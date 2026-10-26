@@ -25,7 +25,7 @@ const HOME_BOTS = ["claude-opus", "gpt-astra", "gemini-pro", "grok", "claude-son
   .filter(Boolean);
 
 // استوديو التصميم (زي أدوبي، وبيشتغل على جهاز المستخدم)
-const STUDIO = ["photo-editor", "poster-maker", "remove-bg", "image-resize", "image-compress", "images-to-pdf", "pdf-merge", "watermark", "design-apps"];
+const STUDIO = ["ai-video", "photo-video", "photo-editor", "poster-maker", "remove-bg", "image-resize", "image-compress", "images-to-pdf", "pdf-merge", "watermark", "design-apps"];
 
 // كروت الاقتراحات: كل كارت بيفتح أداة والطلب مكتوب جاهز
 const IDEAS = [
