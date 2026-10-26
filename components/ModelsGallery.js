@@ -1,6 +1,7 @@
 "use client";
-// معرض الموديلات (زي Poe): أقسام، وكل قسم صف أيقونات، و«عرض الكل» بيفرده شبكة
+// معرض الموديلات والبرامج (زي Poe): أقسام، وكل قسم صف كروت بلوجو واسم، و«عرض الكل» بيفرده شبكة
 import { useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import BotIcon from "./BotIcon";
 import ProCode from "./ProCode";
@@ -22,11 +23,11 @@ export default function ModelsGallery({ sections, bots }) {
 
   function pick(b) {
     if (!b.available) {
-      toast(b.reason === "soon" ? "الموديلات العالمية هتتفعّل قريب" : "الموديل ده مش متاح دلوقتي. جرّب موديل تاني.");
+      toast("الموديل ده هيتفعّل قريب");
       return;
     }
     if (b.tier === "pro" && !code) {
-      toast("الموديل ده للمشتركين. فعّل كود الاشتراك الأول");
+      toast("الموديل ده محتاج كود تفعيل. أدخل الكود الأول");
       proRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
       proRef.current?.querySelector("input")?.focus({ preventScroll: true });
       return;
@@ -35,13 +36,30 @@ export default function ModelsGallery({ sections, bots }) {
     router.push(`/chat?bot=${b.key}`);
   }
 
+  function Tile({ b, expanded }) {
+    const inner = (
+      <>
+        {!b.available && <em className={s.soon}>قريباً</em>}
+        <BotIcon bot={b} size={expanded ? 64 : 72} />
+        <span className={s.tileName} dir="auto">{b.name}</span>
+        {expanded && <span className={s.tileDesc}>{b.desc}</span>}
+      </>
+    );
+    const cls = `${s.tile} ${b.available ? "" : s.tileOff}`;
+    if (b.external) {
+      return <a className={cls} href={b.url} target="_blank" rel="noopener noreferrer" title={`${b.desc} — ${b.maker}`}>{inner}</a>;
+    }
+    if (b.href) return <Link className={cls} href={b.href} title={b.desc}>{inner}</Link>;
+    return <button type="button" className={cls} onClick={() => pick(b)} title={b.desc}>{inner}</button>;
+  }
+
   return (
     <div className={s.gallery}>
       <div className={s.searchRow}>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
           <circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" />
         </svg>
-        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="ابحث عن موديل: Claude، GPT، Gemini..." aria-label="ابحث عن موديل" dir="auto" />
+        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="ابحث عن موديل أو برنامج: Claude، Midjourney، CapCut..." aria-label="ابحث عن موديل أو برنامج" dir="auto" />
       </div>
 
       {sections.map((sec) => {
@@ -52,49 +70,30 @@ export default function ModelsGallery({ sections, bots }) {
           <section key={sec.id} className={s.section} aria-labelledby={`sec-${sec.id}`}>
             <div className={s.sectionHead}>
               <div>
-                <h2 id={`sec-${sec.id}`}>
-                  {sec.title}
-                  {sec.tier === "pro" && <em className={s.proTag}>للمشتركين</em>}
-                  {sec.tier === "free" && <em className={s.freeTag}>مجاناً</em>}
-                </h2>
+                <h2 id={`sec-${sec.id}`}>{sec.title}</h2>
                 <p>{sec.sub}</p>
               </div>
-              {list.length > 4 && !q.trim() && (
+              {list.length > 5 && !q.trim() && (
                 <button type="button" className={s.seeAll} onClick={() => setOpen((o) => ({ ...o, [sec.id]: !o[sec.id] }))}>
                   {expanded ? "أقل" : "عرض الكل"}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M14.5 6l-6 6l6 6" /></svg>
                 </button>
               )}
             </div>
-
             <div className={expanded ? s.grid : s.row}>
-              {list.map((b) => (
-                <button
-                  key={b.key}
-                  type="button"
-                  className={`${s.tile} ${b.available ? "" : s.tileOff}`}
-                  onClick={() => pick(b)}
-                  title={b.desc}
-                >
-                  <BotIcon bot={b} size={66} />
-                  <span className={s.tileName} dir="auto">{b.name}</span>
-                  <span className={s.tileMaker}>
-                    {!b.available ? (b.reason === "soon" ? "قريباً" : "مش متاح") : b.maker}
-                  </span>
-                  {expanded && <span className={s.tileDesc}>{b.desc}</span>}
-                </button>
-              ))}
+              {list.map((b) => <Tile key={b.key} b={b} expanded={expanded} />)}
             </div>
           </section>
         );
       })}
 
-      {!filtered.length && <p className={s.empty}>مفيش موديل بالاسم ده.</p>}
+      {!filtered.length && <p className={s.empty}>مفيش موديل أو برنامج بالاسم ده.</p>}
 
       <div ref={proRef}>
         <ProCode />
       </div>
       <p className={s.footNote}>
-        الأيقونات تصميم خاص بـ Rising StarAi وأسماء الموديلات ملك شركاتها. الموقع بيوصلك بالموديلات دي بالعربي من مكان واحد.
+        أسماء وشعارات الموديلات والبرامج ملك شركاتها، وبتظهر هنا عشان تعرّف كل واحد بشركته. البرامج الخارجية بتفتح في مواقعها الرسمية.
       </p>
     </div>
   );

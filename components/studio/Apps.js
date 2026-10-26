@@ -6,16 +6,16 @@ const GROUPS = [
   {
     title: "صور وتصميم",
     list: [
-      { name: "Photopea", alt: "بديل Photoshop", desc: "شبه فوتوشوب جداً وبيفتح ملفات PSD، ومجاني في المتصفح.", url: "https://www.photopea.com", hue: "#4fa3ff", icon: "layers" },
+      { name: "Photopea", alt: "بديل Photoshop", desc: "شبه فوتوشوب جداً وبيفتح ملفات PSD، وبيشتغل في المتصفح.", url: "https://www.photopea.com", hue: "#4fa3ff", icon: "layers" },
       { name: "Canva", alt: "تصميم سوشيال", desc: "آلاف القوالب الجاهزة للبوستات والعروض، وفيه عربي.", url: "https://www.canva.com", hue: "#26c6da", icon: "grid" },
-      { name: "Adobe Express", alt: "من أدوبي نفسها", desc: "نسخة أدوبي السهلة للبوستات والفيديوهات القصيرة، وليها خطة مجانية.", url: "https://new.express.adobe.com", hue: "#ff5a5f", icon: "spark" },
+      { name: "Adobe Express", alt: "من أدوبي نفسها", desc: "نسخة أدوبي السهلة للبوستات والفيديوهات القصيرة، وفيها قوالب جاهزة.", url: "https://new.express.adobe.com", hue: "#ff5a5f", icon: "spark" },
       { name: "remove.bg", alt: "إزالة خلفية بالذكاء الاصطناعي", desc: "لصور الأشخاص والخلفيات الصعبة.", url: "https://www.remove.bg", hue: "#6fd6a2", icon: "cut" },
     ],
   },
   {
     title: "رسم وواجهات",
     list: [
-      { name: "Figma", alt: "بديل XD وIllustrator", desc: "تصميم واجهات وتطبيقات ولوجوهات، والخطة المجانية كفاية للبداية.", url: "https://www.figma.com", hue: "#a07bff", icon: "pen" },
+      { name: "Figma", alt: "بديل XD وIllustrator", desc: "تصميم واجهات وتطبيقات ولوجوهات، وكفاية للبداية.", url: "https://www.figma.com", hue: "#a07bff", icon: "pen" },
       { name: "Vectorpea", alt: "بديل Illustrator", desc: "من نفس صناع Photopea، لرسم الفيكتور والـ SVG.", url: "https://www.vectorpea.com", hue: "#ffb84d", icon: "pen" },
     ],
   },
@@ -23,7 +23,7 @@ const GROUPS = [
     title: "فيديو",
     list: [
       { name: "CapCut", alt: "بديل Premiere", desc: "مونتاج ريلز وتيك توك بقوالب وترجمة تلقائية.", url: "https://www.capcut.com", hue: "#e9e7e2", icon: "video" },
-      { name: "Clipchamp", alt: "مونتاج في المتصفح", desc: "مونتاج سهل من مايكروسوفت، وفيه خطة مجانية.", url: "https://clipchamp.com", hue: "#7c8cff", icon: "video" },
+      { name: "Clipchamp", alt: "مونتاج في المتصفح", desc: "مونتاج سهل من مايكروسوفت، وبيحفظ شغلك أونلاين.", url: "https://clipchamp.com", hue: "#7c8cff", icon: "video" },
     ],
   },
   {

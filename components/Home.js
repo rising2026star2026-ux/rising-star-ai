@@ -13,6 +13,7 @@ import ExternalLinks from "./ExternalLinks";
 import FlowCards from "./FlowCards";
 import BotIcon from "./BotIcon";
 import { BOTS } from "@/lib/bots";
+import { APPS } from "@/lib/apps";
 import ms from "./models.module.css";
 import s from "./home.module.css";
 
@@ -20,6 +21,9 @@ import s from "./home.module.css";
 const SHORTCUTS = ["article", "post", "translate", "cv", "product-desc", "code-gen", "summarize", "email-writer"];
 
 // شريط الموديلات (زي Poe)
+const HOME_APPS = ["chatgpt", "midjourney", "runway", "suno", "perplexity", "capcut", "kling", "elevenlabs", "ideogram", "notebooklm"]
+  .map((k) => APPS.find((a) => a.key === `app-${k}`))
+  .filter(Boolean);
 const HOME_BOTS = ["claude-opus", "gpt-astra", "gemini-pro", "grok", "claude-sonnet", "kimi", "gpt-oss-120b", "llama-70b", "search-fast", "deepseek"]
   .map((k) => BOTS.find((b) => b.key === k))
   .filter(Boolean);
@@ -228,6 +232,21 @@ export default function Home() {
               <BotIcon bot={b} size={52} />
               <span dir="auto">{b.name}</span>
             </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className={s.cats}>
+        <div className={s.catsHead}>
+          <span>أشهر برامج الذكاء الاصطناعي</span>
+          <Link href="/models" className={s.allLink}>كل البرامج ←</Link>
+        </div>
+        <div className={ms.strip}>
+          {HOME_APPS.map((b) => (
+            <a key={b.key} href={b.url} target="_blank" rel="noopener noreferrer" className={ms.stripItem} title={b.desc}>
+              <BotIcon bot={b} size={52} />
+              <span dir="auto">{b.name}</span>
+            </a>
           ))}
         </div>
       </section>

@@ -33,7 +33,7 @@ export default function Poster() {
   const [logo, setLogo] = useState(null);
   const [badge, setBadge] = useState("عرض خاص");
   const [title, setTitle] = useState("خصم 30% على كل المنيو");
-  const [sub, setSub] = useState("العرض ساري لحد آخر الشهر، والتوصيل مجاني للطلبات فوق 300 جنيه");
+  const [sub, setSub] = useState("العرض ساري لحد آخر الشهر، والتوصيل على حسابنا للطلبات فوق 300 جنيه");
   const [foot, setFoot] = useState("اطلب دلوقتي من الرابط في البايو");
   const [align, setAlign] = useState("right");
   const [vpos, setVpos] = useState("center");

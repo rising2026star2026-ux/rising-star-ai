@@ -1,4 +1,4 @@
-// سكريبت فيديو قصير لأداة «صانع الريلز» — الفيديو نفسه بيترسم في متصفح المستخدم ببلاش
+// سكريبت فيديو قصير لأداة «صانع الريلز» — الفيديو نفسه بيترسم في متصفح المستخدم
 import { getModel } from "@/lib/models";
 import { fail, clientIp, rateLimiter, chainFor, streamFromGroq } from "@/lib/groq";
 

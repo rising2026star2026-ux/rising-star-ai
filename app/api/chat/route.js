@@ -13,7 +13,7 @@ const tooMany = rateLimiter(40);        // 40 رسالة في الساعة لك�
 const tooManySearches = rateLimiter(20); // 20 بحث في الساعة لكل زائر (البحث بفلوس)
 const tooManyPro = rateLimiter(60);      // 60 رسالة في الساعة لكل مشترك على الموديلات العالمية (بفلوس)
 
-/** سلسلة المحاولات لموديل من صفحة «الموديلات»: الموديل نفسه، وبعده موديلات Groq المجانية احتياطي */
+/** سلسلة المحاولات لموديل من صفحة «الموديلات»: الموديل نفسه، وبعده موديلات Groq احتياطي */
 function chainForBot(bot) {
   const first = { id: bot.id, effort: bot.provider === "groq" ? bot.effort || "low" : null, provider: bot.provider };
   const rest = FALLBACK_IDS.filter((id) => id !== bot.id).map((id) => ({ id, effort: "low", provider: "groq" }));
@@ -71,9 +71,9 @@ export async function POST(req) {
     if (!bot) return fail("الموديل ده مش موجود.", 404);
     if (bot.tier === "pro") {
       if (!validProCode(body.pro)) {
-        return Response.json({ error: "الموديل ده للمشتركين. فعّل كود الاشتراك من صفحة الباقات.", code: "pro" }, { status: 402 });
+        return Response.json({ error: "الموديل ده محتاج كود تفعيل. أدخل الكود من صفحة الموديلات.", code: "pro" }, { status: 402 });
       }
-      if (tooManyPro(`${ip}|${body.pro || ""}`)) return fail("وصلت لحد الموديلات العالمية الساعة دي. جرّب بعد شوية أو استخدم موديل مجاني.", 429);
+      if (tooManyPro(`${ip}|${body.pro || ""}`)) return fail("وصلت لحد الموديلات العالمية الساعة دي. جرّب بعد شوية أو استخدم موديل تاني.", 429);
     }
     if (!bot.available || !bot.id) {
       // الموديل مش متاح دلوقتي: نرد بالمتوازن بدل ما نوقف المستخدم
@@ -83,7 +83,9 @@ export async function POST(req) {
   }
 
   const rules = [
-    bot ? `أنت تعمل الآن بنموذج «${bot.name}» من ${bot.maker}. لو سألك المستخدم أنت مين، قول كده.` : mode.hint,
+    bot?.persona
+      ? `أنت «${bot.name}» على منصة Rising StarAi. ${bot.persona}`
+      : bot ? `أنت تعمل الآن بنموذج «${bot.name}» من ${bot.maker}. لو سألك المستخدم أنت مين، قول كده.` : mode.hint,
     SETTINGS.voice.rule[s.voice],
     SETTINGS.depth.rule[s.depth],
   ].filter(Boolean);

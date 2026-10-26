@@ -8,9 +8,9 @@
 
 .step {
   border-radius: var(--r-lg); padding: 14px 16px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.008));
+  background: var(--card);
   border: 1px solid var(--hairline);
-  box-shadow: inset 0 1px 0 var(--highlight);
+  box-shadow: var(--shadow-soft);
   transition: border-color 0.3s var(--ease), opacity 0.3s var(--ease);
 }
 .idle { opacity: 0.6; }
@@ -50,9 +50,9 @@
 .card {
   display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: var(--r-lg);
   color: var(--text);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.034), rgba(255, 255, 255, 0.01));
+  background: var(--card);
   border: 1px solid var(--hairline);
-  box-shadow: inset 0 1px 0 var(--highlight);
+  box-shadow: var(--shadow-soft);
   transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
 }
 .card:hover { border-color: var(--accent-line); transform: translateY(-2px); }

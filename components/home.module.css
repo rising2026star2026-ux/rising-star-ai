@@ -22,17 +22,13 @@
 }
 .brand p { margin: 0; color: var(--muted); font-size: 0.9rem; font-weight: 300; }
 
-/* ===== صندوق السؤال: حافة بيلف عليها ضوء خفيف ===== */
+/* ===== صندوق السؤال ===== */
 .composer {
   position: relative;
   border-radius: 22px; padding: 14px 14px 11px;
-  border: 1px solid transparent;
-  background:
-    linear-gradient(180deg, rgba(20, 20, 28, 0.94), rgba(14, 14, 20, 0.94)) padding-box,
-    conic-gradient(from var(--a), transparent 0 70%, var(--accent-line) 84%, rgba(255, 255, 255, 0.5) 87%, transparent 91%) border-box,
-    linear-gradient(var(--hairline-strong), var(--hairline-strong)) border-box;
-  box-shadow: inset 0 1px 0 var(--highlight), 0 26px 60px -44px color-mix(in srgb, var(--accent) 60%, transparent);
-  animation: orbit 10s linear infinite;
+  border: 1px solid var(--hairline-strong);
+  background: var(--card);
+  box-shadow: var(--shadow-lift);
 }
 @keyframes orbit { to { --a: 360deg; } }
 .composer textarea {
@@ -47,11 +43,11 @@
 .modelBtn {
   display: inline-flex; align-items: center; gap: 7px; font: inherit; font-size: 0.82rem; cursor: pointer;
   padding: 7px 13px; border-radius: 999px; color: var(--text);
-  background: rgba(255, 255, 255, 0.045);
+  background: var(--surface-2);
   border: 1px solid var(--hairline);
   transition: border-color 0.2s var(--ease), background-color 0.2s var(--ease);
 }
-.modelBtn:hover { border-color: var(--hairline-strong); background: rgba(255, 255, 255, 0.07); }
+.modelBtn:hover { border-color: var(--hairline-strong); background: var(--surface-2); }
 .modelBtn b { font-weight: 500; }
 .modelBtn svg { color: var(--faint); }
 
@@ -60,7 +56,7 @@
   cursor: pointer; border: 1px solid var(--hairline); font: inherit;
   transition: transform 0.18s var(--ease), border-color 0.2s var(--ease), opacity 0.2s var(--ease);
 }
-.roundBtn { color: var(--muted); background: rgba(255, 255, 255, 0.04); }
+.roundBtn { color: var(--muted); background: var(--surface-2); }
 .roundBtn:hover { color: var(--text); border-color: var(--hairline-strong); }
 .sendBtn {
   color: var(--on-accent); background: var(--accent); border-color: transparent;
@@ -109,9 +105,9 @@
   flex: none; width: 270px; max-width: 80vw; scroll-snap-align: start;
   display: flex; gap: 12px; align-items: flex-start; padding: 14px; border-radius: 17px;
   color: var(--text);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.032), rgba(255, 255, 255, 0.009));
+  background: var(--card);
   border: 1px solid var(--hairline);
-  box-shadow: inset 0 1px 0 var(--highlight);
+  box-shadow: var(--shadow-soft);
   transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
 }
 .suggestCard:hover { border-color: var(--accent-line); transform: translateY(-2px); }
@@ -133,7 +129,7 @@
   color: var(--text); text-align: center;
   transition: background-color 0.22s var(--ease);
 }
-.tile:hover { background: rgba(255, 255, 255, 0.03); }
+.tile:hover { background: var(--surface); }
 .tile :global(.ticon) { transition: transform 0.22s var(--ease); }
 .tile:hover :global(.ticon) { transform: translateY(-2px); }
 .tileName {
@@ -170,7 +166,7 @@
 /* ===== ورقة اختيار الموديل ===== */
 .sheetWrap {
   position: fixed; inset: 0; z-index: 70; display: flex; align-items: flex-end; justify-content: center;
-  background: rgba(4, 4, 8, 0.62); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  background: var(--scrim); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
   animation: fade 0.18s ease;
 }
 @keyframes fade { from { opacity: 0; } }
@@ -178,9 +174,9 @@
 .sheet {
   width: 100%; max-width: 520px; border-radius: 24px 24px 0 0; padding: 10px 14px 22px;
   padding-bottom: calc(22px + env(safe-area-inset-bottom, 0px));
-  background: rgba(18, 18, 25, 0.97);
+  background: var(--panel);
   border: 1px solid var(--hairline-strong); border-bottom: 0;
-  box-shadow: inset 0 1px 0 var(--highlight), 0 -30px 80px -40px #000;
+  box-shadow: 0 -20px 60px -30px rgba(16, 24, 40, 0.25);
   animation: rise 0.24s var(--ease);
 }
 @keyframes rise { from { transform: translateY(14px); opacity: 0; } }
@@ -196,14 +192,14 @@
 .sheetItem {
   display: flex; align-items: center; gap: 12px; width: 100%; text-align: start; font: inherit; cursor: pointer;
   padding: 11px 13px; border-radius: 15px; color: var(--text);
-  background: rgba(255, 255, 255, 0.022); border: 1px solid transparent;
+  background: var(--surface); border: 1px solid transparent;
   transition: background-color 0.2s var(--ease), border-color 0.2s var(--ease);
 }
-.sheetItem:hover { background: rgba(255, 255, 255, 0.05); }
+.sheetItem:hover { background: var(--surface-2); }
 .sheetActive { background: var(--accent-soft); border-color: var(--accent-line); }
 .sheetIcon {
   flex: none; width: 36px; height: 36px; display: grid; place-items: center; border-radius: 12px;
-  background: rgba(0, 0, 0, 0.3); border: 1px solid var(--hairline);
+  background: var(--field); border: 1px solid var(--hairline);
 }
 .sheetText { flex: 1; min-width: 0; line-height: 1.45; }
 .sheetText b { display: block; font-size: 0.88rem; font-weight: 500; }
@@ -225,7 +221,7 @@
 .webBtn {
   display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 0.82rem; cursor: pointer;
   padding: 7px 12px; border-radius: 999px; color: var(--muted);
-  background: rgba(255, 255, 255, 0.045); border: 1px solid var(--hairline);
+  background: var(--surface-2); border: 1px solid var(--hairline);
   transition: color 0.2s var(--ease), border-color 0.2s var(--ease), background-color 0.2s var(--ease);
 }
 .webBtn:hover { color: var(--text); border-color: var(--hairline-strong); }

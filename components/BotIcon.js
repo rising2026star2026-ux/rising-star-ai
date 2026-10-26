@@ -1,21 +1,28 @@
-// أيقونة الموديل: مربع بتدرّج لون الشركة وحروف مختصرة (تصميم خاص بالموقع، مش شعار الشركة)
+// أيقونة الموديل أو البرنامج:
+//   1) لو فيه لوجو رسمي في public/logos → بيظهر هو
+//   2) مساعد أو برنامج → أيقونة خطية موحدة
+//   3) غير كده → اسم مختصر بخط نضيف على مربع داكن موحد
 import s from "./models.module.css";
+import { Glyph } from "./glyphs";
 
-export default function BotIcon({ bot, size = 64, badge = true }) {
-  const [a, b] = bot.colors || ["#222", "#444"];
+export default function BotIcon({ bot, size = 64 }) {
+  const style = { "--size": `${size}px`, ...(bot.tint ? { "--t": bot.tint } : {}) };
+  if (bot.logo) {
+    return (
+      <span className={`${s.icon} ${s.iconLogo}`} style={style} aria-hidden="true">
+        <img src={bot.logo} alt="" loading="lazy" />
+      </span>
+    );
+  }
+  const glyph = bot.glyph || (bot.mono === "search" ? "search" : null);
   const mono = bot.mono || bot.name.slice(0, 2);
-  const style = { "--c1": a, "--c2": b, "--size": `${size}px` };
   return (
     <span className={s.icon} style={style} aria-hidden="true">
-      {mono === "search" ? (
-        <svg viewBox="0 0 24 24" className={s.iconGlyph} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="10.5" cy="10.5" r="6" />
-          <path d="M19.5 19.5l-4.6-4.6M4.5 10.5h12M10.5 4.5c1.7 1.8 2.5 3.8 2.5 6s-.8 4.2-2.5 6c-1.7-1.8-2.5-3.8-2.5-6s.8-4.2 2.5-6z" />
-        </svg>
+      {glyph ? (
+        <Glyph name={glyph} className={s.iconGlyph} />
       ) : (
         <b className={s.iconMono} data-len={mono.length}>{mono}</b>
       )}
-      {badge && bot.tier === "pro" && <i className={s.iconPro}>✦</i>}
     </span>
   );
 }

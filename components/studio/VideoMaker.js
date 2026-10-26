@@ -1,5 +1,5 @@
 "use client";
-// صانع الفيديو المجاني: الفيديو بيترسم جوه متصفح المستخدم، فمفيش أي تكلفة ولا حد للعدد.
+// صانع الفيديو: الفيديو بيترسم جوه متصفح المستخدم، فمفيش أي تكلفة ولا حد للعدد.
 // 3 أوضاع: ai (الذكاء الاصطناعي بيكتب المشاهد)، text (كلام متحرك)، photos (فيديو من الصور).
 import { useEffect, useRef, useState } from "react";
 import { Drop, Range, Seg, ColorField, TextField, Note, Busy, styles as s } from "./ui";
@@ -248,7 +248,7 @@ export default function VideoMaker({ mode = "text" }) {
 
   return (
     <div className={s.root}>
-      <span className={s.badge}><i />مجاني ومن غير حد، والفيديو بيتعمل على جهازك</span>
+      <span className={s.badge}><i />من غير حد، والفيديو بيتعمل على جهازك</span>
 
       {mode === "ai" && (
         <div className={s.panel}>
@@ -345,7 +345,7 @@ export default function VideoMaker({ mode = "text" }) {
                 title={music ? `🎵 ${music.name.slice(0, 28)}` : "حط ملف موسيقى (MP3)"}
               />
               {music && <button type="button" className="btn ghost" onClick={() => { URL.revokeObjectURL(music.url); setMusic(null); }}>شيل الموسيقى</button>}
-              <Note>استخدم موسيقى مسموح باستخدامها، زي مكتبة الصوت المجانية في يوتيوب أو تيك توك.</Note>
+              <Note>استخدم موسيقى مسموح باستخدامها، زي مكتبة الصوت في يوتيوب أو تيك توك.</Note>
             </div>
 
             <div className={s.panelFoot}>

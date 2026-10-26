@@ -27,7 +27,7 @@ export async function generateMetadata({ params }) {
   const t = getTool(id);
   if (!t) return {};
   const description = seoDescription(t, getContent(id));
-  const title = t.local ? `${t.name} أونلاين مجاناً` : `${t.name} بالذكاء الاصطناعي`;
+  const title = t.local ? `${t.name} أونلاين` : `${t.name} بالذكاء الاصطناعي`;
   return {
     title,
     description,

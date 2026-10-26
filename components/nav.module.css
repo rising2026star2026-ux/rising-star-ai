@@ -13,7 +13,7 @@
   padding: 7px 10px;
   /* يفضل فوق شريط النظام في الموبايل */
   padding-bottom: calc(7px + env(safe-area-inset-bottom, 0px));
-  background: rgba(10, 10, 15, 0.86);
+  background: var(--panel);
   border-top: 1px solid var(--hairline);
   backdrop-filter: blur(20px);
 }
