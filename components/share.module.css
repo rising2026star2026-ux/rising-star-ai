@@ -1,0 +1,100 @@
+/* شريط المشاركة
+   الألوان بتيجي من globals.css. القيم التانية في var(...) احتياطي
+   لو لسه ما ركّبتش ملف التصميم الجديد */
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline, var(--line, rgba(255, 255, 255, 0.08)));
+}
+
+.label {
+  color: var(--faint, var(--muted, #8d8a96));
+  font-size: 0.8rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font: inherit;
+  font-size: 0.82rem;
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 8px 13px;
+  border-radius: 11px;
+  color: var(--muted, #a8a4b3);
+  background: var(--surface, rgba(255, 255, 255, 0.03));
+  border: 1px solid var(--hairline, var(--line, rgba(255, 255, 255, 0.08)));
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.18s ease;
+}
+.btn:hover {
+  color: var(--text, #ece9e4);
+  border-color: var(--hairline-strong, rgba(255, 255, 255, 0.16));
+  transform: translateY(-1px);
+}
+.btn:focus-visible {
+  outline: 2px solid var(--accent, #cfa94d);
+  outline-offset: 2px;
+}
+.btn svg { flex: none; }
+
+/* واتساب: الأيقونة بس خضرا عشان الشكل يفضل هادي */
+.wa svg { color: #25d366; }
+.wa:hover { border-color: rgba(37, 211, 102, 0.45); }
+
+.hint {
+  flex-basis: 100%;
+  margin: 0;
+  color: #e9b46b;
+  font-size: 0.78rem;
+}
+
+/* ===== النسخة الصغيرة للشات: أيقونات بس ===== */
+.compact {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+  gap: 6px;
+}
+.compact .btn {
+  padding: 6px 9px;
+  border-radius: 10px;
+  color: var(--faint, var(--muted, #8d8a96));
+  background: transparent;
+}
+.compact .txt {
+  /* الكلام مخفي بس قارئ الشاشة بيقراه */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* الموبايل: الأزرار الأربعة في سطر واحد */
+@media (max-width: 480px) {
+  .label { flex-basis: 100%; }
+  .row { gap: 6px; width: 100%; }
+  .wrap:not(.compact) .btn {
+    flex: 1 1 0;
+    justify-content: center;
+    min-width: 0;
+    padding: 9px 6px;
+    font-size: 0.78rem;
+    gap: 5px;
+  }
+}

@@ -1,0 +1,236 @@
+/* استوديو التصميم — نفس روح الموقع: أسطح شفافة، حواف شعرة، وخط خفيف */
+
+.root { display: grid; gap: 14px; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 7px; width: fit-content;
+  font-size: 0.76rem; color: var(--muted);
+  padding: 5px 11px; border-radius: 999px;
+  border: 1px solid var(--hairline); background: var(--surface);
+}
+.badge i { width: 6px; height: 6px; border-radius: 50%; background: #5fd39a; box-shadow: 0 0 0 3px rgba(95, 211, 154, 0.14); }
+
+/* ===== مكان الملفات ===== */
+.drop {
+  position: relative; display: grid; place-items: center; gap: 6px; text-align: center;
+  padding: 38px 18px; border-radius: var(--r-xl);
+  border: 1px dashed var(--hairline-strong);
+  background: linear-gradient(180deg, var(--surface), transparent);
+  cursor: pointer; transition: border-color 0.2s var(--ease), background 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.drop:hover, .dropOver { border-color: var(--accent-line); background: var(--accent-soft); }
+.dropOver { transform: scale(1.005); }
+.drop:focus-within { outline: 2px solid var(--accent-line); outline-offset: 2px; }
+.drop b { font-weight: 500; font-size: 0.98rem; }
+.drop small { color: var(--faint); font-size: 0.78rem; }
+.dropCompact { padding: 14px; grid-auto-flow: column; gap: 10px; }
+.dropIcon {
+  width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center;
+  color: var(--accent); background: var(--accent-soft); border: 1px solid var(--accent-line);
+}
+.dropCompact .dropIcon { width: 34px; height: 34px; border-radius: 11px; }
+.dropCompact .dropIcon svg { width: 18px; height: 18px; }
+.hiddenInput { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+
+/* ===== لوحة العمل ===== */
+.bench { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 14px; align-items: start; }
+@media (max-width: 860px) { .bench { grid-template-columns: 1fr; } }
+
+.stage {
+  min-height: 260px; display: grid; place-items: center;
+  border-radius: var(--r-xl); border: 1px solid var(--hairline);
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(255, 255, 255, 0.035), transparent 60%),
+    rgba(0, 0, 0, 0.28);
+  padding: 14px; overflow: hidden;
+  position: sticky; top: 80px; /* المعاينة بتفضل قدامك وانت بتعدّل */
+}
+@media (max-width: 860px) { .stage { position: relative; top: auto; } }
+.stage canvas, .stage img, .stage video {
+  max-width: 100%; max-height: 62vh; height: auto; width: auto;
+  border-radius: 10px; box-shadow: 0 20px 50px -28px rgba(0, 0, 0, 0.9);
+  display: block;
+}
+.stage canvas.clickable { cursor: crosshair; }
+
+.panel {
+  display: grid; gap: 14px; padding: 16px;
+  border-radius: var(--r-xl); border: 1px solid var(--hairline); background: var(--surface);
+}
+.panelFoot { display: grid; gap: 8px; padding-top: 12px; border-top: 1px solid var(--hairline); }
+.panelFoot :global(.btn) { width: 100%; }
+
+.section { display: grid; gap: 10px; }
+.sectionTitle { font-size: 0.78rem; color: var(--faint); letter-spacing: 0.02em; }
+
+.field { display: grid; gap: 6px; }
+.fieldLabel { font-size: 0.8rem; color: var(--muted); }
+.field :global(.segmented) { width: 100%; }
+.field :global(.segmented button) { flex: 1 1 auto; }
+
+.input {
+  width: 100%; font: inherit; font-size: 0.92rem; color: var(--text);
+  background: rgba(0, 0, 0, 0.25); border: 1px solid var(--hairline); border-radius: var(--r-sm);
+  padding: 9px 11px; resize: vertical; transition: border-color 0.2s var(--ease);
+}
+.input:focus { outline: none; border-color: var(--accent-line); }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+.range { display: grid; gap: 4px; }
+.range label { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--muted); }
+.range output { color: var(--faint); font-variant-numeric: tabular-nums; direction: ltr; }
+/* السلايدر من الشمال لليمين زي كل برامج التصميم، عشان الجزء الملوّن يبقى مظبوط */
+.range input { width: 100%; accent-color: var(--accent); height: 18px; direction: ltr; }
+
+.colorField { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 0.82rem; color: var(--muted); }
+.colorWrap { display: inline-flex; align-items: center; gap: 8px; }
+.colorWrap input {
+  width: 34px; height: 30px; padding: 0; border: 1px solid var(--hairline-strong);
+  border-radius: 9px; background: none; cursor: pointer;
+}
+.colorWrap input::-webkit-color-swatch-wrapper { padding: 3px; }
+.colorWrap input::-webkit-color-swatch { border: none; border-radius: 6px; }
+.colorWrap code { font-size: 0.75rem; color: var(--faint); }
+
+/* كروت الاختيارات الجاهزة (فلاتر، مقاسات، قوالب) */
+.presets { display: grid; grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 7px; }
+.preset {
+  display: grid; gap: 2px; text-align: center; padding: 9px 6px; border-radius: 12px; cursor: pointer;
+  border: 1px solid var(--hairline); background: rgba(0, 0, 0, 0.18); color: var(--muted);
+  font: inherit; font-size: 0.78rem; transition: all 0.18s var(--ease);
+}
+.preset small { font-size: 0.68rem; color: var(--faint); direction: ltr; }
+.preset:hover { color: var(--text); border-color: var(--hairline-strong); }
+.presetOn { color: var(--text); border-color: var(--accent-line); background: var(--accent-soft); }
+.swatchDot { width: 100%; height: 26px; border-radius: 8px; margin-bottom: 4px; border: 1px solid rgba(255, 255, 255, 0.08); }
+
+.iconRow { display: flex; gap: 6px; }
+.iconBtn {
+  flex: 1; display: grid; place-items: center; gap: 2px; padding: 8px 4px; cursor: pointer;
+  border-radius: 11px; border: 1px solid var(--hairline); background: rgba(0, 0, 0, 0.18);
+  color: var(--muted); font: inherit; font-size: 0.7rem; transition: all 0.18s var(--ease);
+}
+.iconBtn:hover { color: var(--text); border-color: var(--hairline-strong); }
+.iconBtn svg { width: 18px; height: 18px; }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.toolbar .spacer { flex: 1; }
+
+.note { margin: 0; font-size: 0.8rem; line-height: 1.75; color: var(--faint); }
+.noteWarn { color: var(--danger); }
+.note a { color: var(--accent); }
+
+.busy { display: inline-flex; align-items: center; gap: 9px; font-size: 0.85rem; color: var(--muted); }
+.spinner {
+  width: 15px; height: 15px; border-radius: 50%;
+  border: 2px solid var(--hairline-strong); border-top-color: var(--accent);
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.meta { font-size: 0.76rem; color: var(--faint); font-variant-numeric: tabular-nums; }
+
+/* ===== قوائم الملفات (ضغط، تحويل، PDF) ===== */
+.list { display: grid; gap: 8px; }
+.item {
+  display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 12px; align-items: center;
+  padding: 9px; border-radius: var(--r-md); border: 1px solid var(--hairline); background: var(--surface);
+}
+.thumb {
+  width: 52px; height: 52px; border-radius: 10px; object-fit: cover; background: rgba(0, 0, 0, 0.3);
+  display: grid; place-items: center; font-size: 0.7rem; color: var(--faint); overflow: hidden;
+}
+.itemText { display: grid; gap: 3px; min-width: 0; }
+.itemText b { font-weight: 500; font-size: 0.86rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.itemText small { font-size: 0.75rem; color: var(--faint); }
+.saved { color: #6fd6a2; }
+.grew { color: var(--danger); }
+.itemActions { display: flex; gap: 4px; }
+.mini {
+  min-width: 32px; height: 32px; padding: 0 9px; border-radius: 9px; cursor: pointer;
+  border: 1px solid var(--hairline); background: transparent; color: var(--muted); font: inherit; font-size: 0.78rem;
+  transition: all 0.15s var(--ease);
+}
+.mini:hover:not(:disabled) { color: var(--text); border-color: var(--hairline-strong); }
+.mini:disabled { opacity: 0.3; cursor: default; }
+.miniAccent { color: var(--on-accent); background: var(--accent); border-color: transparent; }
+.miniAccent:hover:not(:disabled) { color: var(--on-accent); filter: brightness(1.08); }
+
+@media (max-width: 520px) {
+  .item { grid-template-columns: 44px minmax(0, 1fr); }
+  .thumb { width: 44px; height: 44px; }
+  .itemActions { grid-column: 1 / -1; justify-content: flex-end; }
+}
+
+/* ===== الألوان ===== */
+.palette { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
+.swatch {
+  display: grid; border-radius: var(--r-md); overflow: hidden; cursor: pointer; text-align: start;
+  border: 1px solid var(--hairline); background: var(--surface); padding: 0; font: inherit; color: inherit;
+  transition: transform 0.18s var(--ease), border-color 0.18s var(--ease);
+}
+.swatch:hover { transform: translateY(-2px); border-color: var(--hairline-strong); }
+.swatchColor { height: 84px; display: flex; align-items: flex-end; padding: 8px; font-size: 0.72rem; }
+.swatchText { display: grid; gap: 2px; padding: 9px 10px; }
+.swatchText code { font-size: 0.86rem; color: var(--text); }
+.swatchText small { font-size: 0.7rem; color: var(--faint); }
+.strip { display: flex; height: 46px; border-radius: 12px; overflow: hidden; border: 1px solid var(--hairline); }
+.strip span { flex: var(--w) 1 0; }
+
+/* ===== لقطات الفيديو ===== */
+.shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
+.shot { display: grid; gap: 4px; }
+.shot img { width: 100%; border-radius: 10px; border: 1px solid var(--hairline); }
+.shot div { display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; color: var(--faint); }
+
+/* ===== برامج أونلاين ===== */
+.apps { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+.app {
+  display: grid; grid-template-columns: 42px minmax(0, 1fr) auto; gap: 12px; align-items: center;
+  padding: 13px; border-radius: var(--r-lg); border: 1px solid var(--hairline); background: var(--surface);
+  color: inherit; text-decoration: none; transition: all 0.2s var(--ease);
+}
+.app:hover { border-color: color-mix(in srgb, var(--h) 45%, transparent); transform: translateY(-2px); }
+.appIcon {
+  width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center;
+  color: var(--h); background: color-mix(in srgb, var(--h) 13%, transparent);
+  border: 1px solid color-mix(in srgb, var(--h) 28%, transparent);
+}
+.appIcon svg { width: 20px; height: 20px; }
+.appText { display: grid; gap: 3px; min-width: 0; }
+.appText b { font-weight: 500; font-size: 0.92rem; display: flex; gap: 6px; align-items: baseline; }
+.appText em { font-style: normal; font-size: 0.68rem; color: var(--faint); }
+.appText small { font-size: 0.76rem; color: var(--muted); line-height: 1.6; }
+.appOut { color: var(--faint); }
+.appsGroup { display: grid; gap: 10px; }
+.appsGroup h3 { margin: 6px 0 0; font-weight: 500; font-size: 0.86rem; color: var(--muted); }
+
+/* ===== مكتبات الإعلانات (Adspy) ===== */
+.spy {
+  display: grid; gap: 12px; padding: 16px; margin-bottom: 14px;
+  border-radius: var(--r-xl); border: 1px solid var(--hairline);
+  background:
+    radial-gradient(90% 120% at 100% 0%, var(--accent-soft), transparent 60%),
+    var(--surface);
+}
+.spyHead { display: grid; gap: 4px; }
+.spyHead b { font-weight: 500; font-size: 0.98rem; }
+.spyHead small { font-size: 0.8rem; color: var(--muted); line-height: 1.7; }
+.spyForm { display: grid; grid-template-columns: minmax(0, 1fr) 150px; gap: 8px; }
+@media (max-width: 520px) { .spyForm { grid-template-columns: 1fr; } }
+.select {
+  font: inherit; font-size: 0.9rem; color: var(--text); background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--hairline); border-radius: var(--r-sm); padding: 9px 10px;
+}
+.select option { background: var(--surface-solid); }
+.spyLinks { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+.spyLink {
+  display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: var(--r-md);
+  border: 1px solid var(--hairline); background: rgba(0, 0, 0, 0.2); color: inherit; text-decoration: none;
+  font-size: 0.84rem; transition: all 0.18s var(--ease);
+}
+.spyLink:hover { border-color: var(--accent-line); transform: translateY(-1px); }
+.spyText { display: grid; gap: 1px; flex: 1; min-width: 0; }
+.spyText small { font-size: 0.7rem; color: var(--faint); }
+.spyDot { width: 30px; height: 30px; flex: none; border-radius: 10px; display: grid; place-items: center; font-size: 0.95rem; background: var(--surface-2); }
+.steps3 { margin: 0; padding-inline-start: 18px; display: grid; gap: 3px; font-size: 0.8rem; color: var(--muted); }

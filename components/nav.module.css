@@ -1,0 +1,49 @@
+/* شريط التنقل السفلي — زي تطبيقات الموبايل */
+
+.nav {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 45;
+  max-width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  gap: 2px;
+  padding: 7px 10px;
+  /* يفضل فوق شريط النظام في الموبايل */
+  padding-bottom: calc(7px + env(safe-area-inset-bottom, 0px));
+  background: rgba(10, 10, 15, 0.86);
+  border-top: 1px solid var(--hairline);
+  backdrop-filter: blur(20px);
+}
+
+.tab {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 7px 4px 5px;
+  border-radius: 14px;
+  color: var(--faint);
+  font-size: 0.68rem;
+  text-align: center;
+  transition: color 0.2s var(--ease);
+}
+.tab span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.tab:hover { color: var(--muted); }
+
+.active { color: var(--accent); }
+.active svg { filter: drop-shadow(0 0 10px var(--accent-soft)); }
+
+/* على الشاشات الكبيرة الشريط مش محتاج */
+@media (min-width: 880px) {
+  .nav { display: none; }
+}
