@@ -22,6 +22,7 @@ const NAV = [
   { href: "/tools", label: "كل الأدوات", match: ["/tools", "/tool/"], icon: <svg {...I}><path d="M14.5 6.5l3-3 3 3-3 3zM4 20l9-9M3.5 7.5h6M6.5 4.5v6M14 17.5h6.5" /></svg> },
   { href: "/flows", label: "المهام الكاملة", match: ["/flows", "/flow/"], icon: <svg {...I}><rect x="3" y="4" width="7" height="5" rx="1.5" /><rect x="14" y="15" width="7" height="5" rx="1.5" /><path d="M6.5 9v3.5a2 2 0 002 2h7v.5" /></svg> },
   { href: "/history", label: "السجل", icon: <svg {...I}><circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" /></svg> },
+  { href: "/subscriptions", label: "مقارن الاشتراكات", match: ["/subscriptions", "/scam-check"], icon: <svg {...I}><path d="M12 3.5l7 3v5c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9v-5z" /><path d="M9 12l2.2 2.2L15.5 10" /></svg> },
   { href: "/plans", label: "الباقات", icon: <svg {...I}><path d="M4 8l4 3.5L12 5l4 6.5L20 8l-1.5 10h-13z" /></svg> },
 ];
 
