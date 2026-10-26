@@ -80,13 +80,7 @@
 
 /* ===== شاشة البداية ===== */
 .hero { text-align: center; padding: 48px 0 24px; flex: 1; }
-.spark {
-  width: 54px; height: 54px; margin: 0 auto 18px; display: grid; place-items: center;
-  font-size: 1.4rem; color: var(--accent);
-  background: var(--accent-soft);
-  border: 1px solid var(--accent-line); border-radius: 17px;
-  box-shadow: 0 16px 44px -22px var(--accent), inset 0 1px 0 var(--highlight);
-}
+.spark { margin: 0 auto 16px; display: grid; place-items: center; filter: drop-shadow(0 8px 18px rgba(245, 158, 11, 0.35)); }
 .hero h1 {
   font-size: clamp(1.5rem, 4.2vw, 2.2rem);
   font-weight: 300; letter-spacing: -0.025em; line-height: 1.3;

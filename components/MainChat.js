@@ -9,6 +9,7 @@ import ShareBar from "./ShareBar";
 import ToolIcon from "./ToolIcon";
 import BotIcon from "./BotIcon";
 import ProCode from "./ProCode";
+import StarMark from "./StarMark";
 import { getBot } from "@/lib/bots";
 import { tools } from "@/lib/tools";
 import { findTools } from "@/lib/search";
@@ -240,7 +241,7 @@ export default function MainChat() {
             {bot ? (
               <div className={s.botHero}><BotIcon bot={bot} size={58} /></div>
             ) : (
-              <div className={s.spark} aria-hidden="true">✦</div>
+              <div className={s.spark}><StarMark size={52} /></div>
             )}
             <h1>{bot ? <>بتتكلم مع <bdi>{bot.name}</bdi></> : "عايز تعمل إيه النهارده؟"}</h1>
             <p>اسأل أي سؤال بالعربي، والرد هيوصلك فوراً. فعّل «بحث» عشان تاخد معلومات جديدة من الإنترنت ومعاها المصادر.</p>

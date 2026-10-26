@@ -8,6 +8,7 @@ import { findTools, norm } from "@/lib/search";
 import { SETTINGS, DEFAULT_SETTINGS } from "@/lib/settings";
 import { useStored, read } from "@/lib/store";
 import ToolIcon from "./ToolIcon";
+import StarMark from "./StarMark";
 
 const THEMES = { auto: "يتحول بعد 5 دقايق", gold: "ذهبي دائماً", royal: "أزرق ملكي دائماً" };
 
@@ -39,15 +40,15 @@ export default function Chrome() {
     <>
       <header className="topbar">
         <Link href="/" className="logo" aria-label="Rising StarAi الصفحة الرئيسية">
-          <span className="logo-star" aria-hidden="true">✦</span>
-          <span dir="ltr">Rising StarAi</span>
+          <StarMark size={34} className="logo-star" />
+          <span dir="ltr" className="logo-name">Rising Star<b>Ai</b></span>
         </Link>
         <nav className="top-actions" aria-label="القائمة">
           <Link href="/chat" className={on("/chat")}>الشات</Link>
           <Link href="/models" className={on("/models")}>الموديلات</Link>
           <Link href="/flows" className={on("/flow")}>المهام</Link>
           <Link href="/tools" className={on("/tool")}>الأدوات</Link>
-          <Link href="/plans" className="upgrade-pill"><span aria-hidden="true">✦</span> ترقية</Link>
+          <Link href="/plans" className="upgrade-pill"><StarMark size={15} /> ترقية</Link>
           <button className="search-btn" onClick={() => setPalette(true)} aria-label="ابحث عن أداة">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
               <circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" />
@@ -152,17 +153,6 @@ function Panel({ onClose }) {
             </div>
           </fieldset>
         ))}
-
-        <fieldset className="setting">
-          <legend>ألوان الموقع</legend>
-          <div className="segmented">
-            {Object.entries(THEMES).map(([v, label]) => (
-              <button key={v} aria-pressed={theme === v} className={theme === v ? "on" : ""} onClick={() => setTheme(v)}>
-                {label}
-              </button>
-            ))}
-          </div>
-        </fieldset>
 
         <button className="btn ghost wide" onClick={() => { setSettings(DEFAULT_SETTINGS); setTheme("auto"); }}>
           رجّع الإعدادات الافتراضية

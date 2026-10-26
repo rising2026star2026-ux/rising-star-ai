@@ -12,6 +12,7 @@ import ToolIcon from "./ToolIcon";
 import ExternalLinks from "./ExternalLinks";
 import FlowCards from "./FlowCards";
 import BotIcon from "./BotIcon";
+import StarMark from "./StarMark";
 import { BOTS } from "@/lib/bots";
 import { APPS } from "@/lib/apps";
 import ms from "./models.module.css";
@@ -96,7 +97,7 @@ export default function Home() {
     <div className={s.screen}>
       {/* ===== الاسم ===== */}
       <div className={s.brand}>
-        <span className={s.mark} aria-hidden="true">✦</span>
+        <span className={s.mark}><StarMark size={64} /></span>
         <h1>مساحة العمل</h1>
         <p>{tools.length} أداة ذكاء اصطناعي بالعربي، وشات بـ {MODEL_OPTIONS.length} موديلات</p>
       </div>
