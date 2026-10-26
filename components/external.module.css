@@ -17,7 +17,7 @@
 
 .card {
   --h: var(--accent);
-  position: relative; display: flex; align-items: stretch; min-width: 0;
+  display: flex; align-items: center; gap: 12px; min-width: 0;
   padding: 13px 14px; border-radius: 16px;
   color: var(--text);
   background: var(--card);
@@ -68,22 +68,4 @@
   .rowDense .icon { width: 34px; height: 34px; border-radius: 11px; }
   .rowDense .out { position: absolute; top: 12px; inset-inline-end: 12px; }
   .rowDense .card { position: relative; }
-}
-
-/* الكارت بقى حاوية: الرابط الرئيسي (مترجم) + زرار EN للأصل */
-.card > .main { flex: 1; min-width: 0; display: flex; align-items: center; gap: 12px; color: inherit; }
-.card:has(.main) { padding: 0; }
-.main { padding: 13px 14px; border-radius: 16px; }
-.main:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.orig {
-  flex: none; align-self: center; margin-inline-end: 10px; padding: 3px 9px; border-radius: 999px;
-  font-size: 0.68rem; letter-spacing: 0.04em; color: var(--faint); border: 1px solid var(--hairline-strong); background: var(--card);
-}
-.orig:hover { color: var(--text); border-color: var(--hairline-strong); }
-
-@media (max-width: 680px) {
-  .row .card { flex-direction: row; align-items: center; padding: 0; }
-  .rowDense .main { flex-direction: column; align-items: flex-start; gap: 9px; padding: 12px; position: relative; }
-  .rowDense .main .out { position: absolute; top: 12px; inset-inline-end: 12px; }
-  .rowDense .orig { align-self: flex-start; margin-top: 10px; margin-inline-end: 8px; }
 }
