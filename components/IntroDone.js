@@ -9,7 +9,8 @@ export default function IntroDone() {
     if (!el) return;
     const skip = () => el.classList.add("intro-skip");
     el.addEventListener("click", skip);
-    const t = setTimeout(() => { el.remove(); document.documentElement.classList.add("no-intro"); }, 3200);
+    // ما بنشيلش العنصر من الصفحة (React هو اللي ماسكه)، بنخفيه بس
+    const t = setTimeout(() => document.documentElement.classList.add("no-intro"), 3200);
     return () => { clearTimeout(t); el.removeEventListener("click", skip); };
   }, []);
   return null;
