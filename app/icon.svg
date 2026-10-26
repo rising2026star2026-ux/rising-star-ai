@@ -7,5 +7,5 @@
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="16" fill="#ffffff"/>
-  <path d="M32 6.5c1.9 14 7.8 21.5 27 27c-19.2 5.5-25.1 13-27 27c-1.9-14-7.8-21.5-27-27c19.2-5.5 25.1-13 27-27z" transform="translate(0 -1.5)" fill="url(#g)"/>
+  <path d="M12 2.2L14.65 9.16L22.08 9.52L16.28 14.19L18.23 21.38L12 17.3L5.77 21.38L7.72 14.19L1.92 9.52L9.35 9.16Z" transform="translate(7 7.5) scale(2.05)" fill="url(#g)" stroke="url(#g)" stroke-width="1.7" stroke-linejoin="round"/>
 </svg>

@@ -1,5 +1,7 @@
-// نجمة Rising StarAi: نجمة رباعية بتدرّج أصفر ذهبي
+// نجمة Rising StarAi: نجمة خماسية بحواف مدورة وتدرّج أصفر ذهبي (هوية الموقع، مختلفة عن أشكال الشركات التانية)
 import { useId } from "react";
+
+export const STAR_PATH = "M12 2.2L14.65 9.16L22.08 9.52L16.28 14.19L18.23 21.38L12 17.3L5.77 21.38L7.72 14.19L1.92 9.52L9.35 9.16Z";
 
 export default function StarMark({ size = 28, className = "" }) {
   const id = useId().replace(/:/g, "");
@@ -20,8 +22,11 @@ export default function StarMark({ size = 28, className = "" }) {
         </linearGradient>
       </defs>
       <path
-        d="M12 1.2c.75 5.6 3.1 8.6 10.8 10.8C15.1 14.2 12.75 17.2 12 22.8c-.75-5.6-3.1-8.6-10.8-10.8C8.9 9.8 11.25 6.8 12 1.2z"
+        d={STAR_PATH}
         fill={`url(#sg${id})`}
+        stroke={`url(#sg${id})`}
+        strokeWidth="1.7"
+        strokeLinejoin="round"
       />
     </svg>
   );
