@@ -183,7 +183,6 @@ kbd {
   .search-btn span, .search-btn kbd { display: none; }
   .search-btn { width: 36px; height: 36px; padding: 0; justify-content: center; border-color: transparent; background: transparent; color: var(--muted); }
   .search-btn svg { width: 19px; height: 19px; margin: 0; }
-  .history-link { display: none; }
 }
 
 .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px 64px; }

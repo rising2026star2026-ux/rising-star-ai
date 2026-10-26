@@ -11,10 +11,18 @@ import { useModal } from "@/lib/useModal";
 import ToolIcon from "./ToolIcon";
 import ExternalLinks from "./ExternalLinks";
 import FlowCards from "./FlowCards";
+import BotIcon from "./BotIcon";
+import { BOTS } from "@/lib/bots";
+import ms from "./models.module.css";
 import s from "./home.module.css";
 
 // شبكة الاختصارات (4 × 2). أول واحدة عليها علامة «شائع»
 const SHORTCUTS = ["article", "post", "translate", "cv", "product-desc", "code-gen", "summarize", "email-writer"];
+
+// شريط الموديلات (زي Poe)
+const HOME_BOTS = ["claude-opus", "gpt-astra", "gemini-pro", "grok", "claude-sonnet", "kimi", "gpt-oss-120b", "llama-70b", "search-fast", "deepseek"]
+  .map((k) => BOTS.find((b) => b.key === k))
+  .filter(Boolean);
 
 // استوديو التصميم (زي أدوبي، وبيشتغل على جهاز المستخدم)
 const STUDIO = ["photo-editor", "poster-maker", "remove-bg", "image-resize", "image-compress", "images-to-pdf", "pdf-merge", "watermark", "design-apps"];
@@ -207,6 +215,21 @@ export default function Home() {
           <Link href="/flows" className={s.allLink}>كل المهام ←</Link>
         </div>
         <FlowCards row />
+      </section>
+
+      <section className={s.cats}>
+        <div className={s.catsHead}>
+          <span>اتكلم مع أقوى موديلات العالم</span>
+          <Link href="/models" className={s.allLink}>كل الموديلات ←</Link>
+        </div>
+        <div className={ms.strip}>
+          {HOME_BOTS.map((b) => (
+            <Link key={b.key} href={`/chat?bot=${b.key}`} className={ms.stripItem}>
+              <BotIcon bot={b} size={52} />
+              <span dir="auto">{b.name}</span>
+            </Link>
+          ))}
+        </div>
       </section>
 
       <section className={s.cats}>

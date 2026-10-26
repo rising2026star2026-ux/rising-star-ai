@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ProCode from "@/components/ProCode";
 
 export const metadata = {
   title: "الباقات",
@@ -11,7 +12,7 @@ export const metadata = {
 const PLANS = [
   { name: "تجربة", price: "0", note: "عشان تجرب الموقع", items: ["عدد محدود من الطلبات يومياً", "كل الأدوات", "الشات بالموديلات الأساسية"] },
   { name: "أساسي", price: "99", note: "للاستخدام اليومي", items: ["طلبات أكتر بكتير", "كل الأدوات", "كل الموديلات الـ6"], best: true },
-  { name: "احترافي", price: "299", note: "للشغل الكتير", items: ["أعلى حد استخدام", "كل الأدوات والموديلات", "أولوية في السرعة"] },
+  { name: "احترافي", price: "299", note: "للشغل الكتير", items: ["الموديلات العالمية: GPT وClaude وGemini وGrok", "أعلى حد استخدام", "كل الأدوات", "أولوية في السرعة"] },
 ];
 
 export default function Plans() {
@@ -30,6 +31,10 @@ export default function Plans() {
             <ul>{p.items.map((i) => <li key={i}>{i}</li>)}</ul>
           </div>
         ))}
+      </div>
+
+      <div style={{ marginTop: 22 }}>
+        <ProCode />
       </div>
 
       <p className="notice">

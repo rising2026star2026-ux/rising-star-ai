@@ -27,14 +27,14 @@ const TABS = [
     ),
   },
   {
-    href: "/flows",
-    label: "المهام",
-    match: ["/flows", "/flow/"],
+    href: "/models",
+    label: "الموديلات",
     icon: (
       <svg {...P}>
-        <rect x="3" y="4" width="7" height="5" rx="1.5" />
-        <rect x="14" y="15" width="7" height="5" rx="1.5" />
-        <path d="M6.5 9v3.5a2 2 0 002 2h9V15" />
+        <rect x="3.5" y="3.5" width="7" height="7" rx="2.2" />
+        <circle cx="17.2" cy="7" r="3.6" />
+        <rect x="3.5" y="13.5" width="7" height="7" rx="2.2" />
+        <path d="M17.2 13.4l1.1 2.3 2.5.4-1.8 1.7.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.7 2.5-.4z" />
       </svg>
     ),
   },
@@ -52,12 +52,14 @@ const TABS = [
     ),
   },
   {
-    href: "/history",
-    label: "السجل",
+    href: "/flows",
+    label: "المهام",
+    match: ["/flows", "/flow/"],
     icon: (
       <svg {...P}>
-        <circle cx="12" cy="12" r="8.5" />
-        <path d="M12 7.5V12l3 2" />
+        <rect x="3" y="4" width="7" height="5" rx="1.5" />
+        <rect x="14" y="15" width="7" height="5" rx="1.5" />
+        <path d="M6.5 9v3.5a2 2 0 002 2h9V15" />
       </svg>
     ),
   },

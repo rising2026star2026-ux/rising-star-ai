@@ -7,6 +7,9 @@ import remarkGfm from "remark-gfm";
 import ModelPicker from "./ModelPicker";
 import ShareBar from "./ShareBar";
 import ToolIcon from "./ToolIcon";
+import BotIcon from "./BotIcon";
+import ProCode from "./ProCode";
+import { getBot } from "@/lib/bots";
 import { tools } from "@/lib/tools";
 import { findTools } from "@/lib/search";
 import { getModel, DEFAULT_MODEL_KEY } from "@/lib/models";
@@ -44,14 +47,23 @@ export default function MainChat() {
   const [sideOpen, setSideOpen] = useState(false);
   const [modelKey, setModelKey] = useStored("model", DEFAULT_MODEL_KEY);
   const [web, setWeb] = useStored("web", false);
+  const [botKey, setBotKey] = useStored("bot", "");
+  const [needPro, setNeedPro] = useState(false);
   const [settings] = useStored("settings", DEFAULT_SETTINGS);
   const abortRef = useRef(null);
   const endRef = useRef(null);
   const boxRef = useRef(null);
   const model = getModel(modelKey);
+  const bot = getBot(botKey);
 
   // أول ما الصفحة تفتح: إما سؤال جاي من الرئيسية، أو آخر محادثة
   useEffect(() => {
+    // جاي من صفحة «الموديلات»: /chat?bot=claude-opus
+    try {
+      const k = new URLSearchParams(window.location.search).get("bot");
+      if (k && getBot(k)) write("bot", k);
+    } catch {}
+
     let pending = null;
     try {
       pending = sessionStorage.getItem(PENDING_KEY);
@@ -114,6 +126,8 @@ export default function MainChat() {
           // بنبعت النص بس، من غير المصادر
           messages: history.map(({ role, content }) => ({ role, content })),
           model: modelOverride || modelKey,
+          bot: read("bot", "") || undefined,
+          pro: read("pro-code", "") || undefined,
           settings: read("settings", DEFAULT_SETTINGS),
           web: searching,
         }),
@@ -121,8 +135,11 @@ export default function MainChat() {
       });
       if (!res.ok || !res.body) {
         const data = await res.json().catch(() => ({}));
+        if (data.code === "pro") setNeedPro(true);
         throw new Error(data.error || "حصل خطأ، جرّب تاني.");
       }
+      setNeedPro(false);
+      if (res.headers.get("x-bot") === "fallback") toast("الموديل ده مش متاح دلوقتي، فردّ عليك «متوازن»");
       const status = res.headers.get("x-search");
       if (status && SEARCH_NOTES[status]) toast(SEARCH_NOTES[status]);
       try { sources = JSON.parse(decodeURIComponent(res.headers.get("x-sources") || "[]")); } catch { sources = []; }
@@ -199,13 +216,20 @@ export default function MainChat() {
 
   return (
     <div className={s.shell}>
-      <ModelPicker value={model.key} onChange={setModelKey} open={sideOpen} onClose={() => setSideOpen(false)} />
+      <ModelPicker
+        value={bot ? null : model.key}
+        bot={bot}
+        onChange={(k) => { setModelKey(k); setBotKey(""); setNeedPro(false); }}
+        onBot={(k) => setBotKey(k)}
+        open={sideOpen}
+        onClose={() => setSideOpen(false)}
+      />
 
       <div className={s.page}>
         <div className={s.bar}>
           <button className={s.modelPill} onClick={openModels} aria-haspopup="dialog">
-            <span aria-hidden="true">{model.icon}</span>
-            <b>{model.name}</b>
+            {bot ? <BotIcon bot={bot} size={22} badge={false} /> : <span aria-hidden="true">{model.icon}</span>}
+            <b dir="auto">{bot ? bot.name : model.name}</b>
             <small>تغيير</small>
           </button>
           {!empty && <button className={s.ghost} onClick={newChat}>+ محادثة جديدة</button>}
@@ -213,8 +237,12 @@ export default function MainChat() {
 
         {empty ? (
           <section className={s.hero}>
-            <div className={s.spark} aria-hidden="true">✦</div>
-            <h1>عايز تعمل إيه النهارده؟</h1>
+            {bot ? (
+              <div className={s.botHero}><BotIcon bot={bot} size={58} /></div>
+            ) : (
+              <div className={s.spark} aria-hidden="true">✦</div>
+            )}
+            <h1>{bot ? <>بتتكلم مع <bdi>{bot.name}</bdi></> : "عايز تعمل إيه النهارده؟"}</h1>
             <p>اسأل أي سؤال بالعربي، والرد هيوصلك فوراً. فعّل «بحث» عشان تاخد معلومات جديدة من الإنترنت ومعاها المصادر.</p>
             <div className={s.starters}>
               {STARTERS.map((q) => (
@@ -289,6 +317,7 @@ export default function MainChat() {
               </div>
             )}
             {error && <div className={s.error} role="alert">{error}</div>}
+            {needPro && <ProCode compact onActivated={() => { setNeedPro(false); setError(""); retry(); }} />}
             <div ref={endRef} />
           </div>
         )}
@@ -326,7 +355,7 @@ export default function MainChat() {
             )}
           </div>
           <div className={s.note}>
-            «{model.name}»{web ? " • بحث على الإنترنت" : ""}{st.voice !== "auto" || st.depth !== "auto" ? " • إعداداتك مفعّلة" : ""} — الردود من ذكاء اصطناعي وممكن يكون فيها أخطاء، راجع المهم منها.
+            «{bot ? bot.name : model.name}»{web ? " • بحث على الإنترنت" : ""}{st.voice !== "auto" || st.depth !== "auto" ? " • إعداداتك مفعّلة" : ""} — الردود من ذكاء اصطناعي وممكن يكون فيها أخطاء، راجع المهم منها.
           </div>
         </div>
       </div>

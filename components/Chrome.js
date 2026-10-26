@@ -44,6 +44,7 @@ export default function Chrome() {
         </Link>
         <nav className="top-actions" aria-label="القائمة">
           <Link href="/chat" className={on("/chat")}>الشات</Link>
+          <Link href="/models" className={on("/models")}>الموديلات</Link>
           <Link href="/flows" className={on("/flow")}>المهام</Link>
           <Link href="/tools" className={on("/tool")}>الأدوات</Link>
           <Link href="/plans" className="upgrade-pill"><span aria-hidden="true">✦</span> ترقية</Link>
