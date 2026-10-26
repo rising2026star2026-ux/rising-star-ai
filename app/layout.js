@@ -2,10 +2,11 @@ import "./globals.css";
 import ThemeShift from "@/components/ThemeShift";
 import Chrome from "@/components/Chrome";
 import BottomNav from "@/components/BottomNav";
+import Intro from "@/components/Intro";
 import { tools, categories } from "@/lib/tools";
 import { SITE_URL, BRAND } from "@/lib/site";
 
-const description = `منصة عربية فيها ${tools.length} أداة ذكاء اصطناعي في ${categories.length} مجال، وشات بـ 6 موديلات: كتابة، تسويق، تعليم، ترجمة، برمجة، وأكتر.`;
+const description = `منصة عربية فيها ${tools.length} أداة ذكاء اصطناعي في ${categories.length} مجال، وشات بأقوى موديلات العالم: كتابة، تسويق، تعليم، ترجمة، برمجة، وأكتر.`;
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -19,7 +20,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#f6f7fb",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -29,6 +30,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl">
       <head>
+        {/* الشاشة الافتتاحية بتظهر أول مرة في الجلسة بس */}
+        <script dangerouslySetInnerHTML={{ __html: "try{if(sessionStorage.getItem('rs:intro'))document.documentElement.classList.add('no-intro');if(localStorage.getItem('rs:side-mini')==='true')document.documentElement.classList.add('side-mini')}catch(e){}" }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         {/* الخط: IBM Plex Sans Arabic. لو غيرته، غيّر --ui في globals.css كمان */}
@@ -38,6 +41,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <Intro />
         <ThemeShift />
         <Chrome />
         <main className="wrap">{children}</main>

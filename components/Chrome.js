@@ -9,17 +9,35 @@ import { SETTINGS, DEFAULT_SETTINGS } from "@/lib/settings";
 import { useStored, read } from "@/lib/store";
 import ToolIcon from "./ToolIcon";
 import StarMark from "./StarMark";
+import BotIcon from "./BotIcon";
+import { BOTS } from "@/lib/bots";
 
-const THEMES = { auto: "يتحول بعد 5 دقايق", gold: "ذهبي دائماً", royal: "أزرق ملكي دائماً" };
+const I = { viewBox: "0 0 24 24", width: 20, height: 20, fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true };
+
+// روابط اللوحة الجانبية
+const NAV = [
+  { href: "/", label: "الرئيسية", exact: true, icon: <svg {...I}><path d="M3.5 10.5L12 3.5l8.5 7" /><path d="M5.5 9.5V20h13V9.5" /></svg> },
+  { href: "/chat", label: "الشات", icon: <svg {...I}><path d="M20.5 11.5a8.3 8.3 0 01-8.9 8.3L3.5 21l1.1-3.5A8.3 8.3 0 1120.5 11.5z" /></svg> },
+  { href: "/models", label: "الموديلات والبرامج", icon: <svg {...I}><rect x="3.5" y="3.5" width="7" height="7" rx="2" /><rect x="13.5" y="3.5" width="7" height="7" rx="2" /><rect x="3.5" y="13.5" width="7" height="7" rx="2" /><path d="M17 13.2l1 2.2 2.3.3-1.7 1.6.4 2.3-2-1.1-2 1.1.4-2.3-1.7-1.6 2.3-.3z" /></svg> },
+  { href: "/tools", label: "كل الأدوات", match: ["/tools", "/tool/"], icon: <svg {...I}><path d="M14.5 6.5l3-3 3 3-3 3zM4 20l9-9M3.5 7.5h6M6.5 4.5v6M14 17.5h6.5" /></svg> },
+  { href: "/flows", label: "المهام الكاملة", match: ["/flows", "/flow/"], icon: <svg {...I}><rect x="3" y="4" width="7" height="5" rx="1.5" /><rect x="14" y="15" width="7" height="5" rx="1.5" /><path d="M6.5 9v3.5a2 2 0 002 2h7v.5" /></svg> },
+  { href: "/history", label: "السجل", icon: <svg {...I}><circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" /></svg> },
+  { href: "/plans", label: "الباقات", icon: <svg {...I}><path d="M4 8l4 3.5L12 5l4 6.5L20 8l-1.5 10h-13z" /></svg> },
+];
+
+const SIDE_BOTS = ["claude-opus", "gpt-astra", "gemini-pro", "grok", "deepseek", "gpt-oss-120b"]
+  .map((k) => BOTS.find((b) => b.key === k))
+  .filter(Boolean);
 
 export default function Chrome() {
   const [palette, setPalette] = useState(false);
   const [panel, setPanel] = useState(false);
+  const [drawer, setDrawer] = useState(false);
 
   useEffect(() => {
     const key = (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") { e.preventDefault(); setPalette((p) => !p); }
-      if (e.key === "Escape") { setPalette(false); setPanel(false); }
+      if (e.key === "Escape") { setPalette(false); setPanel(false); setDrawer(false); }
     };
     const open = () => setPanel(true);
     const find = () => setPalette(true);
@@ -34,21 +52,22 @@ export default function Chrome() {
   }, []);
 
   const pathname = usePathname() || "/";
-  const on = (p) => (pathname.startsWith(p) ? "nav-link on" : "nav-link");
+  useEffect(() => setDrawer(false), [pathname]);
 
   return (
     <>
+      <Sidebar open={drawer} onClose={() => setDrawer(false)} onSettings={() => { setDrawer(false); setPanel(true); }} onSearch={() => { setDrawer(false); setPalette(true); }} />
       <header className="topbar">
-        <Link href="/" className="logo" aria-label="Rising StarAi الصفحة الرئيسية">
-          <StarMark size={34} className="logo-star" />
-          <span dir="ltr" className="logo-name">Rising Star<b>Ai</b></span>
-        </Link>
+        <div className="top-start">
+          <button className="icon-btn menu-btn" onClick={() => setDrawer(true)} aria-label="افتح القائمة" aria-expanded={drawer}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" /></svg>
+          </button>
+          <Link href="/" className="logo top-logo" aria-label="Rising StarAi الصفحة الرئيسية">
+            <StarMark size={28} className="logo-star" />
+            <span dir="ltr" className="logo-name">Rising StarAi</span>
+          </Link>
+        </div>
         <nav className="top-actions" aria-label="القائمة">
-          <Link href="/chat" className={on("/chat")}>الشات</Link>
-          <Link href="/models" className={on("/models")}>الموديلات</Link>
-          <Link href="/flows" className={on("/flow")}>المهام</Link>
-          <Link href="/tools" className={on("/tool")}>الأدوات</Link>
-          <Link href="/plans" className="upgrade-pill"><StarMark size={15} /> ترقية</Link>
           <button className="search-btn" onClick={() => setPalette(true)} aria-label="ابحث عن أداة">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
               <circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" />
@@ -71,6 +90,75 @@ export default function Chrome() {
       {palette && <Palette onClose={() => setPalette(false)} />}
       {panel && <Panel onClose={() => setPanel(false)} />}
       <Toaster />
+    </>
+  );
+}
+
+// اللوحة الجانبية: ثابتة على الكمبيوتر (وبتتصغّر لأيقونات)، ودرج بيطلع من الجنب على الموبايل
+function Sidebar({ open, onClose, onSettings, onSearch }) {
+  const pathname = usePathname() || "/";
+  const [mini, setMini] = useStored("side-mini", false);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("side-mini", !!mini);
+  }, [mini]);
+  useEffect(() => {
+    document.body.classList.toggle("side-open", open);
+    return () => document.body.classList.remove("side-open");
+  }, [open]);
+
+  const active = (n) => (n.exact ? pathname === n.href : (n.match || [n.href]).some((p) => pathname.startsWith(p)));
+
+  return (
+    <>
+      <div className={`side-scrim${open ? " on" : ""}`} onClick={onClose} aria-hidden="true" />
+      <aside className={`side${open ? " open" : ""}`} aria-label="القائمة الجانبية">
+        <div className="side-head">
+          <Link href="/" className="logo" aria-label="Rising StarAi الصفحة الرئيسية">
+            <StarMark size={30} className="logo-star" />
+            <span dir="ltr" className="logo-name side-label">Rising StarAi</span>
+          </Link>
+          <button className="icon-btn side-toggle" onClick={() => setMini(!mini)} aria-label={mini ? "كبّر القائمة" : "صغّر القائمة"} title={mini ? "كبّر القائمة" : "صغّر القائمة"}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="3" /><path d="M14.5 4v16" /></svg>
+          </button>
+          <button className="icon-btn side-close" onClick={onClose} aria-label="اقفل القائمة">✕</button>
+        </div>
+
+        <Link href="/chat?new=1" className="side-new" title="محادثة جديدة" onClick={() => window.dispatchEvent(new Event("rs-new-chat"))}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+          <span className="side-label">محادثة جديدة</span>
+        </Link>
+
+        <nav className="side-nav">
+          {NAV.map((n) => (
+            <Link key={n.href} href={n.href} className={`side-link${active(n) ? " on" : ""}`} title={n.label}>
+              {n.icon}
+              <span className="side-label">{n.label}</span>
+            </Link>
+          ))}
+          <button type="button" className="side-link" onClick={onSearch} title="ابحث عن أداة">
+            <svg {...I}><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></svg>
+            <span className="side-label">ابحث عن أداة</span>
+          </button>
+        </nav>
+
+        <div className="side-sec side-label">اتكلم مع</div>
+        <nav className="side-nav side-bots">
+          {SIDE_BOTS.map((b) => (
+            <Link key={b.key} href={`/chat?bot=${b.key}`} className="side-link" title={b.name}>
+              <BotIcon bot={b} size={22} />
+              <span className="side-label" dir="auto">{b.name}</span>
+            </Link>
+          ))}
+        </nav>
+
+        <div className="side-foot">
+          <button type="button" className="side-link" onClick={onSettings} title="الإعدادات">
+            <svg {...I}><path d="M4 7h10M18 7h2M4 17h2M10 17h10" /><circle cx="16" cy="7" r="2" /><circle cx="8" cy="17" r="2" /></svg>
+            <span className="side-label">الإعدادات</span>
+          </button>
+        </div>
+      </aside>
     </>
   );
 }
@@ -129,7 +217,6 @@ function Palette({ onClose }) {
 
 function Panel({ onClose }) {
   const [settings, setSettings] = useStored("settings", DEFAULT_SETTINGS);
-  const [theme, setTheme] = useStored("theme", "auto");
   const s = { ...DEFAULT_SETTINGS, ...settings };
 
   return (
@@ -154,7 +241,7 @@ function Panel({ onClose }) {
           </fieldset>
         ))}
 
-        <button className="btn ghost wide" onClick={() => { setSettings(DEFAULT_SETTINGS); setTheme("auto"); }}>
+        <button className="btn ghost wide" onClick={() => setSettings(DEFAULT_SETTINGS)}>
           رجّع الإعدادات الافتراضية
         </button>
       </aside>

@@ -23,7 +23,7 @@ const SITE_APPS = {
   apps: ["apps", "#111827"], adspy: ["spy", "#1d4ed8"],
 };
 
-const ORDER = ["official", "free", "search", "app-chat", "app-image", "app-video", "app-audio", "app-work", "assistants", "apps"];
+const ORDER = ["official", "world", "free", "search", "app-chat", "app-image", "app-video", "app-audio", "app-work", "app-auto", "assistants", "apps"];
 
 export default async function ModelsPage() {
   const resolved = await resolveBots();

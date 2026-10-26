@@ -10,6 +10,8 @@ import ToolIcon from "./ToolIcon";
 import BotIcon from "./BotIcon";
 import ProCode from "./ProCode";
 import StarMark from "./StarMark";
+import FusionStack from "./FusionStack";
+import { useProofread, ProofIcon } from "@/lib/useProofread";
 import { getBot } from "@/lib/bots";
 import { tools } from "@/lib/tools";
 import { findTools } from "@/lib/search";
@@ -56,14 +58,23 @@ export default function MainChat() {
   const boxRef = useRef(null);
   const model = getModel(modelKey);
   const bot = getBot(botKey);
+  const proof = useProofread(() => input, (t) => { setInput(t); requestAnimationFrame(resize); });
 
   // أول ما الصفحة تفتح: إما سؤال جاي من الرئيسية، أو آخر محادثة
   useEffect(() => {
     // جاي من صفحة «الموديلات»: /chat?bot=claude-opus
+    let fresh = false;
     try {
-      const k = new URLSearchParams(window.location.search).get("bot");
+      const qs = new URLSearchParams(window.location.search);
+      const k = qs.get("bot");
       if (k && getBot(k)) write("bot", k);
+      fresh = qs.has("new");
     } catch {}
+    if (fresh) {
+      write("chat", []);
+      try { window.history.replaceState(null, "", "/chat"); } catch {}
+      return;
+    }
 
     let pending = null;
     try {
@@ -80,6 +91,13 @@ export default function MainChat() {
     if (Array.isArray(saved)) setMessages(saved);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // «محادثة جديدة» من اللوحة الجانبية وإحنا جوه الشات
+  useEffect(() => {
+    const on = () => newChat();
+    window.addEventListener("rs-new-chat", on);
+    return () => window.removeEventListener("rs-new-chat", on);
+  });
 
   useEffect(() => {
     if (!busy) write("chat", messages.slice(-30));
@@ -118,6 +136,7 @@ export default function MainChat() {
     abortRef.current = controller;
     let reply = "";
     let sources = [];
+    let fusion = null;
 
     try {
       const res = await fetch("/api/chat", {
@@ -140,6 +159,10 @@ export default function MainChat() {
         throw new Error(data.error || "حصل خطأ، جرّب تاني.");
       }
       setNeedPro(false);
+      let fusion = null;
+      try { const f = res.headers.get("x-fusion"); if (f) fusion = JSON.parse(decodeURIComponent(f)); } catch {}
+      if (res.headers.get("x-fusion-limit")) toast("وصلت لحد الدمج الساعة دي، فالرد من نموذج واحد");
+      if (fusion) setMessages([...history, { role: "assistant", content: "", searching, fusion }]);
       if (res.headers.get("x-bot") === "fallback") toast("الموديل ده مش متاح دلوقتي، فردّ عليك «متوازن»");
       const status = res.headers.get("x-search");
       if (status && SEARCH_NOTES[status]) toast(SEARCH_NOTES[status]);
@@ -151,14 +174,14 @@ export default function MainChat() {
         const { done, value } = await reader.read();
         if (done) break;
         reply += decoder.decode(value, { stream: true });
-        setMessages([...history, { role: "assistant", content: reply, sources }]);
+        setMessages([...history, { role: "assistant", content: reply, sources, fusion }]);
       }
       if (!reply.trim()) throw new Error("ما وصلش رد. جرّب تاني.");
     } catch (e) {
       if (e.name === "AbortError") {
-        setMessages([...history, { role: "assistant", content: reply || "_اتوقف الرد._", sources }]);
+        setMessages([...history, { role: "assistant", content: reply || "_اتوقف الرد._", sources, fusion }]);
       } else {
-        setMessages(reply ? [...history, { role: "assistant", content: reply, sources }] : history);
+        setMessages(reply ? [...history, { role: "assistant", content: reply, sources, fusion }] : history);
         setError(e.message || "الاتصال اتقطع. اتأكد من الإنترنت وجرّب تاني.");
       }
     } finally {
@@ -169,7 +192,7 @@ export default function MainChat() {
 
   // على الموبايل اللوحة بتطلع من الجنب، وعلى الكمبيوتر هي ظاهرة أصلاً فبنروح لها
   function openModels() {
-    if (window.matchMedia("(max-width: 879px)").matches) setSideOpen(true);
+    if (window.matchMedia("(max-width: 1199px)").matches) setSideOpen(true);
     else document.querySelector(`.${s.side} button[aria-pressed="true"]`)?.focus();
   }
 
@@ -229,7 +252,7 @@ export default function MainChat() {
       <div className={s.page}>
         <div className={s.bar}>
           <button className={s.modelPill} onClick={openModels} aria-haspopup="dialog">
-            {bot ? <BotIcon bot={bot} size={22} badge={false} /> : <span aria-hidden="true">{model.icon}</span>}
+            {bot ? <BotIcon bot={bot} size={22} /> : model.fusion ? <FusionStack size={18} /> : <span aria-hidden="true">{model.icon}</span>}
             <b dir="auto">{bot ? bot.name : model.name}</b>
             <small>تغيير</small>
           </button>
@@ -241,7 +264,7 @@ export default function MainChat() {
             {bot ? (
               <div className={s.botHero}><BotIcon bot={bot} size={58} /></div>
             ) : (
-              <div className={s.spark}><StarMark size={52} /></div>
+              <div className={s.spark}><StarMark size={42} /></div>
             )}
             <h1>{bot ? <>بتتكلم مع <bdi>{bot.name}</bdi></> : "عايز تعمل إيه النهارده؟"}</h1>
             <p>اسأل أي سؤال بالعربي، والرد هيوصلك فوراً. فعّل «بحث» عشان تاخد معلومات جديدة من الإنترنت ومعاها المصادر.</p>
@@ -259,9 +282,23 @@ export default function MainChat() {
                   <div className={s.user}>{m.content}</div>
                 ) : (
                   <div className={s.bot}>
+                    {m.fusion && m.content && (
+                      <div className={s.fusionTag}>
+                        <FusionStack items={m.fusion} size={18} />
+                        <span>إجابة مدمجة من {m.fusion.length} نماذج ومتدققة لغوياً</span>
+                      </div>
+                    )}
                     {m.content ? (
                       <div className={s.md} id={`msg-${i}`}>
                         <ReactMarkdown remarkPlugins={[remarkGfm]}>{m.content}</ReactMarkdown>
+                      </div>
+                    ) : m.fusion ? (
+                      <div className={s.fusionWait} aria-label="جاري تجميع الإجابة">
+                        <FusionStack items={m.fusion} size={26} pulse />
+                        <span>
+                          <b>{m.fusion.length} نماذج بتشتغل على سؤالك…</b>
+                          <small>{m.fusion.map((x) => x.name).join(" • ")}</small>
+                        </span>
                       </div>
                     ) : (
                       <div className={s.typing} aria-label="جاري الكتابة">
@@ -338,6 +375,16 @@ export default function MainChat() {
             />
             <button
               type="button"
+              className={s.proofBtn}
+              onClick={proof.run}
+              disabled={proof.busy || !input.trim()}
+              title="تدقيق لغوي: صحّح الإملاء والنحو"
+              aria-label="تدقيق لغوي"
+            >
+              {proof.busy ? <span className={s.spin} /> : <ProofIcon />}
+            </button>
+            <button
+              type="button"
               className={`${s.webBtn} ${web ? s.webOn : ""}`}
               onClick={toggleWeb}
               aria-pressed={web}
@@ -355,6 +402,13 @@ export default function MainChat() {
               <button className={s.send} onClick={() => send()} disabled={!input.trim()} aria-label="إرسال">↑</button>
             )}
           </div>
+          {proof.undo !== null && (
+            <div className={s.undoNote}>
+              اتصلّحت الأخطاء في رسالتك.
+              <button type="button" onClick={proof.revert}>تراجع</button>
+              <button type="button" onClick={proof.dismiss} aria-label="إخفاء">✕</button>
+            </div>
+          )}
           <div className={s.note}>
             «{bot ? bot.name : model.name}»{web ? " • بحث على الإنترنت" : ""}{st.voice !== "auto" || st.depth !== "auto" ? " • إعداداتك مفعّلة" : ""} — الردود من ذكاء اصطناعي وممكن يكون فيها أخطاء، راجع المهم منها.
           </div>

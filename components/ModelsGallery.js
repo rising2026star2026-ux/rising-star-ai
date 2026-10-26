@@ -40,7 +40,7 @@ export default function ModelsGallery({ sections, bots }) {
     const inner = (
       <>
         {!b.available && <em className={s.soon}>قريباً</em>}
-        <BotIcon bot={b} size={expanded ? 64 : 72} />
+        <BotIcon bot={b} size={expanded ? 54 : 60} />
         <span className={s.tileName} dir="auto">{b.name}</span>
         {expanded && <span className={s.tileDesc}>{b.desc}</span>}
       </>

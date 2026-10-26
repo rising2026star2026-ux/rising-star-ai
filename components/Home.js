@@ -6,7 +6,9 @@ import { useRouter } from "next/navigation";
 import { tools, categories, getTool } from "@/lib/tools";
 import { findTools } from "@/lib/search";
 import { MODEL_OPTIONS, getModel, DEFAULT_MODEL_KEY } from "@/lib/models";
-import { useStored, PENDING_KEY } from "@/lib/store";
+import { useStored, write, PENDING_KEY } from "@/lib/store";
+import { useProofread, ProofIcon } from "@/lib/useProofread";
+import FusionStack from "./FusionStack";
 import { useModal } from "@/lib/useModal";
 import ToolIcon from "./ToolIcon";
 import ExternalLinks from "./ExternalLinks";
@@ -71,6 +73,7 @@ export default function Home() {
   const [favs] = useStored("favs", []);
   const [recent] = useStored("recent", []);
   const model = getModel(modelKey);
+  const proof = useProofread(() => input, setInput);
 
   useModal(sheet, () => setSheet(false));
 
@@ -83,6 +86,7 @@ export default function Home() {
     const q = input.trim();
     if (!q) return;
     try { sessionStorage.setItem(PENDING_KEY, q); } catch {}
+    write("bot", ""); // الرئيسية بتسأل بالموديل اللي ظاهر فيها (افتراضياً: دمج 4 نماذج)
     router.push("/chat");
   }
 
@@ -97,9 +101,9 @@ export default function Home() {
     <div className={s.screen}>
       {/* ===== الاسم ===== */}
       <div className={s.brand}>
-        <span className={s.mark}><StarMark size={64} /></span>
+        <span className={s.mark}><StarMark size={46} /></span>
         <h1>مساحة العمل</h1>
-        <p>{tools.length} أداة ذكاء اصطناعي بالعربي، وشات بـ {MODEL_OPTIONS.length} موديلات</p>
+        <p>{tools.length} أداة ذكاء اصطناعي بالعربي، وإجابة واحدة من 4 نماذج قوية</p>
       </div>
 
       {/* ===== صندوق السؤال ===== */}
@@ -117,7 +121,7 @@ export default function Home() {
         <div className={s.composerBar}>
           <div className={s.composerActions}>
             <button type="button" className={s.modelBtn} onClick={() => setSheet(true)} aria-haspopup="dialog">
-              <span aria-hidden="true">{model.icon}</span>
+              {model.fusion ? <FusionStack size={18} /> : <span aria-hidden="true">{model.icon}</span>}
               <b>{model.name}</b>
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M6 9l6 6 6-6" />
@@ -142,6 +146,16 @@ export default function Home() {
             <button
               type="button"
               className={s.roundBtn}
+              onClick={proof.run}
+              disabled={proof.busy || !input.trim()}
+              aria-label="تدقيق لغوي"
+              title="تدقيق لغوي: صحّح الإملاء والنحو"
+            >
+              {proof.busy ? <span className={s.spin} /> : <ProofIcon />}
+            </button>
+            <button
+              type="button"
+              className={s.roundBtn}
               onClick={() => window.dispatchEvent(new Event("rs-open-palette"))}
               aria-label="دوّر على أداة"
               title="دوّر على أداة"
@@ -157,6 +171,14 @@ export default function Home() {
             </button>
           </div>
         </div>
+
+        {proof.undo !== null && (
+          <div className={s.undoNote}>
+            اتصلّحت الأخطاء.
+            <button type="button" onClick={proof.revert}>تراجع</button>
+            <button type="button" onClick={proof.dismiss} aria-label="إخفاء">✕</button>
+          </div>
+        )}
 
         {matches.length > 0 && (
           <div className={s.matches}>
@@ -188,7 +210,7 @@ export default function Home() {
               if (!t) return null;
               return (
                 <Link key={tool} href={`/tool/${tool}?q=${encodeURIComponent(text)}`} className={s.suggestCard}>
-                  <ToolIcon tool={t} />
+                  <ToolIcon tool={t} size="sm" />
                   <span className={s.suggestText}>
                     <b>{t.name}</b>
                     <small>{text}</small>
@@ -206,7 +228,7 @@ export default function Home() {
           {SHORTCUTS.map(getTool).filter(Boolean).map((t, i) => (
             <Link key={t.id} href={`/tool/${t.id}`} className={s.tile}>
               {i === 0 && <span className={s.badge}>شائع</span>}
-              <ToolIcon tool={t} size="lg" />
+              <ToolIcon tool={t} />
               <span className={s.tileName}>{t.name}</span>
             </Link>
           ))}
@@ -230,7 +252,7 @@ export default function Home() {
         <div className={ms.strip}>
           {HOME_BOTS.map((b) => (
             <Link key={b.key} href={`/chat?bot=${b.key}`} className={ms.stripItem}>
-              <BotIcon bot={b} size={52} />
+              <BotIcon bot={b} size={44} />
               <span dir="auto">{b.name}</span>
             </Link>
           ))}
@@ -245,7 +267,7 @@ export default function Home() {
         <div className={ms.strip}>
           {HOME_APPS.map((b) => (
             <a key={b.key} href={b.url} target="_blank" rel="noopener noreferrer" className={ms.stripItem} title={b.desc}>
-              <BotIcon bot={b} size={52} />
+              <BotIcon bot={b} size={44} />
               <span dir="auto">{b.name}</span>
             </a>
           ))}

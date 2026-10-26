@@ -63,7 +63,7 @@
 
 .scrim, .scrimOff { display: none; }
 
-@media (max-width: 879px) {
+@media (max-width: 1199px) {
   /* inset المنطقي عشان يشتغل صح في العربي والإنجليزي */
   .side {
     position: fixed; top: 0; bottom: 0; height: 100dvh; inset-inline-end: -320px;
@@ -249,3 +249,31 @@
 .botActiveText { display: grid; gap: 2px; flex: 1; min-width: 0; }
 .botActiveText b { font-weight: 500; font-size: 0.88rem; }
 .botActiveText small { color: var(--muted); font-size: 0.72rem; }
+
+/* ===== دمج 4 نماذج ===== */
+.fusionTag {
+  display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px;
+  padding: 4px 10px 4px 6px; border-radius: 999px; font-size: 0.74rem; color: var(--accent);
+  background: var(--accent-soft); border: 1px solid var(--accent-line);
+}
+.fusionWait { display: flex; align-items: center; gap: 12px; padding: 4px 0; }
+.fusionWait > span:last-child { display: grid; gap: 2px; }
+.fusionWait b { font-weight: 500; font-size: 0.9rem; }
+.fusionWait small { color: var(--faint); font-size: 0.74rem; direction: ltr; text-align: right; }
+
+/* ===== التدقيق اللغوي ===== */
+.proofBtn {
+  flex: none; display: inline-grid; place-items: center; width: 40px; height: 40px; cursor: pointer;
+  border-radius: 13px; color: var(--muted); background: var(--surface-2); border: 1px solid var(--hairline);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.proofBtn:hover:not(:disabled) { color: #059669; border-color: rgba(5, 150, 105, 0.4); }
+.proofBtn:disabled { opacity: 0.45; cursor: default; }
+.spin { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--hairline-strong); border-top-color: var(--accent); animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.undoNote {
+  display: flex; align-items: center; gap: 10px; justify-content: center; margin-top: 8px;
+  font-size: 0.8rem; color: #047857;
+}
+.undoNote button { background: none; border: 0; cursor: pointer; font: inherit; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; padding: 0; }
+.undoNote button:last-child { text-decoration: none; color: var(--faint); }
