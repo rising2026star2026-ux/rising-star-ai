@@ -14,13 +14,24 @@ const AI_SITES = [
 
 // أدلة أدوات الذكاء الاصطناعي (روابط لآلاف الأدوات)
 const DIRECTORIES = [
-  { name: "TAAFT", desc: "There's An AI For That: من أكبر أدلة الأدوات في العالم", url: "https://theresanaiforthat.com", hue: "#ff8a5c", icon: "search", lang: "EN" },
+  { name: "TAAFT", desc: "من أكبر أدلة أدوات الذكاء الاصطناعي في العالم", url: "https://theresanaiforthat.com", hue: "#ff8a5c", icon: "search", lang: "EN" },
   { name: "Toolify", desc: "دليل ضخم مقسم لمئات التصنيفات", url: "https://www.toolify.ai", hue: "#4fc3f7", icon: "layers", lang: "EN" },
   { name: "TopAI.tools", desc: "أدوات مرتبة حسب الشغلانة والمجال", url: "https://topai.tools", hue: "#b388ff", icon: "list", lang: "EN" },
   { name: "Futurepedia", desc: "أدوات مع شروحات وفيديوهات", url: "https://www.futurepedia.io", hue: "#ffd166", icon: "book", lang: "EN" },
   { name: "FutureTools", desc: "اختيارات منتقاة وتقييمات المستخدمين", url: "https://www.futuretools.io", hue: "#7ee0a8", icon: "star", lang: "EN" },
   { name: "Adawatly", desc: "دليل أدوات الذكاء الاصطناعي بالعربي", url: "https://adawatly.com", hue: "#ff6f91", icon: "globe", lang: "عربي" },
 ];
+
+// يفتح الموقع الإنجليزي مترجم للعربي بترجمة جوجل (ترجمة آلية للصفحة كلها)
+function arabicUrl(url) {
+  try {
+    const u = new URL(url);
+    const host = u.hostname.replace(/-/g, "--").replace(/\./g, "-") + ".translate.goog";
+    return `https://${host}${u.pathname}${u.search}${u.search ? "&" : "?"}_x_tr_sl=auto&_x_tr_tl=ar&_x_tr_hl=ar&_x_tr_pto=wapp`;
+  } catch {
+    return url;
+  }
+}
 
 const GROUPS = {
   sites: { title: "مواقع ذكاء اصطناعي", list: AI_SITES },
@@ -40,36 +51,42 @@ export default function ExternalLinks({ show = ["sites", "dirs"], title }) {
               {g.sub && <small>{g.sub}</small>}
             </div>
             <div className={`${s.row} ${key === "dirs" ? s.rowDense : ""}`}>
-              {g.list.map((site) => (
-                <a
-                  key={site.name}
-                  className={s.card}
-                  href={site.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ "--h": site.hue }}
-                  aria-label={`افتح ${site.name} في صفحة جديدة`}
-                >
-                  <span className={s.icon} aria-hidden="true"><Icon name={site.icon} /></span>
-                  <span className={s.text}>
-                    <b>
-                      <bdi>{site.name}</bdi>
-                      {site.lang && <em className={site.lang === "عربي" ? s.ar : ""}>{site.lang}</em>}
-                    </b>
-                    <small>{site.desc}</small>
-                  </span>
-                  <span className={s.out} aria-hidden="true">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h4" />
-                    </svg>
-                  </span>
-                </a>
-              ))}
+              {g.list.map((site) => {
+                const en = site.lang === "EN";
+                return (
+                  <div key={site.name} className={s.card} style={{ "--h": site.hue }}>
+                    <a
+                      className={s.main}
+                      href={en ? arabicUrl(site.url) : site.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={en ? `افتح ${site.name} مترجم للعربي في صفحة جديدة` : `افتح ${site.name} في صفحة جديدة`}
+                    >
+                      <span className={s.icon} aria-hidden="true"><Icon name={site.icon} /></span>
+                      <span className={s.text}>
+                        <b>
+                          <bdi>{site.name}</bdi>
+                          {(en || site.lang) && <em className={s.ar}>{en ? "مترجم للعربي" : site.lang}</em>}
+                        </b>
+                        <small>{site.desc}</small>
+                      </span>
+                      <span className={s.out} aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h4" />
+                        </svg>
+                      </span>
+                    </a>
+                    {en && (
+                      <a className={s.orig} href={site.url} target="_blank" rel="noopener noreferrer" aria-label={`افتح ${site.name} بالإنجليزي`}>EN</a>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         );
       })}
-      <p className={s.note}>مواقع خارجية مش تابعة لـ Rising StarAi. الدخول والاشتراك بيكون بحسابك عندهم وحسب شروطهم.</p>
+      <p className={s.note}>مواقع خارجية مش تابعة لـ Rising StarAi. الأدلة الإنجليزي بتفتح مترجمة للعربي بترجمة جوجل الآلية (ممكن تفضل كلمات إنجليزي زي أسماء الأدوات، وبعض المميزات زي الدخول والبحث ممكن ما تشتغلش في النسخة المترجمة، وزرار EN بيفتح الأصل). الدخول والاشتراك بيكون بحسابك عندهم وحسب شروطهم.</p>
     </section>
   );
 }
