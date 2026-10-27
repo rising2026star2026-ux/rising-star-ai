@@ -78,7 +78,8 @@ if (PROVIDERS.length) {
   const todo = [...byId.values()].filter((i) => !i.ar).sort((a, b) => b.date.localeCompare(a.date)).slice(0, MAX_TRANSLATE);
   for (let k = 0; k < todo.length; k += 8) {
     const batch = todo.slice(k, k + 8);
-    const res = await llm(batch.map((i) => ({ id: i.id, title: i.title, text: descs.get(i.id) || "" })));
+    let res = await llm(batch.map((i) => ({ id: i.id, title: i.title, text: descs.get(i.id) || "" })));
+    if (!res) { await new Promise((r) => setTimeout(r, 25000)); res = await llm(batch.map((i) => ({ id: i.id, title: i.title, text: descs.get(i.id) || "" }))); }
     if (!res) { console.log("LLM batch failed"); continue; }
     for (const r of res) { const it = byId.get(r.id); if (it && r.title) it.ar = { title: String(r.title).slice(0, 160), summary: String(r.summary || "").slice(0, 400) }; }
   }
