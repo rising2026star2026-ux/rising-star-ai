@@ -2,11 +2,14 @@
 # التشغيل: GitHub → Actions → build-directory → Run workflow
 name: build-directory
 on:
+  # بيكمّل لوحده كل 6 ساعات لحد ما كل الأدوات تخلص (ولو المفاتيح مش موجودة بيقف من غير خطأ)
+  schedule:
+    - cron: "17 */6 * * *"
   workflow_dispatch:
     inputs:
       limit:
         description: "عدد الأدوات الجديدة في التشغيلة دي"
-        default: "300"
+        default: "2500"
       refresh_seeds:
         description: "اعمل قايمة الأدوات من الأول؟ (yes/no)"
         default: "no"
@@ -29,7 +32,7 @@ jobs:
         run: |
           if [ "${{ inputs.refresh_seeds }}" = "yes" ] || [ ! -f data/directory/seeds.json ]; then node scripts/directory/seeds.mjs; fi
       - name: build
-        run: node scripts/directory/build.mjs --limit "${{ inputs.limit }}" --minutes 320
+        run: node scripts/directory/build.mjs --limit "${{ inputs.limit || 2500 }}" --minutes 320
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}

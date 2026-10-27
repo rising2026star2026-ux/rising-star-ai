@@ -169,7 +169,7 @@ const PROVIDERS = [
   process.env.GROQ_API_KEY && { name: "groq", url: process.env.GROQ_URL || "https://api.groq.com/openai/v1/chat/completions", key: process.env.GROQ_API_KEY, model: process.env.GROQ_MODEL || "openai/gpt-oss-120b" },
   process.env.OPENROUTER_API_KEY && { name: "openrouter", url: "https://openrouter.ai/api/v1/chat/completions", key: process.env.OPENROUTER_API_KEY, model: process.env.OPENROUTER_MODEL || "openai/gpt-oss-120b" },
 ].filter(Boolean);
-if (!PROVIDERS.length) { console.error("محتاج GROQ_API_KEY أو OPENROUTER_API_KEY"); process.exit(1); }
+if (!PROVIDERS.length) { console.log("NO_KEYS: ضيف GROQ_API_KEY أو OPENROUTER_API_KEY في GitHub Secrets"); process.exit(0); }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const parseJson = (s) => { try { return JSON.parse(s); } catch { const m = s.match(/\{[\s\S]*\}/); return m ? JSON.parse(m[0]) : null; } };
