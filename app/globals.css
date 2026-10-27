@@ -624,3 +624,11 @@ html[data-band="yellow"] .topbar .upgrade-pill { background: var(--ink); color: 
 .plan.best { border-color: var(--blue); }
 .plan .tag { background: var(--yellow); color: var(--ink); font-weight: 700; }
 .ticon { border-width: 1.5px; }
+
+/* فولدرين مميزين في الشريط الجانبي: تعلّم (أزرق) وجديد الذكاء الاصطناعي (برتقالي) */
+.side-link.tone-learn, .side-link.tone-news { font-weight: 700; margin-block: 2px; }
+.side-link.tone-learn { background: linear-gradient(135deg, #1f4dff, #0a26d6); color: #fff; box-shadow: 0 8px 18px -10px #1f4dff; }
+.side-link.tone-news { background: linear-gradient(135deg, #ff7a1a, #ff3d2e); color: #fff; box-shadow: 0 8px 18px -10px #ff5a1f; }
+.side-link.tone-learn:hover { background: linear-gradient(135deg, #3a63ff, #1535e6); color: #fff; }
+.side-link.tone-news:hover { background: linear-gradient(135deg, #ff8d38, #ff4f40); color: #fff; }
+.side-link.tone-learn.on, .side-link.tone-news.on { color: #fff; outline: 2px solid var(--yellow); outline-offset: 1px; font-weight: 800; }
