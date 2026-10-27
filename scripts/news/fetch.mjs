@@ -38,7 +38,8 @@ const now = Date.now(), cutoff = now - KEEP_DAYS * 864e5;
 const fresh = [];
 await Promise.all(FEEDS.map(async (f) => {
   try {
-    const items = parse(await get(f.url));
+    let xml; try { xml = await get(f.url); } catch (e) { await new Promise((r) => setTimeout(r, 4000)); xml = await get(f.url); }
+    const items = parse(xml);
     let n = 0;
     for (const it of items) {
       if (Date.parse(it.date) < cutoff || Date.parse(it.date) > now + 864e5) continue;

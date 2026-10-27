@@ -1,1 +1,2350 @@
-{"updated":null,"feeds":{},"items":[]}
+{
+ "updated": "2026-10-27T20:30:25.811Z",
+ "feeds": {
+  "openai": "ok 71",
+  "apple": "ok 10",
+  "techcrunch": "ok 20",
+  "nvidia": "ok 18",
+  "venturebeat": "FAIL HTTP 429",
+  "huggingface": "ok 26",
+  "aws": "ok 20",
+  "microsoft": "FAIL HTTP 410",
+  "verge": "ok 10",
+  "deepmind": "ok 10",
+  "meta": "FAIL HTTP 400",
+  "marktechpost": "ok 10",
+  "google-ai": "ok 6",
+  "arstechnica": "ok 20",
+  "techwd": "ok 3",
+  "aitnews": "ok 6"
+ },
+ "items": [
+  {
+   "id": "11d849a838d2",
+   "url": "https://www.tech-wd.com/wd/2026/10/27/%d8%b4%d8%b1%d9%83%d8%a9-google-deepmind-%d8%aa%d9%83%d8%b4%d9%81-%d8%b9%d9%86-genie-4-%d9%84%d8%aa%d9%88%d9%84%d9%8a%d8%af-%d8%a7%d9%84%d8%b9%d9%88%d8%a7%d9%84%d9%85-%d8%a7%d9%84%d8%a7%d9%81%d8%aa/",
+   "title": "شركة Google DeepMind تكشف عن Genie 4 لتوليد العوالم الافتراضية",
+   "date": "2026-10-27T19:09:34.000Z",
+   "src": "تك وورلد",
+   "srcId": "techwd",
+   "kind": "arabic",
+   "ar": {
+    "title": "شركة Google DeepMind تكشف عن Genie 4 لتوليد العوالم الافتراضية",
+    "summary": ""
+   }
+  },
+  {
+   "id": "949fa4750b6a",
+   "url": "https://www.tech-wd.com/wd/2026/10/27/%d9%82%d8%a8%d9%84-%d8%b7%d8%b1%d8%ad%d9%87%d8%a7-%d9%81%d9%8a-%d9%88%d9%88%d9%84-%d8%b3%d8%aa%d8%b1%d9%8a%d8%aa-anthropic-%d8%aa%d8%b9%d9%84%d9%86-%d8%b9%d9%86-%d8%a7%d8%ae%d8%aa%d8%a8%d8%a7%d8%b1/",
+   "title": "قبل طرحها في وول ستريت: Anthropic تعلن عن اختبارات أمنية أظهرت ثغرات خطيرة في الذكاء الاصطناعي",
+   "date": "2026-10-27T18:59:40.000Z",
+   "src": "تك وورلد",
+   "srcId": "techwd",
+   "kind": "arabic",
+   "ar": {
+    "title": "قبل طرحها في وول ستريت: Anthropic تعلن عن اختبارات أمنية أظهرت ثغرات خطيرة في الذكاء الاصطناعي",
+    "summary": ""
+   }
+  },
+  {
+   "id": "44543de8094b",
+   "url": "https://techcrunch.com/2026/10/27/disruptive-raises-10b-fund-to-make-big-bets-on-at-least-10-companies/",
+   "title": "Disruptive raises $10B fund to make big bets on at least 10 companies",
+   "date": "2026-10-27T18:55:35.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "a6a1f4abbd10",
+   "url": "https://arstechnica.com/science/2026/10/vibe-genes-naturalish-language-comes-to-protein-genome-design-software/",
+   "title": "Vibe genes? Natural(ish) language comes to protein, genome design software",
+   "date": "2026-10-27T18:49:08.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "a5b999169a7f",
+   "url": "https://aws.amazon.com/blogs/machine-learning/aws-named-a-leader-in-the-2026-gartner-magic-quadrant-for-contact-center-as-a-service/",
+   "title": "AWS named a Leader in the 2026 Gartner Magic Quadrant for Contact Center as a Service",
+   "date": "2026-10-27T18:03:12.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "d8c87d0b4457",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1017064/visionquest-marvel-rogue-ai",
+   "title": "VisionQuest is what happens when AI really goes rogue",
+   "date": "2026-10-27T17:31:36.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "db98bf59a6c7",
+   "url": "https://huggingface.co/blog/LiquidAI/lfm3",
+   "title": "Build specialized multimodal models with LFM3",
+   "date": "2026-10-27T17:16:52.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "9ffebaf1b25a",
+   "url": "https://techcrunch.com/2026/10/27/frontier-ai-labs-say-their-models-refuted-the-exponential-time-hypothesis-what-does-that-mean/",
+   "title": "Frontier AI labs say their models refuted the Exponential Time Hypothesis. What does that mean?",
+   "date": "2026-10-27T17:08:08.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "5d9174dd4f1a",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1019470/anthropic-ipo-resist-investor-pressure-cut-corners-safety",
+   "title": "Anthropic’s elaborate plan to keep Wall Street at bay",
+   "date": "2026-10-27T17:04:30.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "89597713103a",
+   "url": "https://aws.amazon.com/blogs/machine-learning/announcing-soci-indexed-images-for-faster-sagemaker-ai-jobs/",
+   "title": "Announcing SOCI-indexed images for faster SageMaker AI jobs",
+   "date": "2026-10-27T17:00:39.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "beaa9b255949",
+   "url": "https://aws.amazon.com/blogs/machine-learning/fix-evaluation-bias-to-unlock-better-models-on-amazon-bedrock/",
+   "title": "Fix evaluation bias to unlock better models on Amazon Bedrock",
+   "date": "2026-10-27T16:53:02.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "0d159fe4bfec",
+   "url": "https://aws.amazon.com/blogs/machine-learning/exowatt-beats-frontier-models-on-accuracy-with-sagemaker-serverless-model-customization/",
+   "title": "Exowatt beats frontier models on accuracy with SageMaker serverless model customization",
+   "date": "2026-10-27T16:50:55.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "c69c4ac23ab6",
+   "url": "https://aitnews.com/2026/10/27/%d8%a2%d8%a8%d9%84-%d8%aa%d8%b7%d9%84%d9%82-%d8%ad%d8%a7%d8%b3%d9%88%d8%a8%d9%87%d8%a7-%d8%a7%d9%84%d9%85%d9%83%d8%aa%d8%a8%d9%8a-imac-%d8%a8%d9%85%d8%b9%d8%a7%d9%84%d8%ac-m6-%d9%82%d9%81%d8%b2/",
+   "title": "آبل تطلق حاسوبها المكتبي iMac بمعالج M6.. قفزة في أداء الذكاء الاصطناعي وسعر يبدأ من 1500 دولارٍ",
+   "date": "2026-10-27T16:35:58.000Z",
+   "src": "البوابة العربية للأخبار التقنية",
+   "srcId": "aitnews",
+   "kind": "arabic",
+   "ar": {
+    "title": "آبل تطلق حاسوبها المكتبي iMac بمعالج M6.. قفزة في أداء الذكاء الاصطناعي وسعر يبدأ من 1500 دولارٍ",
+    "summary": ""
+   }
+  },
+  {
+   "id": "dddf43d553b6",
+   "url": "https://techcrunch.com/2026/10/27/googles-genie-4-world-model-adds-audio-more-realistic-worlds-and-real-time-steering/",
+   "title": "Google’s Genie 4 world model adds audio, more realistic worlds, and real-time steering",
+   "date": "2026-10-27T16:30:57.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "abb96e9fdd6f",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1019551/firefox-smart-window-ai-fill-forms",
+   "title": "Firefox’s Smart Window adds AI form filling and webpage monitoring",
+   "date": "2026-10-27T16:14:18.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "34370e88c88d",
+   "url": "https://huggingface.co/blog/allenai/novelty-bench",
+   "title": "Can we trust LLMs to judge whether a research idea is novel?",
+   "date": "2026-10-27T16:12:42.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "d17d13a0006a",
+   "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+   "title": "Genie 4: A new generation of world simulation",
+   "date": "2026-10-27T16:01:38.000Z",
+   "src": "Google DeepMind",
+   "srcId": "deepmind",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "a60188d04998",
+   "url": "https://arstechnica.com/google/2026/10/deepminds-genie-4-world-model-adds-audio-and-more-realistic-people-to-simulations/",
+   "title": "DeepMind unveils Genie 4 world model promising more realistic physics and humans",
+   "date": "2026-10-27T16:00:22.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "fd71c3801485",
+   "url": "https://aitnews.com/2026/10/27/%d8%a2%d8%a8%d9%84-%d8%aa%d8%ad%d8%af%d9%91%d8%ab-macbook-pro-%d8%a8%d9%85%d8%b9%d8%a7%d9%84%d8%ac-m6-%d9%88%d8%a3%d8%af%d8%a7%d8%a1-%d8%b1%d8%b3%d9%88%d9%85%d9%8a-%d8%a3%d8%b3%d8%b1%d8%b9-%d8%ad/",
+   "title": "آبل تحدّث MacBook Pro بمعالج M6 وأداء رسومي أسرع حتى 30%",
+   "date": "2026-10-27T15:16:31.000Z",
+   "src": "البوابة العربية للأخبار التقنية",
+   "srcId": "aitnews",
+   "kind": "arabic",
+   "ar": {
+    "title": "آبل تحدّث MacBook Pro بمعالج M6 وأداء رسومي أسرع حتى 30%",
+    "summary": ""
+   }
+  },
+  {
+   "id": "3513fbe8e952",
+   "url": "https://www.theverge.com/tech/1019076/google-genie-4-ai-model",
+   "title": "Google’s next Genie AI model generates more realistic experiences",
+   "date": "2026-10-27T15:07:35.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "df8156dd7062",
+   "url": "https://blogs.nvidia.com/blog/open-source-ai-tools-cbrain-dementia/",
+   "title": "How AI Is Changing the Pace of Discovery for Millions Living With Dementia",
+   "date": "2026-10-27T15:00:20.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "122f4e228239",
+   "url": "https://techcrunch.com/2026/10/27/meta-ai-director-rohit-patel-leaves-to-take-on-microsoft-office-and-google-workspace/",
+   "title": "Meta AI director Rohit Patel leaves to take on Microsoft Office and Google Workspace",
+   "date": "2026-10-27T14:59:09.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "3fc87ee49406",
+   "url": "https://www.tech-wd.com/wd/2026/10/27/%d8%a2%d8%a8%d9%84-%d8%aa%d9%8f%d8%b7%d9%84%d9%82-imac-m6-%d8%a7%d9%84%d8%ac%d8%af%d9%8a%d8%af-%d9%88%d8%aa%d8%ad%d8%b3%d9%91%d9%86-%d8%a3%d8%af%d8%a7%d8%a1-%d8%a7%d9%84%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7/",
+   "title": "آبل تُطلق iMac M6 الجديد وتحسّن أداء الذكاء الاصطناعي",
+   "date": "2026-10-27T13:55:42.000Z",
+   "src": "تك وورلد",
+   "srcId": "techwd",
+   "kind": "arabic",
+   "ar": {
+    "title": "آبل تُطلق iMac M6 الجديد وتحسّن أداء الذكاء الاصطناعي",
+    "summary": ""
+   }
+  },
+  {
+   "id": "0d516a24ee36",
+   "url": "https://www.theverge.com/tech/1019373/apple-pages-keynote-numbers-ai-chatbot-update",
+   "title": "Apple is adding an AI chatbot to Pages, Keynote, and Numbers",
+   "date": "2026-10-27T13:50:51.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "6c930674e3dc",
+   "url": "https://techcrunch.com/2026/10/27/japan-internet-giant-gmo-says-hackers-posted-stolen-customer-data/",
+   "title": "Japan internet giant GMO says hackers posted stolen customer data",
+   "date": "2026-10-27T13:32:57.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "c3f55709f5e3",
+   "url": "https://techcrunch.com/2026/10/27/opera-introduces-a-new-web-standard-to-let-users-deploy-ai-locally-in-their-browser/",
+   "title": "Opera introduces a new web standard to let users deploy AI locally in their browser",
+   "date": "2026-10-27T13:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "a878112837ec",
+   "url": "https://techcrunch.com/2026/10/27/general-compute-raises-100-million-series-a-countering-the-neocloud-disaster-narrative/",
+   "title": "General Compute raises $100 million Series A, countering the neocloud disaster narrative",
+   "date": "2026-10-27T13:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "016fe7e918e7",
+   "url": "https://www.marktechpost.com/2026/10/27/mirendil-fern-10m-token-context-model/",
+   "title": "Mirendil Launches Fern 0.1, Its First Model, With 10M-Token Context",
+   "date": "2026-10-27T12:57:46.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "415aa97d276f",
+   "url": "https://www.theverge.com/policy/1019152/data-centers-midterm-elections",
+   "title": "Data center backlash is uniting America",
+   "date": "2026-10-27T12:20:38.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "b007bafd9ff1",
+   "url": "https://techcrunch.com/2026/10/27/nvidia-backs-indian-startup-helping-companies-run-ai-models-with-fewer-gpus/",
+   "title": "Nvidia backs Indian startup helping companies run AI models with fewer GPUs",
+   "date": "2026-10-27T11:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "a3a879144b29",
+   "url": "https://openai.com/index/oracle-apps-in-chatgpt",
+   "title": "OpenAI expands partnership with Oracle to bring its apps to ChatGPT",
+   "date": "2026-10-27T07:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "765ebcaca332",
+   "url": "https://www.marktechpost.com/2026/10/26/vllm-semantic-router-d3-ultra-27b-multimodal-decision-model/",
+   "title": "vLLM Semantic Router Releases d3-ultra: A 27B Open Multimodal Decision Model",
+   "date": "2026-10-27T05:50:57.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "5c1b76973ac2",
+   "url": "https://www.marktechpost.com/2026/10/26/baidu-unlimited-ocr-2-open-source-long-document-ocr/",
+   "title": "Baidu Open-Sources Unlimited OCR 2 for Hundred-Page Document Parsing",
+   "date": "2026-10-27T05:26:36.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "08bb0f5102f4",
+   "url": "https://www.marktechpost.com/2026/10/26/openai-gpt-6-1-terra/",
+   "title": "OpenAI Launches GPT-6.1 Terra, Halving GPT-6.1 Sol’s API Price for Agent Work",
+   "date": "2026-10-27T02:45:27.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "858bf7d244f3",
+   "url": "https://techcrunch.com/2026/10/26/how-openai-turned-its-coding-tools-into-dots-an-always-on-personal-assistant/",
+   "title": "How OpenAI turned its coding tools into dots, an always-on personal assistant",
+   "date": "2026-10-27T02:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "543832a6d832",
+   "url": "https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing/",
+   "title": "Cohere says Alibaba’s Qwen model tried to send a file to Beijing",
+   "date": "2026-10-27T01:12:21.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "8cb333260a17",
+   "url": "https://openai.com/index/check-point-daybreak",
+   "title": "How Check Point accelerates vulnerability research with Daybreak",
+   "date": "2026-10-27T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "bba291662c45",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics",
+   "title": "OpenAI announces three big science discoveries and a new way to work with academics",
+   "date": "2026-10-26T23:47:59.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "250e5d8f3024",
+   "url": "https://openai.com/index/greptile-code-review-codex-astra",
+   "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
+   "date": "2026-10-26T22:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "ec6912753455",
+   "url": "https://aitnews.com/2026/10/27/%d8%a2%d8%a8%d9%84-%d8%aa%d8%b7%d9%84%d9%82-ipad-mini-2026-%d8%a8%d8%b4%d8%a7%d8%b4%d8%a9-oled-%d9%88%d9%85%d8%b9%d8%a7%d9%84%d8%ac-a20-pro-%d9%82%d9%81%d8%b2%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d8%a3/",
+   "title": "آبل تطلق iPad mini 2026 بشاشة OLED ومعالج A20 Pro.. قفزة في الأداء والسعر",
+   "date": "2026-10-26T21:50:36.000Z",
+   "src": "البوابة العربية للأخبار التقنية",
+   "srcId": "aitnews",
+   "kind": "arabic",
+   "ar": {
+    "title": "آبل تطلق iPad mini 2026 بشاشة OLED ومعالج A20 Pro.. قفزة في الأداء والسعر",
+    "summary": ""
+   }
+  },
+  {
+   "id": "96b9f45bb2e6",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1018994/anthropic-ipo-ai-data-center-energy-climate-risk",
+   "title": "Anthropic is burning gas to feed the AI boom",
+   "date": "2026-10-26T21:45:31.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "eac5588f305c",
+   "url": "https://aitnews.com/2026/10/27/%d8%b2%d9%84%d8%b2%d8%a7%d9%84-%d9%88%d8%b8%d9%8a%d9%81%d9%8a-%d9%81%d9%8a-%d9%85%d8%a7%d9%8a%d9%83%d8%b1%d9%88%d8%b3%d9%88%d9%81%d8%aa-%d8%a7%d9%84%d8%b4%d8%b1%d9%83%d8%a9-%d8%aa%d8%b6%d8%b9-60/",
+   "title": "زلزال وظيفي في مايكروسوفت.. الشركة تضع 60 ألف موظف أمام خيار المغادرة",
+   "date": "2026-10-26T20:23:28.000Z",
+   "src": "البوابة العربية للأخبار التقنية",
+   "srcId": "aitnews",
+   "kind": "arabic",
+   "ar": {
+    "title": "زلزال وظيفي في مايكروسوفت.. الشركة تضع 60 ألف موظف أمام خيار المغادرة",
+    "summary": ""
+   }
+  },
+  {
+   "id": "5d5ff332a0b6",
+   "url": "https://arstechnica.com/apple/2026/10/apple-releases-ios-and-macos-27-2-with-new-siri-ai-features-new-music-logo/",
+   "title": "Apple releases iOS and macOS 27.2 with new Siri AI features, new Music logo",
+   "date": "2026-10-26T20:04:16.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "830f46d3a8fd",
+   "url": "https://arstechnica.com/ai/2026/10/boston-dynamics-employees-want-to-block-sale-of-robot-dogs-to-ice/",
+   "title": "ICE plan to buy robot dogs spurs protest from hundreds of Boston Dynamics employees",
+   "date": "2026-10-26T18:50:41.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "6374202b4b5e",
+   "url": "https://aws.amazon.com/blogs/machine-learning/fleet-wide-computer-vision-lifecycle-at-the-edge-with-sagemaker-sdk-v3/",
+   "title": "Fleet-wide computer vision lifecycle at the edge with SageMaker SDK v3",
+   "date": "2026-10-26T17:56:58.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "2500a6aad874",
+   "url": "https://www.theverge.com/news/1018713/meta-muse-agentic-shopping-ai-the-realreal",
+   "title": "The RealReal won’t let AI agents hog designer clothing",
+   "date": "2026-10-26T17:30:55.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "d44490076cdc",
+   "url": "https://aws.amazon.com/blogs/machine-learning/groundhog-day-for-ai-agents-prompt-caching-patterns-for-using-openai-models-on-amazon-bedrock/",
+   "title": "Groundhog Day for AI agents: Prompt caching patterns for using OpenAI models on Amazon Bedrock",
+   "date": "2026-10-26T17:27:20.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "71784ce3534e",
+   "url": "https://arstechnica.com/tech-policy/2026/10/highway-thieves-are-spoofing-gps-to-steal-millions-in-data-center-bound-cargo/",
+   "title": "Highway thieves are spoofing GPS to steal millions in data center-bound cargo",
+   "date": "2026-10-26T17:26:36.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "7644611dfae9",
+   "url": "https://aws.amazon.com/blogs/machine-learning/build-agentic-retrieval-on-a-managed-amazon-bedrock-knowledge-base-with-cdk/",
+   "title": "Build agentic retrieval on a Managed Amazon Bedrock Knowledge Base with CDK",
+   "date": "2026-10-26T17:15:14.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "4a8f41d180d7",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1018738/anthropic-ipo-s1-filing-weird-details",
+   "title": "Five weird details from Anthropic’s IPO filing",
+   "date": "2026-10-26T17:10:23.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "0c7a0e584035",
+   "url": "https://techcrunch.com/2026/10/26/anthropics-ipo-filing-reveals-its-strategy-for-keeping-enterprise-customers-hooked/",
+   "title": "Anthropic’s IPO filing reveals its strategy for keeping enterprise customers hooked",
+   "date": "2026-10-26T16:49:42.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "4a24365e960e",
+   "url": "https://techcrunch.com/2026/10/26/spacex-locks-in-40b-gpu-financing-deal-with-apollo/",
+   "title": "SpaceX locks in $40B GPU financing deal with Apollo",
+   "date": "2026-10-26T16:46:36.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "ed13d16bbdfa",
+   "url": "https://www.marktechpost.com/2026/10/26/nace-ai-releases-drex-for-search-for-ai-agents/",
+   "title": "Nace AI Releases Drex for Search for AI Agents: 92.05% on BrowseComp-Plus With 12.6 Search Calls",
+   "date": "2026-10-26T16:46:09.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "be77c96c39b4",
+   "url": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/",
+   "title": "Our newest AI Quest: Mapping the human brain",
+   "date": "2026-10-26T16:00:00.000Z",
+   "src": "Google AI",
+   "srcId": "google-ai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "2c43c284058f",
+   "url": "https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/",
+   "title": "Anthropic officially files for its public debut",
+   "date": "2026-10-26T14:35:22.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "6a47f3e0c881",
+   "url": "https://arstechnica.com/cars/2026/10/tesla-wants-ai-and-software-to-be-its-next-profit-engine/",
+   "title": "Tesla gave up the EV crown. Now it wants to win the autonomy race.",
+   "date": "2026-10-26T14:30:27.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "f16aefe89a6e",
+   "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
+   "title": "Working with academic communities to build scientific understanding",
+   "date": "2026-10-26T14:30:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "1a1d4bf2fc11",
+   "url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+   "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
+   "date": "2026-10-26T13:45:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "64d59b55a8fb",
+   "url": "https://openai.com/index/chatgpt-expanding-world-of-work",
+   "title": "ChatGPT’s expanding world of work",
+   "date": "2026-10-26T10:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "3fb44a491dd6",
+   "url": "https://www.marktechpost.com/2026/10/26/tsinghua-akv-kv-cache-engineering-llm-agents/",
+   "title": "Tsinghua AI Open-Sources AKV, a Cache Engineering Server for LLM Agents on SGLang",
+   "date": "2026-10-26T07:56:45.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "eb7708c5f537",
+   "url": "https://openai.com/index/fanatics-streamline-fan-experience",
+   "title": "How Fanatics and OpenAI streamline the fan experience",
+   "date": "2026-10-26T07:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "8f2f08b6e197",
+   "url": "https://openai.com/index/openai-cut-incident-investigation",
+   "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
+   "date": "2026-10-26T07:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "1758535ac6be",
+   "url": "https://openai.com/index/introducing-gpt-6-1-terra",
+   "title": "Introducing GPT-6.1 Terra",
+   "date": "2026-10-26T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "4cd82f931931",
+   "url": "https://machinelearning.apple.com/research/gharp-head-animation",
+   "title": "GHARP: Real-Time Gaussian Head Animation from Large-Scale Reconstruction Prior",
+   "date": "2026-10-26T00:00:00.000Z",
+   "src": "Apple ML",
+   "srcId": "apple",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "a6feae291b1a",
+   "url": "https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/",
+   "title": "Grok releases the first seven minutes of its AI-generated ‘Odyssey’",
+   "date": "2026-10-25T21:31:16.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "c932414b7eb9",
+   "url": "https://www.marktechpost.com/2026/10/25/nanbeige-releases-nanbeige4-3-33b-open-agentic-coding-model/",
+   "title": "Nanbeige Releases Nanbeige4.3-33B, a 33B Open Agentic Coding Model",
+   "date": "2026-10-25T21:15:21.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "71334093a413",
+   "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
+   "title": "AI delivers ‘zero financial payoff’ to most companies, Apollo economist says",
+   "date": "2026-10-25T16:57:32.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "4cd8b15dd649",
+   "url": "https://www.marktechpost.com/2026/10/25/hugging-face-carbon-x-14b-dna-language-model/",
+   "title": "Hugging Face Releases Carbon-X, a 14B Open DNA Language Model that Brings DNA and Natural Language Together for the First Time",
+   "date": "2026-10-25T16:53:40.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "4262d71f08be",
+   "url": "https://techcrunch.com/2026/10/25/the-hottest-ai-wearables-and-gadgets-you-should-know-about/",
+   "title": "The hottest AI wearables and gadgets you should know about",
+   "date": "2026-10-25T14:10:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "1a4147d6e8f3",
+   "url": "https://www.marktechpost.com/2026/10/25/stanford-berkeley-tokengate-learned-token-pruning-llm-prefill/",
+   "title": "Researchers from Stanford and UC Berkeley Introduce TokenGate: Token-Gated Attention Makes Long-Context Prefill Up to 11.3x Faster",
+   "date": "2026-10-25T12:12:18.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "b7ca3dd28f26",
+   "url": "https://www.marktechpost.com/2026/10/25/anthropic-launches-oss-scanner-a-free-ai-vulnerability-scanner/",
+   "title": "Anthropic Launches OSS Scanner, a Free AI Vulnerability Scanner",
+   "date": "2026-10-25T11:32:29.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "770c71828f23",
+   "url": "https://techcrunch.com/2026/10/24/will-ai-expose-the-rickety-infrastructure-of-the-internet/",
+   "title": "Will AI expose the rickety infrastructure of the internet?",
+   "date": "2026-10-24T20:15:33.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "b0af889ad05f",
+   "url": "https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
+   "title": "The AI graveyard: a running list of projects and startups that didn’t make it",
+   "date": "2026-10-24T19:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "35d668020c86",
+   "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/",
+   "title": "Block’s new voice model sounds eerily human",
+   "date": "2026-10-24T16:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "110fd09f65f2",
+   "url": "https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/",
+   "title": "Forced to pick, Grok’s AI model chooses Republicans. OpenAI’s picks Democrats.",
+   "date": "2026-10-24T15:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "79a2ae436951",
+   "url": "https://aitnews.com/2026/10/24/%d8%aa%d9%82%d8%b1%d9%8a%d8%b1-%d8%a7%d9%84%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d9%84%d8%a7%d8%b5%d8%b7%d9%86%d8%a7%d8%b9%d9%8a-%d9%8a%d8%ad%d8%b1%d8%b1-%d8%a3%d8%ac%d9%87%d8%b2%d8%a9-%d8%a7%d9%84%d8%aa/",
+   "title": "تقرير.. الذكاء الاصطناعي يحرر أجهزة التلفاز الذكية من الإعلانات وجمع البيانات",
+   "date": "2026-10-23T21:20:33.000Z",
+   "src": "البوابة العربية للأخبار التقنية",
+   "srcId": "aitnews",
+   "kind": "arabic",
+   "ar": {
+    "title": "تقرير.. الذكاء الاصطناعي يحرر أجهزة التلفاز الذكية من الإعلانات وجمع البيانات",
+    "summary": ""
+   }
+  },
+  {
+   "id": "3e249e7fc631",
+   "url": "https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising/",
+   "title": "Updated Google privacy policy says your Gmail might be used for advertising",
+   "date": "2026-10-23T20:19:55.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "1828cc13c803",
+   "url": "https://aitnews.com/2026/10/23/%d9%88%d8%af%d8%a7%d8%b9%d9%8b%d8%a7-arc-%d9%85%d8%aa%d8%b5%d9%81%d8%ad-%d9%88%d9%8a%d8%a8-%d8%b4%d9%87%d9%8a%d8%b1-%d9%8a%d8%aa%d9%88%d9%82%d9%81-%d9%86%d9%87%d8%a7%d8%a6%d9%8a%d9%8b%d8%a7-%d9%81/",
+   "title": "وداعًا Arc.. متصفح ويب شهير يتوقف نهائيًا في ديسمبر المقبل",
+   "date": "2026-10-23T19:50:37.000Z",
+   "src": "البوابة العربية للأخبار التقنية",
+   "srcId": "aitnews",
+   "kind": "arabic",
+   "ar": {
+    "title": "وداعًا Arc.. متصفح ويب شهير يتوقف نهائيًا في ديسمبر المقبل",
+    "summary": ""
+   }
+  },
+  {
+   "id": "bc7694eb1503",
+   "url": "https://aws.amazon.com/blogs/machine-learning/multi-turn-reinforcement-learning-on-amazon-sagemaker-ai-a-hands-on-guide/",
+   "title": "Multi-Turn Reinforcement Learning on Amazon SageMaker AI: A hands-on guide",
+   "date": "2026-10-23T17:48:54.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "e44aee2d4402",
+   "url": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs/",
+   "title": "Intel gets waiver after worries fuzzy US ban on foreign-made robots may hit fabs",
+   "date": "2026-10-23T17:18:31.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "298c8de07d18",
+   "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+   "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+   "date": "2026-10-23T17:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "1c58a8d6e4eb",
+   "url": "https://aws.amazon.com/blogs/machine-learning/orchestrating-sagemaker-ai-endpoint-auto-scaling-with-aws-cdk/",
+   "title": "Orchestrating SageMaker AI endpoint auto scaling with AWS CDK",
+   "date": "2026-10-23T16:30:10.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "7b49b44d9736",
+   "url": "https://aws.amazon.com/blogs/machine-learning/visualize-points-and-routes-with-geojson-in-amazon-quick-sight-layer-maps/",
+   "title": "Visualize points and routes with GeoJSON in Amazon Quick Sight layer maps",
+   "date": "2026-10-23T16:24:55.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "6fc2c0f171e0",
+   "url": "https://aws.amazon.com/blogs/machine-learning/how-bayer-crop-science-built-an-agentic-decision-engine-on-amazon-bedrock-agentcore-with-aws-unified-operations/",
+   "title": "How Bayer Crop Science built an agentic decision engine on Amazon Bedrock AgentCore with AWS Unified Operations",
+   "date": "2026-10-23T16:21:36.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "48e2274fdf2b",
+   "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+   "title": "Securing our frontier model training environment",
+   "date": "2026-10-23T10:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "b21a97b1b273",
+   "url": "https://blogs.nvidia.com/blog/kazakhstan-ai-compute-ecosystem/",
+   "title": "Kazakhstan Expands Compute for Its AI Future",
+   "date": "2026-10-23T02:00:13.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "c6099fc8919f",
+   "url": "https://openai.com/index/anima",
+   "title": "Anima helps clinics cut call waits by 75% with GPT-6 and GPT-Live",
+   "date": "2026-10-23T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "15c1f8ef7a58",
+   "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership",
+   "title": "OpenAI and Poland’s NASK partner to advance AI safety and security",
+   "date": "2026-10-23T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "6430909168b5",
+   "url": "https://huggingface.co/blog/torch-neuronx-model-support",
+   "title": "Does Your Model Run on AWS Trainium? Look It Up",
+   "date": "2026-10-23T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "95eb6975ad24",
+   "url": "https://huggingface.co/blog/microsoft/thinkingbox-training",
+   "title": "Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox",
+   "date": "2026-10-22T22:24:34.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "27825e300358",
+   "url": "https://openai.com/index/decisions-api",
+   "title": "Build more responsive apps with the Decisions API",
+   "date": "2026-10-22T19:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "bb00f30901ce",
+   "url": "https://aws.amazon.com/blogs/machine-learning/amazon-polly-delivers-a-major-upgrade-to-its-generative-engine/",
+   "title": "Amazon Polly delivers a major upgrade to its Generative engine",
+   "date": "2026-10-22T18:06:35.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "ff227324e376",
+   "url": "https://aws.amazon.com/blogs/machine-learning/how-iskaypet-unified-corporate-knowledge-with-amazon-bedrock-managed-knowledge-bases/",
+   "title": "How IskayPet unified corporate knowledge with Amazon Bedrock Managed Knowledge Bases",
+   "date": "2026-10-22T18:01:53.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "f70f2a2dbc3b",
+   "url": "https://aws.amazon.com/blogs/machine-learning/announcing-new-ways-to-customize-models-with-sagemaker-ai-without-managing-gpus/",
+   "title": "Announcing new ways to customize models with SageMaker AI, without managing GPUs",
+   "date": "2026-10-22T18:00:04.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "df383ee81b1c",
+   "url": "https://aws.amazon.com/blogs/machine-learning/write-your-own-training-loop-without-managing-gpus-with-amazon-sagemaker-training-sessions/",
+   "title": "Write your own training loop — without managing GPUs — with Amazon SageMaker training session APIs",
+   "date": "2026-10-22T18:00:01.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "353395321c92",
+   "url": "https://aws.amazon.com/blogs/machine-learning/deploy-ai-in-a-hipaa-eligible-environment-with-amazon-quick/",
+   "title": "Deploy AI in a HIPAA-eligible environment with Amazon Quick",
+   "date": "2026-10-22T17:48:22.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "f0c8337af231",
+   "url": "https://aws.amazon.com/blogs/machine-learning/stream-low-latency-speech-from-ai-agents-using-kokoro-tts-on-amazon-sagemaker-ai/",
+   "title": "Stream low-latency speech from AI agents using Kokoro TTS on Amazon SageMaker AI",
+   "date": "2026-10-22T17:45:58.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "529344d07694",
+   "url": "https://aws.amazon.com/blogs/machine-learning/stop-guessing-auto-scaling-targets-for-tts-on-amazon-sagemaker-ai/",
+   "title": "Stop guessing auto scaling targets for TTS on Amazon SageMaker AI",
+   "date": "2026-10-22T16:30:06.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "03f220919b75",
+   "url": "https://aws.amazon.com/blogs/machine-learning/how-rescale-built-an-ai-triage-agent-with-strands-agents-and-ai-dlc/",
+   "title": "How Rescale built an AI triage agent with Strands Agents and AI-DLC",
+   "date": "2026-10-22T16:25:57.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "c625905b3719",
+   "url": "https://arstechnica.com/security/2026/10/hackers-got-a-four-day-head-start-on-epic-php2shell-vulnerability/",
+   "title": "Hackers got a four-day head start on epic PHP2Shell vulnerability",
+   "date": "2026-10-22T15:25:02.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "06769efcf6f4",
+   "url": "https://blogs.nvidia.com/blog/minerva-platform-infrastructure/",
+   "title": "NVIDIA Unveils Minerva to Bring End-to-End Observability for AI Factories",
+   "date": "2026-10-22T15:00:02.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "e66e9796ba6b",
+   "url": "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/",
+   "title": "Beyond tree cover: mapping the world’s forest types",
+   "date": "2026-10-22T14:30:24.000Z",
+   "src": "Google DeepMind",
+   "srcId": "deepmind",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "0d155a8c6750",
+   "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-call-of-duty-modern-warfare-4/",
+   "title": "Cloud Deployment Incoming: ‘Call of Duty: Modern Warfare 4’ Arrives on GeForce NOW",
+   "date": "2026-10-22T13:00:20.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "5d118fadbe79",
+   "url": "https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1",
+   "title": "Ensemble forecasting with IBM Granite time-series models",
+   "date": "2026-10-22T07:51:31.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "63c31ca523f9",
+   "url": "https://openai.com/index/forward-deployed-engineering-means",
+   "title": "What FDE means at OpenAI",
+   "date": "2026-10-22T06:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "8eb5c126f8cf",
+   "url": "https://blogs.nvidia.com/blog/european-financial-services-organizations-open-models-proprietary-intelligence/",
+   "title": "Leading European Financial Services Organizations Embrace Open Models to Build Proprietary Intelligence",
+   "date": "2026-10-22T05:00:56.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "381130e24d54",
+   "url": "https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models/",
+   "title": "NVIDIA Cosmos Opens New Tools to Train, Evaluate and Deploy World Models",
+   "date": "2026-10-22T05:00:27.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "761a1716cf64",
+   "url": "https://blogs.nvidia.com/blog/dsx-power/",
+   "title": "How Companies Are Using NVIDIA DSX to Break the Power Bottleneck",
+   "date": "2026-10-22T05:00:25.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "231615289514",
+   "url": "https://blogs.nvidia.com/blog/european-retail-open-models-robotics/",
+   "title": "NVIDIA Transforms European Retail, From Digital Discovery to Physical Operations",
+   "date": "2026-10-22T05:00:23.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "6d8a31a2427f",
+   "url": "https://blogs.nvidia.com/blog/europe-earth-2-open-models-weather-climate-prediction/",
+   "title": "Pioneers Across Europe Deploy NVIDIA Earth-2 Open Models to Power Real-World Weather and Climate Prediction",
+   "date": "2026-10-22T05:00:19.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "2d9cc8be346c",
+   "url": "https://blogs.nvidia.com/blog/european-public-sector-open-models/",
+   "title": "NVIDIA Open Models Power a New Wave of European Public Sector Projects",
+   "date": "2026-10-22T05:00:02.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "ba6fa07d677a",
+   "url": "https://openai.com/index/uber-chatgpt-work-rollout",
+   "title": "Uber brings ChatGPT Work to all employees with OpenAI",
+   "date": "2026-10-22T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "a872764d5ef1",
+   "url": "https://aws.amazon.com/blogs/machine-learning/securing-quick-access-from-corporate-networks-with-aws-privatelink/",
+   "title": "Securing Quick access from corporate networks with AWS PrivateLink",
+   "date": "2026-10-21T23:38:38.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "2ed22a61b2f1",
+   "url": "https://openai.com/index/broad-access-through-consistent-standards",
+   "title": "Broad access through consistent standards",
+   "date": "2026-10-21T21:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "140d853f0e3f",
+   "url": "https://arstechnica.com/culture/2026/10/the-new-human-crafted-apple-music-brand-matters-in-an-ai-world/",
+   "title": "The new human-crafted Apple Music brand matters in an AI world",
+   "date": "2026-10-21T19:44:40.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "53db5cc10927",
+   "url": "https://arstechnica.com/ai/2026/10/openais-latest-ai-models-are-coming-to-google-cloud-and-antigravity/",
+   "title": "OpenAI's latest AI models are coming to Google Cloud and Antigravity",
+   "date": "2026-10-21T18:51:42.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "7104bc51c295",
+   "url": "https://huggingface.co/blog/nvidia/kumo-relational",
+   "title": "NVIDIA Kumo Relational Outperforms Supervised Machine Learning on Relational Data, No Training Required",
+   "date": "2026-10-21T18:26:30.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "5cbd98ec79a6",
+   "url": "https://arstechnica.com/tech-policy/2026/10/judge-rejects-trumps-wild-claim-epa-can-dismiss-data-center-pollution-lawsuits/",
+   "title": "Judge rejects Trump’s wild claim EPA can dismiss data center pollution lawsuits",
+   "date": "2026-10-21T18:20:40.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "354f89a6c7db",
+   "url": "https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization",
+   "title": "How Specializing the Vocabulary of SLMs Can Cut Inference Cost by 77% in Real Applications",
+   "date": "2026-10-21T17:35:36.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "4ab93569e260",
+   "url": "https://openai.com/index/att-legal",
+   "title": "How AT&T is rethinking in-house legal work with OpenAI",
+   "date": "2026-10-21T17:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "f9b499debdda",
+   "url": "https://huggingface.co/blog/amazon/profiling-torchneuron-part-1",
+   "title": "Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.",
+   "date": "2026-10-21T16:04:43.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "2f67d3a79def",
+   "url": "https://arstechnica.com/ai/2026/10/the-15-billion-ad-powered-ai-startup-your-doctor-may-already-be-using/",
+   "title": "The $15 billion ad-powered AI startup your doctor may already be using",
+   "date": "2026-10-21T15:14:07.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "9b35c0bfb2f0",
+   "url": "https://huggingface.co/blog/ibm-granite/granite-speech-5",
+   "title": "Granite Speech 5.0: Transcribe, Translate, and Attribute more Accurately and Faster",
+   "date": "2026-10-21T14:58:18.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "74fcf21eca7a",
+   "url": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
+   "title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
+   "date": "2026-10-21T13:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "61f4d0141ff3",
+   "url": "https://openai.com/index/openai-models-google-cloud",
+   "title": "OpenAI models are coming to Google Cloud",
+   "date": "2026-10-21T12:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "0b1d731f907e",
+   "url": "https://blogs.nvidia.com/blog/local-ai-gtc-rtx-dgx-spark-station-sync/",
+   "title": "Bringing the Spark to Europe: Local Intelligence Powers Next Wave of Agents",
+   "date": "2026-10-21T10:50:37.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "7dbdc8f6d3c5",
+   "url": "https://blogs.nvidia.com/blog/google-cloud-vera-rubin-infrastructure/",
+   "title": "Google Cloud and NVIDIA Announce General Availability of NVIDIA Vera Rubin Infrastructure",
+   "date": "2026-10-21T10:45:17.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "f47072a36f45",
+   "url": "https://blogs.nvidia.com/blog/cloud-partners-europe-sovereign-safety-open-agents/",
+   "title": "NVIDIA Cloud Partners Scale Across Europe — Sovereign, Open and Built for Safe AI Agents",
+   "date": "2026-10-21T10:30:41.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "0c405e6fd045",
+   "url": "https://blogs.nvidia.com/blog/europe-industrial-leaders-engineering-manufacturing/",
+   "title": "Europe’s Industrial Leaders Reinvent Engineering and Manufacturing With NVIDIA",
+   "date": "2026-10-21T10:30:40.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "64ae1d1ebee7",
+   "url": "https://blogs.nvidia.com/blog/cudss-generally-available-engineering-scientific-simulation/",
+   "title": "NVIDIA cuDSS Now Generally Available to Accelerate Engineering and Scientific Simulations",
+   "date": "2026-10-21T10:30:25.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "9e8b8c2e1479",
+   "url": "https://blogs.nvidia.com/blog/confidential-computing-model-builders-infrastructure/",
+   "title": "NVIDIA Confidential Computing Expands, Enabling Frontier Model Builders to Securely Scale Across Global Infrastructure",
+   "date": "2026-10-21T10:30:02.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "7d59293497ac",
+   "url": "https://blogs.nvidia.com/blog/enterprise-platforms-agent-toolkit/",
+   "title": "NVIDIA Agent Toolkit Expands, Grounding Enterprise Agents in Company Data",
+   "date": "2026-10-21T10:10:01.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "be11c18d48ff",
+   "url": "https://blogs.nvidia.com/blog/open-models-europe-industry/",
+   "title": "NVIDIA Open Models Advance Europe’s Sovereign Intelligence Across Industries",
+   "date": "2026-10-21T10:00:07.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "d3f519557f32",
+   "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities",
+   "title": "Patch the Planet: global response coordination as agents uncover critical vulnerabilities",
+   "date": "2026-10-21T07:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "edef63b51aed",
+   "url": "https://openai.com/index/building-chatgpt-ad-stack",
+   "title": "How we built ChatGPT’s novel ad stack for user trust and relevance",
+   "date": "2026-10-21T07:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "1de8e62ff715",
+   "url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data",
+   "title": "Using thousands of AI agents to uncover new leads in biological data",
+   "date": "2026-10-21T04:50:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "1778fb273dbb",
+   "url": "https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/",
+   "title": "Southeast Asia’s digital economy to hit $368 billion",
+   "date": "2026-10-21T04:00:00.000Z",
+   "src": "Google AI",
+   "srcId": "google-ai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "9201054eeb4c",
+   "url": "https://openai.com/index/cloudflare-cyber",
+   "title": "Cloudflare links vulnerability discovery to defense with OpenAI",
+   "date": "2026-10-21T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "b2deaf97c98c",
+   "url": "https://openai.com/index/empowering-cyber-defenders",
+   "title": "Democratic governance of frontier AI, part II: Empowering cyber defenders",
+   "date": "2026-10-21T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "165cb1553146",
+   "url": "https://arstechnica.com/tech-policy/2026/10/meta-drops-the-word-train-from-its-commercial-tos-after-ai-backlash/",
+   "title": "Meta drops the word \"train\" from its commercial TOS after AI backlash",
+   "date": "2026-10-20T20:07:58.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "f74f11fae08f",
+   "url": "https://arstechnica.com/google/2026/10/geminis-personal-intelligence-is-coming-to-cars/",
+   "title": "Gemini's Personal Intelligence is coming to cars",
+   "date": "2026-10-20T20:00:33.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "748b8e425db0",
+   "url": "https://arstechnica.com/gadgets/2026/10/ukraines-drone-rescue-of-wounded-soldier-puts-much-touted-idea-into-practice/",
+   "title": "Ukraine’s drone rescue of wounded soldier puts much touted idea into practice",
+   "date": "2026-10-20T18:22:54.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "f25d567c798e",
+   "url": "https://arstechnica.com/tech-policy/2026/10/meta-ordered-to-name-execs-who-approved-torrenting-for-ai-training/",
+   "title": "Meta tries to scapegoat staff who downloaded torrents to spare execs",
+   "date": "2026-10-20T17:40:20.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "fb9936745ef9",
+   "url": "https://arstechnica.com/security/2026/10/meta-muse-exposes-users-personal-and-business-secrets-when-they-share-conversations/",
+   "title": "Meta Muse exposes users' personal and business secrets when they share conversations",
+   "date": "2026-10-20T12:33:13.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "b3fcb2e42d32",
+   "url": "https://openai.com/index/ted-taylor-restaurant",
+   "title": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
+   "date": "2026-10-20T10:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "a84b6a7bee5c",
+   "url": "https://openai.com/index/terminal-x",
+   "title": "Terminal X matches senior investor judgment 88.6% with GPT-6.1",
+   "date": "2026-10-20T07:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "dbaa90254253",
+   "url": "https://openai.com/index/openai-to-acquire-orchestra-bio",
+   "title": "OpenAI acquires Orchestra Bio",
+   "date": "2026-10-20T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "84cd8d44e982",
+   "url": "https://huggingface.co/blog/hf-torchtpu",
+   "title": "Hugging Face ❤️ TorchTPU: TPUs, Natively",
+   "date": "2026-10-20T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "2596ff929aee",
+   "url": "https://huggingface.co/blog/anylanguagemodel-1-0",
+   "title": "AnyLanguageModel 1.0: One Year of Local Models on Apple Platforms",
+   "date": "2026-10-20T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "3eb18e5ff7f2",
+   "url": "https://huggingface.co/blog/mps-pytorch-2-15",
+   "title": "MPS in PyTorch 2.15",
+   "date": "2026-10-20T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "71a28de11a06",
+   "url": "https://arstechnica.com/tech-policy/2026/10/accused-openai-spy-had-folder-called-saudi-gov-docs-fbi-says/",
+   "title": "Accused OpenAI spy had folder called “Saudi Gov Docs,” FBI says",
+   "date": "2026-10-19T20:21:53.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "5d37bd28a169",
+   "url": "https://arstechnica.com/gaming/2026/10/ai-game-clones-are-making-indie-developers-afraid-to-show-their-work/",
+   "title": "AI game clones are making indie developers afraid to show their work",
+   "date": "2026-10-19T16:59:22.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "7a364f356aab",
+   "url": "https://openai.com/index/low-resource-programming-languages",
+   "title": "Advancing coding in low‑resource programming languages",
+   "date": "2026-10-19T12:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "9dbc0d55ff91",
+   "url": "https://huggingface.co/blog/hf-torchneuron",
+   "title": "TorchNeuron: running HF models on AWS Trainium is easier than ever",
+   "date": "2026-10-19T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "65442e708214",
+   "url": "https://openai.com/index/itau-generative-ai",
+   "title": "How Itaú is building generative AI for its entire customer base",
+   "date": "2026-10-16T19:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "4a2f3ca18eb9",
+   "url": "https://openai.com/index/benefit-street-partners",
+   "title": "Benefit Street Partners answers questions faster with Codex",
+   "date": "2026-10-16T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "9db4940a53f8",
+   "url": "https://openai.com/index/stack-overflow-chatgpt-plugin",
+   "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+   "date": "2026-10-16T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "849b423196d1",
+   "url": "https://huggingface.co/blog/reflection-beam",
+   "title": "Welcome Beam: a 501B open model you can own, customize, and scale",
+   "date": "2026-10-16T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "a72d1e4da6b0",
+   "url": "https://openai.com/index/introducing-the-rosalind-academic-plan",
+   "title": "Bringing GPT-Rosalind to academic research labs",
+   "date": "2026-10-15T19:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "996b33c09ad5",
+   "url": "https://deepmind.google/blog/accelerating-antimicrobial-discovery/",
+   "title": "Accelerating the search for antimicrobial peptides with Google Antigravity",
+   "date": "2026-10-15T16:08:03.000Z",
+   "src": "Google DeepMind",
+   "srcId": "deepmind",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "fa14b8f7db46",
+   "url": "https://openai.com/index/teaching-students-to-think-and-learn-through-questions",
+   "title": "Teaching students to think and learn through questions",
+   "date": "2026-10-15T13:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "e3c36d4422c6",
+   "url": "https://huggingface.co/blog/swiss-ai/apertus-v15-release-notes",
+   "title": "Apertus 1.5 Release Notes",
+   "date": "2026-10-15T09:08:45.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "dd00c04c9b95",
+   "url": "https://openai.com/index/sullivan-cromwell",
+   "title": "Sullivan & Cromwell brings legal expertise into agreement review",
+   "date": "2026-10-15T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "98e6a11f87f3",
+   "url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+   "title": "Local and Distributed Large LLM Inference with MLX and RDMA on Mac Studio",
+   "date": "2026-10-15T00:00:00.000Z",
+   "src": "Apple ML",
+   "srcId": "apple",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "1aaf9ecdd8b2",
+   "url": "https://machinelearning.apple.com/research/selection-structured-reasoning",
+   "title": "Selection-Based Structured Reasoning: Toward Efficient Multimodal Search Agents",
+   "date": "2026-10-15T00:00:00.000Z",
+   "src": "Apple ML",
+   "srcId": "apple",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "7f2975ae8e0c",
+   "url": "https://machinelearning.apple.com/research/plan-retrieve-tool-discovery",
+   "title": "Plan or Retrieve First? A Scale Study of Tool Discovery Architectures",
+   "date": "2026-10-15T00:00:00.000Z",
+   "src": "Apple ML",
+   "srcId": "apple",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "9d251ac6836a",
+   "url": "https://huggingface.co/blog/meta-muse-spark-open",
+   "title": "Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta",
+   "date": "2026-10-15T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "3733c75a28bf",
+   "url": "https://huggingface.co/blog/flux-3",
+   "title": "Welcome FLUX.3 Image Klein in Diffusers",
+   "date": "2026-10-15T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "a0e0fec2c2b5",
+   "url": "https://openai.com/index/amp-beyond-coding",
+   "title": "Amp puts AI agents to work beyond code with OpenAI models",
+   "date": "2026-10-14T12:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "24cc989c02db",
+   "url": "https://openai.com/index/sentinelone",
+   "title": "SentinelOne cuts malware analysis from weeks to hours",
+   "date": "2026-10-14T12:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "e181547094b0",
+   "url": "https://openai.com/index/third-moment-research",
+   "title": "How Third Moment Research runs 10,000 agents for 36+ hours",
+   "date": "2026-10-14T07:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "7d10f0ddfecf",
+   "url": "https://openai.com/index/block-ai-powered-security",
+   "title": "How Block is building AI-powered security with OpenAI technology",
+   "date": "2026-10-14T07:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "58e4191fcfe4",
+   "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+   "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
+   "date": "2026-10-14T02:00:14.000Z",
+   "src": "Google DeepMind",
+   "srcId": "deepmind",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "2f3282e48314",
+   "url": "https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic",
+   "title": "The EU’s next chapter in AI is agentic",
+   "date": "2026-10-14T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "15a88e7ee914",
+   "url": "https://machinelearning.apple.com/research/code-switching-detection",
+   "title": "Code-Switching Detection via Language-Selective Dimensions in Speech Foundation Models",
+   "date": "2026-10-14T00:00:00.000Z",
+   "src": "Apple ML",
+   "srcId": "apple",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "e612dc941250",
+   "url": "https://machinelearning.apple.com/research/tri-modal-masked-diffusion",
+   "title": "The Design Space of Tri-Modal Masked Diffusion Models",
+   "date": "2026-10-14T00:00:00.000Z",
+   "src": "Apple ML",
+   "srcId": "apple",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "471508c04c30",
+   "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
+   "title": "Developing Gemini 4 Argon responsibly and safely",
+   "date": "2026-10-13T19:43:07.000Z",
+   "src": "Google DeepMind",
+   "srcId": "deepmind",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "550c4c02e9ff",
+   "url": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
+   "title": "Run fast, private agents on-device with LFM2.5-24B-A2B",
+   "date": "2026-10-13T17:05:48.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "884ebf3c3978",
+   "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
+   "title": "Gemini 4 Argon for Robotics",
+   "date": "2026-10-13T16:01:58.000Z",
+   "src": "Google DeepMind",
+   "srcId": "deepmind",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "f174716114a9",
+   "url": "https://deepmind.google/blog/introducing-gemini-4-argon/",
+   "title": "Gemini 4 Argon: Built to solve your hardest problems",
+   "date": "2026-10-13T16:01:52.000Z",
+   "src": "Google DeepMind",
+   "srcId": "deepmind",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "c1e94fc83136",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+   "title": "Gemini 4 Argon: Built to solve your hardest problems",
+   "date": "2026-10-13T16:00:00.000Z",
+   "src": "Google AI",
+   "srcId": "google-ai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "ffc748cb8d88",
+   "url": "https://openai.com/index/higgsfield-longer-videos-voice",
+   "title": "Higgsfield takes AI video from 1 minute to over 10",
+   "date": "2026-10-13T12:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "adadd90b83d7",
+   "url": "https://machinelearning.apple.com/research/mix-dont-tune",
+   "title": "Mix, Don't Tune: Bilingual Pre-Training Outperforms Hyperparameter Search in Data-Constrained Settings",
+   "date": "2026-10-13T00:00:00.000Z",
+   "src": "Apple ML",
+   "srcId": "apple",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "78d6d66a2b4f",
+   "url": "https://machinelearning.apple.com/research/llm-translation-quality-annotation",
+   "title": "Large Language Models for Machine Translation Quality Annotation: Humans and Models Are Both Challenged",
+   "date": "2026-10-12T00:00:00.000Z",
+   "src": "Apple ML",
+   "srcId": "apple",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "438f8f82161f",
+   "url": "https://machinelearning.apple.com/research/distributed-gpu-cloud",
+   "title": "Minions: A Dynamic and Distributed Virtual GPU Cloud Built on Idle Apple Silicon Devices",
+   "date": "2026-10-12T00:00:00.000Z",
+   "src": "Apple ML",
+   "srcId": "apple",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "770df069ccb5",
+   "url": "https://machinelearning.apple.com/research/self-compacting-language-agents",
+   "title": "Self-Compacting Language Model Agents",
+   "date": "2026-10-12T00:00:00.000Z",
+   "src": "Apple ML",
+   "srcId": "apple",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "edd58468d564",
+   "url": "https://openai.com/index/sophos",
+   "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
+   "date": "2026-10-09T07:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "90995f7dbc9c",
+   "url": "https://openai.com/index/asana-browser-agent",
+   "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
+   "date": "2026-10-09T07:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "112b5f00879d",
+   "url": "https://openai.com/index/oracle",
+   "title": "How Oracle turns days of work into minutes with ChatGPT and Codex",
+   "date": "2026-10-08T16:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "ca1ec6c6a1a1",
+   "url": "https://openai.com/index/pollo-ai",
+   "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
+   "date": "2026-10-08T12:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "f6d3626eb7c8",
+   "url": "https://openai.com/index/legalon-halves-codex-costs",
+   "title": "LegalOn halves Codex costs while maintaining development speed",
+   "date": "2026-10-08T12:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "077dea1e8a7a",
+   "url": "https://openai.com/index/disrupting-ai-enabled-false-front-operations",
+   "title": "Disrupting AI-enabled “false front” operations",
+   "date": "2026-10-08T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "0f05fd4155a4",
+   "url": "https://huggingface.co/blog/building-with-ml-intern",
+   "title": "The model that didn't exist, so you made it yourself",
+   "date": "2026-10-08T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "91ed3eb235f3",
+   "url": "https://huggingface.co/blog/tiiuae/falcon-asr",
+   "title": "Introducing Falcon ASR",
+   "date": "2026-10-07T13:21:03.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "ad4e14640e35",
+   "url": "https://openai.com/index/teens-learn-and-plan",
+   "title": "Helping teens learn, plan, and shape the future of AI",
+   "date": "2026-10-07T12:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "22643d6fcb19",
+   "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
+   "title": "Introducing Playground: Create and play custom games",
+   "date": "2026-10-07T12:00:00.000Z",
+   "src": "Google AI",
+   "srcId": "google-ai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "04e9dc3828b5",
+   "url": "https://openai.com/index/radisson",
+   "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
+   "date": "2026-10-07T07:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "0ca1450969b5",
+   "url": "https://openai.com/index/gpt-6-for-everyone",
+   "title": "GPT-6 and Intelligent UI for everyone",
+   "date": "2026-10-07T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "4dd290070848",
+   "url": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/",
+   "title": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
+   "date": "2026-10-06T19:57:04.000Z",
+   "src": "Google DeepMind",
+   "srcId": "deepmind",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "60ef2af305e7",
+   "url": "https://openai.com/index/atlassian-partnership",
+   "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
+   "date": "2026-10-06T16:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "342677ae7ead",
+   "url": "https://openai.com/index/jump-trading",
+   "title": "How Jump Trading is scaling quant research with ChatGPT",
+   "date": "2026-10-06T12:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "47b9255d8fa0",
+   "url": "https://openai.com/index/sharing-ai-progress-in-mathematics",
+   "title": "Sharing AI progress in mathematics",
+   "date": "2026-10-06T12:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "9964af802e9c",
+   "url": "https://openai.com/index/advancing-computer-use-with-ironclad",
+   "title": "Advancing computer use with Ironclad",
+   "date": "2026-10-06T10:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "78ad53815846",
+   "url": "https://openai.com/index/eu-text-provenance",
+   "title": "Our approach to EU text provenance rules",
+   "date": "2026-10-05T15:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "3cbec84de8bf",
+   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+   "title": "Building advertising for the way people use AI",
+   "date": "2026-10-05T10:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "89764eae0099",
+   "url": "https://huggingface.co/blog/microsoft/thinkingbox",
+   "title": "The Agent Said It Was Done. The Database Disagreed.",
+   "date": "2026-10-03T22:56:48.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "8e206c4d9ed6",
+   "url": "https://openai.com/index/practical-guide-building-gpt-6",
+   "title": "A model guide for the GPT-6 family",
+   "date": "2026-10-02T16:15:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "1122627a66df",
+   "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
+   "title": "The latest AI news we announced in September 2026",
+   "date": "2026-10-02T15:00:00.000Z",
+   "src": "Google AI",
+   "srcId": "google-ai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "a885ed61f54a",
+   "url": "https://huggingface.co/blog/ServiceNow-AI/autosynthdata",
+   "title": "AutoSynthData: Generating Training Data for Enterprise Agents",
+   "date": "2026-10-02T04:01:31.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "a97398f76ee5",
+   "url": "https://openai.com/index/chatham-financial",
+   "title": "Chatham scales its capital markets expertise with OpenAI",
+   "date": "2026-10-02T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "7e67b43cf9d0",
+   "url": "https://openai.com/index/the-eternal-complement",
+   "title": "The eternal complement",
+   "date": "2026-10-01T17:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "a80484c2d584",
+   "url": "https://openai.com/index/albertsons-reimagining-retail",
+   "title": "How Albertsons Companies is reimagining retail from the inside out",
+   "date": "2026-10-01T16:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "3bba52758573",
+   "url": "https://openai.com/index/the-den-family-social",
+   "title": "The Den frees up 10-15 hours a week to grow with ChatGPT Work",
+   "date": "2026-10-01T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "15e70ee5e4a7",
+   "url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
+   "title": "Gemini 4 Argon: our next era of frontier intelligence",
+   "date": "2026-09-30T20:01:45.000Z",
+   "src": "Google DeepMind",
+   "srcId": "deepmind",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "0a622a33b8e3",
+   "url": "https://deepmind.google/blog/introducing-synthid-bio/",
+   "title": "Introducing SynthID Bio",
+   "date": "2026-09-30T15:03:07.000Z",
+   "src": "Google DeepMind",
+   "srcId": "deepmind",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "6a91381a4292",
+   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
+   "title": "Disrupting a coordinated model-distillation campaign",
+   "date": "2026-09-30T10:30:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "b5e5e43443d2",
+   "url": "https://openai.com/index/helping-small-businesses-put-ai-to-work",
+   "title": "Helping small businesses put AI to work",
+   "date": "2026-09-30T10:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "581ab3112c30",
+   "url": "https://huggingface.co/blog/open-tts-leaderboard",
+   "title": "Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning",
+   "date": "2026-09-30T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "dd66acaed2a0",
+   "url": "https://openai.com/index/introducing-gpt-6-1-sol",
+   "title": "Introducing GPT-6.1 Sol",
+   "date": "2026-09-29T17:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "984223f109f3",
+   "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
+   "title": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents",
+   "date": "2026-09-29T13:07:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "19db7cc5ca5c",
+   "url": "https://openai.com/index/devday-2026-recap",
+   "title": "DevDay 2026 Recap",
+   "date": "2026-09-29T10:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "884977ecb800",
+   "url": "https://openai.com/index/introducing-dots",
+   "title": "Introducing dots",
+   "date": "2026-09-29T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "cfe8e900401f",
+   "url": "https://openai.com/index/how-we-will-do-better-for-australia",
+   "title": "How we will do better for Australia",
+   "date": "2026-09-28T19:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "cf468ec39dd6",
+   "url": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training",
+   "title": "Towards safety cases for frontier AI training",
+   "date": "2026-09-28T19:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "1eadd5627184",
+   "url": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/",
+   "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
+   "date": "2026-09-28T19:00:00.000Z",
+   "src": "Google AI",
+   "srcId": "google-ai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "9552195c964d",
+   "url": "https://huggingface.co/blog/Hcompany/holo4",
+   "title": "Holo4: powering generalist computer-use agents",
+   "date": "2026-09-28T09:44:05.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "216d56bba26c",
+   "url": "https://openai.com/index/lenfest-ai-collaborative-expansion",
+   "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
+   "date": "2026-09-28T07:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "914f14710638",
+   "url": "https://openai.com/form/codex-originals",
+   "title": "Are you a Codex Original?",
+   "date": "2026-09-28T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "bf0fe8cc388a",
+   "url": "https://openai.com/index/basis-tax-workbook-with-astra",
+   "title": "Basis completes a tax workbook 2x faster with GPT-6 Astra",
+   "date": "2026-09-28T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "a30a6af008de",
+   "url": "https://huggingface.co/blog/rl-environments",
+   "title": "Welcome RL Environments to the hub",
+   "date": "2026-09-28T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  }
+ ]
+}
