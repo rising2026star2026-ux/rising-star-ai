@@ -1,25 +1,103 @@
 {
- "updated": "2026-10-27T20:33:26.352Z",
+ "updated": "2026-10-27T22:12:27.777Z",
  "feeds": {
   "openai": "ok 71",
-  "deepmind": "ok 10",
-  "techcrunch": "ok 20",
-  "verge": "ok 10",
+  "meta": "ok 9",
   "apple": "ok 10",
   "nvidia": "ok 18",
+  "techcrunch": "ok 20",
   "huggingface": "ok 26",
-  "aws": "ok 20",
-  "meta": "ok 9",
-  "marktechpost": "ok 10",
   "google-research": "ok 12",
+  "aws": "ok 20",
+  "verge": "ok 10",
+  "deepmind": "ok 10",
+  "marktechpost": "ok 10",
   "google-ai": "ok 6",
-  "arstechnica": "ok 20",
   "techwd": "ok 3",
+  "arstechnica": "ok 20",
   "aitnews": "ok 6",
   "microsoft": "ok 10",
   "venturebeat": "FAIL HTTP 429"
  },
  "items": [
+  {
+   "id": "6849d36ab61f",
+   "url": "https://arstechnica.com/tech-policy/2026/10/no-human-at-the-helm-delaware-plan-would-let-ai-agents-run-entire-businesses/",
+   "title": "\"No human at the helm\": Delaware plan would let AI agents run entire businesses",
+   "date": "2026-10-27T21:50:04.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": {
+    "title": "خطة ديلاوير تسمح للذكاء الاصطناعي بإدارة الشركات",
+    "summary": "الممثل الأمريكي كومر بيقول إن أصحاب الشركات اللي بتشتغل بالذكاء الاصطناعي ممكن يتفادوا المسؤولية عن أي تصرفات متهورة للذكاء الاصطناعي."
+   }
+  },
+  {
+   "id": "f45c20f72906",
+   "url": "https://techcrunch.com/2026/10/27/bank-of-america-kindly-asks-that-you-dont-share-your-banking-password-with-your-ai-assistant/",
+   "title": "Bank of America kindly asks that you don’t share your banking password with your AI assistant",
+   "date": "2026-10-27T21:44:34.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "بنك أوف أمريكا يحذر من مشاركة كلمة السر مع المساعد الذكي",
+    "summary": "البنك بيفكرك إنك مسؤول عن أي نشاط يحصل نتيجة وصول الوكلاء الذكاء الاصطناعي لحسابك."
+   }
+  },
+  {
+   "id": "a9a2cf8c96fe",
+   "url": "https://techcrunch.com/2026/10/27/whos-really-in-charge-at-anthropic-after-the-ipo/",
+   "title": "Who’s really in charge at Anthropic after the IPO?",
+   "date": "2026-10-27T21:38:28.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "مين بيدير Anthropic بعد الاكتتاب؟",
+    "summary": "شرح واضح لهياكل الحوكمة المعقدة لشركة Anthropic بعد طرحها العام."
+   }
+  },
+  {
+   "id": "78aca7aaafb2",
+   "url": "https://arstechnica.com/ai/2026/10/anthropic-ipo-warns-its-ai-could-blackmail-people-become-sentient-end-humanity/",
+   "title": "Anthropic IPO warns its AI could blackmail people, become sentient, end humanity",
+   "date": "2026-10-27T21:31:14.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": {
+    "title": "تحذير Anthropic من مخاطر الذكاء الاصطناعي بعد الاكتتاب",
+    "summary": "وثيقة المخاطر المكوّنة من 93 صفحة بتسرد سبع كوابيس محتملة للذكاء الاصطناعي، من الابتزاز لحد إنسانية النهاية."
+   }
+  },
+  {
+   "id": "c5d050a42c88",
+   "url": "https://www.marktechpost.com/2026/10/27/liquid-ai-lfm3-open-weight-2b-multimodal-models/",
+   "title": "Liquid AI Releases LFM3: 6 Open-Weight 2B-Class Multimodal Models",
+   "date": "2026-10-27T21:08:02.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "Liquid AI تطلق LFM3 بـ 6 نماذج متعددة الوسائط",
+    "summary": "Liquid AI أطلقت LFM3، ستة نماذج مفتوحة الوزن بحجم 2 مليار بارامتر، منها LFM3‑1.7B بواجهة 256K وسياق 256 ألف وتستوعب حوالي 1 جيجابايت على 4‑bit."
+   }
+  },
+  {
+   "id": "ba3cece69efb",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1019921/openai-breakthrough-math-computer-science-physics",
+   "title": "Researchers are getting tired of OpenAI gatekeeping its breakthroughs",
+   "date": "2026-10-27T20:51:04.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "الباحثون سئموا من سيطرة OpenAI على ابتكاراتها",
+    "summary": "OpenAI أعلنت عن إنجازات في الرياضيات والكمبيوتر والفيزياء، لكن الباحثين تعبوا من حجز الشركة على نشر النتائج."
+   }
+  },
   {
    "id": "11d849a838d2",
    "url": "https://www.tech-wd.com/wd/2026/10/27/%d8%b4%d8%b1%d9%83%d8%a9-google-deepmind-%d8%aa%d9%83%d8%b4%d9%81-%d8%b9%d9%86-genie-4-%d9%84%d8%aa%d9%88%d9%84%d9%8a%d8%af-%d8%a7%d9%84%d8%b9%d9%88%d8%a7%d9%84%d9%85-%d8%a7%d9%84%d8%a7%d9%81%d8%aa/",
@@ -54,7 +132,10 @@
    "src": "TechCrunch",
    "srcId": "techcrunch",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Disruptive تجمع صندوق 10 مليار دولار للاستثمار الضخم",
+    "summary": "Disruptive أطلقت صندوق 10 مليار دولار للرهان على ما لا يقل عن عشر شركات، من بينها Groq و ElevenLabs."
+   }
   },
   {
    "id": "a6a1f4abbd10",
@@ -64,7 +145,10 @@
    "src": "Ars Technica",
    "srcId": "arstechnica",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "لغة طبيعية لتصميم البروتينات والجينوم",
+    "summary": "دلوقتي تقدر توصف للذكاء الاصطناعي نوع البروتين اللي عايز تصنعه بلغة شبه طبيعية باستخدام برامج تصميم الجينوم."
+   }
   },
   {
    "id": "a5b999169a7f",
