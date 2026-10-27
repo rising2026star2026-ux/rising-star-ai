@@ -1,0 +1,41 @@
+blocked  200  pollinations         xfo=SAMEORIGIN  logo=y
+error    403  perchance            xfo=SAMEORIGIN  logo=y
+error    403  raphael-ai           xfo=SAMEORIGIN  logo=y
+maybe    200  dezgo                xfo=-  logo=y
+error    403  craiyon              xfo=SAMEORIGIN  logo=y
+maybe    200  deepai               xfo=ALLOWALL  logo=y
+blocked  200  flux-space           xfo=DENY  logo=y
+error    403  lm-arena             xfo=SAMEORIGIN  logo=y
+error    403  meta-ai              xfo=-  logo=y
+maybe    200  bing-image-creator   xfo=-  logo=y
+blocked  200  imagefx              xfo=SAMEORIGIN  logo=y
+error    null gemini-image         xfo=-  logo=y
+error    403  ideogram             xfo=SAMEORIGIN  logo=y
+error    403  leonardo             xfo=SAMEORIGIN  logo=y
+blocked  200  krea                 xfo=- csp=frame-ancestors 'self' logo=y
+maybe    200  playground           xfo=-  logo=y
+blocked  200  recraft              xfo=SAMEORIGIN  logo=y
+error    403  freepik-ai           xfo=-  logo=y
+blocked  200  mage-space           xfo=DENY  logo=y
+maybe    200  seaart               xfo=-  logo=y
+error    403  tensor-art           xfo=SAMEORIGIN  logo=y
+blocked  200  firefly              xfo=SAMEORIGIN csp=frame-ancestors https://*.adobe.com https://*.acro logo=y
+error    403  canva-magic          xfo=SAMEORIGIN  logo=y
+blocked  200  pixlr                xfo=SAMEORIGIN  logo=y
+maybe    200  fotor                xfo=-  logo=y
+blocked  200  google-flow          xfo=SAMEORIGIN  logo=y
+blocked  200  dreamina             xfo=SAMEORIGIN csp=frame-ancestors 'self' bytedance: dreamina.capcut. logo=y
+maybe    200  kling                xfo=-  logo=y
+blocked  200  pixverse             xfo=SAMEORIGIN csp=frame-ancestors 'self' logo=y
+maybe    200  vidu                 xfo=-  logo=y
+blocked  200  hailuo               xfo=- csp=frame-ancestors 'self' https://*.xaminim.com https logo=y
+error    401  wan-space            xfo=SAMEORIGIN  logo=y
+maybe    200  genmo                xfo=-  logo=y
+error    403  canva-video          xfo=SAMEORIGIN  logo=y
+blocked  200  renderforest         xfo=SAMEORIGIN  logo=y
+blocked  200  clipchamp            xfo=SAMEORIGIN csp=frame-ancestors https://app.contentful.com logo=y
+blocked  200  capcut               xfo=- csp=frame-ancestors 'self' bytedance: dreamina.capcut. logo=y
+maybe    200  vn-editor            xfo=-  logo=y
+blocked  200  lumen5               xfo=DENY csp=frame-ancestors 'none' logo=y
+pollinations {"legacy":{"status":200,"type":"image/jpeg","bytes":32560,"acao":"*"},"new":{"status":401,"type":"application/json","bytes":264,"acao":"*"}}
+hf {"black-forest-labs/FLUX.1-schnell":{"api":200,"runtime":"RUNNING","sdk":"gradio","embedStatus":200,"xfo":"","subdomain":"black-forest-labs-flux-1-schnell"},"Wan-AI/Wan2.2-5B":{"api":401,"embedStatus":404,"xfo":"","subdomain":null},"Wan-AI/Wan2.1":{"api":200,"runtime":"RUNTIME_ERROR","sdk":"gradio","embedStatus":503,"xfo":"","subdomain":"wan-ai-wan2-1"},"stabilityai/stable-diffusion-3.5-large":{"api":200,"runtime":"RUNNING","sdk":"gradio","embedStatus":200,"xfo":"","subdomain":"stabilityai-stable-diffusion-3-5-large"},"multimodalart/FLUX.1-merged":{"api":200,"runtime":"RUNNING","sdk":"gradio","embedStatus":200,"xfo":"","subdomain":"multimodalart-flux-1-merged"}}
