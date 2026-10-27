@@ -110,7 +110,8 @@
 @media (max-width: 640px) {
   .pro { grid-template-columns: auto minmax(0, 1fr); }
   .proForm { grid-column: 1 / -1; }
-  .proInput { flex: 1; width: auto; }
+  .proInput { flex: 1; width: auto; min-width: 0; }
+  .proForm > button { flex: none; }
 }
 
 /* ===== شريط الموديلات في الرئيسية والشات ===== */
