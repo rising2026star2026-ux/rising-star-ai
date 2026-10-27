@@ -3,7 +3,8 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { tools, categories, getTool } from "@/lib/tools";
+import { tools, categories, getTool as getAnyTool, isListed } from "@/lib/tools";
+const getTool = (id) => (isListed(id) ? getAnyTool(id) : undefined);
 import { findTools } from "@/lib/search";
 import { MODEL_OPTIONS, getModel, DEFAULT_MODEL_KEY } from "@/lib/models";
 import { useStored, write, PENDING_KEY } from "@/lib/store";
@@ -24,7 +25,7 @@ import s from "./home.module.css";
 const SHORTCUTS = ["article", "post", "translate", "cv", "product-desc", "code-gen", "summarize", "email-writer"];
 
 // شريط الموديلات (زي Poe)
-const HOME_APPS = ["chatgpt", "midjourney", "runway", "suno", "perplexity", "capcut", "kling", "elevenlabs", "ideogram", "notebooklm"]
+const HOME_APPS = ["chatgpt", "claude", "gemini", "canva", "capcut", "midjourney", "kling", "suno", "elevenlabs", "perplexity"]
   .map((k) => APPS.find((a) => a.key === `app-${k}`))
   .filter(Boolean);
 const HOME_BOTS = ["claude-opus", "gpt-astra", "gemini-pro", "grok", "claude-sonnet", "kimi", "gpt-oss-120b", "llama-70b", "search-fast", "deepseek"]
@@ -40,7 +41,7 @@ const IDEAS = [
   { tool: "cv", text: "سيرة ذاتية لمحاسب خبرة 3 سنين في شركة مقاولات" },
   { tool: "study-plan", text: "خطة مذاكرة لأسبوعين قبل امتحان الفيزياء" },
   { tool: "business-plan", text: "مشروع كافيه صغير جنب جامعة بميزانية 300 ألف جنيه" },
-  { tool: "meal-plan", text: "منيو أسبوع لعيلة من 4 أفراد، ويومين سمك" },
+  { tool: "travel-plan", text: "رحلة 4 أيام في إسكندرية لعيلة من 4 أفراد بميزانية 8 آلاف جنيه" },
   { tool: "image-prompt", text: "فنجان قهوة عربي على ترابيزة خشب جنب شباك الصبح" },
   { tool: "adspy", text: "إعلان منافس: عطر فرنسي أصلي بـ 450 جنيه بدل 900، الكمية محدودة والدفع عند الاستلام" },
 ];
@@ -266,10 +267,10 @@ export default function Home() {
         </div>
         <div className={ms.strip}>
           {HOME_APPS.map((b) => (
-            <a key={b.key} href={b.url} target="_blank" rel="noopener noreferrer" className={ms.stripItem} title={b.desc}>
+            <Link key={b.key} href={b.href} className={ms.stripItem} title={b.desc}>
               <BotIcon bot={b} size={44} />
               <span dir="auto">{b.name}</span>
-            </a>
+            </Link>
           ))}
         </div>
       </section>

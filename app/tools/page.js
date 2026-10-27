@@ -2,10 +2,12 @@ import { Suspense } from "react";
 import { tools, categories } from "@/lib/tools";
 import { CatalogFromUrl, CatalogStatic } from "@/components/Catalog";
 import ExternalLinks from "@/components/ExternalLinks";
+import ProgramsGrid from "@/components/ProgramsGrid";
+import { APPS } from "@/lib/apps";
 
 export const metadata = {
   title: "كل الأدوات",
-  description: `${tools.length} أداة ذكاء اصطناعي بالعربي في ${categories.length} مجال: كتابة، تسويق، سوشيال ميديا، تعليم، ترجمة، برمجة، وظائف، وأكتر.`,
+  description: `${tools.length} أداة ذكاء اصطناعي بالعربي و${APPS.length} برنامج عالمي بشرح عربي: ChatGPT وClaude وCanva وCapCut وMidjourney وغيرهم.`,
   alternates: { canonical: "/tools" },
 };
 
@@ -13,7 +15,9 @@ export default function ToolsPage() {
   return (
     <>
       <h1 className="page-title">كل الأدوات</h1>
-      <p className="page-sub">{tools.length} أداة في {categories.length} مجال. اختار المجال أو دوّر بالاسم.</p>
+      <p className="page-sub">{tools.length} أداة بالعربي جوه الموقع، و{APPS.length} برنامج عالمي بصفحات عربي.</p>
+      <ProgramsGrid />
+      <h2 className="page-title" style={{ fontSize: "1.25rem", paddingTop: 30 }}>أدوات الموقع</h2>
       <Suspense fallback={<CatalogStatic />}>
         <CatalogFromUrl />
       </Suspense>

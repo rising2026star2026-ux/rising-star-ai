@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { getTool } from "@/lib/tools";
+import { getTool, isListed } from "@/lib/tools";
 import { useStored } from "@/lib/store";
 import ToolIcon from "@/components/ToolIcon";
 
@@ -24,7 +24,7 @@ export default function History() {
             if (!tool) return null;
             return (
               <div key={h.id} className="history-item">
-                <Link href={`/tool/${h.toolId}?h=${h.id}`} className="history-main">
+                <Link href={isListed(h.toolId) ? `/tool/${h.toolId}?h=${h.id}` : "/tools"} className="history-main">
                   <ToolIcon tool={tool} size="sm" />
                   <span>
                     <b>{tool.name}</b>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { tools, getTool, getCategory } from "@/lib/tools";
+import { tools, getTool, getCategory, isListed } from "@/lib/tools";
 import { getContent } from "@/lib/content";
 import { SITE_URL, BRAND } from "@/lib/site";
 import ToolRunner from "@/components/ToolRunner";
@@ -24,7 +24,7 @@ function seoDescription(tool, content) {
 
 export async function generateMetadata({ params }) {
   const { id } = await params;
-  const t = getTool(id);
+  const t = isListed(id) ? getTool(id) : null;
   if (!t) return {};
   const description = seoDescription(t, getContent(id));
   const title = t.local ? `${t.name} أونلاين` : `${t.name} بالذكاء الاصطناعي`;
@@ -78,7 +78,7 @@ function jsonLd(tool, cat, content) {
 
 export default async function ToolPage({ params }) {
   const { id } = await params;
-  const tool = getTool(id);
+  const tool = isListed(id) ? getTool(id) : null;
   if (!tool) notFound();
   const cat = getCategory(tool.cat);
   const content = getContent(tool.id);

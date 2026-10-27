@@ -5,7 +5,7 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getFlow, fillStep } from "@/lib/flows";
-import { getTool } from "@/lib/tools";
+import { getTool, isListed } from "@/lib/tools";
 import { DEFAULT_SETTINGS } from "@/lib/settings";
 import { read, toast } from "@/lib/store";
 import ToolIcon from "./ToolIcon";
@@ -167,9 +167,11 @@ export default function FlowRunner({ flowId }) {
                   {state.text && <button className="btn ghost" onClick={() => copy(state.text)}>نسخ</button>}
                   {state.status !== "done" && <button className="btn ghost" onClick={() => run(i)}>كمّل من هنا</button>}
                   {state.status === "done" && <button className="btn ghost" onClick={() => run(i)}>أعد الخطوة دي واللي بعدها</button>}
-                  <Link className="btn ghost" href={`/tool/${st.tool}?q=${encodeURIComponent(fillStep(st.input, input, steps.map((x) => x.text)).slice(0, 1500))}`}>
-                    افتحها في الأداة
-                  </Link>
+                  {isListed(st.tool) && (
+                    <Link className="btn ghost" href={`/tool/${st.tool}?q=${encodeURIComponent(fillStep(st.input, input, steps.map((x) => x.text)).slice(0, 1500))}`}>
+                      افتحها في الأداة
+                    </Link>
+                  )}
                 </div>
               )}
             </li>

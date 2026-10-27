@@ -1,4 +1,5 @@
 import { tools } from "@/lib/tools";
+import { APPS } from "@/lib/apps";
 import { FLOWS } from "@/lib/flows";
 import { SITE_URL } from "@/lib/site";
 
@@ -15,6 +16,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/scam-check`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/flows`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     ...FLOWS.map((f) => ({ url: `${SITE_URL}/flow/${f.id}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),
+    ...APPS.map((a) => ({ url: `${SITE_URL}/program/${a.slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),
     ...tools.map((t) => ({ url: `${SITE_URL}/tool/${t.id}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),
   ];
 }
