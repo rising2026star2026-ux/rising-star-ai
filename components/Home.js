@@ -16,6 +16,7 @@ import ExternalLinks from "./ExternalLinks";
 import FlowCards from "./FlowCards";
 import BotIcon from "./BotIcon";
 import StarMark from "./StarMark";
+import ScrollBands from "./ScrollBands";
 import { BOTS } from "@/lib/bots";
 import { APPS } from "@/lib/apps";
 import ms from "./models.module.css";
@@ -99,11 +100,19 @@ export default function Home() {
   }
 
   return (
-    <div className={s.screen}>
+    <div className={s.page}>
+      <ScrollBands />
+
+      {/* ============ القسم الأول: أصفر ============ */}
+      <section className={`${s.band} ${s.yellow}`} data-band-sec="yellow">
+        <i className={`${s.blob} ${s.by1}`} data-blob="0.1" aria-hidden="true" />
+        <i className={`${s.blob} ${s.by2}`} data-blob="0.2" aria-hidden="true" />
+        <i className={`${s.blob} ${s.by3}`} data-blob="0.06" aria-hidden="true" />
+        <div className={s.in}>
       {/* ===== الاسم ===== */}
       <div className={s.brand}>
-        <span className={s.mark}><StarMark size={46} /></span>
-        <h1>مساحة العمل</h1>
+        <span className={s.mark}><StarMark size={64} /></span>
+        <h1 dir="ltr"><span>Rising</span>{" "}<span>Star<em>Ai</em></span></h1>
         <p>{tools.length} أداة ذكاء اصطناعي بالعربي، وإجابة واحدة من 4 نماذج قوية</p>
       </div>
 
@@ -236,6 +245,14 @@ export default function Home() {
         </div>
       </section>
 
+        </div>
+      </section>
+
+      {/* ============ القسم التاني: أزرق ============ */}
+      <section className={`${s.band} ${s.blue}`} data-band-sec="blue">
+        <i className={`${s.blob} ${s.bb1}`} data-blob="0.14" aria-hidden="true" />
+        <i className={`${s.blob} ${s.bb2}`} data-blob="0.08" aria-hidden="true" />
+        <div className={s.in}>
       {/* ===== المهام الكاملة ===== */}
       <section className={s.cats}>
         <div className={s.catsHead}>
@@ -275,6 +292,14 @@ export default function Home() {
         </div>
       </section>
 
+        </div>
+      </section>
+
+      {/* ============ القسم التالت: أبيض ============ */}
+      <section className={`${s.band} ${s.white}`} data-band-sec="white">
+        <i className={`${s.blob} ${s.bw1}`} data-blob="0.1" aria-hidden="true" />
+        <i className={`${s.blob} ${s.bw2}`} data-blob="0.18" aria-hidden="true" />
+        <div className={s.in}>
       <section className={s.cats}>
         <div className={s.catsHead}>
           <span>استوديو التصميم: زي أدوبي، وصورك ما بتطلعش من جهازك</span>
@@ -305,6 +330,8 @@ export default function Home() {
 
       {/* ===== مواقع خارجية ===== */}
       <ExternalLinks />
+        </div>
+      </section>
 
       {/* ===== ورقة اختيار الموديل ===== */}
       {sheet && (

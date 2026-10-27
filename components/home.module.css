@@ -8,13 +8,15 @@
 }
 
 /* ===== الاسم ===== */
-.brand { text-align: center; padding: 34px 0 24px; }
-.mark { display: inline-grid; place-items: center; filter: drop-shadow(0 8px 18px rgba(245, 158, 11, 0.35)); }
+.brand { text-align: center; padding: 26px 0 26px; }
+.mark { display: inline-grid; place-items: center; filter: drop-shadow(0 10px 22px rgba(255, 140, 0, 0.55)); }
 .brand h1 {
-  margin: 10px 0 6px; font-size: clamp(1.6rem, 5vw, 2.2rem); font-weight: 500; color: var(--text-strong);
-  letter-spacing: -0.025em; line-height: 1.3;
+  margin: 6px 0 14px; font-family: var(--display); font-weight: 900; color: var(--ink);
+  font-size: clamp(4.4rem, 23vw, 9.8rem); letter-spacing: -0.055em; line-height: 0.86;
 }
-.brand p { margin: 0; color: var(--muted); font-size: 0.9rem; font-weight: 300; }
+.brand h1 span { display: block; }
+.brand h1 em { font-style: normal; color: var(--blue); }
+.brand p { margin: 0 auto; max-width: 30em; color: var(--ink); font-size: 1.02rem; font-weight: 700; line-height: 1.7; }
 
 /* ===== صندوق السؤال ===== */
 .composer {
@@ -204,8 +206,8 @@
 
 /* ===== الموبايل ===== */
 @media (max-width: 560px) {
-  .brand { padding: 30px 0 22px; }
-  .mark svg { width: 40px; height: 40px; }
+  .brand { padding: 18px 0 22px; }
+  .mark svg { width: 56px; height: 56px; }
   .grid { gap: 4px 2px; }
   .tile { padding: 10px 2px; }
   .tileName { font-size: 0.7rem; }
@@ -241,3 +243,87 @@
 :global(html:not(.no-intro)) .brand > :nth-child(3) { animation-delay: 2.36s; }
 :global(html:not(.no-intro)) .composer { animation-delay: 2.44s; }
 @keyframes rise-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+
+/* ================== الأقسام الملونة (أصفر / أزرق / أبيض) ================== */
+.page { display: block; margin-bottom: -64px; }
+@media (max-width: 879px) { .page { margin-bottom: -100px; } }
+
+/* القسم بياخد عرض الشاشة كله (من غير اللوحة الجانبية) */
+.band {
+  position: relative; overflow: hidden; isolation: isolate;
+  width: calc(100vw - var(--side-w, 0px));
+  margin-inline: calc(50% - 50vw + var(--side-w, 0px) / 2);
+  padding-block: 40px 70px;
+  transition: background-color 0.5s var(--ease);
+}
+.in { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; padding-inline: 16px; }
+
+/* بقع الألوان الناعمة (زي Myndlab) */
+.blob { position: absolute; z-index: 0; border-radius: 50%; pointer-events: none; will-change: transform; }
+
+/* --- الأصفر --- */
+.yellow { background: var(--yellow); padding-top: 26px; padding-bottom: 90px; z-index: 1;
+  --muted: rgba(11, 11, 20, 0.76); --faint: rgba(11, 11, 20, 0.58);
+  --hairline: rgba(11, 11, 20, 0.16); --hairline-strong: rgba(11, 11, 20, 0.3);
+  --surface: rgba(255, 255, 255, 0.62); --surface-2: rgba(255, 255, 255, 0.8);
+}
+.by1 { width: 520px; height: 520px; top: -160px; inset-inline-end: -140px; background: radial-gradient(circle, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0) 68%); }
+.by2 { width: 640px; height: 640px; bottom: -260px; inset-inline-start: -200px; background: radial-gradient(circle, rgba(255, 120, 0, 0.55), rgba(255, 120, 0, 0) 66%); }
+.by3 { width: 520px; height: 520px; bottom: -220px; inset-inline-end: -180px; background: radial-gradient(circle, rgba(31, 77, 255, 0.5), rgba(25, 198, 255, 0.2) 45%, rgba(31, 77, 255, 0) 70%); }
+
+/* --- الأزرق --- */
+.blue {
+  z-index: 2; margin-top: -40px; padding-top: 70px; border-radius: 40px 40px 0 0;
+  background: linear-gradient(180deg, #2a5bff 0%, #1f4dff 45%, #0a26d6 100%); color: #fff;
+  --text: #fff; --text-strong: #fff; --muted: rgba(255, 255, 255, 0.88); --faint: rgba(255, 255, 255, 0.7);
+  --hairline: rgba(255, 255, 255, 0.28); --hairline-strong: rgba(255, 255, 255, 0.5);
+  --surface: rgba(255, 255, 255, 0.14); --surface-2: rgba(255, 255, 255, 0.22);
+  --accent: #ffd21f; --accent-line: rgba(255, 210, 31, 0.6); --accent-soft: rgba(255, 210, 31, 0.2);
+}
+.bb1 { width: 560px; height: 560px; top: -200px; inset-inline-start: -160px; background: radial-gradient(circle, rgba(25, 198, 255, 0.7), rgba(25, 198, 255, 0) 66%); }
+.bb2 { width: 520px; height: 520px; bottom: -220px; inset-inline-end: -150px; background: radial-gradient(circle, rgba(255, 210, 31, 0.5), rgba(255, 210, 31, 0) 66%); }
+
+/* --- الأبيض --- */
+.white { z-index: 3; margin-top: -40px; padding-top: 70px; border-radius: 40px 40px 0 0; background: #fff; box-shadow: 0 -18px 50px -30px rgba(10, 38, 214, 0.5);
+  --muted: #4a5163; --faint: #7a8294;
+}
+.bw1 { width: 520px; height: 520px; top: -190px; inset-inline-end: -170px; background: radial-gradient(circle, rgba(255, 210, 31, 0.4), rgba(255, 210, 31, 0) 66%); }
+.bw2 { width: 560px; height: 560px; bottom: 120px; inset-inline-start: -220px; background: radial-gradient(circle, rgba(31, 77, 255, 0.16), rgba(31, 77, 255, 0) 66%); }
+
+/* عناوين الأقسام: كبيرة وعريضة */
+.catsHead { margin-bottom: 14px; align-items: center; }
+.catsHead span { font-family: var(--display); font-size: clamp(1.15rem, 4.6vw, 1.55rem); font-weight: 800; letter-spacing: -0.02em; color: var(--text-strong); line-height: 1.35; }
+.allLink { font-weight: 700; font-size: 0.82rem; padding: 5px 13px; border-radius: 999px; background: var(--ink); color: var(--yellow); }
+.blue .allLink { background: var(--yellow); color: var(--ink); }
+.cats { margin-top: 38px; }
+.in > .cats:first-child, .in > section:first-child { margin-top: 0; }
+
+/* الأول: كارت السؤال أبيض بظل أزرق، والأزرار الأساسية زرقا */
+.composer { border: 1.5px solid rgba(11, 11, 20, 0.12); border-radius: 28px; box-shadow: 0 28px 60px -24px rgba(10, 38, 214, 0.55), 0 4px 12px rgba(11, 11, 20, 0.06); }
+.composer textarea { color: var(--ink); }
+.sendBtn { background: var(--blue); box-shadow: 0 12px 26px -10px var(--blue); width: 42px; height: 42px; }
+.modelBtn { background: var(--ink); color: #fff; border-color: var(--ink); }
+.modelBtn svg { color: rgba(255, 255, 255, 0.7); }
+.modelBtn b { font-weight: 700; }
+.webOn, .webOn:hover { background: var(--yellow); color: var(--ink); border-color: var(--yellow-deep); }
+.badge { background: var(--blue); color: #fff; }
+.suggestHead, .gridWrap { color: var(--ink); }
+.suggestHead > span { font-weight: 800; font-size: 0.95rem; color: var(--ink); }
+.suggestCard { border-color: rgba(11, 11, 20, 0.1); }
+.suggestCard:hover { border-color: var(--blue); }
+.tile { background: rgba(255, 255, 255, 0.6); border-radius: 18px; padding: 12px 2px 10px; }
+.tile:hover { background: #fff; }
+.tileName { color: var(--ink); font-weight: 600; }
+.grid { gap: 8px 6px; }
+
+/* بقية الأقسام */
+.blue .catChip, .white .catChip { font-weight: 600; color: var(--text); }
+.white .catChip { background: #fff; border-color: rgba(11, 11, 20, 0.12); }
+.white .catChip:hover { border-color: var(--blue); }
+
+@media (max-width: 560px) {
+  .band { padding-block: 28px 60px; }
+  .yellow { padding-top: 14px; padding-bottom: 80px; }
+  .blue, .white { border-radius: 30px 30px 0 0; margin-top: -34px; padding-top: 60px; }
+}
