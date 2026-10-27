@@ -2,6 +2,8 @@ import { tools } from "@/lib/tools";
 import { APPS } from "@/lib/apps";
 import { FLOWS } from "@/lib/flows";
 import { SITE_URL } from "@/lib/site";
+import { CREATORS } from "@/lib/creators";
+import { DIR_CATEGORIES, DIR_TOOLS } from "@/lib/directory";
 
 // خريطة الموقع لجوجل: الرئيسية والصفحات الأساسية وكل الأدوات
 export default function sitemap() {
@@ -15,6 +17,11 @@ export default function sitemap() {
     { url: `${SITE_URL}/subscriptions/calculator`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/scam-check`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/flows`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/creators`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    ...CREATORS.map((c) => ({ url: `${SITE_URL}/creators/${c.slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.6 })),
+    { url: `${SITE_URL}/global-tools`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    ...DIR_CATEGORIES.map((c) => ({ url: `${SITE_URL}/global-tools/${c.id}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 })),
+    ...DIR_TOOLS.map((t) => ({ url: `${SITE_URL}/ai/${t.slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.6 })),
     ...FLOWS.map((f) => ({ url: `${SITE_URL}/flow/${f.id}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),
     ...APPS.map((a) => ({ url: `${SITE_URL}/program/${a.slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),
     ...tools.map((t) => ({ url: `${SITE_URL}/tool/${t.id}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),

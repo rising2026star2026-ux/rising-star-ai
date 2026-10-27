@@ -1,0 +1,42 @@
+# دليل «أدوات عالمية»: بيجمع الأدوات ويكتب صفحاتها بالعربي ويحفظها في الريبو (وVercel بينشر لوحده)
+# التشغيل: GitHub → Actions → build-directory → Run workflow
+name: build-directory
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "عدد الأدوات الجديدة في التشغيلة دي"
+        default: "300"
+      refresh_seeds:
+        description: "اعمل قايمة الأدوات من الأول؟ (yes/no)"
+        default: "no"
+permissions:
+  contents: write
+concurrency:
+  group: build-directory
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 345
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm i --no-save --no-audit --no-fund cheerio@1.0.0 sharp@0.33.5
+      - name: seeds
+        run: |
+          if [ "${{ inputs.refresh_seeds }}" = "yes" ] || [ ! -f data/directory/seeds.json ]; then node scripts/directory/seeds.mjs; fi
+      - name: build
+        run: node scripts/directory/build.mjs --limit "${{ inputs.limit }}" --minutes 320
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      - name: commit
+        if: always()
+        run: |
+          git config user.name "rising-star-bot" && git config user.email "bot@users.noreply.github.com"
+          git add data/directory public/dir-logos
+          git commit -m "directory: update tools" || exit 0
+          git pull --rebase -q origin main && git push
