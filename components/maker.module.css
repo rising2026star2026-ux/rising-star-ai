@@ -1,0 +1,44 @@
+/* صانع الصور والفيديو */
+.sec { margin-top: 26px; }
+.sec h2 { font-family: var(--display); font-size: clamp(1.2rem, 4.6vw, 1.6rem); font-weight: 800; letter-spacing: -0.02em; color: var(--ink); margin: 0 0 4px; }
+.sec p { margin: 0 0 12px; color: var(--muted); font-size: 0.88rem; }
+.featured {
+  position: relative; overflow: hidden; display: flex; gap: 14px; align-items: center; padding: 18px; border-radius: 24px; margin: 6px 0 4px;
+  background: linear-gradient(135deg, #2a5bff, #0a26d6); color: #fff; box-shadow: 0 24px 50px -26px rgba(10, 38, 214, 0.7);
+}
+.featured::after { content: ""; position: absolute; width: 260px; height: 260px; inset-inline-start: -90px; bottom: -130px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 210, 31, 0.6), transparent 66%); pointer-events: none; }
+.featured > * { position: relative; z-index: 1; }
+.featured b { display: block; font-family: var(--display); font-weight: 800; font-size: 1.15rem; }
+.featured small { display: block; opacity: 0.88; font-size: 0.86rem; line-height: 1.6; margin-top: 2px; }
+.featured .go { flex: none; margin-inline-start: auto; background: var(--yellow); color: var(--ink); font-weight: 800; padding: 9px 18px; border-radius: 999px; font-size: 0.88rem; }
+
+.how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 16px 0 4px; }
+.how div { padding: 12px; border-radius: 16px; background: var(--card); border: 1.5px solid rgba(11, 11, 20, 0.08); font-size: 0.8rem; line-height: 1.6; color: var(--muted); text-align: center; }
+.how b { display: block; color: var(--ink); font-size: 0.86rem; margin-bottom: 2px; }
+@media (max-width: 560px) { .how { grid-template-columns: 1fr; } }
+
+/* صندوق الوصف والترجمة */
+.studio { border-radius: 24px; background: var(--card); border: 1.5px solid rgba(11, 11, 20, 0.1); box-shadow: var(--shadow-lift); padding: 16px; margin: 0 0 14px; }
+.studio h2 { margin: 0 0 4px; font-size: 1.05rem; font-weight: 800; color: var(--ink); }
+.studio > p { margin: 0 0 10px; color: var(--muted); font-size: 0.86rem; }
+.studio textarea {
+  width: 100%; min-height: 92px; resize: vertical; font: inherit; font-size: 0.96rem; line-height: 1.7; color: var(--ink);
+  background: var(--field); border: 1.5px solid rgba(11, 11, 20, 0.1); border-radius: 16px; padding: 12px 14px; outline: none;
+}
+.studio textarea:focus { border-color: var(--blue); }
+.row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; align-items: center; }
+.btn { font: inherit; font-weight: 800; font-size: 0.9rem; cursor: pointer; padding: 10px 20px; border-radius: 999px; border: 1.5px solid rgba(11, 11, 20, 0.14); background: var(--card); color: var(--ink); transition: transform .18s var(--ease), opacity .2s; }
+.btn:hover:not(:disabled) { transform: translateY(-1px); }
+.btn:disabled { opacity: 0.45; cursor: default; }
+.btn.main { background: var(--blue); color: #fff; border-color: var(--blue); box-shadow: 0 12px 24px -14px var(--blue); }
+.btn.yellow { background: var(--yellow); border-color: var(--yellow-deep); }
+.en { margin-top: 10px; padding: 12px 14px; border-radius: 16px; background: var(--accent-soft); direction: ltr; text-align: left; font-size: 0.92rem; line-height: 1.7; color: var(--ink); white-space: pre-wrap; }
+.err { color: var(--danger); font-size: 0.86rem; margin-top: 8px; }
+.result { margin-top: 12px; border-radius: 18px; overflow: hidden; background: var(--surface-2); min-height: 120px; display: grid; place-items: center; }
+.result img { display: block; width: 100%; height: auto; }
+.wait { padding: 30px; color: var(--muted); font-size: 0.9rem; }
+.frameBox { border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(11, 11, 20, 0.1); margin: 0 0 14px; background: #fff; }
+.frameBox iframe { display: block; width: 100%; height: 640px; border: 0; }
+.frameNote { padding: 10px 14px; font-size: 0.8rem; color: var(--muted); background: var(--surface-2); }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+.pill { padding: 6px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; background: var(--card); border: 1.5px solid rgba(11, 11, 20, 0.1); color: var(--ink); }
