@@ -1,22 +1,23 @@
 {
- "updated": "2026-10-27T20:30:25.811Z",
+ "updated": "2026-10-27T20:33:26.352Z",
  "feeds": {
   "openai": "ok 71",
-  "apple": "ok 10",
+  "deepmind": "ok 10",
   "techcrunch": "ok 20",
+  "verge": "ok 10",
+  "apple": "ok 10",
   "nvidia": "ok 18",
-  "venturebeat": "FAIL HTTP 429",
   "huggingface": "ok 26",
   "aws": "ok 20",
-  "microsoft": "FAIL HTTP 410",
-  "verge": "ok 10",
-  "deepmind": "ok 10",
-  "meta": "FAIL HTTP 400",
+  "meta": "ok 9",
   "marktechpost": "ok 10",
+  "google-research": "ok 12",
   "google-ai": "ok 6",
   "arstechnica": "ok 20",
   "techwd": "ok 3",
-  "aitnews": "ok 6"
+  "aitnews": "ok 6",
+  "microsoft": "ok 10",
+  "venturebeat": "FAIL HTTP 429"
  },
  "items": [
   {
@@ -72,6 +73,16 @@
    "date": "2026-10-27T18:03:12.000Z",
    "src": "Amazon AWS",
    "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "91ab09be6954",
+   "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+   "title": "The sleep framework: A new way for LLMs to retain knowledge in continual learning",
+   "date": "2026-10-27T17:35:00.000Z",
+   "src": "Google Research",
+   "srcId": "google-research",
    "kind": "company",
    "ar": null
   },
@@ -206,6 +217,16 @@
    "src": "Ars Technica",
    "srcId": "arstechnica",
    "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "e32b804ef046",
+   "url": "https://engineering.fb.com/2026/10/27/security/privacylib/",
+   "title": "PrivacyLib: Privacy Controls at the Data Access Boundary",
+   "date": "2026-10-27T16:00:12.000Z",
+   "src": "Meta Engineering",
+   "srcId": "meta",
+   "kind": "company",
    "ar": null
   },
   {
@@ -571,6 +592,16 @@
    "ar": null
   },
   {
+   "id": "ff1684dfffde",
+   "url": "https://engineering.fb.com/2026/10/26/open-source/ocp-summit-2026-meta-networking-talks/",
+   "title": "Meta Networking at the 2026 OCP Global Summit: Open Innovation for Scale-Up, Scale-Out, and Scale-Across AI Networks",
+   "date": "2026-10-26T16:00:07.000Z",
+   "src": "Meta Engineering",
+   "srcId": "meta",
+   "kind": "company",
+   "ar": null
+  },
+  {
    "id": "be77c96c39b4",
    "url": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/",
    "title": "Our newest AI Quest: Mapping the human brain",
@@ -827,6 +858,16 @@
    }
   },
   {
+   "id": "3c115b0c264d",
+   "url": "https://research.google/blog/bringing-foundational-models-to-the-front-lines-of-tb-screening/",
+   "title": "Bringing foundational models to the front lines of TB screening",
+   "date": "2026-10-23T18:51:33.000Z",
+   "src": "Google Research",
+   "srcId": "google-research",
+   "kind": "company",
+   "ar": null
+  },
+  {
    "id": "bc7694eb1503",
    "url": "https://aws.amazon.com/blogs/machine-learning/multi-turn-reinforcement-learning-on-amazon-sagemaker-ai-a-hands-on-guide/",
    "title": "Multi-Turn Reinforcement Learning on Amazon SageMaker AI: A hands-on guide",
@@ -1033,6 +1074,16 @@
    "date": "2026-10-22T16:25:57.000Z",
    "src": "Amazon AWS",
    "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "ef05d9c57c78",
+   "url": "https://www.microsoft.com/en-us/research/blog/flint-interactive-a-language-for-creating-interactive-data-visualizations/",
+   "title": "Flint-interactive: A language for creating interactive data visualizations",
+   "date": "2026-10-22T16:00:00.000Z",
+   "src": "Microsoft Research",
+   "srcId": "microsoft",
    "kind": "company",
    "ar": null
   },
@@ -1247,12 +1298,32 @@
    "ar": null
   },
   {
+   "id": "2de1f3f85cd4",
+   "url": "https://research.google/blog/empowering-frontline-maternal-care-with-ai-assisted-ultrasound/",
+   "title": "Empowering frontline maternal care with AI-assisted ultrasound",
+   "date": "2026-10-21T16:23:53.000Z",
+   "src": "Google Research",
+   "srcId": "google-research",
+   "kind": "company",
+   "ar": null
+  },
+  {
    "id": "f9b499debdda",
    "url": "https://huggingface.co/blog/amazon/profiling-torchneuron-part-1",
    "title": "Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.",
    "date": "2026-10-21T16:04:43.000Z",
    "src": "Hugging Face",
    "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "2ed826e28d23",
+   "url": "https://www.microsoft.com/en-us/research/blog/solving-a-31-year-old-grand-challenge-in-mathematics-the-kls-conjecture/",
+   "title": "Solving a 31-year-old grand challenge in mathematics – the KLS conjecture",
+   "date": "2026-10-21T16:00:00.000Z",
+   "src": "Microsoft Research",
+   "srcId": "microsoft",
    "kind": "company",
    "ar": null
   },
@@ -1477,6 +1548,16 @@
    "ar": null
   },
   {
+   "id": "c84a57a97fd6",
+   "url": "https://www.microsoft.com/en-us/research/podcast/called-to-serve-tech-research-and-positive-impact-with-chris-white/",
+   "title": "Called to serve: Tech, research, and positive impact",
+   "date": "2026-10-20T16:00:00.000Z",
+   "src": "Microsoft Research",
+   "srcId": "microsoft",
+   "kind": "company",
+   "ar": null
+  },
+  {
    "id": "fb9936745ef9",
    "url": "https://arstechnica.com/security/2026/10/meta-muse-exposes-users-personal-and-business-secrets-when-they-share-conversations/",
    "title": "Meta Muse exposes users' personal and business secrets when they share conversations",
@@ -1567,6 +1648,36 @@
    "ar": null
   },
   {
+   "id": "5bcc766ce19d",
+   "url": "https://engineering.fb.com/2026/10/19/ml-applications/genrecs-tokenization-transforming-ads-recommendation-at-meta-with-stable-model-vocabulary/",
+   "title": "GenRecs Tokenization: Transforming Ads Recommendation at Meta with Stable Model Vocabulary",
+   "date": "2026-10-19T16:00:47.000Z",
+   "src": "Meta Engineering",
+   "srcId": "meta",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "5641e45c2126",
+   "url": "https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/",
+   "title": "The Thin Orchestrator: How We Made Our AI Agents More Reliable by Giving the Router Less to Do",
+   "date": "2026-10-19T15:30:37.000Z",
+   "src": "Meta Engineering",
+   "srcId": "meta",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "ad0fcca57292",
+   "url": "https://engineering.fb.com/2026/10/19/data-center-engineering/inside-prometheus-meta-gigawatt-scale-supercluster/",
+   "title": "Inside Prometheus: Meta’s Journey to a Gigawatt-Scale Supercluster",
+   "date": "2026-10-19T13:00:10.000Z",
+   "src": "Meta Engineering",
+   "srcId": "meta",
+   "kind": "company",
+   "ar": null
+  },
+  {
    "id": "7a364f356aab",
    "url": "https://openai.com/index/low-resource-programming-languages",
    "title": "Advancing coding in low‑resource programming languages",
@@ -1593,6 +1704,16 @@
    "date": "2026-10-16T19:00:00.000Z",
    "src": "OpenAI",
    "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "83945f3b589d",
+   "url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+   "title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
+   "date": "2026-10-16T18:11:34.000Z",
+   "src": "Google Research",
+   "srcId": "google-research",
    "kind": "company",
    "ar": null
   },
@@ -1627,6 +1748,16 @@
    "ar": null
   },
   {
+   "id": "adb6c89c63b3",
+   "url": "https://engineering.fb.com/2026/10/15/ml-applications/how-meta-built-forum-ai-native-engineering/",
+   "title": "How Meta Built Forum With AI-Native Engineering",
+   "date": "2026-10-15T19:00:03.000Z",
+   "src": "Meta Engineering",
+   "srcId": "meta",
+   "kind": "company",
+   "ar": null
+  },
+  {
    "id": "a72d1e4da6b0",
    "url": "https://openai.com/index/introducing-the-rosalind-academic-plan",
    "title": "Bringing GPT-Rosalind to academic research labs",
@@ -1643,6 +1774,16 @@
    "date": "2026-10-15T16:08:03.000Z",
    "src": "Google DeepMind",
    "srcId": "deepmind",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "4069e5410c3e",
+   "url": "https://www.microsoft.com/en-us/research/blog/proof-based-general-purpose-computing-with-magnetar/",
+   "title": "Proof-based general-purpose computing with Magnetar",
+   "date": "2026-10-15T16:00:00.000Z",
+   "src": "Microsoft Research",
+   "srcId": "microsoft",
    "kind": "company",
    "ar": null
   },
@@ -1723,6 +1864,36 @@
    "date": "2026-10-15T00:00:00.000Z",
    "src": "Hugging Face",
    "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "93dc9e9d57ba",
+   "url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/",
+   "title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
+   "date": "2026-10-14T16:14:00.000Z",
+   "src": "Google Research",
+   "srcId": "google-research",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "e5f78e0104d8",
+   "url": "https://research.google/blog/analyzing-technical-documents-with-deep-review/",
+   "title": "Analyzing technical documents with Deep Review",
+   "date": "2026-10-14T16:14:00.000Z",
+   "src": "Google Research",
+   "srcId": "google-research",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "19f3965005eb",
+   "url": "https://research.google/blog/research-2026-10-ways-were-amplifying-human-ingenuity/",
+   "title": "Research@ 2026: 10 ways we're amplifying human ingenuity",
+   "date": "2026-10-14T16:14:00.000Z",
+   "src": "Google Research",
+   "srcId": "google-research",
    "kind": "company",
    "ar": null
   },
@@ -1847,6 +2018,16 @@
    "ar": null
   },
   {
+   "id": "f98cf0a4ecaa",
+   "url": "https://engineering.fb.com/2026/10/13/ml-applications/generative-ads-model-gem-scaling-frontier-ads-ai/",
+   "title": "Meta’s Generative Ads Model (GEM): Scaling the Central Model and Compute Engine for Frontier Ads AI",
+   "date": "2026-10-13T16:01:00.000Z",
+   "src": "Meta Engineering",
+   "srcId": "meta",
+   "kind": "company",
+   "ar": null
+  },
+  {
    "id": "c1e94fc83136",
    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
    "title": "Gemini 4 Argon: Built to solve your hardest problems",
@@ -1873,6 +2054,36 @@
    "date": "2026-10-13T00:00:00.000Z",
    "src": "Apple ML",
    "srcId": "apple",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "9dd69dee0c0d",
+   "url": "https://engineering.fb.com/2026/10/12/open-source/ocp-summit-2026-powering-ai-with-open-innovations-in-scale-up-scale-out-and-scale-across-networks/",
+   "title": "OCP Summit 2026: Powering AI with Open Innovations in Scale-Up, Scale-Out, and Scale-Across Networks",
+   "date": "2026-10-12T21:19:18.000Z",
+   "src": "Meta Engineering",
+   "srcId": "meta",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "edc939989dc9",
+   "url": "https://engineering.fb.com/2026/10/12/ml-applications/turning-opportunistic-ai-inference-capacity-into-better-ads-recommendations/",
+   "title": "Turning Opportunistic AI Inference Capacity Into Better Ads Recommendations",
+   "date": "2026-10-12T16:00:50.000Z",
+   "src": "Meta Engineering",
+   "srcId": "meta",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "5d83dba89b9f",
+   "url": "https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/",
+   "title": "Simulating student learning for better AI tutoring",
+   "date": "2026-10-12T16:00:00.000Z",
+   "src": "Microsoft Research",
+   "srcId": "microsoft",
    "kind": "company",
    "ar": null
   },
@@ -1977,6 +2188,26 @@
    "ar": null
   },
   {
+   "id": "fc6c16485847",
+   "url": "https://research.google/blog/does-better-work-always-mean-better-workers/",
+   "title": "Does better work always mean better workers?",
+   "date": "2026-10-07T20:19:57.000Z",
+   "src": "Google Research",
+   "srcId": "google-research",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "565e240356c9",
+   "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+   "title": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses",
+   "date": "2026-10-07T16:00:00.000Z",
+   "src": "Microsoft Research",
+   "srcId": "microsoft",
+   "kind": "company",
+   "ar": null
+  },
+  {
    "id": "91ed3eb235f3",
    "url": "https://huggingface.co/blog/tiiuae/falcon-asr",
    "title": "Introducing Falcon ASR",
@@ -2037,12 +2268,32 @@
    "ar": null
   },
   {
+   "id": "242f2e4b6328",
+   "url": "https://www.microsoft.com/en-us/research/podcast/what-ai-gets-wrong-and-what-failure-teaches-us/",
+   "title": "What AI gets wrong and what failure teaches us",
+   "date": "2026-10-06T16:19:06.000Z",
+   "src": "Microsoft Research",
+   "srcId": "microsoft",
+   "kind": "company",
+   "ar": null
+  },
+  {
    "id": "60ef2af305e7",
    "url": "https://openai.com/index/atlassian-partnership",
    "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
    "date": "2026-10-06T16:00:00.000Z",
    "src": "OpenAI",
    "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "0ec0c3cc2f3e",
+   "url": "https://research.google/blog/earth-ais-planetary-geospatial-foundation-models-for-global-public-health/",
+   "title": "Unlocking Earth AI’s planetary geospatial foundation models for global public health",
+   "date": "2026-10-06T15:05:11.000Z",
+   "src": "Google Research",
+   "srcId": "google-research",
    "kind": "company",
    "ar": null
   },
@@ -2073,6 +2324,16 @@
    "date": "2026-10-06T10:00:00.000Z",
    "src": "OpenAI",
    "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "c3d66983a8dc",
+   "url": "https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/",
+   "title": "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle",
+   "date": "2026-10-05T21:08:00.000Z",
+   "src": "Google Research",
+   "srcId": "google-research",
    "kind": "company",
    "ar": null
   },
@@ -2123,6 +2384,16 @@
    "date": "2026-10-02T15:00:00.000Z",
    "src": "Google AI",
    "srcId": "google-ai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "b9b18411de99",
+   "url": "https://research.google/blog/toward-provably-private-learning-from-federated-data/",
+   "title": "Toward provably private learning from federated data",
+   "date": "2026-10-02T14:57:41.000Z",
+   "src": "Google Research",
+   "srcId": "google-research",
    "kind": "company",
    "ar": null
   },
@@ -2187,6 +2458,16 @@
    "ar": null
   },
   {
+   "id": "b3162152f353",
+   "url": "https://www.microsoft.com/en-us/research/blog/forecasting-space-weather-risks-on-power-grids/",
+   "title": "Forecasting space weather risks on power grids",
+   "date": "2026-09-30T16:00:00.000Z",
+   "src": "Microsoft Research",
+   "srcId": "microsoft",
+   "kind": "company",
+   "ar": null
+  },
+  {
    "id": "0a622a33b8e3",
    "url": "https://deepmind.google/blog/introducing-synthid-bio/",
    "title": "Introducing SynthID Bio",
@@ -2227,12 +2508,32 @@
    "ar": null
   },
   {
+   "id": "105e76d8cdee",
+   "url": "https://research.google/blog/how-diffusion-controller-unifies-and-simplifies-ai-image-generation/",
+   "title": "How Diffusion Controller unifies and simplifies AI image generation",
+   "date": "2026-09-29T18:38:27.000Z",
+   "src": "Google Research",
+   "srcId": "google-research",
+   "kind": "company",
+   "ar": null
+  },
+  {
    "id": "dd66acaed2a0",
    "url": "https://openai.com/index/introducing-gpt-6-1-sol",
    "title": "Introducing GPT-6.1 Sol",
    "date": "2026-09-29T17:00:00.000Z",
    "src": "OpenAI",
    "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "53ae606fecda",
+   "url": "https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/",
+   "title": "Introducing Quine: An AI research system designed for the complexity of biology",
+   "date": "2026-09-29T14:00:02.000Z",
+   "src": "Microsoft Research",
+   "srcId": "microsoft",
    "kind": "company",
    "ar": null
   },
@@ -2263,6 +2564,16 @@
    "date": "2026-09-29T00:00:00.000Z",
    "src": "OpenAI",
    "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "3c2fdddd3946",
+   "url": "https://www.microsoft.com/en-us/research/blog/one-year-in-how-microsoft-research-asia-singapore-is-advancing-research-partnership-and-talent-for-real-world-impact/",
+   "title": "One year in: How Microsoft Research Asia – Singapore is advancing research, partnership and talent for real-world impact",
+   "date": "2026-09-28T21:00:00.000Z",
+   "src": "Microsoft Research",
+   "srcId": "microsoft",
    "kind": "company",
    "ar": null
   },
