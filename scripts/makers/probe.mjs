@@ -8,7 +8,7 @@ import { MAKERS } from "./list.mjs";
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
 const get = async (u, ms = 20000, init = {}) => {
   const c = new AbortController(); const t = setTimeout(() => c.abort(), ms);
-  try { return await fetch(u, { headers: { "user-agent": UA, accept: "text/html,*/*" }, redirect: "follow", signal: c.signal, ...init }); } finally { clearTimeout(t); }
+  try { return await fetch(u, { headers: { "user-agent": UA, accept: "text/html,*/*" }, redirect: "follow", signal: c.signal, ...init }); } finally { setTimeout(() => clearTimeout(t), ms); }
 };
 fs.mkdirSync("public/maker-logos", { recursive: true });
 fs.mkdirSync("data", { recursive: true });
@@ -39,8 +39,9 @@ async function logo(url, slug, html, finalUrl) {
   return null;
 }
 
+setTimeout(() => { fs.writeFileSync('data/makers-probe.json', JSON.stringify({ at: new Date().toISOString(), partial: true, tools: out }, null, 1)); process.exit(0); }, 12 * 60 * 1000).unref?.();
 const out = [];
-for (const [slug, name, kind, url] of MAKERS) {
+async function one([slug, name, kind, url]) {
   const row = { slug, name, kind, url, status: null, embed: "unknown", xfo: "", csp: "", logo: null, finalUrl: url, title: "" };
   try {
     const r = await get(url);
@@ -58,6 +59,7 @@ for (const [slug, name, kind, url] of MAKERS) {
   console.log(`${row.embed.padEnd(8)} ${String(row.status).padEnd(4)} ${slug.padEnd(20)} xfo=${row.xfo || "-"} ${row.csp ? "csp=" + row.csp.slice(0, 50) : ""} logo=${row.logo ? "y" : "n"}`);
   out.push(row);
 }
+const Q = [...MAKERS]; await Promise.all(Array.from({ length: 8 }, async () => { while (Q.length) await Promise.race([one(Q.shift()), new Promise((r) => setTimeout(r, 60000))]); }));
 
 // Pollinations: صورة حقيقية؟
 const poll = {};
