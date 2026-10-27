@@ -30,8 +30,9 @@ const tools = readJson(OUT, []);
 const failed = readJson(FAILED, {});
 const doneHosts = new Set(tools.map((t) => t.host));
 const slugs = new Set(tools.map((t) => t.slug));
+const names = new Set(tools.map((t) => t.name.toLowerCase()));
 const CAT_IDS = DIR_CATEGORIES.map((c) => c.id);
-const UA = "Mozilla/5.0 (compatible; RisingStarAiBot/1.0; +https://rising-star-ai.vercel.app)";
+const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
 const today = new Date().toISOString().slice(0, 10);
 
 function save() {
@@ -60,8 +61,19 @@ function pageText($) {
   return [...new Set(parts)].join("\n");
 }
 
+// لو الموقع قافل على الزيارات الآلية: نقرا النص من خدمة r.jina.ai (بتجيب نص الصفحة العام)
+async function crawlReader(seed) {
+  const r = await get(`https://r.jina.ai/${seed.url}`, 30000);
+  if (!r.ok) throw new Error(`reader ${r.status}`);
+  const txt = (await r.text()).slice(0, 6000);
+  const title = (txt.match(/^Title: (.*)$/m) || [])[1] || "";
+  return { url: seed.url, title, description: "", siteName: "", icons: [], text: txt };
+}
+
 async function crawl(seed) {
-  const r = await get(seed.url);
+  let r;
+  try { r = await get(seed.url); } catch { return crawlReader(seed); }
+  if (r.status === 403 || r.status === 429 || r.status === 503) return crawlReader(seed);
   if (!r.ok) throw new Error(`HTTP ${r.status}`);
   const finalUrl = r.url;
   const html = await r.text();
@@ -202,6 +214,8 @@ async function one(seed) {
   if (!CAT_IDS.includes(ar.category)) ar.category = "lifestyle";
   if (!arOk(ar.summary) || !arOk(ar.intro)) throw new Error("weak content");
   const name = (ar.name || seed.name).trim().slice(0, 60);
+  if (names.has(name.toLowerCase())) throw new Error("duplicate");
+  names.add(name.toLowerCase());
   const slug = slugify(name, seed.host);
   const type = ["free", "freemium", "trial", "paid", "unknown"].includes(ar.pricing?.type) ? ar.pricing.type : "unknown";
   const plans = type === "unknown" ? [] : (ar.pricing?.plans || []).filter((p) => p && p.name).slice(0, 6).map((p) => ({ name: String(p.name).slice(0, 40), price: String(p.price || "").slice(0, 40), note: String(p.note || "").slice(0, 160) }));
