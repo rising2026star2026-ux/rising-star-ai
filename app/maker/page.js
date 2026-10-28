@@ -18,11 +18,19 @@ export default function MakerHub() {
         {MAKER_LIST.length} أداة مجانية أو فيها جزء مجاني. اكتب فكرتك بالعربي وإحنا نترجمها لوصف إنجليزي تفهمه الأدوات، وبعدين افتح الأداة اللي تعجبك.
       </p>
 
-      <Link href="/maker/pollinations" className={s.featured}>
+      <Link href="/maker/create" className={s.featured}>
         <span style={{ fontSize: "2rem" }} aria-hidden="true">🎨</span>
         <span>
-          <b>ولّد صورة دلوقتي جوه الموقع</b>
-          <small>اكتب بالعربي وطلّع الصورة هنا من غير تسجيل ولا مغادرة الصفحة.</small>
+          <b>ولّد صورة بموديل Flux جوه الموقع</b>
+          <small>اكتب بالعربي أو بالعامية، وطلّع الصورة هنا من غير تسجيل ولا مغادرة الصفحة.</small>
+        </span>
+        <span className={s.go}>جرّب</span>
+      </Link>
+      <Link href="/tool/remove-bg" className={s.featured} style={{ background: "linear-gradient(135deg, #14141f, #2c2c44)" }}>
+        <span style={{ fontSize: "2rem" }} aria-hidden="true">✂️</span>
+        <span>
+          <b>شيل خلفية أي صورة بالذكاء الاصطناعي</b>
+          <small>أشخاص، منتجات، أي خلفية. بيشتغل على جهازك وصورك ما بتترفعش لأي حتة.</small>
         </span>
         <span className={s.go}>جرّب</span>
       </Link>

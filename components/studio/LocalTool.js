@@ -1,13 +1,26 @@
 "use client";
 // بيختار أداة الاستوديو المناسبة. كل أداة بتتحمل لوحدها عشان الصفحة تفضل خفيفة.
+import { useState } from "react";
 import dynamic from "next/dynamic";
-import { Busy } from "./ui";
+import { Busy, Seg } from "./ui";
 
 const loading = () => <Busy text="بيجهز الأداة..." />;
 
 const PhotoEditor = dynamic(() => import("./PhotoEditor"), { ssr: false, loading });
 const Poster = dynamic(() => import("./Poster"), { ssr: false, loading });
-const RemoveBg = dynamic(() => import("./RemoveBg"), { ssr: false, loading });
+const RemoveBgColor = dynamic(() => import("./RemoveBg"), { ssr: false, loading });
+const AiRemoveBg = dynamic(() => import("./AiRemoveBg"), { ssr: false, loading });
+
+// إزالة الخلفية: بالذكاء الاصطناعي (أي صورة) أو بلون الخلفية (أسرع، للخلفيات السادة)
+function RemoveBg() {
+  const [how, setHow] = useState("ai");
+  return (
+    <>
+      <Seg value={how} options={[["ai", "بالذكاء الاصطناعي (أي صورة)"], ["color", "بلون الخلفية (خلفية سادة)"]]} onChange={setHow} />
+      {how === "ai" ? <AiRemoveBg /> : <RemoveBgColor />}
+    </>
+  );
+}
 const Resize = dynamic(() => import("./Resize"), { ssr: false, loading });
 const Batch = dynamic(() => import("./Batch"), { ssr: false, loading });
 const Watermark = dynamic(() => import("./Watermark"), { ssr: false, loading });

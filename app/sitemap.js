@@ -19,6 +19,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/scam-check`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/flows`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/maker`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${SITE_URL}/maker/create`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     ...MAKER_LIST.map((m) => ({ url: `${SITE_URL}/maker/${m.slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),
     { url: `${SITE_URL}/learn`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/news`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
