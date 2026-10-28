@@ -1,25 +1,65 @@
 {
- "updated": "2026-10-27T22:12:27.777Z",
+ "updated": "2026-10-28T02:00:46.066Z",
  "feeds": {
-  "openai": "ok 71",
-  "meta": "ok 9",
+  "openai": "ok 72",
   "apple": "ok 10",
-  "nvidia": "ok 18",
+  "meta": "ok 9",
   "techcrunch": "ok 20",
-  "huggingface": "ok 26",
-  "google-research": "ok 12",
-  "aws": "ok 20",
+  "huggingface": "ok 25",
+  "nvidia": "ok 18",
   "verge": "ok 10",
+  "aws": "ok 20",
+  "google-research": "ok 12",
   "deepmind": "ok 10",
   "marktechpost": "ok 10",
   "google-ai": "ok 6",
-  "techwd": "ok 3",
   "arstechnica": "ok 20",
+  "techwd": "ok 3",
   "aitnews": "ok 6",
   "microsoft": "ok 10",
   "venturebeat": "FAIL HTTP 429"
  },
  "items": [
+  {
+   "id": "0a7119608b55",
+   "url": "https://techcrunch.com/2026/10/27/vcs-will-make-billions-on-anthropics-ipo-but-amazon-is-set-to-make-much-much-more/",
+   "title": "VCs will make billions on Anthropic’s IPO, but Amazon is set to make much (much) more",
+   "date": "2026-10-28T01:15:28.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "6210b5315dda",
+   "url": "https://techcrunch.com/2026/10/27/parents-sue-openai-alleging-gpt-4o-coached-their-daughter-off-seizure-medication/",
+   "title": "Parents sue OpenAI, alleging GPT-4o coached their daughter off seizure medication",
+   "date": "2026-10-27T23:34:27.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "1f592db8b086",
+   "url": "https://techcrunch.com/2026/10/27/the-data-center-boom-has-an-upside-innovation-for-the-us-grid/",
+   "title": "The data center boom has an upside: innovation for the US grid",
+   "date": "2026-10-27T22:55:41.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "538a3b89665c",
+   "url": "https://www.marktechpost.com/2026/10/27/leann-vector-index-mlsys-2026/",
+   "title": "Meet LEANN: An Open-Source Vector Index that Shrinks a 60M-Chunk RAG Index from 201 GB to 6 GB",
+   "date": "2026-10-27T21:54:37.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
   {
    "id": "6849d36ab61f",
    "url": "https://arstechnica.com/tech-policy/2026/10/no-human-at-the-helm-delaware-plan-would-let-ai-agents-run-entire-businesses/",
@@ -347,6 +387,16 @@
    "ar": null
   },
   {
+   "id": "d42fb1eb3362",
+   "url": "https://openai.com/index/retell-ai",
+   "title": "Retell uses OpenAI models to help power 100M monthly calls",
+   "date": "2026-10-27T15:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
    "id": "122f4e228239",
    "url": "https://techcrunch.com/2026/10/27/meta-ai-director-rohit-patel-leaves-to-take-on-microsoft-office-and-google-workspace/",
    "title": "Meta AI director Rohit Patel leaves to take on Microsoft Office and Google Workspace",
@@ -387,7 +437,10 @@
    "src": "TechCrunch",
    "srcId": "techcrunch",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "شركة GMO اليابانية تتأكد من سرقة بيانات العملاء",
+    "summary": "GMO Internet في اليابان بتتحقق من صحة البيانات اللي نشرها الهاكرز بعد اختراق سحابي للمنصة."
+   }
   },
   {
    "id": "c3f55709f5e3",
@@ -397,7 +450,10 @@
    "src": "TechCrunch",
    "srcId": "techcrunch",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Opera تطلق معيار WebAI لتشغيل الذكاء داخل المتصفح",
+    "summary": "Opera أطلقت معيار ويب جديد اسمه WebAI يخلّي المستخدمين يشغّلوا نماذج الذكاء الاصطناعي مباشرة في المتصفح."
+   }
   },
   {
    "id": "a878112837ec",
@@ -407,7 +463,10 @@
    "src": "TechCrunch",
    "srcId": "techcrunch",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "General Compute تجمع 100 مليون دولار لسلسلة A",
+    "summary": "General Compute جمعت 100 مليون دولار في جولة تمويل السلسلة A، وبتستثمر في شرائح استدلال من غير Nvidia لتحدي فكرة فشل السحابة الجديدة."
+   }
   },
   {
    "id": "016fe7e918e7",
@@ -417,7 +476,10 @@
    "src": "MarkTechPost",
    "srcId": "marktechpost",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Mirendil تطلق Fern 0.1 بسياق 10M توكن",
+    "summary": "Mirendil أطلقت نموذج Fern 0.1، أول نموذج ليهم، مدرب من الصفر وبيدعم نافذة سياق 10 مليون توكن، بيستهدف أبحاث الذكاء الوكيل وبيحقق 100% في اختبار RULER على 10M، لكنه لسه متأخر عن النماذج المتقدمة في البرمجة الوكيلة."
+   }
   },
   {
    "id": "415aa97d276f",
@@ -427,7 +489,10 @@
    "src": "The Verge",
    "srcId": "verge",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "الاعتراض على مراكز البيانات يجمع الناخبين في أمريكا",
+    "summary": "بناء مراكز البيانات الضخمة بيخلق احتجاج واسع في الولايات المتحدة، وبيخلّي الموضوع يدخل على الساحة السياسية في 2026."
+   }
   },
   {
    "id": "b007bafd9ff1",
@@ -437,7 +502,10 @@
    "src": "TechCrunch",
    "srcId": "techcrunch",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Nvidia تدعم Simplismart لتقليل عدد الـ GPUs",
+    "summary": "Nvidia بتدعم الشركة الهندية Simplismart اللي بتساعد الشركات تشغّل نماذج الذكاء الاصطناعي باستخدام عدد أقل من وحدات معالجة الرسوميات، وإيراداتها السنوية زادت 14 مرة في ست شهور."
+   }
   },
   {
    "id": "a3a879144b29",
@@ -447,7 +515,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "OpenAI وOracle يوسّعون شراكة لتضم تطبيقات في ChatGPT",
+    "summary": "OpenAI وOracle وسّعوا شراكتهم لتضم تطبيقات الأعمال ووكلاء الذكاء الاصطناعي داخل ChatGPT، وكمان يدعموا منتجات Oracle الجديدة."
+   }
   },
   {
    "id": "765ebcaca332",
@@ -457,7 +528,10 @@
    "src": "MarkTechPost",
    "srcId": "marktechpost",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "vLLM يطلق d3-ultra نموذج متعدد الوسائط 27B",
+    "summary": "vLLM Semantic Router أطلقت نموذج d3-ultra بوزن 27 مليار بارامتر، يقدر يقرأ نصوص وصور وفيديو مرة واحدة ويرجع احتمالات لكل إجابة، وسجل 87.2 في اختبار SR-Text."
+   }
   },
   {
    "id": "5c1b76973ac2",
@@ -1832,6 +1906,26 @@
    "ar": null
   },
   {
+   "id": "1d7d75b47c31",
+   "url": "https://openai.com/index/grupo-boticario",
+   "title": "How Grupo Boticário uses AI to strengthen human connections",
+   "date": "2026-10-16T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "827221925d8d",
+   "url": "https://openai.com/index/localiza-generative-ai",
+   "title": "How Localiza reorganized work around generative AI",
+   "date": "2026-10-16T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
    "id": "adb6c89c63b3",
    "url": "https://engineering.fb.com/2026/10/15/ml-applications/how-meta-built-forum-ai-native-engineering/",
    "title": "How Meta Built Forum With AI-Native Engineering",
@@ -2708,36 +2802,6 @@
    "date": "2026-09-28T07:00:00.000Z",
    "src": "OpenAI",
    "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "914f14710638",
-   "url": "https://openai.com/form/codex-originals",
-   "title": "Are you a Codex Original?",
-   "date": "2026-09-28T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "bf0fe8cc388a",
-   "url": "https://openai.com/index/basis-tax-workbook-with-astra",
-   "title": "Basis completes a tax workbook 2x faster with GPT-6 Astra",
-   "date": "2026-09-28T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "a30a6af008de",
-   "url": "https://huggingface.co/blog/rl-environments",
-   "title": "Welcome RL Environments to the hub",
-   "date": "2026-09-28T00:00:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
    "kind": "company",
    "ar": null
   }
