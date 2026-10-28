@@ -136,6 +136,7 @@
 }
 .md code { direction: ltr; unicode-bidi: embed; font-size: 0.87em; }
 .md a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.md img { display: block; max-width: 100%; width: 100%; max-width: 420px; border-radius: 16px; margin: 6px 0; background: var(--surface); }
 
 .actions { display: flex; gap: 7px; margin-top: 12px; flex-wrap: wrap; }
 .ghost {
