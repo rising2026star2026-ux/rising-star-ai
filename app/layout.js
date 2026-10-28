@@ -20,7 +20,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#050510",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
         {/* الخط: IBM Plex Sans Arabic. لو غيرته، غيّر --ui في globals.css كمان */}
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Alexandria:wght@600;700;800;900&family=Archivo:wght@700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
         />
       </head>
       <body>

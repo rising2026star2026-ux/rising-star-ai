@@ -568,25 +568,46 @@ html.no-intro .intro { display: none; }
 @media (prefers-reduced-motion: reduce) { .intro { display: none; } }
 
 /* ==================================================================
-   هوية Myndlab: ألوان مشبعة (أصفر + أزرق)، خط عريض ضخم، تدرجات ناعمة،
-   وأقسام لونية بتتغير بالتمرير لفوق وتحت (الرئيسية).
+   ليل ونهار: إطار ليلي ثابت (الشريط العلوي واللوحة الجانبية)، ومحتوى أبيض ناصع.
+   الرئيسية بتبدأ بسما ليل والنجمة طالعة من أفق أزرق.
    ================================================================== */
-body { overflow-x: clip; }
-body::before {
-  content: ""; position: absolute; inset: 0 0 auto 0; height: 560px; z-index: 0; pointer-events: none;
-  background:
-    radial-gradient(48% 70% at 4% 0%, rgba(255, 210, 31, 0.6), transparent 72%),
-    radial-gradient(44% 64% at 98% 6%, rgba(31, 77, 255, 0.3), transparent 72%),
-    radial-gradient(36% 50% at 55% 0%, rgba(25, 198, 255, 0.18), transparent 70%);
+:root {
+  --night: #050510;
+  --night-2: #0e1026;
+  --night-3: #161a3a;
+  --blue-bright: #3d6bff;
+  --ink: #050510;
+  --text: #050510;
+  --text-strong: #050510;
+  --muted: #4a5063;
+  --faint: #7a8093;
+  --hairline: rgba(5, 5, 16, 0.09);
+  --hairline-strong: rgba(5, 5, 16, 0.2);
+  --surface-2: #f3f4f8;
+  --field: #f6f7fa;
+  --shadow-soft: none;
+  --shadow-lift: 0 24px 50px -28px rgba(5, 5, 16, 0.4);
+  --display: "Alexandria", "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+  --wordmark: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+html { background: var(--night); }
+body { overflow-x: clip; background: #fff; }
+
+/* ألوان أي مساحة ليلية (بتتورّث لكل اللي جواها) */
+.on-night, .topbar, .side, .footer {
+  --text: #fff; --text-strong: #fff;
+  --muted: rgba(255, 255, 255, 0.72); --faint: rgba(255, 255, 255, 0.5);
+  --hairline: rgba(255, 255, 255, 0.1); --hairline-strong: rgba(255, 255, 255, 0.22);
+  --surface: rgba(255, 255, 255, 0.06); --surface-2: rgba(255, 255, 255, 0.1);
+  --card: var(--night-2); --field: rgba(255, 255, 255, 0.06);
+  --accent: #ffd21f; --accent-soft: rgba(255, 210, 31, 0.14); --accent-line: rgba(255, 210, 31, 0.5); --on-accent: #050510;
+  color: var(--text);
 }
 
-/* الاسم: كبير وعريض */
+/* الاسم */
 .logo { gap: 11px; }
-.logo-star { filter: drop-shadow(0 4px 10px rgba(255, 180, 0, 0.55)); }
-.logo-name {
-  font-family: var(--display); font-size: 2.05rem; font-weight: 900; letter-spacing: -0.045em;
-  color: var(--ink); line-height: 1;
-}
+.logo-star { filter: drop-shadow(0 0 14px rgba(255, 196, 0, 0.55)); }
+.logo-name { font-family: var(--wordmark); font-size: 2.05rem; font-weight: 900; letter-spacing: -0.045em; color: #fff; line-height: 1; }
 .logo-name b { font-weight: 900; }
 .side-head .logo-name { font-size: 1.85rem; }
 @media (max-width: 560px) {
@@ -596,34 +617,59 @@ body::before {
 }
 @media (max-width: 380px) { .logo-name { font-size: 1.42rem; } }
 
-/* الشريط العلوي بياخد لون القسم اللي واقف عليه */
-.topbar { transition: background-color 0.45s var(--ease), border-color 0.45s var(--ease); }
-html[data-band="yellow"] .topbar { background: rgba(255, 210, 31, 0.94); border-bottom-color: rgba(11, 11, 20, 0.12); }
-html[data-band="blue"] .topbar {
-  background: rgba(31, 77, 255, 0.95); border-bottom-color: rgba(255, 255, 255, 0.2);
-  --text: #fff; --text-strong: #fff; --muted: rgba(255, 255, 255, 0.86); --faint: rgba(255, 255, 255, 0.66);
-  --surface: rgba(255, 255, 255, 0.14); --surface-2: rgba(255, 255, 255, 0.2); --hairline: rgba(255, 255, 255, 0.3); --hairline-strong: rgba(255, 255, 255, 0.5);
-  --accent: #ffd21f; --accent-soft: rgba(255, 210, 31, 0.2); --accent-line: rgba(255, 210, 31, 0.6);
-}
-html[data-band="blue"] .topbar .logo-name { color: #fff; }
-html[data-band="yellow"] .topbar { --muted: rgba(11, 11, 20, 0.74); --faint: rgba(11, 11, 20, 0.56); --surface: rgba(255, 255, 255, 0.55); --hairline: rgba(11, 11, 20, 0.16); }
-html[data-band="yellow"] .topbar .upgrade-pill { background: var(--ink); color: var(--yellow); border-color: transparent; }
+/* الشريط العلوي: ليل دايماً */
+.topbar { background: rgba(5, 5, 16, 0.92); border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+.icon-btn:hover { background: rgba(255, 255, 255, 0.08); border-color: transparent; }
+.search-btn { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.1); }
+.search-btn:hover { border-color: rgba(255, 255, 255, 0.28); }
+.upgrade-pill { color: var(--ink); background: var(--yellow); border-color: var(--yellow); font-weight: 700; }
 
-/* عناوين الصفحات: ضخمة وعريضة */
-.page-title { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 7.5vw, 3.6rem); letter-spacing: -0.035em; line-height: 1.12; color: var(--ink); }
-.page-sub { font-weight: 500; color: var(--muted); }
-.tool-head h1 { font-family: var(--display); font-weight: 800; letter-spacing: -0.03em; }
-.shelf h2, .related h2 { font-weight: 700; color: var(--ink); font-size: 1.05rem; }
+/* اللوحة الجانبية: ليل */
+.side { background: var(--night); border-inline-end: 1px solid rgba(255, 255, 255, 0.06); }
+.side-new { background: var(--yellow); color: var(--ink); font-weight: 700; box-shadow: 0 10px 26px -12px rgba(255, 196, 0, 0.7); }
+.side-new:hover { box-shadow: 0 14px 30px -12px rgba(255, 196, 0, 0.85); }
+.side-link { color: rgba(255, 255, 255, 0.7); }
+.side-link:hover { background: rgba(255, 255, 255, 0.07); color: #fff; }
+.side-link.on { background: rgba(255, 210, 31, 0.12); color: var(--yellow); font-weight: 600; }
+.side-sec { color: rgba(255, 255, 255, 0.42); }
+.side-foot { border-top-color: rgba(255, 255, 255, 0.08); }
 
-/* أزرار وكروت بألوان أقوى */
-.btn { background: var(--blue); box-shadow: 0 14px 30px -14px var(--blue); font-weight: 700; }
-.chip.active { background: var(--blue); color: #fff; border-color: var(--blue); }
-.card { border-color: rgba(11, 11, 20, 0.1); }
-.card:hover { border-color: var(--blue); }
-.upgrade-pill { color: #fff; background: var(--blue); border-color: var(--blue); font-weight: 700; }
-.plan.best { border-color: var(--blue); }
-.plan .tag { background: var(--yellow); color: var(--ink); font-weight: 700; }
+/* العناوين بخط إسكندرية (Alexandria). العربي من غير تباعد حروف عشان الحروف ما تتفكش */
+h1, h2, h3 { font-family: var(--display); letter-spacing: 0; }
+.page-title { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 7vw, 3.3rem); letter-spacing: 0; line-height: 1.2; color: var(--ink); padding-top: 30px; }
+.page-sub { font-weight: 500; color: var(--muted); font-size: 0.98rem; }
+.tool-head h1 { font-family: var(--display); font-weight: 800; letter-spacing: 0; }
+.shelf h2, .related h2 { font-family: var(--display); font-weight: 700; color: var(--text-strong); font-size: 1.08rem; }
+
+/* الكروت: حدود حبر واضحة بدل الظل الباهت */
+.card { border: 1.5px solid rgba(5, 5, 16, 0.12); box-shadow: none; border-radius: 16px; }
+.card:hover { border-color: var(--ink); transform: none; box-shadow: none; }
+.card h3 { font-weight: 600; }
+.shelf-item, .chip, .filter, .guide-uses li, .guide-faq details, .history-item { border-width: 1.5px; }
+.shelf-item:hover { border-color: var(--ink); transform: none; }
+.chip.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.composer, .result { border: 1.5px solid rgba(5, 5, 16, 0.14); box-shadow: none; }
+.result { border-top: 3px solid var(--blue); }
 .ticon { border-width: 1.5px; }
+
+/* الأزرار */
+.btn { background: var(--blue); color: #fff; box-shadow: 0 14px 30px -16px var(--blue); font-weight: 700; }
+.btn.ghost { background: #fff; color: var(--ink); border: 1.5px solid rgba(5, 5, 16, 0.16); font-weight: 600; box-shadow: none; }
+.btn.ghost:hover { border-color: var(--ink); }
+.btn.stop { background: var(--ink); color: #fff; }
+
+/* الباقات */
+.plan { border: 1.5px solid rgba(5, 5, 16, 0.12); box-shadow: none; }
+.plan.best { background: var(--night); color: #fff; border-color: var(--night);
+  --text: #fff; --muted: rgba(255, 255, 255, 0.72); --accent: var(--yellow); }
+.plan .tag { background: var(--yellow); color: var(--ink); font-weight: 700; }
+
+/* الفوتر: ليل بعرض الشاشة كلها */
+.footer { border-top: 0; color: rgba(255, 255, 255, 0.55); background: var(--night);
+  box-shadow: 0 0 0 100vmax var(--night); clip-path: inset(0 -100vmax); }
+
+/* الشاشة الافتتاحية: سما ليل */
+.intro { background: radial-gradient(70% 55% at 50% 42%, #161a3a 0%, #050510 72%); }
 
 /* فولدرين مميزين في الشريط الجانبي: تعلّم (أزرق) وجديد الذكاء الاصطناعي (برتقالي) */
 .side-link.tone-learn, .side-link.tone-news { font-weight: 700; margin-block: 2px; }

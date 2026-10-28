@@ -1,17 +1,12 @@
 "use client";
-// أقسام الرئيسية الملونة (أصفر / أزرق / أبيض): بنعرف القسم اللي واقف عليه المستخدم
-// (لما يمرر لتحت أو لفوق) فنغير لون الشريط العلوي ولون شريط الموبايل، ونحرك البقع الملونة بنعومة.
+// أقسام الرئيسية (ليل / نهار): بنسجّل القسم اللي واقف عليه المستخدم في html[data-band]
+// عشان أي عنصر يقدر يتلوّن على حسبه. الشريط العلوي ولون شريط المتصفح ثابتين على الليل.
 import { useEffect } from "react";
-
-const COLORS = { yellow: "#ffd21f", blue: "#1f4dff", white: "#ffffff" };
 
 export default function ScrollBands() {
   useEffect(() => {
     const html = document.documentElement;
     const bands = Array.from(document.querySelectorAll("[data-band-sec]"));
-    const blobs = Array.from(document.querySelectorAll("[data-blob]"));
-    const meta = document.querySelector('meta[name="theme-color"]');
-    const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let cur = "";
     let raf = 0;
 
@@ -25,14 +20,6 @@ export default function ScrollBands() {
       if (active && active !== cur) {
         cur = active;
         html.dataset.band = active;
-        if (meta) meta.setAttribute("content", COLORS[active] || "#ffffff");
-      }
-      if (!calm) {
-        for (const el of blobs) {
-          const top = el.parentElement.getBoundingClientRect().top;
-          const f = parseFloat(el.dataset.blob) || 0.1;
-          el.style.transform = `translate3d(0, ${(-top * f).toFixed(1)}px, 0)`;
-        }
       }
     };
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(run); };
@@ -45,7 +32,6 @@ export default function ScrollBands() {
       window.removeEventListener("resize", onScroll);
       if (raf) cancelAnimationFrame(raf);
       delete html.dataset.band;
-      if (meta) meta.setAttribute("content", "#ffffff");
     };
   }, []);
   return null;

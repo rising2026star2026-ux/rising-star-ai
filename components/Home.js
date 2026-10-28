@@ -103,16 +103,15 @@ export default function Home() {
     <div className={s.page}>
       <ScrollBands />
 
-      {/* ============ القسم الأول: أصفر ============ */}
-      <section className={`${s.band} ${s.yellow}`} data-band-sec="yellow">
-        <i className={`${s.blob} ${s.by1}`} data-blob="0.1" aria-hidden="true" />
-        <i className={`${s.blob} ${s.by2}`} data-blob="0.2" aria-hidden="true" />
-        <i className={`${s.blob} ${s.by3}`} data-blob="0.06" aria-hidden="true" />
+      {/* ============ القسم الأول: سما ليل والنجمة طالعة ============ */}
+      <section className={`${s.band} ${s.night} ${s.hero} on-night`} data-band-sec="night">
+        <i className={s.starfield} aria-hidden="true" />
+        <i className={s.horizon} aria-hidden="true" />
         <div className={s.in}>
       {/* ===== الاسم ===== */}
       <div className={s.brand}>
         <span className={s.mark}><StarMark size={64} /></span>
-        <h1 dir="ltr"><span>Rising</span>{" "}<span>Star<em>Ai</em></span></h1>
+        <h1 dir="ltr"><span>Rising</span>{" "}<span>StarAi</span></h1>
         <p>{tools.length} أداة ذكاء اصطناعي بالعربي، وإجابة واحدة من 4 نماذج قوية</p>
       </div>
 
@@ -248,24 +247,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ القسم التاني: أزرق ============ */}
-      <section className={`${s.band} ${s.blue}`} data-band-sec="blue">
-        <i className={`${s.blob} ${s.bb1}`} data-blob="0.14" aria-hidden="true" />
-        <i className={`${s.blob} ${s.bb2}`} data-blob="0.08" aria-hidden="true" />
+      {/* ============ القسم التاني: نهار ============ */}
+      <section className={`${s.band} ${s.white}`} data-band-sec="white">
         <div className={s.in}>
       {/* ===== المهام الكاملة ===== */}
       <section className={s.cats}>
         <div className={s.catsHead}>
           <span>مهام كاملة: اكتب سطر وخد شغل كامل</span>
-          <Link href="/flows" className={s.allLink}>كل المهام ←</Link>
+          <Link href="/flows" className={s.allLink}>كل المهام</Link>
         </div>
         <FlowCards row />
       </section>
 
       <section className={s.cats}>
         <div className={s.catsHead}>
+          <span>استوديو التصميم: زي أدوبي، وصورك ما بتطلعش من جهازك</span>
+          <Link href="/tools?cat=studio" className={s.allLink}>كل أدوات الاستوديو</Link>
+        </div>
+        <Row ids={STUDIO} />
+      </section>
+
+      <Row title="المفضلة" ids={favs} />
+      <Row title="استخدمتها مؤخراً" ids={recent} />
+
+        </div>
+      </section>
+
+      {/* ============ القسم التالت: ليل، الموديلات زي كوكبة نجوم ============ */}
+      <section className={`${s.band} ${s.night} ${s.sky} on-night`} data-band-sec="night">
+        <i className={s.starfield} aria-hidden="true" />
+        <div className={s.in}>
+      <section className={s.cats}>
+        <div className={s.catsHead}>
           <span>اتكلم مع أقوى موديلات العالم</span>
-          <Link href="/models" className={s.allLink}>كل الموديلات ←</Link>
+          <Link href="/models" className={s.allLink}>كل الموديلات</Link>
         </div>
         <div className={ms.strip}>
           {HOME_BOTS.map((b) => (
@@ -280,7 +295,7 @@ export default function Home() {
       <section className={s.cats}>
         <div className={s.catsHead}>
           <span>أشهر برامج الذكاء الاصطناعي</span>
-          <Link href="/models" className={s.allLink}>كل البرامج ←</Link>
+          <Link href="/models" className={s.allLink}>كل البرامج</Link>
         </div>
         <div className={ms.strip}>
           {HOME_APPS.map((b) => (
@@ -295,27 +310,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ القسم التالت: أبيض ============ */}
+      {/* ============ القسم الرابع: نهار ============ */}
       <section className={`${s.band} ${s.white}`} data-band-sec="white">
-        <i className={`${s.blob} ${s.bw1}`} data-blob="0.1" aria-hidden="true" />
-        <i className={`${s.blob} ${s.bw2}`} data-blob="0.18" aria-hidden="true" />
         <div className={s.in}>
-      <section className={s.cats}>
-        <div className={s.catsHead}>
-          <span>استوديو التصميم: زي أدوبي، وصورك ما بتطلعش من جهازك</span>
-          <Link href="/tools?cat=studio" className={s.allLink}>كل أدوات الاستوديو ←</Link>
-        </div>
-        <Row ids={STUDIO} />
-      </section>
-
-      <Row title="المفضلة" ids={favs} />
-      <Row title="استخدمتها مؤخراً" ids={recent} />
-
       {/* ===== المجالات ===== */}
       <section className={s.cats}>
         <div className={s.catsHead}>
           <span>المجالات</span>
-          <Link href="/tools" className={s.allLink}>كل الـ{tools.length} أداة ←</Link>
+          <Link href="/tools" className={s.allLink}>كل الـ{tools.length} أداة</Link>
         </div>
         <div className={s.catsRow}>
           {categories.map((c) => (
