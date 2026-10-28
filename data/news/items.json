@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-28T02:27:54.518Z",
+ "updated": "2026-10-28T05:10:08.198Z",
  "providers": [
   "groq",
   "openrouter",
@@ -9,22 +9,22 @@
   "openrouter": 9
  },
  "feeds": {
-  "openai": "ok 72",
   "deepmind": "ok 10",
-  "verge": "ok 10",
-  "techcrunch": "ok 20",
-  "apple": "ok 10",
-  "marktechpost": "ok 10",
-  "aws": "ok 20",
-  "google-ai": "ok 6",
-  "nvidia": "ok 18",
   "meta": "ok 9",
-  "huggingface": "ok 25",
+  "openai": "ok 72",
   "google-research": "ok 12",
+  "nvidia": "ok 18",
+  "huggingface": "ok 25",
+  "apple": "ok 10",
+  "techcrunch": "ok 20",
+  "verge": "ok 10",
+  "marktechpost": "ok 10",
+  "google-ai": "ok 6",
+  "aws": "ok 20",
   "techwd": "ok 3",
   "arstechnica": "ok 20",
-  "microsoft": "ok 10",
   "aitnews": "ok 6",
+  "microsoft": "ok 10",
   "venturebeat": "FAIL HTTP 429"
  },
  "items": [
@@ -959,7 +959,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "GPT-6.1 Sol يعزز أمان CodeRabbit",
+    "summary": "CodeRabbit بيستعمل GPT-6.1 Sol عشان يكتشف مخاطر الأمان في الكود المعقّد، والوكيل الأمني بيساعد المطورين يراجعوا النتائج والاقتراحات لإصلاحها."
+   }
   },
   {
    "id": "64d59b55a8fb",
@@ -969,7 +972,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "دراسة OpenAI Signals عن استخدام ChatGPT في الشغل",
+    "summary": "البيانات بتوضح 165 نشاط شغل في حوالي 100 دولة، وبتظهر إزاي الناس بيستعملوا ChatGPT في شغلهم وإزاي الاستخدام بيتغيّر مع الوقت."
+   }
   },
   {
    "id": "3fb44a491dd6",
@@ -979,7 +985,10 @@
    "src": "MarkTechPost",
    "srcId": "marktechpost",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Tsinghua يطلق AKV لخدمات الكاش للـLLM",
+    "summary": "باحثين من Tsinghua أطلقوا AKV، نظام خدمة مبني على SGLang لتقليل تكلفة التخزين المؤقت للـLLM agents بنسبة 27.7% في أربع اختبارات."
+   }
   },
   {
    "id": "eb7708c5f537",
@@ -989,7 +998,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Fanatics وOpenAI يحسنوا تجربة المشجعين",
+    "summary": "Fanatics بيستخدم OpenAI عشان يسهّل على المشجعين اختيار لبس اليوم بالموقع، واختبار على 30,000 منتج MLB زاد التفاعل 10%."
+   }
   },
   {
    "id": "8f2f08b6e197",
@@ -999,7 +1011,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Ultrafast يسرّع تحقيق الحوادث في OpenAI",
+    "summary": "مهندسين OpenAI بيستعملوا Codex Ultrafast لتقليل وقت التحقيق من ساعات لدقايق، وبيستفيدوا من تحليل أمان أسرع وإعادة هيكلة الكود."
+   }
   },
   {
    "id": "1758535ac6be",
@@ -1009,7 +1024,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "إطلاق GPT-6.1 Terra",
+    "summary": "GPT-6.1 Terra بيقدّم قدرة وسرعة في استخدام الكمبيوتر للجميع."
+   }
   },
   {
    "id": "4cd82f931931",
@@ -1019,7 +1037,10 @@
    "src": "Apple ML",
    "srcId": "apple",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "GHARP: تحريك رأس 3D في الوقت الحقيقي",
+    "summary": "GHARP بيحوّل شوية صور لوجه لشخصية 3D متحركة في الوقت الحقيقي، بفصل مرحلة بناء الهوية عن مرحلة التحريك لتقليل الحمل."
+   }
   },
   {
    "id": "a6feae291b1a",
@@ -1029,7 +1050,10 @@
    "src": "TechCrunch",
    "srcId": "techcrunch",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Grok يطرح أول 7 دقائق من 'Odyssey'",
+    "summary": "المقاطع الأولية من الفيلم اللي انتجته AI تبدو مقبولة، لكن ما فيهاش إبداع أو إلهام أو طابع إنساني."
+   }
   },
   {
    "id": "c932414b7eb9",
@@ -1039,7 +1063,10 @@
    "src": "MarkTechPost",
    "srcId": "marktechpost",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Nanbeige تطلق نموذج Nanbeige4.3-33B للبرمجة",
+    "summary": "النموذج 33 مليار بارامتر، بيدعم 512 K سياق، جاب 80.9 في Terminal‑Bench 2.1، وهيعلم النموذج الأصغر Nanbeige4.3-3B."
+   }
   },
   {
    "id": "71334093a413",
@@ -1049,7 +1076,10 @@
    "src": "TechCrunch",
    "srcId": "techcrunch",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "الذكاء الاصطناعي ما جابش عائد مالي للشركات",
+    "summary": "رغم الاستثمارات الضخمة والضجة، الاقتصادي من Apollo بيقول إن AI ما حققش أي ربح مادي للشركات غير التقنية."
+   }
   },
   {
    "id": "4cd8b15dd649",
@@ -1059,7 +1089,10 @@
    "src": "MarkTechPost",
    "srcId": "marktechpost",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Hugging Face تطلق Carbon‑X نموذج DNA بلغة طبيعية",
+    "summary": "Carbon‑X نموذج 14.8 مليار بارامتر مبني على Qwen3‑14B، يقرأ DNA ويجاوب بالإنجليزي، يحقق متوسط 66.7% على 5 معايير DNA، ومتوفر تحت رخصة Apache 2.0."
+   }
   },
   {
    "id": "4262d71f08be",
@@ -1069,7 +1102,10 @@
    "src": "TechCrunch",
    "srcId": "techcrunch",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "أهم الأجهزة القابلة للارتداء والgadgets الذكية",
+    "summary": ""
+   }
   },
   {
    "id": "1a4147d6e8f3",
@@ -1079,7 +1115,10 @@
    "src": "MarkTechPost",
    "srcId": "marktechpost",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Stanford وUC Berkeley يقدمان TokenGate لتسريع السياق الطويل",
+    "summary": ""
+   }
   },
   {
    "id": "b7ca3dd28f26",
@@ -1089,7 +1128,10 @@
    "src": "MarkTechPost",
    "srcId": "marktechpost",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Anthropic تطلق OSS Scanner لفحص ثغرات AI",
+    "summary": ""
+   }
   },
   {
    "id": "770c71828f23",
@@ -1099,7 +1141,10 @@
    "src": "TechCrunch",
    "srcId": "techcrunch",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "هل AI هيكشف ضعف بنية الإنترنت؟",
+    "summary": ""
+   }
   },
   {
    "id": "b0af889ad05f",
@@ -1109,7 +1154,10 @@
    "src": "TechCrunch",
    "srcId": "techcrunch",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "قائمة AI Graveyard للمشاريع الفاشلة",
+    "summary": ""
+   }
   },
   {
    "id": "35d668020c86",
@@ -1407,7 +1455,10 @@
    "src": "Amazon AWS",
    "srcId": "aws",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "تشغيل صوت منخفض التأخير مع Kokoro TTS على SageMaker",
+    "summary": "المقال يوضح إزاي نقدر نبث كل جملة من رد الوكيل الصوتي مباشرة لنموذج Kokoro‑82M على Amazon SageMaker AI، ونوصل الصوت للمتصفح عبر Server‑Sent Events أو بروتوكول ثنائي موحد."
+   }
   },
   {
    "id": "529344d07694",
@@ -1417,7 +1468,10 @@
    "src": "Amazon AWS",
    "srcId": "aws",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "تحديد أوتوسكاليينغ لتقنيات TTS على SageMaker",
+    "summary": "المنشور بيشرح إزاي ينشروا نموذج Kokoro‑82M كحاوية مخصصة على Amazon SageMaker AI ويستخلصوا سياسة أوتوسكاليينغ دقيقة من قياسين Q_max و T_total بدل التخمين."
+   }
   },
   {
    "id": "03f220919b75",
@@ -1427,7 +1481,10 @@
    "src": "Amazon AWS",
    "srcId": "aws",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Rescale يبني وكيل تصنيف اختبار بالذكاء الاصطناعي",
+    "summary": "Rescale استخدمت إطار AI‑DLC على AWS مع Strands Agents وAmazon Bedrock لتطوير وكيل تصنيف اختبار ذكي في أسابيع، وبيوضح إزاي بيطبقوا المنهجية دي على باقي فرق الهندسة."
+   }
   },
   {
    "id": "ef05d9c57c78",
@@ -1437,7 +1494,10 @@
    "src": "Microsoft Research",
    "srcId": "microsoft",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Flint‑interactive: لغة للرسومات التفاعلية",
+    "summary": "Flint‑interactive بيدي الوكلاء الذكاء الاصطناعي لغة لإنشاء تصورات تفاعلية؛ تقدر تضغط على المخطط، تصفي البيانات، وتبرز المحتوى المرتبط لتستكشف أكتر من اللي المؤلف حدده."
+   }
   },
   {
    "id": "c625905b3719",
@@ -1447,7 +1507,10 @@
    "src": "Ars Technica",
    "srcId": "arstechnica",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "قراصنة استغلوا ثغرة PHP2Shell قبل الكشف",
+    "summary": "القراصنة كانوا بيستكشفوا الثغرة الأمنية PHP2Shell قبل ما المدافعين يتعرفوا عليها، يعني حصلوا على أربع أيام من الأفضلية."
+   }
   },
   {
    "id": "06769efcf6f4",
@@ -1457,7 +1520,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "NVIDIA تطلق Minerva لمراقبة مصانع الذكاء الاصطناعي",
+    "summary": "Minerva منصة AIOps من NVIDIA بتجمع بيانات التليمتري من البنية التحتية وحملات الذكاء الاصطناعي، وتستخدم نماذج AI مخصصة لتحويلها لتنبيهات سريعة تساعد على اكتشاف المشكلات مبكراً."
+   }
   },
   {
    "id": "e66e9796ba6b",
@@ -1467,7 +1533,10 @@
    "src": "Google DeepMind",
    "srcId": "deepmind",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "خريطة عالمية لأنواع الغابات كل 10 أمتار",
+    "summary": "تم إنشاء خريطة عالمية تصنف كل قطعة أرض بمساحة 10 أمتار إلى نوع غابة مميز، لتوفير رؤية دقيقة لتوزيع الغابات."
+   }
   },
   {
    "id": "0d155a8c6750",
@@ -1477,7 +1546,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Call of Duty: Modern Warfare 4 على GeForce NOW",
+    "summary": "اللعبة هتنزل على منصة GeForce NOW يوم الإطلاق، مع حملة جديدة، وضع متعدد اللاعبين، ووضع DMZ، وكمان أداء RTX 5080 للعضويات الـ Ultimate مع دعم تتبع الأشعة."
+   }
   },
   {
    "id": "5d118fadbe79",
@@ -1487,7 +1559,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "توقعات جماعية بنماذج IBM Granite للسلاسل الزمنية",
+    "summary": "الخبر بيتكلم عن توقعات جماعية باستخدام نماذج IBM Granite للسلاسل الزمنية."
+   }
   },
   {
    "id": "63c31ca523f9",
@@ -1497,7 +1572,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "معنى FDE في OpenAI",
+    "summary": "FDE هو اختصار لـ Forward Deployed Engineering في OpenAI، وهو دور بيهندس حلول الذكاء الاصطناعي مباشرةً في الميدان."
+   }
   },
   {
    "id": "8eb5c126f8cf",
@@ -1507,7 +1585,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "المؤسسات المالية الأوروبية تتبنى نماذج مفتوحة للذكاء",
+    "summary": "في GTC Berlin، بنوك وشركات دفع ومزودي بيانات مالية بيظهروا إزاي بيبنوا ذكاء على مستوى الإنتاج باستخدام حوسبة NVIDIA المسرّعة ونماذج وزن مفتوحة على بنية تحتية خاصة بيهم، مثال Revolut اللي بيعيد بناء تكنولوجياه على نموذج PRAGMA."
+   }
   },
   {
    "id": "381130e24d54",
@@ -1517,7 +1598,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "NVIDIA Cosmos يضيف أدوات لتدريب نماذج العالم",
+    "summary": "NVIDIA وسّعت منصة Cosmos بأدوات تدريب جديدة، ونقاط فحص محاكاة، وقوالب Cosmos Data Factory، لتسهيل بناء نماذج عالم تساعد الأنظمة الذكية على فهم ومحاكاة الواقع."
+   }
   },
   {
    "id": "761a1716cf64",
@@ -1527,7 +1611,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "الشركات تستخدم NVIDIA DSX لتجاوز عنق الزجاجة الكهربائي",
+    "summary": "شركات حول العالم بتستفيد من منصة NVIDIA DSX AI Factory لتخطيط ومحاكاة وتشغيل الشبكة ومصنع الذكاء كمنظومة واحدة، لأن الطاقة بقت أكبر عائق في البنية التحتية، مع استثمارات تتجاوز 300 مليار دولار."
+   }
   },
   {
    "id": "231615289514",
@@ -1537,7 +1624,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "NVIDIA تحول التجزئة الأوروبية بالذكاء المفتوح",
+    "summary": "تجار التجزئة في أوروبا بيستخدموا نماذج مفتوحة وذكاء مادي في حالات زي تقليل تكلفة الاستدلال 90% على منصة تجارة، أو محاكاة أساطيل روبوتات في مراكز التوزيع باستخدام التوأم الرقمي."
+   }
   },
   {
    "id": "6d8a31a2427f",
@@ -1557,7 +1647,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "نماذج NVIDIA المفتوحة تدعم مشاريع القطاع العام الأوروبي",
+    "summary": "الحكومات الأوروبية بتستفيد من نماذج مفتوحة لتقديم خدمات عامة مع الحفاظ على البيانات الحساسة، حيث يمكنهم تعديل النماذج للغات المحلية وتشغيلها على بنية تحتية خاصة مع تطبيق ضوابط أمان."
+   }
   },
   {
    "id": "ba6fa07d677a",
@@ -1567,7 +1660,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "أوبر توزع ChatGPT Work على 30 ألف موظف",
+    "summary": "أوبر بدأت تنشر أداة ChatGPT Work على أكتر من 30,000 موظف عشان تساعد الفرق في البحث، تحليل البيانات، إعداد العروض، وإنجاز سير العمل المعقد."
+   }
   },
   {
    "id": "a872764d5ef1",
@@ -1577,7 +1673,10 @@
    "src": "Amazon AWS",
    "srcId": "aws",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "الاتصال بـ Quick عبر AWS PrivateLink",
+    "summary": "الدليل بيشرح إزاي تربط مصادر البيانات داخل الشركة بـ Amazon Quick بشكل خاص باستخدام AWS PrivateLink، مع الحفاظ على حركة التحليل بعيد عن الإنترنت العام وتطبيق سياسات الوصول."
+   }
   },
   {
    "id": "2ed22a61b2f1",
@@ -1587,7 +1686,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "معايير موحدة للوصول الآمن لـ OpenAI",
+    "summary": "OpenAI بتشتغل مع شركاء التوزيع لتطبيق ضوابط أمان موحدة، وتدعم الوصول المسؤول وتوضح سياسات الاستخدام."
+   }
   },
   {
    "id": "140d853f0e3f",
@@ -1597,7 +1699,10 @@
    "src": "Ars Technica",
    "srcId": "arstechnica",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "العلامة البشرية لـ Apple Music في زمن الذكاء الاصطناعي",
+    "summary": "في عالم مليان محتوى AI، إبراز اللمسة البشرية في Apple Music بيدل على أهمية الإبداع البشري."
+   }
   },
   {
    "id": "53db5cc10927",
@@ -1607,7 +1712,10 @@
    "src": "Ars Technica",
    "srcId": "arstechnica",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "نماذج OpenAI الجديدة على Google Cloud",
+    "summary": "Google Cloud هتنشر نماذج GPT 6.1 Astra، Sol، وLuna خلال الأسابيع الجاية."
+   }
   },
   {
    "id": "7104bc51c295",
@@ -1617,7 +1725,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "NVIDIA Kumo Relational يتفوق على التعلم الخاضع للإشراف",
+    "summary": ""
+   }
   },
   {
    "id": "5cbd98ec79a6",
@@ -1627,7 +1738,10 @@
    "src": "Ars Technica",
    "srcId": "arstechnica",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "القاضي يرفض ادعاء ترامب بإن EPA تقدر تلغي دعاوى التلوث",
+    "summary": "المحكمة قررت إن EPA ما تقدرش تلغي دعوى تلوث مراكز البيانات اللي قدمتها SpaceXAI لوحدها."
+   }
   },
   {
    "id": "354f89a6c7db",
@@ -1637,7 +1751,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "تقليل تكلفة الاستدلال بـ 77% بتخصيص مفردات SLMs",
+    "summary": ""
+   }
   },
   {
    "id": "4ab93569e260",
@@ -1647,7 +1764,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "AT&T تعيد التفكير في الشغل القانوني الداخلي مع OpenAI",
+    "summary": "AT&T بتشتغل مع OpenAI عشان تسهّل وصول المعرفة القانونية، وفريق LegalEdge بيعيد تصميم طريقة استلام القضايا وتوسيع الحكم القانوني."
+   }
   },
   {
    "id": "2de1f3f85cd4",
@@ -1657,7 +1777,10 @@
    "src": "Google Research",
    "srcId": "google-research",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "الذكاء الاصطناعي بيساعد في فحص الموجات فوق الصوتية للأمهات",
+    "summary": "تقنية AI بتدعم أطباء الخط الأول في رعاية الأمومة عن طريق تحسين فحص الموجات فوق الصوتية."
+   }
   },
   {
    "id": "f9b499debdda",
@@ -1667,7 +1790,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "تحليل TorchNeuron على AWS Trainium (الجزء الأول)",
+    "summary": "المقال بيستعرض طريقة profiling على مستوى النظام لـ TorchNeuron باستخدام AWS Trainium."
+   }
   },
   {
    "id": "2ed826e28d23",
@@ -1677,7 +1803,10 @@
    "src": "Microsoft Research",
    "srcId": "microsoft",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "حل لغز رياضي عمره 31 سنة: فرضية KLS",
+    "summary": "بحث جديد أثبت صحة فرضية Kannan–Lovász–Simonovits اللي اتطرحت سنة 1995، وده بيفتح باب لفهم كفاءة الخوارزميات العشوائية في العلوم والحوسبة."
+   }
   },
   {
    "id": "2f67d3a79def",
@@ -1687,7 +1816,10 @@
    "src": "Ars Technica",
    "srcId": "arstechnica",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "ستارت أب AI مدعوم بالإعلانات بقيمة 15 مليار دولار",
+    "summary": "OpenEvidence بيكبر بسرعة رغم التساؤلات حول دقته واعتماده على الإعلانات."
+   }
   },
   {
    "id": "9b35c0bfb2f0",
@@ -1697,7 +1829,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Granite Speech 5.0: تحويل وتسجيل أسرع وأدق",
+    "summary": "الإصدار الجديد من Granite Speech بيحسّن عملية النسخ والترجمة وتحديد المتكلم بدقة وسرعة أعلى."
+   }
   },
   {
    "id": "74fcf21eca7a",
@@ -1707,7 +1842,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "إعلانات ChatGPT توسعت لـ 26 دولة",
+    "summary": "أكتر من 100,000 معلن بقى يقدر يوصل لعملائه خلال رحلة البحث والشراء على ChatGPT في 26 دولة جديدة."
+   }
   },
   {
    "id": "61f4d0141ff3",
@@ -1717,7 +1855,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "نماذج OpenAI توصل لسحابة جوجل",
+    "summary": "OpenAI وGoogle Cloud بيقدموا نماذج متقدمة وCodex في Gemini’s Model Garden عبر Google Cloud Marketplace."
+   }
   },
   {
    "id": "0b1d731f907e",
@@ -1727,7 +1868,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "نڤيديا تكشف عن مجموعة معالجات AI المحلية في برلين",
+    "summary": "في GTC Berlin عرضت نڤيديا RTX Spark لتشغيل الوكلاء الشخصيين على ويندوز، وDGX Spark للمطورين على لينكس، وDGX Station للفرق المؤسسية مع نسخة ويندوز جاية في ديسمبر."
+   }
   },
   {
    "id": "7dbdc8f6d3c5",
@@ -1737,7 +1881,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "جوجل كلاود ونڤيديا يطلقان خدمة NVIDIA Vera Rubin",
+    "summary": "الخدمة هتوصل للعموم الشهر الجاي وتتوفر في أوروبا، وتجمع بين NVIDIA Vera Rubin NVL72، ConnectX‑9 SuperNICs، شبكة Virgo وتبريد سائل من الجيل الرابع لتدريب وت inference وتعلم التعزيز على السحابة."
+   }
   },
   {
    "id": "f47072a36f45",
@@ -1747,7 +1894,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "شركاء سحابة نڤيديا يوسّعون قدرات AI في أوروبا",
+    "summary": "الطلب المتزايد من الشركات الناطقة بـ AI بيخلي بيئة السحابة الأوروبية تتسارع، والشركاء بيوفروا حوسبة أقرب للبيانات، نماذج مفتوحة قابلة للتخصيص، وبنية تحتية آمنة من التصميم."
+   }
   },
   {
    "id": "0c405e6fd045",
@@ -1757,7 +1907,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "قادة الصناعة الأوروبية يتبنون CUDA‑X وOmniverse",
+    "summary": "الشركات الأوروبية بتستخدم مكتبات CUDA‑X وOmniverse، وكمان نماذج Cosmos وNemotron لتسريع الإنتاجية والابتكار، وطرحوا مخطط NVIDIA Factory Operations Blueprint (FOX) لتطبيقها على أرض المصنع."
+   }
   },
   {
    "id": "64ae1d1ebee7",
@@ -1767,7 +1920,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "مكتبة cuDSS من نڤيديا متاحة الآن لتسريع المحاكاة",
+    "summary": "cuDSS، مكتبة CUDA‑X جديدة، بتنقل جزء كبير من محاكاة الهندسة والعلوم للـ GPU، وده بيساعد على محاكاة تصاميم معقدة زي الرقائق والطائرات قبل التصنيع."
+   }
   },
   {
    "id": "9e8b8c2e1479",
@@ -1777,7 +1933,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "نڤيديا توسّع الحوسبة السرية للوكيل الآمن",
+    "summary": "أعلنت نڤيديا عن بنية OpenShell Reference Architecture لتشغيل الوكلاء بأمان، مع طبقة Confidential Computing اللي بتحمي النماذج والبيانات أثناء التنفيذ."
+   }
   },
   {
    "id": "7d59293497ac",
@@ -1787,7 +1946,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "مجموعة أدوات الوكيل من نڤيديا تدعم بيانات الشركات",
+    "summary": "تم توسيع NVIDIA Agent Toolkit بأدوات جديدة تسمح للشركات بتخصيص الوكلاء، ربطهم ببيانات الشركة، ومراقبة سلوكهم لضمان الثقة."
+   }
   },
   {
    "id": "be11c18d48ff",
@@ -1797,7 +1959,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "نڤيديا تطلق نماذج مفتوحة للذكاء الاصطناعي في أوروبا",
+    "summary": "أضافت نڤيديا نماذج Nemotron 3.5 Super VL وBolt، بالإضافة لنماذج Nemotron Retriever للتمثيل وإعادة الترتيب، لتدعم اللغات والصناعات المحلية."
+   }
   },
   {
    "id": "d3f519557f32",
@@ -1807,7 +1972,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Patch the Planet يربط الباحثين",
+    "summary": "المبادرة بتجمع باحثين الأمن، صانعي الصيانة، ومستجيبي الحوادث علشان يلاقوا حلول للثغرات الحرجة في البرمجيات المفتوحة المصدر."
+   }
   },
   {
    "id": "edef63b51aed",
@@ -1817,7 +1985,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "نظام إعلانات ChatGPT",
+    "summary": "OpenAI شرحوا إزاي بنوا نظام إعلانات مدعوم بالـ LLM بيحدد نية الكلام، ويفصل الإعلانات عن الإجابات، ويعرض إعلانات ملائمة على نطاق واسع."
+   }
   },
   {
    "id": "1de8e62ff715",
@@ -1827,7 +1998,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "وكيلات AI لاكتشاف بيانات دماغية",
+    "summary": "OpenAI وPerturbAI ومؤسسة Scripps Research استخدموا آلاف الوكلاء الذكائيين لتحديد مؤشرات بحثية جديدة من بيانات ملايين خلايا الدماغ."
+   }
   },
   {
    "id": "1778fb273dbb",
@@ -1837,7 +2011,10 @@
    "src": "Google AI",
    "srcId": "google-ai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "الاقتصاد الرقمي في جنوب شرق آسيا",
+    "summary": "اعتماد واسع للذكاء الاصطناعي هيدفع قيمة الاقتصاد الرقمي للمنطقة لـ 368 مليار دولار بحلول 2026، وحيصل لتريليون دولار بحلول 2035."
+   }
   },
   {
    "id": "9201054eeb4c",
@@ -1847,7 +2024,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Cloudflare وتعاونها مع OpenAI",
+    "summary": "Cloudflare بتستعمل OpenAI Daybreak لتحديد الثغرات واقتراح حلول، ومطوريها بيستفيدوا من Codex لتسريع كتابة الكود وتحسين جودته."
+   }
   },
   {
    "id": "b2deaf97c98c",
@@ -1857,7 +2037,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "حوكمة ديمقراطية للـ AI المتقدمة",
+    "summary": "OpenAI قدمت خطة لتمكين مدافعين سيبرانيين باستخدام AI المتقدم، وتعزيز الحمايات، وتحديث الأمن السيبراني، وتقوية المؤسسات العامة."
+   }
   },
   {
    "id": "165cb1553146",
