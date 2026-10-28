@@ -1,22 +1,28 @@
 {
- "updated": "2026-10-28T02:00:46.066Z",
+ "updated": "2026-10-28T02:09:12.812Z",
+ "providers": [
+  "groq"
+ ],
+ "used": {
+  "groq": 1
+ },
  "feeds": {
   "openai": "ok 72",
-  "apple": "ok 10",
-  "meta": "ok 9",
-  "techcrunch": "ok 20",
-  "huggingface": "ok 25",
-  "nvidia": "ok 18",
-  "verge": "ok 10",
-  "aws": "ok 20",
-  "google-research": "ok 12",
   "deepmind": "ok 10",
+  "techcrunch": "ok 20",
+  "verge": "ok 10",
+  "apple": "ok 10",
   "marktechpost": "ok 10",
-  "google-ai": "ok 6",
+  "aws": "ok 20",
+  "huggingface": "ok 25",
+  "google-research": "ok 12",
   "arstechnica": "ok 20",
-  "techwd": "ok 3",
+  "meta": "ok 9",
+  "google-ai": "ok 6",
+  "nvidia": "ok 18",
   "aitnews": "ok 6",
   "microsoft": "ok 10",
+  "techwd": "ok 3",
   "venturebeat": "FAIL HTTP 429"
  },
  "items": [
@@ -647,7 +653,10 @@
    "src": "Ars Technica",
    "srcId": "arstechnica",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "آبل تطلق iOS و macOS 27.2 مع ميزات سيري الجديدة",
+    "summary": "الإصدار الجديد بيدّي سيري القدرة على تحديد التطبيقات اللي يقدر يتواصل معاها مباشرة."
+   }
   },
   {
    "id": "830f46d3a8fd",
@@ -657,7 +666,10 @@
    "src": "Ars Technica",
    "srcId": "arstechnica",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "خطة ICE لشراء كلاب روبوتية تثير احتجاج موظفي Boston Dynamics",
+    "summary": "الشركة الأمريكية للروبوتات بتدعم الصفقة رغم إن أكتر من 300 موظف حذروا من المخاطر."
+   }
   },
   {
    "id": "6374202b4b5e",
@@ -667,7 +679,10 @@
    "src": "Amazon AWS",
    "srcId": "aws",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "نظام رؤية حاسوبية للفلّيت باستخدام SageMaker SDK v3",
+    "summary": "المقال بيشرح بنية مرجعية لتدريب نماذج لكل كاميرا على حافة الشبكة باستخدام SageMaker Neo وStep Functions لتحديث آلاف النماذج ضمن حدود الحساب."
+   }
   },
   {
    "id": "2500a6aad874",
@@ -677,7 +692,10 @@
    "src": "The Verge",
    "srcId": "verge",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "The RealReal تعزز دفاعها ضد بوتات الشراء",
+    "summary": "الموقع عدّل نظام الحماية عشان يصعب على الوكلاء الذكاء الاصطناعي حجز الملابس الفاخرة، بعد ما كشف The Verge إن بوت يقدر يستغل نظام الحجز."
+   }
   },
   {
    "id": "d44490076cdc",
@@ -687,7 +705,10 @@
    "src": "Amazon AWS",
    "srcId": "aws",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "تخزين مؤقت للبرومبت يسرّع وكلاء AI على Amazon Bedrock",
+    "summary": "كل خطوة للوكيل بتعيد قراءة السياق، لكن تقنية التخزين المؤقت للبرومبت بتقلل التكلفة واللاتنسيب بتخلي الوكيل يفتكر الأدوات والتعليمات من غير ما يبعتها كل مرة."
+   }
   },
   {
    "id": "71784ce3534e",
@@ -697,7 +718,10 @@
    "src": "Ars Technica",
    "srcId": "arstechnica",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "لصوص الطرق يزورون GPS ويسرقون معدات مراكز البيانات",
+    "summary": "المحققين كشفوا إن اللصوص بيغيّروا إشارات GPS علشان يسرقوا معدات مراكز البيانات بقيمة 100 مليون دولار."
+   }
   },
   {
    "id": "7644611dfae9",
@@ -707,7 +731,10 @@
    "src": "Amazon AWS",
    "srcId": "aws",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "إنشاء استرجاع ذكي على Amazon Bedrock باستخدام CDK",
+    "summary": "الدليل بيوري إزاي تبني وكيل يجيب معلومات من قاعدتين للمعرفة عبر AgentCore Gateway، مع مراقبة شاملة وتقييم مستمر، كل ده بنشر تطبيق CDK واحد."
+   }
   },
   {
    "id": "4a8f41d180d7",
@@ -717,7 +744,10 @@
    "src": "The Verge",
    "srcId": "verge",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "خمسة تفاصيل غريبة في ملف IPO لشركة Anthropic",
+    "summary": ""
+   }
   },
   {
    "id": "0c7a0e584035",
