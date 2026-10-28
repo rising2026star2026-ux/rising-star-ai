@@ -91,6 +91,6 @@ if (PROVIDERS.length) {
 
 const items = [...byId.values()].filter((i) => Date.parse(i.date) >= cutoff).sort((a, b) => b.date.localeCompare(a.date)).slice(0, MAX_ITEMS);
 fs.mkdirSync("data/news", { recursive: true });
-fs.writeFileSync(FILE, JSON.stringify({ updated: new Date().toISOString(), feeds: report, items }, null, 1));
+fs.writeFileSync(FILE, JSON.stringify({ updated: new Date().toISOString(), providers: PROVIDERS.map((p) => p.name), used, feeds: report, items }, null, 1));
 console.log("used:", JSON.stringify(used));
 console.log("items:", items.length, "translated:", items.filter((i) => i.ar).length);
