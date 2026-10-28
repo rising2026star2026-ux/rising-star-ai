@@ -1,0 +1,32 @@
+name: debug-client-errors
+on:
+  push:
+    branches: [ci-debug]
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install --no-audit --no-fund
+      - run: npx next build > ci/next.txt 2>&1; tail -40 ci/next.txt
+        env:
+          GROQ_API_KEY: dummy
+      - run: npm i --no-save playwright@1.48.2 && npx playwright install --with-deps chromium
+      - run: |
+          (npx next start -p 3000 > server.log 2>&1 &)
+          sleep 6
+          node ci/check.cjs > ci/result.txt 2>&1 || true
+          tail -60 server.log > ci/server.txt || true
+        env:
+          GROQ_API_KEY: dummy
+      - if: always()
+        run: |
+          git config user.name ci && git config user.email ci@example.com
+          git add -f ci
+          git commit -m "ci results [skip ci]" && git push

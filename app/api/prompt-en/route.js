@@ -22,14 +22,13 @@ export async function POST(req) {
   const kind = body.kind === "video" ? "video" : "image";
   if (!text) return fail("اكتب فكرتك الأول.", 400);
   if (tooMany(clientIp(req))) return fail("وصلت للحد الساعة دي. جرّب بعد شوية.", 429);
-  if (!process.env.GROQ_API_KEY && !process.env.OPENROUTER_API_KEY) return fail("المترجم مش متاح دلوقتي.", 500);
-
   const messages = [{ role: "system", content: rules(kind) }, { role: "user", content: text }];
   let out = null;
   for (const m of [
     { id: "openai/gpt-oss-20b", effort: "low", provider: "groq" },
     { id: "openai/gpt-oss-120b", effort: "low", provider: "groq" },
     ...(process.env.OPENROUTER_API_KEY ? [{ id: "openai/gpt-oss-120b", effort: null, provider: "openrouter" }] : []),
+    { id: "openai", effort: null, provider: "pollinations" },
   ]) {
     out = await completeOnce(m, { messages, temperature: 0.6, maxTokens: 500, signal: req.signal });
     if (out) break;

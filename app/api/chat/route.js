@@ -41,6 +41,7 @@ async function imageResponse(idea, signal) {
     { id: "openai/gpt-oss-120b", effort: "low", provider: "groq" },
     { id: "openai/gpt-oss-120b", effort: null, provider: "openrouter" },
     { id: "gemini-2.5-flash", effort: null, provider: "gemini" },
+    { id: "openai", effort: null, provider: "pollinations" },
   ]) {
     prompt = await completeOnce(m, { messages: [{ role: "system", content: IMAGE_PROMPT_RULES }, { role: "user", content: idea }], temperature: 0.6, maxTokens: 300, signal });
     if (prompt) break;
