@@ -60,17 +60,20 @@ for (const it of fresh) {
 
 // ترجمة/تلخيص بالعربي للجديد بس
 const PROVIDERS = [
-  process.env.GROQ_API_KEY && { url: process.env.GROQ_URL || "https://api.groq.com/openai/v1/chat/completions", key: process.env.GROQ_API_KEY, model: process.env.GROQ_MODEL || "openai/gpt-oss-120b" },
-  process.env.OPENROUTER_API_KEY && { url: "https://openrouter.ai/api/v1/chat/completions", key: process.env.OPENROUTER_API_KEY, model: process.env.OPENROUTER_MODEL || "openai/gpt-oss-120b" },
+  process.env.GROQ_API_KEY && { name: "groq", url: process.env.GROQ_URL || "https://api.groq.com/openai/v1/chat/completions", key: process.env.GROQ_API_KEY, model: process.env.GROQ_MODEL || "openai/gpt-oss-120b" },
+  process.env.OPENROUTER_API_KEY && { name: "openrouter", url: "https://openrouter.ai/api/v1/chat/completions", key: process.env.OPENROUTER_API_KEY, model: process.env.OPENROUTER_MODEL || "openai/gpt-oss-120b" },
   process.env.GEMINI_API_KEY && { name: "gemini", url: "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions", key: process.env.GEMINI_API_KEY, model: process.env.GEMINI_MODEL || "gemini-2.5-flash" },
 ].filter(Boolean);
+console.log("providers:", PROVIDERS.map((p) => p.name).join(", ") || "none");
+const used = {};
 
 async function llm(payload) {
   for (const p of PROVIDERS) {
     const r = await fetch(p.url, { method: "POST", headers: { authorization: `Bearer ${p.key}`, "content-type": "application/json" },
       body: JSON.stringify({ model: p.model, temperature: 0.2, max_tokens: 3000, response_format: { type: "json_object" },
         messages: [{ role: "system", content: "انت محرر أخبار تقنية. اكتب بالعربي المبسط (بلمسة مصرية خفيفة). لكل خبر: عنوان عربي قصير، وملخص من جملة أو جملتين بصياغتك انت. اعتمد على النص المعطى بس ومتضفش معلومة مش فيه. أسماء الشركات والمنتجات سيبها بالإنجليزي. الرد JSON بالشكل {\"items\":[{\"id\":\"...\",\"title\":\"...\",\"summary\":\"...\"}]}." }, { role: "user", content: JSON.stringify(payload) }] }) }).catch(() => null);
-    if (!r?.ok) continue;
+    if (!r?.ok) { console.log(`${p.name}: HTTP ${r?.status}`); continue; }
+    used[p.name] = (used[p.name] || 0) + 1;
     try { return JSON.parse((await r.json()).choices[0].message.content).items || []; } catch {}
   }
   return null;
@@ -89,4 +92,5 @@ if (PROVIDERS.length) {
 const items = [...byId.values()].filter((i) => Date.parse(i.date) >= cutoff).sort((a, b) => b.date.localeCompare(a.date)).slice(0, MAX_ITEMS);
 fs.mkdirSync("data/news", { recursive: true });
 fs.writeFileSync(FILE, JSON.stringify({ updated: new Date().toISOString(), feeds: report, items }, null, 1));
+console.log("used:", JSON.stringify(used));
 console.log("items:", items.length, "translated:", items.filter((i) => i.ar).length);
