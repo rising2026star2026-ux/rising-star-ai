@@ -7,13 +7,13 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: node ci/pollcheck.mjs > ci/pollcheck.txt 2>&1 || true
+      - run: node ci/pollstream.mjs > ci/pollstream.txt 2>&1 || true
       - if: always()
         run: |
           git config user.name ci && git config user.email ci@example.com
