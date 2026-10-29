@@ -108,7 +108,7 @@ function QuoteLayout({ text, theme, font }) {
       {a ? (
         <div style={{ marginTop: 40, display: "flex", flexDirection: "column", alignItems: "center", opacity: sp(30) }}>
           <div style={{ width: 120, height: 6, borderRadius: 3, background: theme.accent, marginBottom: 14 }} />
-          <Line text={a} color={theme.accent} font={font} size={46} weight={600} />
+          <Line text={a} color={theme.accent} font={font} size={54} weight={700} />
         </div>
       ) : null}
     </div>
@@ -155,15 +155,15 @@ function TypeLayout({ text, frames, theme, font }) {
   const lines = toLines(text, 18);
   const p = interpolate(frame, [6, Math.max(12, frames * 0.7)], [0, lines.length], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   return (
-    <div style={{ width: 620, padding: "46px 30px", borderRadius: 40, background: "rgba(0,0,0,0.38)", border: "2px solid rgba(255,255,255,0.15)", display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4 }}>
+    <div style={{ direction: "ltr", width: 620, padding: "46px 30px", borderRadius: 40, background: "rgba(0,0,0,0.38)", border: "2px solid rgba(255,255,255,0.15)", display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4 }}>
       {lines.map((l, i) => {
         const r = Math.max(0, Math.min(1, p - i));
         const im = lineImage(l, i === lines.length - 1 ? theme.accent : theme.text, font, 62, 700);
         const k = Math.min(1, 560 / im.w);
         const w = im.w * k;
         return (
-          <div key={i} style={{ display: "flex", justifyContent: "flex-end", width: w * r, height: im.h * k, overflow: "hidden", alignSelf: "flex-end" }}>
-            <Img src={im.src} style={{ width: w, height: im.h * k, flex: "none" }} />
+          <div key={i} style={{ direction: "ltr", width: w * r, height: im.h * k, overflow: "hidden", alignSelf: "flex-end" }}>
+            <Img src={im.src} style={{ display: "block", width: w, height: im.h * k, maxWidth: "none", marginLeft: -(w * (1 - r)) }} />
           </div>
         );
       })}
