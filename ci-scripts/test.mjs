@@ -1,23 +1,21 @@
 import { chromium } from "playwright";
-import fs from "node:fs";
 const BASE = "http://localhost:3000";
+const log = (n, ok, i = "") => console.log(ok ? "OK " : "BAD", n, String(i).slice(0, 300));
 const b = await chromium.launch();
 const p = await b.newPage({ viewport: { width: 420, height: 900 } });
-await p.goto(`${BASE}/lab/remotion`);
-await p.waitForSelector("#rm-render");
-await p.fill("textarea", "3 حاجات بتضيّع وقتك كل يوم\nالموبايل أول ما تصحى");
-await p.$eval("input[type=range]", (el) => { const set = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value").set; set.call(el, "2.5"); el.dispatchEvent(new Event("input", { bubbles: true })); });
+const errs = []; p.on("pageerror", (e) => errs.push(String(e)));
+const r = await p.goto(`${BASE}/tool/reel-pro`);
+log("tool page", r.status() === 200, r.status());
+const h1 = await p.textContent("h1"); log("title", /ريلز/.test(h1), h1);
+await p.waitForSelector("#rm-render", { timeout: 30000 });
+await p.fill("input[aria-label='فكرة الفيديو']", "3 نصايح لتوفير الفلوس");
+await p.click("text=اكتب السكريبت بالذكاء الاصطناعي");
+await p.waitForFunction(() => document.querySelector("textarea[aria-label='المشاهد']")?.value.split("\n").length >= 4 && !document.querySelector("textarea[aria-label='المشاهد']").value.includes("3 حاجات بتضيّع"), null, { timeout: 60000 }).then(() => log("AI script filled scenes", true), (e) => log("AI script", false, e.message));
+const val = await p.inputValue("textarea[aria-label='المشاهد']"); log("scenes", true, val.replace(/\n/g, " | "));
+await p.$eval("input[type=range]", (el) => { const set = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value").set; set.call(el, "2"); el.dispatchEvent(new Event("input", { bubbles: true })); });
 await p.click("#rm-render");
-await p.waitForSelector("#rm-video", { timeout: 240000 });
-const frames = await p.evaluate(async () => {
-  const v = document.querySelector("#rm-video"); const out = [];
-  await new Promise((r) => { if (v.readyState >= 1) r(); else v.onloadedmetadata = r; });
-  for (const t of [0.6, 1.5, 3.2]) {
-    v.currentTime = t; await new Promise((r) => (v.onseeked = r));
-    const c = document.createElement("canvas"); c.width = 360; c.height = 640; c.getContext("2d").drawImage(v, 0, 0, 360, 640); out.push(c.toDataURL("image/jpeg", 0.8));
-  }
-  return out;
-});
-frames.forEach((f, i) => fs.writeFileSync(`ci/frame${i}.jpg`, Buffer.from(f.split(",")[1], "base64")));
-console.log("OK frames", frames.length);
+const res = await Promise.race([p.waitForSelector("#rm-video", { timeout: 240000 }).then(() => "video"), p.waitForSelector("#rm-err", { timeout: 240000 }).then(async (e) => "error " + (await e.textContent()))]).catch(() => "timeout");
+log("render", res === "video", res);
+const t = await (await fetch(`${BASE}/tools`)).text(); log("listed in /tools", t.includes("ريلز بحركة احترافية"));
+log("no page errors", errs.length === 0, errs.join(" | "));
 await b.close();

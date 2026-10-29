@@ -5,6 +5,7 @@ import { Player } from "@remotion/player";
 import { ReelComp, THEMES, FPS, SIZE } from "./ReelComp";
 import s from "@/components/studio/studio.module.css";
 import { siteFont, ensureFont } from "@/components/studio/util";
+import { parseScript } from "@/components/studio/VideoMaker";
 
 const SAMPLE = "3 حاجات بتضيّع وقتك كل يوم\nالموبايل أول ما تصحى\nمهام من غير ترتيب\nاجتماعات تكفيها رسالة\nابدأ بكره من أول سطر";
 
@@ -28,12 +29,27 @@ export default function RemotionReel() {
   const [err, setErr] = useState("");
   const ctl = useRef(null);
   const [font, setFont] = useState(null);
+  const [topic, setTopic] = useState("");
+  const [writing, setWriting] = useState(false);
   useEffect(() => { ensureFont(800).then(() => setFont(siteFont())); }, []);
 
   const scenes = useMemo(() => text.split("\n").map((x) => x.trim()).filter(Boolean).slice(0, 10), [text]);
   const frames = Math.max(1, scenes.length) * Math.round(secs * FPS);
   const props = useMemo(() => ({ scenes, themeId, secondsPerScene: secs, handle, font: font || "system-ui, sans-serif" }), [scenes, themeId, secs, handle, font]);
   const supported = typeof window !== "undefined" && typeof VideoEncoder !== "undefined";
+
+  async function writeScript() {
+    if (!topic.trim() || writing) return;
+    setWriting(true); setErr("");
+    try {
+      const res = await fetch("/api/reel", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ topic, goal: "tips", dialect: "egy", count: 6 }) });
+      if (!res.ok) { const d = await res.json().catch(() => ({})); throw new Error(d.error || "حصلت مشكلة. جرّب تاني."); }
+      const lines = parseScript(await res.text());
+      if (!lines.length) throw new Error("ما طلعش سكريبت مناسب. اكتب الفكرة بتفاصيل أكتر.");
+      setText(lines.join("\n"));
+    } catch (e) { setErr(e.message); }
+    setWriting(false);
+  }
 
   async function render() {
     setErr(""); setOut(null); setProg(0);
@@ -58,7 +74,7 @@ export default function RemotionReel() {
 
   return (
     <div className={s.root}>
-      <span className={s.badge}><i />تجربة Remotion: التصدير على جهازك</span>
+      <span className={s.badge}><i />من غير حد، والفيديو بيتعمل على جهازك</span>
       <div className={s.bench}>
         <div className={s.stage}>
           <div style={{ width: "100%", maxWidth: 300 }}>
@@ -67,6 +83,9 @@ export default function RemotionReel() {
         </div>
         <div className={s.panel}>
           <div className={s.section}>
+            <span className={s.sectionTitle}>فكرة الفيديو (اختياري)</span>
+            <input className={s.input} dir="auto" placeholder="مثال: 5 نصايح لتوفير فلوس المرتب" value={topic} onChange={(e) => setTopic(e.target.value)} maxLength={300} aria-label="فكرة الفيديو" />
+            <button type="button" className="btn ghost" onClick={writeScript} disabled={!topic.trim() || writing}>{writing ? "بيكتب..." : "اكتب السكريبت بالذكاء الاصطناعي"}</button>
             <span className={s.sectionTitle}>المشاهد (سطر لكل مشهد، لحد 10)</span>
             <textarea className={s.input} rows={6} dir="auto" value={text} onChange={(e) => setText(e.target.value)} aria-label="المشاهد" />
             <div className={s.presets}>
