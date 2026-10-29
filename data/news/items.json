@@ -1,31 +1,332 @@
 {
- "updated": "2026-10-28T17:17:00.749Z",
+ "updated": "2026-10-29T05:12:12.477Z",
  "providers": [
   "groq",
   "openrouter",
   "gemini"
  ],
- "used": {},
+ "used": {
+  "gemini": 9
+ },
  "feeds": {
-  "openai": "ok 73",
-  "deepmind": "ok 11",
-  "apple": "ok 10",
-  "verge": "ok 10",
+  "openai": "ok 71",
   "techcrunch": "ok 20",
-  "nvidia": "ok 18",
+  "verge": "ok 10",
   "meta": "ok 9",
-  "aws": "ok 20",
   "huggingface": "ok 24",
+  "apple": "ok 10",
+  "nvidia": "ok 18",
+  "aws": "ok 20",
   "marktechpost": "ok 10",
   "google-research": "ok 12",
-  "google-ai": "ok 6",
-  "techwd": "ok 5",
+  "google-ai": "ok 5",
+  "techwd": "ok 6",
   "arstechnica": "ok 20",
+  "deepmind": "ok 11",
   "aitnews": "ok 6",
-  "microsoft": "ok 10",
+  "microsoft": "ok 9",
   "venturebeat": "FAIL HTTP 429"
  },
  "items": [
+  {
+   "id": "02aebfc3f398",
+   "url": "https://www.marktechpost.com/2026/10/28/nvidia-nemotron-3-5-transcribe-open-speech-llm/",
+   "title": "NVIDIA Releases Nemotron 3.5 Transcribe: An Open 30B MoE Model for 40-Language Transcription with ~4B Active Parameters",
+   "date": "2026-10-29T04:41:24.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "إطلاق نموذج Nemotron 3.5 Transcribe من NVIDIA",
+    "summary": "نزلت NVIDIA نموذج Nemotron 3.5 Transcribe المفتوح للتعامل مع الصوت بـ 40 لغة، وده بيدي دقة عالية جداً في تفريغ النصوص."
+   }
+  },
+  {
+   "id": "09f762edab0d",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1021644/adam-mosseri-instagram-ai-negativity",
+   "title": "Adam Mosseri says negativity around AI is ‘going to get worse’",
+   "date": "2026-10-28T23:05:39.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "كلام رئيس Instagram عن الذكاء الاصطناعي",
+    "summary": "Adam Mosseri رئيس Instagram اعترف إن الهجوم ورفض الناس للذكاء الاصطناعي هيكبر ويزيد الفترة الجاية مش بس عند الشباب والمبدعين."
+   }
+  },
+  {
+   "id": "69a84e049cc6",
+   "url": "https://aitnews.com/2026/10/29/%d8%a3%d9%85%d8%a7%d8%b2%d9%88%d9%86-%d8%aa%d9%83%d8%b4%d9%81-%d8%b9%d9%86-5-%d8%a3%d8%ac%d9%87%d8%b2%d8%a9-%d8%ac%d8%af%d9%8a%d8%af%d8%a9-%d9%85%d9%86-%d8%a3%d9%84%d9%8a%d9%83%d8%b3%d8%a7-%d8%a5/",
+   "title": "أمازون تكشف عن 5 أجهزة جديدة من أليكسا.. إطار صور ذكي وساعة منبهة لمراقبة النوم",
+   "date": "2026-10-28T22:00:44.000Z",
+   "src": "البوابة العربية للأخبار التقنية",
+   "srcId": "aitnews",
+   "kind": "arabic",
+   "ar": {
+    "title": "أمازون تكشف عن 5 أجهزة جديدة من أليكسا.. إطار صور ذكي وساعة منبهة لمراقبة النوم",
+    "summary": ""
+   }
+  },
+  {
+   "id": "b126d7721238",
+   "url": "https://techcrunch.com/2026/10/28/microsoft-just-shared-azures-actual-revenue-in-dollars-33-2-billion/",
+   "title": "Microsoft just shared Azure’s actual revenue in dollars: $33.2 billion",
+   "date": "2026-10-28T21:58:32.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "إيرادات Azure تظهر للنور",
+    "summary": "لأول مرة Microsoft تكشف عن أرقام إيرادات Azure بالدولار واللي وصلت لـ 33.2 مليار دولار لتنافس بقوة."
+   }
+  },
+  {
+   "id": "f348c6db37d8",
+   "url": "https://techcrunch.com/2026/10/28/google-expands-ai-search-ads-globally-as-core-ad-growth-slows/",
+   "title": "Google expands AI Search ads globally as core ad growth slows",
+   "date": "2026-10-28T21:48:37.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Google توسع نطاق إعلانات بحث الذكاء الاصطناعي",
+    "summary": "Google قررت توسع إعلانات البحث المدعومة بالذكاء الاصطناعي عالمياً وسط نمو قوي في إيرادات شركة Alphabet."
+   }
+  },
+  {
+   "id": "90b267becbf2",
+   "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
+   "title": "Microsoft recorded $10 billion in revenue from OpenAI",
+   "date": "2026-10-28T21:34:30.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "مكاسب Microsoft من شراكتها مع OpenAI",
+    "summary": "Microsoft حققت إيرادات بـ 10 مليار دولار من الشراكة والترتيبات التجارية مع OpenAI."
+   }
+  },
+  {
+   "id": "e4867209a9cd",
+   "url": "https://www.theverge.com/gadgets/1021405/akai-open-source-mpc-sample-key",
+   "title": "Akai is embracing vibe-coded mods with an open-source MPC",
+   "date": "2026-10-28T21:34:04.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "دعم Akai للمعدلين والمبرمجين",
+    "summary": "شركة Akai بتدعم مجتمع المودين والمبرمجين من خلال إتاحة جهاز MPC بفيرمแวر مفتوح المصدر بدري."
+   }
+  },
+  {
+   "id": "f7041d98b561",
+   "url": "https://techcrunch.com/2026/10/28/microsoft-hits-10-quarters-of-record-breaking-revenue-in-a-row/",
+   "title": "Microsoft hits 10 quarters of record-breaking revenue in a row",
+   "date": "2026-10-28T21:25:30.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "أرقام قياسية جديدة لـ Microsoft",
+    "summary": "Microsoft حققت إيرادات قياسية جديدة للمرة العاشرة على التوالي بقيمة 92.3 مليار دولار بزيادة 19%."
+   }
+  },
+  {
+   "id": "cd4299cd72e0",
+   "url": "https://aitnews.com/2026/10/29/%d8%ac%d9%88%d8%ac%d9%84-%d8%aa%d8%b7%d9%84%d9%82-%d9%86%d9%85%d9%88%d8%b0%d8%ac-gemini-4-carbon-%d9%82%d9%81%d8%b2%d8%a9-%d9%83%d8%a8%d9%8a%d8%b1%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d8%a3%d9%85%d9%86/",
+   "title": "جوجل تطلق نموذج Gemini 4 Carbon.. قفزة كبيرة في الأمن السيبراني تتفوق على OpenAI وأنثروبيك",
+   "date": "2026-10-28T21:04:31.000Z",
+   "src": "البوابة العربية للأخبار التقنية",
+   "srcId": "aitnews",
+   "kind": "arabic",
+   "ar": {
+    "title": "جوجل تطلق نموذج Gemini 4 Carbon.. قفزة كبيرة في الأمن السيبراني تتفوق على OpenAI وأنثروبيك",
+    "summary": ""
+   }
+  },
+  {
+   "id": "fc7d1d71bde9",
+   "url": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier",
+   "title": "Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity",
+   "date": "2026-10-28T20:03:00.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "إطلاق Gemini 4 Carbon من Google",
+    "summary": "Google أعلنت عن نموذج Gemini 4 Carbon بتطورات ضخمة في البرمجة والأمن السيبراني متفوقاً على منافسيه."
+   }
+  },
+  {
+   "id": "2ede9b7f3431",
+   "url": "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/",
+   "title": "Anthropic just launched tools to show companies what their AI spending is buying",
+   "date": "2026-10-28T19:19:58.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "أدوات جديدة من Anthropic لمتابعة فلوس الذكاء الاصطناعي",
+    "summary": "شركة Anthropic بتزل أدوات جديدة عشان تعرف الشركات فلوسها رايحة فين على موديلات الذكاء الاصطناعي، وذلك استعداداً لطرحها في البورصة."
+   }
+  },
+  {
+   "id": "66c9055b3cf2",
+   "url": "https://techcrunch.com/video/wizs-cto-on-php2shell-and-the-coming-vulnpocalypse/",
+   "title": "Wiz’s CTO on PHP2Shell and the coming ‘vulnpocalypse’",
+   "date": "2026-10-28T19:05:46.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "رئيس التقنية في Wiz يحذر من كارثة ثغرات برمجية",
+    "summary": "بعد ظهور ثغرات خطيرة في لغة PHP اللي بتشغل نسبة كبيرة من المواقع، لسه الشركات بتصلح مشاكلها وقفلوا بعض المواقع لحد ما العيب يتصلح."
+   }
+  },
+  {
+   "id": "24b289310b19",
+   "url": "https://techcrunch.com/podcast/the-vulnpocalypse-is-coming-for-the-internets-aging-code-says-wizs-cto/",
+   "title": "The ‘Vulnpocalypse’ is coming for the internet’s aging code, says Wiz’s CTO",
+   "date": "2026-10-28T18:50:39.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "تحذيرات من Wiz بخصوص الكود القديم على الإنترنت",
+    "summary": "مشاكل لغة PHP الأخيرة وضحت إن تنظيف الكودات القديمة لسه قدامه مشوار طويل والشركات لسه بتلحق نفسها."
+   }
+  },
+  {
+   "id": "bfd6acefc1fb",
+   "url": "https://arstechnica.com/ai/2026/10/google-announces-gemini-4-carbon-its-latest-frontier-ai-model-that-you-cant-use/",
+   "title": "Google announces Gemini 4 Carbon, its latest frontier AI model that you can't use",
+   "date": "2026-10-28T18:47:27.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": {
+    "title": "جوجل تعلن عن نموذج Gemini 4 Carbon بس مش هتقدر تستخدمه",
+    "summary": "جوجل كشفت عن نموذج الذكاء الاصطناعي الجديد Gemini 4 Carbon، واللي يعتبر نسخة أحسن شوية من نموذج Argon."
+   }
+  },
+  {
+   "id": "d0753be868cc",
+   "url": "https://www.theverge.com/tech/1021143/microsoft-lg-samsung-copilot-ai-assistant-smart-tvs-ending",
+   "title": "Microsoft is ending Copilot support on smart TVs",
+   "date": "2026-10-28T18:36:26.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "مايكروسوفت بتلغي دعم Copilot من الشاشات الذكية",
+    "summary": "بعد أقل من سنتين من إعلانه، مايكروسوفت قررت تقفل دعم مساعد الذكاء الاصطناعي Copilot على الشاشات الذكية لسنانج وLG السنة دي."
+   }
+  },
+  {
+   "id": "81ea71b47239",
+   "url": "https://aws.amazon.com/blogs/machine-learning/building-an-agentic-ai-platform-on-amazon-bedrock-agentcore/",
+   "title": "Building an Agentic AI Platform on Amazon Bedrock AgentCore",
+   "date": "2026-10-28T18:28:26.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "بناء منصة ذكاء اصطناعي تفاعلية على Amazon Bedrock",
+    "summary": "شرح لطريقة بناء وتأمين منصة ذكاء اصطناعي متعددة الحسابات باستخدام Amazon Bedrock AgentCore مع خطوط أنابيب للتقييم."
+   }
+  },
+  {
+   "id": "3364604ad84a",
+   "url": "https://aws.amazon.com/blogs/machine-learning/distributed-training-with-ray-train-dlcs-and-efa-on-eks/",
+   "title": "Distributed training with Ray Train DLCs and EFA on EKS",
+   "date": "2026-10-28T18:19:54.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "التدريب الموزع باستخدام Ray Train على Amazon EKS",
+    "summary": "استعراض لتجربة عملية لضبط نموذج Qwen2.5-1.5B باستخدام حاويات Ray Train ودعم من كارت الشاشة على خدمات أمازون."
+   }
+  },
+  {
+   "id": "12048ccbf56b",
+   "url": "https://aws.amazon.com/blogs/machine-learning/accelerating-software-delivery-with-agentic-qa-automation-using-amazon-nova-act-part-3/",
+   "title": "Accelerating software delivery with agentic QA automation using Amazon Nova Act – Part 3",
+   "date": "2026-10-28T18:12:13.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "تسريع تسليم البرمجيات بأتمتة اختبار الجودة مع Amazon Nova Act",
+    "summary": "الجزء الثالث من السلسلة بيضيف أدوات لتنظيم الاختبارات وتقارير الصحة وإدارة المستخدمين بناءً على الفرق في Amazon Nova Act."
+   }
+  },
+  {
+   "id": "c44aa551102e",
+   "url": "https://www.marktechpost.com/2026/10/28/google-deepmind-gemini-4-carbon-frontier-model/",
+   "title": "Google DeepMind Introduces Gemini 4 Carbon, Its Top Model for Cyber Defense and Coding",
+   "date": "2026-10-28T17:48:38.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "جوجل ديب مايند تقدم Gemini 4 Carbon",
+    "summary": "كشفت Google DeepMind عن نموذجها الجديد Gemini 4 Carbon المخصص لأمان السايبر والكود، ومتاح الأول للمتخصصين بأسعار محددة."
+   }
+  },
+  {
+   "id": "168eca1264fc",
+   "url": "https://www.tech-wd.com/wd/2026/10/28/%d8%ad%d8%ac%d8%a8-%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-chatgpt-%d8%b9%d9%84%d9%89-%d8%a7%d9%84%d8%a3%d8%ac%d9%87%d8%b2%d8%a9-%d8%a7%d9%84%d8%ad%d9%83%d9%88%d9%85%d9%8a%d8%a9-%d8%a8%d8%a7%d9%84%d8%b3/",
+   "title": "حجب برنامج ChatGPT على الأجهزة الحكومية بالسويد لحماية البيانات",
+   "date": "2026-10-28T17:47:19.000Z",
+   "src": "تك وورلد",
+   "srcId": "techwd",
+   "kind": "arabic",
+   "ar": {
+    "title": "حجب برنامج ChatGPT على الأجهزة الحكومية بالسويد لحماية البيانات",
+    "summary": ""
+   }
+  },
+  {
+   "id": "0f279d2e0404",
+   "url": "https://www.tech-wd.com/wd/2026/10/28/%d9%86%d8%b8%d8%a7%d9%85-gpt-6-1-terra-%d9%8a%d9%86%d8%b7%d9%84%d9%82-%d8%b1%d8%b3%d9%85%d9%8a%d8%a7%d9%8b-%d8%a8%d9%86%d8%b5%d9%81-%d8%b3%d8%b9%d8%b1-%d9%88%d8%a7%d8%ac%d9%87%d8%a9-%d8%a7%d9%84%d9%86/",
+   "title": "نظام GPT-6.1 Terra ينطلق رسمياً بنصف سعر واجهة النظام السابق",
+   "date": "2026-10-28T17:47:00.000Z",
+   "src": "تك وورلد",
+   "srcId": "techwd",
+   "kind": "arabic",
+   "ar": {
+    "title": "نظام GPT-6.1 Terra ينطلق رسمياً بنصف سعر واجهة النظام السابق",
+    "summary": ""
+   }
+  },
+  {
+   "id": "0676def7896c",
+   "url": "https://arstechnica.com/ai/2026/10/google-ai-gets-cagey-when-asked-who-won-the-2020-elections/",
+   "title": "Google AI gets cagey when asked who won the 2020 elections",
+   "date": "2026-10-28T17:46:32.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": {
+    "title": "ذكاء جوجل الاصطناعي يتحفظ في إجابات انتخابات 2020",
+    "summary": "بقت إجابات الـ AI متحفظة لما بيتسأل عن مين فاز في انتخابات 2020 جوه أمريكا، لكن بتكون أوضح بره أمريكا."
+   }
+  },
+  {
+   "id": "d8fb4e7732a4",
+   "url": "https://www.marktechpost.com/2026/10/28/minimax-open-sources-mcode-stack-agent-skills/",
+   "title": "MiniMax Open-Sources MCode Stack: 15 Agent Skills Its Coding Team Uses Daily",
+   "date": "2026-10-28T17:20:29.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "ميني ماكس تتيح MCode Stack كمصدر مفتوح",
+    "summary": "شركة MiniMax نزلت MCode Stack برخصة MIT، وهو عبارة عن مهارات وقوائم مستخدمة يومياً لفريق الكود بتاعها."
+   }
+  },
   {
    "id": "b0da25ea6c1a",
    "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
@@ -34,7 +335,10 @@
    "src": "Google DeepMind",
    "srcId": "deepmind",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "التفاصيل عن نموذج Gemini 4 Carbon الجديد",
+    "summary": "أعلنت الشركة عن نموذجها الجديد المتطور Gemini 4 Carbon."
+   }
   },
   {
    "id": "765a5a74d244",
@@ -44,7 +348,23 @@
    "src": "TechCrunch",
    "srcId": "techcrunch",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "الملء الآلي في Chrome يدخل على Gmail",
+    "summary": "تحديث الملء الآلي الجديد في متصفح Chrome بيقدر يسحب بيانات الطيران والشحن من إيميلاتك على Gmail بإذنك."
+   }
+  },
+  {
+   "id": "1e8ba9106ed8",
+   "url": "https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/",
+   "title": "As AI agents reshape the web, Google opens Gemini and Search to more apps",
+   "date": "2026-10-28T17:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "جوجل تفتح Gemini وبحثها لتطبيقات أكتر",
+    "summary": "منصة مطورين جديدة هتمكن الشركات من دمج خدماتهم في تجارب الذكاء الاصطناعي من جوجل لتغيير طريقة استخدام التطبيقات."
+   }
   },
   {
    "id": "c802108aab79",
@@ -54,7 +374,10 @@
    "src": "The Verge",
    "srcId": "verge",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "تطوير الملء الآلي في Chrome ببيانات Gmail",
+    "summary": "متصفح Chrome بقى بيستخدم تقنية Gemini وسحب المعلومات من Gmail عشان يسهل عليك ملء الاستمارات والبيانات."
+   }
   },
   {
    "id": "1739307690c3",
@@ -64,7 +387,10 @@
    "src": "The Verge",
    "srcId": "verge",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "ميتا تفكر في تأجيل شروط الأعمال الجديدة",
+    "summary": "شركة Meta قالت إنها ممكن تؤجل تطبيق شروط الأعمال الجديدة بعد 20 نوفمبر بسبب الهجوم والاعتراضات من الناشرين."
+   }
   },
   {
    "id": "41bdeeb24da3",
@@ -74,7 +400,10 @@
    "src": "Meta Engineering",
    "srcId": "meta",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "إصدار جديد من محرك إعلانات Meta Andromeda",
+    "summary": "ميتا طورت محرك الإعلانات Meta Andromeda عبر دمج تصميم النماذج مع عتاد الـ GPU، وده بيزود كفاءة استرجاع الإعلانات بشكل كبير."
+   }
   },
   {
    "id": "d0407e5d8c6e",
@@ -84,7 +413,10 @@
    "src": "TechCrunch",
    "srcId": "techcrunch",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "انتقادات لقيادات الذكاء الاصطناعي بسبب انعزالهم عن الجمهور",
+    "summary": "مسؤولي قطاع التكنولوجيا بيظهروا انفصالهم عن الواقع لما بيتباهوا باستخدام الذكاء الاصطناعي عشان يتواصلوا مع أسرهم."
+   }
   },
   {
    "id": "feda3ad530f5",
@@ -94,7 +426,10 @@
    "src": "TechCrunch",
    "srcId": "techcrunch",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "هجمات سيبرانية جديدة تضرب القطاع المالي في كوريا الجنوبية",
+    "summary": "المؤسسات المالية في كوريا الجنوبية اتعرضت لموجة هجمات سيبرانية جديدة، وده بيبين خطورة عمليات الاختراق بالذكاء الاصطناعي في آسيا."
+   }
   },
   {
    "id": "2952348be6c4",
@@ -104,7 +439,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "لابتوبات NVIDIA RTX Spark الجديدة خفيفة الوزن",
+    "summary": "أجهزة NVIDIA RTX Spark الجديدة نزلت من شركات كبرى وبتجمع بين معالجات Blackwell RTX و Grace CPU لأداء قوي."
+   }
   },
   {
    "id": "f1ebb512d4e0",
@@ -114,7 +452,10 @@
    "src": "TechCrunch",
    "srcId": "techcrunch",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Nvidia تطرح نموذج مجاني للتحويل من الصوت للنص",
+    "summary": "Nvidia نزلت نموذج صوتي جديد بيحول الكلام لنص بحوالي 40 لغة بس بيشتغل على التسجيلات المسجلة مش البث الحي."
+   }
   },
   {
    "id": "7ae8eb20550e",
@@ -124,7 +465,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "إطلاق NVIDIA Nemotron 3.5 للنسخ والتحويل",
+    "summary": "إطلاق نموذجي NVIDIA Nemotron 3.5 Transcribe و Granary v2 للنسخ متعدد اللغات والقابل للتعديل."
+   }
   },
   {
    "id": "5283652bd524",
@@ -134,7 +478,10 @@
    "src": "The Verge",
    "srcId": "verge",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "شركة xAI تشتري منازل جيران مركز البيانات",
+    "summary": "شركة تابعة لـ xAI بتعرض شراء بيوت في ميسيسبي بشرط إن السكان ما يرفعوش قضايا بسبب إزعاج مركز البيانات."
+   }
   },
   {
    "id": "a8cd205d5d97",
@@ -147,6 +494,19 @@
    "ar": {
     "title": "ذاكرة HBM تقود صادرات كوريا لتجاوز خمسين تريليون وون",
     "summary": ""
+   }
+  },
+  {
+   "id": "75e2017ed4c5",
+   "url": "https://openai.com/index/openai-servicenow-partnership-expansion",
+   "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+   "date": "2026-10-28T13:15:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "توسيع الشراكة بين OpenAI و ServiceNow",
+    "summary": "OpenAI و ServiceNow وسعوا شراكتهم عشان يدخلوا نماذج ووكلاء الذكاء الاصطناعي جوه بيئة عمل ServiceNow و ChatGPT."
    }
   },
   {
@@ -190,6 +550,16 @@
    "src": "The Verge",
    "srcId": "verge",
    "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "0dc3cf0b7c98",
+   "url": "https://openai.com/index/the-future-of-the-firm",
+   "title": "The future of the firm",
+   "date": "2026-10-28T10:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
    "ar": null
   },
   {
@@ -1579,7 +1949,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "موديلك بيشتغل على AWS Trainium ولا لأ؟ تقدر تعرف دلوقتي",
+    "summary": "تقدر دلوقتي تبحث وتعرف لو الموديل بتاعك بيشتغل على شرائح AWS Trainium ولا لأ بكل سهولة."
+   }
   },
   {
    "id": "95eb6975ad24",
@@ -1589,7 +1962,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "تحويل تقييم الداتابيز لمكافأة تعزيزية باستخدام ThinkingBox",
+    "summary": "إزاي تحول عملية تقييم قواعد البيانات لمكافأة تعليم تعزيزي عشان تدرب الأージェنتس بذكاء أكتر."
+   }
   },
   {
    "id": "27825e300358",
@@ -1599,7 +1975,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "اعمل تطبيقات أسرع في الاستجابة مع Decisions API",
+    "summary": "أداة Decisions API بتوفرلك قرارات سريعة وموجهة وبتكلفة قليلة لأي تطبيق."
+   }
   },
   {
    "id": "bb00f30901ce",
@@ -1609,7 +1988,10 @@
    "src": "Amazon AWS",
    "srcId": "aws",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "تحديث كبير لمحرك الـ Generative في Amazon Polly",
+    "summary": "Amazon Polly نزلت تحديث بيقدم صوت أدق وأكثر تعبيرية وبسرعة عالية، مع 14 صوت جديد ودعم للغات جديدة من غير ما تحتاج تغير في الكود."
+   }
   },
   {
    "id": "ff227324e376",
@@ -1619,7 +2001,10 @@
    "src": "Amazon AWS",
    "srcId": "aws",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "إزاي IskayPet جمعت المعرفة الشركة بـ Amazon Bedrock",
+    "summary": "شركة IskayPet قدرت تعمل مساعد ذكي متعدد اللغات لخدمة الموظفين في كذا دولة ومن غير ما تدير بنية تحتية لـ RAG."
+   }
   },
   {
    "id": "f70f2a2dbc3b",
@@ -1629,7 +2014,10 @@
    "src": "Amazon AWS",
    "srcId": "aws",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "طرق جديدة لتخصيص النماذج مع SageMaker AI من غير وجع دماغ الـ GPUs",
+    "summary": "خدمة SageMaker AI بقت توفر جلسات تدريب سيرفرلس عشان تقدر تعمل تخصيص للموديلات والـ GPUs بتدار لوحدها بالكامل."
+   }
   },
   {
    "id": "df383ee81b1c",
@@ -1639,7 +2027,10 @@
    "src": "Amazon AWS",
    "srcId": "aws",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "اكتب حلقة التدريب الخاصة بيك مع Amazon SageMaker من غير ما تشيل هم الـ GPUs",
+    "summary": "APIs تدريب SageMaker AI بتخليك تكتب كود التدريب بتاع الـ LLM براحتك بلغة بايثون، وهي بتتولى تشغيل وإدارة الـ GPUs."
+   }
   },
   {
    "id": "353395321c92",
@@ -1649,7 +2040,10 @@
    "src": "Amazon AWS",
    "srcId": "aws",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "شغل الذكاء الاصطناعي في بيئة متوافقة مع HIPAA باستخدام Amazon Quick",
+    "summary": "المقال بيشرح إزاي تستخدم خدمة Amazon Quick لتشغيل وكلاء ذكاء اصطناعي متوافقين مع معايير الصحة والبيانات الحساسة HIPAA."
+   }
   },
   {
    "id": "f0c8337af231",
@@ -1841,7 +2235,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "موديلات NVIDIA Earth-2 لتحسين توقعات الطقس",
+    "summary": "جهات أوروبية بتعتمد على موديلات NVIDIA Earth-2 المفتوحة عشان تعمل توقعات دقيقة للطقس والمناخ تفيد قطاعات زي الطاقة والتأمين."
+   }
   },
   {
    "id": "2d9cc8be346c",
@@ -2254,7 +2651,10 @@
    "src": "Ars Technica",
    "srcId": "arstechnica",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Meta تشيل كلمة \"تدريب\" من شروط الخدمة",
+    "summary": "شركة Meta غيرت سياسة جمع البيانات للذكاء الاصطناعي وشالت كلمة تدريب بعد الهجوم اللي جيلها، من غير ما تضيف تعهدات لملف robots.txt."
+   }
   },
   {
    "id": "f74f11fae08f",
@@ -2264,7 +2664,10 @@
    "src": "Ars Technica",
    "srcId": "arstechnica",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "الذكاء الشخصي من Gemini جاي للعربيات",
+    "summary": "خدمة Gemini للتذكير الذكي والذكاء الشخصي في طريقها للعربيات، ويظهر وقته الواحد يراجع إعداداته."
+   }
   },
   {
    "id": "748b8e425db0",
@@ -2274,7 +2677,10 @@
    "src": "Ars Technica",
    "srcId": "arstechnica",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "درون أوكرانية لإنقاذ جندي مصاب",
+    "summary": "أوكرانيا نفذت فكرة جديدة ومبتكرة باستخدام الدرون لإنقاذ وإخلاء الجرحى عشان تحسن فرص النجاة الصعبة."
+   }
   },
   {
    "id": "f25d567c798e",
@@ -2284,7 +2690,10 @@
    "src": "Ars Technica",
    "srcId": "arstechnica",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Meta بتحاول تحط اللوم على الموظفين",
+    "summary": "شركة Meta بتحاول تطلع الموظفين اللي حملوا تورنت هما السبب عشان تحمي المدراء الكبار."
+   }
   },
   {
    "id": "c84a57a97fd6",
@@ -2294,7 +2703,10 @@
    "src": "Microsoft Research",
    "srcId": "microsoft",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "أبحاث تكنولوجية لتأثير حقيقي وموجب",
+    "summary": "مدير المعامل Chris White بيتكلم في Microsoft Research عن تحديات الأبحاث اللي ليها تأثير واقعي زي تحليل بيانات الحروب ومكافحة الاتجار بالبشر."
+   }
   },
   {
    "id": "fb9936745ef9",
@@ -2304,7 +2716,10 @@
    "src": "Ars Technica",
    "srcId": "arstechnica",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Meta Muse تكشف أسرار المستخدمين",
+    "summary": "أداة Meta Muse بتكشف الأسرار الشخصية والبزنس للمستخدمين وقت ما بيشاركوا المحادثات بتاعتهم."
+   }
   },
   {
    "id": "b3fcb2e42d32",
@@ -2314,7 +2729,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "توفير الوقت بـ ChatGPT Work",
+    "summary": "واحد صاحب امتياز لـ Schlotzsky و Cinnabon قدر يقلل وقت جرد الكاش بنسبة 94% ووفر وقت تغيير الأسعار بـ 95% باستخدام ChatGPT Work."
+   }
   },
   {
    "id": "a84b6a7bee5c",
@@ -2324,7 +2742,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "تقييم Terminal X مع GPT-6.1",
+    "summary": "وكيل التقييم في Terminal X بيطابق أحكام المستثمرين الكبار بنسبة 88.6% باستخدام نموذج GPT-6.1 Sol."
+   }
   },
   {
    "id": "dbaa90254253",
@@ -2334,7 +2755,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "OpenAI تستحوذ على Orchestra Bio",
+    "summary": "شركة OpenAI بتستحوذ على Orchestra Bio عشان تدخل الذكاء الاصطناعي في أبحاث وتطوير علوم الحياة وتسرع إنتاج الأدوية."
+   }
   },
   {
    "id": "84cd8d44e982",
@@ -2394,7 +2818,10 @@
    "src": "Meta Engineering",
    "srcId": "meta",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "تحديث GenRecs Tokenization في Meta",
+    "summary": "ميتا بتطور نظام ترشيح الإعلانات باستخدام الذكاء الاصطناعي ونماذج LLMs عشان تخليه أذكى وأدق بكتير."
+   }
   },
   {
    "id": "5641e45c2126",
@@ -3313,56 +3740,6 @@
    "date": "2026-09-29T10:00:00.000Z",
    "src": "OpenAI",
    "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "884977ecb800",
-   "url": "https://openai.com/index/introducing-dots",
-   "title": "Introducing dots",
-   "date": "2026-09-29T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "3c2fdddd3946",
-   "url": "https://www.microsoft.com/en-us/research/blog/one-year-in-how-microsoft-research-asia-singapore-is-advancing-research-partnership-and-talent-for-real-world-impact/",
-   "title": "One year in: How Microsoft Research Asia – Singapore is advancing research, partnership and talent for real-world impact",
-   "date": "2026-09-28T21:00:00.000Z",
-   "src": "Microsoft Research",
-   "srcId": "microsoft",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "cfe8e900401f",
-   "url": "https://openai.com/index/how-we-will-do-better-for-australia",
-   "title": "How we will do better for Australia",
-   "date": "2026-09-28T19:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "cf468ec39dd6",
-   "url": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training",
-   "title": "Towards safety cases for frontier AI training",
-   "date": "2026-09-28T19:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "1eadd5627184",
-   "url": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/",
-   "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
-   "date": "2026-09-28T19:00:00.000Z",
-   "src": "Google AI",
-   "srcId": "google-ai",
    "kind": "company",
    "ar": null
   }
