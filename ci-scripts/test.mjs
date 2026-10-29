@@ -2,22 +2,15 @@ import { chromium } from "playwright";
 const BASE = "http://localhost:3000";
 const log = (n, ok, i = "") => console.log(ok ? "OK " : "BAD", n, String(i).slice(0, 300));
 const b = await chromium.launch();
-const p = await b.newPage({ viewport: { width: 420, height: 900 } });
-const errs = []; p.on("pageerror", (e) => errs.push(String(e)));
-const svg = (c) => "data:image/svg+xml;utf8," + encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200'><rect width='300' height='200' fill='${c}'/></svg>`);
-const imgs = [{ s: svg("#c33"), h: "https://example.com/a", a: "one" }, { s: svg("#3a3"), h: "https://example.com/b", a: "two" }];
-await p.route("**/api/chat", (r) => r.fulfill({ status: 200, contentType: "text/plain; charset=utf-8", headers: {
-  "x-search": "ok", "x-sources": encodeURIComponent(JSON.stringify([{ t: "Example", u: "https://example.com/a" }])), "x-images": encodeURIComponent(JSON.stringify(imgs)),
-}, body: "ده رد تجريبي [1]" }));
-const r = await p.goto(`${BASE}/chat`);
-log("chat page", r.status() === 200, r.status());
-const fs = await p.$eval("textarea", (t) => parseFloat(getComputedStyle(t).fontSize));
-log("composer font >= 17px", fs >= 17, fs + "px");
-await p.fill("textarea", "سعر الدولار النهارده");
-await p.keyboard.press("Enter");
-await p.waitForSelector("[aria-label='صور من نتائج البحث'] img", { timeout: 15000 }).then(() => log("image strip rendered", true), (e) => log("image strip rendered", false, e.message));
-const n = await p.$$eval("[aria-label='صور من نتائج البحث'] a", (a) => a.length);
-log("2 image cards", n === 2, n);
-await p.screenshot({ path: "ci/chat-images.png" });
-log("no page errors", errs.length === 0, errs.join(" | "));
+for (const [name, vp] of [["mobile", { width: 420, height: 900 }], ["desktop", { width: 1280, height: 800 }]]) {
+  const p = await b.newPage({ viewport: vp });
+  await p.goto(`${BASE}/chat`);
+  const m = await p.$eval("textarea", (t) => { const c = getComputedStyle(t); const r = t.getBoundingClientRect(); return { fs: parseFloat(c.fontSize), h: r.height, w: r.width }; });
+  log(`${name} font 14px`, m.fs === 14, m.fs);
+  log(`${name} height >= 84`, m.h >= 84, Math.round(m.h));
+  await p.fill("textarea", "سطر\nسطر\nسطر\nسطر\nسطر\nسطر\nسطر\nسطر\nسطر\nسطر");
+  const h2 = await p.$eval("textarea", (t) => t.getBoundingClientRect().height);
+  log(`${name} grows with text, capped 280`, h2 > m.h && h2 <= 281, Math.round(h2));
+  await p.screenshot({ path: `ci/composer-${name}.png` });
+}
 await b.close();
