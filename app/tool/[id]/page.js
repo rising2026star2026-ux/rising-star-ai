@@ -6,6 +6,7 @@ import { SITE_URL, BRAND } from "@/lib/site";
 import ToolRunner from "@/components/ToolRunner";
 import LocalTool from "@/components/studio/LocalTool";
 import AdLibrary from "@/components/studio/AdLibrary";
+import VisionRunner from "@/components/VisionRunner";
 import ToolIcon from "@/components/ToolIcon";
 import ToolGuide, { howToSteps, faqFor } from "@/components/ToolGuide";
 
@@ -109,13 +110,13 @@ export default async function ToolPage({ params }) {
       ) : (
         <>
           {tool.extra === "adlibrary" && <AdLibrary />}
-          <ToolRunner
+          {tool.extra === "vision" ? <VisionRunner toolName={tool.name} /> : <ToolRunner
             toolId={tool.id}
             toolName={tool.name}
             placeholder={tool.placeholder}
             option={tool.option}
             label={tool.extra === "adlibrary" ? "٢. حلّل الإعلان واكتب أقوى منه" : undefined}
-          />
+          />}
         </>
       )}
 

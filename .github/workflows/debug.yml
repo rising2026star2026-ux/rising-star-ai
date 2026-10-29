@@ -1,0 +1,36 @@
+name: debug
+on:
+  push:
+    branches: [ci-debug]
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm install --no-audit --no-fund
+      - run: npm i --no-save --no-audit --no-fund playwright@1.49.0 && npx playwright install --with-deps chromium
+      - run: npx next build 2>&1 | tail -40
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      - run: |
+          mkdir -p ci
+          (npx next start -p 3000 > ci/server.log 2>&1 &)
+          for i in $(seq 1 30); do curl -sf localhost:3000 >/dev/null && break; sleep 1; done
+          node ci-scripts/test.mjs > ci/test.log 2>&1 || true
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      - if: always()
+        run: |
+          mkdir -p ci
+          git config user.name "rising-star-bot" && git config user.email "bot@users.noreply.github.com"
+          git add -f ci
+          git commit -m "ci results" || exit 0
+          git pull --rebase -q origin ci-debug || true
+          git push origin HEAD:ci-debug
