@@ -51,6 +51,28 @@ async function pollinations(prompt, [width, height], signal) {
   return bytes.length > 2000 ? { bytes, type } : null;
 }
 
+async function generate(prompt, size, signal) {
+  for (const run of [cloudflare, together, pollinations]) {
+    try {
+      const out = await run(prompt, size, signal);
+      if (out) return out;
+    } catch {}
+  }
+  return null;
+}
+
+// GET: بيستخدمه الشات كرابط صورة (<img src>)، فلو كل المصادر فشلت بيرجع خطأ بدل صورة اعتذار من مصدر خارجي
+export async function GET(req) {
+  const u = new URL(req.url);
+  const prompt = (u.searchParams.get("prompt") || "").trim().slice(0, 1200);
+  const size = SIZES[u.searchParams.get("size")] || SIZES["1024x1024"];
+  if (!prompt) return fail("مفيش وصف.", 400);
+  if (tooMany(clientIp(req))) return fail("وصلت لحد الصور الساعة دي. جرّب بعد شوية.", 429);
+  const out = await generate(prompt, size, req.signal);
+  if (!out) return fail("كل المولّدات مشغولة دلوقتي. جرّب بعد دقيقة.", 503);
+  return new Response(out.bytes, { headers: { "Content-Type": out.type, "Cache-Control": "public, max-age=86400, immutable" } });
+}
+
 export async function POST(req) {
   let body;
   try { body = await req.json(); } catch { return fail("طلب غير صالح.", 400); }
@@ -58,12 +80,7 @@ export async function POST(req) {
   const size = SIZES[body.size] || SIZES["1024x1024"];
   if (!prompt) return fail("مفيش وصف.", 400);
   if (tooMany(clientIp(req))) return fail("وصلت لحد الصور الساعة دي. جرّب بعد شوية.", 429);
-
-  for (const run of [cloudflare, together, pollinations]) {
-    try {
-      const out = await run(prompt, size, req.signal);
-      if (out) return new Response(out.bytes, { headers: { "Content-Type": out.type, "Cache-Control": "no-store" } });
-    } catch {}
-  }
-  return fail("كل المولّدات مشغولة دلوقتي. جرّب بعد دقيقة.", 503);
+  const out = await generate(prompt, size, req.signal);
+  if (!out) return fail("كل المولّدات مشغولة دلوقتي. جرّب بعد دقيقة.", 503);
+  return new Response(out.bytes, { headers: { "Content-Type": out.type, "Cache-Control": "no-store" } });
 }
