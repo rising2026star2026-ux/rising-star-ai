@@ -1,16 +1,7 @@
-templates tips,numbered,quote,ad,typing,stats
-OK  tips 5 scenes video 10s
-BAD numbered 5 scenes timeout 200s
-node:internal/modules/run_main:123
-    triggerUncaughtException(
-    ^
-
-page.click: Timeout 30000ms exceeded.
-Call log:
-  - waiting for locator('[data-tpl=\'quote\']')
-
-    at /home/runner/work/rising-star-ai/rising-star-ai/ci-scripts/test.mjs:13:11 {
-  name: 'TimeoutError'
-}
-
-Node.js v20.20.2
+OK  tips 5 scenes video 6s
+OK  numbered 5 scenes video 7s
+OK  quote 3 scenes video 5s
+OK  ad 5 scenes video 6s
+OK  typing 4 scenes video 5s
+OK  stats 4 scenes video 6s
+OK no page errors
