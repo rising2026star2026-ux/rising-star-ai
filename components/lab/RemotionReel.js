@@ -1,9 +1,10 @@
 "use client";
 // تجربة: ريلز بـ Remotion. المعاينة بالـ Player، والتصدير بيتم في متصفح العميل (WebCodecs) من غير أي سيرفر.
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Player } from "@remotion/player";
 import { ReelComp, THEMES, FPS, SIZE } from "./ReelComp";
 import s from "@/components/studio/studio.module.css";
+import { siteFont, ensureFont } from "@/components/studio/util";
 
 const SAMPLE = "3 حاجات بتضيّع وقتك كل يوم\nالموبايل أول ما تصحى\nمهام من غير ترتيب\nاجتماعات تكفيها رسالة\nابدأ بكره من أول سطر";
 
@@ -26,10 +27,12 @@ export default function RemotionReel() {
   const [out, setOut] = useState(null);
   const [err, setErr] = useState("");
   const ctl = useRef(null);
+  const [font, setFont] = useState(null);
+  useEffect(() => { ensureFont(800).then(() => setFont(siteFont())); }, []);
 
   const scenes = useMemo(() => text.split("\n").map((x) => x.trim()).filter(Boolean).slice(0, 10), [text]);
   const frames = Math.max(1, scenes.length) * Math.round(secs * FPS);
-  const props = useMemo(() => ({ scenes, themeId, secondsPerScene: secs, handle }), [scenes, themeId, secs, handle]);
+  const props = useMemo(() => ({ scenes, themeId, secondsPerScene: secs, handle, font: font || "system-ui, sans-serif" }), [scenes, themeId, secs, handle, font]);
   const supported = typeof window !== "undefined" && typeof VideoEncoder !== "undefined";
 
   async function render() {
@@ -59,7 +62,7 @@ export default function RemotionReel() {
       <div className={s.bench}>
         <div className={s.stage}>
           <div style={{ width: "100%", maxWidth: 300 }}>
-            <Player component={ReelComp} inputProps={props} durationInFrames={frames} fps={FPS} compositionWidth={SIZE.w} compositionHeight={SIZE.h} controls loop style={{ width: "100%", borderRadius: 14 }} />
+            {font && <Player component={ReelComp} inputProps={props} durationInFrames={frames} fps={FPS} compositionWidth={SIZE.w} compositionHeight={SIZE.h} controls loop style={{ width: "100%", borderRadius: 14 }} />}
           </div>
         </div>
         <div className={s.panel}>
@@ -84,7 +87,7 @@ export default function RemotionReel() {
             {prog !== null ? (
               <p className={s.meta} role="status">بيتصدّر... {Math.round(prog * 100)}%</p>
             ) : (
-              <button type="button" className="btn" id="rm-render" onClick={render} disabled={!supported || !scenes.length}>صدّر الفيديو ({Math.round(frames / FPS)} ث)</button>
+              <button type="button" className="btn" id="rm-render" onClick={render} disabled={!supported || !scenes.length || !font}>صدّر الفيديو ({Math.round(frames / FPS)} ث)</button>
             )}
             {out && (
               <>
