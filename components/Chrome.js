@@ -23,6 +23,7 @@ const NAV = [
   { href: "/maker", label: "صانع الصور والفيديو", match: ["/maker"], icon: <svg {...I}><rect x="3.5" y="4.5" width="17" height="15" rx="3" /><circle cx="9" cy="10" r="1.7" /><path d="M20.5 16l-5-4.5L8 19" /></svg> },
   { href: "/global-tools", label: "أدوات عالمية", match: ["/global-tools", "/ai/"], icon: <svg {...I}><circle cx="12" cy="12" r="8.5" /><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z" /></svg> },
   { href: "/creators", label: "صناع المحتوى", match: ["/creators"], icon: <svg {...I}><circle cx="9" cy="8.5" r="3.2" /><path d="M3.5 19.5c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5" /><path d="M16 5.6a3 3 0 010 5.8M17.5 14.7c1.6.6 2.7 2.2 3 4.8" /></svg> },
+  { href: "/tasks", label: "أداة لأي مهمة", match: ["/tasks", "/task/"], icon: <svg {...I}><path d="M9 11l3 3 8-8" /><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9" /></svg> },
   { href: "/learn", label: "تعلّم الذكاء الاصطناعي", tone: "learn", match: ["/learn"], icon: <svg {...I}><path d="M3 9l9-4.5L21 9l-9 4.5z" /><path d="M7 11.2v4.3c0 1.2 2.2 2.5 5 2.5s5-1.3 5-2.5v-4.3M21 9v5.5" /></svg> },
   { href: "/news", label: "جديد الذكاء الاصطناعي", tone: "news", match: ["/news"], icon: <svg {...I}><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z" /></svg> },
   { href: "/flows", label: "المهام الكاملة", match: ["/flows", "/flow/"], icon: <svg {...I}><rect x="3" y="4" width="7" height="5" rx="1.5" /><rect x="14" y="15" width="7" height="5" rx="1.5" /><path d="M6.5 9v3.5a2 2 0 002 2h7v.5" /></svg> },
