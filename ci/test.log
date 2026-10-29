@@ -1,5 +1,6 @@
-OK  chat page 200
-OK  composer font >= 17px 17.6px
-OK  image strip rendered 
-OK  2 image cards 2
-OK  no page errors 
+OK  mobile font 14px 14
+OK  mobile height >= 84 84
+OK  mobile grows with text, capped 280 276
+OK  desktop font 14px 14
+OK  desktop height >= 84 84
+OK  desktop grows with text, capped 280 276
