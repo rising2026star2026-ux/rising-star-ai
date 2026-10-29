@@ -3,11 +3,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Player } from "@remotion/player";
 import { ReelComp, THEMES, FPS, SIZE } from "./ReelComp";
+import { TEMPLATES, getTemplate } from "./templates";
 import s from "@/components/studio/studio.module.css";
 import { siteFont, ensureFont } from "@/components/studio/util";
 import { parseScript } from "@/components/studio/VideoMaker";
 
-const SAMPLE = "3 حاجات بتضيّع وقتك كل يوم\nالموبايل أول ما تصحى\nمهام من غير ترتيب\nاجتماعات تكفيها رسالة\nابدأ بكره من أول سطر";
 
 async function pickContainer() {
   try {
@@ -20,7 +20,8 @@ async function pickContainer() {
 }
 
 export default function RemotionReel() {
-  const [text, setText] = useState(SAMPLE);
+  const [tplId, setTplId] = useState("tips");
+  const [text, setText] = useState(TEMPLATES[0].sample.join("\n"));
   const [themeId, setThemeId] = useState("royal");
   const [secs, setSecs] = useState(3);
   const [handle, setHandle] = useState("");
@@ -35,8 +36,15 @@ export default function RemotionReel() {
 
   const scenes = useMemo(() => text.split("\n").map((x) => x.trim()).filter(Boolean).slice(0, 10), [text]);
   const frames = Math.max(1, scenes.length) * Math.round(secs * FPS);
-  const props = useMemo(() => ({ scenes, themeId, secondsPerScene: secs, handle, font: font || "system-ui, sans-serif" }), [scenes, themeId, secs, handle, font]);
+  const props = useMemo(() => ({ scenes, layout: getTemplate(tplId).layout, themeId, secondsPerScene: secs, handle, font: font || "system-ui, sans-serif" }), [scenes, tplId, themeId, secs, handle, font]);
   const supported = typeof window !== "undefined" && typeof VideoEncoder !== "undefined";
+
+  function pickTemplate(t) {
+    const cur = getTemplate(tplId);
+    // لو العميل ما غيّرش المثال، نبدّله بمثال القالب الجديد
+    if (text.trim() === cur.sample.join("\n")) setText(t.sample.join("\n"));
+    setTplId(t.id);
+  }
 
   async function writeScript() {
     if (!topic.trim() || writing) return;
@@ -83,6 +91,15 @@ export default function RemotionReel() {
         </div>
         <div className={s.panel}>
           <div className={s.section}>
+            <span className={s.sectionTitle}>القالب</span>
+            <div className={s.presets}>
+              {TEMPLATES.map((t) => (
+                <button key={t.id} type="button" className={`${s.preset} ${tplId === t.id ? s.presetOn : ""}`} onClick={() => pickTemplate(t)} data-tpl={t.id} title={t.desc}>
+                  {t.name}
+                </button>
+              ))}
+            </div>
+            <span className={s.meta}>{getTemplate(tplId).desc}</span>
             <span className={s.sectionTitle}>فكرة الفيديو (اختياري)</span>
             <input className={s.input} dir="auto" placeholder="مثال: 5 نصايح لتوفير فلوس المرتب" value={topic} onChange={(e) => setTopic(e.target.value)} maxLength={300} aria-label="فكرة الفيديو" />
             <button type="button" className="btn ghost" onClick={writeScript} disabled={!topic.trim() || writing}>{writing ? "بيكتب..." : "اكتب السكريبت بالذكاء الاصطناعي"}</button>
