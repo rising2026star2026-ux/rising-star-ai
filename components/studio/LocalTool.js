@@ -29,6 +29,7 @@ const Pdf = dynamic(() => import("./Pdf"), { ssr: false, loading });
 const VideoFrame = dynamic(() => import("./VideoFrame"), { ssr: false, loading });
 const Apps = dynamic(() => import("./Apps"), { ssr: false, loading });
 const VideoMaker = dynamic(() => import("./VideoMaker"), { ssr: false, loading });
+const RemotionReel = dynamic(() => import("@/components/lab/RemotionReel"), { ssr: false, loading });
 
 // نوع الأداة (من lib/tools.js) ← المكوّن وإعداداته
 const KINDS = {
@@ -45,6 +46,7 @@ const KINDS = {
   pdfsplit: [Pdf, { mode: "split" }],
   frame: [VideoFrame],
   apps: [Apps],
+  "video-remotion": [RemotionReel],
   "video-ai": [VideoMaker, { mode: "ai" }],
   "video-text": [VideoMaker, { mode: "text" }],
   "video-photos": [VideoMaker, { mode: "photos" }],
