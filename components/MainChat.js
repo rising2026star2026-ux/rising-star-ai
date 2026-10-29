@@ -114,7 +114,7 @@ export default function MainChat() {
     const el = boxRef.current;
     if (!el) return;
     el.style.height = "auto";
-    el.style.height = Math.min(el.scrollHeight, 240) + "px";
+    el.style.height = Math.min(el.scrollHeight, 280) + "px";
   }
 
   // modelOverride بيتستخدم أول ما الصفحة تفتح، لأن حالة الموديل لسه ما اتحدثتش
