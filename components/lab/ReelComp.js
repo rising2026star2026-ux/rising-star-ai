@@ -13,19 +13,31 @@ export const THEMES = [
   { id: "sunset", name: "غروب", c1: "#3a0f1f", c2: "#ff6a4d", text: "#ffffff", accent: "#ffe08a" },
 ];
 
+// المُصدّر داخل المتصفح بيقيس عرض كل عنصر لوحده، فالكلمات العربي المنفصلة بتتداخل.
+// عشان كده بنقسّم الكلام لسطور (كل سطر نص واحد متصل) ونحرّك السطر كله.
+function toLines(text, max = 14) {
+  const lines = [];
+  let cur = "";
+  for (const w of text.split(/\s+/).filter(Boolean)) {
+    if (cur && (cur + " " + w).length > max) { lines.push(cur); cur = w; }
+    else cur = cur ? cur + " " + w : w;
+  }
+  if (cur) lines.push(cur);
+  return lines;
+}
+
 function Words({ text, theme, startOffset = 0 }) {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const words = text.split(/\s+/).filter(Boolean);
+  const lines = toLines(text);
   return (
-    <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "18px 22px", direction: "rtl", padding: "0 64px" }}>
-      {words.map((w, i) => {
-        const s = spring({ frame: frame - startOffset - i * 4, fps, config: { damping: 14, stiffness: 140 } });
-        const hot = i === 0 || w.length > 7 ? theme.accent : theme.text;
+    <div style={{ width: "100%", padding: "0 56px", boxSizing: "border-box" }}>
+      {lines.map((line, i) => {
+        const s = spring({ frame: frame - startOffset - i * 6, fps, config: { damping: 14, stiffness: 140 } });
         return (
-          <span key={i} style={{ display: "inline-block", fontSize: 84, fontWeight: 800, lineHeight: 1.25, color: hot, opacity: s, transform: `translateY(${(1 - s) * 50}px) scale(${0.85 + 0.15 * s})` }}>
-            {w}
-          </span>
+          <div key={i} dir="rtl" style={{ textAlign: "center", fontSize: 80, fontWeight: 800, lineHeight: 1.35, color: i === 0 ? theme.accent : theme.text, opacity: s, transform: `translateY(${(1 - s) * 50}px)`, whiteSpace: "nowrap" }}>
+            {line}
+          </div>
         );
       })}
     </div>
