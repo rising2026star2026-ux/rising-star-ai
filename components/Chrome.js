@@ -71,7 +71,7 @@ export default function Chrome() {
           </button>
           <Link href="/" className="logo top-logo" aria-label="Rising StarAi الصفحة الرئيسية">
             <StarMark size={28} className="logo-star" />
-            <span dir="ltr" className="logo-name">Rising StarAi</span>
+            <span dir="ltr" className="logo-name">Rising Star<span className="logo-ai">Ai</span></span>
           </Link>
         </div>
         <nav className="top-actions" aria-label="القائمة">
@@ -123,7 +123,7 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
         <div className="side-head">
           <Link href="/" className="logo" aria-label="Rising StarAi الصفحة الرئيسية">
             <StarMark size={30} className="logo-star" />
-            <span dir="ltr" className="logo-name side-label">Rising StarAi</span>
+            <span dir="ltr" className="logo-name side-label">Rising Star<span className="logo-ai">Ai</span></span>
           </Link>
           <button className="icon-btn side-toggle" onClick={() => setMini(!mini)} aria-label={mini ? "كبّر القائمة" : "صغّر القائمة"} title={mini ? "كبّر القائمة" : "صغّر القائمة"}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="3" /><path d="M14.5 4v16" /></svg>
