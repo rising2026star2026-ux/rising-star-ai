@@ -49,9 +49,9 @@ async function imageResponse(idea, signal) {
   if (!prompt) return fail("مقدرتش أحوّل الوصف دلوقتي. جرّب تاني.", 503);
   prompt = prompt.replace(/^["«“]+|["»”]+$/g, "").trim();
   const seed = Math.floor(Math.random() * 1e9);
-  const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?model=flux&width=1280&height=1280&nologo=true&enhance=true&seed=${seed}`;
-  const md = `اتفضل 🖼️\n\n![${idea.slice(0, 80).replace(/[[\]]/g, "")}](${url})\n\n**تم التوليد بواسطة [Pollinations](https://pollinations.ai)** — اضغط مطولاً على الصورة (أو زرار يمين الماوس) تقدر تحفظها أو تشاركها زي أي صورة عادية.`;
-  return new Response(md, { headers: { "Content-Type": "text/plain; charset=utf-8", "x-image": "pollinations" } });
+  const url = `/api/image?prompt=${encodeURIComponent(prompt)}&size=1024x1024&seed=${seed}`;
+  const md = `اتفضل 🖼️\n\n![${idea.slice(0, 80).replace(/[[\]]/g, "")}](${url})\n\nاضغط مطولاً على الصورة (أو زرار يمين الماوس) تقدر تحفظها أو تشاركها زي أي صورة عادية.`;
+  return new Response(md, { headers: { "Content-Type": "text/plain; charset=utf-8", "x-image": "server" } });
 }
 
 /** سلسلة المحاولات لموديل من صفحة «الموديلات»: الموديل نفسه، وبعده موديلات Groq احتياطي */

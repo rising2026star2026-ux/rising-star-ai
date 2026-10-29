@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { Drop, Range, Seg, ColorField, TextField, Note, Busy, styles as s } from "./ui";
 import { IMAGE_TYPES, loadImage, download, siteFont, ensureFont, wrapLines, formatBytes } from "./util";
 import { toast } from "@/lib/store";
+import { genImageBlob } from "@/lib/genimage";
 
 const SIZES = {
   story: { w: 720, h: 1280, label: "ريلز وستوري 9:16" },
@@ -52,6 +53,8 @@ export default function VideoMaker({ mode = "text" }) {
   const [dialect, setDialect] = useState("egy");
   const [count, setCount] = useState(6);
   const [writing, setWriting] = useState(false);
+  const [genId, setGenId] = useState(null); // رقم المشهد اللي بيتولّد له صورة، أو "all"
+  const genCtl = useRef(null);
 
   const canvasRef = useRef(null);
   const loopRef = useRef(null);
@@ -231,6 +234,40 @@ export default function VideoMaker({ mode = "text" }) {
     setBgImgs((x) => [...x, ...imgs].slice(0, 10));
   }
 
+  const imgSize = size === "story" ? "768x1024" : size === "wide" ? "1024x768" : "1024x1024";
+  async function genScene(id) {
+    const sc = scenes.find((x) => x.id === id);
+    if (!sc || !sc.text.trim()) { setError("اكتب كلام المشهد الأول عشان نرسم له صورة."); return false; }
+    try {
+      const blob = await genImageBlob(sc.text, { size: imgSize, signal: genCtl.current?.signal });
+      const img = await loadImage(blob);
+      setScenes((x) => x.map((y) => (y.id === id ? { ...y, img } : y)));
+      return true;
+    } catch (e) {
+      if (!genCtl.current?.signal.aborted) setError(e.message || "ما قدرناش نرسم الصورة.");
+      return false;
+    }
+  }
+  async function genOne(id) {
+    if (genId) return;
+    setError(""); genCtl.current = new AbortController(); setGenId(id);
+    await genScene(id);
+    setGenId(null);
+  }
+  async function genAll() {
+    if (genId) return;
+    setError(""); genCtl.current = new AbortController(); setGenId("all");
+    for (const sc of scenes) {
+      if (genCtl.current.signal.aborted) break;
+      if (sc.img || !sc.text.trim()) continue;
+      setGenId(sc.id);
+      if (!(await genScene(sc.id))) break;
+    }
+    setGenId(null);
+  }
+  function stopGen() { genCtl.current?.abort(); setGenId(null); }
+  useEffect(() => () => genCtl.current?.abort(), []);
+
   function setText(id, text) { setScenes((x) => x.map((sc) => (sc.id === id ? { ...sc, text } : sc))); }
   function move(i, d) {
     setScenes((x) => {
@@ -303,10 +340,21 @@ export default function VideoMaker({ mode = "text" }) {
                   />
                   <div className={s.itemActions}>
                     <button type="button" className={s.mini} onClick={() => move(i, -1)} disabled={i === 0} aria-label="لفوق">↑</button>
+                    {mode !== "photos" && (sc.img
+                      ? <button type="button" className={s.mini} onClick={() => setScenes((x) => x.map((y) => (y.id === sc.id ? { ...y, img: null } : y)))} aria-label="شيل الصورة" title="شيل الصورة">🖼✕</button>
+                      : <button type="button" className={s.mini} onClick={() => genOne(sc.id)} disabled={!!genId || !sc.text.trim()} aria-label="ولّد صورة للمشهد" title="ولّد صورة للمشهد">{genId === sc.id ? "…" : "🖼"}</button>)}
                     <button type="button" className={s.mini} onClick={() => remove(sc.id)} aria-label="شيل المشهد">✕</button>
                   </div>
                 </div>
               ))}
+              {mode !== "photos" && scenes.some((x) => x.text.trim() && !x.img) && (
+                genId ? (
+                  <button type="button" className="btn ghost" onClick={stopGen}>إيقاف توليد الصور</button>
+                ) : (
+                  <button type="button" className="btn ghost" onClick={genAll}>🖼 ولّد صور لكل المشاهد</button>
+                )
+              )}
+              {genId && <Note>بنرسم الصور واحدة واحدة، كل صورة من 10 ثواني لدقيقة. سيب الصفحة مفتوحة.</Note>}
               {mode !== "photos" && scenes.length < 12 && (
                 <button type="button" className="btn ghost" onClick={() => setScenes((x) => [...x, scene("")])}>+ مشهد</button>
               )}
