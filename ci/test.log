@@ -1,7 +1,16 @@
-OK  tool page 200
-OK  title ريلز بحركة احترافية
-OK  AI script filled scenes 
-OK  scenes 3 نصايح سريعة لتوفير الفلوس | إقفل الاشتراكات اللي ما بتستخدمها بانتظام. | اشترِ السلع الكبيرة في موسم التخفيضات. | استبدل القهوة اليومية بخلطة شاي بسيطة. | حط ميزانية أسبوعية وحدد حد أقصى للإنفاق. | احفظ الفيديو وابدأ تطبيق النصايح دلوقتي!
-OK  render video
-OK  listed in /tools 
-OK  no page errors 
+templates tips,numbered,quote,ad,typing,stats
+OK  tips 5 scenes video 10s
+BAD numbered 5 scenes timeout 200s
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('[data-tpl=\'quote\']')
+
+    at /home/runner/work/rising-star-ai/rising-star-ai/ci-scripts/test.mjs:13:11 {
+  name: 'TimeoutError'
+}
+
+Node.js v20.20.2
