@@ -1,0 +1,28 @@
+OK  page image-reader 200 قارئ الصور
+OK  page sheet-analyst 200 محلل الجداول
+OK  page video-qa 200 أسئلة عن فيديو
+OK  page gem-assistant 200 مساعد مخصص
+OK  program gemini-live 200
+OK  program aistudio 200
+OK  tools list 
+OK  tools list shows new 
+OK  run sheet-analyst **أعلى شهر:** فبراير (1500)
+
+**نسبة الزيادة من يناير إلى أعلى شهر:**  
+\[
+\frac{1500 - 1200}{1200} \times 100 = 25\%
+\]
+OK  run gem-assistant ## خطة رياضة منزلية للبدء
+
+| يوم | التمرين | عدد التكرارات | المدة |
+|-----|---------|----------------|-------|
+| 1 | **تمارين الإحماء**: تمشية في المكان + 5 دقائق جري خفيف | - | 5 دقائق |
+| 1 | **تمر
+OK  run video-qa **الخطوات المذكورة في النص:**
+
+1. اكتب دخلك ومصاريفك خلال الشهر.  
+2. قسم هذه الدخل والمصاريف إلى فئات ثابتة ومتغيرة.
+BAD api vision reads text {"error":"مقدرناش نقرا الصورة دلوقتي. جرّب تاني بعد شوية."}
+OK  api vision rejects non-image 400
+BAD ui vision result 
+OK  no page errors 
