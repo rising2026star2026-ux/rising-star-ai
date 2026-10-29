@@ -1,6 +1,6 @@
-OK  mobile font 14px 14
-OK  mobile height >= 84 84
-OK  mobile grows with text, capped 280 276
-OK  desktop font 14px 14
-OK  desktop height >= 84 84
-OK  desktop grows with text, capped 280 276
+OK  mobile text Rising StarAi
+OK  mobile Ai blue rgb(74, 116, 255)
+OK  mobile size 22.08px, rest color rgb(255, 255, 255)
+OK  desktop text Rising StarAi
+OK  desktop Ai blue rgb(74, 116, 255)
+OK  desktop size 27.2px, rest color rgb(255, 255, 255)
