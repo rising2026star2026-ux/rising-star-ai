@@ -1,8 +1,5 @@
-OK  GET /api/image 200 image/jpeg 53327B
-OK  chat image md uses /api/image 200 اتفضل 🖼️
-
-![ارسم لي صورة قطة على سطح](/api/image?prompt=A%20sleek%2C%20midnight%E2%80%91black%20cat%20perched%20gracefully%20on%20a%20sun%E2%80%91bleached%20ro
-OK  page ai-video 200
-OK  script written + gen-all button 
-OK  scene image result image
+OK  chat page 200
+OK  composer font >= 17px 17.6px
+OK  image strip rendered 
+OK  2 image cards 2
 OK  no page errors 
