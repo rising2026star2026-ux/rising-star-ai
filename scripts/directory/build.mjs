@@ -168,7 +168,7 @@ function userMsg(seed, info) {
 const PROVIDERS = [
   process.env.GROQ_API_KEY && { name: "groq", url: process.env.GROQ_URL || "https://api.groq.com/openai/v1/chat/completions", key: process.env.GROQ_API_KEY, model: process.env.GROQ_MODEL || "openai/gpt-oss-120b" },
   process.env.OPENROUTER_API_KEY && { name: "openrouter", url: "https://openrouter.ai/api/v1/chat/completions", key: process.env.OPENROUTER_API_KEY, model: process.env.OPENROUTER_MODEL || "openai/gpt-oss-120b" },
-  process.env.GEMINI_API_KEY && { name: "gemini", url: "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions", key: process.env.GEMINI_API_KEY, model: process.env.GEMINI_MODEL || "gemini-2.5-flash" },
+  process.env.GEMINI_API_KEY && { name: "gemini", url: "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions", key: process.env.GEMINI_API_KEY, model: process.env.GEMINI_MODEL || "gemini-flash-lite-latest" },
 ].filter(Boolean);
 if (!PROVIDERS.length) { console.log("NO_KEYS: ضيف GROQ_API_KEY أو OPENROUTER_API_KEY في GitHub Secrets"); process.exit(0); }
 
