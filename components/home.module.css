@@ -12,7 +12,7 @@
 .mark { display: inline-grid; place-items: center; filter: drop-shadow(0 10px 22px rgba(255, 140, 0, 0.55)); }
 .brand h1 {
   margin: 6px 0 14px; font-family: var(--display); font-weight: 900; color: var(--ink);
-  font-size: clamp(4.4rem, 23vw, 9.8rem); letter-spacing: -0.055em; line-height: 0.86;
+  font-size: clamp(3.6rem, 18.5vw, 7.8rem); letter-spacing: -0.055em; line-height: 0.86;
 }
 .brand h1 span { display: block; }
 .brand h1 em { font-style: normal; color: var(--blue); }
@@ -293,6 +293,7 @@
 .brand { padding: 22px 0 30px; }
 .mark { filter: drop-shadow(0 0 28px rgba(255, 190, 0, 0.75)); }
 .brand h1 { color: #fff; font-family: var(--wordmark); letter-spacing: -0.055em; margin-top: 10px; }
+.brand h1 em { color: #4a74ff; }
 .brand p { color: rgba(255, 255, 255, 0.82); font-weight: 600; font-size: 1.04rem; }
 
 /* اللحظة الوحيدة المتحركة: النجمة بتطلع من الأفق ونورها بيفتح */

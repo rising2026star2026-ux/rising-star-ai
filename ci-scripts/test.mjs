@@ -4,12 +4,13 @@ const log = (n, ok, i = "") => console.log(ok ? "OK " : "BAD", n, String(i).slic
 const b = await chromium.launch();
 for (const [name, vp] of [["mobile", { width: 420, height: 900 }], ["desktop", { width: 1280, height: 800 }]]) {
   const p = await b.newPage({ viewport: vp });
-  await p.goto(`${BASE}/chat`);
-  await p.waitForTimeout(2500);
-  const m = await p.$eval(".top-logo .logo-name", (n) => ({ fs: parseFloat(getComputedStyle(n).fontSize), ai: getComputedStyle(n.querySelector(".logo-ai")).color, text: n.textContent, rest: getComputedStyle(n).color }));
-  log(`${name} text`, m.text === "Rising StarAi", m.text);
+  await p.goto(`${BASE}/`);
+  await p.waitForSelector("h1 em", { state: "attached" });
+  await p.waitForTimeout(6000);
+  const m = await p.$eval("h1", (h) => ({ fs: parseFloat(getComputedStyle(h).fontSize), ai: getComputedStyle(h.querySelector("em")).color, text: h.textContent, w: h.getBoundingClientRect().width, vw: innerWidth }));
+  log(`${name} text`, m.text.replace(/\s/g, "") === "RisingStarAi", m.text);
   log(`${name} Ai blue`, m.ai === "rgb(74, 116, 255)", m.ai);
-  log(`${name} size`, true, m.fs + "px, rest color " + m.rest);
-  await p.screenshot({ path: `ci/logo-${name}.png`, clip: { x: 0, y: 0, width: vp.width, height: 90 } });
+  log(`${name} size`, true, `${m.fs}px width ${Math.round(m.w)}/${m.vw}`);
+  await p.screenshot({ path: `ci/home-${name}.png` });
 }
 await b.close();

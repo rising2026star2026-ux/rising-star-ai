@@ -111,7 +111,7 @@ export default function Home() {
       {/* ===== الاسم ===== */}
       <div className={s.brand}>
         <span className={s.mark}><StarMark size={64} /></span>
-        <h1 dir="ltr"><span>Rising</span>{" "}<span>StarAi</span></h1>
+        <h1 dir="ltr"><span>Rising</span>{" "}<span>Star<em>Ai</em></span></h1>
         <p>{tools.length} أداة ذكاء اصطناعي بالعربي، وإجابة واحدة من 4 نماذج قوية</p>
       </div>
 
