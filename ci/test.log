@@ -1,28 +1,5 @@
-OK  page image-reader 200 قارئ الصور
-OK  page sheet-analyst 200 محلل الجداول
-OK  page video-qa 200 أسئلة عن فيديو
-OK  page gem-assistant 200 مساعد مخصص
-OK  program gemini-live 200
-OK  program aistudio 200
-OK  tools list 
-OK  tools list shows new 
-OK  run sheet-analyst **الشهر الأعلى مبيعات**  
-- فبراير (1500)
-
-**نسبة الزيادة من يناير إلى فبراير**  
-- \((1500 - 1200) ÷ 1200 × 100 = 25 %\)
-OK  run gem-assistant **خطة رياضة بسيطة للبدء من البيت**
-
-| اليوم | التمرين | عدد التكرارات | المدة |
-|-------|---------|----------------|-------|
-| 1 | تمارين إحماء (جري خفيف على المكان، دوران الكاحلين والركبتين) | 5 دقائ
-OK  run video-qa أول خطوة: كتابة الدخل والمصاريف الشهرية.  
-ثاني خطوة: تقسيمها إلى ثابتة ومتغيرة.
-OK  api vision reads text {"text":"النص اللي مكتوب في الصورة هو:\n\n* **TOTAL: 1450 EGP**\n* **Invoice 7731 - Cairo**"}
-OK  api vision rejects non-image 400
-OK  ui vision result النص الموجود في الصورة هو:
-
-TOTAL: 1450 EGP
-Invoice 7731 - Cairo
-نسخإعادةشارك النتيجةواتسابWordPDF
+OK  tasks index 200
+OK  task links 30
+BAD all task pages ok /task/3d 200 n=4
+OK  sitemap has tasks 
 OK  no page errors 
