@@ -316,7 +316,7 @@
   border: 0; border-radius: 28px;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5), 0 30px 80px -20px rgba(43, 91, 255, 0.7), 0 0 120px -30px rgba(255, 196, 0, 0.35);
 }
-.composer textarea { color: var(--ink); font-size: 1.02rem; }
+.composer textarea { color: var(--ink); font-size: 1.12rem; }
 .sendBtn { background: var(--blue); box-shadow: 0 12px 26px -10px var(--blue); width: 42px; height: 42px; }
 .modelBtn { background: var(--ink); color: #fff; border-color: var(--ink); }
 .modelBtn svg { color: rgba(255, 255, 255, 0.7); }

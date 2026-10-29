@@ -1,11 +1,16 @@
 {
+<<<<<<< HEAD
  "updated": "2026-10-29T05:12:12.477Z",
+=======
+ "updated": "2026-10-29T17:16:38.717Z",
+>>>>>>> main
  "providers": [
   "groq",
   "openrouter",
   "gemini"
  ],
  "used": {
+<<<<<<< HEAD
   "gemini": 9
  },
  "feeds": {
@@ -29,6 +34,318 @@
  },
  "items": [
   {
+=======
+  "groq": 7,
+  "gemini": 2
+ },
+ "feeds": {
+  "openai": "ok 70",
+  "deepmind": "ok 11",
+  "meta": "ok 9",
+  "apple": "ok 10",
+  "nvidia": "ok 18",
+  "huggingface": "ok 26",
+  "techcrunch": "ok 20",
+  "google-research": "ok 12",
+  "verge": "ok 10",
+  "aws": "ok 20",
+  "marktechpost": "ok 10",
+  "google-ai": "ok 5",
+  "arstechnica": "ok 20",
+  "techwd": "ok 6",
+  "aitnews": "ok 6",
+  "venturebeat": "FAIL HTTP 429",
+  "microsoft": "ok 8"
+ },
+ "items": [
+  {
+   "id": "8d9b5cf421c5",
+   "url": "https://aws.amazon.com/blogs/machine-learning/lend-and-borrow-resources-across-teams-with-aws-batchs-quota-management-for-sagemaker-training-jobs/",
+   "title": "Lend and borrow resources across teams with AWS Batch’s quota management for SageMaker Training jobs",
+   "date": "2026-10-29T16:58:57.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "إدارة حصص AWS Batch لتدريب SageMaker",
+    "summary": "AWS Batch بقى يقدر يقسم سعة الـ GPU لحصص فرق أو مشاريع، ويقرض السعة الفاضية تلقائيًا، ويستخدم الإلغاء المسبق لتشغيل أعلى أولويات وظائف SageMaker Training من غير تنسيق يدوي."
+   }
+  },
+  {
+   "id": "66eaaf2a569a",
+   "url": "https://aws.amazon.com/blogs/machine-learning/how-moengage-turned-over-400-apis-into-agent-tools-with-agentcore-gateway/",
+   "title": "How MoEngage turned over 400 APIs into agent tools with AgentCore Gateway",
+   "date": "2026-10-29T16:54:52.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "MoEngage تحول 400 API لأدوات وكيل بـ AgentCore Gateway",
+    "summary": "MoEngage حول حوالي 400 API خاصة في 7 مناطق AWS لعدة أدوات وكيل بامتيازات محددة باستخدام Amazon Bedrock AgentCore Gateway، من غير خوادم MCP ولا نقاط وصول عامة، واعتمد على OpenAPI وCedar وAmazon VPC Lattice."
+   }
+  },
+  {
+   "id": "7610575f9544",
+   "url": "https://techcrunch.com/2026/10/29/u-s-investigated-chinese-spy-plot-aimed-at-nvidia-ceo/",
+   "title": "U.S. investigated Chinese spy plot aimed at Nvidia CEO",
+   "date": "2026-10-29T16:42:32.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "تحقيق أمريكي في مؤامرة تجسس صيني ضد مدير Nvidia",
+    "summary": "مصدرون قالوا للـ NYT إن مدير تنفيذي في شركة سحابية سنغافورية للذكاء الاصطناعي، المتهمة ببيع شرايح Nvidia للصين، ممكن يكون كان جاسوس صيني."
+   }
+  },
+  {
+   "id": "4fecc0fbd4de",
+   "url": "https://arstechnica.com/gadgets/2026/10/google-admits-ai-search-makes-less-money-but-its-fixing-that-with-more-ads/",
+   "title": "Google admits AI search makes less money, but it's fixing that with more ads",
+   "date": "2026-10-29T16:24:55.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": {
+    "title": "Google تعترف إن البحث بالذكاء الاصطناعي بيقلل الأرباح",
+    "summary": "Google خسرت 9.06 مليار دولار في التدفق النقدي السالب للربع الثالث، وسعر السهم نزل بعد ما كشفوا إن AI Search بيجيب فلوس أقل."
+   }
+  },
+  {
+   "id": "88294416a4cb",
+   "url": "https://techcrunch.com/2026/10/29/ex-palantir-execs-launch-dream-with-17m-from-a16z-to-build-ai-world-models-for-construction/",
+   "title": "Ex-Palantir execs launch Dream with $17M from a16z to build AI world models for construction",
+   "date": "2026-10-29T16:21:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "مؤسسو Palantir يطلقوا Dream بتمويل a16z لبناء نماذج AI للبناء",
+    "summary": "Dream، بدعم 17 مليون من a16z، عايزة تستخدم AI لتصميم نماذج عالمية للبناء وتنافس Autodesk، وبتستهدف 100 مليون قدم مربع من تصاريح البناء."
+   }
+  },
+  {
+   "id": "23037afd49a5",
+   "url": "https://aws.amazon.com/blogs/machine-learning/accelerate-agentic-ai-with-nvidia-nemotron-models-on-amazon-eks-and-sagemaker-hyperpod-eks/",
+   "title": "Accelerate agentic AI with NVIDIA Nemotron models on Amazon EKS and SageMaker HyperPod EKS",
+   "date": "2026-10-29T16:11:08.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "تسريع AI الوكيل بـ NVIDIA Nemotron على EKS وSageMaker",
+    "summary": "نموذج NVIDIA Nemotron 3.5 Super VL بـ120 مليار بارامتر بيدمج التفكير واستخدام الأدوات مع الفهم المتعدد الوسائط، والمقال بيشرح بنية النموذج وحالات الاستخدام وازاي تنشره على Amazon EKS وSageMaker HyperPod EKS."
+   }
+  },
+  {
+   "id": "9d92d4ec6e5e",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1022193/nyt-cooking-app-ai-recipe-modification-tool",
+   "title": "The NYT Cooking app is testing AI recipe modifications",
+   "date": "2026-10-29T16:02:16.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "NYT Cooking يختبر تعديل الوصفات بالذكاء الاصطناعي",
+    "summary": "تطبيق NYT Cooking بيجرب ميزة AI جديدة تساعد المستخدمين يغيروا الوصفات، زي استبدال المكونات أو الأدوات وتكبير أو تصغير الكميات، والميزة أثارت جدل بين المستخدمين."
+   }
+  },
+  {
+   "id": "baf7193e75c1",
+   "url": "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/",
+   "title": "Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents",
+   "date": "2026-10-29T16:00:35.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": {
+    "title": "المطورين يستخدموا وكلاء AI في Omniverse لتسريع المحاكاة",
+    "summary": "المطورين بيجمعوا نماذج AI المتقدمة مع مكتبات NVIDIA Omniverse عشان يبنوا تطبيقات محاكاة، يربطوا الأصول والفيزياء والرندرة، ويخلو الوكلاء يتعاملوا مع المشاهد لتصميم وتحليل أفضل."
+   }
+  },
+  {
+   "id": "e532f698962f",
+   "url": "https://engineering.fb.com/2026/10/29/security/catching-bugs-before-they-land-jittestings-human-on-the-loop-approach-at-full-scale/",
+   "title": "Catching Bugs Before They Land: JiTTesting’s Human-on-the-Loop Approach at Full Scale",
+   "date": "2026-10-29T16:00:12.000Z",
+   "src": "Meta Engineering",
+   "srcId": "meta",
+   "kind": "company",
+   "ar": {
+    "title": "اختبار JiTTesting يكتشف الأخطاء قبل ما تظهر",
+    "summary": "Meta بيستخدم نماذج لغة كبيرة لتوليد اختبارات Just‑in‑Time تلقائيًا، وبيوضحوا إن الطريقة دي قللت الأخطاء في الإنتاج."
+   }
+  },
+  {
+   "id": "45b4ef0b726f",
+   "url": "https://www.theverge.com/tech/1022023/microsoft-exit-offer-layoffs-notepad",
+   "title": "Microsoft’s AI future has fewer jobs",
+   "date": "2026-10-29T15:17:52.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "مايكروسوفت تقدم تعويضات طوعية لـ 60 ألف موظف",
+    "summary": "Satya Nadella بيأكد إن الذكاء الاصطناعي هيغير حجم القوى العاملة، والشركة بتعرض شراء طوعي للموظفين في أمريكا وبريطانيا وكندا."
+   }
+  },
+  {
+   "id": "9cd5509199bf",
+   "url": "https://www.theverge.com/cs/features/1016650/arizona-water-data-center-tsmc",
+   "title": "AI has come for Arizona’s water",
+   "date": "2026-10-29T15:05:18.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "الذكاء الاصطناعي يهدد موارد المياه في أريزونا",
+    "summary": "الذكاء الاصطناعي وصل لأريزونا وبيستغل موارد المياه في مراكز تصنيع الأجهزة."
+   }
+  },
+  {
+   "id": "60c269dfa54e",
+   "url": "https://techcrunch.com/2026/10/29/wabi-the-ai-agent-that-builds-mini-apps-now-valued-at-1-25b-after-latest-round/",
+   "title": "Wabi, the AI agent that builds mini apps, now valued at $1.25B after latest round",
+   "date": "2026-10-29T14:35:26.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Wabi يرفع تمويله لـ 55 مليون دولار بقيمة 1.25 بليون",
+    "summary": "الوكيل الذكي لبناء التطبيقات الصغيرة Wabi جمع 55 مليون دولار، وتقييمه وصل لـ 1.25 بليون دولار."
+   }
+  },
+  {
+   "id": "079251699e8e",
+   "url": "https://www.theverge.com/podcast/1021322/anthropic-ipo-filing-s-1-claude-semianalysis-joey-brookhart-interview",
+   "title": "Anthropic is asking Wall Street to believe in AGI",
+   "date": "2026-10-29T13:47:56.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "أنثروبيك يطلب من وول ستريت تمويل للـ AGI",
+    "summary": "تحليل لملف الـ S‑1 بتاع أنثروبيك يوضح إن الشركة عايزة تمويل لتطوير الذكاء العام وتطرح أسهمها في Nasdaq."
+   }
+  },
+  {
+   "id": "f3538b6fb36f",
+   "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
+   "title": "Granite Switch 4.1.1 — Update models like you update software",
+   "date": "2026-10-29T13:37:07.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": {
+    "title": "Granite Switch 4.1.1 يضيف تحديث للأنماط",
+    "summary": ""
+   }
+  },
+  {
+   "id": "0b3918620b86",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1021476/anthropic-s-1-compute-recursive",
+   "title": "Anthropic’s business plan: Build God or die trying",
+   "date": "2026-10-29T13:20:35.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "خطة أنثروبيك: بناء إله أو الفشل",
+    "summary": "ملف الـ S‑1 بيظهر إن أنثروبيك ناوية تصرف كل موارد الحوسبة عشان تبني نموذج ذكاء عام وتقنع المستثمرين إن ده هو شغلها."
+   }
+  },
+  {
+   "id": "f52687297c33",
+   "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-phantom-blade-zero/",
+   "title": "Slice Into GFN Thursday: ‘Phantom Blade Zero’ Launches on GeForce NOW",
+   "date": "2026-10-29T13:00:16.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": {
+    "title": "Phantom Blade Zero على GeForce NOW",
+    "summary": "اللعبة Phantom Blade Zero نزلت على خدمة السحابة GeForce NOW، وبتقدم مزيج من الفنون القتالية والخيال البانك."
+   }
+  },
+  {
+   "id": "c546a70dbf99",
+   "url": "https://techcrunch.com/2026/10/29/deepgram-acquires-pipecat-maker-daily-to-bolster-its-voice-ai-infrastructure/",
+   "title": "Deepgram acquires Pipecat-maker Daily to bolster its voice AI infrastructure",
+   "date": "2026-10-29T13:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Deepgram تستحوذ على Daily لتقوية بنية صوت AI",
+    "summary": "مع دمج Pipecat، Deepgram هتقدر تفهم أكتر بنية الصوت والفيديو في الوقت الحقيقي."
+   }
+  },
+  {
+   "id": "fd92a529665f",
+   "url": "https://techcrunch.com/2026/10/29/amazon-updates-alexa-to-help-you-manage-shopping-lists-and-subscriptions-and-update-delivery-instructions/",
+   "title": "Amazon updates Alexa to help you manage shopping lists and subscriptions and update delivery instructions",
+   "date": "2026-10-29T13:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Amazon تحدث Alexa لإدارة القوائم والاشتراكات",
+    "summary": "التحديث بيسمح لك تستخدم Alexa لإنشاء القوائم، تشوفها، وتضيف أو تعدل العناصر، وكمان تدير الاشتراكات وتعليمات التوصيل."
+   }
+  },
+  {
+   "id": "d28967fce9c6",
+   "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+   "title": "How we detect frontier model misalignment",
+   "date": "2026-10-29T09:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "OpenAI تكشف عن طريقة كشف عدم توافق النماذج المتقدمة",
+    "summary": "OpenAI بتطبق مراقبة متعددة الطبقات عشان تكتشف عدم توافق النماذج المتقدمة وسلوك الوكلاء غير المصرح به، وتدخل قبل ما المشكلة تكبر."
+   }
+  },
+  {
+   "id": "c8889526df5c",
+   "url": "https://www.marktechpost.com/2026/10/29/infini-ai-lab-hermit-harness-adapter-framework/",
+   "title": "Infini-AI-Lab Releases Hermit, an Open-Source Harness Adapter Framework for AI Agents",
+   "date": "2026-10-29T08:24:52.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "Infini-AI-Lab تطلق Hermit لإطار عمل مفتوح للوكالات الذكية",
+    "summary": "Hermit إطار Apache-2.0 بيدرب طبقة تعليمات ومهارات وذاكرة للوكيل من ردود الفعل، من غير ما يغير نموذج الوكيل أو الهيكل الأساسي."
+   }
+  },
+  {
+   "id": "281b82320b75",
+   "url": "https://www.marktechpost.com/2026/10/29/block-dessa-full-duplex-speech-model/",
+   "title": "Block Unveils Dessa, a Full-Duplex Speech Model Trained Only on Speech",
+   "date": "2026-10-29T07:50:39.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "Block تكشف عن نموذج الكلام الثنائي Dessa",
+    "summary": "Dessa نموذج تحويل الكلام إلى كلام مدرب على محادثات بشرية بس، يشتغل محليًا على MacBook Pro M4 Max، لكن الشركة ما نشرتش تفاصيل الحجم أو الأداء."
+   }
+  },
+  {
+   "id": "b864fbcc4827",
+   "url": "https://www.marktechpost.com/2026/10/29/assemblyai-tts-1-text-to-speech-api-voice-agents/",
+   "title": "AssemblyAI Ships AssemblyAI-TTS-1: A $15 per 1M Character Text-to-Speech API for Voice Agents",
+   "date": "2026-10-29T07:28:36.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "AssemblyAI تطلق AssemblyAI‑TTS‑1 بخدمة تحويل نص لصوت",
+    "summary": "AssemblyAI‑TTS‑1 أول نموذج تحويل نص لصوت للوكالات الصوتية، سعره 15 دولار لكل مليون حرف، يدعم 6 لغات، ولا عقد ولا حدود للتوازي."
+   }
+  },
+  {
+>>>>>>> main
    "id": "02aebfc3f398",
    "url": "https://www.marktechpost.com/2026/10/28/nvidia-nemotron-3-5-transcribe-open-speech-llm/",
    "title": "NVIDIA Releases Nemotron 3.5 Transcribe: An Open 30B MoE Model for 40-Language Transcription with ~4B Active Parameters",
@@ -42,6 +359,48 @@
    }
   },
   {
+<<<<<<< HEAD
+=======
+   "id": "e1c742c1d925",
+   "url": "https://huggingface.co/blog/announcing-project-protostar",
+   "title": "Announcing Project ProtoStar: Making Publicly Funded Science AI-Ready",
+   "date": "2026-10-29T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": {
+    "title": "إعلان عن Project ProtoStar لتجهيز العلوم العامة للذكاء الاصطناعي",
+    "summary": ""
+   }
+  },
+  {
+   "id": "a1765f446c5b",
+   "url": "https://huggingface.co/blog/mistral-large4",
+   "title": "Welcome Le Chonk: Mistral Large 4 on Hugging Face",
+   "date": "2026-10-29T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": {
+    "title": "ترحيب بـ Le Chonk: Mistral Large 4 على Hugging Face",
+    "summary": ""
+   }
+  },
+  {
+   "id": "85d975255b4f",
+   "url": "https://huggingface.co/blog/anydecisionmodel",
+   "title": "Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms",
+   "date": "2026-10-29T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": {
+    "title": "نموذج AnySpeechRecognizer و AnyDecisionModel على Apple",
+    "summary": ""
+   }
+  },
+  {
+>>>>>>> main
    "id": "09f762edab0d",
    "url": "https://www.theverge.com/ai-artificial-intelligence/1021644/adam-mosseri-instagram-ai-negativity",
    "title": "Adam Mosseri says negativity around AI is ‘going to get worse’",
@@ -517,7 +876,10 @@
    "src": "TechCrunch",
    "srcId": "techcrunch",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "متبقي 7 أيام لمؤتمر TechCrunch Founder Summit",
+    "summary": "في خلال 7 أيام، مؤتمر TechCrunch Founder Summit هيقابلنا في بوسطن يوم 4 نوفمبر، وتقدر توفر لحد 100 دولار على التذاكر."
+   }
   },
   {
    "id": "8030d1b5c635",
@@ -527,7 +889,10 @@
    "src": "The Verge",
    "srcId": "verge",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "مصوتو تكساس يرفضوا مراكز البيانات",
+    "summary": ""
+   }
   },
   {
    "id": "1d32e1e17f91",
@@ -550,7 +915,23 @@
    "src": "The Verge",
    "srcId": "verge",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Meta أطلقت تطبيق دفتر يوميات AI للحيوانات",
+    "summary": ""
+   }
+  },
+  {
+   "id": "0dc3cf0b7c98",
+   "url": "https://openai.com/index/the-future-of-the-firm",
+   "title": "The future of the firm",
+   "date": "2026-10-28T10:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "مستقبل الشركات مع الذكاء الاصطناعي",
+    "summary": "مستقبل الشركات هيكون مع الذكاء الاصطناعي داخل الهيكل التنظيمي، تحتنا، جنبنا، وبيننا."
+   }
   },
   {
    "id": "0dc3cf0b7c98",
@@ -570,7 +951,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Legora تبني نظام تشغيل للمهام القانونية",
+    "summary": ""
+   }
   },
   {
    "id": "41c97fe8dc29",
@@ -580,7 +964,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Legora تستخدم OpenAI لتسريع شغل المحامين",
+    "summary": "Legora بتستغل نماذج OpenAI وChatGPT وCodex لتسريع شغل المحامين، تحليل العقود وتفريغهم من المهام الروتينية."
+   }
   },
   {
    "id": "4f9f5b60270e",
@@ -590,7 +977,10 @@
    "src": "MarkTechPost",
    "srcId": "marktechpost",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "FlashMap يسرّع فك تشفير LLM 6.14×",
+    "summary": "FlashMap من Polymathic AI وباحثين من Princeton وUSC ISI بي Draft 16 توكن في مرة واحدة، وبيسرّع LLM لحد 6.14 مرة من غير خسارة."
+   }
   },
   {
    "id": "cb3d9954d8c1",
@@ -600,7 +990,10 @@
    "src": "MarkTechPost",
    "srcId": "marktechpost",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "جيني 4 من Google DeepMind: نموذج عالمي لحظي مع صوت أصلي",
+    "summary": "Google DeepMind أطلقت جيني 4 كمعاينة بحثية، يضيف صوت أصلي وحوار مباشر وتوجيه نصي، ويستخدم Gemini 3.8 Flash لتخطيط الأحداث داخل حلقة المحاكاة."
+   }
   },
   {
    "id": "0a7119608b55",
@@ -2768,7 +3161,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Hugging Face ❤️ TorchTPU: دعم الـTPU أصلاً",
+    "summary": "لا توجد تفاصيل إضافية."
+   }
   },
   {
    "id": "2596ff929aee",
@@ -2778,7 +3174,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "AnyLanguageModel 1.0: سنة من النماذج المحلية على منصات Apple",
+    "summary": "لا توجد تفاصيل إضافية."
+   }
   },
   {
    "id": "3eb18e5ff7f2",
@@ -2788,7 +3187,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "MPS في PyTorch 2.15",
+    "summary": "لا توجد تفاصيل إضافية."
+   }
   },
   {
    "id": "71a28de11a06",
@@ -2798,7 +3200,10 @@
    "src": "Ars Technica",
    "srcId": "arstechnica",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "متهم تجسس على OpenAI يمتلك مجلد \"Saudi Gov Docs\" حسب FBI",
+    "summary": "لا توجد تفاصيل إضافية."
+   }
   },
   {
    "id": "5d37bd28a169",
@@ -2808,7 +3213,10 @@
    "src": "Ars Technica",
    "srcId": "arstechnica",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "نسخ ألعاب الذكاء الاصطناعي تخوف مطوري الإ indie",
+    "summary": "لا توجد تفاصيل إضافية."
+   }
   },
   {
    "id": "5bcc766ce19d",
@@ -2831,7 +3239,10 @@
    "src": "Meta Engineering",
    "srcId": "meta",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "المُنسق النحيف: تحسين موثوقية وكلاء الذكاء الاصطناعي",
+    "summary": "في Meta، تقليل دور طبقة التنسيق في أنظمة الوكلاء أدى لتحسين الكفاءة والدقة؛ الطبقة تنقل المهام وتتحقق من الموثوقية بينما الوكلاء المتخصصون يتعاملون مع التفكير المتخصص."
+   }
   },
   {
    "id": "ad0fcca57292",
@@ -2841,7 +3252,10 @@
    "src": "Meta Engineering",
    "srcId": "meta",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "داخل Prometheus: رحلة Meta إلى سوبركلاستر بقدرة جيجاواط",
+    "summary": "Meta تكشف عن مرحلة أولى من سوبركلاستر Prometheus بقدرة جيجاواط، يهدف لتوسيعها إلى مليون GPU، ويستخدم تقنيات مثل التبريد السائل المغلق."
+   }
   },
   {
    "id": "7a364f356aab",
@@ -2851,7 +3265,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "تطوير البرمجة بلغات قليلة الموارد",
+    "summary": "OpenAI بتطور أداء ChatGPT في لغات البرمجة قليلة الموارد، مع تقييمات جديدة لهندسة البرمجيات وSQLite ونقل أكواد COBOL."
+   }
   },
   {
    "id": "9dbc0d55ff91",
@@ -2861,7 +3278,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "تسهيل تشغيل موديلات HF على AWS Trainium",
+    "summary": "بقى تشغيل موديلات Hugging Face على شرائح AWS Trainium أسهل وأسرع بكتير باستخدام TorchNeuron."
+   }
   },
   {
    "id": "65442e708214",
@@ -2871,7 +3291,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "איטאו بنك يطور ذكاء اصطناعي لعملائه",
+    "summary": "بنك Itaú بيطبق استراتيجية الـ AI First لخدمة عملائه وموظفيه في قطاع حساس، وده من خلال واجهة محادثة ia.i ومنصة الحوكمة IARA."
+   }
   },
   {
    "id": "83945f3b589d",
@@ -2881,7 +3304,10 @@
    "src": "Google Research",
    "srcId": "google-research",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "ربط وكلاء الذكاء الاصطناعي بالواقع البيولوجي",
+    "summary": "بناء وحدات أساسية ومتقدمة للمعمل الحيوي المستقل لربط وكلاء الذكاء الاصطناعي بالعلوم العامة."
+   }
   },
   {
    "id": "4a2f3ca18eb9",
@@ -2891,7 +3317,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Benefit Street Partners تجاوب أسرع باستخدام Codex",
+    "summary": "أنانت كومار بيستخدم أدوات مدعومة بـ Codex لمراجعة الكود، مقارنة تقييمات القروض، وتحليل اتفاقيات الائتمان بسرعة أكبر."
+   }
   },
   {
    "id": "9db4940a53f8",
@@ -2901,7 +3330,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "مضاعفة تسجيلات Stack Overflow for Agents",
+    "summary": "مهندسين قدروا يطلقوا Stack Overflow for Agents في أسابيع بـ Codex، ومساعد plugin بتاع ChatGPT ساهم في زيادة إنشاء الوكلاء بشكل ملحوظ."
+   }
   },
   {
    "id": "849b423196d1",
@@ -2911,7 +3343,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "الترحيب بنموذج Beam المفتوح",
+    "summary": "إطلاق الموديل المفتوح Beam 501B اللي تقدر تملكه، تخصصه، وتكبره براحتك."
+   }
   },
   {
    "id": "1d7d75b47c31",
@@ -2921,7 +3356,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Grupo Boticário يستخدم الذكاء الاصطناعي لدعم التواصل",
+    "summary": "الشركة بتستخدم منصة وكلاء ذكية عشان تحل 80% من طلبات الموزعين تلقائياً، وده بيخلي قوة المبيعات تركز أكتر على دور المستشار."
+   }
   },
   {
    "id": "827221925d8d",
@@ -2931,7 +3369,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "إزاي Localiza غيرت نظام شغلها بالذكاء الاصطناعي التوليدي",
+    "summary": "شركة Localiza طورت طريقة شغلها وتجربة التنقل باستخدام ChatGPT Enterprise وOpenAI API وCodex، ده غير أكتر من 60 وكيل ذكاء اصطناعي متخصص."
+   }
   },
   {
    "id": "adb6c89c63b3",
@@ -2941,7 +3382,10 @@
    "src": "Meta Engineering",
    "srcId": "meta",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "ميتا بنت تطبيق Forum بالاعتماد على هندسة الذكاء الاصطناعي",
+    "summary": "ميتا عملت تطبيقها الجديد Forum الخاص بمناقشات Facebook groups، ومهندسي الشركة استعانوا بوكلاء ذكاء الاصطناعي طوال مراحل التطوير والبناء."
+   }
   },
   {
    "id": "a72d1e4da6b0",
@@ -2951,7 +3395,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "توفير GPT-Rosalind لمختبرات الأبحاث الأكاديمية",
+    "summary": "إطلاق خطة Rosalind الأكاديمية اللي بتدي المختبرات المؤهلة إمكانية الوصول المدعوم لأداة GPT-Rosalind وأدوات تانية لتطوير أبحاث علوم الحياة."
+   }
   },
   {
    "id": "996b33c09ad5",
@@ -2961,7 +3408,10 @@
    "src": "Google DeepMind",
    "srcId": "deepmind",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "تسريع البحث عن الببتيدات المضادة للميكروبات بـ Google Antigravity",
+    "summary": "استخدام أداة Google Antigravity for Science عشان يسرعوا بيه عملية البحث عن ببتيدات جديدة ومبتكرة مضادة للميكروبات."
+   }
   },
   {
    "id": "4069e5410c3e",
@@ -2971,7 +3421,10 @@
    "src": "Microsoft Research",
    "srcId": "microsoft",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "الحوسبة العامة القائمة على الإثبات باستخدام Magnetar",
+    "summary": "أداة Magnetar من مايكروسوفت بتجيب إثباتات المعرفة الصفرية للمجال الرئيسي بدعم لغات البرمجة العادية وسرعة أكبر وأمان مقاوم للكم."
+   }
   },
   {
    "id": "fa14b8f7db46",
@@ -2981,7 +3434,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "تعليم الطلاب التفكير والتعلم عن طريق الأسئلة",
+    "summary": "احتفالاً بيوم المعلم، تم توفير أدوات الذكاء الاصطناعي للمعلمين بالبرتغالية البرازيلية ووضع الدراسة لمساعدة الطلاب في التعلم النشط خطوة بخطوة."
+   }
   },
   {
    "id": "e3c36d4422c6",
@@ -2991,7 +3447,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "إصدار ملاحظات Apertus 1.5",
+    "summary": "الإعلان عن تفاصيل وملاحظات الإصدار الجديد Apertus 1.5."
+   }
   },
   {
    "id": "dd00c04c9b95",
@@ -3001,7 +3460,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "مكتب Sullivan & Cromwell بيدخل الخبرة القانونية في مراجعة العقود",
+    "summary": "بالتعاون مع OpenAI، مكتب Sullivan & Cromwell طور أداة Agreement Analyzer عشان تساعدهم في اكتشاف المشاكل جوه مسودات العقود."
+   }
   },
   {
    "id": "98e6a11f87f3",
@@ -3011,7 +3473,10 @@
    "src": "Apple ML",
    "srcId": "apple",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "تشغيل نماذج LLM الكبيرة محليًا على Mac Studio باستخدام MLX و RDMA",
+    "summary": "MLX بيستغل بنية الذاكرة الموحدة في شريحة Apple silicon علشان يخلّي الباحثين يجرّبوا نماذج LLM الكبيرة وتعديلها على جهازهم بشكل خاص وآمن."
+   }
   },
   {
    "id": "1aaf9ecdd8b2",
@@ -3021,7 +3486,10 @@
    "src": "Apple ML",
    "srcId": "apple",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "التفكير الهيكلي القائم على الاختيار للوكيل المتعدد الوسائط",
+    "summary": "SSR بيحوّل عملية التفكير من توليد نص حر إلى اختيار من خيارات مسبقة، وده بيقلل تكلفة الاستدلال وبيسرّع اتخاذ الإجراءات للنماذج الصغيرة."
+   }
   },
   {
    "id": "7f2975ae8e0c",
@@ -3031,7 +3499,10 @@
    "src": "Apple ML",
    "srcId": "apple",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "هل نخطط قبل ما نسترجع الأدوات؟ دراسة مقارنة",
+    "summary": "النهج التقليدي (Retrieve‑then‑Plan) بيسترجع الأدوات قبل التخطيط، لكن بيواجه مشكلة طول السياق. الدراسة بتقارن بديل (Plan‑then‑Retrieve) اللي بيولّد أولًا توقيعات أدوات افتراضية قبل ما يدوّر على الأدوات الفعلية."
+   }
   },
   {
    "id": "9d251ac6836a",
@@ -3041,7 +3512,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Muse Spark Open من Meta: نموذج متعدد الوسائط بوزن مفتوح",
+    "summary": ""
+   }
   },
   {
    "id": "3733c75a28bf",
@@ -3051,7 +3525,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "إطلاق FLUX.3 Image Klein في Diffusers",
+    "summary": ""
+   }
   },
   {
    "id": "93dc9e9d57ba",
@@ -3061,7 +3538,10 @@
    "src": "Google Research",
    "srcId": "google-research",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "استخدام Earth AI في حل تحديات كوكبنا",
+    "summary": "Earth AI بيقدّم وكلاء جغرافيين لتحليل البيانات المكانية ومواجهة أكبر التحديات البيئية."
+   }
   },
   {
    "id": "e5f78e0104d8",
@@ -3071,7 +3551,10 @@
    "src": "Google Research",
    "srcId": "google-research",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "تحليل المستندات التقنية مع Deep Review",
+    "summary": "Deep Review بيساعد على فحص وتحليل الوثائق التقنية بسرعة."
+   }
   },
   {
    "id": "19f3965005eb",
@@ -3081,7 +3564,10 @@
    "src": "Google Research",
    "srcId": "google-research",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Research@2026: 10 طرق لتعزيز الإبداع البشري",
+    "summary": "المنشور بيستعرض عشر مبادرات هدفها رفع قدرات الابتكار البشري."
+   }
   },
   {
    "id": "a0e0fec2c2b5",
@@ -3091,7 +3577,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Amp بتوظف وكلاء AI مع نماذج OpenAI",
+    "summary": "Amp بيستعرض إمكانيات الوكلاء باستخدام GPT‑6 Astra، Ultrafast، GPT‑Live‑1، وميزة Sign in with ChatGPT."
+   }
   },
   {
    "id": "24cc989c02db",
@@ -3101,7 +3590,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "SentinelOne تقلل تحليل البرمجيات الضارة من أسابيع لساعات",
+    "summary": "مع OpenAI Daybreak، SentinelOne بتسرّع تحليل البرمجيات الضارة من أسابيع لساعات، وده بيسمح لها تحقق في تهديدات أكتر."
+   }
   },
   {
    "id": "e181547094b0",
@@ -3111,7 +3603,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Third Moment Research تشغّل 10,000 وكيل AI لأكثر من 36 ساعة",
+    "summary": "المختبر بيستخدم GPT‑6 Astra، GPT‑6.1 Sol، Codex، وDaybreak للأمن السيبراني لتشغيل وكلاء يشتغلوا أيام ويتحسنوا مع الاستخدام."
+   }
   },
   {
    "id": "7d10f0ddfecf",
@@ -3121,7 +3616,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Block تبني أمان AI باستخدام تكنولوجيا OpenAI",
+    "summary": "فريق الأمان في Block بيستكشف التهديدات أسرع وبيقترح تصحيحات خلال دقائق بفضل حلول AI من OpenAI."
+   }
   },
   {
    "id": "58e4191fcfe4",
@@ -3131,7 +3629,10 @@
    "src": "Google DeepMind",
    "srcId": "deepmind",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "DeepMind وGovTech Singapore يطوّروا نموذج AI للكشف عن الاحتيال",
+    "summary": "Google DeepMind وGovTech Singapore بيستعملوا نماذج Gemma الخفيفة على الجهاز لتصدي للاحتيال في الدردشات الخاصة من غير ما يطلعوا بيانات للسحابة."
+   }
   },
   {
    "id": "2f3282e48314",
@@ -3141,7 +3642,10 @@
    "src": "OpenAI",
    "srcId": "openai",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "الاتحاد الأوروبي يركز على AI الوكيل في المرحلة الجاية",
+    "summary": "تحليل جديد يوضح إن تبني AI الوكيل بيزيد في الشركات الأوروبية الصغيرة والكبيرة، وإن الاستخدام الأعمق ممكن يضيف قيمة أكبر."
+   }
   },
   {
    "id": "15a88e7ee914",
@@ -3592,6 +4096,7 @@
    "srcId": "huggingface",
    "kind": "company",
    "ar": null
+<<<<<<< HEAD
   },
   {
    "id": "a97398f76ee5",
@@ -3742,6 +4247,8 @@
    "srcId": "openai",
    "kind": "company",
    "ar": null
+=======
+>>>>>>> main
   }
  ]
 }

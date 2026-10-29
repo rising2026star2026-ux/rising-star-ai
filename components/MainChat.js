@@ -114,7 +114,7 @@ export default function MainChat() {
     const el = boxRef.current;
     if (!el) return;
     el.style.height = "auto";
-    el.style.height = Math.min(el.scrollHeight, 200) + "px";
+    el.style.height = Math.min(el.scrollHeight, 240) + "px";
   }
 
   // modelOverride بيتستخدم أول ما الصفحة تفتح، لأن حالة الموديل لسه ما اتحدثتش
@@ -136,6 +136,7 @@ export default function MainChat() {
     abortRef.current = controller;
     let reply = "";
     let sources = [];
+    let images = [];
     let fusion = null;
 
     try {
@@ -167,6 +168,7 @@ export default function MainChat() {
       const status = res.headers.get("x-search");
       if (status && SEARCH_NOTES[status]) toast(SEARCH_NOTES[status]);
       try { sources = JSON.parse(decodeURIComponent(res.headers.get("x-sources") || "[]")); } catch { sources = []; }
+      try { images = JSON.parse(decodeURIComponent(res.headers.get("x-images") || "[]")); } catch { images = []; }
 
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
@@ -174,14 +176,14 @@ export default function MainChat() {
         const { done, value } = await reader.read();
         if (done) break;
         reply += decoder.decode(value, { stream: true });
-        setMessages([...history, { role: "assistant", content: reply, sources, fusion }]);
+        setMessages([...history, { role: "assistant", content: reply, sources, images, fusion }]);
       }
       if (!reply.trim()) throw new Error("ما وصلش رد. جرّب تاني.");
     } catch (e) {
       if (e.name === "AbortError") {
-        setMessages([...history, { role: "assistant", content: reply || "_اتوقف الرد._", sources, fusion }]);
+        setMessages([...history, { role: "assistant", content: reply || "_اتوقف الرد._", sources, images, fusion }]);
       } else {
-        setMessages(reply ? [...history, { role: "assistant", content: reply, sources, fusion }] : history);
+        setMessages(reply ? [...history, { role: "assistant", content: reply, sources, images, fusion }] : history);
         setError(e.message || "الاتصال اتقطع. اتأكد من الإنترنت وجرّب تاني.");
       }
     } finally {
@@ -304,6 +306,16 @@ export default function MainChat() {
                       <div className={s.typing} aria-label="جاري الكتابة">
                         <span /><span /><span />
                         {m.searching && <em className={s.searchingNote}>بيدوّر على الإنترنت…</em>}
+                      </div>
+                    )}
+
+                    {m.images?.length > 0 && (
+                      <div className={s.images} aria-label="صور من نتائج البحث">
+                        {m.images.map((im) => (
+                          <a key={im.s} href={im.h} target="_blank" rel="noopener noreferrer nofollow" className={s.imgCard} title={im.a || ""}>
+                            <img src={im.s} alt={im.a || ""} loading="lazy" referrerPolicy="no-referrer" onError={(e) => { e.currentTarget.closest("a").style.display = "none"; }} />
+                          </a>
+                        ))}
                       </div>
                     )}
 
