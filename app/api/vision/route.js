@@ -1,5 +1,5 @@
 // قارئ الصور: يوصف الصورة أو يقرا النص اللي فيها ويرد على سؤال المستخدم عنها
-import { fail, clientIp, rateLimiter, completeOnce, fallbackTail } from "@/lib/groq";
+import { fail, clientIp, rateLimiter, completeOnce, visionChain } from "@/lib/groq";
 
 export const maxDuration = 60;
 
@@ -37,11 +37,7 @@ export async function POST(req) {
     },
   ];
 
-  const chain = [
-    { id: "meta-llama/llama-4-scout-17b-16e-instruct", effort: null, provider: "groq" },
-    { id: "meta-llama/llama-4-maverick-17b-128e-instruct", effort: null, provider: "groq" },
-    ...fallbackTail().filter((x) => x.provider === "gemini" || x.provider === "openrouter"),
-  ];
+  const chain = visionChain();
 
   for (const m of chain) {
     const text = await completeOnce(m, { messages, temperature: 0.3, maxTokens: 1500, signal: req.signal });
