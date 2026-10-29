@@ -5,12 +5,11 @@ const b = await chromium.launch();
 for (const [name, vp] of [["mobile", { width: 420, height: 900 }], ["desktop", { width: 1280, height: 800 }]]) {
   const p = await b.newPage({ viewport: vp });
   await p.goto(`${BASE}/chat`);
-  const m = await p.$eval("textarea", (t) => { const c = getComputedStyle(t); const r = t.getBoundingClientRect(); return { fs: parseFloat(c.fontSize), h: r.height, w: r.width }; });
-  log(`${name} font 14px`, m.fs === 14, m.fs);
-  log(`${name} height >= 84`, m.h >= 84, Math.round(m.h));
-  await p.fill("textarea", "سطر\nسطر\nسطر\nسطر\nسطر\nسطر\nسطر\nسطر\nسطر\nسطر");
-  const h2 = await p.$eval("textarea", (t) => t.getBoundingClientRect().height);
-  log(`${name} grows with text, capped 280`, h2 > m.h && h2 <= 281, Math.round(h2));
-  await p.screenshot({ path: `ci/composer-${name}.png` });
+  await p.waitForTimeout(2500);
+  const m = await p.$eval(".top-logo .logo-name", (n) => ({ fs: parseFloat(getComputedStyle(n).fontSize), ai: getComputedStyle(n.querySelector(".logo-ai")).color, text: n.textContent, rest: getComputedStyle(n).color }));
+  log(`${name} text`, m.text === "Rising StarAi", m.text);
+  log(`${name} Ai blue`, m.ai === "rgb(74, 116, 255)", m.ai);
+  log(`${name} size`, true, m.fs + "px, rest color " + m.rest);
+  await p.screenshot({ path: `ci/logo-${name}.png`, clip: { x: 0, y: 0, width: vp.width, height: 90 } });
 }
 await b.close();

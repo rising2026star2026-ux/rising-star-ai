@@ -607,15 +607,16 @@ body { overflow-x: clip; background: #fff; }
 /* الاسم */
 .logo { gap: 11px; }
 .logo-star { filter: drop-shadow(0 0 14px rgba(255, 196, 0, 0.55)); }
-.logo-name { font-family: var(--wordmark); font-size: 2.05rem; font-weight: 900; letter-spacing: -0.045em; color: #fff; line-height: 1; }
+.logo-name { font-family: var(--wordmark); font-size: 1.7rem; font-weight: 900; letter-spacing: -0.045em; color: #fff; line-height: 1; }
 .logo-name b { font-weight: 900; }
-.side-head .logo-name { font-size: 1.85rem; }
+.logo-ai { color: #4a74ff; }
+.side-head .logo-name { font-size: 1.5rem; }
 @media (max-width: 560px) {
-  .logo-name { font-size: 1.62rem; }
-  .logo-star { width: 34px; height: 34px; }
+  .logo-name { font-size: 1.38rem; }
+  .logo-star { width: 32px; height: 34px; }
   .logo { gap: 7px; }
 }
-@media (max-width: 380px) { .logo-name { font-size: 1.42rem; } }
+@media (max-width: 380px) { .logo-name { font-size: 1.22rem; } }
 
 /* الشريط العلوي: ليل دايماً */
 .topbar { background: rgba(5, 5, 16, 0.92); border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
