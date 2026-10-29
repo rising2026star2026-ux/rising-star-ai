@@ -2,7 +2,7 @@
 import { getModel } from "@/lib/models";
 import { SETTINGS, cleanSettings } from "@/lib/settings";
 import { fail, clientIp, rateLimiter, chainFor, streamFromGroq, completeOnce } from "@/lib/groq";
-import { searchProvider, searchQuery, webSearch, resultsBlock } from "@/lib/websearch";
+import { searchProvider, searchQuery, webSearchFull, resultsBlock } from "@/lib/websearch";
 import { FALLBACK_IDS } from "@/lib/models";
 import { resolveBot, validProCode } from "@/lib/botcatalog";
 import { fusionResponse } from "@/lib/fusion";
@@ -147,12 +147,13 @@ export async function POST(req) {
     else if (tooManySearches(ip)) headers["x-search"] = "limit";
     else {
       const query = await searchQuery(messages, apiKey);
-      const results = await webSearch(query);
+      const { results, images } = await webSearchFull(query);
       if (results.length) {
         system += `\n\n${resultsBlock(query, results)}`;
         headers["x-search"] = "ok";
         // المصادر بتوصل للمتصفح في الهيدر عشان تتعرض تحت الرد
         headers["x-sources"] = encodeURIComponent(JSON.stringify(results.map((r) => ({ t: r.title, u: r.url }))));
+        if (images.length) headers["x-images"] = encodeURIComponent(JSON.stringify(images));
       } else headers["x-search"] = "empty";
     }
   }
