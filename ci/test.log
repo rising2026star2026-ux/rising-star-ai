@@ -1,5 +1,8 @@
-OK  tasks index 200
-OK  task links 30
-BAD all task pages ok /task/3d 200 n=4
-OK  sitemap has tasks 
+OK  GET /api/image 200 image/jpeg 53327B
+OK  chat image md uses /api/image 200 اتفضل 🖼️
+
+![ارسم لي صورة قطة على سطح](/api/image?prompt=A%20sleek%2C%20midnight%E2%80%91black%20cat%20perched%20gracefully%20on%20a%20sun%E2%80%91bleached%20ro
+OK  page ai-video 200
+OK  script written + gen-all button 
+OK  scene image result image
 OK  no page errors 
