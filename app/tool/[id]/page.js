@@ -114,6 +114,7 @@ export default async function ToolPage({ params }) {
             toolId={tool.id}
             toolName={tool.name}
             placeholder={tool.placeholder}
+            example={content?.example}
             option={tool.option}
             label={tool.extra === "adlibrary" ? "٢. حلّل الإعلان واكتب أقوى منه" : undefined}
           />}

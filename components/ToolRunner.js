@@ -8,7 +8,7 @@ import ShareBar from "@/components/ShareBar";
 
 const MAX = 6000;
 
-export default function ToolRunner({ toolId, toolName, placeholder, option, label = "طلبك" }) {
+export default function ToolRunner({ toolId, toolName, placeholder, example, option, label = "طلبك" }) {
   const [input, setInput] = useState("");
   const [choice, setChoice] = useState(option?.choices[0] || "");
   const [loading, setLoading] = useState(false);
@@ -109,6 +109,11 @@ export default function ToolRunner({ toolId, toolName, placeholder, option, labe
       <div className="composer">
         <div className="composer-top">
           <label htmlFor="in">{label}</label>
+          {example && !input.trim() && !result && (
+            <button type="button" className="pill" onClick={() => window.dispatchEvent(new CustomEvent("rs-fill", { detail: example }))}>
+              جرّب مثالاً
+            </button>
+          )}
           <button className={`fav ${isFav ? "on" : ""}`} onClick={toggleFav} aria-pressed={isFav}>
             {isFav ? "★ في المفضلة" : "☆ أضف للمفضلة"}
           </button>
