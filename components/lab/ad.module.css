@@ -1,0 +1,14 @@
+/* فيديو إعلان من صورة المنتج */
+.card { display: grid; gap: 8px; padding: 14px; border-radius: 18px; border: 1px solid var(--hairline); background: var(--surface); }
+.h { font-size: 0.88rem; font-weight: 800; color: var(--ink); }
+.hint { color: var(--muted); font-size: 0.78rem; line-height: 1.8; }
+.hint a { color: var(--blue); text-decoration: underline; }
+.thumbs { display: flex; gap: 8px; flex-wrap: wrap; }
+.thumb { position: relative; width: 84px; height: 84px; border-radius: 14px; overflow: hidden; background: #fff; border: 1px solid var(--hairline); }
+.thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.thumb button { position: absolute; top: 3px; inset-inline-end: 3px; width: 22px; height: 22px; border-radius: 50%; border: 0; background: rgba(0, 0, 0, 0.65); color: #fff; font-size: 0.9rem; line-height: 1; cursor: pointer; }
+.add { display: grid; place-items: center; width: 84px; height: 84px; border-radius: 14px; border: 2px dashed rgba(74, 116, 255, 0.5); color: var(--blue); font-size: 0.78rem; font-weight: 800; cursor: pointer; text-align: center; }
+.add input { display: none; }
+.ai { display: flex; gap: 8px; flex-wrap: wrap; }
+.ai .input, .ai input { flex: 1 1 200px; min-width: 0; }
+.check { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 700; color: var(--ink); cursor: pointer; }
