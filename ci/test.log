@@ -1,6 +1,5 @@
-LIVE TTS 200 audio/mpeg 36864 bytes 1606 ms 
-LIVE TTS 200 audio/mpeg 33408 bytes 2345 ms 
-LIVE TTS 200 audio/mpeg 36864 bytes 771 ms 
-LIVE PEXELS 503 {"error":"no_key"}
-LIVE VSCRIPT 200 {"scenes":[{"text":"المشي كل يوم ينعش جسمك وعقلك","kw":"walking park"},{"text":"بيساعد على تحسين الدورة الدموية وتنشيط القلب","kw":"blood circulation"},{"text":"بيقلل التوتر والضغط النفسي بسرعة","kw":"stress relief"},{"text":"بيحرق سعرات حرارية بدون مجهود كبير","kw":"calorie burn"},{"text":"بيقوي ال
-LIVE PAGE 200
+url after sub click http://localhost:3000/resources/psd
+/resources 200
+/resources/courses 200
+/resources/nope 404
+errs 
