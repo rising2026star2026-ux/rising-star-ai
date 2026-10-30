@@ -1,10 +1,22 @@
 
-added 3 packages, and removed 2 packages in 1s
-import err Unknown file extension ".ts" for /home/runner/work/rising-star-ai/rising-star-ai/node_modules/edge-tts/index.ts
-ar-EG-SalmaNeural npm error could not determine executable to run
-npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2026-10-30T01_58_53_124Z-debug-0.log
- NO FILE
-ar-EG-ShakirNeural npm error could not determine executable to run
-npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2026-10-30T01_58_53_465Z-debug-0.log
- NO FILE
-pexels cdn 403 null
+ar-EG-SalmaNeural                  Female    General                Friendly, Positive
+ar-EG-ShakirNeural                 Male      General                Friendly, Positive
+
+ar-EG-SalmaNeural  39024 bytes
+ar-EG-ShakirNeural  35568 bytes
+1
+00:00:00,100 --> 00:00:06,500
+ازيك يا صاحبي، النهارده هنتكلم عن القهوة وازاي نعملها صح
+
+
+npm edge-tts pkg: version = '1.0.1'
+description = "Use Microsoft Edge's online text-to-speech service from JavaScript WITHOUT needing Microsoft Edge or Windows or an API key"
+license = 'CC BY-NC-SA 4.0'
+main = 'index.ts'
+types = './out/index.d.ts'
+
+alt npm: version = '1.2.12'
+license = 'MIT'
+ version = '2.1.1'
+license = 'MIT'
+
