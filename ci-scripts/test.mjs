@@ -32,7 +32,7 @@ async function run(name, mockVideo) {
   const p = await ctx.newPage();
   const errs = [];
   p.on("pageerror", (e) => errs.push("PAGEERR " + e.message.slice(0, 200)));
-  p.on("console", (m) => { if (m.type() === "error") errs.push("CONSOLE " + m.text().slice(0, 200)); });
+  p.on("console", (m) => { if (m.type() === "error" || /BACKUP/.test(m.text())) errs.push("CONSOLE " + m.text().slice(0, 200)); });
   if (name === "fallback") await p.route("**/api/tts", (route) => route.fulfill({ status: 502, contentType: "application/json", body: '{"error":"tts_unavailable"}' }));
   if (mockVideo) {
     await p.route("**/api/pexels**", (route) => route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({ items: [1, 2, 3].map((i) => ({ id: i, url: FLOWER, thumb: "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=", duration: 10, page: "https://www.pexels.com/", by: "Test" + i, byUrl: "" })) }) }));
@@ -44,7 +44,7 @@ async function run(name, mockVideo) {
   await p.waitForFunction(() => !document.querySelector("#vf-make")?.textContent.includes("بيشتغل"), null, { timeout: 120000 }).catch(() => {});
   console.log(name, "make took", ((Date.now() - t0) / 1000).toFixed(1) + "s", "scenes:", await p.locator("[data-scene]").count(), "err:", await p.locator("#vf-err").textContent().catch(() => ""), "notes:", await p.locator("p").allTextContents().then((a) => a.filter((x) => x.includes("مفعّل") || x.includes("الصوت")).join(" / ")));
   await p.waitForTimeout(2500);
-  await p.locator("#vf-root").locator("div").nth(3).screenshot({ path: `ci/vf/${name}_player.jpg`, type: "jpeg", quality: 60 }).catch(() => {});
+  await p.locator("[data-vf=preview]").screenshot({ path: `ci/vf/${name}_player.jpg`, type: "jpeg", quality: 60 }).catch(() => {});
   await p.screenshot({ path: `ci/vf/${name}_ui.jpg`, type: "jpeg", quality: 55, fullPage: true });
   const t1 = Date.now();
   await p.click("#vf-render");

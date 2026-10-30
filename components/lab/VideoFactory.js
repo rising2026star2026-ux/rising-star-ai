@@ -79,7 +79,12 @@ export default function VideoFactory() {
       const dur = await audioDuration(url);
       addNote("الصوت الأساسي مش متاح دلوقتي، فاستخدمنا صوت بديل مجاني (أبطأ وصوته مش ثابت بين المشاهد).");
       return { audio: url, dur };
-    } catch (e) { if (e?.name === "AbortError") throw e; return null; }
+    } catch (e) {
+      if (e?.name === "AbortError") throw e;
+      console.error("BACKUP", e?.quota ? "quota" : "busy", String(e?.message || e).slice(0, 160));
+      if (e?.quota) addNote("حصتك المجانية من الصوت البديل خلصت النهارده. جرّب بكرة أو لما الصوت الأساسي يرجع.");
+      return null;
+    }
   }
 
   async function makeVoice(text) {
@@ -212,7 +217,7 @@ export default function VideoFactory() {
 
       {scenes.length > 0 && (
         <>
-          <div className={s.preview}>
+          <div className={s.preview} data-vf="preview">
             {font && <Player component={FactoryComp} inputProps={props} durationInFrames={frames} fps={FPS} compositionWidth={SIZE.w} compositionHeight={SIZE.h} controls loop style={{ width: "100%", borderRadius: 16 }} />}
           </div>
 
