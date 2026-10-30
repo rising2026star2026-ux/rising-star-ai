@@ -1,4 +1,4 @@
-TTS 200 audio/mpeg 31824 bytes 1351 ms 
+TTS 200 audio/mpeg 31824 bytes 777 ms 
 duration=5.304000
 bit_rate=48000
 
@@ -6,23 +6,21 @@ TTS empty 400
 PEXELS nokey 503
 CB /on_language_change IN: lang(Language|Dropdown|"fr"), current_ref(Reference Audio File (Optional)|Audio|{"path":"/tmp/gradio/1a10ad98c1da5dd8e29b13dc8aab2), current_text(Text to synthesize (max chars 300)|Textbox|"Le mois dernier, nous avons atteint un nouveau ja) OUT: Audio:Reference Audio File (Optional), Textbox:Text to synthesize (max chars 300)
 CB /generate_tts_audio IN: text_input(Text to synthesize (max chars 300)|Textbox|"Le mois dernier, nous avons atteint un nouveau ja), language_id(Language|Dropdown|"fr"), audio_prompt_path_input(Reference Audio File (Optional)|Audio|{"path":"/tmp/gradio/1a10ad98c1da5dd8e29b13dc8aab2), exaggeration_input(Exaggeration (Neutral = 0.5, extreme values can be unstable)|Slider|0.5), temperature_input(Temperature|Slider|0.8), seed_num_input(Random seed (0 for random)|Number|0), cfgw_input(CFG/Pace|Slider|0.5) OUT: Audio:Output Audio
-mock make took 7.7s scenes: 6 err:  notes: 
-mock render took 52.7s err: none
-mock file ci/vf/mock.webm 8987431 bytes
+CB call 200 {"event_id":"35e9763feaa948f0816cb3b35aeb694b"}
+CB events event: error
+data: null
+
+
+nopexels make took 6.0s scenes: 6 err:  notes: فيديوهات Pexels مش مفعّلة لسه (مفتاح PEXELS_API_KEY ناقص)، فالمشاهد بخلفية ملونة.
+nopexels preview box {"x":45,"y":367.546875,"width":300,"height":533.328125} inner <div style="position: relative; overflow: hidden; aspect-ratio: 720 / 1280; opacity: 1; width: 100%; border-radius: 16px;"><div style="width: 299.997px; height: 533.328px; display: flex; flex-direction: column; position: absolute; overflow: hidden; left: 0.0014648px; top: 0px;"><div class="__remotio
+mock make took 6.6s scenes: 6 err:  notes: 
+mock preview box {"x":45,"y":367.046875,"width":300,"height":533.328125} inner <div style="position: relative; overflow: hidden; aspect-ratio: 720 / 1280; opacity: 1; width: 100%; border-radius: 16px;"><div style="width: 299.997px; height: 533.328px; display: flex; flex-direction: column; position: absolute; overflow: hidden; left: 0.0014648px; top: 0px;"><div class="__remotio
+mock render took 47.7s err: none
+mock file ci/vf/mock.webm 8422640 bytes
 stream|codec_name=vp8|codec_type=video|width=720|height=1280|duration=N/A
 stream|codec_name=opus|codec_type=audio|duration=N/A
 
-mock audio volume [Parsed_volumedetect_0 @ 0x7d3290002000] mean_volume: -23.2 dB
-[Parsed_volumedetect_0 @ 0x7d3290002000] max_volume: -4.9 dB
+mock audio volume [Parsed_volumedetect_0 @ 0x767a54002000] mean_volume: -23.0 dB
+[Parsed_volumedetect_0 @ 0x767a54002000] max_volume: -4.9 dB
 
 mock errs: 
-fallback make took 5.6s scenes: 6 err:  notes: الصوت ما اشتغلش في 6 مشهد. اضغط «حدّث الصوت» على المشهد، أو أعد المحاولة بعد شوية.
-fallback render took 24.2s err: none
-fallback file ci/vf/fallback.webm 5008396 bytes
-stream|codec_name=vp8|codec_type=video|width=720|height=1280|duration=N/A
-stream|codec_name=opus|codec_type=audio|duration=N/A
-
-fallback audio volume [Parsed_volumedetect_0 @ 0x778794002000] mean_volume: -91.0 dB
-[Parsed_volumedetect_0 @ 0x778794002000] max_volume: -91.0 dB
-
-fallback errs: CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway) | CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway) | CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway) | CONSOLE BACKUP busy "" | CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway) | CONSOLE BACKUP busy "" | CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway) | CONSOLE BACKUP busy ""
