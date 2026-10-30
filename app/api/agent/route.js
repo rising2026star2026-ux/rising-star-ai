@@ -107,7 +107,7 @@ export async function POST(req) {
         send({ t: "step", m: "بكتب النتيجة…" });
         const today = new Date().toLocaleDateString("ar-EG", { timeZone: "Africa/Cairo", dateStyle: "full" });
         const system = `انت «${agent.name}» على موقع Rising StarAi. تاريخ النهارده: ${today}.\n${agent.write}\n${
-          context ? "اعتمد على المصادر اللي تحت أولاً، وما تخترعش أرقام أو أسعار مش موجودة فيها." : "مفيش مصادر بحث متاحة: وضّح في أول سطر إن المعلومات من معرفة الموديل وممكن تكون قديمة، وما تحطش أرقام مصادر."
+          context ? "اعتمد على المصادر اللي تحت أولاً، وما تخترعش أرقام أو أسعار مش موجودة فيها." : "مفيش بحث في الإنترنت متاح دلوقتي. اكتب في أول سطر بالظبط: «⚠️ البحث في الإنترنت مش متاح دلوقتي، فدي معلومات عامة ممكن تكون مش محدثة.» وما تذكرش اسم أي موديل أو تاريخ تدريب. ممنوع تخترع أسماء محلات أو شركات أو أسعار محددة أو مصادر أو دراسات: اكتب أنواع وفئات ونطاقات تقريبية بس، وقول إنها تقديرية."
         }`;
         const messages = [{ role: "system", content: system }, { role: "user", content: context ? `${inputText}\n\nالمصادر:\n${context}` : inputText }];
         const res = await streamFromGroq({ chain: chainFor(getModel("balanced")), messages, temperature: 0.4, maxTokens: 3500, signal });
