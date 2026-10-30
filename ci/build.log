@@ -7,106 +7,110 @@ https://nextjs.org/telemetry
    ▲ Next.js 15.5.28
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 18.3s
+ ✓ Compiled successfully in 11.4s
    Linting and checking validity of types ...
    Collecting page data ...
-   Generating static pages (0/1029) ...
-   Generating static pages (257/1029) 
-   Generating static pages (514/1029) 
-   Generating static pages (771/1029) 
- ✓ Generating static pages (1029/1029)
+   Generating static pages (0/1033) ...
+   Generating static pages (258/1033) 
+   Generating static pages (516/1033) 
+   Generating static pages (774/1033) 
+ ✓ Generating static pages (1033/1033)
    Finalizing page optimization ...
    Collecting build traces ...
 
 Route (app)                                 Size  First Load JS  Revalidate  Expire
-┌ ○ /                                    20.1 kB         155 kB
-├ ○ /_not-found                            996 B         105 kB
-├ ○ /agents                                434 B         108 kB
-├ ● /agents/[id]                         1.89 kB         160 kB
+┌ ○ /                                    20.3 kB         155 kB
+├ ○ /_not-found                             1 kB         105 kB
+├ ○ /agents                                438 B         107 kB
+├ ● /agents/[id]                         1.91 kB         160 kB
 ├   ├ /agents/research
 ├   ├ /agents/market
 ├   ├ /agents/compare
 ├   └ [+3 more paths]
-├ ● /ai/[slug]                             986 B         108 kB
+├ ● /ai/[slug]                             991 B         108 kB
 ├   ├ /ai/taskade
 ├   ├ /ai/runwayml
 ├   ├ /ai/aiva
 ├   └ [+588 more paths]
-├ ƒ /api/agent                             160 B         104 kB
-├ ƒ /api/chat                              160 B         104 kB
-├ ƒ /api/image                             160 B         104 kB
-├ ƒ /api/pro                               160 B         104 kB
-├ ƒ /api/prompt-en                         160 B         104 kB
-├ ƒ /api/proofread                         160 B         104 kB
-├ ƒ /api/reel                              160 B         104 kB
-├ ƒ /api/run                               160 B         104 kB
-├ ƒ /api/scam-scan                         160 B         104 kB
-├ ƒ /api/vision                            160 B         104 kB
-├ ○ /chat                                9.06 kB         195 kB
-├ ○ /creators                              402 B         108 kB
-├ ● /creators/[slug]                       402 B         108 kB
+├ ƒ /api/agent                             170 B         104 kB
+├ ƒ /api/chat                              170 B         104 kB
+├ ƒ /api/image                             170 B         104 kB
+├ ƒ /api/pexels                            170 B         104 kB
+├ ƒ /api/pro                               170 B         104 kB
+├ ƒ /api/prompt-en                         170 B         104 kB
+├ ƒ /api/proofread                         170 B         104 kB
+├ ƒ /api/reel                              170 B         104 kB
+├ ƒ /api/run                               170 B         104 kB
+├ ƒ /api/scam-scan                         170 B         104 kB
+├ ƒ /api/tts                               170 B         104 kB
+├ ƒ /api/vision                            170 B         104 kB
+├ ƒ /api/vscript                           170 B         104 kB
+├ ○ /chat                                 9.1 kB         195 kB
+├ ○ /creators                              404 B         107 kB
+├ ● /creators/[slug]                       404 B         107 kB
 ├   ├ /creators/omar-alshal
 ├   ├ /creators/ahmed-shaffik
 ├   ├ /creators/hossam-hassan
 ├   └ [+17 more paths]
-├ ● /flow/[id]                            6.2 kB         184 kB
+├ ● /flow/[id]                           6.27 kB         183 kB
 ├   ├ /flow/product-launch
 ├   ├ /flow/short-video
 ├   ├ /flow/youtube-video
 ├   └ [+6 more paths]
-├ ○ /flows                                 506 B         108 kB
-├ ○ /global-tools                        1.08 kB         108 kB
-├ ● /global-tools/[cat]                  3.41 kB         111 kB
+├ ○ /flows                                 511 B         108 kB
+├ ○ /global-tools                        1.09 kB         108 kB
+├ ● /global-tools/[cat]                  3.43 kB         110 kB
 ├   ├ /global-tools/chatbots
 ├   ├ /global-tools/writing
 ├   ├ /global-tools/copywriting
 ├   └ [+37 more paths]
-├ ○ /history                               874 B         127 kB
+├ ○ /history                               877 B         127 kB
 ├ ○ /icon.svg                                0 B            0 B
+├ ○ /lab/factory                         1.84 kB         109 kB
 ├ ○ /lab/remotion                        1.84 kB         109 kB
-├ ○ /learn                                 420 B         108 kB
-├ ○ /library                             1.65 kB         109 kB
-├ ● /library/[slug]                      2.63 kB         110 kB
+├ ○ /learn                                 423 B         107 kB
+├ ○ /library                             1.66 kB         109 kB
+├ ● /library/[slug]                      2.64 kB         110 kB
 ├   ├ /library/flux-schnell
 ├   ├ /library/flux-dev
 ├   ├ /library/qwen-image
 ├   └ [+111 more paths]
-├ ○ /maker                               1.21 kB         108 kB
-├ ● /maker/[slug]                        3.89 kB         111 kB
+├ ○ /maker                               1.22 kB         108 kB
+├ ● /maker/[slug]                        3.91 kB         111 kB
 ├   ├ /maker/pollinations
 ├   ├ /maker/perchance
 ├   ├ /maker/raphael-ai
 ├   └ [+38 more paths]
 ├ ○ /maker/create                        4.83 kB         112 kB
-├ ○ /models                              4.71 kB         112 kB          6h      1y
+├ ○ /models                              4.72 kB         112 kB          6h      1y
 ├ ○ /news                                 1.3 kB         105 kB
-├ ○ /plans                               1.88 kB         109 kB
-├ ● /program/[key]                       1.57 kB         109 kB
+├ ○ /plans                               1.89 kB         109 kB
+├ ● /program/[key]                       1.58 kB         109 kB
 ├   ├ /program/chatgpt
 ├   ├ /program/claude
 ├   ├ /program/gemini
 ├   └ [+68 more paths]
-├ ○ /robots.txt                            160 B         104 kB
-├ ○ /scam-check                          4.64 kB         112 kB
-├ ○ /sitemap.xml                           160 B         104 kB
-├ ○ /subscriptions                       3.04 kB         120 kB
-├ ○ /subscriptions/calculator            2.35 kB         119 kB
-├ ● /task/[slug]                         3.41 kB         111 kB
+├ ○ /robots.txt                            170 B         104 kB
+├ ○ /scam-check                          4.65 kB         112 kB
+├ ○ /sitemap.xml                           170 B         104 kB
+├ ○ /subscriptions                       3.03 kB         120 kB
+├ ○ /subscriptions/calculator            2.36 kB         119 kB
+├ ● /task/[slug]                         3.43 kB         110 kB
 ├   ├ /task/logo
 ├   ├ /task/resume
 ├   ├ /task/translate
 ├   └ [+27 more paths]
-├ ○ /tasks                                 599 B         108 kB
-├ ● /tool/[id]                           9.41 kB         168 kB
+├ ○ /tasks                                 603 B         108 kB
+├ ● /tool/[id]                           9.45 kB         168 kB
 ├   ├ /tool/article
 ├   ├ /tool/rewrite
 ├   ├ /tool/summarize
 ├   └ [+68 more paths]
-└ ○ /tools                               2.69 kB         129 kB
+└ ○ /tools                               2.71 kB         128 kB
 + First Load JS shared by all             104 kB
-  ├ chunks/1255-dc3ddf72a1dc71a7.js      46.6 kB
-  ├ chunks/4bd1b696-f785427dddbba9fb.js  54.2 kB
-  └ other shared chunks (total)          3.03 kB
+  ├ chunks/1255-60d8dc7c8c9309a1.js      46.3 kB
+  ├ chunks/4bd1b696-100b9d70ed4e49c1.js  54.2 kB
+  └ other shared chunks (total)          3.12 kB
 
 
 ○  (Static)   prerendered as static content
