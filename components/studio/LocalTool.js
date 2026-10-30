@@ -31,6 +31,7 @@ const Apps = dynamic(() => import("./Apps"), { ssr: false, loading });
 const VideoMaker = dynamic(() => import("./VideoMaker"), { ssr: false, loading });
 const RemotionReel = dynamic(() => import("@/components/lab/RemotionReel"), { ssr: false, loading });
 const VideoFactory = dynamic(() => import("@/components/lab/VideoFactory"), { ssr: false, loading });
+const ProductAd = dynamic(() => import("@/components/lab/ProductAd"), { ssr: false, loading });
 
 // نوع الأداة (من lib/tools.js) ← المكوّن وإعداداته
 const KINDS = {
@@ -49,6 +50,7 @@ const KINDS = {
   apps: [Apps],
   "video-remotion": [RemotionReel],
   "video-factory": [VideoFactory],
+  "product-ad": [ProductAd],
   "video-ai": [VideoMaker, { mode: "ai" }],
   "video-text": [VideoMaker, { mode: "text" }],
   "video-photos": [VideoMaker, { mode: "photos" }],
