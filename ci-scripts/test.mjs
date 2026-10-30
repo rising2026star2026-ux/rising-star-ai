@@ -77,5 +77,28 @@ async function run(name, mockVideo, doRender = true) {
   await ctx.close();
 }
 await run("nopexels", false, false);
+{
+  const ctx = await b.newContext({ viewport: { width: 390, height: 900 }, isMobile: true });
+  const p = await ctx.newPage();
+  await p.goto(BASE + "/lab/factory");
+  await p.fill("#vf-topic", "قهوة");
+  await p.click("#vf-make");
+  await p.waitForSelector("[data-vf=preview]", { timeout: 60000 });
+  await p.waitForTimeout(4000);
+  const dump = await p.evaluate(() => {
+    const out = [];
+    const walk = (el, d) => { if (d > 9 || out.length > 40) return; const r = el.getBoundingClientRect(); const cs = getComputedStyle(el); out.push(`${"  ".repeat(d)}${el.tagName.toLowerCase()} ${Math.round(r.width)}x${Math.round(r.height)} @${Math.round(r.left)},${Math.round(r.top)} ov=${cs.overflow} tf=${cs.transform === "none" ? "" : cs.transform.slice(0, 40)} disp=${cs.display}`); for (const c of el.children) walk(c, d + 1); };
+    walk(document.querySelector("[data-vf=preview]"), 0);
+    return out.join("\n");
+  });
+  console.log("DOMDUMP\n" + dump);
+  await ctx.close();
+  const c2 = await b.newContext({ viewport: { width: 390, height: 900 }, isMobile: true });
+  const q = await c2.newPage();
+  await q.goto(BASE + "/lab/remotion");
+  await q.waitForTimeout(5000);
+  await q.screenshot({ path: "ci/vf/reel_ref.jpg", type: "jpeg", quality: 50 });
+  await c2.close();
+}
 await run("mock", true);
 await b.close();
