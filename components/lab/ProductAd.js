@@ -238,7 +238,7 @@ export default function ProductAd() {
         <>
           <div className={s.preview} data-pa="preview" style={{ width: `min(${prevW}px, 100%)` }}>
             <div dir="ltr">
-              <Player component={AdComp} inputProps={props} durationInFrames={frames} fps={FPS} compositionWidth={F.w} compositionHeight={F.h} controls loop style={{ width: "100%", borderRadius: 16 }} />
+              <Player component={AdComp} inputProps={props} durationInFrames={frames} fps={FPS} compositionWidth={F.w} compositionHeight={F.h} controls loop initialFrame={Math.min(40, Math.max(0, frames - 1))} style={{ width: "100%", borderRadius: 16 }} />
             </div>
           </div>
           {voiceOn && !voiceReady && <p className={s.note}>التعليق الصوتي لسه ما اتجهزش (أو الكلام اتغيّر). اضغط «جهّز التعليق الصوتي» وإلا هيتصدّر الفيديو من غير صوت.</p>}

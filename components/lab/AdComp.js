@@ -67,7 +67,7 @@ function Backdrop({ img, theme, frame, frames }) {
   const h = img.h * k;
   return (
     <AbsoluteFill>
-      <Img src={img.src} style={{ position: "absolute", left: (W - w) / 2, top: (H - h) / 2, width: w, height: h, opacity: 0.55 }} />
+      <Img src={img.src} style={{ position: "absolute", left: (W - w) / 2, top: (H - h) / 2, width: w, height: h, opacity: 0.22 }} />
       <AbsoluteFill style={{ background: `linear-gradient(160deg, ${theme.c1}f2, ${theme.c2}e6)` }} />
     </AbsoluteFill>
   );
@@ -87,10 +87,10 @@ function Scene({ sc, idx, data, theme, font, L, frames }) {
   const sp = (delay = 0, cfg = { damping: 14, stiffness: 140 }) => spring({ frame: frame - delay, fps, config: cfg });
   const imgs = data.images;
   const img = imgs[idx % imgs.length];
-  const fade = Math.min(interpolate(frame, [0, 6], [0, 1], { extrapolateRight: "clamp" }), interpolate(frame, [frames - 6, frames], [1, 0], { extrapolateLeft: "clamp" }));
+  const fade = Math.min(idx === 0 ? 1 : interpolate(frame, [0, 6], [0, 1], { extrapolateRight: "clamp" }), interpolate(frame, [frames - 6, frames], [1, 0], { extrapolateLeft: "clamp" }));
   const shrink = sc.id === "intro" ? 0 : Math.min(1, sp(0, { damping: 18, stiffness: 120 }));
   const rect = lerpRect(L.big, L.small, shrink);
-  const pop = sc.id === "intro" ? sp(0) : 1;
+  const pop = sc.id === "intro" ? 0.85 + 0.15 * Math.min(1, sp(0)) : 1;
   const cardRect = sc.id === "intro" ? { x: rect.x + rect.w * (1 - pop) * 0.5, y: rect.y + rect.h * (1 - pop) * 0.5, w: rect.w * pop, h: rect.h * pop } : rect;
   const tr = sc.id === "intro" ? L.text : L.textSmall;
   const nameLines = toLines(data.name, L.chars).slice(0, L.kind === "port" ? 3 : 2);
