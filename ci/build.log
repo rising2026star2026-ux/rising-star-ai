@@ -7,21 +7,21 @@ https://nextjs.org/telemetry
    ▲ Next.js 15.5.28
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 17.3s
+ ✓ Compiled successfully in 13.1s
    Linting and checking validity of types ...
    Collecting page data ...
-   Generating static pages (0/1045) ...
-   Generating static pages (261/1045) 
-   Generating static pages (522/1045) 
-   Generating static pages (783/1045) 
- ✓ Generating static pages (1045/1045)
+   Generating static pages (0/1047) ...
+   Generating static pages (261/1047) 
+   Generating static pages (523/1047) 
+   Generating static pages (785/1047) 
+ ✓ Generating static pages (1047/1047)
    Finalizing page optimization ...
    Collecting build traces ...
 
 Route (app)                                 Size  First Load JS  Revalidate  Expire
 ┌ ○ /                                    20.3 kB         155 kB
 ├ ○ /_not-found                             1 kB         105 kB
-├ ○ /agents                                438 B         107 kB
+├ ○ /agents                                438 B         108 kB
 ├ ● /agents/[id]                         1.91 kB         160 kB
 ├   ├ /agents/research
 ├   ├ /agents/market
@@ -32,19 +32,20 @@ Route (app)                                 Size  First Load JS  Revalidate  Exp
 ├   ├ /ai/runwayml
 ├   ├ /ai/aiva
 ├   └ [+588 more paths]
-├ ƒ /api/agent                             170 B         104 kB
-├ ƒ /api/chat                              170 B         104 kB
-├ ƒ /api/image                             170 B         104 kB
-├ ƒ /api/pexels                            170 B         104 kB
-├ ƒ /api/pro                               170 B         104 kB
-├ ƒ /api/prompt-en                         170 B         104 kB
-├ ƒ /api/proofread                         170 B         104 kB
-├ ƒ /api/reel                              170 B         104 kB
-├ ƒ /api/run                               170 B         104 kB
-├ ƒ /api/scam-scan                         170 B         104 kB
-├ ƒ /api/tts                               170 B         104 kB
-├ ƒ /api/vision                            170 B         104 kB
-├ ƒ /api/vscript                           170 B         104 kB
+├ ƒ /api/adcopy                            173 B         104 kB
+├ ƒ /api/agent                             173 B         104 kB
+├ ƒ /api/chat                              173 B         104 kB
+├ ƒ /api/image                             173 B         104 kB
+├ ƒ /api/pexels                            173 B         104 kB
+├ ƒ /api/pro                               173 B         104 kB
+├ ƒ /api/prompt-en                         173 B         104 kB
+├ ƒ /api/proofread                         173 B         104 kB
+├ ƒ /api/reel                              173 B         104 kB
+├ ƒ /api/run                               173 B         104 kB
+├ ƒ /api/scam-scan                         173 B         104 kB
+├ ƒ /api/tts                               173 B         104 kB
+├ ƒ /api/vision                            173 B         104 kB
+├ ƒ /api/vscript                           173 B         104 kB
 ├ ○ /chat                                 9.1 kB         195 kB
 ├ ○ /creators                              404 B         107 kB
 ├ ● /creators/[slug]                       404 B         107 kB
@@ -59,16 +60,16 @@ Route (app)                                 Size  First Load JS  Revalidate  Exp
 ├   └ [+6 more paths]
 ├ ○ /flows                                 511 B         108 kB
 ├ ○ /global-tools                        1.09 kB         108 kB
-├ ● /global-tools/[cat]                  3.43 kB         110 kB
+├ ● /global-tools/[cat]                  3.43 kB         111 kB
 ├   ├ /global-tools/chatbots
 ├   ├ /global-tools/writing
 ├   ├ /global-tools/copywriting
 ├   └ [+37 more paths]
 ├ ○ /history                               877 B         127 kB
 ├ ○ /icon.svg                                0 B            0 B
-├ ○ /lab/factory                         1.84 kB         109 kB
+├ ○ /lab/factory                         1.85 kB         109 kB
 ├ ○ /lab/remotion                        1.84 kB         109 kB
-├ ○ /learn                                 423 B         107 kB
+├ ○ /learn                                 423 B         108 kB
 ├ ○ /library                             2.56 kB         110 kB
 ├ ● /library/[slug]                       3.5 kB         111 kB
 ├   ├ /library/flux-schnell
@@ -90,34 +91,34 @@ Route (app)                                 Size  First Load JS  Revalidate  Exp
 ├   ├ /program/claude
 ├   ├ /program/gemini
 ├   └ [+68 more paths]
-├ ○ /prompts                             1.85 kB         109 kB
+├ ○ /prompts                              1.9 kB         109 kB
 ├ ○ /resources                             610 B         108 kB
 ├ ● /resources/[cat]                       610 B         108 kB
 ├   ├ /resources/canva
 ├   ├ /resources/social
 ├   ├ /resources/psd
 ├   └ [+6 more paths]
-├ ○ /robots.txt                            170 B         104 kB
+├ ○ /robots.txt                            173 B         104 kB
 ├ ○ /scam-check                          4.65 kB         112 kB
-├ ○ /sitemap.xml                           170 B         104 kB
+├ ○ /sitemap.xml                           173 B         104 kB
 ├ ○ /subscriptions                       3.03 kB         120 kB
 ├ ○ /subscriptions/calculator            2.36 kB         119 kB
-├ ● /task/[slug]                         3.43 kB         110 kB
+├ ● /task/[slug]                         3.43 kB         111 kB
 ├   ├ /task/logo
 ├   ├ /task/resume
 ├   ├ /task/translate
 ├   └ [+27 more paths]
 ├ ○ /tasks                                 610 B         108 kB
-├ ● /tool/[id]                           9.49 kB         167 kB
+├ ● /tool/[id]                           9.54 kB         168 kB
 ├   ├ /tool/article
 ├   ├ /tool/rewrite
 ├   ├ /tool/summarize
-├   └ [+69 more paths]
+├   └ [+70 more paths]
 └ ○ /tools                               2.71 kB         129 kB
 + First Load JS shared by all             104 kB
   ├ chunks/1255-60d8dc7c8c9309a1.js      46.3 kB
   ├ chunks/4bd1b696-100b9d70ed4e49c1.js  54.2 kB
-  └ other shared chunks (total)          3.13 kB
+  └ other shared chunks (total)          3.17 kB
 
 
 ○  (Static)   prerendered as static content
