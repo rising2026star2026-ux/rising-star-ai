@@ -1,14 +1,28 @@
-TTS 502 application/json 63 bytes 277 ms {"error":"tts_unavailable","detail":"b.mask is not a function"}
+TTS 200 audio/mpeg 63360 bytes 1404 ms 
+duration=10.560000
+bit_rate=48000
+
 TTS empty 400
 PEXELS nokey 503
-CHATTERBOX {"/on_language_change":{"parameters":[{"label":"Language","parameter_name":"lang","parameter_has_default":true,"parameter_default":"fr","type":{"type":"string","enum":["ar","da","de","el","en","es","fi","fr","he","hi","it","ja","ko","ms","nl","no","pl","pt","ru","sv","sw","tr","zh"]},"python_type":{"type":"Literal['ar', 'da', 'de', 'el', 'en', 'es', 'fi', 'fr', 'he', 'hi', 'it', 'ja', 'ko', 'ms', 'nl', 'no', 'pl', 'pt', 'ru', 'sv', 'sw', 'tr', 'zh']","description":""},"component":"Dropdown","example_input":"ar"},{"label":"Reference Audio File (Optional)","parameter_name":"current_ref","parameter_has_default":true,"parameter_default":{"path":"/tmp/gradio/1a10ad98c1da5dd8e29b13dc8aab2c33baa79e42e550c54f07c6bcf7d915988a/fr_f1.flac","url":"https://github.com/gradio-app/gradio/raw/main/test/test_files/audio_sample.wav","size":null,"orig_name":null,"mime_type":null,"is_stream":false,"meta":{"_type":"gradio.FileData"}},"type":{"$defs":{"FileDataMeta":{"properties":{"_type":{"const":"gradio.FileData","title":"Type","type":"string"}},"required":["_type"],"title":"FileDataMeta","type":"object"}},"properties":{"path":{"title":"Path","type":"string"},"url":{"anyOf":[{"type":"string"},{"type":"null"}],"default":null,"title":"Url"},"size":{"anyOf":[{"type":"integer"},{"type":"null"}],"default":null,"title":"Size"},"orig_name":{"anyOf":[{"type":"string"},{"type":"null"}],"default":null,"title":"Orig Name"},"mime_type":{"anyOf":[{"type":"string"},{"type":"null"}],"default":null,"title":"Mime Type"},"is_stream":{"default":false,"title":"Is Stream","type":"boolean"},"meta":{"$ref":"#/$defs/FileDataMeta"}},"required":["path"],"title":"FileData","type":"object","additional_description":"The FileData class is a subclass of the GradioModel class that represents a file object within a Gradio 
-nopexels make took 4.0s scenes: 6 err:  notes: فيديوهات Pexels مش مفعّلة لسه (مفتاح PEXELS_API_KEY ناقص)، فالمشاهد بخلفية ملونة. / الصوت ما اشتغلش في 6 مشهد. اضغط «حدّث الصوت» على المشهد، أو أعد المحاولة بعد شوية.
-nopexels render took 9.0s err: none
-nopexels file ci/vf/nopexels.webm 4768341 bytes
-ERR /bin/sh: 1: ffprobe: not found
+CB /on_language_change IN: lang(Language|Dropdown|"fr"), current_ref(Reference Audio File (Optional)|Audio|{"path":"/tmp/gradio/1a10ad98c1da5dd8e29b13dc8aab2), current_text(Text to synthesize (max chars 300)|Textbox|"Le mois dernier, nous avons atteint un nouveau ja) OUT: Audio:Reference Audio File (Optional), Textbox:Text to synthesize (max chars 300)
+CB /generate_tts_audio IN: text_input(Text to synthesize (max chars 300)|Textbox|"Le mois dernier, nous avons atteint un nouveau ja), language_id(Language|Dropdown|"fr"), audio_prompt_path_input(Reference Audio File (Optional)|Audio|{"path":"/tmp/gradio/1a10ad98c1da5dd8e29b13dc8aab2), exaggeration_input(Exaggeration (Neutral = 0.5, extreme values can be unstable)|Slider|0.5), temperature_input(Temperature|Slider|0.8), seed_num_input(Random seed (0 for random)|Number|0), cfgw_input(CFG/Pace|Slider|0.5) OUT: Audio:Output Audio
+nopexels make took 6.8s scenes: 6 err:  notes: فيديوهات Pexels مش مفعّلة لسه (مفتاح PEXELS_API_KEY ناقص)، فالمشاهد بخلفية ملونة.
+nopexels render took 59.4s err: none
+nopexels file ci/vf/nopexels.webm 13400236 bytes
+stream|codec_name=vp8|codec_type=video|width=720|height=1280|duration=N/A
+stream|codec_name=opus|codec_type=audio|duration=N/A
 
-nopexels audio volume ERR Command failed: ffmpeg -i ci/vf/nopexels.webm -af volumedetect -vn -f null - 2>&1 | grep -E 'mean_volume|max_volume' 2>&1
-nopexels errs: CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable) | CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable) | CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable) | CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway) | CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable) | CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway) | CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable) | CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway)
-mock make took 4.3s scenes: 6 err:  notes: الصوت ما اشتغلش في 6 مشهد. اضغط «حدّث الصوت» على المشهد، أو أعد المحاولة بعد شوية.
-mock render took 240.0s err: Cannot render video "blob:http://localhost:3000/472a5f1c-082c-4a5a-9088-3f9abe2d8fef": The video could not be decoded by the browser.
-mock errs: CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway) | CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway) | CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway) | CONSOLE Error occurred in video MediaError | PAGEERR The browser threw an error while playing the video blob:http://localhost:3000/472a5f1c-082c-4a5a-9088-3f9abe2d8fef: Code 4 - DEMUXER_ERROR_NO_SUPPORTED_STREAMS: FFmpegDemuxer: no supported streams. Se | CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway) | CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway) | CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+nopexels audio volume [Parsed_volumedetect_0 @ 0x7ea548002000] mean_volume: -23.0 dB
+[Parsed_volumedetect_0 @ 0x7ea548002000] max_volume: -5.4 dB
+
+nopexels errs: CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable) | CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable) | CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable) | CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable) | CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable) | CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable)
+mock make took 7.2s scenes: 6 err:  notes: 
+mock render took 68.0s err: none
+mock file ci/vf/mock.webm 13522479 bytes
+stream|codec_name=vp8|codec_type=video|width=720|height=1280|duration=N/A
+stream|codec_name=opus|codec_type=audio|duration=N/A
+
+mock audio volume [Parsed_volumedetect_0 @ 0x7bed74002000] mean_volume: -23.0 dB
+[Parsed_volumedetect_0 @ 0x7bed74002000] max_volume: -5.3 dB
+
+mock errs: 
