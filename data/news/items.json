@@ -1,34 +1,489 @@
 {
- "updated": "2026-10-29T17:16:38.717Z",
+ "updated": "2026-10-30T17:06:49.546Z",
  "providers": [
   "groq",
   "openrouter",
   "gemini"
  ],
  "used": {
-  "groq": 7,
-  "gemini": 2
+  "groq": 5,
+  "gemini": 1
  },
  "feeds": {
-  "openai": "ok 70",
-  "deepmind": "ok 11",
-  "meta": "ok 9",
-  "apple": "ok 10",
-  "nvidia": "ok 18",
-  "huggingface": "ok 26",
-  "techcrunch": "ok 20",
-  "google-research": "ok 12",
-  "verge": "ok 10",
+  "openai": "ok 72",
+  "google-research": "ok 11",
   "aws": "ok 20",
-  "marktechpost": "ok 10",
+  "apple": "ok 10",
+  "techcrunch": "ok 20",
+  "nvidia": "ok 18",
+  "huggingface": "ok 25",
+  "verge": "ok 10",
+  "meta": "ok 9",
+  "deepmind": "ok 10",
   "google-ai": "ok 5",
+  "marktechpost": "ok 10",
+  "techwd": "ok 4",
   "arstechnica": "ok 20",
-  "techwd": "ok 6",
-  "aitnews": "ok 6",
+  "microsoft": "ok 9",
   "venturebeat": "FAIL HTTP 429",
-  "microsoft": "ok 8"
+  "aitnews": "FAIL HTTP 415"
  },
  "items": [
+  {
+   "id": "1a9f926a45b8",
+   "url": "https://arstechnica.com/tech-policy/2026/10/doj-exposes-ghost-students-using-ai-to-complete-courses-steal-student-loans/",
+   "title": "DOJ exposes “ghost students” using AI to complete courses, steal student loans",
+   "date": "2026-10-30T16:53:49.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": {
+    "title": "وزارة العدل تكشف عن طلاب وهميين يستخدموا الذكاء الاصطناعي للغش",
+    "summary": "الطلاب الوهميين بيستغلوا AI عشان يخلصوا الكورسات ويسرقوا قروض الطلاب، والوزارة بدأت حملة ضدهم."
+   }
+  },
+  {
+   "id": "a973ac401cee",
+   "url": "https://www.theverge.com/policy/1022880/wikipedia-openai-new-york-times-copyright",
+   "title": "Wikipedia’s operator says a bad AI copyright ruling could threaten the open web",
+   "date": "2026-10-30T16:08:56.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "تحذير من حكم حقوق النشر للذكاء الاصطناعي يهدد الويب المفتوح",
+    "summary": "ويكيميديا بتطالب القضاة يحميوا تدريب نماذج اللغة الكبيرة من حقوق النشر، لكن من غير ما يمنع الشات بوتات من عرض المحتوى."
+   }
+  },
+  {
+   "id": "8cb2db80dc5c",
+   "url": "https://techcrunch.com/2026/10/30/theranos-whistleblower-tyler-shultz-warns-that-the-ai-boom-is-a-great-opportunity-to-go-deceive-people/",
+   "title": "Theranos whistleblower Tyler Shultz warns that the AI boom is ‘a great opportunity to go deceive people’",
+   "date": "2026-10-30T16:03:45.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "تحذير من تايلر شولتز: AI فرصة للغش",
+    "summary": "المخبر السابق في Theranos بيقول إن طفرة AI ممكن تستخدمها الشركات غير المربحة لتضليل الناس وتجمع قيم تريليون."
+   }
+  },
+  {
+   "id": "974d9b85c8fb",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1023188/pope-leo-disarm-ai",
+   "title": "Pope Leo calls for the disarmament of AI: ‘Machines are tools, not persons’",
+   "date": "2026-10-30T15:14:37.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "البابا ليو يطالب بنزع سلاح الذكاء الاصطناعي",
+    "summary": "البابا ليو الرابع عشر بيأكد إن الآلات أدوات مش أشخاص، وبدعو الأمم المتحدة تحظر الأسلحة الذاتية."
+   }
+  },
+  {
+   "id": "4a4bcbde667c",
+   "url": "https://blogs.nvidia.com/blog/ai-joins-the-search-for-extraterrestrial-signals/",
+   "title": "Things That Go Beep in the Night: Agentic AI Joins the Search for Extraterrestrial Signals",
+   "date": "2026-10-30T15:00:10.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": {
+    "title": "AI يشارك في البحث عن إشارات من الفضاء",
+    "summary": "العلماء بيستخدموا وكلاء ذكاء اصطناعي عشان يراقبوا إشارات من كائنات فضائية، وده بيخلي المهمة أكتر تعقيدًا."
+   }
+  },
+  {
+   "id": "dbfbce585037",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1021080/maine-senate-race-susan-collins-ai-data-centers",
+   "title": "Maine’s data center revolt will decide who controls the Senate",
+   "date": "2026-10-30T14:40:29.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "ثورة مراكز البيانات في مين وتحديد مستقبل مجلس الشيوخ",
+    "summary": "سيناتور مين سوزان كولينز اتعرضت لهتاف من مواطن بيقول إن مراكز بيانات AI بتضر المناخ والمياه، والموضوع بقى سلاح سياسي."
+   }
+  },
+  {
+   "id": "40aed769d1c2",
+   "url": "https://techcrunch.com/2026/10/30/skip-the-small-talk-make-game-changing-connections-at-techcrunch-founder-summit-with-braindate/",
+   "title": "Skip the small talk: Make game-changing connections at TechCrunch Founder Summit with Braindate",
+   "date": "2026-10-30T14:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "شبكة علاقات أسرع في TechCrunch Founder Summit مع Braindate",
+    "summary": "في مؤتمر TechCrunch 2026 ببوسطن، Braindate هيساعد المؤسسين يلاقوا محادثات سريعة سواء 1:1 أو مجموعات صغيرة، وسجلوا عشان توفروا."
+   }
+  },
+  {
+   "id": "f986a412ee0e",
+   "url": "https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/",
+   "title": "DoorDash said it’s only received ‘several hundred’ orders from AI agents",
+   "date": "2026-10-30T13:54:25.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "DoorDash تستقبل مئات طلبات من وكلاء AI فقط",
+    "summary": "DoorDash قالت إن عدد الطلبات اللي جت من وكلاء ذكاء اصطناعي قليل، لكن الشركة مستعدة تتعاون مع مطوري الوكلاء."
+   }
+  },
+  {
+   "id": "5cfbd02556ec",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1023054/altman-cheeky-pint-ai-math-interview",
+   "title": "Sam Altman sympathizes with mathematicians, but says OpenAI’s math onslaught won’t stop",
+   "date": "2026-10-30T13:30:14.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "Sam Altman يعتذر للرياضياتيين لكن مش هيتوقف عن إنتاج أبحاث AI",
+    "summary": "بعد شهور من إغراق الباحثين في الرياضيات بنتايج AI، سام ألتمان بيقول إنه متفهم للضغط لكن مش ناوي يوقف المشروع، وممكن يطلع أكتر من مخزون الشركة."
+   }
+  },
+  {
+   "id": "5ec9437afb13",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1023070/anthropic-ipo-risk-factors-filing-miracles",
+   "title": "Silicon Valley wants you to invest in miracles",
+   "date": "2026-10-30T13:11:05.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "وادي السيليكون عايزك تستثمر في المعجزات",
+    "summary": "الاستثمار في التكنولوجيا دي شبه القمار؛ ممكن يسبب مخاطر وجودية للإنسان أو يفتح باب معجزات، وده اللي بيخلّي وادي السيليكون يروّج له."
+   }
+  },
+  {
+   "id": "fd4521a18599",
+   "url": "https://www.microsoft.com/en-us/research/blog/from-synthetic-enterprise-data-evaluations-to-real-microsoft-copilot-ai-confidence/",
+   "title": "From synthetic enterprise data evaluations to real Microsoft Copilot AI confidence",
+   "date": "2026-10-30T13:05:28.000Z",
+   "src": "Microsoft Research",
+   "srcId": "microsoft",
+   "kind": "company",
+   "ar": {
+    "title": "من بيانات صناعية لتقييم Microsoft Copilot لثقة AI حقيقية",
+    "summary": "تقييم Microsoft Copilot على مستوى الشركات محتاج بيانات صناعية عشان تحاكي تعقيد المؤسسات، لأن البيانات الحقيقية فيها معلومات حساسة ما ينفعش تستخدمها."
+   }
+  },
+  {
+   "id": "5135d63cacdd",
+   "url": "https://techcrunch.com/2026/10/30/5-days-left-your-last-chance-to-connect-scale-and-save-at-techcrunch-founder-summit-2026/",
+   "title": "5 days left: Your last chance to connect, scale, and save at TechCrunch Founder Summit 2026",
+   "date": "2026-10-30T13:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "5 أيام بس: فرصتك الأخيرة للتسجيل وتوفير في TechCrunch Founder Summit 2026",
+    "summary": "فاضل 5 أيام بس لتوفير لحد 100 دولار والحصول على تذكرة ثانية مجانية لحضور TechCrunch Founder Summit 2026 في بوسطن يوم 4 نوفمبر."
+   }
+  },
+  {
+   "id": "cea73ec16e82",
+   "url": "https://techcrunch.com/2026/10/30/can-ai-data-centers-be-mass-produced-like-cars-and-online-in-48-hours-this-startup-aims-to-find-out/",
+   "title": "Can AI data centers be mass-produced like cars? This startup aims to find out",
+   "date": "2026-10-30T13:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Runware بتصنع مراكز بيانات AI على خط إنتاج زي العربيات",
+    "summary": "ستارت‑آب Runware شغّالة على مصنع لإنتاج مراكز بيانات AI جاهزة على خط تجميع، والتحدي الحقيقي هو إنهم يقدروا يلبوا الطلب على المستوى ده."
+   }
+  },
+  {
+   "id": "c7606af40dbb",
+   "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
+   "title": "Community safety report and new protections for teens",
+   "date": "2026-10-30T09:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "OpenAI تقوي حماية العنف في ChatGPT وتضيف تقارير أمان للمراهقين",
+    "summary": "OpenAI بتقوّي إجراءات منع العنف في ChatGPT بإضافة حماية أوسع وتدخلات مبكرة، وكمان بتلتزم بتقارير أمان عامة للمراهقين."
+   }
+  },
+  {
+   "id": "a25ea1ea21fd",
+   "url": "https://www.marktechpost.com/2026/10/30/samaya-sterling-post-trained-finance-research-model-frontierfinance/",
+   "title": "Samaya AI Releases Sterling: A 3B-Active Finance Research Agent Model that Beats Claude Fable 5.1 on FrontierFinance at 11x Lower Cost",
+   "date": "2026-10-30T07:26:12.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "Samaya AI تطلق Sterling: نموذج بحوث مالية بـ3B بارامتر يتفوق على Claude Fable 5.1 بتكلفة أقل 11 مرة",
+    "summary": "Samaya AI أطلقت Sterling، نموذج بحوث مالية مبني على Nemotron 3.5 Lightning، يحقق 58.9% على FrontierFinance بتكلفة 0.61 دولار للسؤال، متفوق على Claude Fable 5.1 اللي بيكلف 6.89 دولار."
+   }
+  },
+  {
+   "id": "f4afd5415c84",
+   "url": "https://www.marktechpost.com/2026/10/29/edge0-audio8-tts-realistic-0-6b-voice-cloning/",
+   "title": "Edge0 Releases Audio8-TTS-Realistic, a 0.6B Voice Cloning TTS Model",
+   "date": "2026-10-30T05:02:52.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "Edge0 تطلق Audio8‑TTS‑Realistic: نموذج TTS لتقليد الصوت بـ0.6B بارامتر يدعم 23 لغة",
+    "summary": "Edge0 نشرت Audio8‑TTS‑Realistic، نموذج TTS بوزن 0.6B مفتوح المصدر يدعم 23 لغة ويستعمل مرحلة GRPO بتحكم نقدي للواقعية."
+   }
+  },
+  {
+   "id": "3e1cebb1f9f3",
+   "url": "https://techcrunch.com/2026/10/29/you-dont-need-to-believe-in-a-god-to-get-a-religious-exemption-from-using-ai-at-work/",
+   "title": "You don’t need to believe in a god to get a religious exemption from using AI at work",
+   "date": "2026-10-30T01:20:48.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "إعفاء ديني من استخدام الذكاء الاصطناعي في الشغل",
+    "summary": "ديفيد دورمان من جامعة كنتاكي حصل على إعفاء ديني يسمح له بعدم استعمال أدوات الذكاء الاصطناعي في مكان العمل."
+   }
+  },
+  {
+   "id": "05367ef1f34c",
+   "url": "https://techcrunch.com/2026/10/29/aws-will-be-a-1t-business-jassy-says-but-first-it-will-spend-big/",
+   "title": "AWS will be a $1T business, Jassy says. But first, it will spend big.",
+   "date": "2026-10-29T23:42:22.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "AWS تستهدف تريليون دولار وتستمر في الإنفاق الضخم",
+    "summary": "جيف جاسي قال إن أمازون عايزة تكون أول شركة توصل لإيرادات تريليون دولار من خلال قيادة سحابة الذكاء الاصطناعي، وده هيحتاج لاستمرار الإنفاق الرأسمالي الكبير."
+   }
+  },
+  {
+   "id": "5566afd51eb5",
+   "url": "https://aitnews.com/2026/10/30/%d8%ac%d9%88%d8%ac%d9%84-%d8%aa%d8%ad%d8%b3%d9%91%d9%86-%d9%82%d8%af%d8%b1%d8%a7%d8%aa-gemini-%d9%84%d8%aa%d8%ad%d8%b1%d9%8a%d8%b1-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d9%86%d8%af%d8%a7%d8%aa-%d9%85%d8%a8/",
+   "title": "جوجل تحسّن قدرات Gemini لتحرير المستندات مباشرةً عبر الهواتف والويب",
+   "date": "2026-10-29T22:54:53.000Z",
+   "src": "البوابة العربية للأخبار التقنية",
+   "srcId": "aitnews",
+   "kind": "arabic",
+   "ar": {
+    "title": "جوجل تحسّن قدرات Gemini لتحرير المستندات مباشرةً عبر الهواتف والويب",
+    "summary": ""
+   }
+  },
+  {
+   "id": "51e4998c0a55",
+   "url": "https://www.marktechpost.com/2026/10/29/baseten-joey-1-2b-decision-model/",
+   "title": "Baseten Releases joey-1, a 2B Decision Model at $0.01 per 1M Tokens",
+   "date": "2026-10-29T21:20:29.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "Baseten تطلق نموذج joey-1 بقرارات مدققة وتكلفة رمزية",
+    "summary": "Baseten أطلقت joey-1، نموذج قرار بوزن 2 مليار بيطلع احتمالات calibrated بدل النص، بيشتغل بـ20 مللي ثانية وتكلفته $0.01 لكل مليون توكن."
+   }
+  },
+  {
+   "id": "7e89c4ae7ac8",
+   "url": "https://aitnews.com/2026/10/30/%d9%85%d8%b9%d8%b6%d9%84%d8%a9-%d8%a3%d9%86%d8%ab%d8%b1%d9%88%d8%a8%d9%8a%d9%83-%d8%a7%d9%84%d9%85%d8%a7%d9%84%d9%8a%d8%a9-%d9%86%d9%85%d9%88-%d8%a8%d9%84%d8%a7-%d8%aa%d9%88%d9%82%d9%81-%d8%a3%d9%88/",
+   "title": "معضلة أنثروبيك المالية.. نمو بلا توقف أو خسائر فادحة",
+   "date": "2026-10-29T20:28:06.000Z",
+   "src": "البوابة العربية للأخبار التقنية",
+   "srcId": "aitnews",
+   "kind": "arabic",
+   "ar": {
+    "title": "معضلة أنثروبيك المالية.. نمو بلا توقف أو خسائر فادحة",
+    "summary": ""
+   }
+  },
+  {
+   "id": "cf0463a1a0ce",
+   "url": "https://aws.amazon.com/blogs/machine-learning/how-the-uk-amazon-quick-user-group-grew-in-2026/",
+   "title": "How the UK Amazon Quick User Group grew in 2026",
+   "date": "2026-10-29T20:16:40.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "مجموعة مستخدمي Amazon Quick في بريطانيا تنمو في 2026",
+    "summary": "مجموعة Amazon Quick UK عملت 3 لقاءات ربع سنوية، حضرها أكتر من 150 شخص، وشاركت قصص من Arriva وCarsa وPropulse Lab عن استخدام AI الوكيل وAmazon Quick لتحسين اتخاذ القرار."
+   }
+  },
+  {
+   "id": "6224c596d37f",
+   "url": "https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience/",
+   "title": "As search traffic dries up, Reddit announces it’s shifting to a logged-in experience",
+   "date": "2026-10-29T20:08:31.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Reddit يتحول لتجربة تسجيل الدخول فقط",
+    "summary": "مع تحول AI لطريقة البحث، Reddit بيعيد التفكير في نموذج الويب المفتوح عشان يحافظ على جمهوره وشغله، وبيخطط لتجربة محتوى للمستخدمين المسجلين فقط."
+   }
+  },
+  {
+   "id": "24f3c9778b1e",
+   "url": "https://techcrunch.com/2026/10/29/rivian-expands-joint-venture-with-vw-to-include-ai-assistant/",
+   "title": "Rivian expands joint venture with VW to include AI assistant",
+   "date": "2026-10-29T20:05:47.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Rivian توسع شراكة مع VW لتشمل مساعد AI",
+    "summary": "Rivian بتوسع مشروعها المشترك مع VW اللي قيمته $5.8 مليار ليشمل مساعد ذكي، لكن ما وضحتش إذا هتزيد قيمة الشراكة."
+   }
+  },
+  {
+   "id": "56fa7327f2b2",
+   "url": "https://techcrunch.com/2026/10/29/openai-backed-thrive-holdings-acquires-adt/",
+   "title": "OpenAI-backed Thrive Holdings acquires ADT",
+   "date": "2026-10-29T19:56:19.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Thrive Holdings المدعومة من OpenAI تستحوذ على ADT",
+    "summary": "Thrive Holdings، المدعومة من OpenAI، هتشتري ADT بصفقة قيمتها $15.3 مليار بهدف إدخال الذكاء الاصطناعي في مجال أمان المنازل."
+   }
+  },
+  {
+   "id": "9e5c9d9f241b",
+   "url": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-97/",
+   "title": "Microsoft Research Focus – Edition #97",
+   "date": "2026-10-29T19:19:16.000Z",
+   "src": "Microsoft Research",
+   "srcId": "microsoft",
+   "kind": "company",
+   "ar": {
+    "title": "ملخص أبحاث مايكروسوفت #97",
+    "summary": "سوباغيا سورش شاركت أحدث أخبار وأبحاث مايكروسوفت، من تحديات وكلاء البرمجة لحد تحسين توقعات الطقس بعيد المدى واستخدام AI في بيئات العمل."
+   }
+  },
+  {
+   "id": "31a141606e86",
+   "url": "https://techcrunch.com/2026/10/29/meta-quietly-launches-an-ai-fashion-app-called-style-sketch/",
+   "title": "Meta quietly launches an AI fashion app called Style Sketch",
+   "date": "2026-10-29T19:14:36.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Meta تطلق تطبيق أزياء AI اسمه Style Sketch",
+    "summary": "التطبيق بيتصل بإنستجرام ويعمل خزانة افتراضية من الصور اللي شاركتها، أو تقدر تضيف قطع يدويًا بالتصوير أو الفيديو أو رفع صور من المعرض."
+   }
+  },
+  {
+   "id": "2eb0eeefec6e",
+   "url": "https://arstechnica.com/gadgets/2026/10/trump-declares-robot-imports-a-national-security-threat/",
+   "title": "Trump declares robot imports a national security threat",
+   "date": "2026-10-29T19:07:53.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": {
+    "title": "ترامب يحذر من استيراد الروبوتات",
+    "summary": "الرئيس بيأمر بمفاوضات تجارية بخصوص الروبوتات المصنّعة بره، وبيهدد بفرض تعريفة."
+   }
+  },
+  {
+   "id": "2a1a8a7c88a0",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1022519/google-gemini-file-editing-documents-pdfs",
+   "title": "You can generate and edit Google Docs files directly in Gemini chats now",
+   "date": "2026-10-29T18:45:31.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "تعديل ملفات Google Docs داخل Gemini",
+    "summary": "دلوقتي تقدر تولد وتعرض وتعدل ملفات PDF وGoogle Docs وSheets وSlides وملفات Markdown وTXT وكود داخل محادثات Gemini، الميزة متاحة لكل المستخدمين، ومعاينة وتعديل PDF شغالة على الويب والموبايل، والباقي لحد دلوقتي على الويب بس."
+   }
+  },
+  {
+   "id": "ffb43a6dca61",
+   "url": "https://www.marktechpost.com/2026/10/29/prime-intellect-prime-mega-moe-fused-moe-kernel-training/",
+   "title": "Prime Intellect Releases Prime Mega MoE: Trainable Fused MoE Kernel, 3.11x Faster Forward Pass",
+   "date": "2026-10-29T18:28:57.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "Prime Intellect تطلق Prime Mega MoE أسرع 3.11×",
+    "summary": "الإصدار الجديد بيخلي نواة Mega MoE مدربة وبيسرّع خطوة التدريب لـ Qwen3 MoE لحد 34% في prime-rl."
+   }
+  },
+  {
+   "id": "1f3c261e4a3c",
+   "url": "https://aws.amazon.com/blogs/machine-learning/building-intent-driven-ui-testing-with-amazon-nova-act/",
+   "title": "Building intent-driven UI testing with Amazon Nova Act",
+   "date": "2026-10-29T18:20:27.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "اختبار UI بالذكاء الاصطناعي مع Amazon Nova Act",
+    "summary": "فريق Agentic Platform من Epsilon بيقدّم خدمة اختبار UI مدارة على Amazon Nova Act وBedrock AgentCore Browser Tool، والاختبارات بتكتب بالإنجليزي البسيط وتشتغل على متصفحات AWS بدون أي بنية تحتية لكل فريق."
+   }
+  },
+  {
+   "id": "1d9d3dc95e9d",
+   "url": "https://aws.amazon.com/blogs/machine-learning/build-a-repeatable-php-to-java-migration-engine-with-kiro/",
+   "title": "Build a repeatable PHP-to-Java migration engine with Kiro",
+   "date": "2026-10-29T18:14:17.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "محرك تحويل PHP إلى Java مع Kiro",
+    "summary": "Kiro بيحوّل عملية الهجرة من PHP لـ Java من خطوة عشوائية لعملية قابلة للقياس، باستخدام ماسح اكتشاف ميكانيكي وسير عمل من ثمان مراحل يضمن توافق الكود."
+   }
+  },
+  {
+   "id": "a39d2cb266f9",
+   "url": "https://techcrunch.com/2026/10/29/granola-crunches-up-a-dictation-feature-to-compete-with-wispr/",
+   "title": "Granola crunches up a dictation feature to compete with Wispr",
+   "date": "2026-10-29T17:54:38.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Granola تضيف ميزة إملاء لمنافسة Wispr",
+    "summary": "بعد ما Wispr ضافت ملاحظات الاجتماعات لتطبيق الإملاء، Granola رجعت تضيف إملاء في أداة تدوين الاجتماعات بتاعتها، وده بيخلي حروب الذكاء الصوتي تشد."
+   }
+  },
+  {
+   "id": "7bf0065ceb16",
+   "url": "https://openai.com/index/updated-model-spec",
+   "title": "An updated Model Spec for more capable and beneficial AI",
+   "date": "2026-10-29T17:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "OpenAI تنشر مواصفات نموذج جديدة",
+    "summary": "المواصفات المحدثة بتحدد خمس قيم أساسية لتوجيه الذكاء الاصطناعي لتصرف حكيم، تمكين الإنسان، والالتزام بنوايا البشر."
+   }
+  },
+  {
+   "id": "bcae5e5bffd4",
+   "url": "https://techcrunch.com/2026/10/29/mistral-releases-weights-for-its-trillion-parameter-ai-model-targeting-cybersecurity/",
+   "title": "Mistral releases weights for its trillion-parameter AI model, targeting cybersecurity",
+   "date": "2026-10-29T17:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Mistral تطلق نموذج AI بترليون بارامتر للأمن السيبراني",
+    "summary": "Mistral بتقول إن النموذج الجديد بيدي المؤسسات تحكم أكتر في دفاعاتها السيبرانية مقارنة بالنماذج المغلقة."
+   }
+  },
   {
    "id": "8d9b5cf421c5",
    "url": "https://aws.amazon.com/blogs/machine-learning/lend-and-borrow-resources-across-teams-with-aws-batchs-quota-management-for-sagemaker-training-jobs/",
@@ -316,6 +771,19 @@
    }
   },
   {
+   "id": "2d9928289658",
+   "url": "https://openai.com/index/ropes-gray-ai-diligence",
+   "title": "How Ropes & Gray is developing AI for transactional diligence",
+   "date": "2026-10-29T07:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "Ropes & Gray تطوّر AI للمعاملات القانونية",
+    "summary": "الشركة بتشتغل مع OpenAI لتطوير AI بيساعد في تدقيق المستندات وتلخيصها قبل ما المحامين يقدموا النصايح للعملاء."
+   }
+  },
+  {
    "id": "02aebfc3f398",
    "url": "https://www.marktechpost.com/2026/10/28/nvidia-nemotron-3-5-transcribe-open-speech-llm/",
    "title": "NVIDIA Releases Nemotron 3.5 Transcribe: An Open 30B MoE Model for 40-Language Transcription with ~4B Active Parameters",
@@ -365,6 +833,19 @@
    "ar": {
     "title": "نموذج AnySpeechRecognizer و AnyDecisionModel على Apple",
     "summary": ""
+   }
+  },
+  {
+   "id": "6750c2461412",
+   "url": "https://openai.com/index/credit-saison",
+   "title": "Credit Saison achieves 954% ROI in a ChatGPT Enterprise pilot",
+   "date": "2026-10-29T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "Credit Saison تحقق عائد 954% في تجربة ChatGPT Enterprise",
+    "summary": "تجربة ChatGPT Enterprise عند Credit Saison أدت لعائد استثمار 954%، والقياديين والموظفين حولوا النتائج لتطبيق على مستوى الشركة."
    }
   },
   {
@@ -3612,7 +4093,10 @@
    "src": "Apple ML",
    "srcId": "apple",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "كشف التحويل اللغوي في نماذج الكلام",
+    "summary": "البحث بيقترح طريقة خفيفة لاكتشاف التحويل بين اللغات في الكلام من غير ما نعتمد على تفريغ نصي دقيق، علشان نزود تغطية التحويل اللغوي في بيانات التدريب."
+   }
   },
   {
    "id": "e612dc941250",
@@ -3622,7 +4106,10 @@
    "src": "Apple ML",
    "srcId": "apple",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "نموذج انتشار ثلاثي الوضعيات",
+    "summary": "المؤلفين قدموا أول نموذج انتشار مقنّع (MDM) يدعم النص، الصورة والنص الصوتي من الصفر، وحللوا قوانين التوسّع وتوازن الوضعيات وتأثير حجم الدفعة على الأداء."
+   }
   },
   {
    "id": "471508c04c30",
@@ -3632,7 +4119,10 @@
    "src": "Google DeepMind",
    "srcId": "deepmind",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "تطوير Gemini 4 Argon بأمان",
+    "summary": ""
+   }
   },
   {
    "id": "550c4c02e9ff",
@@ -3642,7 +4132,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "تشغيل وكلاء خاصين وسريعين على الجهاز بـ LFM2.5-24B-A2B",
+    "summary": ""
+   }
   },
   {
    "id": "884ebf3c3978",
@@ -3652,7 +4145,10 @@
    "src": "Google DeepMind",
    "srcId": "deepmind",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Gemini 4 Argon للروبوتات",
+    "summary": ""
+   }
   },
   {
    "id": "f174716114a9",
@@ -3662,7 +4158,10 @@
    "src": "Google DeepMind",
    "srcId": "deepmind",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Gemini 4 Argon: حل أصعب المشكلات",
+    "summary": ""
+   }
   },
   {
    "id": "f98cf0a4ecaa",
@@ -3672,7 +4171,10 @@
    "src": "Meta Engineering",
    "srcId": "meta",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "نموذج إعلانات جينيريتيف (GEM) من Meta",
+    "summary": "Meta بتوسع نموذج GEM اللي هو أكبر نظام توصية مبني على LLM، وبتزيد القدرة الحوسبية عشان يغطي كل نظام الإعلانات عندهم."
+   }
   },
   {
    "id": "c1e94fc83136",
@@ -3682,377 +4184,10 @@
    "src": "Google AI",
    "srcId": "google-ai",
    "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "ffc748cb8d88",
-   "url": "https://openai.com/index/higgsfield-longer-videos-voice",
-   "title": "Higgsfield takes AI video from 1 minute to over 10",
-   "date": "2026-10-13T12:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "adadd90b83d7",
-   "url": "https://machinelearning.apple.com/research/mix-dont-tune",
-   "title": "Mix, Don't Tune: Bilingual Pre-Training Outperforms Hyperparameter Search in Data-Constrained Settings",
-   "date": "2026-10-13T00:00:00.000Z",
-   "src": "Apple ML",
-   "srcId": "apple",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "9dd69dee0c0d",
-   "url": "https://engineering.fb.com/2026/10/12/open-source/ocp-summit-2026-powering-ai-with-open-innovations-in-scale-up-scale-out-and-scale-across-networks/",
-   "title": "OCP Summit 2026: Powering AI with Open Innovations in Scale-Up, Scale-Out, and Scale-Across Networks",
-   "date": "2026-10-12T21:19:18.000Z",
-   "src": "Meta Engineering",
-   "srcId": "meta",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "edc939989dc9",
-   "url": "https://engineering.fb.com/2026/10/12/ml-applications/turning-opportunistic-ai-inference-capacity-into-better-ads-recommendations/",
-   "title": "Turning Opportunistic AI Inference Capacity Into Better Ads Recommendations",
-   "date": "2026-10-12T16:00:50.000Z",
-   "src": "Meta Engineering",
-   "srcId": "meta",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "5d83dba89b9f",
-   "url": "https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/",
-   "title": "Simulating student learning for better AI tutoring",
-   "date": "2026-10-12T16:00:00.000Z",
-   "src": "Microsoft Research",
-   "srcId": "microsoft",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "78d6d66a2b4f",
-   "url": "https://machinelearning.apple.com/research/llm-translation-quality-annotation",
-   "title": "Large Language Models for Machine Translation Quality Annotation: Humans and Models Are Both Challenged",
-   "date": "2026-10-12T00:00:00.000Z",
-   "src": "Apple ML",
-   "srcId": "apple",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "438f8f82161f",
-   "url": "https://machinelearning.apple.com/research/distributed-gpu-cloud",
-   "title": "Minions: A Dynamic and Distributed Virtual GPU Cloud Built on Idle Apple Silicon Devices",
-   "date": "2026-10-12T00:00:00.000Z",
-   "src": "Apple ML",
-   "srcId": "apple",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "770df069ccb5",
-   "url": "https://machinelearning.apple.com/research/self-compacting-language-agents",
-   "title": "Self-Compacting Language Model Agents",
-   "date": "2026-10-12T00:00:00.000Z",
-   "src": "Apple ML",
-   "srcId": "apple",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "edd58468d564",
-   "url": "https://openai.com/index/sophos",
-   "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
-   "date": "2026-10-09T07:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "90995f7dbc9c",
-   "url": "https://openai.com/index/asana-browser-agent",
-   "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
-   "date": "2026-10-09T07:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "112b5f00879d",
-   "url": "https://openai.com/index/oracle",
-   "title": "How Oracle turns days of work into minutes with ChatGPT and Codex",
-   "date": "2026-10-08T16:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "ca1ec6c6a1a1",
-   "url": "https://openai.com/index/pollo-ai",
-   "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
-   "date": "2026-10-08T12:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "f6d3626eb7c8",
-   "url": "https://openai.com/index/legalon-halves-codex-costs",
-   "title": "LegalOn halves Codex costs while maintaining development speed",
-   "date": "2026-10-08T12:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "077dea1e8a7a",
-   "url": "https://openai.com/index/disrupting-ai-enabled-false-front-operations",
-   "title": "Disrupting AI-enabled “false front” operations",
-   "date": "2026-10-08T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "0f05fd4155a4",
-   "url": "https://huggingface.co/blog/building-with-ml-intern",
-   "title": "The model that didn't exist, so you made it yourself",
-   "date": "2026-10-08T00:00:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "fc6c16485847",
-   "url": "https://research.google/blog/does-better-work-always-mean-better-workers/",
-   "title": "Does better work always mean better workers?",
-   "date": "2026-10-07T20:19:57.000Z",
-   "src": "Google Research",
-   "srcId": "google-research",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "565e240356c9",
-   "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
-   "title": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses",
-   "date": "2026-10-07T16:00:00.000Z",
-   "src": "Microsoft Research",
-   "srcId": "microsoft",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "91ed3eb235f3",
-   "url": "https://huggingface.co/blog/tiiuae/falcon-asr",
-   "title": "Introducing Falcon ASR",
-   "date": "2026-10-07T13:21:03.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "ad4e14640e35",
-   "url": "https://openai.com/index/teens-learn-and-plan",
-   "title": "Helping teens learn, plan, and shape the future of AI",
-   "date": "2026-10-07T12:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "22643d6fcb19",
-   "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
-   "title": "Introducing Playground: Create and play custom games",
-   "date": "2026-10-07T12:00:00.000Z",
-   "src": "Google AI",
-   "srcId": "google-ai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "04e9dc3828b5",
-   "url": "https://openai.com/index/radisson",
-   "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
-   "date": "2026-10-07T07:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "0ca1450969b5",
-   "url": "https://openai.com/index/gpt-6-for-everyone",
-   "title": "GPT-6 and Intelligent UI for everyone",
-   "date": "2026-10-07T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "4dd290070848",
-   "url": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/",
-   "title": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
-   "date": "2026-10-06T19:57:04.000Z",
-   "src": "Google DeepMind",
-   "srcId": "deepmind",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "242f2e4b6328",
-   "url": "https://www.microsoft.com/en-us/research/podcast/what-ai-gets-wrong-and-what-failure-teaches-us/",
-   "title": "What AI gets wrong and what failure teaches us",
-   "date": "2026-10-06T16:19:06.000Z",
-   "src": "Microsoft Research",
-   "srcId": "microsoft",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "60ef2af305e7",
-   "url": "https://openai.com/index/atlassian-partnership",
-   "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
-   "date": "2026-10-06T16:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "0ec0c3cc2f3e",
-   "url": "https://research.google/blog/earth-ais-planetary-geospatial-foundation-models-for-global-public-health/",
-   "title": "Unlocking Earth AI’s planetary geospatial foundation models for global public health",
-   "date": "2026-10-06T15:05:11.000Z",
-   "src": "Google Research",
-   "srcId": "google-research",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "342677ae7ead",
-   "url": "https://openai.com/index/jump-trading",
-   "title": "How Jump Trading is scaling quant research with ChatGPT",
-   "date": "2026-10-06T12:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "47b9255d8fa0",
-   "url": "https://openai.com/index/sharing-ai-progress-in-mathematics",
-   "title": "Sharing AI progress in mathematics",
-   "date": "2026-10-06T12:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "9964af802e9c",
-   "url": "https://openai.com/index/advancing-computer-use-with-ironclad",
-   "title": "Advancing computer use with Ironclad",
-   "date": "2026-10-06T10:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "c3d66983a8dc",
-   "url": "https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/",
-   "title": "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle",
-   "date": "2026-10-05T21:08:00.000Z",
-   "src": "Google Research",
-   "srcId": "google-research",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "78ad53815846",
-   "url": "https://openai.com/index/eu-text-provenance",
-   "title": "Our approach to EU text provenance rules",
-   "date": "2026-10-05T15:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "3cbec84de8bf",
-   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
-   "title": "Building advertising for the way people use AI",
-   "date": "2026-10-05T10:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "89764eae0099",
-   "url": "https://huggingface.co/blog/microsoft/thinkingbox",
-   "title": "The Agent Said It Was Done. The Database Disagreed.",
-   "date": "2026-10-03T22:56:48.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "8e206c4d9ed6",
-   "url": "https://openai.com/index/practical-guide-building-gpt-6",
-   "title": "A model guide for the GPT-6 family",
-   "date": "2026-10-02T16:15:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "1122627a66df",
-   "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
-   "title": "The latest AI news we announced in September 2026",
-   "date": "2026-10-02T15:00:00.000Z",
-   "src": "Google AI",
-   "srcId": "google-ai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "b9b18411de99",
-   "url": "https://research.google/blog/toward-provably-private-learning-from-federated-data/",
-   "title": "Toward provably private learning from federated data",
-   "date": "2026-10-02T14:57:41.000Z",
-   "src": "Google Research",
-   "srcId": "google-research",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "a885ed61f54a",
-   "url": "https://huggingface.co/blog/ServiceNow-AI/autosynthdata",
-   "title": "AutoSynthData: Generating Training Data for Enterprise Agents",
-   "date": "2026-10-02T04:01:31.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "Gemini 4 Argon",
+    "summary": "Google بتوفر للمطورين والشركات والعلماء ومستخدميها نموذج Gemini 4 Argon المتقدم لحل أصعب المشكلات."
+   }
   }
  ]
 }

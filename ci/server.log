@@ -1,6 +1,9 @@
    ▲ Next.js 15.5.28
    - Local:        http://localhost:3000
-   - Network:      http://10.1.1.69:3000
+   - Network:      http://10.1.0.139:3000
 
  ✓ Starting...
- ✓ Ready in 202ms
+ ✓ Ready in 218ms
+Error: Internal: NoFallbackError
+    at n (.next/server/app/resources/[cat]/page.js:2:1062)
+    at responseGenerator (.next/server/app/resources/[cat]/page.js:2:1919)
