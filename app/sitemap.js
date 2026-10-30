@@ -6,6 +6,7 @@ import { MAKER_LIST } from "@/lib/makers";
 import { CREATORS } from "@/lib/creators";
 import { DIR_CATEGORIES, DIR_TOOLS } from "@/lib/directory";
 import { TASKS } from "@/lib/tasks";
+import { LIBRARY } from "@/lib/library";
 
 // خريطة الموقع لجوجل: الرئيسية والصفحات الأساسية وكل الأدوات
 export default function sitemap() {
@@ -26,6 +27,8 @@ export default function sitemap() {
     { url: `${SITE_URL}/news`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
     { url: `${SITE_URL}/creators`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     ...CREATORS.map((c) => ({ url: `${SITE_URL}/creators/${c.slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.6 })),
+    { url: `${SITE_URL}/library`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    ...LIBRARY.map((t) => ({ url: `${SITE_URL}/library/${t.slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),
     { url: `${SITE_URL}/tasks`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     ...TASKS.map((t) => ({ url: `${SITE_URL}/task/${t.slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 })),
     { url: `${SITE_URL}/global-tools`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
