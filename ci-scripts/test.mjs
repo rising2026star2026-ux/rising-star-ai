@@ -44,7 +44,8 @@ async function run(name, mockVideo, doRender = true) {
   if (mockVideo) {
     await p.route("**/api/pexels**", (route) => route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({ items: [1, 2, 3].map((i) => ({ id: i, url: FLOWER, thumb: "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=", duration: 10, page: "https://www.pexels.com/", by: "Test" + i, byUrl: "" })) }) }));
   }
-  await p.goto(BASE + "/lab/factory");
+  await p.goto(BASE + "/tool/video-factory");
+  await p.waitForSelector("#vf-topic", { timeout: 30000 });
   await p.fill("#vf-topic", "فوايد القهوة");
   const t0 = Date.now();
   await p.click("#vf-make");
@@ -95,7 +96,7 @@ await run("nopexels", false, false);
   await ctx.close();
   const c2 = await b.newContext({ viewport: { width: 390, height: 900 }, isMobile: true });
   const q = await c2.newPage();
-  await q.goto(BASE + "/lab/remotion");
+  await q.goto(BASE + "/tool/reel-pro");
   await q.waitForTimeout(5000);
   await q.screenshot({ path: "ci/vf/reel_ref.jpg", type: "jpeg", quality: 50 });
   await c2.close();
