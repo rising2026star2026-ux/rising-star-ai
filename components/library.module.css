@@ -21,8 +21,12 @@
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
 .card { display: flex; flex-direction: column; gap: 3px; padding: 14px; border-radius: 18px; background: var(--card); border: 1.5px solid rgba(11, 11, 20, 0.08); box-shadow: var(--shadow-soft); transition: border-color .2s var(--ease), transform .2s var(--ease); }
 .card:hover { border-color: var(--blue); transform: translateY(-2px); }
+.head { display: flex; align-items: center; gap: 10px; }
+.names { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.logo { flex: none; display: grid; place-items: center; border-radius: 12px; background: #fff; border: 1px solid rgba(11, 11, 20, 0.1); object-fit: contain; padding: 4px; box-sizing: border-box; font-weight: 900; color: var(--blue); }
+span.logo { background: var(--accent-soft); }
 .card b { font-weight: 800; font-size: 0.95rem; color: var(--ink); }
-.card i { font-style: normal; font-size: 0.74rem; color: var(--faint); direction: ltr; text-align: end; }
+.card i { font-style: normal; font-size: 0.74rem; color: var(--faint); direction: ltr; text-align: start; }
 .card small { color: var(--muted); font-size: 0.8rem; line-height: 1.65; flex: 1; }
 .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
 .tags em { font-style: normal; font-size: 0.66rem; font-weight: 800; padding: 2px 8px; border-radius: 999px; }

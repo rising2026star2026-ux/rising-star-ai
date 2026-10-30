@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LIBRARY, LIB_CATS, BLOCKED, getLibTool } from "@/lib/library";
+import BrandLogo from "@/components/BrandLogo";
 import LibraryGrid from "@/components/LibraryGrid";
 import s from "@/components/library.module.css";
 
@@ -33,7 +34,7 @@ export default function Library() {
           {BLOCKED.map((b) => (
             <div key={b.name} className={s.bcard}>
               <header>
-                <b>{b.name}<span className={`${s.strength} ${LEVEL[b.strength] || ""}`}>البديل: {b.strength}</span></b>
+                <b><BrandLogo tool={{ name: b.name, slug: b.name, url: b.url }} size={24} /> {b.name}<span className={`${s.strength} ${LEVEL[b.strength] || ""}`}>البديل: {b.strength}</span></b>
                 <a href={b.url} target="_blank" rel="noopener noreferrer">الأصلي ↗</a>
               </header>
               {b.why}

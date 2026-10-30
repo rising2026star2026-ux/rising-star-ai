@@ -1,40 +1,11 @@
 {
-<<<<<<< HEAD
- "updated": "2026-10-29T05:12:12.477Z",
-=======
  "updated": "2026-10-29T17:16:38.717Z",
->>>>>>> main
  "providers": [
   "groq",
   "openrouter",
   "gemini"
  ],
  "used": {
-<<<<<<< HEAD
-  "gemini": 9
- },
- "feeds": {
-  "openai": "ok 71",
-  "techcrunch": "ok 20",
-  "verge": "ok 10",
-  "meta": "ok 9",
-  "huggingface": "ok 24",
-  "apple": "ok 10",
-  "nvidia": "ok 18",
-  "aws": "ok 20",
-  "marktechpost": "ok 10",
-  "google-research": "ok 12",
-  "google-ai": "ok 5",
-  "techwd": "ok 6",
-  "arstechnica": "ok 20",
-  "deepmind": "ok 11",
-  "aitnews": "ok 6",
-  "microsoft": "ok 9",
-  "venturebeat": "FAIL HTTP 429"
- },
- "items": [
-  {
-=======
   "groq": 7,
   "gemini": 2
  },
@@ -345,7 +316,6 @@
    }
   },
   {
->>>>>>> main
    "id": "02aebfc3f398",
    "url": "https://www.marktechpost.com/2026/10/28/nvidia-nemotron-3-5-transcribe-open-speech-llm/",
    "title": "NVIDIA Releases Nemotron 3.5 Transcribe: An Open 30B MoE Model for 40-Language Transcription with ~4B Active Parameters",
@@ -359,8 +329,6 @@
    }
   },
   {
-<<<<<<< HEAD
-=======
    "id": "e1c742c1d925",
    "url": "https://huggingface.co/blog/announcing-project-protostar",
    "title": "Announcing Project ProtoStar: Making Publicly Funded Science AI-Ready",
@@ -400,7 +368,6 @@
    }
   },
   {
->>>>>>> main
    "id": "09f762edab0d",
    "url": "https://www.theverge.com/ai-artificial-intelligence/1021644/adam-mosseri-instagram-ai-negativity",
    "title": "Adam Mosseri says negativity around AI is ‘going to get worse’",
@@ -932,16 +899,6 @@
     "title": "مستقبل الشركات مع الذكاء الاصطناعي",
     "summary": "مستقبل الشركات هيكون مع الذكاء الاصطناعي داخل الهيكل التنظيمي، تحتنا، جنبنا، وبيننا."
    }
-  },
-  {
-   "id": "0dc3cf0b7c98",
-   "url": "https://openai.com/index/the-future-of-the-firm",
-   "title": "The future of the firm",
-   "date": "2026-10-28T10:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
   },
   {
    "id": "2fc8e689e413",
@@ -4096,159 +4053,6 @@
    "srcId": "huggingface",
    "kind": "company",
    "ar": null
-<<<<<<< HEAD
-  },
-  {
-   "id": "a97398f76ee5",
-   "url": "https://openai.com/index/chatham-financial",
-   "title": "Chatham scales its capital markets expertise with OpenAI",
-   "date": "2026-10-02T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "7e67b43cf9d0",
-   "url": "https://openai.com/index/the-eternal-complement",
-   "title": "The eternal complement",
-   "date": "2026-10-01T17:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "a80484c2d584",
-   "url": "https://openai.com/index/albertsons-reimagining-retail",
-   "title": "How Albertsons Companies is reimagining retail from the inside out",
-   "date": "2026-10-01T16:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "3bba52758573",
-   "url": "https://openai.com/index/the-den-family-social",
-   "title": "The Den frees up 10-15 hours a week to grow with ChatGPT Work",
-   "date": "2026-10-01T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "15e70ee5e4a7",
-   "url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
-   "title": "Gemini 4 Argon: our next era of frontier intelligence",
-   "date": "2026-09-30T20:01:45.000Z",
-   "src": "Google DeepMind",
-   "srcId": "deepmind",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "b3162152f353",
-   "url": "https://www.microsoft.com/en-us/research/blog/forecasting-space-weather-risks-on-power-grids/",
-   "title": "Forecasting space weather risks on power grids",
-   "date": "2026-09-30T16:00:00.000Z",
-   "src": "Microsoft Research",
-   "srcId": "microsoft",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "0a622a33b8e3",
-   "url": "https://deepmind.google/blog/introducing-synthid-bio/",
-   "title": "Introducing SynthID Bio",
-   "date": "2026-09-30T15:03:07.000Z",
-   "src": "Google DeepMind",
-   "srcId": "deepmind",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "6a91381a4292",
-   "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
-   "title": "Disrupting a coordinated model-distillation campaign",
-   "date": "2026-09-30T10:30:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "b5e5e43443d2",
-   "url": "https://openai.com/index/helping-small-businesses-put-ai-to-work",
-   "title": "Helping small businesses put AI to work",
-   "date": "2026-09-30T10:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "581ab3112c30",
-   "url": "https://huggingface.co/blog/open-tts-leaderboard",
-   "title": "Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning",
-   "date": "2026-09-30T00:00:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "105e76d8cdee",
-   "url": "https://research.google/blog/how-diffusion-controller-unifies-and-simplifies-ai-image-generation/",
-   "title": "How Diffusion Controller unifies and simplifies AI image generation",
-   "date": "2026-09-29T18:38:27.000Z",
-   "src": "Google Research",
-   "srcId": "google-research",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "dd66acaed2a0",
-   "url": "https://openai.com/index/introducing-gpt-6-1-sol",
-   "title": "Introducing GPT-6.1 Sol",
-   "date": "2026-09-29T17:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "53ae606fecda",
-   "url": "https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/",
-   "title": "Introducing Quine: An AI research system designed for the complexity of biology",
-   "date": "2026-09-29T14:00:02.000Z",
-   "src": "Microsoft Research",
-   "srcId": "microsoft",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "984223f109f3",
-   "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
-   "title": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents",
-   "date": "2026-09-29T13:07:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "19db7cc5ca5c",
-   "url": "https://openai.com/index/devday-2026-recap",
-   "title": "DevDay 2026 Recap",
-   "date": "2026-09-29T10:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-=======
->>>>>>> main
   }
  ]
 }
