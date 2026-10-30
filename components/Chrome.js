@@ -10,6 +10,7 @@ import { useStored, read } from "@/lib/store";
 import ToolIcon from "./ToolIcon";
 import StarMark from "./StarMark";
 import BotIcon from "./BotIcon";
+import { RES_CATS } from "@/lib/resources";
 import { BOTS } from "@/lib/bots";
 
 const I = { viewBox: "0 0 24 24", width: 20, height: 20, fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true };
@@ -23,6 +24,7 @@ const NAV = [
   { href: "/maker", label: "صانع الصور والفيديو", match: ["/maker"], icon: <svg {...I}><rect x="3.5" y="4.5" width="17" height="15" rx="3" /><circle cx="9" cy="10" r="1.7" /><path d="M20.5 16l-5-4.5L8 19" /></svg> },
   { href: "/agents", label: "الوكلاء", match: ["/agents"], icon: <svg {...I}><rect x="5" y="8" width="14" height="11" rx="3" /><path d="M12 4.5V8M9.5 13h.01M14.5 13h.01M9.5 16h5" /><circle cx="12" cy="4" r="1" /></svg> },
   { href: "/library", label: "مكتبة الأدوات", match: ["/library"], icon: <svg {...I}><path d="M4 19.5V5a1.5 1.5 0 011.5-1.5H8V19.5M8 3.5h3.5v16H8M14 4.6l3.2-.8 3.3 15.4-3.2.8z" /><path d="M3 19.5h18" /></svg> },
+  { href: "/resources", label: "مكتبة الموارد", folder: "res", match: ["/resources"], icon: <svg {...I}><path d="M3.5 7.5a2 2 0 012-2h4l2 2h7a2 2 0 012 2v8a2 2 0 01-2 2h-13a2 2 0 01-2-2z" /><path d="M3.5 10.5h17" /></svg> },
   { href: "/global-tools", label: "أدوات عالمية", match: ["/global-tools", "/ai/"], icon: <svg {...I}><circle cx="12" cy="12" r="8.5" /><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z" /></svg> },
   { href: "/creators", label: "صناع المحتوى", match: ["/creators"], icon: <svg {...I}><circle cx="9" cy="8.5" r="3.2" /><path d="M3.5 19.5c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5" /><path d="M16 5.6a3 3 0 010 5.8M17.5 14.7c1.6.6 2.7 2.2 3 4.8" /></svg> },
   { href: "/tasks", label: "أداة لأي مهمة", match: ["/tasks", "/task/"], icon: <svg {...I}><path d="M9 11l3 3 8-8" /><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9" /></svg> },
@@ -116,6 +118,8 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
     return () => document.body.classList.remove("side-open");
   }, [open]);
 
+  const [folder, setFolder] = useStored("side-res", false);
+  const folderOpen = !!folder || pathname.startsWith("/resources/");
   const active = (n) => (n.exact ? pathname === n.href : (n.match || [n.href]).some((p) => pathname.startsWith(p)));
 
   return (
@@ -139,7 +143,29 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
         </Link>
 
         <nav className="side-nav">
-          {NAV.map((n) => (
+          {NAV.map((n) => n.folder ? (
+            <div key={n.href} className="side-folder">
+              <div className="side-folder-row">
+                <Link href={n.href} className={`side-link${pathname === n.href ? " on" : ""}`} title={n.label}>
+                  {n.icon}
+                  <span className="side-label">{n.label}</span>
+                </Link>
+                <button type="button" className="side-chev side-label" onClick={() => setFolder(!folderOpen)} aria-expanded={folderOpen} aria-label={folderOpen ? "اقفل الأقسام" : "افتح الأقسام"}>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ transform: folderOpen ? "rotate(180deg)" : "none", transition: "transform .2s" }}><path d="M6 9l6 6 6-6" /></svg>
+                </button>
+              </div>
+              {folderOpen && (
+                <div className="side-sub">
+                  {RES_CATS.map((c) => (
+                    <Link key={c.id} href={`/resources/${c.id}`} className={`side-link${pathname === `/resources/${c.id}` ? " on" : ""}`} title={c.name}>
+                      <span aria-hidden="true">{c.icon}</span>
+                      <span className="side-label">{c.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : (
             <Link key={n.href} href={n.href} className={`side-link${n.tone ? " tone-" + n.tone : ""}${active(n) ? " on" : ""}`} title={n.label}>
               {n.icon}
               <span className="side-label">{n.label}</span>
