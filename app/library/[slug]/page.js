@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { LIBRARY, LIB_CATS, getLibTool, libByCat, LIB_HF_NOTE } from "@/lib/library";
 import { SITE_URL, BRAND } from "@/lib/site";
+import BrandLogo from "@/components/BrandLogo";
 import LibraryFrame from "@/components/LibraryFrame";
 import s from "@/components/library.module.css";
 
@@ -27,7 +28,7 @@ export default async function LibTool({ params }) {
   return (
     <div className={s.page}>
       <p className={s.crumbs}><Link href="/library">مكتبة الأدوات</Link> ← {cat?.name}</p>
-      <h1 className="page-title">{t.ar}</h1>
+      <h1 className="page-title" style={{ display: "flex", alignItems: "center", gap: 12 }}><BrandLogo tool={t} size={52} />{t.ar}</h1>
       <p className={s.lead} style={{ marginBottom: 6 }}>{t.desc}</p>
       <div className={s.meta}>
         <span>✅ مجانية</span>
@@ -41,7 +42,7 @@ export default async function LibTool({ params }) {
           <h2>أدوات تانية في {cat?.name}</h2>
           <div className={s.more}>
             {more.map((x) => (
-              <Link key={x.slug} href={`/library/${x.slug}`} className={s.card}><b>{x.ar}</b><small>{x.desc}</small></Link>
+              <Link key={x.slug} href={`/library/${x.slug}`} className={s.card}><span className={s.head}><BrandLogo tool={x} size={32} /><span className={s.names}><b>{x.ar}</b></span></span><small>{x.desc}</small></Link>
             ))}
           </div>
         </div>

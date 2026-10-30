@@ -2,6 +2,7 @@
 // شبكة المكتبة: فلترة بالتصنيف + بحث
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import BrandLogo from "./BrandLogo";
 import s from "./library.module.css";
 
 export default function LibraryGrid({ tools, cats }) {
@@ -36,8 +37,10 @@ export default function LibraryGrid({ tools, cats }) {
             <div className={s.grid}>
               {items.map((t) => (
                 <Link key={t.slug} href={`/library/${t.slug}`} className={s.card}>
-                  <b>{t.ar}</b>
-                  <i>{t.name}</i>
+                  <span className={s.head}>
+                    <BrandLogo tool={t} />
+                    <span className={s.names}><b>{t.ar}</b><i>{t.name}</i></span>
+                  </span>
                   <small>{t.desc}</small>
                   <span className={s.tags}>
                     <em className={s.free}>مجانية</em>
