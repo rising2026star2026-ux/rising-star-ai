@@ -1,31 +1,20 @@
-import { chromium } from "playwright";
 import fs from "node:fs";
-fs.rmSync("ci/ag", { recursive: true, force: true });
-fs.mkdirSync("ci/ag", { recursive: true });
-// API مباشرة
-for (const [agent, inputs] of [["research", { topic: "أفضل طرق تسويق مشروع أكل بيتي في مصر" }], ["factcheck", { claim: "شرب الماء البارد بعد الأكل بيسبب السرطان" }]]) {
-  const t0 = Date.now();
-  const r = await fetch("http://localhost:3000/api/agent", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ agent, inputs }) });
-  const txt = await r.text();
-  const ev = txt.split("\n").filter(Boolean).map((l) => JSON.parse(l));
-  const out = ev.filter((e) => e.t === "x").map((e) => e.d).join("");
-  console.log(agent, r.status, ((Date.now() - t0) / 1000).toFixed(1) + "s", "steps:", ev.filter((e) => e.t === "step").map((e) => e.m).join(" | "), "err:", ev.filter((e) => e.t === "err").map((e) => e.m).join(), "len:", out.length);
-  console.log(out.slice(0, 700));
+import { execSync } from "node:child_process";
+fs.mkdirSync("ci", { recursive: true });
+execSync("npm i --no-save --no-audit --no-fund edge-tts 2>&1 | tail -2", { stdio: "inherit" });
+try {
+  const m = await import("edge-tts");
+  console.log("exports", Object.keys(m).join(","));
+} catch (e) { console.log("import err", e.message); }
+// الاختبار بالـCLI الرسمي للمكتبة: صوت مصري
+for (const v of ["ar-EG-SalmaNeural", "ar-EG-ShakirNeural"]) {
+  try {
+    const out = execSync(`npx --no-install edge-tts --voice ${v} --text "ازيك يا صاحبي، النهارده هنتكلم عن القهوة" --write-media ci/${v}.mp3 2>&1 || true`, { encoding: "utf8", timeout: 60000 });
+    console.log(v, out.slice(0, 300), fs.existsSync(`ci/${v}.mp3`) ? fs.statSync(`ci/${v}.mp3`).size + " bytes" : "NO FILE");
+  } catch (e) { console.log(v, "err", String(e.message).slice(0, 200)); }
 }
-const bad = await fetch("http://localhost:3000/api/agent", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ agent: "market", inputs: {} }) });
-console.log("missing field", bad.status, await bad.text());
-const b = await chromium.launch();
-const errs = [];
-const m = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true });
-const p = await m.newPage();
-p.on("pageerror", (e) => errs.push(e.message));
-await p.goto("http://localhost:3000/agents");
-await p.screenshot({ path: "ci/ag/index.jpg", type: "jpeg", quality: 50, fullPage: true });
-await p.goto("http://localhost:3000/agents/market");
-await p.fill("textarea", "محل عصاير فريش جنب جامعة");
-await p.click("button[type=submit]");
-await p.waitForSelector("text=المخاطر", { timeout: 90000 }).catch(() => {});
-await p.waitForTimeout(15000);
-await p.screenshot({ path: "ci/ag/market.jpg", type: "jpeg", quality: 50, fullPage: true });
-console.log("pageerrors", errs.join(" | "));
-await b.close();
+// فحص CORS لسيرفر فيديوهات Pexels (من صفحة عامة)
+try {
+  const r = await fetch("https://videos.pexels.com/", { method: "HEAD" });
+  console.log("pexels cdn", r.status, r.headers.get("access-control-allow-origin"));
+} catch (e) { console.log("pexels err", e.message); }
