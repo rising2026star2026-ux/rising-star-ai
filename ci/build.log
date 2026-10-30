@@ -7,14 +7,14 @@ https://nextjs.org/telemetry
    ▲ Next.js 15.5.28
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 9.9s
+ ✓ Compiled successfully in 16.7s
    Linting and checking validity of types ...
    Collecting page data ...
-   Generating static pages (0/1014) ...
-   Generating static pages (253/1014) 
-   Generating static pages (506/1014) 
-   Generating static pages (760/1014) 
- ✓ Generating static pages (1014/1014)
+   Generating static pages (0/1013) ...
+   Generating static pages (253/1013) 
+   Generating static pages (506/1013) 
+   Generating static pages (759/1013) 
+ ✓ Generating static pages (1013/1013)
    Finalizing page optimization ...
    Collecting build traces ...
 
@@ -59,11 +59,11 @@ Route (app)                                 Size  First Load JS  Revalidate  Exp
 ├ ○ /lab/remotion                        1.84 kB         109 kB
 ├ ○ /learn                                 420 B         108 kB
 ├ ○ /library                             1.65 kB         109 kB
-├ ● /library/[slug]                      2.62 kB         110 kB
+├ ● /library/[slug]                      2.63 kB         110 kB
 ├   ├ /library/flux-schnell
 ├   ├ /library/flux-dev
 ├   ├ /library/qwen-image
-├   └ [+104 more paths]
+├   └ [+103 more paths]
 ├ ○ /maker                               1.21 kB         108 kB
 ├ ● /maker/[slug]                        3.89 kB         111 kB
 ├   ├ /maker/pollinations

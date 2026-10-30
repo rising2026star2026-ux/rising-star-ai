@@ -1,33 +1,5 @@
-slugs 107
+slugs 11
 index 200
 search hits 32
-done 107 bad qwen-edit-2511:200:false:
-qwen-layered:200:false:
-remove-bg-dis:200:false:
-step1x-3d:200:false:
-squoosh:200:false:
-drawio:200:false:
-markmap:200:false:
-transform:0:false:err page.goto: Timeout 30000ms exceeded.
-Call log:
-  - navigating to "http://localho
-pageerrors longcat-avatar Cannot read properties of undefined (reading '0')
-longcat-avatar Cannot read properties of undefined (reading '0')
-longcat-avatar Cannot read properties of undefined (reading '0')
-longcat-avatar Cannot read properties of undefined (reading '1')
-longcat-avatar Cannot read properties of undefined (reading '1')
-longcat-avatar Cannot read properties of undefined (reading '1')
-longcat-avatar Cannot read properties of undefined (reading '2')
-longcat-avatar Cannot read properties of undefined (reading '2')
-longcat-avatar Cannot read properties of undefined (reading '2')
-longcat-avatar Cannot read properties of undefined (reading '3')
-longcat-avatar Cannot read properties of undefined (reading '5')
-longcat-avatar Cannot read properties of undefined (reading '6')
-longcat-avatar Cannot read properties of undefined (reading '3')
-longcat-avatar Cannot read properties of undefined (reading '5')
-longcat-avatar Cannot read properties of undefined (reading '6')
-longcat-avatar Cannot read properties of undefined (reading '3')
-longcat-avatar Cannot read properties of undefined (reading '5')
-longcat-avatar Cannot read properties of undefined (reading '6')
-longcat-avatar Cannot read properties of undefined (reading '4')
-longcat-avatar Cannot read properties of undefined (reading '4')
+done 11 bad 
+pageerrors 
