@@ -14,7 +14,7 @@ export const THEMES = [
   { id: "sunset", name: "غروب", c1: "#3a0f1f", c2: "#ff6a4d", text: "#ffffff", accent: "#ffe08a" },
 ];
 
-function toLines(text, max = 16) {
+export function toLines(text, max = 16) {
   const lines = [];
   let cur = "";
   for (const w of text.split(/\s+/).filter(Boolean)) {
@@ -26,7 +26,7 @@ function toLines(text, max = 16) {
 }
 
 const cache = new Map();
-function lineImage(text, color, font, size = 80, weight = 800) {
+export function lineImage(text, color, font, size = 80, weight = 800) {
   const key = `${text}|${color}|${font}|${size}|${weight}`;
   if (cache.has(key)) return cache.get(key);
   const c = document.createElement("canvas");
@@ -48,7 +48,7 @@ function lineImage(text, color, font, size = 80, weight = 800) {
 }
 
 // صورة سطر بعرض مناسب للشاشة
-function Line({ text, color, font, size = 80, weight = 800, style = {}, maxW = 620 }) {
+export function Line({ text, color, font, size = 80, weight = 800, style = {}, maxW = 620 }) {
   const im = lineImage(text, color, font, size, weight);
   const k = Math.min(1, maxW / im.w);
   return <Img src={im.src} style={{ width: im.w * k, height: im.h * k, ...style }} />;
