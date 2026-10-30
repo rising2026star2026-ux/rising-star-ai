@@ -21,10 +21,10 @@ console.log("PEXELS nokey", (await fetch(BASE + "/api/pexels?q=coffee")).status)
 // 3) واجهة Chatterbox
 try {
   const j = await (await fetch("https://resembleai-chatterbox-multilingual-tts.hf.space/gradio_api/info")).json();
-  console.log("CHATTERBOX", JSON.stringify(j.named_endpoints).slice(0, 1800));
+  for (const [k, v] of Object.entries(j.named_endpoints)) console.log("CB", k, "IN:", v.parameters.map((x) => `${x.parameter_name}(${x.label}|${x.component}|${JSON.stringify(x.parameter_default)?.slice(0, 50)})`).join(", "), "OUT:", v.returns.map((x) => x.component + ":" + x.label).join(", "));
 } catch (e) { console.log("chatterbox info err", e.message); }
 // 4) CORS لفيديو MDN
-const FLOWER = "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4";
+const FLOWER = "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm";
 
 const b = await chromium.launch({ args: ["--autoplay-policy=no-user-gesture-required"] });
 async function run(name, mockVideo) {

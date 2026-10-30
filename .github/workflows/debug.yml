@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - run: npm install --no-audit --no-fund
       - run: npm i --no-save --no-audit --no-fund playwright@1.49.0 && npx playwright install --with-deps chromium
       - run: mkdir -p ci && (npx next build > ci/build.log 2>&1; echo exit $? >> ci/build.log); tail -40 ci/build.log
