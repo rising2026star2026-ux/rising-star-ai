@@ -7,14 +7,18 @@ export default function LibraryFrame({ url, name, hf, hfNote, pageUrl }) {
   const [key, setKey] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [slow, setSlow] = useState(false);
+  const [src, setSrc] = useState(null);
   const box = useRef(null);
 
+  // الرابط بيتحط بعد ما الصفحة تشتغل، عشان حدث «اتحمّلت» ما يفوتناش
   useEffect(() => {
     setLoaded(false);
     setSlow(false);
+    setSrc(url);
+    const cover = setTimeout(() => setLoaded(true), 12000);
     const t = setTimeout(() => setSlow(true), hf ? 25000 : 15000);
-    return () => clearTimeout(t);
-  }, [key, hf]);
+    return () => { clearTimeout(t); clearTimeout(cover); };
+  }, [key, hf, url]);
 
   function full() {
     const el = box.current;
@@ -40,17 +44,17 @@ export default function LibraryFrame({ url, name, hf, hfNote, pageUrl }) {
       )}
       <div className={s.frame} ref={box}>
         {!loaded && <div className={s.loading}>جاري فتح {name}...</div>}
-        <iframe
+        {src && <iframe
           key={key}
-          src={url}
+          src={src}
           title={name}
           onLoad={() => setLoaded(true)}
           allow="clipboard-read; clipboard-write; fullscreen; microphone; camera; autoplay; display-capture"
           referrerPolicy="no-referrer-when-downgrade"
-        />
+        />}
       </div>
-      {slow && !loaded && (
-        <p className={s.slow}>الأداة بطيئة شوية النهارده. جرّب «إعادة تحميل»، أو <a href={url} target="_blank" rel="noopener noreferrer">افتحها في تبويب</a>.</p>
+      {slow && (
+        <p className={s.slow}>لو الأداة لسه ما ظهرتش، جرّب «إعادة تحميل»، أو <a href={url} target="_blank" rel="noopener noreferrer">افتحها في تبويب</a>.</p>
       )}
       <SaveShare name={name} pageUrl={pageUrl} />
     </>
