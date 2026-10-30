@@ -7,42 +7,49 @@ https://nextjs.org/telemetry
    ▲ Next.js 15.5.28
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 13.8s
+ ✓ Compiled successfully in 17.1s
    Linting and checking validity of types ...
    Collecting page data ...
-   Generating static pages (0/1022) ...
-   Generating static pages (255/1022) 
-   Generating static pages (510/1022) 
-   Generating static pages (766/1022) 
- ✓ Generating static pages (1022/1022)
+   Generating static pages (0/1029) ...
+   Generating static pages (257/1029) 
+   Generating static pages (514/1029) 
+   Generating static pages (771/1029) 
+ ✓ Generating static pages (1029/1029)
    Finalizing page optimization ...
    Collecting build traces ...
 
 Route (app)                                 Size  First Load JS  Revalidate  Expire
 ┌ ○ /                                    20.1 kB         155 kB
 ├ ○ /_not-found                            996 B         105 kB
+├ ○ /agents                                434 B         108 kB
+├ ● /agents/[id]                         1.89 kB         160 kB
+├   ├ /agents/research
+├   ├ /agents/market
+├   ├ /agents/compare
+├   └ [+3 more paths]
 ├ ● /ai/[slug]                             986 B         108 kB
 ├   ├ /ai/taskade
 ├   ├ /ai/runwayml
 ├   ├ /ai/aiva
 ├   └ [+588 more paths]
-├ ƒ /api/chat                              158 B         104 kB
-├ ƒ /api/image                             158 B         104 kB
-├ ƒ /api/pro                               158 B         104 kB
-├ ƒ /api/prompt-en                         158 B         104 kB
-├ ƒ /api/proofread                         158 B         104 kB
-├ ƒ /api/reel                              158 B         104 kB
-├ ƒ /api/run                               158 B         104 kB
-├ ƒ /api/scam-scan                         158 B         104 kB
-├ ƒ /api/vision                            158 B         104 kB
-├ ○ /chat                                8.47 kB         195 kB
+├ ƒ /api/agent                             160 B         104 kB
+├ ƒ /api/chat                              160 B         104 kB
+├ ƒ /api/image                             160 B         104 kB
+├ ƒ /api/pro                               160 B         104 kB
+├ ƒ /api/prompt-en                         160 B         104 kB
+├ ƒ /api/proofread                         160 B         104 kB
+├ ƒ /api/reel                              160 B         104 kB
+├ ƒ /api/run                               160 B         104 kB
+├ ƒ /api/scam-scan                         160 B         104 kB
+├ ƒ /api/vision                            160 B         104 kB
+├ ○ /chat                                9.06 kB         195 kB
 ├ ○ /creators                              402 B         108 kB
 ├ ● /creators/[slug]                       402 B         108 kB
 ├   ├ /creators/omar-alshal
 ├   ├ /creators/ahmed-shaffik
 ├   ├ /creators/hossam-hassan
 ├   └ [+17 more paths]
-├ ● /flow/[id]                           5.63 kB         184 kB
+├ ● /flow/[id]                            6.2 kB         184 kB
 ├   ├ /flow/product-launch
 ├   ├ /flow/short-video
 ├   ├ /flow/youtube-video
@@ -63,7 +70,7 @@ Route (app)                                 Size  First Load JS  Revalidate  Exp
 ├   ├ /library/flux-schnell
 ├   ├ /library/flux-dev
 ├   ├ /library/qwen-image
-├   └ [+112 more paths]
+├   └ [+111 more paths]
 ├ ○ /maker                               1.21 kB         108 kB
 ├ ● /maker/[slug]                        3.89 kB         111 kB
 ├   ├ /maker/pollinations
@@ -79,9 +86,9 @@ Route (app)                                 Size  First Load JS  Revalidate  Exp
 ├   ├ /program/claude
 ├   ├ /program/gemini
 ├   └ [+68 more paths]
-├ ○ /robots.txt                            158 B         104 kB
+├ ○ /robots.txt                            160 B         104 kB
 ├ ○ /scam-check                          4.64 kB         112 kB
-├ ○ /sitemap.xml                           158 B         104 kB
+├ ○ /sitemap.xml                           160 B         104 kB
 ├ ○ /subscriptions                       3.04 kB         120 kB
 ├ ○ /subscriptions/calculator            2.35 kB         119 kB
 ├ ● /task/[slug]                         3.41 kB         111 kB
@@ -90,7 +97,7 @@ Route (app)                                 Size  First Load JS  Revalidate  Exp
 ├   ├ /task/translate
 ├   └ [+27 more paths]
 ├ ○ /tasks                                 599 B         108 kB
-├ ● /tool/[id]                           8.81 kB         168 kB
+├ ● /tool/[id]                           9.41 kB         168 kB
 ├   ├ /tool/article
 ├   ├ /tool/rewrite
 ├   ├ /tool/summarize
