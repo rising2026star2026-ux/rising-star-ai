@@ -6,7 +6,7 @@ import { FactoryComp, FPS, SIZE, sceneFrames, totalFrames } from "./FactoryComp"
 import { THEMES } from "./ReelComp";
 import { VOICES } from "@/lib/voices";
 import { siteFont, ensureFont } from "@/components/studio/util";
-import { callSpace } from "@/lib/hfspace";
+import { callSpace, fileUrl } from "@/lib/hfspace";
 import s from "./factory.module.css";
 
 let uid = 0;
@@ -69,9 +69,8 @@ export default function VideoFactory() {
   async function backupVoice(text) {
     try {
       const lang = voice.startsWith("en-") ? "en" : "ar";
-      const data = await callSpace("https://resembleai-chatterbox-multilingual-tts.hf.space", "generate_tts_audio", [text.slice(0, 280), lang, null, 0.5, 0.8, 7, 0.5], { signal: ctl.current?.signal });
-      const file = data?.[0];
-      const src = file?.url || (file?.path ? `https://resembleai-chatterbox-multilingual-tts.hf.space/gradio_api/file=${file.path}` : null);
+      const { out: data, base } = await callSpace("https://resembleai-chatterbox-multilingual-tts.hf.space", "generate_tts_audio", [text.slice(0, 280), lang, null, 0.5, 0.8, 7, 0.5], { signal: ctl.current?.signal });
+      const src = fileUrl(data?.[0], base);
       if (!src) return null;
       const r = await fetch(src, { signal: ctl.current?.signal });
       if (!r.ok) return null;

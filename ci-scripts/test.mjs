@@ -23,11 +23,18 @@ try {
   const j = await (await fetch("https://resembleai-chatterbox-multilingual-tts.hf.space/gradio_api/info")).json();
   for (const [k, v] of Object.entries(j.named_endpoints)) console.log("CB", k, "IN:", v.parameters.map((x) => `${x.parameter_name}(${x.label}|${x.component}|${JSON.stringify(x.parameter_default)?.slice(0, 50)})`).join(", "), "OUT:", v.returns.map((x) => x.component + ":" + x.label).join(", "));
 } catch (e) { console.log("chatterbox info err", e.message); }
+try {
+  const H = "https://resembleai-chatterbox-multilingual-tts.hf.space/gradio_api";
+  const r1 = await fetch(H + "/call/generate_tts_audio", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ data: ["ازيك يا صاحبي النهارده هنتكلم عن القهوة", "ar", null, 0.5, 0.8, 7, 0.5] }) });
+  const j1 = await r1.json().catch(() => ({}));
+  console.log("CB call", r1.status, JSON.stringify(j1).slice(0, 200));
+  if (j1.event_id) { const r2 = await fetch(H + "/call/generate_tts_audio/" + j1.event_id); const txt = await r2.text(); console.log("CB events", txt.slice(0, 700)); }
+} catch (e) { console.log("CB raw err", e.message); }
 // 4) CORS لفيديو MDN
 const FLOWER = "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm";
 
 const b = await chromium.launch({ args: ["--autoplay-policy=no-user-gesture-required"] });
-async function run(name, mockVideo) {
+async function run(name, mockVideo, doRender = true) {
   const ctx = await b.newContext({ viewport: { width: 390, height: 900 }, isMobile: true, acceptDownloads: true });
   const p = await ctx.newPage();
   const errs = [];
@@ -45,7 +52,12 @@ async function run(name, mockVideo) {
   console.log(name, "make took", ((Date.now() - t0) / 1000).toFixed(1) + "s", "scenes:", await p.locator("[data-scene]").count(), "err:", await p.locator("#vf-err").textContent().catch(() => ""), "notes:", await p.locator("p").allTextContents().then((a) => a.filter((x) => x.includes("مفعّل") || x.includes("الصوت")).join(" / ")));
   await p.waitForTimeout(2500);
   await p.locator("[data-vf=preview]").screenshot({ path: `ci/vf/${name}_player.jpg`, type: "jpeg", quality: 60 }).catch(() => {});
+  await p.locator("[data-vf=preview]").click({ position: { x: 100, y: 150 } }).catch(() => {});
+  await p.waitForTimeout(3000);
+  await p.locator("[data-vf=preview]").screenshot({ path: `ci/vf/${name}_player_play.jpg`, type: "jpeg", quality: 60 }).catch(() => {});
+  console.log(name, "preview box", JSON.stringify(await p.locator("[data-vf=preview]").boundingBox()), "inner", await p.locator("[data-vf=preview] > div").first().evaluate((el) => el.outerHTML.slice(0, 300)).catch(() => ""));
   await p.screenshot({ path: `ci/vf/${name}_ui.jpg`, type: "jpeg", quality: 55, fullPage: true });
+  if (!doRender) { await ctx.close(); return; }
   const t1 = Date.now();
   await p.click("#vf-render");
   await p.waitForSelector("#vf-video", { timeout: 240000 }).catch(() => {});
@@ -64,6 +76,6 @@ async function run(name, mockVideo) {
   console.log(name, "errs:", errs.slice(0, 8).join(" | "));
   await ctx.close();
 }
+await run("nopexels", false, false);
 await run("mock", true);
-await run("fallback", true);
 await b.close();
