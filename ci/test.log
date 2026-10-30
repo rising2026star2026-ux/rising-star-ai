@@ -1,28 +1,28 @@
-TTS 200 audio/mpeg 63360 bytes 1404 ms 
-duration=10.560000
+TTS 200 audio/mpeg 31824 bytes 1407 ms 
+duration=5.304000
 bit_rate=48000
 
 TTS empty 400
 PEXELS nokey 503
 CB /on_language_change IN: lang(Language|Dropdown|"fr"), current_ref(Reference Audio File (Optional)|Audio|{"path":"/tmp/gradio/1a10ad98c1da5dd8e29b13dc8aab2), current_text(Text to synthesize (max chars 300)|Textbox|"Le mois dernier, nous avons atteint un nouveau ja) OUT: Audio:Reference Audio File (Optional), Textbox:Text to synthesize (max chars 300)
 CB /generate_tts_audio IN: text_input(Text to synthesize (max chars 300)|Textbox|"Le mois dernier, nous avons atteint un nouveau ja), language_id(Language|Dropdown|"fr"), audio_prompt_path_input(Reference Audio File (Optional)|Audio|{"path":"/tmp/gradio/1a10ad98c1da5dd8e29b13dc8aab2), exaggeration_input(Exaggeration (Neutral = 0.5, extreme values can be unstable)|Slider|0.5), temperature_input(Temperature|Slider|0.8), seed_num_input(Random seed (0 for random)|Number|0), cfgw_input(CFG/Pace|Slider|0.5) OUT: Audio:Output Audio
-nopexels make took 6.8s scenes: 6 err:  notes: فيديوهات Pexels مش مفعّلة لسه (مفتاح PEXELS_API_KEY ناقص)، فالمشاهد بخلفية ملونة.
-nopexels render took 59.4s err: none
-nopexels file ci/vf/nopexels.webm 13400236 bytes
+mock make took 7.5s scenes: 6 err:  notes: 
+mock render took 46.0s err: none
+mock file ci/vf/mock.webm 7517845 bytes
 stream|codec_name=vp8|codec_type=video|width=720|height=1280|duration=N/A
 stream|codec_name=opus|codec_type=audio|duration=N/A
 
-nopexels audio volume [Parsed_volumedetect_0 @ 0x7ea548002000] mean_volume: -23.0 dB
-[Parsed_volumedetect_0 @ 0x7ea548002000] max_volume: -5.4 dB
-
-nopexels errs: CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable) | CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable) | CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable) | CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable) | CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable) | CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable)
-mock make took 7.2s scenes: 6 err:  notes: 
-mock render took 68.0s err: none
-mock file ci/vf/mock.webm 13522479 bytes
-stream|codec_name=vp8|codec_type=video|width=720|height=1280|duration=N/A
-stream|codec_name=opus|codec_type=audio|duration=N/A
-
-mock audio volume [Parsed_volumedetect_0 @ 0x7bed74002000] mean_volume: -23.0 dB
-[Parsed_volumedetect_0 @ 0x7bed74002000] max_volume: -5.3 dB
+mock audio volume [Parsed_volumedetect_0 @ 0x7b5d24002000] mean_volume: -23.4 dB
+[Parsed_volumedetect_0 @ 0x7b5d24002000] max_volume: -5.7 dB
 
 mock errs: 
+fallback make took 5.9s scenes: 6 err:  notes: الصوت ما اشتغلش في 6 مشهد. اضغط «حدّث الصوت» على المشهد، أو أعد المحاولة بعد شوية.
+fallback render took 25.4s err: none
+fallback file ci/vf/fallback.webm 5012714 bytes
+stream|codec_name=vp8|codec_type=video|width=720|height=1280|duration=N/A
+stream|codec_name=opus|codec_type=audio|duration=N/A
+
+fallback audio volume [Parsed_volumedetect_0 @ 0x70fe80002000] mean_volume: -91.0 dB
+[Parsed_volumedetect_0 @ 0x70fe80002000] max_volume: -91.0 dB
+
+fallback errs: CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway) | CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway) | CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway) | CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway) | CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway) | CONSOLE Failed to load resource: the server responded with a status of 502 (Bad Gateway)
