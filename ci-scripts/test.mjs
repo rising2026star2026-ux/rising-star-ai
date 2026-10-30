@@ -1,54 +1,65 @@
-// يجيب صفحات الشروط لكل موقع ويحفظها نص
+// يختبر مكتبة الأدوات: الصفحة الرئيسية + كل صفحة أداة بالإطار
 import { chromium } from "playwright";
 import fs from "node:fs";
-const sites = {
-  pixlr: "https://pixlr.com/", cleanup: "https://cleanup.pictures/", iloveimg: "https://www.iloveimg.com/", croppola: "https://croppola.com/",
-  paletton: "https://paletton.com/", haikei: "https://haikei.app/", shots: "https://shots.so/", crontab: "https://crontab.guru/",
-  sqlfiddle: "https://sqlfiddle.com/", froggy: "https://flexboxfroggy.com/", garden: "https://cssgridgarden.com/", httpstatus: "https://httpstatuses.io/",
-  hash: "https://emn178.github.io/online-tools/", hemingway: "https://hemingwayapp.com/", wordcounter: "https://wordcounter.net/", lingojam: "https://lingojam.com/",
-  textcompare: "https://text-compare.com/", inputtools: "https://www.google.com/inputtools/try/", fontpair: "https://fontpair.co/", calcnet: "https://www.calculator.net/",
-  unitconv: "https://www.unitconverters.net/", percent: "https://www.percentagecalculator.net/", xrates: "https://www.x-rates.com/", ilovepdf: "https://www.ilovepdf.com/",
-  qrmonkey: "https://www.qrcode-monkey.com/", audiotrimmer: "https://audiotrimmer.com/", tuner: "https://www.onlinetuner.net/", pomofocus: "https://pomofocus.io/",
-  eggtimer: "https://e.ggtimer.com/", vclock: "https://vclock.com/", timeis: "https://time.is/", wtb: "https://www.worldtimebuddy.com/",
-  flipclock: "https://flipclocker.com/", islamicfinder: "https://www.islamicfinder.org/", nullschool: "https://earth.nullschool.net/", wikimapia: "https://wikimapia.org/",
-  magenta: "https://magenta.tensorflow.org/", etherpad: "https://etherpad.wikimedia.org/", lexica: "https://lexica.art/",
-};
-fs.rmSync("ci/tos", { recursive: true, force: true });
-fs.mkdirSync("ci/tos", { recursive: true });
+const src = fs.readFileSync("lib/library.js", "utf8");
+const slugs = [...src.matchAll(/T\("([a-z0-9-]+)"/g)].map((m) => m[1]);
+const phet = [...src.matchAll(/\["([a-z-]+)", "(?=[^\x00-\x7F])/g)].map((m) => "phet-" + m[1]);
+const all = [...slugs, ...phet].filter((x) => ["qr-monkey","currency","wordcounter","hash","http-status","flexbox-froggy","grid-garden","timer","stopwatch","alarm"].includes(x));
+console.log("slugs", all.length);
+fs.rmSync("ci/lib", { recursive: true, force: true });
+fs.mkdirSync("ci/lib", { recursive: true });
 const b = await chromium.launch();
-const ctx = await b.newContext({ userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36" });
-const keys = Object.keys(sites);
-let i = 0;
+const errs = [];
+{
+  const ctx = await b.newContext({ viewport: { width: 1280, height: 900 } });
+  const p = await ctx.newPage();
+  p.on("pageerror", (e) => errs.push("index " + e.message));
+  const r = await p.goto("http://localhost:3000/library");
+  console.log("index", r.status());
+  await p.screenshot({ path: "ci/lib/_index.jpg", type: "jpeg", quality: 50, fullPage: true });
+  await p.fill("input[type=search]", "خلفية");
+  await p.waitForTimeout(300);
+  console.log("search hits", await p.locator("a[href^='/library/']").count());
+  await ctx.close();
+  const m = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true });
+  const q = await m.newPage();
+  await q.goto("http://localhost:3000/library");
+  await q.screenshot({ path: "ci/lib/_index_m.jpg", type: "jpeg", quality: 50 });
+  await q.goto("http://localhost:3000/library/remove-bg");
+  await q.waitForTimeout(8000);
+  await q.screenshot({ path: "ci/lib/_tool_m.jpg", type: "jpeg", quality: 50, fullPage: true });
+  await m.close();
+}
+const results = [];
+let idx = 0;
 async function worker() {
-  while (i < keys.length) {
-    const k = keys[i++];
+  const ctx = await b.newContext({ viewport: { width: 1280, height: 900 } });
+  while (idx < all.length) {
+    const slug = all[idx++];
     const p = await ctx.newPage();
-    let out = "";
+    const blocked = [];
+    p.on("console", (m) => { const t = m.text(); if (/Refused to (display|frame)|frame-ancestors|X-Frame-Options/i.test(t)) blocked.push(t.slice(0, 120)); });
+    p.on("pageerror", (e) => errs.push(slug + " " + e.message));
+    let status = 0, loaded = false;
     try {
-      await p.goto(sites[k], { timeout: 30000, waitUntil: "domcontentloaded" });
-      await p.waitForTimeout(2500);
-      const links = await p.$$eval("a", (as) => as.map((a) => [a.innerText.trim().slice(0, 40), a.href]).filter(([t, h]) => /terms|tos\b|legal|conditions|license|licence|usage|about|faq|widget|embed|github/i.test(t + " " + h)));
-      out += "LINKS " + JSON.stringify(links.slice(0, 25)) + "\n";
-      const seen = new Set();
-      for (const [t, h] of links) {
-        if (seen.size >= 4 || seen.has(h) || !/^https?:/.test(h)) continue;
-        if (!/terms|tos\b|legal|conditions|license|licence|widget|embed|usage/i.test(t + " " + h)) continue;
-        seen.add(h);
-        try {
-          const q = await ctx.newPage();
-          await q.goto(h, { timeout: 25000, waitUntil: "domcontentloaded" });
-          await q.waitForTimeout(1500);
-          const txt = (await q.evaluate(() => document.body.innerText)).replace(/\s+/g, " ");
-          out += `\n=== ${h}\n${txt.slice(0, 40000)}\n`;
-          await q.close();
-        } catch (e) { out += `\n=== ${h} ERR ${e.message.slice(0, 80)}\n`; }
-      }
-      if (!seen.size) out += "\n=== HOME\n" + (await p.evaluate(() => document.body.innerText)).replace(/\s+/g, " ").slice(0, 6000);
-    } catch (e) { out += "ERR " + e.message.slice(0, 100); }
-    fs.writeFileSync(`ci/tos/${k}.txt`, out);
+      const r = await p.goto(`http://localhost:3000/library/${slug}`);
+      status = r.status();
+      const hf = await p.locator("iframe").getAttribute("src").then((u) => u.includes("hf.space"));
+      await p.waitForFunction(() => !document.body.innerText.includes("جاري فتح"), null, { timeout: 30000 }).then(() => (loaded = true), () => {});
+      await p.waitForTimeout(hf ? 10000 : 5000);
+      await p.locator("iframe").screenshot({ path: `ci/lib/${slug}.jpg`, type: "jpeg", quality: 35 });
+    } catch (e) { blocked.push("err " + e.message.slice(0, 80)); }
+    results.push({ slug, status, loaded, blocked });
     await p.close();
   }
+  await ctx.close();
 }
-await Promise.all(Array.from({ length: 5 }, worker));
-console.log("done");
+await Promise.all(Array.from({ length: 6 }, worker));
+fs.writeFileSync("ci/lib.json", JSON.stringify(results));
+console.log("done", results.length, "bad", results.filter((r) => r.status !== 200 || !r.loaded || r.blocked.length).map((r) => r.slug + ":" + r.status + ":" + r.loaded + ":" + r.blocked.join("|")).join("\n"));
+console.log("pageerrors", errs.slice(0, 20).join("\n"));
 await b.close();
+// رخص المستودعات
+for (const r of ["thomaspark/flexboxfroggy", "thomaspark/gridgarden", "emn178/online-tools", "httpstatuses/httpstatuses"]) {
+  try { const j = await (await fetch(`https://api.github.com/repos/${r}/license`)).json(); console.log("LICENSE", r, j.license?.spdx_id); } catch (e) { console.log("LICENSE", r, "err"); }
+}
