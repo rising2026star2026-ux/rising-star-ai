@@ -1,0 +1,4 @@
+LINKS [["about\n                        About this","https://earth.nullschool.net/about"]]
+
+=== HOME
+earth get the app!

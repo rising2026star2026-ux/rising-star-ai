@@ -1,0 +1,4 @@
+LINKS [["JavaScript license information","https://etherpad.wikimedia.org/javascript"]]
+
+=== https://etherpad.wikimedia.org/javascript
+jquery-3.0.1.min.js Expat jquery.js html10n.js Expat html10n.js l10n.js Apache-2.0-only l10n.js socket.io.js Expat socket.io.js require-kernel.js Expat require-kernel.js plugins.js Apache-2.0-only plugins.js minify.json.js Expat minify.json.js settings.js Apache-2.0-only settings.js jquery.autosize.js Expat jquery.autosize.js
