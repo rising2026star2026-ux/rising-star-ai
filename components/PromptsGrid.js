@@ -57,8 +57,9 @@ export default function PromptsGrid({ prompts, cats }) {
   const [q, setQ] = useState("");
   const list = useMemo(() => {
     const k = q.trim().toLowerCase();
-    return prompts.filter((p) => (cat === "all" || p.cat === cat) && (!k || `${p.title} ${p.text}`.toLowerCase().includes(k)));
-  }, [prompts, cat, q]);
+    const meta = Object.fromEntries(cats.map((c) => [c.id, `${c.name} ${c.desc}`]));
+    return prompts.filter((p) => (cat === "all" || p.cat === cat) && (!k || `${p.title} ${p.text} ${meta[p.cat] || ""}`.toLowerCase().includes(k)));
+  }, [prompts, cats, cat, q]);
   const shown = cat === "all" && !q.trim() ? cats : cats.filter((c) => list.some((p) => p.cat === c.id));
 
   return (
