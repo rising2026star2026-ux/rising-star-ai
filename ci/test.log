@@ -1,5 +1,0 @@
-url after sub click http://localhost:3000/resources/psd
-/resources 200
-/resources/courses 200
-/resources/nope 404
-errs 

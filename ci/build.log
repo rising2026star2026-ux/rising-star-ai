@@ -7,14 +7,14 @@ https://nextjs.org/telemetry
    ▲ Next.js 15.5.28
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 12.0s
+ ✓ Compiled successfully in 17.3s
    Linting and checking validity of types ...
    Collecting page data ...
-   Generating static pages (0/1044) ...
-   Generating static pages (261/1044) 
-   Generating static pages (522/1044) 
-   Generating static pages (783/1044) 
- ✓ Generating static pages (1044/1044)
+   Generating static pages (0/1045) ...
+   Generating static pages (261/1045) 
+   Generating static pages (522/1045) 
+   Generating static pages (783/1045) 
+ ✓ Generating static pages (1045/1045)
    Finalizing page optimization ...
    Collecting build traces ...
 
@@ -69,8 +69,8 @@ Route (app)                                 Size  First Load JS  Revalidate  Exp
 ├ ○ /lab/factory                         1.84 kB         109 kB
 ├ ○ /lab/remotion                        1.84 kB         109 kB
 ├ ○ /learn                                 423 B         107 kB
-├ ○ /library                             1.66 kB         109 kB
-├ ● /library/[slug]                      2.64 kB         110 kB
+├ ○ /library                             2.56 kB         110 kB
+├ ● /library/[slug]                       3.5 kB         111 kB
 ├   ├ /library/flux-schnell
 ├   ├ /library/flux-dev
 ├   ├ /library/qwen-image
@@ -90,6 +90,7 @@ Route (app)                                 Size  First Load JS  Revalidate  Exp
 ├   ├ /program/claude
 ├   ├ /program/gemini
 ├   └ [+68 more paths]
+├ ○ /prompts                             1.85 kB         109 kB
 ├ ○ /resources                             610 B         108 kB
 ├ ● /resources/[cat]                       610 B         108 kB
 ├   ├ /resources/canva
@@ -107,7 +108,7 @@ Route (app)                                 Size  First Load JS  Revalidate  Exp
 ├   ├ /task/translate
 ├   └ [+27 more paths]
 ├ ○ /tasks                                 610 B         108 kB
-├ ● /tool/[id]                           9.49 kB         168 kB
+├ ● /tool/[id]                           9.49 kB         167 kB
 ├   ├ /tool/article
 ├   ├ /tool/rewrite
 ├   ├ /tool/summarize
@@ -116,7 +117,7 @@ Route (app)                                 Size  First Load JS  Revalidate  Exp
 + First Load JS shared by all             104 kB
   ├ chunks/1255-60d8dc7c8c9309a1.js      46.3 kB
   ├ chunks/4bd1b696-100b9d70ed4e49c1.js  54.2 kB
-  └ other shared chunks (total)          3.12 kB
+  └ other shared chunks (total)          3.13 kB
 
 
 ○  (Static)   prerendered as static content
