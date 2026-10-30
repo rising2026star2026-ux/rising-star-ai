@@ -7,22 +7,120 @@ https://nextjs.org/telemetry
    ▲ Next.js 15.5.28
 
    Creating an optimized production build ...
-Failed to compile.
+ ✓ Compiled successfully in 11.0s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/1044) ...
+   Generating static pages (261/1044) 
+   Generating static pages (522/1044) 
+   Generating static pages (783/1044) 
+ ✓ Generating static pages (1044/1044)
+   Finalizing page optimization ...
+   Collecting build traces ...
 
-./components/LibraryGrid.js
-Module not found: Can't resolve './BrandLogo'
+Route (app)                                 Size  First Load JS  Revalidate  Expire
+┌ ○ /                                    20.3 kB         155 kB
+├ ○ /_not-found                             1 kB         105 kB
+├ ○ /agents                                438 B         107 kB
+├ ● /agents/[id]                         1.91 kB         160 kB
+├   ├ /agents/research
+├   ├ /agents/market
+├   ├ /agents/compare
+├   └ [+3 more paths]
+├ ● /ai/[slug]                             991 B         108 kB
+├   ├ /ai/taskade
+├   ├ /ai/runwayml
+├   ├ /ai/aiva
+├   └ [+588 more paths]
+├ ƒ /api/agent                             170 B         104 kB
+├ ƒ /api/chat                              170 B         104 kB
+├ ƒ /api/image                             170 B         104 kB
+├ ƒ /api/pexels                            170 B         104 kB
+├ ƒ /api/pro                               170 B         104 kB
+├ ƒ /api/prompt-en                         170 B         104 kB
+├ ƒ /api/proofread                         170 B         104 kB
+├ ƒ /api/reel                              170 B         104 kB
+├ ƒ /api/run                               170 B         104 kB
+├ ƒ /api/scam-scan                         170 B         104 kB
+├ ƒ /api/tts                               170 B         104 kB
+├ ƒ /api/vision                            170 B         104 kB
+├ ƒ /api/vscript                           170 B         104 kB
+├ ○ /chat                                 9.1 kB         195 kB
+├ ○ /creators                              404 B         107 kB
+├ ● /creators/[slug]                       404 B         107 kB
+├   ├ /creators/omar-alshal
+├   ├ /creators/ahmed-shaffik
+├   ├ /creators/hossam-hassan
+├   └ [+17 more paths]
+├ ● /flow/[id]                           6.27 kB         183 kB
+├   ├ /flow/product-launch
+├   ├ /flow/short-video
+├   ├ /flow/youtube-video
+├   └ [+6 more paths]
+├ ○ /flows                                 511 B         108 kB
+├ ○ /global-tools                        1.09 kB         108 kB
+├ ● /global-tools/[cat]                  3.43 kB         110 kB
+├   ├ /global-tools/chatbots
+├   ├ /global-tools/writing
+├   ├ /global-tools/copywriting
+├   └ [+37 more paths]
+├ ○ /history                               877 B         127 kB
+├ ○ /icon.svg                                0 B            0 B
+├ ○ /lab/factory                         1.84 kB         109 kB
+├ ○ /lab/remotion                        1.84 kB         109 kB
+├ ○ /learn                                 423 B         107 kB
+├ ○ /library                             2.56 kB         110 kB
+├ ● /library/[slug]                       3.5 kB         111 kB
+├   ├ /library/flux-schnell
+├   ├ /library/flux-dev
+├   ├ /library/qwen-image
+├   └ [+111 more paths]
+├ ○ /maker                               1.22 kB         108 kB
+├ ● /maker/[slug]                        3.91 kB         111 kB
+├   ├ /maker/pollinations
+├   ├ /maker/perchance
+├   ├ /maker/raphael-ai
+├   └ [+38 more paths]
+├ ○ /maker/create                        4.83 kB         112 kB
+├ ○ /models                              4.72 kB         112 kB          6h      1y
+├ ○ /news                                 1.3 kB         105 kB
+├ ○ /plans                               1.89 kB         109 kB
+├ ● /program/[key]                       1.58 kB         109 kB
+├   ├ /program/chatgpt
+├   ├ /program/claude
+├   ├ /program/gemini
+├   └ [+68 more paths]
+├ ○ /resources                             610 B         108 kB
+├ ● /resources/[cat]                       610 B         108 kB
+├   ├ /resources/canva
+├   ├ /resources/social
+├   ├ /resources/psd
+├   └ [+6 more paths]
+├ ○ /robots.txt                            170 B         104 kB
+├ ○ /scam-check                          4.65 kB         112 kB
+├ ○ /sitemap.xml                           170 B         104 kB
+├ ○ /subscriptions                       3.03 kB         120 kB
+├ ○ /subscriptions/calculator            2.36 kB         119 kB
+├ ● /task/[slug]                         3.43 kB         110 kB
+├   ├ /task/logo
+├   ├ /task/resume
+├   ├ /task/translate
+├   └ [+27 more paths]
+├ ○ /tasks                                 610 B         108 kB
+├ ● /tool/[id]                           9.49 kB         168 kB
+├   ├ /tool/article
+├   ├ /tool/rewrite
+├   ├ /tool/summarize
+├   └ [+69 more paths]
+└ ○ /tools                               2.71 kB         129 kB
++ First Load JS shared by all             104 kB
+  ├ chunks/1255-60d8dc7c8c9309a1.js      46.3 kB
+  ├ chunks/4bd1b696-100b9d70ed4e49c1.js  54.2 kB
+  └ other shared chunks (total)          3.12 kB
 
-https://nextjs.org/docs/messages/module-not-found
 
-./app/library/[slug]/page.js
-Module not found: Can't resolve '@/components/BrandLogo'
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
 
-https://nextjs.org/docs/messages/module-not-found
-
-./app/library/page.js
-Module not found: Can't resolve '@/components/BrandLogo'
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-> Build failed because of webpack errors
+exit 0

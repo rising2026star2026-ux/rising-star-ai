@@ -1,0 +1,32 @@
+{
+ "n": 55,
+ "ok": 30,
+ "letters": 77,
+ "bad": [
+  "https://openai.com",
+  "https://openai.com",
+  "https://resemble.ai",
+  "https://elevenlabs.io",
+  "https://canopylabs.ai",
+  "https://microsoft.com",
+  "https://stepfun.com",
+  "https://github.com",
+  "https://wikipedia.org",
+  "https://wikipedia.org",
+  "https://x-rates.com",
+  "https://adobe.com",
+  "https://canva.com",
+  "https://figma.com",
+  "https://miro.com",
+  "https://lucidchart.com",
+  "https://chatgpt.com",
+  "https://docs.google.com",
+  "https://grammarly.com",
+  "https://scratch.mit.edu",
+  "https://geogebra.org",
+  "https://remove.bg",
+  "https://elevenlabs.io",
+  "https://capcut.com",
+  "https://smallpdf.com"
+ ]
+}
