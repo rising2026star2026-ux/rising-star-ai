@@ -86,7 +86,7 @@ export default function RemotionReel() {
       <div className={s.bench}>
         <div className={s.stage}>
           <div style={{ width: "100%", maxWidth: 300 }}>
-            {font && <Player component={ReelComp} inputProps={props} durationInFrames={frames} fps={FPS} compositionWidth={SIZE.w} compositionHeight={SIZE.h} controls loop style={{ width: "100%", borderRadius: 14 }} />}
+            {font && <div dir="ltr"><Player component={ReelComp} inputProps={props} durationInFrames={frames} fps={FPS} compositionWidth={SIZE.w} compositionHeight={SIZE.h} controls loop style={{ width: "100%", borderRadius: 14 }} /></div>}
           </div>
         </div>
         <div className={s.panel}>

@@ -217,7 +217,7 @@ export default function VideoFactory() {
       {scenes.length > 0 && (
         <>
           <div className={s.preview} data-vf="preview">
-            {font && <Player component={FactoryComp} inputProps={props} durationInFrames={frames} fps={FPS} compositionWidth={SIZE.w} compositionHeight={SIZE.h} controls loop style={{ width: "100%", borderRadius: 16 }} />}
+            {font && <div dir="ltr"><Player component={FactoryComp} inputProps={props} durationInFrames={frames} fps={FPS} compositionWidth={SIZE.w} compositionHeight={SIZE.h} controls loop style={{ width: "100%", borderRadius: 16 }} /></div>}
           </div>
 
           <div className={s.timeline} role="list" aria-label="المشاهد">
