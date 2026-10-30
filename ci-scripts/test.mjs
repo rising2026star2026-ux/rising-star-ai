@@ -3,7 +3,7 @@ import { chromium } from "playwright";
 import fs from "node:fs";
 const src = fs.readFileSync("lib/library.js", "utf8");
 const slugs = [...src.matchAll(/T\("([a-z0-9-]+)"/g)].map((m) => m[1]);
-const phet = [...src.matchAll(/\["([a-z-]+)", "/g)].map((m) => "phet-" + m[1]);
+const phet = [...src.matchAll(/\["([a-z-]+)", "(?=[^\x00-\x7F])/g)].map((m) => "phet-" + m[1]);
 const all = [...slugs, ...phet];
 console.log("slugs", all.length);
 fs.rmSync("ci/lib", { recursive: true, force: true });
