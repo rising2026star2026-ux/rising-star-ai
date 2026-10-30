@@ -357,3 +357,17 @@
   .hero::after { width: 300px; height: 300px; }
   .white, .sky { border-radius: 30px 30px 0 0; margin-top: -34px; padding-top: 54px; }
 }
+
+/* ===== وضع الكتابة: لما العميل يبدأ يكتب، الزحمة بتختفي والصندوق ياخد الشاشة ===== */
+.suggest, .gridWrap, .brand p, .brand h1, .mark {
+  transition: opacity 0.28s var(--ease), max-height 0.36s var(--ease), margin 0.36s var(--ease), font-size 0.36s var(--ease);
+}
+.suggest, .gridWrap { max-height: 600px; overflow: hidden; }
+.typing .suggest, .typing .gridWrap { max-height: 0; opacity: 0; margin-top: 0; pointer-events: none; }
+.typing .brand p { opacity: 0; max-height: 0; overflow: hidden; margin: 0; }
+.typing .brand h1 { font-size: clamp(2.2rem, 9vw, 3.4rem); margin-bottom: 4px; }
+.typing .brand { padding-bottom: 14px; }
+.typing .composer textarea { min-height: 7.5em; }
+@media (prefers-reduced-motion: reduce) {
+  .suggest, .gridWrap, .brand p, .brand h1, .mark { transition: none; }
+}

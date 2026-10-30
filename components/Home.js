@@ -69,6 +69,7 @@ export default function Home() {
   const router = useRouter();
   const [input, setInput] = useState("");
   const [sheet, setSheet] = useState(false);
+  const [focus, setFocus] = useState(false); // وضع الكتابة: الشاشة تفضى وتسيب الصندوق لوحده
   const [modelKey, setModelKey] = useStored("model", DEFAULT_MODEL_KEY);
   const [suggestOff, setSuggestOff] = useStored("suggest-off", false);
   const [web, setWeb] = useStored("web", false);
@@ -104,7 +105,7 @@ export default function Home() {
       <ScrollBands />
 
       {/* ============ القسم الأول: سما ليل والنجمة طالعة ============ */}
-      <section className={`${s.band} ${s.night} ${s.hero} on-night`} data-band-sec="night">
+      <section className={`${s.band} ${s.night} ${s.hero} on-night ${focus || input.trim() ? s.typing : ""}`} data-band-sec="night">
         <i className={s.starfield} aria-hidden="true" />
         <i className={s.horizon} aria-hidden="true" />
         <div className={s.in}>
@@ -126,6 +127,8 @@ export default function Home() {
           placeholder="اسأل أي حاجة، اعمل أي حاجة"
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={onKey}
+          onFocus={() => setFocus(true)}
+          onBlur={() => setFocus(false)}
         />
         <div className={s.composerBar}>
           <div className={s.composerActions}>
