@@ -21,7 +21,7 @@ export async function POST(req) {
   try {
     const tts = new MsEdgeTTS({ connectionTimeoutMs: 8000, synthesisTimeoutMs: 15000 });
     await tts.setMetadata(voice, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3);
-    const { audioStream } = tts.toStream(esc(text), { rate: Number(body.rate) || 0 });
+    const { audioStream } = tts.toStream(esc(text));
     const chunks = [];
     await new Promise((resolve, reject) => {
       audioStream.on("data", (c) => chunks.push(c));

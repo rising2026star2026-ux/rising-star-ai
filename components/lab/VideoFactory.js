@@ -6,6 +6,7 @@ import { FactoryComp, FPS, SIZE, sceneFrames, totalFrames } from "./FactoryComp"
 import { THEMES } from "./ReelComp";
 import { VOICES } from "@/lib/voices";
 import { siteFont, ensureFont } from "@/components/studio/util";
+import { callSpace } from "@/lib/hfspace";
 import s from "./factory.module.css";
 
 let uid = 0;
@@ -64,6 +65,23 @@ export default function VideoFactory() {
   const patch = (id, p) => setScenes((all) => all.map((x) => (x.id === id ? { ...x, ...p } : x)));
   const addNote = (m) => setNotes((n) => (n.includes(m) ? n : [...n, m]));
 
+  // صوت بديل مجاني لو خدمة الصوت الأساسية وقفت: Chatterbox على Hugging Face (بحصة الزائر نفسه)
+  async function backupVoice(text) {
+    try {
+      const lang = voice.startsWith("en-") ? "en" : "ar";
+      const data = await callSpace("https://resembleai-chatterbox-multilingual-tts.hf.space", "generate_tts_audio", [text.slice(0, 280), lang, null, 0.5, 0.8, 7, 0.5], { signal: ctl.current?.signal });
+      const file = data?.[0];
+      const src = file?.url || (file?.path ? `https://resembleai-chatterbox-multilingual-tts.hf.space/gradio_api/file=${file.path}` : null);
+      if (!src) return null;
+      const r = await fetch(src, { signal: ctl.current?.signal });
+      if (!r.ok) return null;
+      const url = keep(await r.blob());
+      const dur = await audioDuration(url);
+      addNote("الصوت الأساسي مش متاح دلوقتي، فاستخدمنا صوت بديل مجاني (أبطأ وصوته مش ثابت بين المشاهد).");
+      return { audio: url, dur };
+    } catch (e) { if (e?.name === "AbortError") throw e; return null; }
+  }
+
   async function makeVoice(text) {
     try {
       const r = await fetch("/api/tts", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text, voice }), signal: ctl.current?.signal });
@@ -74,7 +92,7 @@ export default function VideoFactory() {
         return { audio: url, dur };
       }
     } catch (e) { if (e?.name === "AbortError") throw e; }
-    return null;
+    return await backupVoice(text);
   }
 
   async function fetchClip(item) {
