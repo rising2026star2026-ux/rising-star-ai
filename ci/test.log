@@ -1,4 +1,4 @@
-TTS 200 audio/mpeg 31824 bytes 1360 ms 
+TTS 200 audio/mpeg 31824 bytes 1237 ms 
 duration=5.304000
 bit_rate=48000
 
@@ -6,63 +6,63 @@ TTS empty 400
 PEXELS nokey 503
 CB /on_language_change IN: lang(Language|Dropdown|"fr"), current_ref(Reference Audio File (Optional)|Audio|{"path":"/tmp/gradio/1a10ad98c1da5dd8e29b13dc8aab2), current_text(Text to synthesize (max chars 300)|Textbox|"Le mois dernier, nous avons atteint un nouveau ja) OUT: Audio:Reference Audio File (Optional), Textbox:Text to synthesize (max chars 300)
 CB /generate_tts_audio IN: text_input(Text to synthesize (max chars 300)|Textbox|"Le mois dernier, nous avons atteint un nouveau ja), language_id(Language|Dropdown|"fr"), audio_prompt_path_input(Reference Audio File (Optional)|Audio|{"path":"/tmp/gradio/1a10ad98c1da5dd8e29b13dc8aab2), exaggeration_input(Exaggeration (Neutral = 0.5, extreme values can be unstable)|Slider|0.5), temperature_input(Temperature|Slider|0.8), seed_num_input(Random seed (0 for random)|Number|0), cfgw_input(CFG/Pace|Slider|0.5) OUT: Audio:Output Audio
-CB call 200 {"event_id":"6c8c713f3c01428a9f5c11a89afecb47"}
+CB call 200 {"event_id":"1611d4b3af324d0588b2396d24d75af3"}
 CB events event: error
 data: null
 
 
-nopexels make took 7.0s scenes: 6 err:  notes: فيديوهات Pexels مش مفعّلة لسه (مفتاح PEXELS_API_KEY ناقص)، فالمشاهد بخلفية ملونة.
-nopexels preview box {"x":45,"y":367.546875,"width":300,"height":533.328125} inner <div style="position: relative; overflow: hidden; aspect-ratio: 720 / 1280; opacity: 1; width: 100%; border-radius: 16px;"><div style="width: 299.997px; height: 533.328px; display: flex; flex-direction: column; position: absolute; overflow: hidden; left: 0.0014648px; top: 0px;"><div class="__remotio
+nopexels make took 7.4s scenes: 6 err:  notes: فيديوهات Pexels مش مفعّلة لسه (مفتاح PEXELS_API_KEY ناقص)، فالمشاهد بخلفية ملونة.
+nopexels preview box {"x":45,"y":367.546875,"width":300,"height":533.328125} inner <div dir="ltr"><audio preload="metadata" src="data:audio/mp3;base64,/+MYxAAJcAV8AAgAABn//////+/gQ5BAMA+D4Pg+BAQBAEAwD4Pg+D4EBAEAQDAPg++hYBH///hUFQVBUFREDQNHmf///////+MYxBUGkAGIMAAAAP/29Xt6lUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV/+MYxDUAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVV
 DOMDUMP
 div 300x533 @45,491 ov=visible tf= disp=block
-  audio 0x0 @0,0 ov=visible tf= disp=none
-  audio 0x0 @0,0 ov=visible tf= disp=none
-  audio 0x0 @0,0 ov=visible tf= disp=none
-  audio 0x0 @0,0 ov=visible tf= disp=none
-  audio 0x0 @0,0 ov=visible tf= disp=none
-  div 300x533 @45,491 ov=hidden tf= disp=block
-    div 300x533 @45,491 ov=hidden tf= disp=flex
-      div 300x533 @-165,491 ov=hidden tf=matrix(0.416663, 0, 0, 0.416663, 0, 0) disp=flex
-        div 300x533 @-165,491 ov=visible tf= disp=flex
-          div 300x533 @-165,491 ov=visible tf= disp=flex
-            div 300x533 @-165,491 ov=visible tf= disp=flex
-              div 300x533 @-165,491 ov=visible tf= disp=flex
-              div 267x89 @-148,856 ov=visible tf=matrix(1, 0, 0, 1, 0, 40) disp=flex
-                div 255x89 @-143,856 ov=visible tf= disp=flex
-                  img 177x39 @-104,863 ov=clip tf= disp=block
-                  img 233x35 @-132,902 ov=clip tf= disp=block
-          div 0x3 @-165,1021 ov=visible tf= disp=block
-    div 300x108 @45,916 ov=visible tf= disp=flex
-      div 276x37 @57,956 ov=visible tf= disp=flex
-        div 152x37 @181,956 ov=visible tf= disp=flex
-          button 25x37 @308,956 ov=visible tf= disp=flex
-            svg 25x25 @308,962 ov=hidden tf= disp=block
-              path 12x12 @315,968 ov=visible tf= disp=inline
-          div 12x0 @296,974 ov=visible tf= disp=block
-          div 25x25 @271,962 ov=visible tf= disp=flex
-            button 25x25 @271,962 ov=visible tf= disp=block
-              svg 25x25 @271,962 ov=hidden tf= disp=inline
-                path 19x18 @274,966 ov=visible tf= disp=inline
-          div 12x0 @259,974 ov=visible tf= disp=block
-          div 66x24 @193,962 ov=hidden tf= disp=block
-          div 12x0 @181,974 ov=visible tf= disp=block
-        div 108x0 @73,974 ov=visible tf= disp=block
-        div 16x37 @57,956 ov=visible tf= disp=block
-          button 16x37 @57,956 ov=visible tf= disp=inline-flex
-            svg 16x16 @57,966 ov=hidden tf= disp=block
-              path 5x5 @59,968 ov=visible tf= disp=inline
-              path 5x5 @67,968 ov=visible tf= disp=inline
-              path 5x5 @59,976 ov=visible tf= disp=inline
-              path 5x5 @67,976 ov=visible tf= disp=inline
-      div 276x8 @57,993 ov=visible tf= disp=block
-mock make took 6.1s scenes: 6 err:  notes: 
-mock preview box {"x":45,"y":367.046875,"width":300,"height":533.328125} inner <div style="position: relative; overflow: hidden; aspect-ratio: 720 / 1280; opacity: 1; width: 100%; border-radius: 16px;"><div style="width: 299.997px; height: 533.328px; display: flex; flex-direction: column; position: absolute; overflow: hidden; left: 0.0014648px; top: 0px;"><div class="__remotio
-mock render took 52.4s err: none
-mock file ci/vf/mock.webm 7523769 bytes
+  div 300x533 @45,491 ov=visible tf= disp=block
+    audio 0x0 @0,0 ov=visible tf= disp=none
+    audio 0x0 @0,0 ov=visible tf= disp=none
+    audio 0x0 @0,0 ov=visible tf= disp=none
+    audio 0x0 @0,0 ov=visible tf= disp=none
+    audio 0x0 @0,0 ov=visible tf= disp=none
+    div 300x533 @45,491 ov=hidden tf= disp=block
+      div 300x533 @45,491 ov=hidden tf= disp=flex
+        div 300x533 @45,491 ov=hidden tf=matrix(0.416663, 0, 0, 0.416663, 0, 0) disp=flex
+          div 300x533 @45,491 ov=visible tf= disp=flex
+            div 300x533 @45,491 ov=visible tf= disp=flex
+              div 300x533 @45,491 ov=visible tf= disp=flex
+                div 300x533 @45,491 ov=visible tf= disp=flex
+                div 267x92 @62,852 ov=visible tf=matrix(1, 0, 0, 1, 0, 40) disp=flex
+                  div 240x92 @75,852 ov=visible tf= disp=flex
+            div 0x3 @45,1021 ov=visible tf= disp=block
+      div 300x108 @45,916 ov=visible tf= disp=flex
+        div 276x37 @57,956 ov=visible tf= disp=flex
+          div 152x37 @57,956 ov=visible tf= disp=flex
+            button 25x37 @57,956 ov=visible tf= disp=flex
+              svg 25x25 @57,962 ov=hidden tf= disp=block
+                path 12x12 @64,968 ov=visible tf= disp=inline
+            div 12x0 @82,974 ov=visible tf= disp=block
+            div 25x25 @94,962 ov=visible tf= disp=flex
+              button 25x25 @94,962 ov=visible tf= disp=block
+                svg 25x25 @94,962 ov=hidden tf= disp=inline
+                  path 19x18 @97,966 ov=visible tf= disp=inline
+            div 12x0 @119,974 ov=visible tf= disp=block
+            div 66x24 @131,962 ov=hidden tf= disp=block
+            div 12x0 @197,974 ov=visible tf= disp=block
+          div 108x0 @209,974 ov=visible tf= disp=block
+          div 16x37 @317,956 ov=visible tf= disp=block
+            button 16x37 @317,956 ov=visible tf= disp=inline-flex
+              svg 16x16 @317,966 ov=hidden tf= disp=block
+                path 5x5 @319,968 ov=visible tf= disp=inline
+                path 5x5 @327,968 ov=visible tf= disp=inline
+                path 5x5 @319,976 ov=visible tf= disp=inline
+                path 5x5 @327,976 ov=visible tf= disp=inline
+        div 276x8 @57,993 ov=visible tf= disp=block
+        div 276x13 @57,1001 ov=visible tf= disp=block
+mock make took 6.9s scenes: 6 err:  notes: 
+mock preview box {"x":45,"y":367.046875,"width":300,"height":533.328125} inner <div dir="ltr"><audio preload="metadata" src="data:audio/mp3;base64,/+MYxAAJcAV8AAgAABn//////+/gQ5BAMA+D4Pg+BAQBAEAwD4Pg+D4EBAEAQDAPg++hYBH///hUFQVBUFREDQNHmf///////+MYxBUGkAGIMAAAAP/29Xt6lUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV/+MYxDUAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVV
+mock render took 55.6s err: none
+mock file ci/vf/mock.webm 7813486 bytes
 stream|codec_name=vp8|codec_type=video|width=720|height=1280|duration=N/A
 stream|codec_name=opus|codec_type=audio|duration=N/A
 
-mock audio volume [Parsed_volumedetect_0 @ 0x71e0d8002000] mean_volume: -23.0 dB
-[Parsed_volumedetect_0 @ 0x71e0d8002000] max_volume: -5.1 dB
+mock audio volume [Parsed_volumedetect_0 @ 0x7cd7c0002000] mean_volume: -23.1 dB
+[Parsed_volumedetect_0 @ 0x7cd7c0002000] max_volume: -5.2 dB
 
 mock errs: 
