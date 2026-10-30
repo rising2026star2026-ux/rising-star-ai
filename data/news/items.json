@@ -1,34 +1,242 @@
 {
- "updated": "2026-10-30T05:09:55.664Z",
+ "updated": "2026-10-30T17:06:49.546Z",
  "providers": [
   "groq",
   "openrouter",
   "gemini"
  ],
  "used": {
-  "groq": 7,
-  "gemini": 3
+  "groq": 5,
+  "gemini": 1
  },
  "feeds": {
   "openai": "ok 72",
   "google-research": "ok 11",
-  "meta": "ok 9",
+  "aws": "ok 20",
   "apple": "ok 10",
   "techcrunch": "ok 20",
   "nvidia": "ok 18",
-  "aws": "ok 20",
   "huggingface": "ok 25",
-  "arstechnica": "ok 20",
-  "techwd": "ok 4",
-  "deepmind": "ok 11",
+  "verge": "ok 10",
+  "meta": "ok 9",
+  "deepmind": "ok 10",
   "google-ai": "ok 5",
   "marktechpost": "ok 10",
-  "verge": "ok 10",
-  "aitnews": "ok 6",
+  "techwd": "ok 4",
+  "arstechnica": "ok 20",
   "microsoft": "ok 9",
-  "venturebeat": "FAIL HTTP 429"
+  "venturebeat": "FAIL HTTP 429",
+  "aitnews": "FAIL HTTP 415"
  },
  "items": [
+  {
+   "id": "1a9f926a45b8",
+   "url": "https://arstechnica.com/tech-policy/2026/10/doj-exposes-ghost-students-using-ai-to-complete-courses-steal-student-loans/",
+   "title": "DOJ exposes “ghost students” using AI to complete courses, steal student loans",
+   "date": "2026-10-30T16:53:49.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": {
+    "title": "وزارة العدل تكشف عن طلاب وهميين يستخدموا الذكاء الاصطناعي للغش",
+    "summary": "الطلاب الوهميين بيستغلوا AI عشان يخلصوا الكورسات ويسرقوا قروض الطلاب، والوزارة بدأت حملة ضدهم."
+   }
+  },
+  {
+   "id": "a973ac401cee",
+   "url": "https://www.theverge.com/policy/1022880/wikipedia-openai-new-york-times-copyright",
+   "title": "Wikipedia’s operator says a bad AI copyright ruling could threaten the open web",
+   "date": "2026-10-30T16:08:56.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "تحذير من حكم حقوق النشر للذكاء الاصطناعي يهدد الويب المفتوح",
+    "summary": "ويكيميديا بتطالب القضاة يحميوا تدريب نماذج اللغة الكبيرة من حقوق النشر، لكن من غير ما يمنع الشات بوتات من عرض المحتوى."
+   }
+  },
+  {
+   "id": "8cb2db80dc5c",
+   "url": "https://techcrunch.com/2026/10/30/theranos-whistleblower-tyler-shultz-warns-that-the-ai-boom-is-a-great-opportunity-to-go-deceive-people/",
+   "title": "Theranos whistleblower Tyler Shultz warns that the AI boom is ‘a great opportunity to go deceive people’",
+   "date": "2026-10-30T16:03:45.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "تحذير من تايلر شولتز: AI فرصة للغش",
+    "summary": "المخبر السابق في Theranos بيقول إن طفرة AI ممكن تستخدمها الشركات غير المربحة لتضليل الناس وتجمع قيم تريليون."
+   }
+  },
+  {
+   "id": "974d9b85c8fb",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1023188/pope-leo-disarm-ai",
+   "title": "Pope Leo calls for the disarmament of AI: ‘Machines are tools, not persons’",
+   "date": "2026-10-30T15:14:37.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "البابا ليو يطالب بنزع سلاح الذكاء الاصطناعي",
+    "summary": "البابا ليو الرابع عشر بيأكد إن الآلات أدوات مش أشخاص، وبدعو الأمم المتحدة تحظر الأسلحة الذاتية."
+   }
+  },
+  {
+   "id": "4a4bcbde667c",
+   "url": "https://blogs.nvidia.com/blog/ai-joins-the-search-for-extraterrestrial-signals/",
+   "title": "Things That Go Beep in the Night: Agentic AI Joins the Search for Extraterrestrial Signals",
+   "date": "2026-10-30T15:00:10.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": {
+    "title": "AI يشارك في البحث عن إشارات من الفضاء",
+    "summary": "العلماء بيستخدموا وكلاء ذكاء اصطناعي عشان يراقبوا إشارات من كائنات فضائية، وده بيخلي المهمة أكتر تعقيدًا."
+   }
+  },
+  {
+   "id": "dbfbce585037",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1021080/maine-senate-race-susan-collins-ai-data-centers",
+   "title": "Maine’s data center revolt will decide who controls the Senate",
+   "date": "2026-10-30T14:40:29.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "ثورة مراكز البيانات في مين وتحديد مستقبل مجلس الشيوخ",
+    "summary": "سيناتور مين سوزان كولينز اتعرضت لهتاف من مواطن بيقول إن مراكز بيانات AI بتضر المناخ والمياه، والموضوع بقى سلاح سياسي."
+   }
+  },
+  {
+   "id": "40aed769d1c2",
+   "url": "https://techcrunch.com/2026/10/30/skip-the-small-talk-make-game-changing-connections-at-techcrunch-founder-summit-with-braindate/",
+   "title": "Skip the small talk: Make game-changing connections at TechCrunch Founder Summit with Braindate",
+   "date": "2026-10-30T14:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "شبكة علاقات أسرع في TechCrunch Founder Summit مع Braindate",
+    "summary": "في مؤتمر TechCrunch 2026 ببوسطن، Braindate هيساعد المؤسسين يلاقوا محادثات سريعة سواء 1:1 أو مجموعات صغيرة، وسجلوا عشان توفروا."
+   }
+  },
+  {
+   "id": "f986a412ee0e",
+   "url": "https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/",
+   "title": "DoorDash said it’s only received ‘several hundred’ orders from AI agents",
+   "date": "2026-10-30T13:54:25.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "DoorDash تستقبل مئات طلبات من وكلاء AI فقط",
+    "summary": "DoorDash قالت إن عدد الطلبات اللي جت من وكلاء ذكاء اصطناعي قليل، لكن الشركة مستعدة تتعاون مع مطوري الوكلاء."
+   }
+  },
+  {
+   "id": "5cfbd02556ec",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1023054/altman-cheeky-pint-ai-math-interview",
+   "title": "Sam Altman sympathizes with mathematicians, but says OpenAI’s math onslaught won’t stop",
+   "date": "2026-10-30T13:30:14.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "Sam Altman يعتذر للرياضياتيين لكن مش هيتوقف عن إنتاج أبحاث AI",
+    "summary": "بعد شهور من إغراق الباحثين في الرياضيات بنتايج AI، سام ألتمان بيقول إنه متفهم للضغط لكن مش ناوي يوقف المشروع، وممكن يطلع أكتر من مخزون الشركة."
+   }
+  },
+  {
+   "id": "5ec9437afb13",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1023070/anthropic-ipo-risk-factors-filing-miracles",
+   "title": "Silicon Valley wants you to invest in miracles",
+   "date": "2026-10-30T13:11:05.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "وادي السيليكون عايزك تستثمر في المعجزات",
+    "summary": "الاستثمار في التكنولوجيا دي شبه القمار؛ ممكن يسبب مخاطر وجودية للإنسان أو يفتح باب معجزات، وده اللي بيخلّي وادي السيليكون يروّج له."
+   }
+  },
+  {
+   "id": "fd4521a18599",
+   "url": "https://www.microsoft.com/en-us/research/blog/from-synthetic-enterprise-data-evaluations-to-real-microsoft-copilot-ai-confidence/",
+   "title": "From synthetic enterprise data evaluations to real Microsoft Copilot AI confidence",
+   "date": "2026-10-30T13:05:28.000Z",
+   "src": "Microsoft Research",
+   "srcId": "microsoft",
+   "kind": "company",
+   "ar": {
+    "title": "من بيانات صناعية لتقييم Microsoft Copilot لثقة AI حقيقية",
+    "summary": "تقييم Microsoft Copilot على مستوى الشركات محتاج بيانات صناعية عشان تحاكي تعقيد المؤسسات، لأن البيانات الحقيقية فيها معلومات حساسة ما ينفعش تستخدمها."
+   }
+  },
+  {
+   "id": "5135d63cacdd",
+   "url": "https://techcrunch.com/2026/10/30/5-days-left-your-last-chance-to-connect-scale-and-save-at-techcrunch-founder-summit-2026/",
+   "title": "5 days left: Your last chance to connect, scale, and save at TechCrunch Founder Summit 2026",
+   "date": "2026-10-30T13:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "5 أيام بس: فرصتك الأخيرة للتسجيل وتوفير في TechCrunch Founder Summit 2026",
+    "summary": "فاضل 5 أيام بس لتوفير لحد 100 دولار والحصول على تذكرة ثانية مجانية لحضور TechCrunch Founder Summit 2026 في بوسطن يوم 4 نوفمبر."
+   }
+  },
+  {
+   "id": "cea73ec16e82",
+   "url": "https://techcrunch.com/2026/10/30/can-ai-data-centers-be-mass-produced-like-cars-and-online-in-48-hours-this-startup-aims-to-find-out/",
+   "title": "Can AI data centers be mass-produced like cars? This startup aims to find out",
+   "date": "2026-10-30T13:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Runware بتصنع مراكز بيانات AI على خط إنتاج زي العربيات",
+    "summary": "ستارت‑آب Runware شغّالة على مصنع لإنتاج مراكز بيانات AI جاهزة على خط تجميع، والتحدي الحقيقي هو إنهم يقدروا يلبوا الطلب على المستوى ده."
+   }
+  },
+  {
+   "id": "c7606af40dbb",
+   "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
+   "title": "Community safety report and new protections for teens",
+   "date": "2026-10-30T09:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "OpenAI تقوي حماية العنف في ChatGPT وتضيف تقارير أمان للمراهقين",
+    "summary": "OpenAI بتقوّي إجراءات منع العنف في ChatGPT بإضافة حماية أوسع وتدخلات مبكرة، وكمان بتلتزم بتقارير أمان عامة للمراهقين."
+   }
+  },
+  {
+   "id": "a25ea1ea21fd",
+   "url": "https://www.marktechpost.com/2026/10/30/samaya-sterling-post-trained-finance-research-model-frontierfinance/",
+   "title": "Samaya AI Releases Sterling: A 3B-Active Finance Research Agent Model that Beats Claude Fable 5.1 on FrontierFinance at 11x Lower Cost",
+   "date": "2026-10-30T07:26:12.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "Samaya AI تطلق Sterling: نموذج بحوث مالية بـ3B بارامتر يتفوق على Claude Fable 5.1 بتكلفة أقل 11 مرة",
+    "summary": "Samaya AI أطلقت Sterling، نموذج بحوث مالية مبني على Nemotron 3.5 Lightning، يحقق 58.9% على FrontierFinance بتكلفة 0.61 دولار للسؤال، متفوق على Claude Fable 5.1 اللي بيكلف 6.89 دولار."
+   }
+  },
+  {
+   "id": "f4afd5415c84",
+   "url": "https://www.marktechpost.com/2026/10/29/edge0-audio8-tts-realistic-0-6b-voice-cloning/",
+   "title": "Edge0 Releases Audio8-TTS-Realistic, a 0.6B Voice Cloning TTS Model",
+   "date": "2026-10-30T05:02:52.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "Edge0 تطلق Audio8‑TTS‑Realistic: نموذج TTS لتقليد الصوت بـ0.6B بارامتر يدعم 23 لغة",
+    "summary": "Edge0 نشرت Audio8‑TTS‑Realistic، نموذج TTS بوزن 0.6B مفتوح المصدر يدعم 23 لغة ويستعمل مرحلة GRPO بتحكم نقدي للواقعية."
+   }
+  },
   {
    "id": "3e1cebb1f9f3",
    "url": "https://techcrunch.com/2026/10/29/you-dont-need-to-believe-in-a-god-to-get-a-religious-exemption-from-using-ai-at-work/",
@@ -625,6 +833,19 @@
    "ar": {
     "title": "نموذج AnySpeechRecognizer و AnyDecisionModel على Apple",
     "summary": ""
+   }
+  },
+  {
+   "id": "6750c2461412",
+   "url": "https://openai.com/index/credit-saison",
+   "title": "Credit Saison achieves 954% ROI in a ChatGPT Enterprise pilot",
+   "date": "2026-10-29T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "Credit Saison تحقق عائد 954% في تجربة ChatGPT Enterprise",
+    "summary": "تجربة ChatGPT Enterprise عند Credit Saison أدت لعائد استثمار 954%، والقياديين والموظفين حولوا النتائج لتطبيق على مستوى الشركة."
    }
   },
   {
@@ -3966,227 +4187,6 @@
    "ar": {
     "title": "Gemini 4 Argon",
     "summary": "Google بتوفر للمطورين والشركات والعلماء ومستخدميها نموذج Gemini 4 Argon المتقدم لحل أصعب المشكلات."
-   }
-  },
-  {
-   "id": "ffc748cb8d88",
-   "url": "https://openai.com/index/higgsfield-longer-videos-voice",
-   "title": "Higgsfield takes AI video from 1 minute to over 10",
-   "date": "2026-10-13T12:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Higgsfield يطوّل الفيديو بالذكاء الاصطناعي",
-    "summary": "Higgsfield بيقدّم فيديوهات أطول باستخدام GPT-6 Astra، وصور دقيقة بـ GPT-Image-2.5، وكمان بيضيف إمكانيات صناعة الأفلام بالصوت عبر GPT-Live."
-   }
-  },
-  {
-   "id": "adadd90b83d7",
-   "url": "https://machinelearning.apple.com/research/mix-dont-tune",
-   "title": "Mix, Don't Tune: Bilingual Pre-Training Outperforms Hyperparameter Search in Data-Constrained Settings",
-   "date": "2026-10-13T00:00:00.000Z",
-   "src": "Apple ML",
-   "srcId": "apple",
-   "kind": "company",
-   "ar": {
-    "title": "التدريب الثنائي اللغة يتفوّق على ضبط المعاملات",
-    "summary": "في اللغات القليلة البيانات، خلط بيانات لغة عالية الموارد مع اللغة المستهدفة بيحسّن النماذج أكتر من تعديل المعاملات زي weight decay."
-   }
-  },
-  {
-   "id": "9dd69dee0c0d",
-   "url": "https://engineering.fb.com/2026/10/12/open-source/ocp-summit-2026-powering-ai-with-open-innovations-in-scale-up-scale-out-and-scale-across-networks/",
-   "title": "OCP Summit 2026: Powering AI with Open Innovations in Scale-Up, Scale-Out, and Scale-Across Networks",
-   "date": "2026-10-12T21:19:18.000Z",
-   "src": "Meta Engineering",
-   "srcId": "meta",
-   "kind": "company",
-   "ar": {
-    "title": "قمة OCP 2026 للذكاء الاصطناعي",
-    "summary": ""
-   }
-  },
-  {
-   "id": "edc939989dc9",
-   "url": "https://engineering.fb.com/2026/10/12/ml-applications/turning-opportunistic-ai-inference-capacity-into-better-ads-recommendations/",
-   "title": "Turning Opportunistic AI Inference Capacity Into Better Ads Recommendations",
-   "date": "2026-10-12T16:00:50.000Z",
-   "src": "Meta Engineering",
-   "srcId": "meta",
-   "kind": "company",
-   "ar": {
-    "title": "تحويل سعة الاستدلال الذكي لاقتراحات إعلانات أفضل",
-    "summary": ""
-   }
-  },
-  {
-   "id": "5d83dba89b9f",
-   "url": "https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/",
-   "title": "Simulating student learning for better AI tutoring",
-   "date": "2026-10-12T16:00:00.000Z",
-   "src": "Microsoft Research",
-   "srcId": "microsoft",
-   "kind": "company",
-   "ar": {
-    "title": "محاكاة تعلم الطلاب لتحسين التدريس بالذكاء الاصطناعي",
-    "summary": "StudentSim نظام بحثي بيحاكي تفاعل الطلاب مع المعلمين الذكيين لتقييم وتحسين أداء أدوات التدريس في مواضيع زي الشطرنج والكتابة والرياضيات."
-   }
-  },
-  {
-   "id": "78d6d66a2b4f",
-   "url": "https://machinelearning.apple.com/research/llm-translation-quality-annotation",
-   "title": "Large Language Models for Machine Translation Quality Annotation: Humans and Models Are Both Challenged",
-   "date": "2026-10-12T00:00:00.000Z",
-   "src": "Apple ML",
-   "srcId": "apple",
-   "kind": "company",
-   "ar": {
-    "title": "تحديات تقييم جودة الترجمة بالـ LLM",
-    "summary": "الدراسة بتقارن أداء نماذج اللغة الكبيرة مع تقييم البشر في تقييم جودة الترجمة، وبتظهر إنهم لسه بيواجهوا صعوبات عبر لغات ومجالات مختلفة."
-   }
-  },
-  {
-   "id": "438f8f82161f",
-   "url": "https://machinelearning.apple.com/research/distributed-gpu-cloud",
-   "title": "Minions: A Dynamic and Distributed Virtual GPU Cloud Built on Idle Apple Silicon Devices",
-   "date": "2026-10-12T00:00:00.000Z",
-   "src": "Apple ML",
-   "srcId": "apple",
-   "kind": "company",
-   "ar": {
-    "title": "Minions: سحابة GPU افتراضية من أجهزة Apple Silicon الخاملة",
-    "summary": "الطلب المتزايد على التعلم الآلي يخلِّي مراكز GPU التقليدية مكلفة وغير مرنة، وMinions بيجمع معالجات الرسوم في أجهزة macOS اللي بتقعد فاضية عشان يكوّن سحابة GPU موزَّعة."
-   }
-  },
-  {
-   "id": "770df069ccb5",
-   "url": "https://machinelearning.apple.com/research/self-compacting-language-agents",
-   "title": "Self-Compacting Language Model Agents",
-   "date": "2026-10-12T00:00:00.000Z",
-   "src": "Apple ML",
-   "srcId": "apple",
-   "kind": "company",
-   "ar": {
-    "title": "SELFCOMPACT: نموذج يضغط نفسه",
-    "summary": "السلاسل الطويلة للوكيل بتتراكم فيها محتوى قديم وبتقرب من حد السياق، وSELFCOMPACT بيسمح للنموذج يحدد بنفسه وقت وطريقة الضغط بدل ما يعتمد على عتبة ثابتة."
-   }
-  },
-  {
-   "id": "edd58468d564",
-   "url": "https://openai.com/index/sophos",
-   "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
-   "date": "2026-10-09T07:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Sophos توفر 96% وقت التحقيق مع Daybreak",
-    "summary": "شركة Sophos استخدمت Daybreak من OpenAI لتقليل وقت فحص التهديدات بنسبة 96% وتلقائية 52% من حالات MDR مع الحفاظ على إشراف بشري."
-   }
-  },
-  {
-   "id": "90995f7dbc9c",
-   "url": "https://openai.com/index/asana-browser-agent",
-   "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
-   "date": "2026-10-09T07:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Asana تخفض تكلفة النموذج 76 مرة",
-    "summary": "Asana استعملت GPT-6 Astra في Codex وحققت توفير 76× في تكلفة الوكيل المتصفح، وكمان سرّعته 5 مرات."
-   }
-  },
-  {
-   "id": "112b5f00879d",
-   "url": "https://openai.com/index/oracle",
-   "title": "How Oracle turns days of work into minutes with ChatGPT and Codex",
-   "date": "2026-10-08T16:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Oracle تحول أيام شغل لدقايق بـ ChatGPT",
-    "summary": "Oracle بتستغل ChatGPT Work وCodex لتحويل المعرفة المتخصصة إلى سير عمل سريع وقابل للتكرار في التوظيف والهندسة والعمليات."
-   }
-  },
-  {
-   "id": "ca1ec6c6a1a1",
-   "url": "https://openai.com/index/pollo-ai",
-   "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
-   "date": "2026-10-08T12:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Pollo AI تحول الأفكار لحملات إعلانية",
-    "summary": "Pollo AI بتستعين بـ GPT-5.6 وGPT-6 Astra وGPT‑Image‑2.5 لتوليد صور وفيديوهات إعلانية من الأفكار الإبداعية."
-   }
-  },
-  {
-   "id": "f6d3626eb7c8",
-   "url": "https://openai.com/index/legalon-halves-codex-costs",
-   "title": "LegalOn halves Codex costs while maintaining development speed",
-   "date": "2026-10-08T12:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "LegalOn تخفض تكاليف Codex للنصف",
-    "summary": "LegalOn قللت تكلفة Codex اليومية 65% مع الحفاظ على سرعة التطوير، ووزعت نماذج Astra وSol وLuna على المهام وضبطت الميزانية."
-   }
-  },
-  {
-   "id": "077dea1e8a7a",
-   "url": "https://openai.com/index/disrupting-ai-enabled-false-front-operations",
-   "title": "Disrupting AI-enabled “false front” operations",
-   "date": "2026-10-08T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "OpenAI توقف عمليات تأثير مزيفة بالذكاء",
-    "summary": "OpenAI نجحت في إيقاف عمليتين لتأثيرات مدعومة بالذكاء الاصطناعي كانوا بيستغلوا صحفيين وهميين ومركز أبحاث لنشر رسائل جيوسياسية."
-   }
-  },
-  {
-   "id": "0f05fd4155a4",
-   "url": "https://huggingface.co/blog/building-with-ml-intern",
-   "title": "The model that didn't exist, so you made it yourself",
-   "date": "2026-10-08T00:00:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "النموذج اللي ماكانش موجود، فعملته بنفسك",
-    "summary": ""
-   }
-  },
-  {
-   "id": "fc6c16485847",
-   "url": "https://research.google/blog/does-better-work-always-mean-better-workers/",
-   "title": "Does better work always mean better workers?",
-   "date": "2026-10-07T20:19:57.000Z",
-   "src": "Google Research",
-   "srcId": "google-research",
-   "kind": "company",
-   "ar": {
-    "title": "هل الشغل الأحسن يعني عمال أحسن؟",
-    "summary": ""
-   }
-  },
-  {
-   "id": "565e240356c9",
-   "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
-   "title": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses",
-   "date": "2026-10-07T16:00:00.000Z",
-   "src": "Microsoft Research",
-   "srcId": "microsoft",
-   "kind": "company",
-   "ar": {
-    "title": "Agent Lightning v1.0: إطار خفيف لتدريب الوكلاء",
-    "summary": "Agent Lightning بيوصل الوكلاء الموجودين لتدريب التعزيز، ويسهّل تحسينهم من غير ما تعيد بناء الإطار بالكامل."
    }
   }
  ]
