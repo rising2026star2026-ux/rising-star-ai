@@ -57,6 +57,8 @@ jobs:
           REPO="https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git clone -q --depth 1 --branch ci-results "$REPO" /tmp/r 2>/dev/null || { mkdir -p /tmp/r && cd /tmp/r && git init -q && git checkout -q -b ci-results && git remote add origin "$REPO"; }
           cd /tmp/r
+          # الفرع ده صور ونتايج بس: Vercel ما يبنيهوش
+          [ -f vercel.json ] || printf '{ "git": { "deploymentEnabled": false } }\n' > vercel.json
           ls -1d runs/* 2>/dev/null | sort | head -n -3 | xargs -r git rm -rq
           mkdir -p "$RUN" && cp -r "$GITHUB_WORKSPACE/ci-out/." "$RUN/"
           echo "$RUN" > LATEST

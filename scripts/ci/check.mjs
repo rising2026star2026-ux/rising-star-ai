@@ -34,16 +34,28 @@ for (const check of CHECKS) {
     const t0 = Date.now();
     let ok = true;
     const tag = `${check.name}-${vp}`;
+    // صورة للشاشة الحالية بس (مقروءة)، أو كذا صورة ورا بعض لحد آخر الصفحة (screens)
     const shot = async (label, opts = {}) => {
       const file = path.join(OUT, `${tag}-${label}.jpg`);
-      await page.screenshot({ path: file, type: "jpeg", quality: 62, fullPage: opts.full !== false, ...(opts.clip ? { clip: opts.clip, fullPage: false } : {}) });
+      await page.screenshot({ path: file, type: "jpeg", quality: 70, fullPage: !!opts.full });
+    };
+    const screens = async (label, max = 6) => {
+      const H = page.viewportSize().height;
+      const total = await page.evaluate(() => document.documentElement.scrollHeight);
+      const n = Math.min(max, Math.ceil(total / (H * 0.9)));
+      for (let i = 0; i < n; i++) {
+        await page.evaluate((y) => window.scrollTo(0, y), Math.round(i * H * 0.9));
+        await page.waitForTimeout(450);
+        await shot(`${label}-${i + 1}`);
+      }
+      await page.evaluate(() => window.scrollTo(0, 0));
     };
     const save = async (label, data) => fs.writeFile(path.join(OUT, `${tag}-${label}.json`), JSON.stringify(data, null, 2));
     try {
       await page.goto(BASE + check.path, { waitUntil: "networkidle", timeout: 60000 });
       await page.waitForTimeout(check.settle ?? 1200);
-      if (check.run) await check.run({ page, shot, save, note: (n) => notes.push(n), vp, BASE });
-      else await shot("page");
+      if (check.run) await check.run({ page, shot, screens, save, note: (n) => notes.push(n), vp, BASE });
+      else await screens("page", check.max || 4);
     } catch (e) {
       ok = false;
       notes.push(`FAILED: ${String(e?.message || e).slice(0, 800)}`);

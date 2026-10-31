@@ -6,32 +6,9 @@ import { useEffect, useRef, useState } from "react";
 import { Drop, Seg, ColorField, Workbench, Note, Busy, styles as s } from "./ui";
 import { IMAGE_TYPES, loadImage, makeCanvas, canvasToBlob, download, baseName, fitWithin, checker } from "./util";
 import { toast } from "@/lib/store";
+import { cutoutCanvas, progressTracker } from "./cutout";
 
-const TJS = "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1";
-const MODEL = "onnx-community/BiRefNet_lite-ONNX";
 const WORK_MAX = 2048;
-
-let loader = null; // الموديل بيتحمّل مرة واحدة للصفحة كلها
-function getModel(onProgress) {
-  if (!loader) {
-    loader = (async () => {
-      const T = await import(/* webpackIgnore: true */ TJS);
-      T.env.allowLocalModels = false;
-      const tries = [];
-      if (typeof navigator !== "undefined" && navigator.gpu) tries.push({ device: "webgpu", dtype: "fp16" }, { device: "webgpu", dtype: "fp32" });
-      tries.push({ device: "wasm", dtype: "q8" }, { device: "wasm", dtype: "fp32" });
-      let last;
-      for (const o of tries) {
-        try {
-          const seg = await T.pipeline("image-segmentation", MODEL, { ...o, progress_callback: onProgress });
-          return { T, seg };
-        } catch (e) { last = e; }
-      }
-      throw last;
-    })().catch((e) => { loader = null; throw e; });
-  }
-  return loader;
-}
 
 export default function AiRemoveBg() {
   const [stage, setStage] = useState("empty"); // empty | load | work | done
@@ -66,32 +43,8 @@ export default function AiRemoveBg() {
       base.getContext("2d").drawImage(im, 0, 0, w, h);
 
       setStage("load"); setPct(0);
-      const files = new Map();
-      const { T, seg } = await getModel((p) => {
-        if (p.status === "progress" && p.total) {
-          files.set(p.file, [p.loaded, p.total]);
-          let a = 0, b = 0;
-          for (const [l, t] of files.values()) { a += l; b += t; }
-          setPct(Math.round((a / b) * 100));
-        }
-      });
-
-      setStage("work");
-      const raw = await T.RawImage.fromBlob(await canvasToBlob(base, "png"));
-      const out = await seg(raw);
-      const mask = (Array.isArray(out) ? out[0] : out)?.mask;
-      if (!mask) throw new Error("الموديل ما رجّعش نتيجة.");
-
-      // نكبّر القناع لمقاس الصورة ونستخدمه كشفافية
-      const mc = makeCanvas(w, h);
-      const mctx = mc.getContext("2d", { willReadFrequently: true });
-      mctx.drawImage(mask.toCanvas(), 0, 0, w, h);
-      const m = mctx.getImageData(0, 0, w, h).data;
-      const bctx = base.getContext("2d", { willReadFrequently: true });
-      const px = bctx.getImageData(0, 0, w, h);
-      for (let i = 0; i < px.data.length; i += 4) px.data[i + 3] = m[i];
-      bctx.putImageData(px, 0, 0);
-      cut.current = base;
+      const cut1 = await cutoutCanvas(base, progressTracker(setPct), () => setStage("work"));
+      cut.current = cut1;
       setStage("done");
     } catch (e) {
       console.error(e);
