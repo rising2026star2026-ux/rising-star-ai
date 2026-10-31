@@ -1,34 +1,359 @@
 {
- "updated": "2026-10-30T17:06:49.546Z",
+ "updated": "2026-10-31T05:05:11.710Z",
  "providers": [
   "groq",
   "openrouter",
   "gemini"
  ],
  "used": {
-  "groq": 5,
-  "gemini": 1
+  "groq": 6,
+  "gemini": 3
  },
  "feeds": {
-  "openai": "ok 72",
-  "google-research": "ok 11",
-  "aws": "ok 20",
+  "deepmind": "ok 9",
   "apple": "ok 10",
   "techcrunch": "ok 20",
+  "aws": "ok 20",
+  "meta": "ok 9",
   "nvidia": "ok 18",
   "huggingface": "ok 25",
   "verge": "ok 10",
-  "meta": "ok 9",
-  "deepmind": "ok 10",
+  "google-research": "ok 11",
+  "openai": "ok 73",
+  "arstechnica": "ok 20",
+  "techwd": "ok 4",
   "google-ai": "ok 5",
   "marktechpost": "ok 10",
-  "techwd": "ok 4",
-  "arstechnica": "ok 20",
+  "aitnews": "ok 6",
   "microsoft": "ok 9",
-  "venturebeat": "FAIL HTTP 429",
-  "aitnews": "FAIL HTTP 415"
+  "venturebeat": "FAIL HTTP 429"
  },
  "items": [
+  {
+   "id": "6336aff37e57",
+   "url": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
+   "title": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
+   "date": "2026-10-31T01:20:05.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Nvidia ممكن تكون كفيل لتمويل مركز بيانات Nscale في فرجينيا الغربية",
+    "summary": "لما المستثمرين يقلقوا من إنفاق الذكاء الاصطناعي، Nvidia اللي بتبيع الشرائح عرضت تكون كفيل للقرض الخاص بمركز بيانات Nscale في فرجينيا الغربية."
+   }
+  },
+  {
+   "id": "43523836c604",
+   "url": "https://techcrunch.com/2026/10/30/ollie-a-privacy-focused-ai-assistant-is-shutting-down/",
+   "title": "Ollie, a privacy-focused AI assistant, is shutting down",
+   "date": "2026-10-30T22:56:13.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "مساعد الذكاء الاصطناعي Ollie يغلق",
+    "summary": "مؤسس Ollie، المساعد اللي كان بيركّز على خصوصية المستخدمين، أعلن إنه هيتوقف خلال أسبوع بسبب تزايد عدد المساعدين في السوق."
+   }
+  },
+  {
+   "id": "963a648beab8",
+   "url": "https://aws.amazon.com/blogs/machine-learning/managing-amazon-bedrock-costs-end-to-end-a-playbook-for-finops-and-platform-teams/",
+   "title": "Managing Amazon Bedrock costs end to end: A playbook for FinOps and platform teams",
+   "date": "2026-10-30T22:42:24.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "دليل إدارة تكاليف Amazon Bedrock",
+    "summary": "المقال بيقدّم نموذج تشغيل من خمس مراحل لإدارة تكلفة Amazon Bedrock: تخصيص كل دولار لمالك، مراقبة كل طلب، فرض الميزانيات، تحسين الإعدادات الافتراضية، ومراجعة دورية، موجه لفرق FinOps والهندسة."
+   }
+  },
+  {
+   "id": "011fdc062b2b",
+   "url": "https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3",
+   "title": "Apple Intelligence is finally coming to China with iOS 27.3",
+   "date": "2026-10-30T22:32:53.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "Apple Intelligence توصل للصين مع iOS 27.3",
+    "summary": "آبل هتنشر Apple Intelligence في الصين عبر iOS 27.3، أولاً في نسخة تجريبية هتنزل 4 نوفمبر، والإصدار الكامل في ديسمبر."
+   }
+  },
+  {
+   "id": "25a528e218b1",
+   "url": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
+   "title": "The biggest names in AI are backing a new way to opt out of scraping",
+   "date": "2026-10-30T22:04:23.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "أكبر شركات الذكاء الاصطناعي تدعم معيار للانسحاب من التجريف",
+    "summary": "OpenAI وGoogle وMicrosoft وAnthropic هيتبنوا معيار جديد يخلّي الناشرين يقدروا يحددوا إن محتواهم ما يتجمعش لتدريب الذكاء الاصطناعي، من خلال إشارة \"policy token\" موحدة."
+   }
+  },
+  {
+   "id": "6198118eee13",
+   "url": "https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/",
+   "title": "Intel’s stock crashes, knocking $12B from government’s stake",
+   "date": "2026-10-30T21:54:34.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "سهم Intel ينهار ويخسر 12 مليار من حصة الحكومة",
+    "summary": "سهم Intel انخفض بسبب ضعف مبيعات الحواسيب الشخصية، بينما قطاع الذكاء الاصطناعي بيستهلك الذاكرة ومكونات تانية، مما رفع أسعار الأجهزة."
+   }
+  },
+  {
+   "id": "60ba719a0574",
+   "url": "https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/",
+   "title": "Anthropic expected to receive high ‘junk’ rating from credit agencies following IPO, FT report says",
+   "date": "2026-10-30T21:52:03.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "توقع تصنيف Anthropic كديون عالية بعد الاكتتاب",
+    "summary": "تقرير FT بيقول إن وكالات التصنيف ممكن تعطي Anthropic تصنيف \"junk\" عالي، وده هيصعب عليها جمع تمويل لتغطية إنفاقها الكبير."
+   }
+  },
+  {
+   "id": "df26d5473c41",
+   "url": "https://arstechnica.com/gadgets/2026/10/united-airlines-ceo-doubts-supersonic-airliner-from-boom-will-be-ready-by-2029/",
+   "title": "Supersonic airliner in doubt as company shifts to powering AI data centers",
+   "date": "2026-10-30T21:41:54.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": {
+    "title": "مشروع الطائرة الفائقة السرعة يتأخر بعد تحول الشركة لتشغيل مراكز بيانات AI",
+    "summary": "شركة Boom ممكن تأخر طائرتها الفائقة السرعة، وكمان فقدت عميل في مجال تشغيل مراكز بيانات الذكاء الاصطناعي."
+   }
+  },
+  {
+   "id": "168738aae15d",
+   "url": "https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime/",
+   "title": "Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime",
+   "date": "2026-10-30T21:40:03.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "معاينة تطبيقات الويب مباشرة مع Amazon Bedrock AgentCore",
+    "summary": "Amazon Bedrock AgentCore بيوفر جلسات ب URL موثّق يقدر يوجه أي طلب HTTP أو WebSocket للمنفذ اللي انت تسمحه. في المقال بننشّط وكيل برمجي يشغّل موقع Vite داخل الجلسة ونشوف التحديثات مباشرة في المتصفح."
+   }
+  },
+  {
+   "id": "0806533d8a71",
+   "url": "https://techcrunch.com/2026/10/30/last-minute-halloween-costumes-for-tech-nerds/",
+   "title": "Last-minute Halloween costumes for tech nerds",
+   "date": "2026-10-30T21:26:59.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "أزياء هالوين للمهتمين بالتقنية",
+    "summary": "مش لاقي لبس هالوين؟ ممكن تكون أيقونة AI ظريفة، أو ثغرة PHP، أو برايان جونسون النعسان."
+   }
+  },
+  {
+   "id": "f1f6194d2036",
+   "url": "https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/",
+   "title": "Cracks are emerging in the AI spending boom",
+   "date": "2026-10-30T21:17:40.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "تراجع في إنفاق الذكاء الاصطناعي يثير القلق",
+    "summary": "الشركات الكبيرة بتصرف مليارات على بنية AI، لكن الديون المتزايدة، التدفق النقدي السلبي، والشك المتصاعد من المستثمرين بيخلّي الناس تتساءل إذا كان هالإنفاق مستدام."
+   }
+  },
+  {
+   "id": "ce0cce9f3bc5",
+   "url": "https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/",
+   "title": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
+   "date": "2026-10-30T21:09:54.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": {
+    "title": "ثغرة في امتداد Anthropic VS على Cursor استمرت 12 ساعة",
+    "summary": "تم اختراق امتداد Anthropic VS على Cursor لمدة تقريبًا 12 ساعة، ولسه مش معروف إزاي المهاجمين وصلوا لحساب Cursor الموثق."
+   }
+  },
+  {
+   "id": "e6a83342c0c5",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1023820/sam-altman-ram-shortage-cloud-servers",
+   "title": "Sam Altman says it’s better for RAM to be in a data center than on your desk",
+   "date": "2026-10-30T20:48:43.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "سام ألتمان: الأفضل تخزين الرام في مراكز البيانات مش على الكمبيوتر",
+    "summary": "سام ألتمان قال إن نقص الرام في الأجهزة الشخصية أمر سيء، وإنه أفضل يكون الرام في مراكز البيانات. الكلام ده جاء خلال مقابلة في بودكاست Cheeky Pint."
+   }
+  },
+  {
+   "id": "65d255a74525",
+   "url": "https://arstechnica.com/tech-policy/2026/10/dartmouths-provost-warned-us-about-ai-cheating-but-his-own-ai-use-cost-him-his-job/",
+   "title": "Dartmouth's provost warned us about AI cheating—but his own AI use cost him his job",
+   "date": "2026-10-30T20:40:13.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": {
+    "title": "عميد دارتماوث ينهى عن AI للغش ويتعرض للطرد بسبب استخدامه للـ AI",
+    "summary": "عميد دارتماوث حذر من الغش باستخدام AI، لكن استخدامه الشخصي للـ AI أدى لفقدانه للوظيفة."
+   }
+  },
+  {
+   "id": "538ea1326a6a",
+   "url": "https://arstechnica.com/ai/2026/10/doordash-says-outside-ai-agents-have-only-led-to-hundreds-of-orders-so-far/",
+   "title": "Basically no one is using AI agents for their DoorDash orders",
+   "date": "2026-10-30T19:30:52.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": {
+    "title": "قليل من الناس بيستعملوا وكلاء AI لطلبات DoorDash",
+    "summary": "قليل من الناس بيستعملوا وكلاء AI لطلبات DoorDash، لكن لسه بدري على الاستخدام الواسع في التجارة الإلكترونية."
+   }
+  },
+  {
+   "id": "c4dbacf8aa2b",
+   "url": "https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission",
+   "title": "Google’s satellite AI server transmits its first response to Earth",
+   "date": "2026-10-30T18:21:38.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "قمر صناعي من Google يرسل أول رد من AI للفضاء",
+    "summary": "قمر صناعي من Google مزوّد بشريحة AI أرسل أول رد من الفضاء. حسب المدونة، تم تشغيل وحدات TPU على القمر وخلّى نموذج Gemma 4 يكتب هايكو عن الفضاء."
+   }
+  },
+  {
+   "id": "b2263e9f8412",
+   "url": "https://huggingface.co/blog/nvidia/nemotron-halloween",
+   "title": "nemotron-halloween",
+   "date": "2026-10-30T17:57:24.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": {
+    "title": "نيموترون - هالوين",
+    "summary": ""
+   }
+  },
+  {
+   "id": "00aeec5afb00",
+   "url": "https://www.marktechpost.com/2026/10/30/microsoft-tokeneconomizer-coding-agent-cost-control/",
+   "title": "Meet TokenEconomizer: Microsoft’s Plugin That Cuts Coding Agent Costs by Up to 30.9%",
+   "date": "2026-10-30T17:53:37.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "TokenEconomizer: إضافة مايكروسوفت لتقليل تكلفة الوكلاء",
+    "summary": "مايكروسوفت ريسيرش وجامعة كاليفورنيا بيركلي أطلقوا TokenEconomizer، إضافة مفتوحة المصدر بتقلل تكلفة توكنات الوكلاء البرمجية من 18.4% لحد 30.9% على SWE‑Bench من غير ما تغير في الوكيل."
+   }
+  },
+  {
+   "id": "d52c9778a55e",
+   "url": "https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/",
+   "title": "Zest’s new AI agent finds restaurants and books reservations over text",
+   "date": "2026-10-30T17:47:12.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Zest: وكيل AI يحجز المطاعم بالرسائل",
+    "summary": "Zest بيقدملك وكيل AI يدمج أذواق الكل، يعمل تصويت على المطاعم، ويحجز لك الطاولة عن طريق الرسائل."
+   }
+  },
+  {
+   "id": "b10570d1171f",
+   "url": "https://arstechnica.com/gadgets/2026/10/fujifilm-to-boost-tape-production-5x-as-ai-fuels-archiving-demand/",
+   "title": "Fujifilm to boost tape production 5x as AI fuels archiving demand",
+   "date": "2026-10-30T17:38:19.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": {
+    "title": "فوجي فيلم تزيد إنتاج الشريط المغناطيسي 5 أضعاف",
+    "summary": "فوجي فيلم هتزود إنتاج الشريط المغناطيسي خمس مرات بسبب الطلب المتزايد على الأرشفة، لأن الشريط رخيص وآمن من الناحية الأوفلاين."
+   }
+  },
+  {
+   "id": "0de3f9697e49",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru",
+   "title": "Starbucks wants to use AI to show you a ‘personalized digital menu’ at the drive-thru",
+   "date": "2026-10-30T17:38:04.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "ستاربكس يخطط لقائمة رقمية مخصصة في الدرايف‑ثرو",
+    "summary": "ستاربكس ممكن يوريك قائمة رقمية مخصصة لما توصل للدرّايڤ‑ثرو، وبيخططوا لتجربة تعرف الزبون وتقدم له قائمة شخصية وتسهّل الدفع."
+   }
+  },
+  {
+   "id": "a8738faa1f17",
+   "url": "https://www.marktechpost.com/2026/10/30/ai-security-agents-claude-codex-mantis-cloudflare/",
+   "title": "AI Security Agents Compared: Claude, Codex, Mantis, Cloudflare",
+   "date": "2026-10-30T17:34:15.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "مقارنة وكلاء الأمن AI: Claude، Codex، Mantis، Cloudflare",
+    "summary": "أنثروبيك، أوبن AI، كلاودفلير وجوجل قدموا وكلاء AI بيدوروا على ثغرات الأمان في الكود، كلهم بيتبعوا نفس دورة البحث، إثبات، وتصحيح، مع اختلافات بينهم."
+   }
+  },
+  {
+   "id": "45af74876da1",
+   "url": "https://aws.amazon.com/blogs/machine-learning/how-worldwide-express-automated-freight-exceptions-with-amazon-bedrock/",
+   "title": "How Worldwide Express automated freight exceptions with Amazon Bedrock",
+   "date": "2026-10-30T17:32:20.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "Worldwide Express تستخدم Amazon Bedrock لتقليل استثناءات الشحن",
+    "summary": "شركة Worldwide Express أتمتت عملية استثناءات الفواتير للشحن باستخدام حل متعدد الوكلاء مبني على Amazon Bedrock، وخفضت الاستثناءات 75%، وسرّعت التحصيل بأربعة أسابيع، وكسبت 10 مليون دولار تدفق نقدي حر."
+   }
+  },
+  {
+   "id": "bf0d3d19a39d",
+   "url": "https://aws.amazon.com/blogs/machine-learning/configure-the-chatgpt-desktop-app-with-amazon-bedrock-in-aws-govcloud-us/",
+   "title": "Configure the ChatGPT desktop app with Amazon Bedrock in AWS GovCloud (US)",
+   "date": "2026-10-30T17:27:45.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "تطبيق ChatGPT لسطح المكتب على Amazon Bedrock في GovCloud",
+    "summary": "التطبيق بقى متاح على Amazon Bedrock في AWS GovCloud (US)، والدليل يوضح نشر محلي يتحكم في توجيه الاستدلال للنموذج عبر API مع سياسات أمان وشبكة مقيدة."
+   }
+  },
+  {
+   "id": "135f70cd39eb",
+   "url": "https://techcrunch.com/2026/10/30/googles-first-data-center-satellite-is-online-and-writing-poetry/",
+   "title": "Google’s first data center satellite is online and writing poetry",
+   "date": "2026-10-30T17:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "قمر صناعي لمركز بيانات جوجل يكتب شعر",
+    "summary": "أول معالج TPU في الفضاء شغّال على نموذج Gemma 4 من DeepMind وبيكتب شعر رومانسي بسيط."
+   }
+  },
   {
    "id": "1a9f926a45b8",
    "url": "https://arstechnica.com/tech-policy/2026/10/doj-exposes-ghost-students-using-ai-to-complete-courses-steal-student-loans/",
@@ -199,6 +524,19 @@
    }
   },
   {
+   "id": "25cc4c9bb2e3",
+   "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+   "title": "Making it easier for websites to express AI training preferences",
+   "date": "2026-10-30T09:30:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "OpenAI تدعم إشارة robots.txt لتفضيلات التدريب",
+    "summary": "OpenAI هتلتزم بإشارة robots.txt المشتركة عشان أصحاب المواقع يوضحوا إيه البيانات اللي يسمحوا باستخدامها في تدريب نماذج الذكاء الاصطناعي."
+   }
+  },
+  {
    "id": "c7606af40dbb",
    "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
    "title": "Community safety report and new protections for teens",
@@ -248,6 +586,19 @@
    "ar": {
     "title": "إعفاء ديني من استخدام الذكاء الاصطناعي في الشغل",
     "summary": "ديفيد دورمان من جامعة كنتاكي حصل على إعفاء ديني يسمح له بعدم استعمال أدوات الذكاء الاصطناعي في مكان العمل."
+   }
+  },
+  {
+   "id": "d2282bcce162",
+   "url": "https://openai.com/index/fair-use-benefits-everyone",
+   "title": "Fair use benefits everyone",
+   "date": "2026-10-30T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "OpenAI توضح أهمية الاستخدام العادل",
+    "summary": "OpenAI شاركت مقتطفات من مذكرات قانونية لكتاب، أكاديميين، ومدافعين عن الإتاحة، بتوضح إزاي الاستخدام العادل بيدعم تدريب الذكاء الاصطناعي والابتكار."
    }
   },
   {
@@ -3836,357 +4187,6 @@
    "ar": {
     "title": "توفير GPT-Rosalind لمختبرات الأبحاث الأكاديمية",
     "summary": "إطلاق خطة Rosalind الأكاديمية اللي بتدي المختبرات المؤهلة إمكانية الوصول المدعوم لأداة GPT-Rosalind وأدوات تانية لتطوير أبحاث علوم الحياة."
-   }
-  },
-  {
-   "id": "996b33c09ad5",
-   "url": "https://deepmind.google/blog/accelerating-antimicrobial-discovery/",
-   "title": "Accelerating the search for antimicrobial peptides with Google Antigravity",
-   "date": "2026-10-15T16:08:03.000Z",
-   "src": "Google DeepMind",
-   "srcId": "deepmind",
-   "kind": "company",
-   "ar": {
-    "title": "تسريع البحث عن الببتيدات المضادة للميكروبات بـ Google Antigravity",
-    "summary": "استخدام أداة Google Antigravity for Science عشان يسرعوا بيه عملية البحث عن ببتيدات جديدة ومبتكرة مضادة للميكروبات."
-   }
-  },
-  {
-   "id": "4069e5410c3e",
-   "url": "https://www.microsoft.com/en-us/research/blog/proof-based-general-purpose-computing-with-magnetar/",
-   "title": "Proof-based general-purpose computing with Magnetar",
-   "date": "2026-10-15T16:00:00.000Z",
-   "src": "Microsoft Research",
-   "srcId": "microsoft",
-   "kind": "company",
-   "ar": {
-    "title": "الحوسبة العامة القائمة على الإثبات باستخدام Magnetar",
-    "summary": "أداة Magnetar من مايكروسوفت بتجيب إثباتات المعرفة الصفرية للمجال الرئيسي بدعم لغات البرمجة العادية وسرعة أكبر وأمان مقاوم للكم."
-   }
-  },
-  {
-   "id": "fa14b8f7db46",
-   "url": "https://openai.com/index/teaching-students-to-think-and-learn-through-questions",
-   "title": "Teaching students to think and learn through questions",
-   "date": "2026-10-15T13:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "تعليم الطلاب التفكير والتعلم عن طريق الأسئلة",
-    "summary": "احتفالاً بيوم المعلم، تم توفير أدوات الذكاء الاصطناعي للمعلمين بالبرتغالية البرازيلية ووضع الدراسة لمساعدة الطلاب في التعلم النشط خطوة بخطوة."
-   }
-  },
-  {
-   "id": "e3c36d4422c6",
-   "url": "https://huggingface.co/blog/swiss-ai/apertus-v15-release-notes",
-   "title": "Apertus 1.5 Release Notes",
-   "date": "2026-10-15T09:08:45.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "إصدار ملاحظات Apertus 1.5",
-    "summary": "الإعلان عن تفاصيل وملاحظات الإصدار الجديد Apertus 1.5."
-   }
-  },
-  {
-   "id": "dd00c04c9b95",
-   "url": "https://openai.com/index/sullivan-cromwell",
-   "title": "Sullivan & Cromwell brings legal expertise into agreement review",
-   "date": "2026-10-15T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "مكتب Sullivan & Cromwell بيدخل الخبرة القانونية في مراجعة العقود",
-    "summary": "بالتعاون مع OpenAI، مكتب Sullivan & Cromwell طور أداة Agreement Analyzer عشان تساعدهم في اكتشاف المشاكل جوه مسودات العقود."
-   }
-  },
-  {
-   "id": "98e6a11f87f3",
-   "url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
-   "title": "Local and Distributed Large LLM Inference with MLX and RDMA on Mac Studio",
-   "date": "2026-10-15T00:00:00.000Z",
-   "src": "Apple ML",
-   "srcId": "apple",
-   "kind": "company",
-   "ar": {
-    "title": "تشغيل نماذج LLM الكبيرة محليًا على Mac Studio باستخدام MLX و RDMA",
-    "summary": "MLX بيستغل بنية الذاكرة الموحدة في شريحة Apple silicon علشان يخلّي الباحثين يجرّبوا نماذج LLM الكبيرة وتعديلها على جهازهم بشكل خاص وآمن."
-   }
-  },
-  {
-   "id": "1aaf9ecdd8b2",
-   "url": "https://machinelearning.apple.com/research/selection-structured-reasoning",
-   "title": "Selection-Based Structured Reasoning: Toward Efficient Multimodal Search Agents",
-   "date": "2026-10-15T00:00:00.000Z",
-   "src": "Apple ML",
-   "srcId": "apple",
-   "kind": "company",
-   "ar": {
-    "title": "التفكير الهيكلي القائم على الاختيار للوكيل المتعدد الوسائط",
-    "summary": "SSR بيحوّل عملية التفكير من توليد نص حر إلى اختيار من خيارات مسبقة، وده بيقلل تكلفة الاستدلال وبيسرّع اتخاذ الإجراءات للنماذج الصغيرة."
-   }
-  },
-  {
-   "id": "7f2975ae8e0c",
-   "url": "https://machinelearning.apple.com/research/plan-retrieve-tool-discovery",
-   "title": "Plan or Retrieve First? A Scale Study of Tool Discovery Architectures",
-   "date": "2026-10-15T00:00:00.000Z",
-   "src": "Apple ML",
-   "srcId": "apple",
-   "kind": "company",
-   "ar": {
-    "title": "هل نخطط قبل ما نسترجع الأدوات؟ دراسة مقارنة",
-    "summary": "النهج التقليدي (Retrieve‑then‑Plan) بيسترجع الأدوات قبل التخطيط، لكن بيواجه مشكلة طول السياق. الدراسة بتقارن بديل (Plan‑then‑Retrieve) اللي بيولّد أولًا توقيعات أدوات افتراضية قبل ما يدوّر على الأدوات الفعلية."
-   }
-  },
-  {
-   "id": "9d251ac6836a",
-   "url": "https://huggingface.co/blog/meta-muse-spark-open",
-   "title": "Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta",
-   "date": "2026-10-15T00:00:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "Muse Spark Open من Meta: نموذج متعدد الوسائط بوزن مفتوح",
-    "summary": ""
-   }
-  },
-  {
-   "id": "3733c75a28bf",
-   "url": "https://huggingface.co/blog/flux-3",
-   "title": "Welcome FLUX.3 Image Klein in Diffusers",
-   "date": "2026-10-15T00:00:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "إطلاق FLUX.3 Image Klein في Diffusers",
-    "summary": ""
-   }
-  },
-  {
-   "id": "93dc9e9d57ba",
-   "url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/",
-   "title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
-   "date": "2026-10-14T16:14:00.000Z",
-   "src": "Google Research",
-   "srcId": "google-research",
-   "kind": "company",
-   "ar": {
-    "title": "استخدام Earth AI في حل تحديات كوكبنا",
-    "summary": "Earth AI بيقدّم وكلاء جغرافيين لتحليل البيانات المكانية ومواجهة أكبر التحديات البيئية."
-   }
-  },
-  {
-   "id": "e5f78e0104d8",
-   "url": "https://research.google/blog/analyzing-technical-documents-with-deep-review/",
-   "title": "Analyzing technical documents with Deep Review",
-   "date": "2026-10-14T16:14:00.000Z",
-   "src": "Google Research",
-   "srcId": "google-research",
-   "kind": "company",
-   "ar": {
-    "title": "تحليل المستندات التقنية مع Deep Review",
-    "summary": "Deep Review بيساعد على فحص وتحليل الوثائق التقنية بسرعة."
-   }
-  },
-  {
-   "id": "19f3965005eb",
-   "url": "https://research.google/blog/research-2026-10-ways-were-amplifying-human-ingenuity/",
-   "title": "Research@ 2026: 10 ways we're amplifying human ingenuity",
-   "date": "2026-10-14T16:14:00.000Z",
-   "src": "Google Research",
-   "srcId": "google-research",
-   "kind": "company",
-   "ar": {
-    "title": "Research@2026: 10 طرق لتعزيز الإبداع البشري",
-    "summary": "المنشور بيستعرض عشر مبادرات هدفها رفع قدرات الابتكار البشري."
-   }
-  },
-  {
-   "id": "a0e0fec2c2b5",
-   "url": "https://openai.com/index/amp-beyond-coding",
-   "title": "Amp puts AI agents to work beyond code with OpenAI models",
-   "date": "2026-10-14T12:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Amp بتوظف وكلاء AI مع نماذج OpenAI",
-    "summary": "Amp بيستعرض إمكانيات الوكلاء باستخدام GPT‑6 Astra، Ultrafast، GPT‑Live‑1، وميزة Sign in with ChatGPT."
-   }
-  },
-  {
-   "id": "24cc989c02db",
-   "url": "https://openai.com/index/sentinelone",
-   "title": "SentinelOne cuts malware analysis from weeks to hours",
-   "date": "2026-10-14T12:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "SentinelOne تقلل تحليل البرمجيات الضارة من أسابيع لساعات",
-    "summary": "مع OpenAI Daybreak، SentinelOne بتسرّع تحليل البرمجيات الضارة من أسابيع لساعات، وده بيسمح لها تحقق في تهديدات أكتر."
-   }
-  },
-  {
-   "id": "e181547094b0",
-   "url": "https://openai.com/index/third-moment-research",
-   "title": "How Third Moment Research runs 10,000 agents for 36+ hours",
-   "date": "2026-10-14T07:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Third Moment Research تشغّل 10,000 وكيل AI لأكثر من 36 ساعة",
-    "summary": "المختبر بيستخدم GPT‑6 Astra، GPT‑6.1 Sol، Codex، وDaybreak للأمن السيبراني لتشغيل وكلاء يشتغلوا أيام ويتحسنوا مع الاستخدام."
-   }
-  },
-  {
-   "id": "7d10f0ddfecf",
-   "url": "https://openai.com/index/block-ai-powered-security",
-   "title": "How Block is building AI-powered security with OpenAI technology",
-   "date": "2026-10-14T07:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Block تبني أمان AI باستخدام تكنولوجيا OpenAI",
-    "summary": "فريق الأمان في Block بيستكشف التهديدات أسرع وبيقترح تصحيحات خلال دقائق بفضل حلول AI من OpenAI."
-   }
-  },
-  {
-   "id": "58e4191fcfe4",
-   "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
-   "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
-   "date": "2026-10-14T02:00:14.000Z",
-   "src": "Google DeepMind",
-   "srcId": "deepmind",
-   "kind": "company",
-   "ar": {
-    "title": "DeepMind وGovTech Singapore يطوّروا نموذج AI للكشف عن الاحتيال",
-    "summary": "Google DeepMind وGovTech Singapore بيستعملوا نماذج Gemma الخفيفة على الجهاز لتصدي للاحتيال في الدردشات الخاصة من غير ما يطلعوا بيانات للسحابة."
-   }
-  },
-  {
-   "id": "2f3282e48314",
-   "url": "https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic",
-   "title": "The EU’s next chapter in AI is agentic",
-   "date": "2026-10-14T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "الاتحاد الأوروبي يركز على AI الوكيل في المرحلة الجاية",
-    "summary": "تحليل جديد يوضح إن تبني AI الوكيل بيزيد في الشركات الأوروبية الصغيرة والكبيرة، وإن الاستخدام الأعمق ممكن يضيف قيمة أكبر."
-   }
-  },
-  {
-   "id": "15a88e7ee914",
-   "url": "https://machinelearning.apple.com/research/code-switching-detection",
-   "title": "Code-Switching Detection via Language-Selective Dimensions in Speech Foundation Models",
-   "date": "2026-10-14T00:00:00.000Z",
-   "src": "Apple ML",
-   "srcId": "apple",
-   "kind": "company",
-   "ar": {
-    "title": "كشف التحويل اللغوي في نماذج الكلام",
-    "summary": "البحث بيقترح طريقة خفيفة لاكتشاف التحويل بين اللغات في الكلام من غير ما نعتمد على تفريغ نصي دقيق، علشان نزود تغطية التحويل اللغوي في بيانات التدريب."
-   }
-  },
-  {
-   "id": "e612dc941250",
-   "url": "https://machinelearning.apple.com/research/tri-modal-masked-diffusion",
-   "title": "The Design Space of Tri-Modal Masked Diffusion Models",
-   "date": "2026-10-14T00:00:00.000Z",
-   "src": "Apple ML",
-   "srcId": "apple",
-   "kind": "company",
-   "ar": {
-    "title": "نموذج انتشار ثلاثي الوضعيات",
-    "summary": "المؤلفين قدموا أول نموذج انتشار مقنّع (MDM) يدعم النص، الصورة والنص الصوتي من الصفر، وحللوا قوانين التوسّع وتوازن الوضعيات وتأثير حجم الدفعة على الأداء."
-   }
-  },
-  {
-   "id": "471508c04c30",
-   "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
-   "title": "Developing Gemini 4 Argon responsibly and safely",
-   "date": "2026-10-13T19:43:07.000Z",
-   "src": "Google DeepMind",
-   "srcId": "deepmind",
-   "kind": "company",
-   "ar": {
-    "title": "تطوير Gemini 4 Argon بأمان",
-    "summary": ""
-   }
-  },
-  {
-   "id": "550c4c02e9ff",
-   "url": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
-   "title": "Run fast, private agents on-device with LFM2.5-24B-A2B",
-   "date": "2026-10-13T17:05:48.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "تشغيل وكلاء خاصين وسريعين على الجهاز بـ LFM2.5-24B-A2B",
-    "summary": ""
-   }
-  },
-  {
-   "id": "884ebf3c3978",
-   "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
-   "title": "Gemini 4 Argon for Robotics",
-   "date": "2026-10-13T16:01:58.000Z",
-   "src": "Google DeepMind",
-   "srcId": "deepmind",
-   "kind": "company",
-   "ar": {
-    "title": "Gemini 4 Argon للروبوتات",
-    "summary": ""
-   }
-  },
-  {
-   "id": "f174716114a9",
-   "url": "https://deepmind.google/blog/introducing-gemini-4-argon/",
-   "title": "Gemini 4 Argon: Built to solve your hardest problems",
-   "date": "2026-10-13T16:01:52.000Z",
-   "src": "Google DeepMind",
-   "srcId": "deepmind",
-   "kind": "company",
-   "ar": {
-    "title": "Gemini 4 Argon: حل أصعب المشكلات",
-    "summary": ""
-   }
-  },
-  {
-   "id": "f98cf0a4ecaa",
-   "url": "https://engineering.fb.com/2026/10/13/ml-applications/generative-ads-model-gem-scaling-frontier-ads-ai/",
-   "title": "Meta’s Generative Ads Model (GEM): Scaling the Central Model and Compute Engine for Frontier Ads AI",
-   "date": "2026-10-13T16:01:00.000Z",
-   "src": "Meta Engineering",
-   "srcId": "meta",
-   "kind": "company",
-   "ar": {
-    "title": "نموذج إعلانات جينيريتيف (GEM) من Meta",
-    "summary": "Meta بتوسع نموذج GEM اللي هو أكبر نظام توصية مبني على LLM، وبتزيد القدرة الحوسبية عشان يغطي كل نظام الإعلانات عندهم."
-   }
-  },
-  {
-   "id": "c1e94fc83136",
-   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
-   "title": "Gemini 4 Argon: Built to solve your hardest problems",
-   "date": "2026-10-13T16:00:00.000Z",
-   "src": "Google AI",
-   "srcId": "google-ai",
-   "kind": "company",
-   "ar": {
-    "title": "Gemini 4 Argon",
-    "summary": "Google بتوفر للمطورين والشركات والعلماء ومستخدميها نموذج Gemini 4 Argon المتقدم لحل أصعب المشكلات."
    }
   }
  ]
