@@ -1,0 +1,212 @@
+[
+  {
+    "check": "api:voice-tts-transcribe",
+    "ok": true,
+    "ms": 7849,
+    "notes": [
+      "transcribe 200 in 256ms",
+      "said: عندي طقم حلل جرانيت تركي عشر قطع، سعره ألف وتمنمية وخمسين جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام.",
+      "got: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ]
+  },
+  {
+    "check": "home",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 4752,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "home",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 4242,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "seller",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 3712,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "seller",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 3113,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "test-ad",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 24941,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "test-ad",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 23189,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "photo-ad",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 67676,
+    "notes": [
+      "صورتك هتتحط في إطار"
+    ],
+    "errors": [
+      "console: Failed to load resource: the server responded with a status of 405 ()",
+      "console: Failed to load resource: the server responded with a status of 405 ()",
+      "console: Failed to load resource: the server responded with a status of 405 ()",
+      "console: Failed to load resource: the server responded with a status of 405 ()",
+      "console: Failed to load resource: the server responded with a status of 405 ()",
+      "console: Failed to load resource: the server responded with a status of 405 ()",
+      "console: An error occurred during model execution: \"240595976\".",
+      "console: Inputs given to model: {input_image: Object}"
+    ]
+  },
+  {
+    "check": "photo-ad",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 64822,
+    "notes": [
+      "صورتك هتتحط في إطار"
+    ],
+    "errors": [
+      "console: Failed to load resource: the server responded with a status of 405 ()",
+      "console: Failed to load resource: the server responded with a status of 405 ()",
+      "console: Failed to load resource: the server responded with a status of 405 ()",
+      "console: Failed to load resource: the server responded with a status of 405 ()",
+      "console: Failed to load resource: the server responded with a status of 405 ()",
+      "console: Failed to load resource: the server responded with a status of 405 ()",
+      "console: An error occurred during model execution: \"240595976\".",
+      "console: Inputs given to model: {input_image: Object}"
+    ]
+  },
+  {
+    "check": "voice-post",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 16974,
+    "notes": [
+      "transcript: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ],
+    "errors": [
+      "requestfailed: http://localhost:3000/models?_rsc=iGAD6zesgY1rLyE5 net::ERR_ABORTED"
+    ]
+  },
+  {
+    "check": "voice-post",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 15672,
+    "notes": [
+      "transcript: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ],
+    "errors": []
+  },
+  {
+    "check": "catalog",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 28020,
+    "notes": [
+      "pdf saved",
+      "page images 4"
+    ],
+    "errors": []
+  },
+  {
+    "check": "catalog",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 22783,
+    "notes": [
+      "pdf saved",
+      "page images 4"
+    ],
+    "errors": []
+  },
+  {
+    "check": "receipt",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 20562,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "receipt",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 15728,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "api:test-ad",
+    "ok": true,
+    "ms": 2914,
+    "notes": [
+      "status 200 in 2914ms",
+      "score 67 tally {\"buy\":27,\"maybe\":43,\"skip\":30}"
+    ]
+  },
+  {
+    "check": "api:test-ad-image",
+    "ok": true,
+    "ms": 5440,
+    "notes": [
+      "status 200 in 5440ms",
+      "sawImage=true",
+      "photo=[\"الصورة كرتونية جداً، استبدلها بصورة فوتوغرافية للمنتج الحقيقي.\",\"حط علامة تجارية أو نص يوضح نوع العطر (مثلاً \\\"عطر فرنسي أصل\\\" ).\",\"ضيف خلفية بسيطة لكن مع مساحة لكتابة السعر ومعلومات الشحن.\"]"
+    ]
+  },
+  {
+    "check": "api:product-eye",
+    "ok": true,
+    "ms": 2515,
+    "notes": [
+      "status 200 in 2515ms",
+      "{\"name\":\"زجاجة برتقالية مستطيلة\",\"category\":\"زجاجة\",\"colors\":[\"أصفر/برتقالي فاتح\",\"أسود/رمادي داكن\"],\"visible\":[\"تصميم بسيط مع تباين لوني واضح بين الزجاجة والغطاء\"],\"scene\":\"soft beige marble countertop, warm morning window light, blurred kitchen background\",\"seen\":\"بناءً على الصورة الظاهرة:\\n\\n1. **النوع والشكل:** زجاجة مستطيلة ذات زوايا دائرية، تعلوها رقبة وغطاء مربع الشكل.\\n2. **الألوان والخامة"
+    ]
+  },
+  {
+    "check": "api:catalog-copy",
+    "ok": true,
+    "ms": 284,
+    "notes": [
+      "status 200 in 284ms",
+      "{\"tagline\":\"أناقة يومية في كل تفاصيل\",\"descs\":[\"شنطة يد جلد طبيعي: مظهر فخم، وزن خفيف\",\"شنطة كروس صغيرة: مساحة كافية، تصميم عصري\",\"محفظة حريمي: أمان، تصميم أنيق\"]}"
+    ]
+  },
+  {
+    "check": "api:ad-pack-voice",
+    "ok": true,
+    "ms": 1783,
+    "notes": [
+      "status 200 in 1783ms",
+      "missing=[\"مقاسات القطع\",\"مادة الجرانيت بالتحديد\",\"مدة التوصيل\",\"هل في ضمان\"] tags=12"
+    ]
+  }
+]
