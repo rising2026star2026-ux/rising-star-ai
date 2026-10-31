@@ -686,6 +686,9 @@ h1, h2, h3 { font-family: var(--display); letter-spacing: 0; }
 .side-link.tone-news { background: linear-gradient(135deg, #ff7a1a, #ff3d2e); color: #fff; box-shadow: 0 8px 18px -10px #ff5a1f; }
 .side-link.tone-learn:hover { background: linear-gradient(135deg, #3a63ff, #1535e6); color: #fff; }
 .side-link.tone-news:hover { background: linear-gradient(135deg, #ff8d38, #ff4f40); color: #fff; }
+.side-link.tone-seller { font-weight: 700; margin-block: 2px; background: linear-gradient(135deg, #ffd21f, #ffb400); color: #050510; box-shadow: 0 8px 18px -10px #ffb400; }
+.side-link.tone-seller:hover { background: linear-gradient(135deg, #ffe066, #ffc21a); color: #050510; }
+.side-link.tone-seller.on { color: #050510; outline: 2px solid #fff; outline-offset: 1px; font-weight: 800; }
 .side-link.tone-learn.on, .side-link.tone-news.on { color: #fff; outline: 2px solid var(--yellow); outline-offset: 1px; font-weight: 800; }
 
 /* ===== بلوك الرسالة في صفحة الأداة (لأصحاب المشاريع) ===== */

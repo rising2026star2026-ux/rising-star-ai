@@ -68,7 +68,8 @@
 }
 
 /* ================= جسم الصفحة ================= */
-.body { max-width: 860px; margin: -42px auto 0; position: relative; z-index: 2; display: grid; gap: 16px; }
+.body { max-width: 860px; margin: -42px auto 0; position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.body > * { min-width: 0; }
 .card {
   background: #fff; border: 1.5px solid rgba(5, 5, 16, 0.12); border-radius: 24px; padding: 20px;
   box-shadow: 0 30px 60px -40px rgba(5, 5, 16, 0.45);

@@ -1,0 +1,39 @@
+/* «اتكلم بس.. واحنا نكتب» */
+.stage { display: grid; justify-items: center; text-align: center; gap: 14px; padding-block: 24px; }
+.stage h2 { justify-self: stretch; text-align: start; }
+.write { justify-items: stretch; text-align: start; gap: 10px; }
+.write .again { justify-self: center; }
+.stage textarea { min-height: 180px; }
+.stage > :global(*) { max-width: 100%; }
+
+.prompts { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; align-items: center; font-size: 0.8rem; color: var(--faint); }
+.prompts b { font-weight: 700; color: var(--ink); background: var(--surface-2); padding: 4px 11px; border-radius: 999px; }
+
+.micWrap { position: relative; display: grid; place-items: center; width: 190px; height: 190px; margin-top: 6px; }
+.ring { position: absolute; inset: 22px; border-radius: 50%; background: rgba(31, 77, 255, 0.1); transition: transform 0.4s var(--ease); }
+.on .ring { animation: ring 1.8s ease-out infinite; background: rgba(240, 68, 56, 0.16); }
+.on .r2 { animation-delay: 0.6s; }
+@keyframes ring { from { transform: scale(0.85); opacity: 1; } to { transform: scale(1.35); opacity: 0; } }
+.mic {
+  position: relative; z-index: 1; width: 128px; height: 128px; border-radius: 50%; border: 0; cursor: pointer; display: grid; place-items: center;
+  color: #fff; background: radial-gradient(circle at 35% 30%, #4a74ff, #1f4dff 55%, #0a26d6);
+  box-shadow: 0 22px 50px -18px rgba(31, 77, 255, 0.9), inset 0 -6px 0 rgba(0, 0, 0, 0.15);
+  transition: transform 0.18s var(--ease), background 0.3s;
+}
+.mic:hover:not(:disabled) { transform: scale(1.04); }
+.mic:active:not(:disabled) { transform: scale(0.97); }
+.mic:disabled { cursor: progress; }
+.on .mic { background: radial-gradient(circle at 35% 30%, #ff6b5e, #f04438 55%, #b42318); box-shadow: 0 22px 50px -18px rgba(240, 68, 56, 0.9), inset 0 -6px 0 rgba(0, 0, 0, 0.15); }
+.micSpin { width: 34px; height: 34px; border-width: 3px; border-color: rgba(255, 255, 255, 0.3); border-top-color: #fff; }
+
+.bars { display: flex; align-items: center; gap: 4px; height: 46px; }
+.bars i { width: 5px; height: 100%; border-radius: 99px; background: linear-gradient(var(--blue), var(--yellow)); transform-origin: center; transition: transform 0.12s linear; }
+
+.status { margin: 0; font-family: var(--display); font-weight: 700; font-size: 1.02rem; color: var(--ink); display: flex; align-items: center; gap: 8px; }
+.status small { color: var(--faint); font-weight: 500; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: #f04438; animation: blink 1s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0.2; } }
+.live { margin: 0; width: 100%; min-height: 3.4em; padding: 12px 14px; border-radius: 16px; background: var(--surface-2); color: var(--ink); font-size: 1rem; line-height: 1.8; text-align: start; }
+.alt { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.hint { justify-self: stretch; text-align: start; margin: -8px 0 0; color: var(--muted); font-size: 0.86rem; }
+.again { justify-self: center; }

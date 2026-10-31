@@ -52,14 +52,14 @@ const TABS = [
     ),
   },
   {
-    href: "/flows",
-    label: "المهام",
-    match: ["/flows", "/flow/"],
+    href: "/seller",
+    label: "البيّاع",
+    match: ["/seller", "/test-ad", "/photo-ad", "/voice-post", "/catalog"],
     icon: (
       <svg {...P}>
-        <rect x="3" y="4" width="7" height="5" rx="1.5" />
-        <rect x="14" y="15" width="7" height="5" rx="1.5" />
-        <path d="M6.5 9v3.5a2 2 0 002 2h9V15" />
+        <path d="M4 9.5l1.6-4.2A1.5 1.5 0 017 4.3h10a1.5 1.5 0 011.4 1l1.6 4.2" />
+        <path d="M4 9.5a2.7 2.7 0 005.3 0 2.7 2.7 0 005.4 0 2.7 2.7 0 005.3 0" />
+        <path d="M5.5 12.5V19a1 1 0 001 1h11a1 1 0 001-1v-6.5M10 20v-4.5h4V20" />
       </svg>
     ),
   },

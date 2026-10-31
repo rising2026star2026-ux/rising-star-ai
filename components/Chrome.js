@@ -19,6 +19,7 @@ const I = { viewBox: "0 0 24 24", width: 20, height: 20, fill: "none", stroke: "
 const NAV = [
   { href: "/", label: "الرئيسية", exact: true, icon: <svg {...I}><path d="M3.5 10.5L12 3.5l8.5 7" /><path d="M5.5 9.5V20h13V9.5" /></svg> },
   { href: "/chat", label: "الشات", icon: <svg {...I}><path d="M20.5 11.5a8.3 8.3 0 01-8.9 8.3L3.5 21l1.1-3.5A8.3 8.3 0 1120.5 11.5z" /></svg> },
+  { href: "/seller", label: "ستوديو البيّاع", tone: "seller", match: ["/seller", "/test-ad", "/photo-ad", "/voice-post", "/catalog"], icon: <svg {...I}><path d="M4 9.5l1.6-4.2A1.5 1.5 0 017 4.3h10a1.5 1.5 0 011.4 1l1.6 4.2" /><path d="M4 9.5a2.7 2.7 0 005.3 0 2.7 2.7 0 005.4 0 2.7 2.7 0 005.3 0" /><path d="M5.5 12.5V19a1 1 0 001 1h11a1 1 0 001-1v-6.5M10 20v-4.5h4V20" /></svg> },
   { href: "/models", label: "الموديلات والبرامج", icon: <svg {...I}><rect x="3.5" y="3.5" width="7" height="7" rx="2" /><rect x="13.5" y="3.5" width="7" height="7" rx="2" /><rect x="3.5" y="13.5" width="7" height="7" rx="2" /><path d="M17 13.2l1 2.2 2.3.3-1.7 1.6.4 2.3-2-1.1-2 1.1.4-2.3-1.7-1.6 2.3-.3z" /></svg> },
   { href: "/tools", label: "كل الأدوات", match: ["/tools", "/tool/"], icon: <svg {...I}><path d="M14.5 6.5l3-3 3 3-3 3zM4 20l9-9M3.5 7.5h6M6.5 4.5v6M14 17.5h6.5" /></svg> },
   { href: "/maker", label: "صانع الصور والفيديو", match: ["/maker"], icon: <svg {...I}><rect x="3.5" y="4.5" width="17" height="15" rx="3" /><circle cx="9" cy="10" r="1.7" /><path d="M20.5 16l-5-4.5L8 19" /></svg> },

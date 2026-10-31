@@ -13,48 +13,144 @@ const post = async (BASE, route, body) => {
 const dataUrl = async (file) => `data:image/jpeg;base64,${(await fs.readFile(path.join(FIX, file))).toString("base64")}`;
 
 export const CHECKS = [
-  { name: "home", path: "/", max: 3 },
+  { name: "home", path: "/", max: 4 },
+  { name: "seller", path: "/seller", max: 5 },
   {
     name: "test-ad", path: "/test-ad",
     async run({ page, shot, screens, note }) {
       await shot("form");
       await page.getByRole("button", { name: "جرّب بمثال" }).click();
       await page.getByRole("button", { name: "اعرض إعلاني على 100 زبون" }).click();
-      await page.waitForTimeout(1500);
+      await page.waitForTimeout(1200);
       await shot("running");
       await page.getByRole("button", { name: /اعرض النتيجة على طول/ }).waitFor({ timeout: 75000 });
-      await page.waitForTimeout(4000);
+      await page.waitForTimeout(4500);
       await shot("comments");
       await page.getByRole("button", { name: /اعرض النتيجة على طول/ }).click();
       await page.waitForTimeout(2500);
       await screens("result", 9);
-      // صورة المشاركة
       const dl = page.waitForEvent("download", { timeout: 15000 }).catch(() => null);
       await page.getByRole("button", { name: /شارك نتيجتك/ }).click();
       const d = await dl;
       if (d) { await d.saveAs(`ci-out/test-ad-story-${page.viewportSize().width}.png`); note("story saved"); } else note("no story download");
+      // إعادة الاختبار بالنسخة المحسّنة
+      await page.getByRole("button", { name: /اختبر النسخة دي/ }).click();
+      await page.getByRole("button", { name: /اعرض النتيجة على طول/ }).waitFor({ timeout: 75000 });
+      await page.getByRole("button", { name: /اعرض النتيجة على طول/ }).click();
+      await page.waitForTimeout(2500);
+      await shot("retest");
     },
   },
   {
     name: "photo-ad", path: "/photo-ad",
     async run({ page, shot, screens, note }) {
       await shot("start");
-      await page.locator('input[type=file]').nth(1).setInputFiles(path.join(FIX, "product.jpg"));
-      await page.getByText(/الخلفية اتشالت|صورتك هتتحط في إطار/).waitFor({ timeout: 180000 });
+      await page.locator("input[type=file]").nth(1).setInputFiles(path.join(FIX, "product.jpg"));
+      await page.getByText(/الخلفية اتشالت|صورتك هتتحط في إطار/).first().waitFor({ timeout: 240000 });
       note(await page.getByText(/الخلفية اتشالت|صورتك هتتحط في إطار/).first().textContent());
-      await page.waitForTimeout(3500);
+      await page.waitForTimeout(4000);
       await page.getByPlaceholder("450 ج").fill("1850 ج");
       await page.getByPlaceholder("900 ج").fill("2600 ج");
       await page.getByPlaceholder("01012345678").fill("01012345678");
-      await page.waitForTimeout(1500);
+      await page.waitForTimeout(1800);
       await screens("shots", 4);
       await page.getByRole("button", { name: /اكتبلي الإعلان كامل/ }).click();
       await page.getByText("فهمنا كده:").waitFor({ timeout: 70000 }).catch(() => note("pack timeout"));
       await page.waitForTimeout(800);
       await screens("pack", 5);
       await page.getByRole("button", { name: /اعمل الفيديو/ }).click().catch(() => note("no video button"));
-      await page.waitForTimeout(6000);
+      await page.waitForTimeout(7000);
       await shot("video");
+    },
+  },
+  {
+    name: "voice-post", path: "/voice-post",
+    async run({ page, shot, screens, note, BASE }) {
+      await shot("idle");
+      await page.getByRole("button", { name: "ابدأ التسجيل" }).click();
+      await page.waitForTimeout(2500);
+      await shot("rec");
+      await page.getByRole("button", { name: "خلصت ✓" }).click();
+      await page.waitForTimeout(6000);
+      await shot("after-fake-mic");
+      // فويس حقيقي بالعربي (متولد بالـ TTS) مرفوع زي فويس واتساب
+      await page.goto(BASE + "/voice-post", { waitUntil: "load" });
+      const file = "ci-out/voice-sample.mp3";
+      try { await fs.access(file); } catch { note("no voice sample"); return; }
+      await page.locator("input[type=file]").setInputFiles(file);
+      await page.getByText("ده كلامك مكتوب").waitFor({ timeout: 60000 });
+      note("transcript: " + (await page.locator("textarea").inputValue()).slice(0, 200));
+      await shot("transcript");
+      await page.getByRole("button", { name: /حوّله لبوستات/ }).click();
+      await page.getByText("البوستات جاهزة").waitFor({ timeout: 70000 });
+      await page.waitForTimeout(800);
+      await screens("pack", 4);
+    },
+  },
+  {
+    name: "catalog", path: "/catalog",
+    async run({ page, shot, screens, note }) {
+      await shot("empty");
+      await page.getByLabel("اسم المحل").fill("بوتيك ليلى");
+      await page.getByLabel("رقم الواتساب").fill("01012345678");
+      await page.locator("input[type=file][multiple]").setInputFiles([0, 1, 2, 3, 4].map((i) => path.join(FIX, `p${i}.jpg`)));
+      await page.waitForTimeout(1200);
+      await page.getByRole("button", { name: /سمّي المنتجات/ }).click();
+      await page.waitForFunction(() => !document.body.innerText.includes("بنتعرّف على المنتجات"), null, { timeout: 90000 }).catch(() => note("naming slow"));
+      for (const [i, pr] of [[1, "650 ج"], [2, "420 ج"], [3, "380 ج"], [4, "299 ج"], [5, "510 ج"]]) await page.getByLabel(`سعر المنتج ${i}`).fill(pr);
+      await page.getByLabel("السعر قبل الخصم 1").fill("900 ج");
+      await page.getByRole("button", { name: /اكتب الأوصاف/ }).click();
+      await page.waitForFunction(() => !document.body.innerText.includes("بنكتب الأوصاف"), null, { timeout: 60000 }).catch(() => note("descs slow"));
+      await page.waitForTimeout(2500);
+      await screens("built", 7);
+      const dl = page.waitForEvent("download", { timeout: 30000 }).catch(() => null);
+      await page.getByRole("button", { name: /حمّل الكتالوج PDF/ }).click();
+      const d = await dl;
+      if (d) { await d.saveAs(`ci-out/catalog-${page.viewportSize().width}.pdf`); note("pdf saved"); } else note("no pdf");
+      const imgs = [];
+      page.on("download", (x) => imgs.push(x));
+      await page.getByRole("button", { name: /صور للحالة/ }).click();
+      await page.waitForTimeout(4000);
+      for (let i = 0; i < imgs.length; i++) await imgs[i].saveAs(`ci-out/catalog-page-${page.viewportSize().width}-${i + 1}.jpg`);
+      note(`page images ${imgs.length}`);
+    },
+  },
+  {
+    name: "receipt", path: "/subscriptions/receipt",
+    async run({ page, shot, screens, note }) {
+      await shot("start");
+      for (const n of ["ChatGPT", "Claude", "Google AI (Gemini)", "Canva", "Midjourney", "CapCut"]) await page.getByRole("button", { name: n, exact: true }).first().click();
+      const segs = page.getByRole("group", { name: "بتستخدمه قد إيه" });
+      await segs.nth(2).getByRole("button", { name: "نادراً" }).click();
+      await segs.nth(4).getByRole("button", { name: "كل أسبوع" }).click();
+      await screens("items", 4);
+      await page.getByRole("button", { name: /اطبع كشف الحساب/ }).click();
+      await page.waitForTimeout(3500);
+      await screens("paper", 6);
+      const dl = page.waitForEvent("download", { timeout: 15000 }).catch(() => null);
+      await page.getByRole("button", { name: /شارك الكشف/ }).click();
+      const d = await dl;
+      if (d) { await d.saveAs(`ci-out/receipt-story-${page.viewportSize().width}.png`); note("story saved"); } else note("no story");
+    },
+  },
+];
+
+export const API_CHECKS_FIRST = [
+  {
+    name: "voice-tts-transcribe",
+    async run({ BASE, OUT }) {
+      const say = "عندي طقم حلل جرانيت تركي عشر قطع، سعره ألف وتمنمية وخمسين جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام.";
+      const t = await fetch(BASE + "/api/tts", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text: say, voice: "ar-EG-ShakirNeural" }) });
+      if (!t.ok) return { ok: false, notes: [`tts ${t.status}`] };
+      const buf = Buffer.from(await t.arrayBuffer());
+      await fs.mkdir(OUT, { recursive: true });
+      await fs.writeFile(path.join(OUT, "voice-sample.mp3"), buf);
+      const fd = new FormData();
+      fd.append("audio", new Blob([buf], { type: "audio/mpeg" }), "voice.mp3");
+      const t0 = Date.now();
+      const r = await fetch(BASE + "/api/transcribe", { method: "POST", body: fd });
+      const j = await r.json().catch(() => ({}));
+      return { ok: r.ok && (j.text || "").length > 20, notes: [`transcribe ${r.status} in ${Date.now() - t0}ms`, `said: ${say}`, `got: ${j.text || j.error}`], data: j };
     },
   },
 ];
@@ -81,6 +177,13 @@ export const API_CHECKS = [
     async run({ BASE }) {
       const r = await post(BASE, "/api/product-eye", { image: await dataUrl("product.jpg") });
       return { ok: r.status === 200 && !!r.data.name, notes: [`status ${r.status} in ${r.ms}ms`, JSON.stringify(r.data).slice(0, 400)], data: r.data };
+    },
+  },
+  {
+    name: "catalog-copy",
+    async run({ BASE }) {
+      const r = await post(BASE, "/api/catalog-copy", { shop: "بوتيك ليلى", products: [{ name: "شنطة يد جلد طبيعي", price: "650 ج" }, { name: "شنطة كروس صغيرة", price: "420 ج" }, { name: "محفظة حريمي", price: "199 ج" }] });
+      return { ok: r.status === 200 && r.data.descs?.length === 3, notes: [`status ${r.status} in ${r.ms}ms`, JSON.stringify(r.data).slice(0, 400)], data: r.data };
     },
   },
   {

@@ -1,0 +1,53 @@
+/* كروت ستوديو البيّاع */
+.t_gold { --c1: #ffb400; --c2: #ff6a1f; --glow: rgba(255, 170, 0, 0.45); }
+.t_cyan { --c1: #19c6ff; --c2: #6d4bff; --glow: rgba(25, 198, 255, 0.4); }
+.t_blue { --c1: #3d6bff; --c2: #0a26d6; --glow: rgba(31, 77, 255, 0.5); }
+.t_green { --c1: #12c48b; --c2: #0a8f6a; --glow: rgba(18, 196, 139, 0.4); }
+.t_rose { --c1: #ff4fa3; --c2: #c2185b; --glow: rgba(255, 79, 163, 0.4); }
+
+/* ===== شريط الرئيسية ===== */
+.strip {
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(230px, 1fr); gap: 12px; overflow-x: auto;
+  scroll-snap-type: x mandatory; padding: 4px 2px 10px; scrollbar-width: none;
+}
+.strip::-webkit-scrollbar { display: none; }
+@media (min-width: 1100px) { .strip { grid-auto-flow: row; grid-template-columns: repeat(5, 1fr); overflow: visible; } }
+.tile {
+  position: relative; overflow: hidden; isolation: isolate; scroll-snap-align: start;
+  display: flex; flex-direction: column; gap: 8px; min-height: 236px; padding: 18px 16px 16px; border-radius: 26px; color: #fff;
+  background: linear-gradient(150deg, var(--c1), var(--c2));
+  box-shadow: 0 22px 40px -26px var(--glow);
+  transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease);
+}
+.tile::before { content: ""; position: absolute; z-index: -1; inset: auto -30% -50% auto; width: 180px; height: 180px; border-radius: 50%; background: rgba(255, 255, 255, 0.16); }
+.tile::after { content: ""; position: absolute; z-index: -1; inset: -40px auto auto -40px; width: 120px; height: 120px; border-radius: 50%; background: rgba(255, 255, 255, 0.1); }
+.tile:hover { transform: translateY(-4px) rotate(-0.4deg); box-shadow: 0 30px 50px -26px var(--glow); }
+.tIcon { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 18px; font-size: 1.7rem; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(4px); }
+.tile b { font-family: var(--display); font-weight: 900; font-size: 1.18rem; line-height: 1.4; margin-top: 4px; }
+.tile small { font-size: 0.84rem; line-height: 1.7; opacity: 0.92; font-weight: 500; }
+.tGo { margin-top: auto; align-self: flex-start; font-size: 0.8rem; font-weight: 800; padding: 6px 13px; border-radius: 999px; background: #fff; color: var(--ink); }
+
+/* ===== صفحة الستوديو ===== */
+.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; counter-reset: f; }
+@media (max-width: 720px) { .flow { grid-template-columns: minmax(0, 1fr); } }
+.card {
+  position: relative; overflow: hidden; isolation: isolate; height: 100%;
+  display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: auto 1fr auto; gap: 6px 14px;
+  padding: 18px; border-radius: 26px; color: #fff; background: linear-gradient(150deg, var(--c1), var(--c2));
+  box-shadow: 0 26px 50px -30px var(--glow); transition: transform 0.22s var(--ease);
+}
+.card::before { content: ""; position: absolute; z-index: -1; inset: auto -60px -80px auto; width: 220px; height: 220px; border-radius: 50%; background: rgba(255, 255, 255, 0.14); }
+.card:hover { transform: translateY(-4px); }
+.num { grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; font-family: var(--wordmark); font-weight: 900; font-size: 0.9rem; }
+.num em { font-style: normal; font-family: var(--display); font-size: 0.78rem; font-weight: 800; padding: 3px 10px; border-radius: 999px; background: rgba(5, 5, 16, 0.22); }
+.cIcon { grid-row: span 2; display: grid; place-items: center; width: 64px; height: 64px; border-radius: 20px; font-size: 2rem; background: rgba(255, 255, 255, 0.2); }
+.cText { display: grid; gap: 4px; align-content: start; }
+.cText b { font-family: var(--display); font-weight: 900; font-size: 1.25rem; line-height: 1.4; }
+.cText small { font-size: 0.88rem; line-height: 1.7; opacity: 0.94; font-weight: 600; }
+.cText ul { margin: 6px 0 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+.cText li { font-size: 0.82rem; opacity: 0.9; }
+.cText li::before { content: "✓"; margin-inline-end: 7px; font-weight: 900; }
+.cGo { grid-column: 2; justify-self: start; margin-top: 8px; font-size: 0.86rem; font-weight: 800; padding: 8px 16px; border-radius: 999px; background: #fff; color: var(--ink); }
+.wide { grid-template-rows: auto auto; }
+.wide .cIcon { grid-row: span 1; }
+.sub { margin: 28px 0 12px; font-family: var(--display); font-weight: 800; font-size: 1.2rem; color: var(--ink); }

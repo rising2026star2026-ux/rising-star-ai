@@ -17,6 +17,7 @@ import FlowCards from "./FlowCards";
 import BotIcon from "./BotIcon";
 import StarMark from "./StarMark";
 import ScrollBands from "./ScrollBands";
+import { ShowcaseStrip } from "./seller/Showcase";
 import { BOTS } from "@/lib/bots";
 import { APPS } from "@/lib/apps";
 import ms from "./models.module.css";
@@ -252,6 +253,15 @@ export default function Home() {
       {/* ============ القسم التاني: نهار ============ */}
       <section className={`${s.band} ${s.white}`} data-band-sec="white">
         <div className={s.in}>
+      {/* ===== ستوديو البيّاع ===== */}
+      <section className={s.cats}>
+        <div className={s.catsHead}>
+          <span>ستوديو البيّاع: بيع أونلاين من موبايلك</span>
+          <Link href="/seller" className={s.allLink}>الستوديو كله</Link>
+        </div>
+        <ShowcaseStrip />
+      </section>
+
       {/* ===== المهام الكاملة ===== */}
       <section className={s.cats}>
         <div className={s.catsHead}>

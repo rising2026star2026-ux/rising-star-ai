@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import s from "./subs.module.css";
 
 const ITEMS = [
+  { href: "/subscriptions/receipt", label: "🧾 كشف حساب اشتراكاتك" },
   { href: "/subscriptions", label: "مقارن الاشتراكات" },
   { href: "/subscriptions/calculator", label: "أنا محتاج إيه؟" },
   { href: "/scam-check", label: "كاشف النصب" },

@@ -18,6 +18,17 @@ const VIEWPORTS = {
 
 await fs.mkdir(OUT, { recursive: true });
 const summary = [];
+// تجارب لازم تتعمل قبل المتصفح (مثلاً توليد فويس للتجربة)
+const { API_CHECKS_FIRST = [] } = await import("./plan.mjs");
+for (const a of API_CHECKS_FIRST) {
+  const t0 = Date.now();
+  try {
+    const out = await a.run({ BASE, OUT });
+    summary.push({ check: `api:${a.name}`, ok: !!out?.ok, ms: Date.now() - t0, notes: out?.notes || [] });
+  } catch (e) {
+    summary.push({ check: `api:${a.name}`, ok: false, ms: Date.now() - t0, notes: [String(e?.message || e).slice(0, 500)] });
+  }
+}
 const browser = await chromium.launch({ args: ["--use-fake-ui-for-media-stream", "--use-fake-device-for-media-stream"] });
 
 for (const check of CHECKS) {
@@ -52,7 +63,8 @@ for (const check of CHECKS) {
     };
     const save = async (label, data) => fs.writeFile(path.join(OUT, `${tag}-${label}.json`), JSON.stringify(data, null, 2));
     try {
-      await page.goto(BASE + check.path, { waitUntil: "networkidle", timeout: 60000 });
+      await page.goto(BASE + check.path, { waitUntil: "load", timeout: 60000 });
+      await page.waitForLoadState("networkidle", { timeout: 8000 }).catch(() => {});
       await page.waitForTimeout(check.settle ?? 1200);
       if (check.run) await check.run({ page, shot, screens, save, note: (n) => notes.push(n), vp, BASE });
       else await screens("page", check.max || 4);
