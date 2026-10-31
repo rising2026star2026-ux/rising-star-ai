@@ -1,34 +1,86 @@
 {
- "updated": "2026-10-31T05:05:11.710Z",
+ "updated": "2026-10-31T16:59:21.184Z",
  "providers": [
   "groq",
   "openrouter",
   "gemini"
  ],
  "used": {
-  "groq": 6,
-  "gemini": 3
+  "groq": 5,
+  "gemini": 4
  },
  "feeds": {
+  "openai": "ok 72",
   "deepmind": "ok 9",
+  "verge": "ok 10",
   "apple": "ok 10",
   "techcrunch": "ok 20",
-  "aws": "ok 20",
+  "google-ai": "ok 5",
   "meta": "ok 9",
   "nvidia": "ok 18",
-  "huggingface": "ok 25",
-  "verge": "ok 10",
-  "google-research": "ok 11",
-  "openai": "ok 73",
   "arstechnica": "ok 20",
-  "techwd": "ok 4",
-  "google-ai": "ok 5",
   "marktechpost": "ok 10",
+  "huggingface": "ok 25",
+  "google-research": "ok 11",
+  "aws": "ok 20",
+  "techwd": "ok 2",
   "aitnews": "ok 6",
   "microsoft": "ok 9",
   "venturebeat": "FAIL HTTP 429"
  },
  "items": [
+  {
+   "id": "344dcf79744a",
+   "url": "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
+   "title": "OpenAI reportedly lowers funding target for new round",
+   "date": "2026-10-31T16:12:55.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "OpenAI تخفض هدف التمويل للجولة الجديدة",
+    "summary": "التمويل الأخير لـ OpenAI ما وصلش للمتوقع، والشركة خفضت المبلغ المستهدف."
+   }
+  },
+  {
+   "id": "ed0268fa6e32",
+   "url": "https://www.theverge.com/gadgets/1013375/muse-charm-gadgets-preview-waveshare-esp32-claude-vibe-code",
+   "title": "I built an AI Tamagotchi before Meta could",
+   "date": "2026-10-31T16:09:02.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "Meta تطلق Muse Charm كـ AI Tamagotchi",
+    "summary": "Meta قدمت Muse Charm اللي بيخلي الذكاء الاصطناعي يبان كـ Tamagotchi، لكن الكاتب مش ناوي يشتريه لأنه عنده نسخة في البيت."
+   }
+  },
+  {
+   "id": "a5c6759870e7",
+   "url": "https://www.marktechpost.com/2026/10/31/factory-droid-1-0-frontier-harness/",
+   "title": "Meet Factory Droid 1.0: A Model-Independent Coding Agent Harness Built on Script Mode",
+   "date": "2026-10-31T10:38:14.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "Factory تطلق Droid 1.0 للبرمجة المستقلة",
+    "summary": "Factory قدمت Droid 1.0، وكيل برمجة غير مرتبط بنموذج معين، بيخلي استدعاء الأدوات البرمجية افتراضي، وجاب 65.2% على اختبار Terminal‑Bench 4 مع Claude Opus 5.5 بتكلفة $4.73 لكل مهمة."
+   }
+  },
+  {
+   "id": "78c1c1a14c87",
+   "url": "https://www.marktechpost.com/2026/10/31/vercel-labs-agent-desktop-computer-use/",
+   "title": "Vercel Labs Open-Sources agent-desktop for Agent Computer Use",
+   "date": "2026-10-31T10:10:28.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "Vercel Labs تفتح مصدر agent‑desktop",
+    "summary": "Vercel Labs نشرت agent‑desktop، أداة CLI مكتوبة بـ Rust وتشتغل على macOS وWindows وLinux، وتخلي أي وكيل AI يقدر يتحكم في الكمبيوتر بقراءة شجرة الوصول للنظام بدل الاعتماد على البيكسلات."
+   }
+  },
   {
    "id": "6336aff37e57",
    "url": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
@@ -4135,58 +4187,6 @@
    "ar": {
     "title": "الترحيب بنموذج Beam المفتوح",
     "summary": "إطلاق الموديل المفتوح Beam 501B اللي تقدر تملكه، تخصصه، وتكبره براحتك."
-   }
-  },
-  {
-   "id": "1d7d75b47c31",
-   "url": "https://openai.com/index/grupo-boticario",
-   "title": "How Grupo Boticário uses AI to strengthen human connections",
-   "date": "2026-10-16T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Grupo Boticário يستخدم الذكاء الاصطناعي لدعم التواصل",
-    "summary": "الشركة بتستخدم منصة وكلاء ذكية عشان تحل 80% من طلبات الموزعين تلقائياً، وده بيخلي قوة المبيعات تركز أكتر على دور المستشار."
-   }
-  },
-  {
-   "id": "827221925d8d",
-   "url": "https://openai.com/index/localiza-generative-ai",
-   "title": "How Localiza reorganized work around generative AI",
-   "date": "2026-10-16T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "إزاي Localiza غيرت نظام شغلها بالذكاء الاصطناعي التوليدي",
-    "summary": "شركة Localiza طورت طريقة شغلها وتجربة التنقل باستخدام ChatGPT Enterprise وOpenAI API وCodex، ده غير أكتر من 60 وكيل ذكاء اصطناعي متخصص."
-   }
-  },
-  {
-   "id": "adb6c89c63b3",
-   "url": "https://engineering.fb.com/2026/10/15/ml-applications/how-meta-built-forum-ai-native-engineering/",
-   "title": "How Meta Built Forum With AI-Native Engineering",
-   "date": "2026-10-15T19:00:03.000Z",
-   "src": "Meta Engineering",
-   "srcId": "meta",
-   "kind": "company",
-   "ar": {
-    "title": "ميتا بنت تطبيق Forum بالاعتماد على هندسة الذكاء الاصطناعي",
-    "summary": "ميتا عملت تطبيقها الجديد Forum الخاص بمناقشات Facebook groups، ومهندسي الشركة استعانوا بوكلاء ذكاء الاصطناعي طوال مراحل التطوير والبناء."
-   }
-  },
-  {
-   "id": "a72d1e4da6b0",
-   "url": "https://openai.com/index/introducing-the-rosalind-academic-plan",
-   "title": "Bringing GPT-Rosalind to academic research labs",
-   "date": "2026-10-15T19:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "توفير GPT-Rosalind لمختبرات الأبحاث الأكاديمية",
-    "summary": "إطلاق خطة Rosalind الأكاديمية اللي بتدي المختبرات المؤهلة إمكانية الوصول المدعوم لأداة GPT-Rosalind وأدوات تانية لتطوير أبحاث علوم الحياة."
    }
   }
  ]
