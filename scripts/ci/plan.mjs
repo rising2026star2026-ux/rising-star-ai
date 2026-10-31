@@ -290,7 +290,7 @@ export const API_CHECKS = [
       const r = await fetch(BASE + "/api/chat", { method: "POST", headers: { "Content-Type": "application/json", "x-forwarded-for": `10.1.${Math.floor(Math.random() * 250)}.7` }, body: JSON.stringify({ messages: [{ role: "user", content: "إيه آخر أخبار سعر الدولار في مصر النهارده؟" }], model: "balanced", web: true }) });
       const text = await r.text();
       let src = []; try { src = JSON.parse(decodeURIComponent(r.headers.get("x-sources") || "[]")); } catch {}
-      return { ok: r.ok && r.headers.get("x-search") === "ok" && src.length > 0 && text.length > 80, notes: [`status ${r.status} search=${r.headers.get("x-search")} sources=${src.length}`, `domains: ${src.map((x) => x.d || x.u).slice(0, 5).join(", ")}`, text.slice(0, 400)] };
+      return { ok: r.ok && r.headers.get("x-search") === "ok" && src.length > 0 && text.length > 80, notes: [`status ${r.status} search=${r.headers.get("x-search")} sources=${src.length} model=${r.headers.get("x-model")}`, `why: ${decodeURIComponent(r.headers.get("x-search-why") || "-")}`, `domains: ${src.map((x) => x.d || x.u).slice(0, 5).join(", ")}`, text.slice(0, 400)] };
     },
   },
   {
@@ -303,7 +303,7 @@ export const API_CHECKS = [
       const text = lines.join("\n\n");
       const r = await fetch(BASE + "/api/chat", { method: "POST", headers: { "Content-Type": "application/json", "x-forwarded-for": `10.2.${Math.floor(Math.random() * 250)}.9` }, body: JSON.stringify({ messages: [{ role: "user", content: "سعر الجملة لمصباح نور كام؟" }], model: "balanced", docs: [{ name: "report.txt", text }] }) });
       const out = await r.text();
-      return { ok: r.ok && /187/.test(out), notes: [`status ${r.status} x-docs=${r.headers.get("x-docs")} chars=${text.length}`, out.slice(0, 300)] };
+      return { ok: r.ok && /187/.test(out), notes: [`status ${r.status} x-docs=${r.headers.get("x-docs")} model=${r.headers.get("x-model")} chars=${text.length}`, out.slice(0, 300)] };
     },
   },
   {
@@ -314,7 +314,7 @@ export const API_CHECKS = [
       const r = await fetch(BASE + "/api/chat", { method: "POST", headers: { "Content-Type": "application/json", "x-forwarded-for": `10.3.${Math.floor(Math.random() * 250)}.5` }, body: JSON.stringify({ messages: [{ role: "user", content: "لخّصلي الملف في 4 نقاط" }], model: "balanced", docs: [{ name: "guide.txt", text }], instructions: "اكتب بالفصحى فقط" }) });
       const out = await r.text();
       const hits = ["الجمهور", "الإعلانات", "المحتوى", "قياس"].filter((w) => out.includes(w)).length;
-      return { ok: r.ok && hits >= 3, notes: [`status ${r.status} x-docs=${r.headers.get("x-docs")} covered=${hits}/4`, out.slice(0, 500)] };
+      return { ok: r.ok && hits >= 3, notes: [`status ${r.status} x-docs=${r.headers.get("x-docs")} model=${r.headers.get("x-model")} covered=${hits}/4`, out.slice(0, 500)] };
     },
   },
   {

@@ -158,14 +158,18 @@ export async function POST(req) {
     else if (tooManySearches(ip)) headers["x-search"] = "limit";
     else {
       const query = await searchQuery(messages, apiKey);
-      const { results, images, notes } = await webSearchFull(query);
+      const { results, images, notes, why } = await webSearchFull(query);
       if (results.length) {
         system += `\n\n${resultsBlock(query, results, notes)}`;
         headers["x-search"] = "ok";
         // المصادر بتوصل للمتصفح في الهيدر عشان تتعرض تحت الرد (d = اسم الموقع لو الرابط تحويلة)
         headers["x-sources"] = encodeURIComponent(JSON.stringify(results.map((r) => ({ t: r.title, u: r.url, ...(r.domain ? { d: r.domain } : {}) }))));
         if (images.length) headers["x-images"] = encodeURIComponent(JSON.stringify(images));
-      } else headers["x-search"] = "empty";
+      } else {
+        headers["x-search"] = "empty";
+        // سبب فشل البحث لتشخيص الأعطال (رقم الخطأ ورسالته، من غير أي مفاتيح)
+        if (why) headers["x-search-why"] = encodeURIComponent(why.slice(0, 400));
+      }
     }
   }
 
