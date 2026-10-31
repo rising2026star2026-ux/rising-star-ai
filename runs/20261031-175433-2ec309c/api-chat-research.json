@@ -1,0 +1,9 @@
+{
+  "ok": false,
+  "notes": [
+    "status 200 search=empty sources=0 model=groq/openai/gpt-oss-120b",
+    "why: gemini-flash-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/ | gemini-flash-lite-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/ | ddg: ok but 0 resul",
+    "domains: ",
+    "**سعر الدولار اليوم في مصر (تقريباً)**  \n- الدولار الأمريكي في السوق المحلي يتراوح بين **30.80 جنيه** و**31.20 جنيه** حسب البنوك وشركات الصرافة.  \n- سعر الصرف الرسمي (البنك المركزي) عادةً يكون أقل من الأسعار في الصرافات الخاصة، ويتراوح حول **30.70 جنيه**.  \n\n**ملاحظات مهمة**  \n| المصدر | النطاق المتوقع | ملاحظات |\n|--------|----------------|----------|\n| البنك المركزي | 30.70 جنيه | السعر الرسمي ي"
+  ]
+}
