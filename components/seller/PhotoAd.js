@@ -6,7 +6,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { readImage, scaledCanvas, canvasBlob, blobToDataUrl, shareOrDownload, loadFonts } from "@/lib/imagefile";
-import { cutoutCanvas, trimAlpha, progressTracker } from "@/components/studio/cutout";
+import { removeBackground, trimAlpha, progressTracker } from "@/components/studio/cutout";
 import { renderScene, SCENES, FORMATS } from "./scenes";
 import { aiBackground } from "@/lib/aibg";
 import { toast } from "@/lib/store";
@@ -56,9 +56,13 @@ export default function PhotoAd() {
   }
 
   async function removeBg(canvas) {
-    setCut({ status: "load", pct: 0 });
+    setCut({ status: "work", pct: 100 });
     try {
-      const out = await cutoutCanvas(canvas, progressTracker((pct) => setCut({ status: "load", pct })), () => setCut({ status: "work", pct: 100 }));
+      const { canvas: out } = await removeBackground(canvas, {
+        onDevice: () => setCut({ status: "load", pct: 0 }),
+        onProgress: progressTracker((pct) => setCut({ status: "load", pct })),
+        onReady: () => setCut({ status: "work", pct: 100 }),
+      });
       const trimmed = trimAlpha(out);
       if (!trimmed) throw new Error("empty");
       setProd({ canvas: trimmed, framed: false });
@@ -229,9 +233,9 @@ export default function PhotoAd() {
             <div className={p.origInfo}>
               <b>{cut.status === "done" ? "✓ الخلفية اتشالت" : cut.status === "failed" ? "صورتك هتتحط في إطار" : cut.status === "work" ? "بنشيل الخلفية…" : `بنجهّز أداة إزالة الخلفية… ${cut.pct}%`}</b>
               <small>
-                {cut.status === "load" && "أول مرة بس بيحمّل حوالي 50 ميجا، وبعدها بيبقى أسرع بكتير."}
-                {cut.status === "work" && "على الموبايل ممكن تاخد نص دقيقة."}
-                {cut.status === "failed" && "الجهاز ده ما قدرش يشيل الخلفية، فهنستخدم صورتك زي ما هي جوه إطار شيك."}
+                {cut.status === "load" && "السيرفر مشغول، فبنشيلها على جهازك. أول مرة بس بيحمّل حوالي 50 ميجا."}
+                {cut.status === "work" && "ثواني… الصورة بتتبعت لسيرفر Hugging Face عشان تتشال خلفيتها."}
+                {cut.status === "failed" && "ما قدرناش نشيل الخلفية دلوقتي، فحطينا صورتك زي ما هي جوه إطار شيك. جرّب صورة تانية بعد شوية."}
                 {cut.status === "done" && (eye.status === "busy" ? "وبنتعرّف على المنتج…" : eye.status === "done" ? `شكله «${eye.data.name}»` : "")}
               </small>
               {(cut.status === "load" || cut.status === "work") && <div className={p.bar}><i style={{ width: `${cut.status === "work" ? 100 : cut.pct}%` }} className={cut.status === "work" ? p.barWork : ""} /></div>}
@@ -290,7 +294,12 @@ export default function PhotoAd() {
               <span className={s.ctaNote} style={{ margin: 0 }}>اضغط على أي صورة عشان تكبّرها أو تبعتها</span>
             </div>
           )}
-          {prod.framed && <p className={s.note} style={{ marginTop: 12 }}>ℹ️ الجهاز ده ما قدرش يشيل الخلفية، فحطينا صورتك في إطار. جرّب من كروم على كمبيوتر أو موبايل أحدث عشان تاخد المنتج لوحده.</p>}
+          {prod.framed && (
+            <p className={s.note} style={{ marginTop: 12 }}>
+              <span>ℹ️ الخلفية ما اتشالتش المرة دي، فحطينا صورتك في إطار.</span>
+              <button type="button" className={s.miniBtn} onClick={() => removeBg(orig.canvas)}>جرّب تاني</button>
+            </p>
+          )}
         </section>
       )}
 

@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { Drop, Seg, ColorField, Workbench, Note, Busy, styles as s } from "./ui";
 import { IMAGE_TYPES, loadImage, makeCanvas, canvasToBlob, download, baseName, fitWithin, checker } from "./util";
 import { toast } from "@/lib/store";
-import { cutoutCanvas, progressTracker } from "./cutout";
+import { cutoutCanvas, cutoutCloud, progressTracker } from "./cutout";
 
 const WORK_MAX = 2048;
 
@@ -19,6 +19,7 @@ export default function AiRemoveBg() {
   const [error, setError] = useState("");
   const view = useRef(null);
   const cut = useRef(null); // canvas فيه الصورة بعد إزالة الخلفية (شفافة)
+  const lastBase = useRef(null); // آخر صورة فشلت على الجهاز (عشان نعرض السيرفر)
 
   useEffect(() => { paint(); }, [fill, fillColor, stage]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -43,12 +44,25 @@ export default function AiRemoveBg() {
       base.getContext("2d").drawImage(im, 0, 0, w, h);
 
       setStage("load"); setPct(0);
+      lastBase.current = base;
       const cut1 = await cutoutCanvas(base, progressTracker(setPct), () => setStage("work"));
       cut.current = cut1;
       setStage("done");
     } catch (e) {
       console.error(e);
-      setError("ما قدرناش نشغّل الذكاء الاصطناعي على الجهاز ده (ممكن المتصفح قديم أو الذاكرة قليلة). جرّب كروم أو إيدج محدّث، أو استخدم طريقة «لون الخلفية».");
+      setError("الجهاز ده ما قدرش يشغّل الذكاء الاصطناعي (ممكن المتصفح قديم أو الذاكرة قليلة). تقدر تشيلها على السيرفر بدل جهازك، أو تستخدم طريقة «لون الخلفية».");
+      setStage("empty");
+    }
+  }
+
+  async function cloud() {
+    setError("");
+    setStage("work");
+    try {
+      cut.current = await cutoutCloud(lastBase.current);
+      setStage("done");
+    } catch {
+      setError("السيرفر مشغول دلوقتي. جرّب بعد دقيقة، أو استخدم طريقة «لون الخلفية».");
       setStage("empty");
     }
   }
@@ -70,6 +84,9 @@ export default function AiRemoveBg() {
         <span className={s.badge}><i />بيشتغل على جهازك، وصورك ما بتترفعش</span>
         <Drop accept={IMAGE_TYPES} onFiles={open} hint="أي صورة: شخص، منتج، حيوان، عربية. أول مرة بس بيحمّل الموديل (حوالي 50 لـ100 ميجا) وبعدها بيبقى أسرع." />
         {error && <Note tone="warn">{error}</Note>}
+        {error && lastBase.current && (
+          <button type="button" className="btn" onClick={cloud}>شيلها على سيرفر Hugging Face (الصورة هتترفع هناك)</button>
+        )}
       </div>
     );
   }

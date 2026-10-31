@@ -4,7 +4,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { readImage, scaledCanvas, canvasBlob, blobToDataUrl, shareOrDownload, copyText, loadFonts } from "@/lib/imagefile";
-import { cutoutCanvas, trimAlpha, progressTracker } from "@/components/studio/cutout";
+import { removeBackground, trimAlpha, progressTracker } from "@/components/studio/cutout";
 import { read, write, toast } from "@/lib/store";
 import { THEMES, LAYOUTS, renderCatalog, waLink } from "./catalogRender";
 import { buildPdf, pageImages, makeQr } from "./catalogPdf";
@@ -118,21 +118,22 @@ export default function Catalog() {
     if (!list.length) return;
     setError("");
     setBusy(list.length > 1 ? "بنشيل خلفيات المنتجات…" : "بنشيل الخلفية…");
-    setBgPct(0);
+    setBgPct(null);
     let failed = 0;
     for (let i = 0; i < list.length; i++) {
       const p = list[i];
       try {
         const im = imgs[p.id] || (await readImage(await (await fetch(p.img)).blob()));
         const src = scaledCanvas(im, 900);
-        const cut = await cutoutCanvas(src, progressTracker((pct) => setBgPct(pct)), () => setBusy(`بنشيل الخلفيات… ${i + 1} من ${list.length}`));
+        setBusy(`بنشيل الخلفيات… ${i + 1} من ${list.length}`);
+        const { canvas: cut } = await removeBackground(src, { onProgress: progressTracker((pct) => setBgPct(pct)), onReady: () => setBgPct(100) });
         const t = trimAlpha(cut);
         if (!t) throw new Error("empty");
         setProduct(p.id, { img: await toStoredImage(onWhite(t)), clean: true });
       } catch { failed++; }
     }
     setBusy(""); setBgPct(null);
-    if (failed) setError(failed === list.length ? "الجهاز ده ما قدرش يشيل الخلفية. جرّب من كروم على كمبيوتر أو موبايل أحدث." : `${failed} صورة ما اتشالتش خلفيتها، وفضلت زي ما هي.`);
+    if (failed) setError(failed === list.length ? "ما قدرناش نشيل الخلفيات دلوقتي. جرّب تاني بعد شوية." : `${failed} صورة ما اتشالتش خلفيتها، وفضلت زي ما هي.`);
   }
 
   async function nameFromPhotos() {
@@ -287,7 +288,7 @@ export default function Catalog() {
             <div className={k.magic}>
               <button type="button" className={s.miniBtn} onClick={nameFromPhotos} disabled={!!busy || !unnamed}>✨ سمّي المنتجات من صورها {unnamed ? `(${unnamed})` : ""}</button>
               <button type="button" className={s.miniBtn} onClick={writeDescs} disabled={!!busy}>✍️ اكتب الأوصاف</button>
-              <button type="button" className={s.miniBtn} onClick={() => cleanBackgrounds()} disabled={!!busy || !dirty}>🪄 شيل الخلفيات وحطها على أبيض</button>
+              <button type="button" className={s.miniBtn} onClick={() => cleanBackgrounds()} disabled={!!busy || !dirty} title="الصور بتتبعت لسيرفر Hugging Face عشان تتشال خلفيتها">🪄 شيل الخلفيات وحطها على أبيض</button>
             </div>
             {busy && <p className={k.busy} role="status"><span className={s.spin} />{busy}{bgPct !== null && bgPct < 100 ? ` (بنحمّل الأداة ${bgPct}%)` : ""}</p>}
             <ol className={k.list}>

@@ -187,6 +187,9 @@ export const CHECKS = [
       await page.getByLabel("السعر قبل الخصم 1").fill("900 ج");
       await page.getByRole("button", { name: /اكتب الأوصاف/ }).click();
       await page.waitForFunction(() => !document.body.innerText.includes("بنكتب الأوصاف"), null, { timeout: 60000 }).catch(() => note("descs slow"));
+      await page.getByRole("button", { name: /شيل الخلفيات/ }).click();
+      await page.waitForFunction(() => !document.body.innerText.includes("بنشيل الخلفيات") && !document.body.innerText.includes("بنشيل خلفيات"), null, { timeout: 180000 }).catch(() => note("bg slow"));
+      note("after bg: " + ((await page.locator("[role=alert]").allInnerTexts()).join(" | ") || "no error"));
       await page.waitForTimeout(2500);
       await screens("built", 7);
       const dl = page.waitForEvent("download", { timeout: 30000 }).catch(() => null);
