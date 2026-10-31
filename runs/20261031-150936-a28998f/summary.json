@@ -1,0 +1,140 @@
+[
+  {
+    "check": "photo-ad",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 52572,
+    "notes": [
+      "✓ الخلفية اتشالت"
+    ],
+    "errors": [
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license\nPass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear."
+    ]
+  },
+  {
+    "check": "photo-ad",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 29152,
+    "notes": [
+      "✓ الخلفية اتشالت"
+    ],
+    "errors": [
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license\nPass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear."
+    ]
+  },
+  {
+    "check": "catalog",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 41103,
+    "notes": [
+      "after bg: 4 صورة ما اتشالتش خلفيتها، وفضلت زي ما هي. | ",
+      "pdf saved",
+      "page images 4"
+    ],
+    "errors": [
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-4e0",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-4e0",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-4e0",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-4e0"
+    ]
+  },
+  {
+    "check": "catalog",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 29335,
+    "notes": [
+      "after bg: ما قدرناش نشيل الخلفيات دلوقتي. جرّب تاني بعد شوية. | ",
+      "pdf saved",
+      "page images 4"
+    ],
+    "errors": [
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-4e0",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-4e0",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-4e0",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-4e0",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-4e086d776dc92128.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-4e0"
+    ]
+  },
+  {
+    "check": "remove-bg",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 92493,
+    "notes": [
+      "device failed → trying cloud button",
+      "cloud timeout",
+      "NOT removed"
+    ],
+    "errors": [
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: Error: Error (405) occurred while trying to load file: \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json\".\n    at https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751721\n    at f (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751744)\n    at async _ (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:753508)\n    at async g ",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()"
+    ]
+  },
+  {
+    "check": "remove-bg",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 92478,
+    "notes": [
+      "device failed → trying cloud button",
+      "cloud timeout",
+      "NOT removed"
+    ],
+    "errors": [
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: Error: Error (405) occurred while trying to load file: \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json\".\n    at https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751721\n    at f (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751744)\n    at async _ (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:753508)\n    at async g ",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()"
+    ]
+  }
+]
