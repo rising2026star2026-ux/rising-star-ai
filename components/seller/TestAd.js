@@ -76,7 +76,7 @@ export default function TestAd() {
   async function run(adText = text, compareWith = null) {
     if (adText.trim().length < 8) { setError("اكتب نص الإعلان الأول (جملة واحدة على الأقل)."); return; }
     setError("");
-    timers.current.forEach(clearTimeout);
+    timers.current.forEach(clearTimeout); timers.current = [];
     setShown(0); setRevealed(false); setTyping(false);
     setStage("running");
     setPrev(compareWith);
@@ -114,7 +114,7 @@ export default function TestAd() {
   }
 
   function skip() {
-    timers.current.forEach(clearTimeout);
+    timers.current.forEach(clearTimeout); timers.current = [];
     setTyping(false);
     setShown(res?.personas.length || 0);
     setRevealed(true);
@@ -127,7 +127,7 @@ export default function TestAd() {
   }
 
   function reset() {
-    timers.current.forEach(clearTimeout);
+    timers.current.forEach(clearTimeout); timers.current = [];
     setStage("form"); setRes(null); setPrev(null);
     requestAnimationFrame(() => topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
   }
@@ -457,7 +457,7 @@ async function makeStory(res) {
   drawText(ctx, "100 زبون قبل ما أنشره", W / 2, 312, { size: 64, weight: 900, color: "#ffd21f", font: "display" });
 
   // الدرجة
-  const cx = W / 2, cy = 590, R = 190;
+  const cx = W / 2, cy = 560, R = 172;
   ctx.lineWidth = 34; ctx.lineCap = "round";
   ctx.strokeStyle = "rgba(255,255,255,0.1)";
   ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.stroke();
@@ -468,18 +468,18 @@ async function makeStory(res) {
   ctx.fillStyle = tier.color;
   ctx.font = `800 44px "Alexandria", sans-serif`;
   const tw = ctx.measureText(tier.label).width + 70;
-  rr(ctx, cx - tw / 2, cy + R + 50, tw, 82, 41); ctx.fill();
-  drawText(ctx, tier.label, cx, cy + R + 106, { size: 40, weight: 800, color: "#fff", font: "display" });
+  rr(ctx, cx - tw / 2, cy + R + 44, tw, 80, 40); ctx.fill();
+  drawText(ctx, tier.label, cx, cy + R + 99, { size: 40, weight: 800, color: "#fff", font: "display" });
 
   // شبكة الـ100
   const dots = hundredDots(res.tally);
-  const gs = 44, gap = 14, gw = 10 * gs + 9 * gap, gx = (W - gw) / 2, gy = 1000;
+  const gs = 38, gap = 12, gw = 10 * gs + 9 * gap, gx = (W - gw) / 2, gy = 900;
   dots.forEach((v, i) => {
     const col = 9 - (i % 10), row = Math.floor(i / 10); // من اليمين لليسار
     ctx.fillStyle = VERDICT_COLOR[v];
     ctx.beginPath(); ctx.arc(gx + col * (gs + gap) + gs / 2, gy + row * (gs + gap) + gs / 2, gs / 2, 0, Math.PI * 2); ctx.fill();
   });
-  const ly = gy + 10 * (gs + gap) + 50;
+  const ly = gy + 10 * (gs + gap) + 40;
   const items = [["buy", `${res.tally.buy} هيطلبوا`], ["maybe", `${res.tally.maybe} بيفكروا`], ["skip", `${res.tally.skip} عدّوا`]];
   items.forEach(([k, label], i) => {
     const x = W / 2 + (1 - i) * 300;
@@ -495,9 +495,9 @@ async function makeStory(res) {
     const lines = wrap(ctx, `«${best.comment}»`, W - 260, 2);
     const bh = 70 + lines.length * 50;
     ctx.fillStyle = "rgba(255,255,255,0.08)";
-    rr(ctx, 110, ly + 50, W - 220, bh, 32); ctx.fill();
-    drawText(ctx, best.name, W - 150, ly + 106, { size: 30, weight: 700, color: "#ffd21f", align: "right" });
-    lines.forEach((l, k) => drawText(ctx, l, W - 150, ly + 158 + k * 50, { size: 36, weight: 600, color: "#fff", align: "right" }));
+    rr(ctx, 110, ly + 40, W - 220, bh, 32); ctx.fill();
+    drawText(ctx, best.name, W - 150, ly + 94, { size: 30, weight: 700, color: "#ffd21f", align: "right" });
+    lines.forEach((l, k) => drawText(ctx, l, W - 150, ly + 146 + k * 50, { size: 36, weight: 600, color: "#fff", align: "right" }));
   }
   star(ctx, W / 2, 118, 86);
   brandFooter(ctx, W, H, "/test-ad");

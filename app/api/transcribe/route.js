@@ -61,7 +61,8 @@ export async function POST(req) {
   if (!file || typeof file === "string") return fail("مفيش تسجيل.", 400);
   if (file.size < 1500) return fail("التسجيل قصير أوي. اتكلم كام ثانية عن المنتج.", 400);
   if (file.size > MAX) return fail("الفويس أكبر من 4 ميجا. سجّل حاجة أقصر (أقل من 3 دقايق).", 400);
-  if (!/^(audio|video)\//.test(file.type || "audio/")) return fail("الملف ده مش صوت.", 400);
+  const audioExt = /\.(ogg|opus|oga|m4a|mp3|mp4|mpeg|mpga|wav|webm|aac|flac|amr)$/i.test(file.name || "");
+  if (!/^(audio|video)\//.test(file.type || "audio/") && !audioExt) return fail("الملف ده مش صوت.", 400);
   if (tooMany(clientIp(req))) return fail("سجّلت كتير الساعة دي. استنى شوية.", 429);
 
   const text =

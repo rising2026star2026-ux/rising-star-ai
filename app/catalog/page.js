@@ -5,7 +5,8 @@ export const metadata = {
   title: "كتالوجك في دقيقة: كتالوج PDF لمنتجاتك بزرار طلب واتساب",
   description: "ارفع صور منتجاتك واكتب الأسعار، وخد كتالوج PDF شيك بأرقام المنتجات وزراير «اطلب» بتفتح واتساب، وصور للحالة والستوري، وكتالوج نصي.",
   alternates: { canonical: "/catalog" },
-  openGraph: { title: "كتالوجك في دقيقة", url: "/catalog" },
+  openGraph: { title: "كتالوجك في دقيقة", description: "ارفع صور منتجاتك واكتب الأسعار، وخد كتالوج PDF شيك بأرقام المنتجات وزراير «اطلب» بتفتح واتساب، وصور للحالة والستوري، وكتالوج نصي.", url: "/catalog", siteName: "Rising StarAi", locale: "ar_EG", type: "website" },
+  twitter: { card: "summary", title: "كتالوجك في دقيقة", description: "ارفع صور منتجاتك واكتب الأسعار، وخد كتالوج PDF شيك بأرقام المنتجات وزراير «اطلب» بتفتح واتساب، وصور للحالة والستوري، وكتالوج نصي." },
 };
 
 export default function CatalogPage() {

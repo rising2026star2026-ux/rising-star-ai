@@ -116,6 +116,15 @@ export const CHECKS = [
     },
   },
   {
+    name: "remove-bg", path: "/tool/remove-bg",
+    async run({ page, shot, note }) {
+      await page.locator("input[type=file]").first().setInputFiles(path.join(FIX, "product.jpg"));
+      await page.getByText(/الخلفية اتشالت|ما قدرناش نشغّل/).first().waitFor({ timeout: 240000 }).catch(() => note("remove-bg timeout"));
+      note(await page.locator("body").innerText().then((t) => (t.match(/الخلفية اتشالت|ما قدرناش نشغّل[^\n]*/) || ["?"])[0]));
+      await shot("result");
+    },
+  },
+  {
     name: "receipt", path: "/subscriptions/receipt",
     async run({ page, shot, screens, note }) {
       await shot("start");

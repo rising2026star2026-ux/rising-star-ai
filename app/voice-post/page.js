@@ -5,7 +5,8 @@ export const metadata = {
   title: "اتكلم بس.. واحنا نكتب: من فويس لبوست جاهز",
   description: "سجّل فويس بالمصري عن منتجك، أو ارفع فويس من واتساب، وخد بوست فيسبوك وكابشن إنستجرام ورسالة واتساب وسكريبت ريلز ووصف للمتجر.",
   alternates: { canonical: "/voice-post" },
-  openGraph: { title: "اتكلم بس.. واحنا نكتب", url: "/voice-post" },
+  openGraph: { title: "اتكلم بس.. واحنا نكتب", description: "سجّل فويس بالمصري عن منتجك، أو ارفع فويس من واتساب، وخد بوست فيسبوك وكابشن إنستجرام ورسالة واتساب وسكريبت ريلز ووصف للمتجر.", url: "/voice-post", siteName: "Rising StarAi", locale: "ar_EG", type: "website" },
+  twitter: { card: "summary", title: "اتكلم بس.. واحنا نكتب", description: "سجّل فويس بالمصري عن منتجك، أو ارفع فويس من واتساب، وخد بوست فيسبوك وكابشن إنستجرام ورسالة واتساب وسكريبت ريلز ووصف للمتجر." },
 };
 
 export default function VoicePostPage() {

@@ -115,8 +115,12 @@ export default function VoicePost() {
           }
           setLive(`${finalText.current}${interim}`.trim());
         };
-        sr.onend = () => { if (speech.current === sr && rec.current?.state === "recording") { try { sr.start(); } catch {} } };
-        sr.onerror = () => {};
+        let restarts = 0, fatal = false;
+        sr.onend = () => {
+          // بيقف لوحده بعد سكوت، فبنشغّله تاني (بحد أقصى، عشان لو المايك مش متاح ما يلفّش على الفاضي)
+          if (!fatal && speech.current === sr && rec.current?.state === "recording" && restarts++ < 8) { try { sr.start(); } catch {} }
+        };
+        sr.onerror = (e) => { if (["audio-capture", "not-allowed", "service-not-allowed", "language-not-supported"].includes(e?.error)) fatal = true; };
         sr.start();
         speech.current = sr;
       } catch {}

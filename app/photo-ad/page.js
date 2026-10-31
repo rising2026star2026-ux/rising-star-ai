@@ -5,7 +5,8 @@ export const metadata = {
   title: "صوّرها بموبايلك وخد إعلان كامل",
   description: "صورة منتج عادية من موبايلك تتحول لصور شكل الاستوديو، وبوستات فيسبوك وإنستجرام وواتساب وتيك توك بالمصري، وفيديو إعلان 15 ثانية.",
   alternates: { canonical: "/photo-ad" },
-  openGraph: { title: "صوّرها بموبايلك وخد إعلان كامل", url: "/photo-ad" },
+  openGraph: { title: "صوّرها بموبايلك وخد إعلان كامل", description: "صورة منتج عادية من موبايلك تتحول لصور شكل الاستوديو، وبوستات فيسبوك وإنستجرام وواتساب وتيك توك بالمصري، وفيديو إعلان 15 ثانية.", url: "/photo-ad", siteName: "Rising StarAi", locale: "ar_EG", type: "website" },
+  twitter: { card: "summary", title: "صوّرها بموبايلك وخد إعلان كامل", description: "صورة منتج عادية من موبايلك تتحول لصور شكل الاستوديو، وبوستات فيسبوك وإنستجرام وواتساب وتيك توك بالمصري، وفيديو إعلان 15 ثانية." },
 };
 
 export default function PhotoAdPage() {

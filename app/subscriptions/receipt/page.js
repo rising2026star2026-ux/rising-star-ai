@@ -6,7 +6,8 @@ export const metadata = {
   title: "كشف حساب اشتراكاتك: بتدفع كام على الذكاء الاصطناعي؟",
   description: "اختار اشتراكاتك (ChatGPT وClaude وCanva وCapCut وMidjourney...) وخد إيصال بإجمالي اللي بتدفعه بالجنيه، والفلوس اللي بتضيع، وتوفيرك في السنة.",
   alternates: { canonical: "/subscriptions/receipt" },
-  openGraph: { title: "كشف حساب اشتراكاتك", url: "/subscriptions/receipt" },
+  openGraph: { title: "كشف حساب اشتراكاتك", description: "اختار اشتراكاتك (ChatGPT وClaude وCanva وCapCut وMidjourney...) وخد إيصال بإجمالي اللي بتدفعه بالجنيه، والفلوس اللي بتضيع، وتوفيرك في السنة.", url: "/subscriptions/receipt", siteName: "Rising StarAi", locale: "ar_EG", type: "website" },
+  twitter: { card: "summary", title: "كشف حساب اشتراكاتك", description: "اختار اشتراكاتك (ChatGPT وClaude وCanva وCapCut وMidjourney...) وخد إيصال بإجمالي اللي بتدفعه بالجنيه، والفلوس اللي بتضيع، وتوفيرك في السنة." },
 };
 
 export default function ReceiptPage() {

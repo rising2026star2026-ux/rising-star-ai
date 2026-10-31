@@ -9,7 +9,10 @@ import { CHECKS } from "./plan.mjs";
 
 const BASE = process.env.BASE || "http://localhost:3000";
 const OUT = process.env.OUT || "ci-out";
-const ONLY = (process.env.CI_ONLY || "").split(",").map((s) => s.trim()).filter(Boolean);
+// تشغيل جزء بس: متغير CI_ONLY أو ملف scripts/ci/ONLY (سطر واحد: أسماء مفصولة بفاصلة)
+let onlyRaw = process.env.CI_ONLY || "";
+try { onlyRaw = onlyRaw || (await fs.readFile(new URL("./ONLY", import.meta.url), "utf8")); } catch {}
+const ONLY = onlyRaw.split(",").map((s) => s.trim()).filter(Boolean);
 
 const VIEWPORTS = {
   mobile: { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true },
@@ -21,6 +24,7 @@ const summary = [];
 // تجارب لازم تتعمل قبل المتصفح (مثلاً توليد فويس للتجربة)
 const { API_CHECKS_FIRST = [] } = await import("./plan.mjs");
 for (const a of API_CHECKS_FIRST) {
+  if (ONLY.length && !ONLY.includes(a.name)) continue;
   const t0 = Date.now();
   try {
     const out = await a.run({ BASE, OUT });
@@ -39,7 +43,8 @@ for (const check of CHECKS) {
     const page = await ctx.newPage();
     const errors = [];
     page.on("pageerror", (e) => errors.push(`pageerror: ${e.message}`));
-    page.on("console", (m) => { if (m.type() === "error") errors.push(`console: ${m.text().slice(0, 300)}`); });
+    page.on("console", (m) => { if (m.type() === "error" || m.type() === "warning") errors.push(`console.${m.type()}: ${m.text().slice(0, 400)}`); });
+    page.on("response", (r) => { if (r.status() >= 400) errors.push(`http ${r.status()} ${r.request().method()} ${r.url().slice(0, 200)}`); });
     page.on("requestfailed", (r) => { const u = r.url(); if (u.startsWith(BASE)) errors.push(`requestfailed: ${u} ${r.failure()?.errorText}`); });
     const notes = [];
     const t0 = Date.now();
@@ -73,7 +78,7 @@ for (const check of CHECKS) {
       notes.push(`FAILED: ${String(e?.message || e).slice(0, 800)}`);
       try { await shot("failure"); } catch {}
     }
-    summary.push({ check: check.name, vp, ok, ms: Date.now() - t0, notes, errors: errors.slice(0, 25) });
+    summary.push({ check: check.name, vp, ok, ms: Date.now() - t0, notes, errors: errors.slice(0, 40) });
     await ctx.close();
   }
 }

@@ -25,8 +25,9 @@ export default function Receipt() {
   const [printKey, setPrintKey] = useState(0);
   const paperRef = useRef(null);
 
-  useEffect(() => { const saved = read(STORE_KEY, []); if (Array.isArray(saved)) setItems(saved.filter((x) => toolById[x.toolId])); }, []);
-  useEffect(() => { write(STORE_KEY, items); }, [items]);
+  const loaded = useRef(false);
+  useEffect(() => { const saved = read(STORE_KEY, []); if (Array.isArray(saved)) setItems(saved.filter((x) => toolById[x.toolId] && toolById[x.toolId].plans.some((p) => p.name === x.plan))); loaded.current = true; }, []);
+  useEffect(() => { if (loaded.current) write(STORE_KEY, items); }, [items]);
 
   const list = useMemo(() => {
     const nq = q.trim().toLowerCase();
@@ -194,7 +195,7 @@ async function makeStory(res) {
   // الورقة
   const px = 110, pw = W - 220, py = 350;
   const rows = res.lines.slice(0, 6);
-  const ph = 330 + rows.length * 74 + (res.saveYear > 0 ? 300 : 200);
+  const ph = 250 + rows.length * 74 + (res.lines.length > rows.length ? 30 : 0) + (res.saveYear > 0 ? 300 : 200);
   ctx.save();
   ctx.shadowColor = "rgba(0,0,0,0.5)"; ctx.shadowBlur = 60; ctx.shadowOffsetY = 20;
   ctx.fillStyle = "#fffdf7";
