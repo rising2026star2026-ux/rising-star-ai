@@ -7,19 +7,19 @@ https://nextjs.org/telemetry
    ▲ Next.js 15.5.28
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 12.2s
+ ✓ Compiled successfully in 19.7s
    Linting and checking validity of types ...
    Collecting page data ...
-   Generating static pages (0/1051) ...
-   Generating static pages (262/1051) 
-   Generating static pages (525/1051) 
-   Generating static pages (788/1051) 
- ✓ Generating static pages (1051/1051)
+   Generating static pages (0/1057) ...
+   Generating static pages (264/1057) 
+   Generating static pages (528/1057) 
+   Generating static pages (792/1057) 
+ ✓ Generating static pages (1057/1057)
    Finalizing page optimization ...
    Collecting build traces ...
 
 Route (app)                                 Size  First Load JS  Revalidate  Expire
-┌ ○ /                                    20.3 kB         155 kB
+┌ ○ /                                    21.3 kB         156 kB
 ├ ○ /_not-found                             1 kB         105 kB
 ├ ○ /agents                                438 B         108 kB
 ├ ● /agents/[id]                         1.91 kB         160 kB
@@ -27,28 +27,31 @@ Route (app)                                 Size  First Load JS  Revalidate  Exp
 ├   ├ /agents/market
 ├   ├ /agents/compare
 ├   └ [+3 more paths]
-├ ● /ai/[slug]                             991 B         108 kB
+├ ● /ai/[slug]                             992 B         108 kB
 ├   ├ /ai/taskade
 ├   ├ /ai/runwayml
 ├   ├ /ai/aiva
 ├   └ [+588 more paths]
-├ ƒ /api/ad-pack                           183 B         104 kB
-├ ƒ /api/adcopy                            183 B         104 kB
-├ ƒ /api/agent                             183 B         104 kB
-├ ƒ /api/chat                              183 B         104 kB
-├ ƒ /api/image                             183 B         104 kB
-├ ƒ /api/pexels                            183 B         104 kB
-├ ƒ /api/pro                               183 B         104 kB
-├ ƒ /api/product-eye                       183 B         104 kB
-├ ƒ /api/prompt-en                         183 B         104 kB
-├ ƒ /api/proofread                         183 B         104 kB
-├ ƒ /api/reel                              183 B         104 kB
-├ ƒ /api/run                               183 B         104 kB
-├ ƒ /api/scam-scan                         183 B         104 kB
-├ ƒ /api/test-ad                           183 B         104 kB
-├ ƒ /api/tts                               183 B         104 kB
-├ ƒ /api/vision                            183 B         104 kB
-├ ƒ /api/vscript                           183 B         104 kB
+├ ƒ /api/ad-pack                           188 B         104 kB
+├ ƒ /api/adcopy                            188 B         104 kB
+├ ƒ /api/agent                             188 B         104 kB
+├ ƒ /api/catalog-copy                      188 B         104 kB
+├ ƒ /api/chat                              188 B         104 kB
+├ ƒ /api/image                             188 B         104 kB
+├ ƒ /api/pexels                            188 B         104 kB
+├ ƒ /api/pro                               188 B         104 kB
+├ ƒ /api/product-eye                       188 B         104 kB
+├ ƒ /api/prompt-en                         188 B         104 kB
+├ ƒ /api/proofread                         188 B         104 kB
+├ ƒ /api/reel                              188 B         104 kB
+├ ƒ /api/run                               188 B         104 kB
+├ ƒ /api/scam-scan                         188 B         104 kB
+├ ƒ /api/test-ad                           188 B         104 kB
+├ ƒ /api/transcribe                        188 B         104 kB
+├ ƒ /api/tts                               188 B         104 kB
+├ ƒ /api/vision                            188 B         104 kB
+├ ƒ /api/vscript                           188 B         104 kB
+├ ○ /catalog                             12.8 kB         120 kB
 ├ ○ /chat                                9.16 kB         195 kB
 ├ ○ /creators                              404 B         108 kB
 ├ ● /creators/[slug]                       404 B         108 kB
@@ -63,7 +66,7 @@ Route (app)                                 Size  First Load JS  Revalidate  Exp
 ├   └ [+6 more paths]
 ├ ○ /flows                                 511 B         108 kB
 ├ ○ /global-tools                        1.09 kB         108 kB
-├ ● /global-tools/[cat]                  3.43 kB         111 kB
+├ ● /global-tools/[cat]                  3.44 kB         111 kB
 ├   ├ /global-tools/chatbots
 ├   ├ /global-tools/writing
 ├   ├ /global-tools/copywriting
@@ -79,7 +82,7 @@ Route (app)                                 Size  First Load JS  Revalidate  Exp
 ├   ├ /library/qwen-image
 ├   └ [+111 more paths]
 ├ ○ /maker                               1.22 kB         108 kB
-├ ● /maker/[slug]                        3.91 kB         111 kB
+├ ● /maker/[slug]                        3.92 kB         111 kB
 ├   ├ /maker/pollinations
 ├   ├ /maker/perchance
 ├   ├ /maker/raphael-ai
@@ -87,7 +90,7 @@ Route (app)                                 Size  First Load JS  Revalidate  Exp
 ├ ○ /maker/create                        4.83 kB         112 kB
 ├ ○ /models                              4.72 kB         112 kB          6h      1y
 ├ ○ /news                                 1.3 kB         105 kB
-├ ○ /photo-ad                            15.8 kB         123 kB
+├ ○ /photo-ad                            15.9 kB         123 kB
 ├ ○ /plans                               1.89 kB         109 kB
 ├ ● /program/[key]                       1.58 kB         109 kB
 ├   ├ /program/chatgpt
@@ -95,34 +98,37 @@ Route (app)                                 Size  First Load JS  Revalidate  Exp
 ├   ├ /program/gemini
 ├   └ [+68 more paths]
 ├ ○ /prompts                              1.9 kB         109 kB
-├ ○ /resources                             610 B         108 kB
-├ ● /resources/[cat]                       610 B         108 kB
+├ ○ /resources                             611 B         108 kB
+├ ● /resources/[cat]                       611 B         108 kB
 ├   ├ /resources/canva
 ├   ├ /resources/social
 ├   ├ /resources/psd
 ├   └ [+6 more paths]
-├ ○ /robots.txt                            183 B         104 kB
-├ ○ /scam-check                          4.65 kB         112 kB
-├ ○ /sitemap.xml                           183 B         104 kB
-├ ○ /subscriptions                       3.03 kB         120 kB
+├ ○ /robots.txt                            188 B         104 kB
+├ ○ /scam-check                          4.69 kB         112 kB
+├ ○ /seller                                 1 kB         108 kB
+├ ○ /sitemap.xml                           188 B         104 kB
+├ ○ /subscriptions                       3.04 kB         120 kB
 ├ ○ /subscriptions/calculator            2.36 kB         119 kB
-├ ● /task/[slug]                         3.43 kB         111 kB
+├ ○ /subscriptions/receipt               10.4 kB         127 kB
+├ ● /task/[slug]                         3.44 kB         111 kB
 ├   ├ /task/logo
 ├   ├ /task/resume
 ├   ├ /task/translate
 ├   └ [+27 more paths]
-├ ○ /tasks                                 610 B         108 kB
+├ ○ /tasks                                 611 B         108 kB
 ├ ○ /test-ad                             12.1 kB         119 kB
 ├ ● /tool/[id]                           9.58 kB         168 kB
 ├   ├ /tool/article
 ├   ├ /tool/rewrite
 ├   ├ /tool/summarize
 ├   └ [+70 more paths]
-└ ○ /tools                               2.71 kB         129 kB
+├ ○ /tools                               2.71 kB         129 kB
+└ ○ /voice-post                          8.31 kB         115 kB
 + First Load JS shared by all             104 kB
   ├ chunks/1255-60d8dc7c8c9309a1.js      46.3 kB
   ├ chunks/4bd1b696-100b9d70ed4e49c1.js  54.2 kB
-  └ other shared chunks (total)          3.19 kB
+  └ other shared chunks (total)           3.2 kB
 
 
 ○  (Static)   prerendered as static content
