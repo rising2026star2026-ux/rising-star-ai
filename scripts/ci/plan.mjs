@@ -204,6 +204,21 @@ export const CHECKS = [
       note(`page images ${imgs.length}`);
     },
   },
+  {
+    name: "chat-pdf", path: "/chat", viewports: ["mobile"],
+    async run({ page, shot, note, FIXDIR }) {
+      await page.setInputFiles('[data-testid="chat-file"]', [path.join(FIXDIR, "guide-ar.pdf"), path.join(FIXDIR, "policy-ar.docx")]);
+      await page.waitForFunction(() => !document.querySelector('[class*="filePending"]'), null, { timeout: 40000 });
+      await shot("ready");
+      await page.fill("#chat-in", "كام تكلفة فيسبوك الشهرية وكام أوردر جابت؟ وإيه مصاريف الشحن للقاهرة؟");
+      await page.click('button[aria-label="إرسال"]');
+      await page.waitForFunction(() => document.body.innerText.includes("3000") || document.body.innerText.includes("٣٠٠٠"), null, { timeout: 60000 }).catch(() => note("answer lacked 3000"));
+      await page.waitForTimeout(6000);
+      await shot("answer");
+      const txt = await page.evaluate(() => document.body.innerText);
+      note(`has 3000=${/3000|3,000/.test(txt)} has 45=${/45/.test(txt)} has 50=${/50/.test(txt)}`);
+    },
+  },
   // معامل التجارب (بتشتغل بس لو اسمها مكتوب في scripts/ci/ONLY)
   { name: "cutout-lab", lab: true, path: "/tool/remove-bg", viewports: ["desktop"], run: CUTOUT_LAB },
   { name: "space-lab", lab: true, path: "/tool/remove-bg", viewports: ["desktop"], run: SPACE_LAB },
@@ -269,6 +284,39 @@ export const API_CHECKS_FIRST = [
 ];
 
 export const API_CHECKS = [
+  {
+    name: "chat-research",
+    async run({ BASE }) {
+      const r = await fetch(BASE + "/api/chat", { method: "POST", headers: { "Content-Type": "application/json", "x-forwarded-for": `10.1.${Math.floor(Math.random() * 250)}.7` }, body: JSON.stringify({ messages: [{ role: "user", content: "إيه آخر أخبار سعر الدولار في مصر النهارده؟" }], model: "balanced", web: true }) });
+      const text = await r.text();
+      let src = []; try { src = JSON.parse(decodeURIComponent(r.headers.get("x-sources") || "[]")); } catch {}
+      return { ok: r.ok && r.headers.get("x-search") === "ok" && src.length > 0 && text.length > 80, notes: [`status ${r.status} search=${r.headers.get("x-search")} sources=${src.length}`, `domains: ${src.map((x) => x.d || x.u).slice(0, 5).join(", ")}`, text.slice(0, 400)] };
+    },
+  },
+  {
+    name: "chat-long-doc",
+    async run({ BASE }) {
+      // ملف طويل (حوالي 60 ألف حرف) فيه معلومة واحدة مدفونة في النص
+      const filler = (i) => `الفقرة ${i}: تقرير دوري عن حركة المبيعات والمخزون في الفرع الرئيسي، ومعدلات الشحن والتسليم، وملاحظات عامة لا تحتوي على قرارات.`;
+      const lines = Array.from({ length: 500 }, (_, i) => filler(i));
+      lines[311] = "قرار مهم: تم الاتفاق على أن سعر الجملة لمنتج «مصباح نور» هو 187 جنيه للقطعة بداية من الشهر القادم.";
+      const text = lines.join("\n\n");
+      const r = await fetch(BASE + "/api/chat", { method: "POST", headers: { "Content-Type": "application/json", "x-forwarded-for": `10.2.${Math.floor(Math.random() * 250)}.9` }, body: JSON.stringify({ messages: [{ role: "user", content: "سعر الجملة لمصباح نور كام؟" }], model: "balanced", docs: [{ name: "report.txt", text }] }) });
+      const out = await r.text();
+      return { ok: r.ok && /187/.test(out), notes: [`status ${r.status} x-docs=${r.headers.get("x-docs")} chars=${text.length}`, out.slice(0, 300)] };
+    },
+  },
+  {
+    name: "chat-summarize-long",
+    async run({ BASE }) {
+      const parts = ["الفصل الأول: بيتكلم عن اختيار الجمهور المستهدف.", "الفصل الثاني: بيتكلم عن الإعلانات الممولة وتكلفتها.", "الفصل الثالث: بيتكلم عن صناعة المحتوى والريلز.", "الفصل الرابع: بيتكلم عن قياس النتايج."];
+      const text = parts.map((p, i) => `${p}\n\n` + Array.from({ length: 120 }, (_, k) => `تفاصيل ${k} في الفصل ${i + 1} مع أمثلة وأرقام وتوصيات متكررة للتوضيح.`).join("\n\n")).join("\n\n");
+      const r = await fetch(BASE + "/api/chat", { method: "POST", headers: { "Content-Type": "application/json", "x-forwarded-for": `10.3.${Math.floor(Math.random() * 250)}.5` }, body: JSON.stringify({ messages: [{ role: "user", content: "لخّصلي الملف في 4 نقاط" }], model: "balanced", docs: [{ name: "guide.txt", text }], instructions: "اكتب بالفصحى فقط" }) });
+      const out = await r.text();
+      const hits = ["الجمهور", "الإعلانات", "المحتوى", "قياس"].filter((w) => out.includes(w)).length;
+      return { ok: r.ok && hits >= 3, notes: [`status ${r.status} x-docs=${r.headers.get("x-docs")} covered=${hits}/4`, out.slice(0, 500)] };
+    },
+  },
   {
     name: "test-ad",
     async run({ BASE }) {
