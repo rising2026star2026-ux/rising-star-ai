@@ -1,0 +1,331 @@
+[
+  {
+    "check": "api:voice-tts-transcribe",
+    "ok": true,
+    "ms": 964,
+    "notes": [
+      "transcribe 200 in 368ms",
+      "said: عندي طقم حلل جرانيت تركي عشر قطع، سعره ألف وتمنمية وخمسين جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام.",
+      "got: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ]
+  },
+  {
+    "check": "home",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 4866,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "home",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 4293,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "seller",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 3662,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "seller",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 3082,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "test-ad",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 26820,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "test-ad",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 22813,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "photo-ad",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 28870,
+    "notes": [
+      "✓ الخلفية اتشالت"
+    ],
+    "errors": [
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license\nPass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear."
+    ]
+  },
+  {
+    "check": "photo-ad",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 27116,
+    "notes": [
+      "✓ الخلفية اتشالت"
+    ],
+    "errors": [
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license\nPass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear."
+    ]
+  },
+  {
+    "check": "voice-post",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 16693,
+    "notes": [
+      "transcript: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ],
+    "errors": [
+      "requestfailed: http://localhost:3000/models?_rsc=iGAD6zesgY1rLyE5 net::ERR_ABORTED"
+    ]
+  },
+  {
+    "check": "voice-post",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 15956,
+    "notes": [
+      "transcript: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ],
+    "errors": [
+      "requestfailed: http://localhost:3000/models?_rsc=iGAD6zesgY1rLyE5 net::ERR_ABORTED"
+    ]
+  },
+  {
+    "check": "catalog",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 29322,
+    "notes": [
+      "after bg: 4 صورة ما اتشالتش خلفيتها، وفضلت زي ما هي. | ",
+      "pdf saved",
+      "page images 4"
+    ],
+    "errors": [
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd"
+    ]
+  },
+  {
+    "check": "catalog",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 25487,
+    "notes": [
+      "after bg: ما قدرناش نشيل الخلفيات دلوقتي. جرّب تاني بعد شوية. | ",
+      "pdf saved",
+      "page images 4"
+    ],
+    "errors": [
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd"
+    ]
+  },
+  {
+    "check": "chat-pdf",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 9450,
+    "notes": [
+      "has 3000=true has 45=true has 50=true"
+    ],
+    "errors": []
+  },
+  {
+    "check": "remove-bg",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 92494,
+    "notes": [
+      "device failed → trying cloud button",
+      "cloud timeout",
+      "NOT removed"
+    ],
+    "errors": [
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: Error: Error (405) occurred while trying to load file: \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json\".\n    at https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751721\n    at f (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751744)\n    at async _ (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:753508)\n    at async g ",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()"
+    ]
+  },
+  {
+    "check": "remove-bg",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 92478,
+    "notes": [
+      "device failed → trying cloud button",
+      "cloud timeout",
+      "NOT removed"
+    ],
+    "errors": [
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: Error: Error (405) occurred while trying to load file: \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json\".\n    at https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751721\n    at f (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751744)\n    at async _ (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:753508)\n    at async g ",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()"
+    ]
+  },
+  {
+    "check": "receipt",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 20822,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "receipt",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 16349,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "api:chat-research",
+    "ok": false,
+    "ms": 1851,
+    "notes": [
+      "status 200 search=empty sources=0 model=groq/openai/gpt-oss-120b",
+      "why: gemini-flash-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/ | gemini-flash-lite-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/ | ddg: ok but 0 resul",
+      "domains: ",
+      "**ملاحظة:** مش قادر أتأكد من سعر الدولار في مصر لليوم بالضبط لأن البحث ما جابش نتائج، فالأرقام الحالية ممكن تكون مختلفة؛ يفضَّل تتحقق منها من مصدر موثوق (موقع البنك المركزي، أو تطبيقات أسواق العملات).\n\n---\n\n## نظرة عامة على سعر الدولار في مصر (حتى أواخر 2023)\n\n| الفترة | سعر الدولار (جنيه) | ملاحظات |\n|--------|--------------------|----------|\n| 2022‑2023 | 30‑31 جنيه تقريبًا | استقرار نسبي بعد تع"
+    ]
+  },
+  {
+    "check": "api:chat-long-doc",
+    "ok": true,
+    "ms": 1755,
+    "notes": [
+      "status 200 x-docs=long model=gemini/gemini-flash-lite-latest chars=63361",
+      "سعر الجملة لمنتج «مصباح نور» هو **187 جنيه** للقطعة بداية من الشهر القادم (ملف `report.txt`)."
+    ]
+  },
+  {
+    "check": "api:chat-summarize-long",
+    "ok": true,
+    "ms": 6304,
+    "notes": [
+      "status 200 x-docs=long model=gemini/gemini-flash-lite-latest covered=4/4",
+      "يستعرض الملف محتوى شاملًا مقسماً على أربعة فصول رئيسية تغطي استراتيجيات التسويق الرقمي بدءاً من تحديد الجمهور وصولاً إلى قياس النتائج وتحليلها.\n\n* **الفصل الأول (اختيار الجمهور المستهدف):** يوضح كيفية تحديد وتحليل الشرائح المستهدفة بدقة لضمان توجيه الرسائل التسويقية للأشخاص الأنسب للمنتج أو الخدمة.\n* **الفصل الثاني (الإعلانات الممولة وتكلفتها):** يناقش آليات إطلاق الحملات الإعلانية المدفوعة، وطرق احتساب التكاليف وتحسين العائد على الإنفاق الإعلاني (ROAS).\n* **الفصل الثالث (صناعة المحتوى والريلز):"
+    ]
+  },
+  {
+    "check": "api:test-ad",
+    "ok": true,
+    "ms": 2645,
+    "notes": [
+      "status 200 in 2644ms",
+      "score 72 tally {\"buy\":37,\"maybe\":37,\"skip\":26}"
+    ]
+  },
+  {
+    "check": "api:test-ad-image",
+    "ok": true,
+    "ms": 4460,
+    "notes": [
+      "status 200 in 4460ms",
+      "sawImage=true",
+      "photo=[\"الصورة جرافيك، يفضل استبدالها بصورة حقيقية للزجاجة.\",\"ضيف إضاءة وشدة ألوان توضح تفاصيل الزجاجة.\",\"حط علامة تجارية أو شعار واضح على الصورة.\"]"
+    ]
+  },
+  {
+    "check": "api:product-eye",
+    "ok": true,
+    "ms": 2007,
+    "notes": [
+      "status 200 in 2006ms",
+      "{\"name\":\"زجاجة صفراء بسيطة\",\"category\":\"مستحضرات\",\"colors\":[\"أصفر/بني فاتح\",\"أسود مطفي\"],\"visible\":[\"تصميم بسيط ونظيف\",\"إضاءة عاكسة على جانب الزجاجة\"],\"scene\":\"soft beige and light brown gradient countertop, warm natural light from a window, blurred minimalist kitchen background\",\"seen\":\"بناءً على الصورة الظاهرة أمامنا، إليك التفاصيل المحددة:\\n\\n1) **نوع المنتج وشكله:**\\n* زجاجة مستطيلة الشكل بحوا"
+    ]
+  },
+  {
+    "check": "api:catalog-copy",
+    "ok": true,
+    "ms": 630,
+    "notes": [
+      "status 200 in 629ms",
+      "{\"tagline\":\"أزياء يومية، أناقة مستمرة\",\"descs\":[\"شنطة يد جلد طبيعي: جودة عالية، تصميم أنيق\",\"شنطة كروس صغيرة: حجم عملي، مظهر عصري\",\"محفظة حريمي: أنيقة، تخزين منظم\"]}"
+    ]
+  },
+  {
+    "check": "api:ad-pack-voice",
+    "ok": true,
+    "ms": 1866,
+    "notes": [
+      "status 200 in 1866ms",
+      "missing=[] tags=12"
+    ]
+  }
+]

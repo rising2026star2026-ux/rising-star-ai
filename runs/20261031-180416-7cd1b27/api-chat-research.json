@@ -1,0 +1,9 @@
+{
+  "ok": false,
+  "notes": [
+    "status 200 search=empty sources=0 model=groq/openai/gpt-oss-120b",
+    "why: gemini-flash-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/ | gemini-flash-lite-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/ | ddg: ok but 0 resul",
+    "domains: ",
+    "**ملاحظة:** مش قادر أتأكد من سعر الدولار في مصر لليوم بالضبط لأن البحث ما جابش نتائج، فالأرقام الحالية ممكن تكون مختلفة؛ يفضَّل تتحقق منها من مصدر موثوق (موقع البنك المركزي، أو تطبيقات أسواق العملات).\n\n---\n\n## نظرة عامة على سعر الدولار في مصر (حتى أواخر 2023)\n\n| الفترة | سعر الدولار (جنيه) | ملاحظات |\n|--------|--------------------|----------|\n| 2022‑2023 | 30‑31 جنيه تقريبًا | استقرار نسبي بعد تع"
+  ]
+}
