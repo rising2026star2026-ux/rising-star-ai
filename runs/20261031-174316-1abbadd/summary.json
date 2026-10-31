@@ -1,0 +1,344 @@
+[
+  {
+    "check": "api:voice-tts-transcribe",
+    "ok": true,
+    "ms": 1156,
+    "notes": [
+      "transcribe 200 in 366ms",
+      "said: عندي طقم حلل جرانيت تركي عشر قطع، سعره ألف وتمنمية وخمسين جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام.",
+      "got: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ]
+  },
+  {
+    "check": "home",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 4658,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "home",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 4302,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "seller",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 3586,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "seller",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 3079,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "test-ad",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 26808,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "test-ad",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 23098,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "photo-ad",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 29377,
+    "notes": [
+      "✓ الخلفية اتشالت"
+    ],
+    "errors": [
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license\nPass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear."
+    ]
+  },
+  {
+    "check": "photo-ad",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 29987,
+    "notes": [
+      "✓ الخلفية اتشالت"
+    ],
+    "errors": [
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license\nPass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear."
+    ]
+  },
+  {
+    "check": "voice-post",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 17056,
+    "notes": [
+      "transcript: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ],
+    "errors": [
+      "requestfailed: http://localhost:3000/models?_rsc=iGAD6zesgY1rLyE5 net::ERR_ABORTED"
+    ]
+  },
+  {
+    "check": "voice-post",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 16254,
+    "notes": [
+      "transcript: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ],
+    "errors": []
+  },
+  {
+    "check": "catalog",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 93549,
+    "notes": [
+      "after bg: 4 صورة ما اتشالتش خلفيتها، وفضلت زي ما هي. | ",
+      "pdf saved",
+      "page images 4"
+    ],
+    "errors": [
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd"
+    ]
+  },
+  {
+    "check": "catalog",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 121307,
+    "notes": [
+      "naming slow",
+      "after bg: ما قدرناش نشيل الخلفيات دلوقتي. جرّب تاني بعد شوية. | ",
+      "pdf saved",
+      "page images 4"
+    ],
+    "errors": [
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-abdd4e7aae145bff.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-abd"
+    ]
+  },
+  {
+    "check": "chat-pdf",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 9412,
+    "notes": [
+      "has 3000=true has 45=true has 50=true"
+    ],
+    "errors": []
+  },
+  {
+    "check": "remove-bg",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 92433,
+    "notes": [
+      "device failed → trying cloud button",
+      "cloud timeout",
+      "NOT removed"
+    ],
+    "errors": [
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: Error: Error (405) occurred while trying to load file: \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json\".\n    at https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751721\n    at f (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751744)\n    at async _ (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:753508)\n    at async g ",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()"
+    ]
+  },
+  {
+    "check": "remove-bg",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 128467,
+    "notes": [
+      "device failed → trying cloud button",
+      "cloud timeout",
+      "NOT removed"
+    ],
+    "errors": [
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: \u001b[0;93m2026-10-31 17:39:49.389698 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:39:49.413798 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:39:49.433498 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:39:49.446099 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:39:49.467798 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:39:49.488398 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:39:49.531199 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:39:49.542399 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:39:49.913298 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:39:49.913798 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:39:49.913999 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:39:49.914499 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:39:49.914899 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:39:49.915199 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:39:49.915499 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:39:49.915898 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3/Sub'\u001b[m",
+      "console.error: An error occurred during model execution: \"127873152\".",
+      "console.error: Inputs given to model: {input_image: Object}",
+      "console.error: 127873152"
+    ]
+  },
+  {
+    "check": "receipt",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 20861,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "receipt",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 16256,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "api:chat-research",
+    "ok": false,
+    "ms": 1409,
+    "notes": [
+      "status 200 search=empty sources=0 model=groq/openai/gpt-oss-120b",
+      "why: gemini-flash-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/ | gemini-flash-lite-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
+      "domains: ",
+      "**سعر الدولار اليوم (مصر)**  \nحسب آخر البيانات المتوفرة حتى تاريخ آخر تحديث لي (نهاية 2023)، الدولار الأمريكي يتداول في السوق المحلي بين **30.5 جنيه** و**31.0 جنيه** للشراء، وبين **31.2 جنيه** و**31.8 جنيه** للبيع، مع اختلاف بسيط بين البنوك ومكاتب الصرافة.\n\n**ملاحظة مهمة**  \nالأسعار تتقلب طوال اليوم بحسب العرض والطلب، وقد تكون هناك فروق بين البنوك (مثل البنك المركزي، البنك الأهلي، البنك التجاري ال"
+    ]
+  },
+  {
+    "check": "api:chat-long-doc",
+    "ok": true,
+    "ms": 30991,
+    "notes": [
+      "status 200 x-docs=long model=gemini/gemini-flash-lite-latest chars=63361",
+      "سعر الجملة لمنتج «مصباح نور» هو 187 جنيه للقطعة بداية من الشهر القادم (ملف report.txt)."
+    ]
+  },
+  {
+    "check": "api:chat-summarize-long",
+    "ok": true,
+    "ms": 2307,
+    "notes": [
+      "status 200 x-docs=long model=gemini/gemini-flash-lite-latest covered=4/4",
+      "يتناول الملف المرفق (guide.txt) استراتيجيات التسويق الرقمي وتطوير الأعمال عبر 4 فصول رئيسية تغطي الجمهور المستهدف، الإعلانات الممولة، صناعة المحتوى، وقياس النتائج.\n\n* **الفصل الأول (اختيار الجمهور المستهدف):** يركز على أهمية تحديد وتحليل شرائح الجمهور المستهدف بدقة لضمان وصول الرسالة التسويقية للأشخاص المناسبين (guide.txt).\n* **الفصل الثاني (الإعلانات الممولة وتكلفتها):** يناقش آليات إدارة الحملات الإعلانية المدفوعة وكيفية تحسين التكاليف الاستراتيجية للحصول على أفضل عائد على الإنفاق الإعلاني (gu"
+    ]
+  },
+  {
+    "check": "api:test-ad",
+    "ok": true,
+    "ms": 2718,
+    "notes": [
+      "status 200 in 2717ms",
+      "score 66 tally {\"buy\":32,\"maybe\":39,\"skip\":29}"
+    ]
+  },
+  {
+    "check": "api:test-ad-image",
+    "ok": true,
+    "ms": 4502,
+    "notes": [
+      "status 200 in 4501ms",
+      "sawImage=true",
+      "photo=[\"الصورة مش واقعية؛ استبدل التصميم المتجه بصورة حقيقية للزجاجة.\",\"ضيف شعار أو اسم الماركة على الزجاجة لتقوية الثقة.\"]"
+    ]
+  },
+  {
+    "check": "api:product-eye",
+    "ok": true,
+    "ms": 1989,
+    "notes": [
+      "status 200 in 1988ms",
+      "{\"name\":\"زجاجة عسل أسود\",\"category\":\"عسل\",\"colors\":[\"أصفر داكن\",\"أسود\"],\"visible\":[\"تصميم نظيف وبسيط\",\"إضاءة خفيفة على جانب الزجاجة\"],\"scene\":\"soft beige marble countertop, warm morning window light, blurred kitchen background\",\"seen\":\"بناءً على الصورة الظاهرة أمامنا، إليك التفاصيل المحددة:\\n\\n* **نوع وشكل المنتج:** زجاجة مستطيلة بحواف دائرية مع غطاء مربع متصل بعنق قصير.\\n* **الألوان:** \\n  * جسم "
+    ]
+  },
+  {
+    "check": "api:catalog-copy",
+    "ok": true,
+    "ms": 337,
+    "notes": [
+      "status 200 in 336ms",
+      "{\"tagline\":\"أزياء بسيطة، أناقة خالدة\",\"descs\":[\"شنطة يد جلد طبيعي بتخليك متألقة\",\"شنطة كروس صغيرة للراحة اليومية\",\"محفظة حريمي بتنظم شحنتك مع أناقة\"]}"
+    ]
+  },
+  {
+    "check": "api:ad-pack-voice",
+    "ok": true,
+    "ms": 2099,
+    "notes": [
+      "status 200 in 2099ms",
+      "missing=[] tags=12"
+    ]
+  }
+]

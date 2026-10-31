@@ -1,0 +1,9 @@
+{
+  "ok": false,
+  "notes": [
+    "status 200 search=empty sources=0 model=groq/openai/gpt-oss-120b",
+    "why: gemini-flash-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/ | gemini-flash-lite-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
+    "domains: ",
+    "**سعر الدولار اليوم (مصر)**  \nحسب آخر البيانات المتوفرة حتى تاريخ آخر تحديث لي (نهاية 2023)، الدولار الأمريكي يتداول في السوق المحلي بين **30.5 جنيه** و**31.0 جنيه** للشراء، وبين **31.2 جنيه** و**31.8 جنيه** للبيع، مع اختلاف بسيط بين البنوك ومكاتب الصرافة.\n\n**ملاحظة مهمة**  \nالأسعار تتقلب طوال اليوم بحسب العرض والطلب، وقد تكون هناك فروق بين البنوك (مثل البنك المركزي، البنك الأهلي، البنك التجاري ال"
+  ]
+}
