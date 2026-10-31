@@ -1,0 +1,304 @@
+[
+  {
+    "check": "api:voice-tts-transcribe",
+    "ok": true,
+    "ms": 1056,
+    "notes": [
+      "transcribe 200 in 416ms",
+      "said: عندي طقم حلل جرانيت تركي عشر قطع، سعره ألف وتمنمية وخمسين جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام.",
+      "got: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ]
+  },
+  {
+    "check": "home",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 4564,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "home",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 4224,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "seller",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 3517,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "seller",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 3073,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "test-ad",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 25434,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "test-ad",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 23925,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "photo-ad",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 28478,
+    "notes": [
+      "✓ الخلفية اتشالت"
+    ],
+    "errors": [
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license\nPass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear."
+    ]
+  },
+  {
+    "check": "photo-ad",
+    "vp": "desktop",
+    "ok": false,
+    "ms": 40806,
+    "notes": [
+      "✓ الخلفية اتشالت",
+      "FAILED: locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /اكتبلي الإعلان كامل/ })\n    - locator resolved to <button disabled type=\"button\" class=\"seller_cta__eyv4u\">✍️ اكتبلي الإعلان كامل</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not stable\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not stable\n    - retrying click action\n      - waiting 100ms\n    - waiting for element to be visible, enabled and stable\n    - element is not stable\n  57 × retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is not enabled\n  - retrying click ac"
+    ],
+    "errors": [
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently"
+    ]
+  },
+  {
+    "check": "voice-post",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 16918,
+    "notes": [
+      "transcript: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ],
+    "errors": [
+      "requestfailed: http://localhost:3000/models?_rsc=iGAD6zesgY1rLyE5 net::ERR_ABORTED"
+    ]
+  },
+  {
+    "check": "voice-post",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 15945,
+    "notes": [
+      "transcript: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ],
+    "errors": [
+      "requestfailed: http://localhost:3000/models?_rsc=iGAD6zesgY1rLyE5 net::ERR_ABORTED"
+    ]
+  },
+  {
+    "check": "catalog",
+    "vp": "mobile",
+    "ok": false,
+    "ms": 123454,
+    "notes": [
+      "naming slow",
+      "FAILED: locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /اكتب الأوصاف/ })\n    - locator resolved to <button disabled type=\"button\" class=\"seller_miniBtn__Q_4Pf\">✍️ اكتب الأوصاف</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not stable\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not stable\n    - retrying click action\n      - waiting 100ms\n    56 × waiting for element to be visible, enabled and stable\n       - element is not enabled\n     - retrying click action\n       - waiting 500ms\n"
+    ],
+    "errors": []
+  },
+  {
+    "check": "catalog",
+    "vp": "desktop",
+    "ok": false,
+    "ms": 123473,
+    "notes": [
+      "naming slow",
+      "FAILED: locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /اكتب الأوصاف/ })\n    - locator resolved to <button disabled type=\"button\" class=\"seller_miniBtn__Q_4Pf\">✍️ اكتب الأوصاف</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not stable\n    - retrying click action\n    - waiting 20ms\n    - waiting for element to be visible, enabled and stable\n    - element is not stable\n  2 × retrying click action\n      - waiting 100ms\n      - waiting for element to be visible, enabled and stable\n      - element is not enabled\n  55 × retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is not enabled\n  - retrying click action\n    "
+    ],
+    "errors": []
+  },
+  {
+    "check": "chat-pdf",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 9463,
+    "notes": [
+      "has 3000=true has 45=true has 50=true"
+    ],
+    "errors": []
+  },
+  {
+    "check": "remove-bg",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 8836,
+    "notes": [
+      "device failed → trying cloud button",
+      "background removed"
+    ],
+    "errors": [
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: Error: Error (405) occurred while trying to load file: \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json\".\n    at https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751721\n    at f (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751744)\n    at async _ (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:753508)\n    at async g ",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()"
+    ]
+  },
+  {
+    "check": "remove-bg",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 125657,
+    "notes": [
+      "device failed → trying cloud button",
+      "cloud timeout",
+      "NOT removed"
+    ],
+    "errors": [
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: \u001b[0;93m2026-10-31 17:20:51.146398 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:20:51.164698 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:20:51.179498 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:20:51.188798 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:20:51.204698 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:20:51.219898 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:20:51.247898 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:20:51.256298 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:20:51.525499 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:20:51.525898 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:20:51.526098 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:20:51.526299 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:20:51.526598 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:20:51.526698 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:20:51.526998 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 17:20:51.527298 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3/Sub'\u001b[m",
+      "console.error: An error occurred during model execution: \"127873152\".",
+      "console.error: Inputs given to model: {input_image: Object}",
+      "console.error: 127873152"
+    ]
+  },
+  {
+    "check": "receipt",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 20463,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "receipt",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 16150,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "api:chat-research",
+    "ok": false,
+    "ms": 1358,
+    "notes": [
+      "status 200 search=empty sources=0",
+      "domains: ",
+      "**سعر الدولار اليوم في مصر (حسب آخر البيانات المتوفرة حتى تاريخ معرفتي في 2024):**  \n- سعر الدولار الأمريكي في السوق الرسمي (البنك المركزي): تقريبًا 31.00 جنيه مصري.  \n- سعر الدولار في السوق الموازي (السوق السوداء): يتراوح عادةً بين 33.00 و 35.00 جنيه، حسب العرض والطلب في المنطقة.\n\n**ملاحظة هامة:** الأسعار تتقلب يوميًا بناءً على عوامل اقتصادية (سياق السياسة النقدية، تدفق العملة، الأحداث الجيوسياسي"
+    ]
+  },
+  {
+    "check": "api:chat-long-doc",
+    "ok": false,
+    "ms": 300749,
+    "notes": [
+      "fetch failed"
+    ]
+  },
+  {
+    "check": "api:chat-summarize-long",
+    "ok": true,
+    "ms": 7197,
+    "notes": [
+      "status 200 x-docs=long covered=3/4",
+      "**ملخص الملف في أربع نقاط رئيسية**\n\n1. **اختيار الجمهور المستهدف**  \n   - يقدّم الفصل الأول مجموعة شاملة من التفاصيل (من 0 إلى 109 وما فوق) حول كيفية تحديد الفئة المثالية للمنتج أو الخدمة، مع أمثلة رقمية وتوصيات متكررة لتصنيف الجمهور بحسب الديموغرافيا، السلوكيات، والاحتياجات.  \n\n2. **تحليل السوق وتحديد الفرص**  \n   - يتضمن الفصل الثاني (تفاصيل 11 إلى 119) أدوات تحليل المنافسين، حجم السوق، وتحديد الفجوات التي يمكن استغلالها، مدعومة ببيانات إحصائية ونماذج تطبيقية لتقييم جدوى الفكرة قبل الإطلاق.  \n"
+    ]
+  },
+  {
+    "check": "api:test-ad",
+    "ok": true,
+    "ms": 2694,
+    "notes": [
+      "status 200 in 2694ms",
+      "score 65 tally {\"buy\":40,\"maybe\":37,\"skip\":23}"
+    ]
+  },
+  {
+    "check": "api:test-ad-image",
+    "ok": true,
+    "ms": 17850,
+    "notes": [
+      "status 200 in 17850ms",
+      "sawImage=true",
+      "photo=[\"الصورة رسمة رقمية؛ استبدلها بصورة فوتوغرافية للمنتج.\",\"ضيف نص السعر (450 جنيه) على الصورة بخط واضح.\",\"أظهر تفاصيل الغطاء والزجاجة لتقليل الشك.\"]"
+    ]
+  },
+  {
+    "check": "api:product-eye",
+    "ok": true,
+    "ms": 11513,
+    "notes": [
+      "status 200 in 11513ms",
+      "{\"name\":\"زجاجة ماء عسلية\",\"category\":\"مياه\",\"colors\":[\"أصفر عسلي\",\"أسود\"],\"visible\":[\"غطاء مربع الشكل مع حافة مستديرة\",\"تصميم بسيط ومسطح\"],\"scene\":\"soft beige marble countertop, warm morning window light, blurred kitchen background\",\"seen\":\"بناءً على الصورة الظاهرة أمامنا، إليك التحليل:\\n\\n1. **النوع والشكل:** زجاجة مستطيلة الشكل بحواف دائرية، مع غطاء علوي مربع الشكل متصل بعنق قصير.\\n2. **الألوان "
+    ]
+  },
+  {
+    "check": "api:catalog-copy",
+    "ok": true,
+    "ms": 445,
+    "notes": [
+      "status 200 in 445ms",
+      "{\"tagline\":\"أزياء مميزة، أسلوب لا يُنسى\",\"descs\":[\"شنطة جلد طبيعي، أمان وأناقة في كل تفاصيل\",\"شنطة كروس صغيرة، سعة عملية مع لمسة عصرية\",\"محفظة حريمي، تنظيم أنيق مع تصميم جذاب\"]}"
+    ]
+  },
+  {
+    "check": "api:ad-pack-voice",
+    "ok": true,
+    "ms": 2122,
+    "notes": [
+      "status 200 in 2122ms",
+      "missing=[] tags=12"
+    ]
+  }
+]
