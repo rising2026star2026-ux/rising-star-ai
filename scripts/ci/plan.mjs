@@ -214,8 +214,16 @@ export const CHECKS = [
     name: "remove-bg", path: "/tool/remove-bg",
     async run({ page, shot, note }) {
       await page.locator("input[type=file]").first().setInputFiles(path.join(FIX, "product.jpg"));
-      await page.getByText(/الخلفية اتشالت|ما قدرناش نشغّل/).first().waitFor({ timeout: 240000 }).catch(() => note("remove-bg timeout"));
-      note(await page.locator("body").innerText().then((t) => (t.match(/الخلفية اتشالت|ما قدرناش نشغّل[^\n]*/) || ["?"])[0]));
+      const done = page.getByText(/الخلفية اتشالت/).first();
+      const failed = page.getByRole("button", { name: /شيلها على سيرفر/ });
+      await Promise.race([done.waitFor({ timeout: 240000 }), failed.waitFor({ timeout: 240000 })]).catch(() => note("remove-bg timeout"));
+      if (await failed.isVisible().catch(() => false)) {
+        note("device failed → trying cloud button");
+        await shot("device-failed");
+        await failed.click();
+        await done.waitFor({ timeout: 90000 }).catch(() => note("cloud timeout"));
+      }
+      note((await done.isVisible().catch(() => false)) ? "background removed" : "NOT removed");
       await shot("result");
     },
   },
