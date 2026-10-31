@@ -38,7 +38,7 @@ jobs:
           for i in $(seq 1 60); do curl -sf -o /dev/null http://localhost:3000/ && break; sleep 2; done
       - name: browser checks
         if: steps.build.outcome == 'success'
-        timeout-minutes: 25
+        timeout-minutes: 30
         env:
           CI_ONLY: ${{ vars.CI_ONLY }}
         run: |

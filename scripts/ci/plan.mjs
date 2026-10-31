@@ -12,6 +12,44 @@ const post = async (BASE, route, body) => {
 };
 const dataUrl = async (file) => `data:image/jpeg;base64,${(await fs.readFile(path.join(FIX, file))).toString("base64")}`;
 
+
+// معمل إزالة الخلفية: بيجرب موديلات وطرق تشغيل مختلفة جوه المتصفح ويقيس اللي بيشتغل (من غير GPU، وبـ WebGPU برمجي)
+const CUTOUT_LAB = async ({ page, note, FIXDIR }) => {
+  const img = `data:image/jpeg;base64,${(await fs.readFile(path.join(FIXDIR, "product.jpg"))).toString("base64")}`;
+  const trials = [
+    ["onnx-community/BiRefNet_lite-ONNX", "wasm", "q8"],
+    ["onnx-community/BiRefNet_lite-ONNX", "wasm", "fp32"],
+    ["onnx-community/BiRefNet_lite-ONNX", "wasm", "fp16"],
+    ["onnx-community/BiRefNet_lite-ONNX", "webgpu", "fp16"],
+    ["onnx-community/BiRefNet_lite-ONNX", "webgpu", "fp32"],
+    ["onnx-community/ormbg-ONNX", "wasm", "fp32"],
+    ["onnx-community/ISNet-ONNX", "wasm", "fp32"],
+    ["onnx-community/BEN2-ONNX", "wasm", "fp32"],
+  ];
+  for (const [model, device, dtype] of trials) {
+    const r = await page.evaluate(async ({ model, device, dtype, img }) => {
+      const t0 = performance.now();
+      let bytes = 0;
+      try {
+        const T = await import("https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1");
+        T.env.allowLocalModels = false;
+        if (device === "webgpu" && !navigator.gpu) return "no navigator.gpu";
+        const seg = await T.pipeline("image-segmentation", model, { device, dtype, progress_callback: (p) => { if (p.status === "done" && p.total) bytes += p.total; else if (p.status === "progress" && p.total && p.loaded === p.total) bytes += 0; } });
+        const t1 = performance.now();
+        const out = await seg(await T.RawImage.fromURL(img));
+        const mask = (Array.isArray(out) ? out[0] : out)?.mask;
+        if (!mask) return "no mask";
+        const d = mask.data; let on = 0; for (let i = 0; i < d.length; i++) if (d[i] > 127) on++;
+        await seg.dispose?.();
+        return `OK load ${Math.round(t1 - t0)}ms run ${Math.round(performance.now() - t1)}ms mask ${mask.width}x${mask.height} fg ${Math.round((on / d.length) * 100)}%`;
+      } catch (e) {
+        return `FAIL after ${Math.round(performance.now() - t0)}ms: ${String(e?.message || e).slice(0, 160)}`;
+      }
+    }, { model, device, dtype, img });
+    note(`${model} ${device} ${dtype}: ${r}`);
+  }
+};
+
 export const CHECKS = [
   { name: "home", path: "/", max: 4 },
   { name: "seller", path: "/seller", max: 5 },
@@ -114,6 +152,11 @@ export const CHECKS = [
       for (let i = 0; i < imgs.length; i++) await imgs[i].saveAs(`ci-out/catalog-page-${page.viewportSize().width}-${i + 1}.jpg`);
       note(`page images ${imgs.length}`);
     },
+  },
+  { name: "cutout-lab", path: "/tool/remove-bg", viewports: ["desktop"], run: CUTOUT_LAB },
+  {
+    name: "cutout-lab-gpu", path: "/tool/remove-bg", viewports: ["desktop"], run: CUTOUT_LAB,
+    launchArgs: ["--enable-unsafe-webgpu", "--enable-features=Vulkan", "--use-vulkan=swiftshader", "--use-webgpu-adapter=swiftshader", "--use-angle=swiftshader", "--ignore-gpu-blocklist"],
   },
   {
     name: "remove-bg", path: "/tool/remove-bg",

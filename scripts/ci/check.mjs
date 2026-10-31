@@ -37,8 +37,9 @@ const browser = await chromium.launch({ args: ["--use-fake-ui-for-media-stream",
 
 for (const check of CHECKS) {
   if (ONLY.length && !ONLY.includes(check.name)) continue;
+  const own = check.launchArgs ? await chromium.launch({ args: check.launchArgs }) : null;
   for (const vp of check.viewports || ["mobile", "desktop"]) {
-    const ctx = await browser.newContext({ ...VIEWPORTS[vp], locale: "ar-EG", permissions: ["microphone", "clipboard-read", "clipboard-write"] });
+    const ctx = await (own || browser).newContext({ ...VIEWPORTS[vp], locale: "ar-EG", permissions: ["microphone", "clipboard-read", "clipboard-write"] });
     await ctx.addInitScript(() => { try { sessionStorage.setItem("rs:intro", "1"); } catch {} });
     const page = await ctx.newPage();
     const errors = [];
@@ -71,16 +72,17 @@ for (const check of CHECKS) {
       await page.goto(BASE + check.path, { waitUntil: "load", timeout: 60000 });
       await page.waitForLoadState("networkidle", { timeout: 8000 }).catch(() => {});
       await page.waitForTimeout(check.settle ?? 1200);
-      if (check.run) await check.run({ page, shot, screens, save, note: (n) => notes.push(n), vp, BASE });
+      if (check.run) await check.run({ page, shot, screens, save, note: (n) => notes.push(n), vp, BASE, FIXDIR: path.join(path.dirname(new URL(import.meta.url).pathname), "fixtures") });
       else await screens("page", check.max || 4);
     } catch (e) {
       ok = false;
       notes.push(`FAILED: ${String(e?.message || e).slice(0, 800)}`);
       try { await shot("failure"); } catch {}
     }
-    summary.push({ check: check.name, vp, ok, ms: Date.now() - t0, notes, errors: errors.slice(0, 40) });
+    summary.push({ check: check.name, vp, ok, ms: Date.now() - t0, notes, errors: errors.filter((e) => !e.includes("preloaded using link preload")).slice(0, 40) });
     await ctx.close();
   }
+  if (own) await own.close();
 }
 
 // تجارب الـ API المباشرة (من غير متصفح)
