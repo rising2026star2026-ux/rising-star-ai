@@ -50,6 +50,54 @@ const CUTOUT_LAB = async ({ page, note, FIXDIR }) => {
   }
 };
 
+// معمل 2: إزالة الخلفية على Hugging Face Space (BiRefNet) بحصة الزائر
+const SPACE_LAB = async ({ page, note, FIXDIR, save }) => {
+  const b64 = (await fs.readFile(path.join(FIXDIR, "product.jpg"))).toString("base64");
+  const out = await page.evaluate(async ({ b64 }) => {
+    const log = [];
+    const spaces = ["https://not-lain-background-removal.hf.space", "https://zhengpeng7-birefnet-demo.hf.space", "https://eccv2022-dis-background-removal.hf.space"];
+    for (const host of spaces) {
+      for (const pre of ["/gradio_api", ""]) {
+        try {
+          const r = await fetch(`${host}${pre}/info`);
+          const t = await r.text();
+          log.push(`${host}${pre}/info ${r.status} ${t.slice(0, 1500)}`);
+          if (r.ok) break;
+        } catch (e) { log.push(`${host}${pre}/info ERR ${e.message}`); }
+      }
+    }
+    // تجربة فعلية على أول Space
+    try {
+      const host = spaces[0], pre = "/gradio_api";
+      const bin = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+      const fd = new FormData();
+      fd.append("files", new Blob([bin], { type: "image/jpeg" }), "p.jpg");
+      const t0 = performance.now();
+      const up = await fetch(`${host}${pre}/upload`, { method: "POST", body: fd });
+      const paths = await up.json();
+      log.push(`upload ${up.status} ${JSON.stringify(paths).slice(0, 200)}`);
+      const info = await (await fetch(`${host}${pre}/info`)).json();
+      const names = Object.keys(info.named_endpoints || {});
+      log.push(`endpoints ${names.join(" ")}`);
+      for (const name of names) {
+        const ep = info.named_endpoints[name];
+        const params = ep.parameters || [];
+        const data = params.map((p) => (/image|file/i.test(JSON.stringify(p.python_type || p.type || p.component)) ? { path: paths[0], meta: { _type: "gradio.FileData" } } : p.parameter_default ?? null));
+        const c = await fetch(`${host}${pre}/call${name}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ data }) });
+        const cj = await c.json().catch(() => ({}));
+        log.push(`call ${name} ${c.status} ${JSON.stringify(cj).slice(0, 200)} params=${JSON.stringify(params.map((p) => [p.parameter_name, p.component, p.python_type?.type])).slice(0, 300)}`);
+        if (!cj.event_id) continue;
+        const sres = await fetch(`${host}${pre}/call${name}/${cj.event_id}`);
+        const txt = await sres.text();
+        log.push(`result ${name} ${sres.status} in ${Math.round(performance.now() - t0)}ms ${txt.slice(0, 900)}`);
+      }
+    } catch (e) { log.push(`call ERR ${e.message}`); }
+    return log;
+  }, { b64 });
+  for (const l of out) note(l.slice(0, 1600));
+  await save("space-lab", out);
+};
+
 export const CHECKS = [
   { name: "home", path: "/", max: 4 },
   { name: "seller", path: "/seller", max: 5 },
@@ -154,6 +202,7 @@ export const CHECKS = [
     },
   },
   { name: "cutout-lab", path: "/tool/remove-bg", viewports: ["desktop"], run: CUTOUT_LAB },
+  { name: "space-lab", path: "/tool/remove-bg", viewports: ["desktop"], run: SPACE_LAB },
   {
     name: "cutout-lab-gpu", path: "/tool/remove-bg", viewports: ["desktop"], run: CUTOUT_LAB,
     launchArgs: ["--enable-unsafe-webgpu", "--enable-features=Vulkan", "--use-vulkan=swiftshader", "--use-webgpu-adapter=swiftshader", "--use-angle=swiftshader", "--ignore-gpu-blocklist"],
