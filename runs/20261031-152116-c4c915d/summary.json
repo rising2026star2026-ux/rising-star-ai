@@ -1,0 +1,411 @@
+[
+  {
+    "check": "api:voice-tts-transcribe",
+    "ok": true,
+    "ms": 873,
+    "notes": [
+      "transcribe 200 in 309ms",
+      "said: عندي طقم حلل جرانيت تركي عشر قطع، سعره ألف وتمنمية وخمسين جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام.",
+      "got: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ]
+  },
+  {
+    "check": "home",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 4861,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "home",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 4364,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "seller",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 3738,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "seller",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 3134,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "test-ad",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 25633,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "test-ad",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 22479,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "photo-ad",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 30860,
+    "notes": [
+      "✓ الخلفية اتشالت"
+    ],
+    "errors": [
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license\nPass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear."
+    ]
+  },
+  {
+    "check": "photo-ad",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 29151,
+    "notes": [
+      "✓ الخلفية اتشالت"
+    ],
+    "errors": [
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license\nPass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear."
+    ]
+  },
+  {
+    "check": "voice-post",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 16595,
+    "notes": [
+      "transcript: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ],
+    "errors": [
+      "requestfailed: http://localhost:3000/models?_rsc=iGAD6zesgY1rLyE5 net::ERR_ABORTED"
+    ]
+  },
+  {
+    "check": "voice-post",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 16409,
+    "notes": [
+      "transcript: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ],
+    "errors": [
+      "requestfailed: http://localhost:3000/models?_rsc=iGAD6zesgY1rLyE5 net::ERR_ABORTED"
+    ]
+  },
+  {
+    "check": "catalog",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 33139,
+    "notes": [
+      "after bg: 4 صورة ما اتشالتش خلفيتها، وفضلت زي ما هي. | ",
+      "pdf saved",
+      "page images 4"
+    ],
+    "errors": [
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9"
+    ]
+  },
+  {
+    "check": "catalog",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 26604,
+    "notes": [
+      "after bg: ما قدرناش نشيل الخلفيات دلوقتي. جرّب تاني بعد شوية. | ",
+      "pdf saved",
+      "page images 4"
+    ],
+    "errors": [
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 404 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/onnx/model_quantized.onnx",
+      "console.error: Failed to load resource: the server responded with a status of 404 ()",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9a9ab488f8654d.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-0b9"
+    ]
+  },
+  {
+    "check": "cutout-lab",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 55340,
+    "notes": [
+      "onnx-community/BiRefNet_lite-ONNX wasm q8: FAIL after 123ms: Error (405) occurred while trying to load file: \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json\".",
+      "onnx-community/BiRefNet_lite-ONNX wasm fp32: FAIL after 8ms: Error (405) occurred while trying to load file: \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json\".",
+      "onnx-community/BiRefNet_lite-ONNX wasm fp16: FAIL after 44267ms: 127873152",
+      "onnx-community/BiRefNet_lite-ONNX webgpu fp16: FAIL after 25ms: The device (webgpu) does not support fp16.",
+      "onnx-community/BiRefNet_lite-ONNX webgpu fp32: FAIL after 10ms: Error (405) occurred while trying to load file: \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/onnx/model.onnx\".",
+      "onnx-community/ormbg-ONNX wasm fp32: FAIL after 4141ms: 127873152",
+      "onnx-community/ISNet-ONNX wasm fp32: FAIL after 4490ms: 127873152",
+      "onnx-community/BEN2-ONNX wasm fp32: FAIL after 140ms: Unsupported model type: ben"
+    ],
+    "errors": [
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: \u001b[0;93m2026-10-31 15:15:29.213799 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:15:29.251099 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:15:29.284699 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:15:29.305399 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:15:29.328099 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:15:29.356800 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:15:29.420499 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:15:29.439300 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:15:29.822400 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:15:29.823099 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:15:29.823399 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:15:29.823899 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:15:29.824499 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:15:29.824899 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:15:29.825299 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:15:29.825599 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3/Sub'\u001b[m",
+      "console.error: An error occurred during model execution: \"127873152\".",
+      "console.error: Inputs given to model: {input_image: Object}",
+      "console.warning: Failed to create WebGPU Context Provider",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/onnx/model.onnx",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: An error occurred during model execution: \"127873152\".",
+      "console.error: Inputs given to model: {pixel_values: Object}",
+      "console.error: An error occurred during model execution: \"127873152\".",
+      "console.error: Inputs given to model: {input: Object}",
+      "http 404 GET https://huggingface.co/onnx-community/BEN2-ONNX/resolve/main/onnx/model.onnx",
+      "console.error: Failed to load resource: the server responded with a status of 404 ()"
+    ]
+  },
+  {
+    "check": "space-lab",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 3141,
+    "notes": [
+      "https://not-lain-background-removal.hf.space/gradio_api/info 200 {\"named_endpoints\":{\"/image\":{\"parameters\":[{\"label\":\"Upload an image\",\"parameter_name\":\"image\",\"parameter_has_default\":false,\"parameter_default\":null,\"type\":{\"properties\":{\"path\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}],\"default\":null,\"description\":\"Path to a local file\",\"title\":\"Path\"},\"url\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}],\"default\":null,\"description\":\"Publicly available url or base64 encoded image\",\"title\":\"Url\"},\"size\":{\"anyOf\":[{\"type\":\"integer\"},{\"type\":\"null\"}],\"default\":null,\"description\":\"Size of image in bytes\",\"title\":\"Size\"},\"orig_name\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}],\"default\":null,\"description\":\"Original filename\",\"title\":\"Orig Name\"},\"mime_type\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}],\"default\":null,\"description\":\"mime type of image\",\"title\":\"Mime Type\"},\"is_stream\":{\"default\":false,\"description\":\"Can always be set to False\",\"title\":\"Is Stream\",\"type\":\"boolean\"},\"meta\":{\"additionalProperties\":true,\"default\":{\"_type\":\"gradio.FileData\"},\"title\":\"Meta\",\"type\":\"object\"}},\"title\":\"ImageData\",\"type\":\"object\",\"additional_description\":\"For input, either path or url must be provided. For output, path is always provided.\"},\"python_type\":{\"type\":\"dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mime_type: str | None (mime type of image), is_stream: bool (Can always be set to False), meta: di",
+      "https://zhengpeng7-birefnet-demo.hf.space/gradio_api/info 200 {\"named_endpoints\":{\"/image\":{\"parameters\":[{\"label\":\"Upload an image\",\"parameter_name\":\"images\",\"parameter_has_default\":false,\"parameter_default\":null,\"type\":{\"properties\":{\"path\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}],\"default\":null,\"description\":\"Path to a local file\",\"title\":\"Path\"},\"url\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}],\"default\":null,\"description\":\"Publicly available url or base64 encoded image\",\"title\":\"Url\"},\"size\":{\"anyOf\":[{\"type\":\"integer\"},{\"type\":\"null\"}],\"default\":null,\"description\":\"Size of image in bytes\",\"title\":\"Size\"},\"orig_name\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}],\"default\":null,\"description\":\"Original filename\",\"title\":\"Orig Name\"},\"mime_type\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}],\"default\":null,\"description\":\"mime type of image\",\"title\":\"Mime Type\"},\"is_stream\":{\"default\":false,\"description\":\"Can always be set to False\",\"title\":\"Is Stream\",\"type\":\"boolean\"},\"meta\":{\"additionalProperties\":true,\"default\":{\"_type\":\"gradio.FileData\"},\"title\":\"Meta\",\"type\":\"object\"}},\"title\":\"ImageData\",\"type\":\"object\",\"additional_description\":\"For input, either path or url must be provided. For output, path is always provided.\"},\"python_type\":{\"type\":\"dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mime_type: str | None (mime type of image), is_stream: bool (Can always be set to False), meta: d",
+      "https://eccv2022-dis-background-removal.hf.space/gradio_api/info 206 <!DOCTYPE html>\n<html class=\"\">\n<head>\n    <meta charset=\"utf-8\"/>\n    <meta\n            name=\"viewport\"\n            content=\"width=device-width, initial-scale=1.0, user-scalable=no\"\n    />\n    <meta\n            name=\"description\"\n            content=\"We’re on a journey to advance and democratize artificial intelligence through open source and open science.\"\n    />\n    <meta property=\"fb:app_id\" content=\"1321688464574422\"/>\n    <meta name=\"twitter:card\" content=\"summary_large_image\"/>\n    <meta name=\"twitter:site\" content=\"@huggingface\"/>\n    <meta\n            property=\"og:title\"\n            content=\"Hugging Face – The AI community building the future.\"\n    />\n    <meta property=\"og:type\" content=\"website\"/>\n\n    <title>Hugging Face – The AI community building the future.</title>\n    <style>\n        body {\n            margin: 0;\n        }\n\n        main {\n            background-color: white;\n            height: 100vh;\n            text-align: center;\n            font-family: Source Sans Pro, ui-sans-serif, system-ui, -apple-system,\n            BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,\n            sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,\n            Noto Color Emoji;\n        }\n\n        img {\n            width: 6rem;\n            height: 6rem;\n            margin: 7rem 1rem 1rem;\n        }\n\n        h1 {\n            font-size: 3.75rem;\n            line-height: 1;\n            color: rgba(31, 41, 55, 1);\n            font-weight: 700",
+      "upload 200 [\"/tmp/gradio/00676bc54158cea7d07551fc1cd7327d99a80a86620d9dd334806fb3dee9ee1f/p.jpg\"]",
+      "endpoints /image /text /png",
+      "call /image 200 {\"event_id\":\"eff3cd9c36c443bba3b27850d509c301\"} params=[[\"image\",\"Image\",\"dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mime_type: str | None (mime type of image), is_stream: bool (Can always be set to F",
+      "result /image 200 in 407ms event: error\ndata: null\n\n",
+      "call /text 200 {\"event_id\":\"0afd618752e44c779d2dd07e66b16348\"} params=[[\"image\",\"Textbox\",\"str\"]]",
+      "result /text 200 in 526ms event: error\ndata: null\n\n",
+      "call /png 200 {\"event_id\":\"b67bb988044445f09d4e27b3dd9e71ad\"} params=[[\"f\",\"Image\",\"dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mime_type: str | None (mime type of image), is_stream: bool (Can always be set to False",
+      "result /png 200 in 784ms event: error\ndata: null\n\n"
+    ],
+    "errors": []
+  },
+  {
+    "check": "cutout-lab-gpu",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 62785,
+    "notes": [
+      "onnx-community/BiRefNet_lite-ONNX wasm q8: FAIL after 151ms: Error (405) occurred while trying to load file: \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json\".",
+      "onnx-community/BiRefNet_lite-ONNX wasm fp32: FAIL after 10ms: Error (405) occurred while trying to load file: \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json\".",
+      "onnx-community/BiRefNet_lite-ONNX wasm fp16: FAIL after 49246ms: 127873152",
+      "onnx-community/BiRefNet_lite-ONNX webgpu fp16: FAIL after 28ms: The device (webgpu) does not support fp16.",
+      "onnx-community/BiRefNet_lite-ONNX webgpu fp32: FAIL after 9ms: Error (405) occurred while trying to load file: \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/onnx/model.onnx\".",
+      "onnx-community/ormbg-ONNX wasm fp32: FAIL after 6598ms: 127873152",
+      "onnx-community/ISNet-ONNX wasm fp32: FAIL after 4284ms: 127873152",
+      "onnx-community/BEN2-ONNX wasm fp32: FAIL after 91ms: Unsupported model type: ben"
+    ],
+    "errors": [
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: \u001b[0;93m2026-10-31 15:16:29.157498 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:16:29.193098 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:16:29.225398 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:16:29.243798 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:16:29.276298 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:16:29.310998 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:16:29.373598 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:16:29.391698 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:16:29.800198 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:16:29.800898 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:16:29.801398 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:16:29.801898 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:16:29.802398 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:16:29.802998 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:16:29.803398 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-10-31 15:16:29.803898 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3/Sub'\u001b[m",
+      "console.error: An error occurred during model execution: \"127873152\".",
+      "console.error: Inputs given to model: {input_image: Object}",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/onnx/model.onnx",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: An error occurred during model execution: \"127873152\".",
+      "console.error: Inputs given to model: {pixel_values: Object}",
+      "console.error: An error occurred during model execution: \"127873152\".",
+      "console.error: Inputs given to model: {input: Object}",
+      "http 404 GET https://huggingface.co/onnx-community/BEN2-ONNX/resolve/main/onnx/model.onnx",
+      "console.error: Failed to load resource: the server responded with a status of 404 ()"
+    ]
+  },
+  {
+    "check": "remove-bg",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 92639,
+    "notes": [
+      "device failed → trying cloud button",
+      "cloud timeout",
+      "NOT removed"
+    ],
+    "errors": [
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 404 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/onnx/model_quantized.onnx",
+      "console.error: Failed to load resource: the server responded with a status of 404 ()",
+      "console.error: Error: Unsupported model type: swin\n    at qu.from_pretrained (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:574501)\n    at async https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:688046"
+    ]
+  },
+  {
+    "check": "remove-bg",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 92598,
+    "notes": [
+      "device failed → trying cloud button",
+      "cloud timeout",
+      "NOT removed"
+    ],
+    "errors": [
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 404 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/onnx/model_quantized.onnx",
+      "console.error: Failed to load resource: the server responded with a status of 404 ()",
+      "console.error: Error: Unsupported model type: swin\n    at qu.from_pretrained (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:574501)\n    at async https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:688046"
+    ]
+  },
+  {
+    "check": "receipt",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 20748,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "receipt",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 15950,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "api:test-ad",
+    "ok": true,
+    "ms": 2609,
+    "notes": [
+      "status 200 in 2609ms",
+      "score 66 tally {\"buy\":47,\"maybe\":33,\"skip\":20}"
+    ]
+  },
+  {
+    "check": "api:test-ad-image",
+    "ok": true,
+    "ms": 4870,
+    "notes": [
+      "status 200 in 4869ms",
+      "sawImage=true",
+      "photo=[\"الصورة رسومية جداً، استبدلها بصورة فوتوغرافية للمنتج الحقيقي بخلفية بسيطة.\"]"
+    ]
+  },
+  {
+    "check": "api:product-eye",
+    "ok": true,
+    "ms": 1884,
+    "notes": [
+      "status 200 in 1884ms",
+      "{\"name\":\"زجاجة عسل مستطيلة\",\"category\":\"مستلزمات\",\"colors\":[\"أصفر عسل\",\"أسود\"],\"visible\":[\"غطاء مربع\",\"تصميم رسومي\",\"خلفية بيج وبني فاتح\"],\"scene\":\"soft beige marble countertop, warm morning window light, blurred kitchen background\",\"seen\":\"بناءً على الصورة الظاهرة أمامنا، إليك التفاصيل المحددة:\\n\\n1) **النوع والشكل:** زجاجة مستطيلة الشكل بحواف دائرية مع غطاء مربع، وتصميمها يبدو رسوميًا (Vector/Fl"
+    ]
+  },
+  {
+    "check": "api:catalog-copy",
+    "ok": true,
+    "ms": 305,
+    "notes": [
+      "status 200 in 305ms",
+      "{\"tagline\":\"أزياء بسيطة، أناقة يومية\",\"descs\":[\"شنطة يد جلد طبيعي: راحة وأناقة في كل خطوة\",\"شنطة كروس صغيرة: مثالية للمتنقلين\",\"محفظة حريمي: تنظيم أنيق ومتين\"]}"
+    ]
+  },
+  {
+    "check": "api:ad-pack-voice",
+    "ok": true,
+    "ms": 1998,
+    "notes": [
+      "status 200 in 1998ms",
+      "missing=[] tags=12"
+    ]
+  }
+]
