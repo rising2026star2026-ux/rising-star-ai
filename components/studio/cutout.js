@@ -29,7 +29,8 @@ async function lib() {
 function configs() {
   const list = [];
   if (typeof navigator !== "undefined" && navigator.gpu) list.push({ device: "webgpu", dtype: "fp16" }, { device: "webgpu", dtype: "fp32" });
-  list.push({ device: "wasm", dtype: "q8" });
+  // نسخة q8 مش موجودة في الموديل ده (404)، فمن غير GPU بنستخدم fp16 (محتاج ذاكرة كبيرة، فبيشتغل على الكمبيوتر غالباً)
+  list.push({ device: "wasm", dtype: "fp16" });
   return list.filter((c) => !bad.has(`${c.device}-${c.dtype}`));
 }
 

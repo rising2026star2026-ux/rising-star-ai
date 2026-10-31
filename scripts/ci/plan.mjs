@@ -204,10 +204,11 @@ export const CHECKS = [
       note(`page images ${imgs.length}`);
     },
   },
-  { name: "cutout-lab", path: "/tool/remove-bg", viewports: ["desktop"], run: CUTOUT_LAB },
-  { name: "space-lab", path: "/tool/remove-bg", viewports: ["desktop"], run: SPACE_LAB },
+  // معامل التجارب (بتشتغل بس لو اسمها مكتوب في scripts/ci/ONLY)
+  { name: "cutout-lab", lab: true, path: "/tool/remove-bg", viewports: ["desktop"], run: CUTOUT_LAB },
+  { name: "space-lab", lab: true, path: "/tool/remove-bg", viewports: ["desktop"], run: SPACE_LAB },
   {
-    name: "cutout-lab-gpu", path: "/tool/remove-bg", viewports: ["desktop"], run: CUTOUT_LAB,
+    name: "cutout-lab-gpu", lab: true, path: "/tool/remove-bg", viewports: ["desktop"], run: CUTOUT_LAB,
     launchArgs: ["--enable-unsafe-webgpu", "--enable-features=Vulkan", "--use-vulkan=swiftshader", "--use-webgpu-adapter=swiftshader", "--use-angle=swiftshader", "--ignore-gpu-blocklist"],
   },
   {

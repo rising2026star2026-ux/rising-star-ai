@@ -36,7 +36,7 @@ for (const a of API_CHECKS_FIRST) {
 const browser = await chromium.launch({ args: ["--use-fake-ui-for-media-stream", "--use-fake-device-for-media-stream"] });
 
 for (const check of CHECKS) {
-  if (ONLY.length && !ONLY.includes(check.name)) continue;
+  if (ONLY.length ? !ONLY.includes(check.name) : check.lab) continue;
   const own = check.launchArgs ? await chromium.launch({ args: check.launchArgs }) : null;
   for (const vp of check.viewports || ["mobile", "desktop"]) {
     const ctx = await (own || browser).newContext({ ...VIEWPORTS[vp], locale: "ar-EG", permissions: ["microphone", "clipboard-read", "clipboard-write"] });
