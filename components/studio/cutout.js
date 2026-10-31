@@ -117,7 +117,7 @@ export async function cutoutCloud(src, { signal } = {}) {
   const photo = await blobOf(small, "image/jpeg", 0.92);
   let last;
   for (const [host, api, pick] of SPACES) {
-    const t = withTimeout(60_000, signal);
+    const t = withTimeout(40_000, signal);
     try {
       let base = `${host}/gradio_api`;
       const fd = new FormData();
@@ -147,6 +147,8 @@ export async function cutoutCloud(src, { signal } = {}) {
     } catch (e) {
       if (signal?.aborted) throw e;
       last = e;
+      // الحصة المجانية للزائر خلصت: كل الـ Spaces بتستخدم نفس الحصة، فمفيش داعي نستنى الباقي
+      if (e?.quota) break;
     } finally {
       t.done();
     }
