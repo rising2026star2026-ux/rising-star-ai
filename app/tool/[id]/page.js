@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tools, getTool, getCategory, isListed } from "@/lib/tools";
 import { getContent } from "@/lib/content";
+import ToolPitch from "@/components/ToolPitch";
 import { SITE_URL, BRAND } from "@/lib/site";
 import ToolRunner from "@/components/ToolRunner";
 import LocalTool from "@/components/studio/LocalTool";
@@ -104,6 +105,8 @@ export default async function ToolPage({ params }) {
           <p>{tool.desc}</p>
         </div>
       </div>
+
+      <ToolPitch id={tool.id} example={content?.example} />
 
       {tool.local ? (
         <LocalTool kind={tool.local} />
