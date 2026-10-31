@@ -5,6 +5,8 @@ import Link from "next/link";
 import BotIcon from "@/components/BotIcon";
 import { SUB_TOOLS, PRICES_UPDATED_AR, fmtUsd } from "@/lib/subscriptions";
 import { analyze, POPULAR, USAGE, toolById, paidPlans, defaultPlan, SITE_FOR } from "@/lib/receipt";
+import { siteOffer, SITE_PLAN_EGP, SITE_PLAN_NAME, TOOLSURF } from "@/lib/offer";
+import { toEgp } from "@/lib/subscriptions";
 import { read, write, toast } from "@/lib/store";
 import { copyText, shareOrDownload, loadFonts } from "@/lib/imagefile";
 import { storyCanvas, night, star, text as drawText, rr, brandFooter, toBlob } from "@/lib/sharecard";
@@ -119,6 +121,7 @@ export default function Receipt() {
             <Paper res={res} />
           </div>
           <Actions res={res} />
+          <SiteOffer res={res} />
           {res.needs.some((k) => SITE_FOR[k]) && (
             <section className={s.card}>
               <h3 className={s.sectionTitle}><i aria-hidden="true">⭐</i>جرّب الأول جوه Rising StarAi</h3>
@@ -263,6 +266,58 @@ function Actions({ res }) {
         <span aria-hidden="true">ℹ️</span>
         <span>التوفير محسوب بقواعد واضحة: اشتراكين بيعملوا نفس الشغل، أو خطة أكبر من استخدامك، أو دفع شهري والسنوي أرخص. اتأكد من الخطط في الموقع الرسمي قبل ما تلغي أي حاجة، وشوف <Link href="/subscriptions">مقارن الاشتراكات</Link> و<Link href="/scam-check">كاشف النصب</Link> قبل ما تشتري من أي بياع.</span>
       </p>
+    </section>
+  );
+}
+
+// «لو جيت الموقع»: اللي الموقع بيعمله فعلاً بدل اشتراكاتك، مقارنةً بباقة 250 ج
+function SiteOffer({ res }) {
+  const o = useMemo(() => siteOffer(res), [res]);
+  if (!o) return null;
+  const toolsurfEgp = toEgp(TOOLSURF.usd);
+  return (
+    <section className={`${s.card} ${r.offer}`}>
+      <h3 className={s.sectionTitle}><i aria-hidden="true">⭐</i>وفّر الفاتورة دي كلها هنا</h3>
+      {o.covered.length > 0 && (
+        <>
+          <p className={r.lead}>
+            {o.worth
+              ? <>اللي بتدفعه على {o.covered.map((l) => l.name).join(" و")} هو <b>{n(o.coveredSum)} جنيه</b> في الشهر. باقة Rising StarAi بـ <b>{SITE_PLAN_EGP} جنيه</b> فيها شغلهم:</>
+              : <>باقة Rising StarAi بـ <b>{SITE_PLAN_EGP} جنيه</b> في الشهر فيها شغل اشتراكاتك دي، وبتدفع حالياً حوالي {n(o.coveredSum)} جنيه:</>}
+          </p>
+          <ul className={r.offerList}>
+            {o.covered.map((l) => (
+              <li key={l.toolId}><span>{l.name}</span><em>{n(l.egp)} ج</em><small>{l.by}</small></li>
+            ))}
+          </ul>
+          <ul className={r.offerDo}>
+            <li>✍️ شات وكتابة بالعربي بأقوى الموديلات</li>
+            <li>🔎 بحث على الإنترنت بالمصادر</li>
+            <li>📄 تلخيص PDF وWord وصور والإجابة منها</li>
+            <li>📁 مشاريع: ملفاتك وتعليماتك ومحادثاتك في مكان واحد</li>
+          </ul>
+          <p className={r.offerNote}>الحساب ده للشات والكتابة والبحث والتلخيص بس. لو بتستخدم صور أو فيديو جوه اشتراكك، الموقع فيه أدواتهم لكن مش بنوعدك بنفس الجودة والحدود.</p>
+          {o.worth && (
+            <div className={r.offerSave}>
+              <small>التوفير لو بدّلتهم</small>
+              <b>{n(o.saveMonthly)} <span>جنيه / شهر</span></b>
+              <em>{n(o.saveYear)} جنيه في السنة</em>
+            </div>
+          )}
+        </>
+      )}
+      {o.tooled.length > 0 && (
+        <div className={r.toolsurf}>
+          <b>{o.tooled.map((l) => l.name).join(" و")}؟</b>
+          <p>
+            موجودين في باقة {TOOLSURF.name} بـ {TOOLSURF.usd} دولار (حوالي {n(toolsurfEgp)} جنيه) كـ<b> {TOOLSURF.label}</b>: حساب بتشاركه مع غيرك، مش اشتراكك الخاص.
+            ده غالباً بيخالف شروط استخدام الشركات الأصلية وممكن يتقفل في أي وقت، فاعتبره حل اقتصادي مؤقت وبدون ضمان.
+          </p>
+        </div>
+      )}
+      {o.uncovered.length > 0 && <p className={r.offerNote}>اللي مش هنغطيه: {o.uncovered.map((l) => l.name).join(" و")}. هيفضل اشتراكهم زي ما هو.</p>}
+      <Link href="/plans" className={s.cta}>شوف باقة {SITE_PLAN_NAME} • {SITE_PLAN_EGP} ج</Link>
+      <p className={s.ctaNote}>الاشتراكات لسه مش مفعّلة، والصفحة دي بتوريك الحساب بس.</p>
     </section>
   );
 }
