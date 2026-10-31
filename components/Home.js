@@ -23,7 +23,7 @@ import ms from "./models.module.css";
 import s from "./home.module.css";
 
 // شبكة الاختصارات (4 × 2). أول واحدة عليها علامة «شائع»
-const SHORTCUTS = ["article", "post", "translate", "cv", "product-desc", "code-gen", "summarize", "email-writer"];
+const SHORTCUTS = ["ad-copy", "product-desc", "remove-bg", "product-ad", "poster-maker", "post", "adspy", "image-prompt"];
 
 // شريط الموديلات (زي Poe)
 const HOME_APPS = ["chatgpt", "claude", "gemini", "canva", "capcut", "midjourney", "kling", "suno", "elevenlabs", "perplexity"]
@@ -39,12 +39,11 @@ const STUDIO = ["ai-video", "photo-video", "photo-editor", "poster-maker", "remo
 // كروت الاقتراحات: كل كارت بيفتح أداة والطلب مكتوب جاهز
 const IDEAS = [
   { tool: "ad-copy", text: "إعلان فيسبوك لمطعم مشويات في المعادي، وعرض 20% أول أسبوع" },
-  { tool: "cv", text: "سيرة ذاتية لمحاسب خبرة 3 سنين في شركة مقاولات" },
-  { tool: "study-plan", text: "خطة مذاكرة لأسبوعين قبل امتحان الفيزياء" },
-  { tool: "business-plan", text: "مشروع كافيه صغير جنب جامعة بميزانية 300 ألف جنيه" },
-  { tool: "travel-plan", text: "رحلة 4 أيام في إسكندرية لعيلة من 4 أفراد بميزانية 8 آلاف جنيه" },
-  { tool: "image-prompt", text: "فنجان قهوة عربي على ترابيزة خشب جنب شباك الصبح" },
+  { tool: "product-desc", text: "شنطة جلد طبيعي للسيدات، 3 ألوان، ضمان سنة، الشحن لكل المحافظات" },
+  { tool: "post", text: "بوست إنستجرام لمحل ملابس أطفال عن تخفيضات العيد" },
   { tool: "adspy", text: "إعلان منافس: عطر فرنسي أصلي بـ 450 جنيه بدل 900، الكمية محدودة والدفع عند الاستلام" },
+  { tool: "image-prompt", text: "فنجان قهوة عربي على ترابيزة خشب جنب شباك الصبح" },
+  { tool: "business-plan", text: "مشروع كافيه صغير جنب جامعة بميزانية 300 ألف جنيه" },
 ];
 
 function Row({ title, ids }) {
@@ -113,7 +112,7 @@ export default function Home() {
       <div className={s.brand}>
         <span className={s.mark}><StarMark size={64} /></span>
         <h1 dir="ltr"><span>Rising</span>{" "}<span>Star<em>Ai</em></span></h1>
-        <p>{tools.length} أداة ذكاء اصطناعي بالعربي، وإجابة واحدة من 4 نماذج قوية</p>
+        <p>إعلانات ومنتجات وفيديو لمشروعك بالعربي في دقيقة، بدل ما تدفع لمصمم وكاتب. {tools.length} أداة في مكان واحد.</p>
       </div>
 
       {/* ===== صندوق السؤال ===== */}
