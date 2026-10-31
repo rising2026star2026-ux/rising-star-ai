@@ -301,7 +301,7 @@ export const API_CHECKS = [
       const lines = Array.from({ length: 500 }, (_, i) => filler(i));
       lines[311] = "قرار مهم: تم الاتفاق على أن سعر الجملة لمنتج «مصباح نور» هو 187 جنيه للقطعة بداية من الشهر القادم.";
       const text = lines.join("\n\n");
-      const r = await fetch(BASE + "/api/chat", { method: "POST", headers: { "Content-Type": "application/json", "x-forwarded-for": `10.2.${Math.floor(Math.random() * 250)}.9` }, body: JSON.stringify({ messages: [{ role: "user", content: "سعر الجملة لمصباح نور كام؟" }], model: "balanced", docs: [{ name: "report.txt", text }] }) });
+      const r = await fetch(BASE + "/api/chat", { method: "POST", headers: { "Content-Type": "application/json", "x-forwarded-for": `10.2.${Math.floor(Math.random() * 250)}.9` }, body: JSON.stringify({ messages: [{ role: "user", content: "سعر الجملة لمصباح نور كام؟" }], model: "balanced", docs: [{ name: "report.txt", text }] }), signal: AbortSignal.timeout(90000) });
       const out = await r.text();
       return { ok: r.ok && /187/.test(out), notes: [`status ${r.status} x-docs=${r.headers.get("x-docs")} model=${r.headers.get("x-model")} chars=${text.length}`, out.slice(0, 300)] };
     },
