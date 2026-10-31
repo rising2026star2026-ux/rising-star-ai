@@ -44,6 +44,7 @@ const shareText = (m) =>
 export default function MainChat() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
+  const [focus, setFocus] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(-1);
@@ -262,7 +263,7 @@ export default function MainChat() {
         </div>
 
         {empty ? (
-          <section className={s.hero}>
+          <section className={`${s.hero} ${focus || input.trim() ? s.typingMode : ""}`}>
             {bot ? (
               <div className={s.botHero}><BotIcon bot={bot} size={58} /></div>
             ) : (
@@ -384,6 +385,8 @@ export default function MainChat() {
               placeholder={web ? "اسأل عن أي حاجة جديدة، وهدوّرلك على الإنترنت..." : "اكتب سؤالك أو طلبك هنا..."}
               onChange={(e) => { setInput(e.target.value); resize(); }}
               onKeyDown={onKey}
+              onFocus={() => setFocus(true)}
+              onBlur={() => setFocus(false)}
             />
             <button
               type="button"
