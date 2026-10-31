@@ -1,0 +1,66 @@
+# فحص أي فرع قبل ما يتدمج في main: بناء الموقع، وتشغيله بمفاتيح الموديلات، وتجربة الصفحات
+# في متصفح حقيقي (موبايل وكمبيوتر)، وحفظ الصور ونتايج التجارب في فرع ci-results عشان تتراجع.
+# main نفسه مش بيتفحص هنا (Vercel بيبنيه وينشره).
+name: preview-check
+on:
+  push:
+    branches-ignore: [main, ci-results]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: preview-check-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: install
+        run: npm install --no-audit --no-fund > /tmp/npm.log 2>&1 || (tail -40 /tmp/npm.log; exit 1)
+      - name: build
+        id: build
+        run: |
+          set -o pipefail
+          npx next build 2>&1 | tee /tmp/build.log | tail -60
+      - name: start
+        if: steps.build.outcome == 'success'
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          nohup npx next start -p 3000 > /tmp/server.log 2>&1 &
+          for i in $(seq 1 60); do curl -sf -o /dev/null http://localhost:3000/ && break; sleep 2; done
+      - name: browser checks
+        if: steps.build.outcome == 'success'
+        timeout-minutes: 25
+        env:
+          CI_ONLY: ${{ vars.CI_ONLY }}
+        run: |
+          npm i --no-save --no-audit --no-fund playwright@1.49.1 > /dev/null 2>&1
+          npx playwright install --with-deps chromium > /dev/null 2>&1
+          node scripts/ci/check.mjs
+      - name: publish results
+        if: always()
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          mkdir -p ci-out
+          cp /tmp/build.log /tmp/server.log /tmp/npm.log ci-out/ 2>/dev/null
+          RUN="runs/$(date -u +%Y%m%d-%H%M%S)-${GITHUB_SHA::7}"
+          REPO="https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git clone -q --depth 1 --branch ci-results "$REPO" /tmp/r 2>/dev/null || { mkdir -p /tmp/r && cd /tmp/r && git init -q && git checkout -q -b ci-results && git remote add origin "$REPO"; }
+          cd /tmp/r
+          ls -1d runs/* 2>/dev/null | sort | head -n -3 | xargs -r git rm -rq
+          mkdir -p "$RUN" && cp -r "$GITHUB_WORKSPACE/ci-out/." "$RUN/"
+          echo "$RUN" > LATEST
+          git add -A
+          git -c user.name=rising-star-ci -c user.email=ci@users.noreply.github.com commit -qm "ci ${GITHUB_SHA::7}"
+          git push -q origin HEAD:ci-results
+          echo "published $RUN"
