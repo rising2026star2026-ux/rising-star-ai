@@ -6,6 +6,7 @@ import { searchProvider, searchQuery, webSearchFull, resultsBlock } from "@/lib/
 import { FALLBACK_IDS } from "@/lib/models";
 import { resolveBot, validProCode } from "@/lib/botcatalog";
 import { fusionResponse } from "@/lib/fusion";
+import { cleanDocs, cleanInstructions, docContext, longChain, instructionsBlock } from "@/lib/doccontext";
 
 const MAX_MESSAGES = 16;       // آخر رسائل بتتبعت للنموذج
 const MAX_MSG_CHARS = 4000;    // أقصى طول للرسالة الواحدة
@@ -15,6 +16,7 @@ const tooManySearches = rateLimiter(20); // 20 بحث في الساعة لكل �
 const tooManyFusion = rateLimiter(25);   // 25 سؤال مدمج في الساعة لكل زائر (كل سؤال = 5 طلبات)
 const tooManyPro = rateLimiter(60);      // 60 رسالة في الساعة لكل مشترك على الموديلات العالمية (بفلوس)
 const tooManyImages = rateLimiter(20);   // 20 صورة في الساعة لكل زائر (توليد الصور جوه الشات)
+const tooManyLong = rateLimiter(30);     // 30 سؤال في الساعة على ملفات كبيرة (كل سؤال بيقرا الملف كله)
 
 // لو المستخدم كتب في الشات إنه عايز صورة، بنولّدها بـ Pollinations بدل ما نرد بكلام بس
 // الكتابة المصرية بتستخدم «ه» بدل «ة» كتير (صوره بدل صورة)، فبنقبل الاتنين
@@ -104,9 +106,15 @@ export async function POST(req) {
   const ip = clientIp(req);
   if (tooMany(ip)) return fail("وصلت للحد المسموح الساعة دي. جرّب بعد شوية.", 429);
 
-  // طلب صورة؟ بنولّدها بـ Pollinations بدل الرد النصي العادي
+  // ملفات مرفوعة (PDF/Word/نص) وتعليمات مشروع
+  const docs = cleanDocs(body.docs);
+  const instructions = cleanInstructions(body.instructions);
   const lastUser = messages[messages.length - 1];
-  if (lastUser?.role === "user" && IMAGE_INTENT.test(lastUser.content) && lastUser.content.length < 400) {
+  const docCtx = docContext(docs, lastUser.content);
+  if (docCtx?.long && tooManyLong(ip)) return fail("وصلت لحد الأسئلة على الملفات الكبيرة الساعة دي. جرّب بعد شوية.", 429);
+
+  // طلب صورة؟ بنولّدها بـ Pollinations بدل الرد النصي العادي (إلا لو بيسأل عن ملف)
+  if (!docs.length && IMAGE_INTENT.test(lastUser.content) && lastUser.content.length < 400) {
     if (tooManyImages(ip)) return fail("وصلت لحد توليد الصور الساعة دي. جرّب بعد شوية.", 429);
     return imageResponse(lastUser.content, req.signal);
   }
@@ -141,6 +149,7 @@ export async function POST(req) {
     SETTINGS.depth.rule[s.depth],
   ].filter(Boolean);
   let system = rules.length ? `${SYSTEM}\n\n${rules.join("\n")}` : SYSTEM;
+  if (instructions) system += `\n\n${instructionsBlock(instructions, body.project)}`;
 
   // البحث على الإنترنت: من زرار «بحث»، أو موديلات قسم البحث (Sonar بيبحث بنفسه)
   const wantsWeb = bot ? bot.web || (body.web === true && !bot.nativeSearch) : body.web === true;
@@ -149,19 +158,20 @@ export async function POST(req) {
     else if (tooManySearches(ip)) headers["x-search"] = "limit";
     else {
       const query = await searchQuery(messages, apiKey);
-      const { results, images } = await webSearchFull(query);
+      const { results, images, notes } = await webSearchFull(query);
       if (results.length) {
-        system += `\n\n${resultsBlock(query, results)}`;
+        system += `\n\n${resultsBlock(query, results, notes)}`;
         headers["x-search"] = "ok";
-        // المصادر بتوصل للمتصفح في الهيدر عشان تتعرض تحت الرد
-        headers["x-sources"] = encodeURIComponent(JSON.stringify(results.map((r) => ({ t: r.title, u: r.url }))));
+        // المصادر بتوصل للمتصفح في الهيدر عشان تتعرض تحت الرد (d = اسم الموقع لو الرابط تحويلة)
+        headers["x-sources"] = encodeURIComponent(JSON.stringify(results.map((r) => ({ t: r.title, u: r.url, ...(r.domain ? { d: r.domain } : {}) }))));
         if (images.length) headers["x-images"] = encodeURIComponent(JSON.stringify(images));
       } else headers["x-search"] = "empty";
     }
   }
 
   // «دمج 4 نماذج»: 4 مسودات في نفس الوقت، وبعدين محرر بيكتب منهم رد واحد متدقق
-  if (!bot && mode.fusion) {
+  // (مع الملفات بنرد بنموذج واحد بيقرا الملف كله، لأن 4 نسخ من ملف طويل تقيلة ومش بتفرق في الدقة)
+  if (!bot && mode.fusion && !docs.length) {
     if (!tooManyFusion(ip)) {
       return fusionResponse({
         system,
@@ -175,11 +185,33 @@ export async function POST(req) {
   }
 
   const effort = bot ? bot.effort : mode.effort;
+  const temperature = docs.length ? 0.3 : SETTINGS.style.temp[s.style] ?? 0.6;
+  const maxTokens = effort === "high" ? 6000 : effort === "medium" || docs.length ? 3200 : 2048;
+  let chain = bot ? chainForBot(bot) : chainFor(mode);
+  let finalMessages = [{ role: "system", content: system }, ...messages];
+
+  if (docCtx) {
+    headers["x-docs"] = docCtx.long ? "long" : "full";
+    const full = [{ role: "system", content: `${system}\n\n${docCtx.full}` }, ...messages];
+    if (!docCtx.long) finalMessages = full;
+    else {
+      // الملف كبير: Gemini بيقرا الملف كله، ولو مش متاح الباقيين بياخدوا أنسب الأجزاء للسؤال
+      const excerpt = [{ role: "system", content: `${system}\n\n${docCtx.excerpt}` }, ...messages];
+      const withFull = (list) => list.map((m) => ({ ...m, messages: full }));
+      const withExcerpt = (list) => list.map((m) => ({ ...m, messages: excerpt }));
+      // الموديلات العالمية المدفوعة بتقرا نصوص طويلة، فنديها الملف كله الأول
+      const head = bot?.tier === "pro" ? withFull(chain.slice(0, 1)) : [];
+      const rest = bot?.tier === "pro" ? chain.slice(1) : chain;
+      chain = [...head, ...withFull(longChain()), ...withExcerpt(rest)];
+      finalMessages = excerpt;
+    }
+  }
+
   return streamFromGroq({
-    chain: bot ? chainForBot(bot) : chainFor(mode),
-    messages: [{ role: "system", content: system }, ...messages],
-    temperature: SETTINGS.style.temp[s.style] ?? 0.6,
-    maxTokens: effort === "high" ? 6000 : effort === "medium" ? 3200 : 2048,
+    chain,
+    messages: finalMessages,
+    temperature,
+    maxTokens,
     signal: req.signal,
     headers,
   });
