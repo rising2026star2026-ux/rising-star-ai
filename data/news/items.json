@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01T05:12:59.601Z",
+ "updated": "2026-11-01T16:58:36.141Z",
  "providers": [
   "groq",
   "openrouter",
@@ -10,25 +10,51 @@
   "gemini": 4
  },
  "feeds": {
-  "openai": "ok 70",
-  "techcrunch": "ok 20",
+  "openai": "ok 69",
   "verge": "ok 10",
-  "nvidia": "ok 18",
+  "techcrunch": "ok 20",
+  "meta": "ok 9",
+  "aws": "ok 20",
   "deepmind": "ok 9",
   "apple": "ok 10",
-  "aws": "ok 20",
-  "google-ai": "ok 5",
   "huggingface": "ok 24",
-  "marktechpost": "ok 10",
-  "techwd": "ok 2",
-  "meta": "ok 9",
-  "google-research": "ok 11",
   "arstechnica": "ok 20",
+  "google-research": "ok 10",
+  "nvidia": "ok 18",
+  "techwd": "ok 0",
+  "google-ai": "ok 4",
+  "marktechpost": "ok 10",
   "microsoft": "ok 9",
-  "venturebeat": "FAIL HTTP 429",
-  "aitnews": "FAIL HTTP 403"
+  "aitnews": "FAIL HTTP 403",
+  "venturebeat": "FAIL HTTP 429"
  },
  "items": [
+  {
+   "id": "b78eced8d414",
+   "url": "https://www.marktechpost.com/2026/11/01/nace-ai-open-sources-drex-max-v1-local-inference/",
+   "title": "Nace AI Open-Sources Drex Max v1: A 27B Decision Model That Runs Locally on Apple Silicon",
+   "date": "2026-11-01T08:10:07.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "Nace AI يطلق Drex Max v1 مفتوح المصدر على Apple Silicon",
+    "summary": "Nace AI أتاح Drex Max v1، نموذج قرار متعدد الوسائط بـ27 مليار بارامتر وتقييم 67.52، يشتغل محليًا على معالجات Apple Silicon."
+   }
+  },
+  {
+   "id": "3cc4ce3d743f",
+   "url": "https://www.marktechpost.com/2026/11/01/deepseek-dsh-superagent-router-worker-coding-agent/",
+   "title": "DeepSeek Open-Sources dsh-superagent, a Router-Worker Coding Agent",
+   "date": "2026-11-01T07:47:17.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "DeepSeek يطلق dsh-superagent، وكيل برمجة بنظام Router-Worker",
+    "summary": "DeepSeek قدم dsh-superagent تحت رخصة MIT، يحول طلبات GitHub وFeishu إلى جلسات عمل موازية، وقلل متوسط إكمال المهام من 29.5 دقيقة إلى 15.7 دقيقة في محاكاته."
+   }
+  },
   {
    "id": "89c6cb6d2971",
    "url": "https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/",
@@ -4161,32 +4187,6 @@
    "ar": {
     "title": "تسهيل تشغيل موديلات HF على AWS Trainium",
     "summary": "بقى تشغيل موديلات Hugging Face على شرائح AWS Trainium أسهل وأسرع بكتير باستخدام TorchNeuron."
-   }
-  },
-  {
-   "id": "65442e708214",
-   "url": "https://openai.com/index/itau-generative-ai",
-   "title": "How Itaú is building generative AI for its entire customer base",
-   "date": "2026-10-16T19:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "איטאו بنك يطور ذكاء اصطناعي لعملائه",
-    "summary": "بنك Itaú بيطبق استراتيجية الـ AI First لخدمة عملائه وموظفيه في قطاع حساس، وده من خلال واجهة محادثة ia.i ومنصة الحوكمة IARA."
-   }
-  },
-  {
-   "id": "83945f3b589d",
-   "url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
-   "title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
-   "date": "2026-10-16T18:11:34.000Z",
-   "src": "Google Research",
-   "srcId": "google-research",
-   "kind": "company",
-   "ar": {
-    "title": "ربط وكلاء الذكاء الاصطناعي بالواقع البيولوجي",
-    "summary": "بناء وحدات أساسية ومتقدمة للمعمل الحيوي المستقل لربط وكلاء الذكاء الاصطناعي بالعلوم العامة."
    }
   }
  ]
