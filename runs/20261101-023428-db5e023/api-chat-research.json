@@ -1,0 +1,9 @@
+{
+  "ok": false,
+  "notes": [
+    "status 200 search=empty sources=0 model=groq/openai/gpt-oss-120b",
+    "why: gemini-flash-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/ | gemini-flash-lite-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/ | ddg: ok but 0 resul",
+    "domains: ",
+    "**ملاحظة:** مش قادر أتحقق دلوقتي من أحدث سعر للدولار في مصر لأن البحث ما جابش نتائج، فمعلوماتي ممكن تكون قديمة (تقريباً حتى آخر تحديث لي في 2023).\n\n---\n\n### ملخص سريع\n- سعر الدولار في مصر بيتقلب يوميًا بناءً على عوامل داخلية (العرض والطلب، سياسات البنك المركزي) وخارجية (أسعار النفط، سعر الصرف في الأسواق العالمية).\n- عادةً بيكون في نطاق **30‑33 جنيه** للدولار الأمريكي في السوق الرسمي، لكن في السوق "
+  ]
+}
