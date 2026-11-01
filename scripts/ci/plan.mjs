@@ -219,6 +219,54 @@ export const CHECKS = [
       note(`has 3000=${/3000|3,000/.test(txt)} has 45=${/45/.test(txt)} has 50=${/50/.test(txt)}`);
     },
   },
+  { name: "tools-grid", path: "/tools", max: 3 },
+  { name: "projects", path: "/projects", viewports: ["mobile"], max: 2 },
+  {
+    name: "tool-qr", path: "/tool/qr-code", viewports: ["mobile"],
+    async run({ page, shot, note }) {
+      await page.locator("textarea").fill("https://wa.me/201012345678");
+      await page.getByRole("button", { name: "اعمل QR" }).click();
+      const ok = await page.locator("img[alt='رمز QR جاهز']").waitFor({ timeout: 20000 }).then(() => true).catch(() => false);
+      note(ok ? "qr ok" : "qr FAILED");
+      await shot("qr");
+    },
+  },
+  {
+    name: "tool-calcs", path: "/tool/number-words", viewports: ["mobile"],
+    async run({ page, shot, note }) {
+      await page.locator("input").first().fill("1250.5");
+      await page.getByRole("radio", { name: "جنيه" }).click();
+      await page.waitForTimeout(500);
+      note((await page.locator("[role=status]").first().innerText()).replace(/\s+/g, " "));
+      await shot("number-words");
+      await page.goto(page.url().replace("number-words", "hijri-date"));
+      await page.waitForTimeout(1200);
+      note((await page.locator("[role=status]").first().innerText()).replace(/\s+/g, " "));
+      await shot("hijri");
+    },
+  },
+  {
+    name: "tool-pdf-delete", path: "/tool/pdf-delete-pages", viewports: ["mobile"],
+    async run({ page, shot, note, FIXDIR }) {
+      await page.setInputFiles("input[type=file]", path.join(FIXDIR, "guide-ar.pdf"));
+      await page.waitForTimeout(1500);
+      await page.locator("input[type=text]").first().fill("2");
+      const dl = page.waitForEvent("download", { timeout: 15000 }).catch(() => null);
+      await page.getByRole("button", { name: /احذف ونزّل/ }).click();
+      note((await dl) ? "pdf downloaded" : "pdf download FAILED");
+      await shot("pdf-delete");
+    },
+  },
+  {
+    name: "tool-ocr", path: "/tool/image-to-text", viewports: ["mobile"],
+    async run({ page, shot, note, FIXDIR }) {
+      await page.setInputFiles("input[type=file]", path.join(FIXDIR, "ocr-text.png"));
+      await page.waitForFunction(() => document.querySelector("textarea") || document.querySelector("[class*=warn]"), null, { timeout: 60000 }).catch(() => note("ocr timeout"));
+      await page.waitForTimeout(800);
+      note((await page.locator("textarea").first().inputValue().catch(() => "no text")).slice(0, 200));
+      await shot("ocr");
+    },
+  },
   // معامل التجارب (بتشتغل بس لو اسمها مكتوب في scripts/ci/ONLY)
   { name: "cutout-lab", lab: true, path: "/tool/remove-bg", viewports: ["desktop"], run: CUTOUT_LAB },
   { name: "space-lab", lab: true, path: "/tool/remove-bg", viewports: ["desktop"], run: SPACE_LAB },

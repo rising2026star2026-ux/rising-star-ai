@@ -1,5 +1,5 @@
 import TryExample from "@/components/TryExample";
-import { SHARED_FAQ, STUDIO_FAQ } from "@/lib/content";
+import { SHARED_FAQ, STUDIO_FAQ, CALC_FAQ } from "@/lib/content";
 
 // خطوات الاستخدام بتتكتب تلقائياً من بيانات الأداة نفسها
 export function howToSteps(tool, content) {
@@ -18,6 +18,8 @@ export function howToSteps(tool, content) {
 }
 
 export function faqFor(content, tool) {
+  // أدوات ليها أسئلتها الخاصة بالخصوصية (الحاسبات، أو OCR اللي بيبعت الصورة لقارئ الصور)
+  if (content?.ownFaq) return [...(content.faq || []), ...(content.calc ? CALC_FAQ : [])];
   return [...(content?.faq || []), ...(tool?.local ? STUDIO_FAQ : SHARED_FAQ)];
 }
 

@@ -7,6 +7,7 @@ import { tools, categories } from "@/lib/tools";
 import { norm } from "@/lib/search";
 import { useStored } from "@/lib/store";
 import ToolIcon from "./ToolIcon";
+import { Glyph, CATEGORY_GLYPH } from "@/lib/toolglyphs";
 
 const VALID = new Set(categories.map((c) => c.id));
 const COUNTS = Object.fromEntries(categories.map((c) => [c.id, tools.filter((t) => t.cat === c.id).length]));
@@ -28,7 +29,7 @@ function Catalog({ cat, onCat }) {
         </button>
         {categories.map((c) => (
           <button key={c.id} role="tab" aria-selected={cat === c.id} className={`chip ${cat === c.id ? "active" : ""}`} onClick={() => onCat(c.id)}>
-            {c.icon} {c.name} <small>{COUNTS[c.id]}</small>
+            <Glyph name={CATEGORY_GLYPH[c.id]} size={16} /> {c.name} <small>{COUNTS[c.id]}</small>
           </button>
         ))}
       </div>

@@ -27,6 +27,8 @@ const Watermark = dynamic(() => import("./Watermark"), { ssr: false, loading });
 const Colors = dynamic(() => import("./Colors"), { ssr: false, loading });
 const Pdf = dynamic(() => import("./Pdf"), { ssr: false, loading });
 const VideoFrame = dynamic(() => import("./VideoFrame"), { ssr: false, loading });
+const Calcs = dynamic(() => import("./Calcs"), { ssr: false, loading });
+const Ocr = dynamic(() => import("./Ocr"), { ssr: false, loading });
 const Apps = dynamic(() => import("./Apps"), { ssr: false, loading });
 const VideoMaker = dynamic(() => import("./VideoMaker"), { ssr: false, loading });
 const RemotionReel = dynamic(() => import("@/components/lab/RemotionReel"), { ssr: false, loading });
@@ -46,8 +48,19 @@ const KINDS = {
   img2pdf: [Pdf, { mode: "img2pdf" }],
   pdfmerge: [Pdf, { mode: "merge" }],
   pdfsplit: [Pdf, { mode: "split" }],
+  pdfdelete: [Pdf, { mode: "delete" }],
+  ocr: [Ocr],
   frame: [VideoFrame],
   apps: [Apps],
+  percent: [Calcs, { mode: "percent" }],
+  hourly: [Calcs, { mode: "hourly" }],
+  numwords: [Calcs, { mode: "numwords" }],
+  zakat: [Calcs, { mode: "zakat" }],
+  hijri: [Calcs, { mode: "hijri" }],
+  wordcount: [Calcs, { mode: "wordcount" }],
+  textclean: [Calcs, { mode: "textclean" }],
+  password: [Calcs, { mode: "password" }],
+  qr: [Calcs, { mode: "qr" }],
   "video-remotion": [RemotionReel],
   "video-factory": [VideoFactory],
   "product-ad": [ProductAd],

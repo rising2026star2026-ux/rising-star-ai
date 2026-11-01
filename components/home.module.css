@@ -371,3 +371,5 @@
 @media (prefers-reduced-motion: reduce) {
   .suggest, .gridWrap, .brand p, .brand h1, .mark { transition: none; }
 }
+
+.catGlyph { display: inline-grid; place-items: center; color: var(--c); }

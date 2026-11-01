@@ -15,6 +15,7 @@ const A4 = [595.28, 841.89];
 export default function Pdf({ mode }) {
   if (mode === "merge") return <Merge />;
   if (mode === "split") return <Split />;
+  if (mode === "delete") return <Split drop />;
   return <ImagesToPdf />;
 }
 
@@ -232,10 +233,11 @@ export function parseRanges(text, count) {
   return out.length ? out : null;
 }
 
-function Split() {
+// drop = «احذف صفحات»: نفس الأداة بس الصفحات المكتوبة هي اللي بتتشال والباقي بيطلع
+function Split({ drop = false }) {
   const [file, setFile] = useState(null);
   const [count, setCount] = useState(0);
-  const [mode, setMode] = useState("pick");
+  const [mode, setMode] = useState(drop ? "drop" : "pick");
   const [ranges, setRanges] = useState("1");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -247,13 +249,16 @@ function Split() {
       const doc = await PDFDocument.load(await readBytes(files[0]), { ignoreEncryption: true });
       setFile(files[0]);
       setCount(doc.getPageCount());
-      setRanges(doc.getPageCount() > 1 ? `1-${Math.min(3, doc.getPageCount())}` : "1");
+      setRanges(drop ? "" : doc.getPageCount() > 1 ? `1-${Math.min(3, doc.getPageCount())}` : "1");
     } catch {
       setError("الملف ده مش PDF سليم أو عليه باسورد.");
     }
   }
 
-  const picked = mode === "pick" ? parseRanges(ranges, count) : null;
+  const parsed = mode === "pick" || mode === "drop" ? parseRanges(ranges, count) : null;
+  // الصفحات اللي هتطلع في الملف الجديد (في وضع الحذف: كل الصفحات ما عدا المكتوبة، ولازم يفضل صفحة على الأقل)
+  const picked = mode === "drop" && parsed ? Array.from({ length: count }, (_, i) => i).filter((i) => !parsed.includes(i)) : parsed;
+  const valid = picked && picked.length > 0 && (mode !== "drop" || picked.length < count);
 
   async function run() {
     setBusy(true);
@@ -262,10 +267,10 @@ function Split() {
       const { PDFDocument } = await lib();
       const src = await PDFDocument.load(await readBytes(file), { ignoreEncryption: true });
       const base = baseName(file.name);
-      if (mode === "pick") {
+      if (mode === "pick" || mode === "drop") {
         const out = await PDFDocument.create();
         (await out.copyPages(src, picked)).forEach((p) => out.addPage(p));
-        download(new Blob([await out.save()], { type: "application/pdf" }), `${base}-pages.pdf`);
+        download(new Blob([await out.save()], { type: "application/pdf" }), `${base}-${mode === "drop" ? "edited" : "pages"}.pdf`);
         toast(`اتحمل ملف فيه ${picked.length} صفحة`);
       } else {
         const files = [];
@@ -294,8 +299,16 @@ function Split() {
             <div className={s.itemText}><b dir="auto">{file.name}</b><small>{count} صفحة · {formatBytes(file.size)}</small></div>
           </div>
           <div className={s.panel} style={{ position: "static" }}>
-            <Seg value={mode} options={[["pick", "طلّع صفحات معيّنة"], ["each", "كل صفحة في ملف"]]} onChange={setMode} />
-            {mode === "pick" ? (
+            {!drop && <Seg value={mode} options={[["pick", "طلّع صفحات معيّنة"], ["each", "كل صفحة في ملف"]]} onChange={setMode} />}
+            {mode === "drop" ? (
+              <>
+                <TextField label="الصفحات اللي هتتحذف" value={ranges} onChange={setRanges} dir="ltr" inputMode="numeric" placeholder="2, 5-7" maxLength={200} />
+                <Note>
+                  اكتب أرقام الصفحات اللي عايز تشيلها بفاصلة، والشرطة معناها «من لحد». مثال: <bdi dir="ltr">2, 5-7</bdi> يشيل الصفحات 2 و5 و6 و7.
+                  {parsed ? (picked.length > 0 ? ` هيفضل ${picked.length} صفحة من ${count}.` : " مينفعش تحذف كل الصفحات.") : ` الأرقام لازم تكون من 1 لـ ${count}.`}
+                </Note>
+              </>
+            ) : mode === "pick" ? (
               <>
                 <TextField label="الصفحات" value={ranges} onChange={setRanges} dir="ltr" inputMode="numeric" placeholder="1-3, 5, 8-10" maxLength={200} />
                 <Note>
@@ -308,7 +321,7 @@ function Split() {
             )}
           </div>
           <div className={s.toolbar}>
-            {busy ? <Busy /> : <button type="button" className="btn" onClick={run} disabled={mode === "pick" && !picked}>نفّذ</button>}
+            {busy ? <Busy /> : <button type="button" className="btn" onClick={run} disabled={mode !== "each" && !valid}>{mode === "drop" ? "احذف ونزّل الملف" : "نفّذ"}</button>}
           </div>
         </>
       )}

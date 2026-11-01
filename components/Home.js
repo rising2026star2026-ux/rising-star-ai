@@ -12,6 +12,7 @@ import { useProofread, ProofIcon } from "@/lib/useProofread";
 import FusionStack from "./FusionStack";
 import { useModal } from "@/lib/useModal";
 import ToolIcon from "./ToolIcon";
+import { Glyph, CATEGORY_GLYPH } from "@/lib/toolglyphs";
 import ExternalLinks from "./ExternalLinks";
 import FlowCards from "./FlowCards";
 import BotIcon from "./BotIcon";
@@ -334,7 +335,7 @@ export default function Home() {
         <div className={s.catsRow}>
           {categories.map((c) => (
             <Link key={c.id} href={`/tools?cat=${c.id}`} className={s.catChip} style={{ "--c": c.color }}>
-              <span aria-hidden="true">{c.icon}</span>
+              <span className={s.catGlyph} aria-hidden="true"><Glyph name={CATEGORY_GLYPH[c.id]} size={15} /></span>
               {c.name}
               <small>{counts[c.id]}</small>
             </Link>
