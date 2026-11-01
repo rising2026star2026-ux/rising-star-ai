@@ -54,7 +54,7 @@ const TABS = [
   {
     href: "/seller",
     label: "البيّاع",
-    match: ["/seller", "/test-ad", "/photo-ad", "/voice-post", "/catalog"],
+    match: ["/seller", "/test-ad", "/photo-ad", "/voice-post", "/catalog", "/amazon"],
     icon: (
       <svg {...P}>
         <path d="M4 9.5l1.6-4.2A1.5 1.5 0 017 4.3h10a1.5 1.5 0 011.4 1l1.6 4.2" />

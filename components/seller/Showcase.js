@@ -31,11 +31,17 @@ export const RECEIPT = {
   gets: ["إيصال بالإجمالي بالجنيه", "الفلوس اللي بتضيع وليه", "كارت تشاركه ستوري"],
 };
 
+export const AMAZON = {
+  href: "/amazon", tone: "gold", icon: "🛒",
+  title: "أدوات بياعين أمازون", hook: "فاحص رفض، ليستنج بالعربي والإنجليزي، حاسبة ربح، وتحليل منافس",
+  gets: ["اعرف سبب الرفض قبل ما يحصل", "اكتب الليستنج من كلامك", "احسب ربحك الصافي وحلّل منافسك"],
+};
+
 /** شريط الرئيسية */
 export function ShowcaseStrip() {
   return (
     <div className={s.strip}>
-      {[...FEATURES, RECEIPT].map((f) => (
+      {[...FEATURES, AMAZON, RECEIPT].map((f) => (
         <Link key={f.href} href={f.href} className={`${s.tile} ${s["t_" + f.tone]}`}>
           <span className={s.tIcon} aria-hidden="true">{f.icon}</span>
           <b>{f.title}</b>
@@ -67,6 +73,16 @@ export function ShowcaseFull() {
           </li>
         ))}
       </ol>
+      <h2 className={s.sub}>ولو بتبيع على أمازون</h2>
+      <Link href={AMAZON.href} className={`${s.card} ${s.wide} ${s["t_" + AMAZON.tone]}`}>
+        <span className={s.cIcon} aria-hidden="true">{AMAZON.icon}</span>
+        <span className={s.cText}>
+          <b>{AMAZON.title}</b>
+          <small>{AMAZON.hook}</small>
+          <ul>{AMAZON.gets.map((g) => <li key={g}>{g}</li>)}</ul>
+        </span>
+        <span className={s.cGo}>افتح الأدوات ←</span>
+      </Link>
       <h2 className={s.sub}>ولو بتدفع اشتراكات ذكاء اصطناعي</h2>
       <Link href={RECEIPT.href} className={`${s.card} ${s.wide} ${s["t_" + RECEIPT.tone]}`}>
         <span className={s.cIcon} aria-hidden="true">{RECEIPT.icon}</span>
