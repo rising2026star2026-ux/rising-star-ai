@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T16:59:21.184Z",
+ "updated": "2026-11-01T05:12:59.601Z",
  "providers": [
   "groq",
   "openrouter",
@@ -10,25 +10,64 @@
   "gemini": 4
  },
  "feeds": {
-  "openai": "ok 72",
-  "deepmind": "ok 9",
-  "verge": "ok 10",
-  "apple": "ok 10",
+  "openai": "ok 70",
   "techcrunch": "ok 20",
-  "google-ai": "ok 5",
-  "meta": "ok 9",
+  "verge": "ok 10",
   "nvidia": "ok 18",
-  "arstechnica": "ok 20",
-  "marktechpost": "ok 10",
-  "huggingface": "ok 25",
-  "google-research": "ok 11",
+  "deepmind": "ok 9",
+  "apple": "ok 10",
   "aws": "ok 20",
+  "google-ai": "ok 5",
+  "huggingface": "ok 24",
+  "marktechpost": "ok 10",
   "techwd": "ok 2",
-  "aitnews": "ok 6",
+  "meta": "ok 9",
+  "google-research": "ok 11",
+  "arstechnica": "ok 20",
   "microsoft": "ok 9",
-  "venturebeat": "FAIL HTTP 429"
+  "venturebeat": "FAIL HTTP 429",
+  "aitnews": "FAIL HTTP 403"
  },
  "items": [
+  {
+   "id": "89c6cb6d2971",
+   "url": "https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/",
+   "title": "Apple CEO says the company doesn’t ‘want to ship AI for AI’s sake’",
+   "date": "2026-10-31T21:41:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "الـCEO بتاع Apple يوضح موقف الشركة من الذكاء الاصطناعي",
+    "summary": "الـCEO الجديد لشركة Apple بيأكد إن الشركة مش عايزة تنشر AI لمجرد وجوده، وده بيظهر في استراتيجيتها الحالية."
+   }
+  },
+  {
+   "id": "cefcb0bd2478",
+   "url": "https://techcrunch.com/2026/10/31/4-days-left-how-techcrunch-founder-summit-helps-you-make-more-useful-connections-to-scale/",
+   "title": "4 days left: How TechCrunch Founder Summit helps you make more useful connections to scale",
+   "date": "2026-10-31T21:36:07.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "مؤتمر TechCrunch Founder Summit في بوسطن",
+    "summary": "الفعالية هتكون يوم 4 نوفمبر في SoWa Power Station، فيها فرص شبكة قوية، ورؤى عملية ممكن تغير مسار الفكرة أو الستارت أب بتاعك. احجز بدري قبل ما الأسعار تعلى عند الباب."
+   }
+  },
+  {
+   "id": "bc398a80a0df",
+   "url": "https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/",
+   "title": "Judge allows NAACP lawsuit over xAI data center pollution to move forward",
+   "date": "2026-10-31T21:17:03.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "قضية NAACP ضد مركز بيانات xAI",
+    "summary": "قضية NAACP بتتهم شركة xAI المملوكة لـ SpaceX بانتهاك قانون الهواء النظيف بسبب تلوث مركز البيانات."
+   }
+  },
   {
    "id": "344dcf79744a",
    "url": "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
@@ -4148,45 +4187,6 @@
    "ar": {
     "title": "ربط وكلاء الذكاء الاصطناعي بالواقع البيولوجي",
     "summary": "بناء وحدات أساسية ومتقدمة للمعمل الحيوي المستقل لربط وكلاء الذكاء الاصطناعي بالعلوم العامة."
-   }
-  },
-  {
-   "id": "4a2f3ca18eb9",
-   "url": "https://openai.com/index/benefit-street-partners",
-   "title": "Benefit Street Partners answers questions faster with Codex",
-   "date": "2026-10-16T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Benefit Street Partners تجاوب أسرع باستخدام Codex",
-    "summary": "أنانت كومار بيستخدم أدوات مدعومة بـ Codex لمراجعة الكود، مقارنة تقييمات القروض، وتحليل اتفاقيات الائتمان بسرعة أكبر."
-   }
-  },
-  {
-   "id": "9db4940a53f8",
-   "url": "https://openai.com/index/stack-overflow-chatgpt-plugin",
-   "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
-   "date": "2026-10-16T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "مضاعفة تسجيلات Stack Overflow for Agents",
-    "summary": "مهندسين قدروا يطلقوا Stack Overflow for Agents في أسابيع بـ Codex، ومساعد plugin بتاع ChatGPT ساهم في زيادة إنشاء الوكلاء بشكل ملحوظ."
-   }
-  },
-  {
-   "id": "849b423196d1",
-   "url": "https://huggingface.co/blog/reflection-beam",
-   "title": "Welcome Beam: a 501B open model you can own, customize, and scale",
-   "date": "2026-10-16T00:00:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "الترحيب بنموذج Beam المفتوح",
-    "summary": "إطلاق الموديل المفتوح Beam 501B اللي تقدر تملكه، تخصصه، وتكبره براحتك."
    }
   }
  ]
