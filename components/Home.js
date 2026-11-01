@@ -18,6 +18,8 @@ import FlowCards from "./FlowCards";
 import BotIcon from "./BotIcon";
 import StarMark from "./StarMark";
 import ScrollBands from "./ScrollBands";
+import RevealOnScroll from "./fx/RevealOnScroll";
+import SpotRoot, { Glow } from "./fx/SpotRoot";
 import { ShowcaseStrip } from "./seller/Showcase";
 import { BOTS } from "@/lib/bots";
 import { APPS } from "@/lib/apps";
@@ -104,6 +106,7 @@ export default function Home() {
   return (
     <div className={s.page}>
       <ScrollBands />
+      <RevealOnScroll />
 
       {/* ============ القسم الأول: سما ليل والنجمة طالعة ============ */}
       <section className={`${s.band} ${s.night} ${s.hero} on-night ${focus || input.trim() ? s.typing : ""}`} data-band-sec="night">
@@ -237,15 +240,16 @@ export default function Home() {
 
       {/* ===== شبكة الاختصارات ===== */}
       <section className={s.gridWrap} aria-label="أدوات سريعة">
-        <div className={s.grid}>
+        <SpotRoot className={s.grid}>
           {SHORTCUTS.map(getTool).filter(Boolean).map((t, i) => (
-            <Link key={t.id} href={`/tool/${t.id}`} className={s.tile}>
+            <Link key={t.id} href={`/tool/${t.id}`} className={s.tile} data-spot>
+              <Glow />
               {i === 0 && <span className={s.badge}>شائع</span>}
               <ToolIcon tool={t} />
               <span className={s.tileName}>{t.name}</span>
             </Link>
           ))}
-        </div>
+        </SpotRoot>
       </section>
 
         </div>
@@ -255,7 +259,7 @@ export default function Home() {
       <section className={`${s.band} ${s.white}`} data-band-sec="white">
         <div className={s.in}>
       {/* ===== ستوديو البيّاع ===== */}
-      <section className={s.cats}>
+      <section className={s.cats} data-reveal>
         <div className={s.catsHead}>
           <span>ستوديو البيّاع: بيع أونلاين من موبايلك</span>
           <Link href="/seller" className={s.allLink}>الستوديو كله</Link>
@@ -264,7 +268,7 @@ export default function Home() {
       </section>
 
       {/* ===== المهام الكاملة ===== */}
-      <section className={s.cats}>
+      <section className={s.cats} data-reveal>
         <div className={s.catsHead}>
           <span>مهام كاملة: اكتب سطر وخد شغل كامل</span>
           <Link href="/flows" className={s.allLink}>كل المهام</Link>
@@ -272,7 +276,7 @@ export default function Home() {
         <FlowCards row />
       </section>
 
-      <section className={s.cats}>
+      <section className={s.cats} data-reveal>
         <div className={s.catsHead}>
           <span>استوديو التصميم: زي أدوبي، وصورك ما بتطلعش من جهازك</span>
           <Link href="/tools?cat=studio" className={s.allLink}>كل أدوات الاستوديو</Link>
@@ -290,7 +294,7 @@ export default function Home() {
       <section className={`${s.band} ${s.night} ${s.sky} on-night`} data-band-sec="night">
         <i className={s.starfield} aria-hidden="true" />
         <div className={s.in}>
-      <section className={s.cats}>
+      <section className={s.cats} data-reveal>
         <div className={s.catsHead}>
           <span>اتكلم مع أقوى موديلات العالم</span>
           <Link href="/models" className={s.allLink}>كل الموديلات</Link>
@@ -305,7 +309,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={s.cats}>
+      <section className={s.cats} data-reveal>
         <div className={s.catsHead}>
           <span>أشهر برامج الذكاء الاصطناعي</span>
           <Link href="/models" className={s.allLink}>كل البرامج</Link>
@@ -327,7 +331,7 @@ export default function Home() {
       <section className={`${s.band} ${s.white}`} data-band-sec="white">
         <div className={s.in}>
       {/* ===== المجالات ===== */}
-      <section className={s.cats}>
+      <section className={s.cats} data-reveal>
         <div className={s.catsHead}>
           <span>المجالات</span>
           <Link href="/tools" className={s.allLink}>كل الـ{tools.length} أداة</Link>

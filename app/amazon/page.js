@@ -1,5 +1,6 @@
 import SellerHero from "@/components/seller/SellerHero";
 import Hub from "@/components/amazon/Hub";
+import { ICONS } from "@/components/amazon/icons";
 import sc from "@/components/seller/seller.module.css";
 
 const T = "أدوات بياعين أمازون بالعربي: فاحص رفض، ليستنج، حاسبة ربح، تحليل منافس";
@@ -26,7 +27,7 @@ export default function AmazonPage() {
       <div className={sc.body}>
         <Hub />
         <p className={sc.note}>
-          <span aria-hidden="true">ℹ️</span>
+          <span aria-hidden="true">{ICONS.info}</span>
           <span>الأدوات دي مساعدة مش بديل لأمازون: هي اللي بتقرر قبول الليستنج. الفحص بيعتمد على قواعدها المعلنة، والرسوم في الحاسبة بتكتبها انت من حاسبة الرسوم الرسمية في Seller Central.</span>
         </p>
       </div>

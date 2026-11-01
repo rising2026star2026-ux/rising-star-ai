@@ -30,6 +30,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl">
       <head>
+        {/* وضع التخفيف: بيقفل المؤثرات الزخرفية على الأجهزة الضعيفة أو لما المستخدم يطلب تقليل الحركة أو توفير البيانات */}
+        <script dangerouslySetInnerHTML={{ __html: "try{var n=navigator,c=n.connection||{};if(localStorage.getItem('rs:motion')==='off'||matchMedia('(prefers-reduced-motion: reduce)').matches||c.saveData||/(^|-)2g$/.test(c.effectiveType||'')||(n.deviceMemory&&n.deviceMemory<=2)||(n.hardwareConcurrency&&n.hardwareConcurrency<=2))document.documentElement.classList.add('lite')}catch(e){}" }} />
         {/* الشاشة الافتتاحية بتظهر أول مرة في الجلسة بس */}
         <script dangerouslySetInnerHTML={{ __html: "try{if(sessionStorage.getItem('rs:intro'))document.documentElement.classList.add('no-intro');if(localStorage.getItem('rs:side-mini')==='true')document.documentElement.classList.add('side-mini')}catch(e){}" }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

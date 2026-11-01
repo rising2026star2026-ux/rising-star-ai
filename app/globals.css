@@ -42,7 +42,7 @@
   --text: #12121c;
   --text-strong: #0b0b14;
   --muted: #5b6474;
-  --faint: #8b93a1;
+  --faint: #667085; /* كان #8b93a1 (تباين 3.1:1 على الأبيض). دلوقتي 5:1 وده الحد المقبول للنص الصغير */
   --danger: #d43f3a;
 
   /* لون واحد للتفاعل */
@@ -706,3 +706,25 @@ h1, h2, h3 { font-family: var(--display); letter-spacing: 0; }
 .pitch-points span { color: var(--muted); font-size: 0.86rem; line-height: 1.6; }
 .pitch-steps { margin: 0 0 14px; padding: 0 20px 0 0; color: var(--muted); font-size: 0.88rem; display: flex; flex-wrap: wrap; gap: 4px 22px; }
 .pitch-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+
+/* ==================================================================
+   مؤثرات الحركة (مستوحاة من ReactBits، بتنفيذ خفيف)
+   - بتتقفل كلها تلقائياً في html.lite (جهاز ضعيف / توفير بيانات / تقليل الحركة)
+   - بتتحرك بـopacity وtransform بس، ومفيش حاجة بتشتغل في صفحات الأدوات نفسها
+   ================================================================== */
+:where([data-spot]) { position: relative; }
+.fx-glow {
+  position: absolute; inset: 0; z-index: 0; border-radius: inherit; pointer-events: none; opacity: 0;
+  transition: opacity 0.25s var(--ease);
+  background: radial-gradient(180px circle at var(--mx, 50%) var(--my, 50%), var(--fx-glow-color, rgba(255, 255, 255, 0.24)), transparent 72%);
+}
+.fx-glow-cool { --fx-glow-color: rgba(31, 77, 255, 0.12); }
+@media (hover: hover) and (pointer: fine) { [data-spot]:hover > .fx-glow { opacity: 1; } }
+html.lite .fx-glow { display: none; }
+
+[data-reveal] { transition: opacity 0.55s var(--ease), transform 0.55s var(--ease); }
+[data-reveal].fx-pre { opacity: 0; transform: translateY(18px); }
+@media (prefers-reduced-motion: reduce) { [data-reveal], [data-reveal].fx-pre { transition: none; opacity: 1; transform: none; } }
+@media print { [data-reveal].fx-pre { opacity: 1; transform: none; } }
+html.lite .intro { display: none; }

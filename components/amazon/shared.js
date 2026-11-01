@@ -6,6 +6,7 @@ import { copyText } from "@/lib/imagefile";
 import { toast } from "@/lib/store";
 import s from "../seller/seller.module.css";
 import a from "./amazon.module.css";
+import { ICONS } from "./icons";
 
 export function MarketChips({ value, onChange }) {
   return (
@@ -30,14 +31,14 @@ export function Meter({ value, max, unit = "حرف" }) {
 
 export function StatusBanner({ status, stats }) {
   const map = {
-    blocked: ["⛔", "فيه مشاكل ممكن توقف الليستنج", "صلّح الأخطاء الحمرا الأول. دي اللي أمازون بترفض أو تخفي بسببها."],
-    risky: ["⚠️", "مفيش أخطاء قاطعة، بس فيه تحذيرات", "راجع التحذيرات البرتقالي مع دليل التصنيف بتاعك قبل النشر."],
-    clean: ["✅", "مفيش مشاكل ظاهرة", "الفحص ده مش ضمان للقبول، فراجع دليل التصنيف لو المنتج في فئة حساسة."],
+    blocked: ["stop", "فيه مشاكل ممكن توقف الليستنج", "صلّح الأخطاء الحمرا الأول. دي اللي أمازون بترفض أو تخفي بسببها."],
+    risky: ["warn", "مفيش أخطاء قاطعة، بس فيه تحذيرات", "راجع التحذيرات البرتقالي مع دليل التصنيف بتاعك قبل النشر."],
+    clean: ["ok", "مفيش مشاكل ظاهرة", "الفحص ده مش ضمان للقبول، فراجع دليل التصنيف لو المنتج في فئة حساسة."],
   };
   const [icon, title, sub] = map[status] || map.clean;
   return (
     <div className={`${a.status} ${a["st_" + status]}`} role="status">
-      <span className={a.sIcon} aria-hidden="true">{icon}</span>
+      <span className={a.sIcon} aria-hidden="true">{ICONS[icon]}</span>
       <div>
         <b>{title}</b>
         <small>{sub}</small>

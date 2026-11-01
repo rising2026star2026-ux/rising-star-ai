@@ -7,6 +7,7 @@ import { MARKETS, computeProfit } from "@/lib/amazon";
 import { MarketChips } from "./shared";
 import { copyText } from "@/lib/imagefile";
 import { toast, useStored } from "@/lib/store";
+import { ICONS } from "./icons";
 import s from "../seller/seller.module.css";
 import a from "./amazon.module.css";
 
@@ -122,7 +123,7 @@ export default function ProfitTool() {
             </div>
 
             {r.missing.length > 0 && (
-              <p className={s.note}><span aria-hidden="true">⚠️</span><span><b>الحساب ناقص:</b> سيبت {r.missing.join(" و")} فاضيين فاتحسبوا بصفر، فالربح اللي فوق متفائل. اكتبهم عشان الرقم يبقى حقيقي.</span></p>
+              <p className={s.note}><span aria-hidden="true">{ICONS.warn}</span><span><b>الحساب ناقص:</b> سيبت {r.missing.join(" و")} فاضيين فاتحسبوا بصفر، فالربح اللي فوق متفائل. اكتبهم عشان الرقم يبقى حقيقي.</span></p>
             )}
 
             <div>

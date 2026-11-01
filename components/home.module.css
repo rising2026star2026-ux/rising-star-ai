@@ -309,7 +309,7 @@
 
 /* ===== صندوق السؤال: كارت أبيض ناصع وسط الليل ===== */
 .composer {
-  --text: #050510; --text-strong: #050510; --muted: #4a5063; --faint: #7a8093;
+  --text: #050510; --text-strong: #050510; --muted: #4a5063; --faint: #667085;
   --hairline: rgba(5, 5, 16, 0.09); --hairline-strong: rgba(5, 5, 16, 0.18);
   --surface: #fff; --surface-2: #f3f4f8; --card: #fff; --field: #f6f7fa;
   --accent: #1f4dff; --accent-soft: rgba(31, 77, 255, 0.1); --accent-line: rgba(31, 77, 255, 0.36); --on-accent: #fff;

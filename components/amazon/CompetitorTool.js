@@ -3,6 +3,7 @@
 // كل اقتباس بيظهر كدليل بيتراجع بالكود على النص اللي لصقته، واللي مش موجود بيتشال.
 import { useEffect, useRef, useState } from "react";
 import { MarketChips, CopyBlock } from "./shared";
+import { ICONS } from "./icons";
 import s from "../seller/seller.module.css";
 import a from "./amazon.module.css";
 
@@ -79,7 +80,7 @@ export default function CompetitorTool() {
         <section className={s.card} ref={resRef} aria-labelledby="cp-r-h">
           <div className={a.stack}>
             <h2 id="cp-r-h" style={{ margin: 0 }}>فرصتك قدام المنافس</h2>
-            {res.summary && <p className={s.note}><span aria-hidden="true">🎯</span><span>{res.summary}</span></p>}
+            {res.summary && <p className={s.note}><span aria-hidden="true">{ICONS.search}</span><span>{res.summary}</span></p>}
             {res.reviewsLen < 600 && <p className={a.hint} style={{ margin: 0 }}>التقييمات اللي لصقتها قليلة، فاعتبر الاستنتاجات مؤشر مش حكم.</p>}
 
             <div className={a.stack} style={{ gap: 10 }}>

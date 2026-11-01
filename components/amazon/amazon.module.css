@@ -94,3 +94,10 @@
 .quote small { display: block; color: var(--faint); font-size: 0.72rem; margin-top: 2px; }
 .win { margin: 0; font-size: 0.88rem; line-height: 1.8; color: #0b4a2b; background: #ecfdf3; padding: 8px 12px; border-radius: 12px; }
 .win b { font-weight: 800; }
+
+@media (pointer: coarse) {
+  .seg button, .tabs button, .moreBtn { min-height: 44px; }
+  .details summary { min-height: 44px; }
+}
+.sIcon svg { display: block; }
+.st_blocked .sIcon { color: #b42318; } .st_risky .sIcon { color: #b54708; } .st_clean .sIcon { color: #067647; }

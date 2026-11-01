@@ -173,3 +173,10 @@
 @keyframes spin { to { transform: rotate(360deg); } }
 
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* أهداف اللمس: 44px على الشاشات اللي بتتلمس (معيار الوصول) */
+@media (pointer: coarse) {
+  .miniBtn, .chip { min-height: 44px; }
+  .uploadX { width: 44px; height: 44px; }
+}
+.note > span:first-child { flex: none; display: inline-flex; margin-top: 3px; }

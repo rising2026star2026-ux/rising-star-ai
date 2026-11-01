@@ -1,6 +1,7 @@
 // كروت «ستوديو البيّاع»: في الرئيسية (شريط) وفي صفحة الستوديو (كبيرة بالتفاصيل)
 import Link from "next/link";
 import s from "./showcase.module.css";
+import { ICONS } from "../amazon/icons";
 
 export const FEATURES = [
   {
@@ -32,7 +33,7 @@ export const RECEIPT = {
 };
 
 export const AMAZON = {
-  href: "/amazon", tone: "gold", icon: "🛒",
+  href: "/amazon", tone: "gold", icon: "cart",
   title: "أدوات بياعين أمازون", hook: "فاحص رفض، ليستنج بالعربي والإنجليزي، حاسبة ربح، وتحليل منافس",
   gets: ["اعرف سبب الرفض قبل ما يحصل", "اكتب الليستنج من كلامك", "احسب ربحك الصافي وحلّل منافسك"],
 };
@@ -43,7 +44,7 @@ export function ShowcaseStrip() {
     <div className={s.strip}>
       {[...FEATURES, AMAZON, RECEIPT].map((f) => (
         <Link key={f.href} href={f.href} className={`${s.tile} ${s["t_" + f.tone]}`}>
-          <span className={s.tIcon} aria-hidden="true">{f.icon}</span>
+          <span className={s.tIcon} aria-hidden="true">{f.icon in ICONS ? ICONS[f.icon] : f.icon}</span>
           <b>{f.title}</b>
           <small>{f.hook}</small>
           <span className={s.tGo}>جرّب دلوقتي ←</span>
@@ -75,7 +76,7 @@ export function ShowcaseFull() {
       </ol>
       <h2 className={s.sub}>ولو بتبيع على أمازون</h2>
       <Link href={AMAZON.href} className={`${s.card} ${s.wide} ${s["t_" + AMAZON.tone]}`}>
-        <span className={s.cIcon} aria-hidden="true">{AMAZON.icon}</span>
+        <span className={s.cIcon} aria-hidden="true">{ICONS[AMAZON.icon]}</span>
         <span className={s.cText}>
           <b>{AMAZON.title}</b>
           <small>{AMAZON.hook}</small>

@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { fileToDataUrl } from "@/lib/imagefile";
 import { MarketChips, StatusBanner, IssueList, ListingView } from "./shared";
 import { CHECK_HANDOFF } from "./CheckTool";
+import { ICONS } from "./icons";
 import s from "../seller/seller.module.css";
 import a from "./amazon.module.css";
 
@@ -120,7 +121,7 @@ export default function ListingTool() {
         <section className={s.card} ref={resRef} aria-labelledby="ls-r">
           <div className={a.stack}>
             <h2 id="ls-r" style={{ margin: 0 }}>الليستنج جاهز</h2>
-            {res.understood && <p className={s.note}><span aria-hidden="true">🧠</span><span><b>فهمنا المنتج كده:</b> {res.understood}</span></p>}
+            {res.understood && <p className={s.note}><span aria-hidden="true">{ICONS.info}</span><span><b>فهمنا المنتج كده:</b> {res.understood}</span></p>}
 
             {res.missing?.length > 0 && (
               <div className={a.stack} style={{ gap: 8 }}>
