@@ -32,3 +32,8 @@
 .btns button, .go { font: inherit; font-size: 0.78rem; font-weight: 800; cursor: pointer; padding: 7px 14px; border-radius: 999px; border: 1.5px solid rgba(11, 11, 20, 0.14); background: transparent; color: var(--ink); }
 .btns .copy { background: var(--blue); border-color: var(--blue); color: #fff; min-width: 76px; }
 .go { background: var(--yellow); border-color: var(--yellow); }
+
+.builderBanner { display: grid; gap: 4px; margin: 0 0 16px; padding: 16px 18px; border-radius: 20px; color: #fff; background: linear-gradient(150deg, var(--blue), var(--blue-deep)); box-shadow: 0 22px 40px -26px rgba(31, 77, 255, 0.7); transition: transform 0.2s var(--ease); }
+.builderBanner:hover { transform: translateY(-2px); }
+.builderBanner b { font-family: var(--display); font-size: 1.1rem; font-weight: 900; }
+.builderBanner span { font-size: 0.86rem; line-height: 1.8; opacity: 0.92; }

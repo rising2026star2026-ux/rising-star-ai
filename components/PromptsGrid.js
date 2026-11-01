@@ -2,11 +2,14 @@
 // مكتبة البرومبتات: بحث + تصنيفات + نسخ بضغطة + تعبئة الأقواس [زي كده] قبل النسخ
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { IMPROVE_HANDOFF } from "./prompts/Builder";
 import s from "./prompts.module.css";
 
 const parts = (t) => t.split(/(\[[^\]]+\])/g).filter(Boolean);
 
 function Card({ p }) {
+  const router = useRouter();
   const [copied, setCopied] = useState(false);
   const [open, setOpen] = useState(false);
   const slots = useMemo(() => [...new Set(p.text.match(/\[[^\]]+\]/g) || [])], [p.text]);
@@ -46,6 +49,7 @@ function Card({ p }) {
       <div className={s.btns}>
         <button type="button" className={s.copy} onClick={copy}>{copied ? "✓ اتنسخ" : "نسخ"}</button>
         {slots.length > 0 && <button type="button" onClick={() => setOpen(!open)}>{open ? "إخفاء التعديل" : "عدّل الأقواس"}</button>}
+        <button type="button" onClick={() => { try { sessionStorage.setItem(IMPROVE_HANDOFF, JSON.stringify({ text: final, cat: p.cat })); } catch {} router.push("/prompts/builder"); }}>حسّنه بالذكاء</button>
         {p.link && <Link href={p.link.href} className={s.go}>{p.link.label} ←</Link>}
       </div>
     </article>

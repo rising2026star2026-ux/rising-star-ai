@@ -43,6 +43,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/agents`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     ...AGENTS.map((a) => ({ url: `${SITE_URL}/agents/${a.id}`, lastModified: now, changeFrequency: "monthly", priority: 0.8 })),
     { url: `${SITE_URL}/prompts`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${SITE_URL}/prompts/builder`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/library`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     ...LIBRARY.map((t) => ({ url: `${SITE_URL}/library/${t.slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),
     { url: `${SITE_URL}/tasks`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
