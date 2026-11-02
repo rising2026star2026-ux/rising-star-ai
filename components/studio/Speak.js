@@ -3,48 +3,26 @@
 // مع مؤثرات ومزيكا خلفية. الكتاب بيتقسّم فقرات والمتصفح بيطلبها واحدة واحدة، فالسماع بيبدأ في ثواني.
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Drop, Seg, Range, Note, Busy, styles as s } from "./ui";
+import dynamic from "next/dynamic";
 import { download } from "./util";
 import { extractFile, ACCEPT } from "@/lib/docs";
 import { read, write, toast } from "@/lib/store";
 import { DIALECTS, GENDERS, TONES, MAX_PITCH_ADJUST, voiceFor, splitText, estimateSeconds, formatDuration, bookId } from "@/lib/speech";
 import { AMBIENCE, renderAmbience, encodeWav } from "@/lib/ambience";
+import { requestAudio } from "@/lib/speakclient";
+import { joinWavs } from "@/lib/wav";
+
+const SpeakCompare = dynamic(() => import("./SpeakCompare"), { ssr: false, loading: () => <Busy text="بيجهز المقارنة..." /> });
 
 const SAMPLE = "السلام عليكم، دي تجربة سريعة للصوت، وبعدها تقدر تبدأ القراءة.";
 const MAX_TEXT = 200000;
+const CHUNK_MAX = 420; // أقصر من حد الصوت المعبّر (500)، فالفقرات بتطلع واحدة في الوضعين
+const MAX_PRO_EXPORT = 30000; // تنزيل الصوت المعبّر WAV (حوالي 35 دقيقة) بيتجمّع في الذاكرة
 const MAX_MIXED_CHARS = 10000; // التصدير بالمؤثرات بيتجمّع في الذاكرة، فبنحدّه بحوالي 12 دقيقة
 const RATES = [0.8, 0.9, 1, 1.15, 1.3, 1.5];
 const MIX_RATE = 24000;
 const ambGain = (level) => (level / 100) * 1.2;
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const safeName = (n) => String(n || "").replace(/\.[a-z0-9]{2,5}$/i, "").replace(/[\\/:*?"<>|\u0000-\u001f]/g, " ").replace(/\s+/g, " ").trim().slice(0, 60);
-
-class SpeakError extends Error {
-  constructor(msg, status) { super(msg); this.status = status; this.fatal = status === 429 || (status >= 400 && status < 500); }
-}
-
-/** بيطلب صوت فقرة من السيرفر. بيعيد المحاولة على أعطال الشبكة والسيرفر، لكن مش على رفض الطلب أو الحد المسموح. */
-async function requestAudio(text, voice, tone, pitch) {
-  let last = null;
-  for (let a = 0; a < 3; a++) {
-    try {
-      const r = await fetch("/api/speak", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text, voice, tone, pitch }) });
-      if (r.ok) {
-        const b = await r.blob();
-        if (b.size > 500) return b;
-        last = new SpeakError("الصوت رجع فاضي.", 502);
-      } else {
-        const j = await r.json().catch(() => ({}));
-        last = new SpeakError(j.error || "الصوت مش متاح دلوقتي.", r.status);
-        if (last.fatal) throw last;
-      }
-    } catch (e) {
-      if (e instanceof SpeakError && e.fatal) throw e;
-      last = e;
-    }
-    await sleep(700 * (a + 1));
-  }
-  throw last instanceof Error ? last : new SpeakError("الصوت مش متاح دلوقتي.", 502);
-}
 
 export default function Speak() {
   // المصدر
@@ -70,6 +48,11 @@ export default function Speak() {
   const [scope, setScope] = useState("all");
   const [partial, setPartial] = useState(null);
   const [resume, setResume] = useState(null);
+  // جودة الصوت: عادي (سريع) أو معبّر (Gemini، بإحساس). المعبّر بيظهر بس لو السيرفر مفعّله.
+  const [engine, setEngine] = useState("std");
+  const [proOk, setProOk] = useState(false);
+  const [variant, setVariant] = useState(0);
+  const [compare, setCompare] = useState(false);
 
   const audioRef = useRef(null);
   const cacheRef = useRef(new Map());
@@ -83,11 +66,12 @@ export default function Speak() {
   const ambBufRef = useRef({});
   const expAbort = useRef(null);
 
-  const { chunks, chapters } = useMemo(() => splitText(text), [text]);
+  const { chunks, chapters } = useMemo(() => splitText(text, CHUNK_MAX), [text]);
   const bookKey = useMemo(() => (text ? bookId(text) : ""), [text]);
   const voice = voiceFor(dialect, gender);
   const cfgRef = useRef({});
-  cfgRef.current = { voice, tone, pitch, bookKey, rate };
+  const pro = engine === "pro" && proOk;
+  cfgRef.current = { engine: pro ? "pro" : "std", voice, tone, pitch, bookKey, rate, dialect, gender, variant };
   const chunksRef = useRef(chunks);
   chunksRef.current = chunks;
   const n = chunks.length;
@@ -160,14 +144,15 @@ export default function Speak() {
 
   /* ============ تحميل الفقرات وتشغيلها ============ */
 
-  const getChunk = useCallback((i) => {
-    const { voice: v, tone: t, pitch: p, bookKey: b } = cfgRef.current;
+  const getChunk = useCallback((i, snap) => {
+    const cfg = snap || cfgRef.current;
     const chunk = chunksRef.current[i];
     if (!chunk) return Promise.reject(new Error("الفقرة مش موجودة."));
-    const key = `${b}|${v}|${t}|${p}|${i}`;
+    const eng = cfg.engine === "pro" ? `pro:${cfg.dialect}:${cfg.gender}:${cfg.variant}` : "std";
+    const key = `${cfg.bookKey}|${eng}|${cfg.voice}|${cfg.tone}|${cfg.pitch}|${i}`;
     const hit = cacheRef.current.get(key);
     if (hit) return hit;
-    const pr = requestAudio(chunk.t, v, t, p);
+    const pr = requestAudio(chunk.t, cfg);
     cacheRef.current.set(key, pr);
     pr.catch(() => { if (cacheRef.current.get(key) === pr) cacheRef.current.delete(key); });
     return pr;
@@ -180,8 +165,8 @@ export default function Speak() {
 
   const evict = useCallback((i) => {
     for (const k of cacheRef.current.keys()) {
-      const [b, , , , at] = k.split("|");
-      if (b !== cfgRef.current.bookKey || Number(at) < i - 2) cacheRef.current.delete(k);
+      const parts = k.split("|");
+      if (parts[0] !== cfgRef.current.bookKey || Number(parts[parts.length - 1]) < i - 2) cacheRef.current.delete(k);
     }
   }, []);
 
@@ -262,8 +247,7 @@ export default function Speak() {
     setError("");
     try {
       await ensureGraph();
-      const { voice: v, tone: t, pitch: p } = cfgRef.current;
-      const blob = await requestAudio(SAMPLE, v, t, p);
+      const blob = await requestAudio(SAMPLE, cfgRef.current);
       if (my !== tokenRef.current) return;
       setAudioBlob(blob);
       loadedRef.current = -1;
@@ -281,6 +265,10 @@ export default function Speak() {
     if (!ambPreview) await ensureGraph();
     setAmbPreview((v) => !v);
   }, [ambPreview, ensureGraph]);
+
+  useEffect(() => {
+    fetch("/api/speak-pro").then((r) => (r.ok ? r.json() : null)).then((j) => setProOk(!!j?.enabled)).catch(() => {});
+  }, []);
 
   // سرعة التشغيل بتتغيّر في اللحظة من غير ما نطلب الصوت تاني
   useEffect(() => {
@@ -376,30 +364,45 @@ export default function Speak() {
 
   async function collect(ac) {
     const out = [];
+    const snap = { ...cfgRef.current }; // إعدادات ثابتة طول التنزيل
     const total = range[1] - range[0];
     for (let i = range[0]; i < range[1]; i++) {
       if (ac.signal.aborted) throw new DOMException("aborted", "AbortError");
       setExp({ done: i - range[0], total, label: "بنجهّز الصوت" });
-      try { out.push(await getChunk(i)); } catch (e) { e.partialBlobs = out; throw e; }
+      try { out.push(await getChunk(i, snap)); } catch (e) { e.partialBlobs = out; throw e; }
     }
+    out.pro = snap.engine === "pro";
     setExp({ done: total, total, label: "بنجمّع الملف" });
     return out;
   }
 
+  // الصوت العادي MP3 بيتضم بسهولة، والمعبّر WAV بيتضم بدمج بياناته
+  async function pack(blobs, isPro) {
+    if (!isPro) return { blob: new Blob(blobs, { type: "audio/mpeg" }), ext: "mp3" };
+    const bufs = await Promise.all(blobs.map(async (b) => new Uint8Array(await b.arrayBuffer())));
+    return { blob: new Blob([joinWavs(bufs, 0.25)], { type: "audio/wav" }), ext: "wav" };
+  }
+
   async function exportMp3() {
+    if (pro && rangeChars > MAX_PRO_EXPORT) { toast("الصوت المعبّر للتنزيل لحد حوالي 35 دقيقة. اختار «الفصل الحالي» أو استخدم الصوت العادي للكتب الطويلة."); return; }
+    const isPro = pro;
     const ac = new AbortController();
     expAbort.current = ac;
     setPartial(null);
     setExp({ done: 0, total: range[1] - range[0], label: "بنجهّز الصوت" });
     try {
       const blobs = await collect(ac);
-      download(new Blob(blobs, { type: "audio/mpeg" }), `${baseName}.mp3`);
+      const { blob, ext } = await pack(blobs, blobs.pro);
+      download(blob, `${baseName}.${ext}`);
       toast("الملف جاهز");
     } catch (e) {
       if (e?.name === "AbortError") toast("اتلغى التنزيل.");
       else {
         toast(e?.message || "التنزيل وقف.");
-        if (e?.partialBlobs?.length) setPartial({ blob: new Blob(e.partialBlobs, { type: "audio/mpeg" }), count: e.partialBlobs.length });
+        if (e?.partialBlobs?.length) {
+          const part = await pack(e.partialBlobs, isPro).catch(() => null);
+          if (part) setPartial({ blob: part.blob, ext: part.ext, count: e.partialBlobs.length });
+        }
       }
     } finally {
       setExp(null);
@@ -496,6 +499,13 @@ export default function Speak() {
 
           <Seg label="اللهجة" value={dialect} onChange={setDialect} options={DIALECTS.map((d) => [d.id, d.name])} />
           <Seg label="الصوت" value={gender} onChange={setGender} options={GENDERS} />
+          {proOk && (
+            <>
+              <Seg label="جودة الصوت" value={pro ? "pro" : "std"} onChange={setEngine} options={[["std", "عادي (سريع)"], ["pro", "معبّر (بإحساس)"]]} />
+              {pro && <Seg label="الشخصية" value={variant} onChange={setVariant} options={[[0, "صوت 1"], [1, "صوت 2"]]} />}
+              {pro && <Note>الصوت المعبّر بيفهم النبرة والإحساس فعلاً، لكنه أبطأ وبحد أقل في الساعة. الأنسب للقصص والإعلانات والمقاطع القصيرة، والكتب الطويلة الأحسن بالعادي.</Note>}
+            </>
+          )}
           <div className={s.field}>
             <span className={s.fieldLabel}>النبرة</span>
             <div className={s.qrTypes} role="group" aria-label="النبرة">
@@ -504,10 +514,12 @@ export default function Speak() {
               ))}
             </div>
           </div>
-          {toneInfo.approx && <Note>صوت الطفل هنا تقريبي: بنرفع درجة الصوت بس، فممكن يطلع مصطنع شوية. الأصوات الجاهزة مالهاش أعمار ولا مشاعر حقيقية.</Note>}
-          <Range label="غلظ أو رفع الصوت" value={pitch} min={-MAX_PITCH_ADJUST} max={MAX_PITCH_ADJUST} step={2} onChange={setPitch} format={(v) => (v === 0 ? "عادي" : v > 0 ? `أرفع ${v}` : `أغلظ ${-v}`)} />
+          {toneInfo.approx && !pro && <Note>صوت الطفل هنا تقريبي: بنرفع درجة الصوت بس، فممكن يطلع مصطنع شوية. الأصوات الجاهزة مالهاش أعمار ولا مشاعر حقيقية.</Note>}
+          {!pro && <Range label="غلظ أو رفع الصوت" value={pitch} min={-MAX_PITCH_ADJUST} max={MAX_PITCH_ADJUST} step={2} onChange={setPitch} format={(v) => (v === 0 ? "عادي" : v > 0 ? `أرفع ${v}` : `أغلظ ${-v}`)} />}
           <Seg label="سرعة التشغيل" value={rate} onChange={setRate} options={RATES.map((r) => [r, r === 1 ? "عادي" : `${r}×`])} />
           <button type="button" className="btn ghost" disabled={exp !== null} onClick={previewVoice}>جرّب الصوت</button>
+          <button type="button" className="btn ghost" aria-expanded={compare} onClick={() => setCompare((v) => !v)}>{compare ? "اقفل المقارنة" : "قارن بين الأصوات"}</button>
+          {compare && <SpeakCompare dialect={dialect} gender={gender} tone={tone} variant={variant} proOk={proOk} />}
           {isBusy && n > 0 && <Note>أي تغيير في اللهجة أو الصوت أو النبرة هيبان من الفقرة الجاية.</Note>}
 
           <hr className={s.qrSep} />
@@ -590,13 +602,13 @@ export default function Speak() {
                 </div>
               ) : (
                 <>
-                  <button type="button" className="btn" onClick={exportMp3}>نزّل الصوت MP3 · {formatDuration(estimateSeconds(rangeChars))}</button>
+                  <button type="button" className="btn" onClick={exportMp3}>نزّل الصوت {pro ? "WAV" : "MP3"} · {formatDuration(estimateSeconds(rangeChars))}</button>
                   {amb !== "none" && (
                     <button type="button" className="btn ghost" disabled={!mixedOk} onClick={exportMixed}>نزّل الصوت مع المؤثر (WAV)</button>
                   )}
                   {amb !== "none" && !mixedOk && rangeChars > MAX_MIXED_CHARS && <Note>التنزيل مع المؤثر لحد حوالي 12 دقيقة. اختار «الفصل الحالي» أو نزّل الصوت بس.</Note>}
                   {partial && (
-                    <button type="button" className="btn ghost" onClick={() => download(partial.blob, `${baseName}-جزء.mp3`)}>نزّل الجزء اللي اتجهز ({partial.count.toLocaleString("en-US")} فقرة)</button>
+                    <button type="button" className="btn ghost" onClick={() => download(partial.blob, `${baseName}-جزء.${partial.ext || "mp3"}`)}>نزّل الجزء اللي اتجهز ({partial.count.toLocaleString("en-US")} فقرة)</button>
                   )}
                 </>
               )}
