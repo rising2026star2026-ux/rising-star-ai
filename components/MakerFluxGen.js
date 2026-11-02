@@ -2,9 +2,12 @@
 // «صورة من وصف عربي»: اكتب بالعربي ← بنكتب وصف إنجليزي ← Flux بيرسم الصورة.
 // الرسم بيتم من متصفح الزائر على Hugging Face (حصته المجانية هو)، ولو خلصت بنحوّل لمولّد السيرفر الاحتياطي.
 import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import { toast } from "@/lib/store";
 import { callSpace, fileUrl, withTimeout } from "@/lib/hfspace";
 import s from "./maker.module.css";
+
+const ImageEnhancer = dynamic(() => import("@/components/studio/ImageEnhancer"), { ssr: false });
 
 const FLUX = "https://black-forest-labs-flux-1-schnell.hf.space";
 const SIZES = [["1024x1024", "مربع"], ["768x1024", "طولي (ستوري)"], ["1024x768", "عرضي"]];
@@ -23,9 +26,11 @@ export default function MakerFluxGen() {
   const [err, setErr] = useState("");
   const [img, setImg] = useState(null); // { src, blob? }
   const [history, setHistory] = useState([]);
+  const [enh, setEnh] = useState(false); // لوحة تحسين الصورة (ألوان وتكبير) بعد التوليد
   const stop = useRef(null);
 
   useEffect(() => () => stop.current?.abort(), []);
+  useEffect(() => { setEnh(false); }, [img]);
 
   async function drawOnSpace(prompt, signal) {
     const [w, h] = size.split("x").map(Number);
@@ -123,6 +128,7 @@ export default function MakerFluxGen() {
         {busy && <button type="button" className={s.btn} onClick={() => { stop.current?.abort(); setStage("idle"); }}>إلغاء</button>}
         {img && !busy && <button type="button" className={`${s.btn} ${s.yellow}`} onClick={() => download()}>تنزيل</button>}
         {img && !busy && <button type="button" className={s.btn} onClick={share}>مشاركة</button>}
+        {img && !busy && <button type="button" className={s.btn} aria-expanded={enh} onClick={() => setEnh((v) => !v)}>{enh ? "اقفل التحسين" : "كثّف الألوان وكبّر الجودة"}</button>}
         {en && !busy && <button type="button" className={s.btn} onClick={async () => { try { await navigator.clipboard.writeText(en); toast("اتنسخ الوصف ✓"); } catch {} }}>نسخ الوصف</button>}
       </div>
       {err && <p className={s.err}>{err}</p>}
@@ -130,6 +136,20 @@ export default function MakerFluxGen() {
         <div className={s.result} aria-live="polite">
           {busy && <span className={s.wait}>{wait}</span>}
           {img && !busy && <img src={img.src} alt={img.idea} />}
+        </div>
+      )}
+      {enh && img?.blob && !busy && (
+        <div style={{ marginTop: 12 }}>
+          <ImageEnhancer
+            source={img.blob}
+            name="rising-star"
+            onUse={(blob) => {
+              const item = { src: URL.createObjectURL(blob), blob, idea: img.idea };
+              setImg(item);
+              setHistory((h) => [item, ...h].slice(0, 8));
+              toast("اتطبّق التحسين ✓");
+            }}
+          />
         </div>
       )}
       {en && <div className={s.en} dir="ltr">{en}</div>}

@@ -31,6 +31,7 @@ const Calcs = dynamic(() => import("./Calcs"), { ssr: false, loading });
 const Ocr = dynamic(() => import("./Ocr"), { ssr: false, loading });
 const QrStudio = dynamic(() => import("./QrStudio"), { ssr: false, loading });
 const Speak = dynamic(() => import("./Speak"), { ssr: false, loading });
+const Enhance = dynamic(() => import("./Enhance"), { ssr: false, loading });
 const Apps = dynamic(() => import("./Apps"), { ssr: false, loading });
 const VideoMaker = dynamic(() => import("./VideoMaker"), { ssr: false, loading });
 const RemotionReel = dynamic(() => import("@/components/lab/RemotionReel"), { ssr: false, loading });
@@ -64,6 +65,7 @@ const KINDS = {
   password: [Calcs, { mode: "password" }],
   qr: [QrStudio],
   speak: [Speak],
+  enhance: [Enhance],
   "video-remotion": [RemotionReel],
   "video-factory": [VideoFactory],
   "product-ad": [ProductAd],

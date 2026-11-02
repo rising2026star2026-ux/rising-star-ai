@@ -1,8 +1,11 @@
 "use client";
 // مولّد صور جوه الموقع (Pollinations): اكتب بالعربي، بنترجم الوصف وبنطلعلك الصورة هنا
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { toast } from "@/lib/store";
 import s from "./maker.module.css";
+
+const ImageEnhancer = dynamic(() => import("@/components/studio/ImageEnhancer"), { ssr: false });
 
 const SIZES = [["1024x1024", "مربع"], ["768x1024", "طولي"], ["1024x768", "عرضي"]];
 
@@ -13,10 +16,11 @@ export default function MakerImageGen({ base }) {
   const [src, setSrc] = useState("");
   const [state, setState] = useState("idle"); // idle | prompt | image | done | error
   const [err, setErr] = useState("");
+  const [enh, setEnh] = useState(false);
 
   async function run() {
     if (!idea.trim()) { setErr("اكتب فكرتك الأول."); return; }
-    setErr(""); setSrc(""); setState("prompt");
+    setErr(""); setSrc(""); setEnh(false); setState("prompt");
     try {
       const res = await fetch("/api/prompt-en", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text: idea, kind: "image" }) });
       const data = await res.json().catch(() => ({}));
@@ -51,6 +55,7 @@ export default function MakerImageGen({ base }) {
       <div className={s.row}>
         <button type="button" className={`${s.btn} ${s.main}`} onClick={run} disabled={busy}>{busy ? "بنجهّز الصورة..." : "ولّد الصورة"}</button>
         {state === "done" && <button type="button" className={`${s.btn} ${s.yellow}`} onClick={download}>تنزيل الصورة</button>}
+        {state === "done" && <button type="button" className={s.btn} aria-expanded={enh} onClick={() => setEnh((v) => !v)}>{enh ? "اقفل التحسين" : "كثّف الألوان وكبّر الجودة"}</button>}
         {en && <button type="button" className={s.btn} onClick={async () => { try { await navigator.clipboard.writeText(en); toast("اتنسخ الوصف ✓"); } catch {} }}>نسخ الوصف</button>}
       </div>
       {err && <p className={s.err}>{err}</p>}
@@ -66,6 +71,7 @@ export default function MakerImageGen({ base }) {
           )}
         </div>
       )}
+      {enh && state === "done" && src && <div style={{ marginTop: 12 }}><ImageEnhancer source={src} name="rising-star" /></div>}
       {en && <div className={s.en} dir="ltr">{en}</div>}
     </section>
   );
