@@ -60,7 +60,7 @@ async function runRecipe(r, kind) {
   const ctx = await browser.newContext({ ...MOBILE, acceptDownloads: true, permissions: ["microphone", "clipboard-read", "clipboard-write"] });
   await ctx.addInitScript(() => { try { sessionStorage.setItem("rs:intro", "1"); } catch {} });
   const { page, log: plog } = await newPage(ctx);
-  const res = { group: kind, path: r.path, name: r.name || nameOf.get(r.path) || r.id, problems: [], tech: [], ms: 0, note: "" };
+  const res = { group: kind, key: kind === "features" ? `feature:${r.id}` : r.path, path: r.path, name: r.name || nameOf.get(r.path) || r.id, problems: [], tech: [], ms: 0, note: "" };
   const t0 = Date.now();
   try {
     if (!r.api) {
@@ -86,7 +86,7 @@ async function runRecipe(r, kind) {
   if (errs.length) { res.problems.push({ level: "warn", text: `خطأ في كود الصفحة أثناء الاستخدام: ${errs[0].slice(0, 120)}` }); res.tech.push(errs.slice(0, 3).join(" | ")); }
   const api5 = plog.bad.filter((b) => b.url.startsWith(BASE + "/api/") && b.status >= 500);
   if (api5.length) res.tech.push(`api: ${api5.slice(0, 4).map((b) => `${b.status} ${b.method} ${b.url}`).join(" | ")}`);
-  if (res.problems.length && !r.api) res.shot = await shot(page, OUT, `${kind}${r.path}`);
+  if (!r.api) { const s = await shot(page, OUT, `${res.problems.length ? "" : "ok-"}${kind}-${r.id || ""}${r.path}`); if (res.problems.length) res.shot = s; }
   await ctx.close();
   log(`${res.problems.some((p) => p.level === "broken") ? "✗" : res.problems.length ? "!" : "✓"} [${kind}] ${r.path} ${(res.ms / 1000).toFixed(0)}s ${res.problems.map((p) => p.text).join(" | ").slice(0, 160)}`);
   return res;

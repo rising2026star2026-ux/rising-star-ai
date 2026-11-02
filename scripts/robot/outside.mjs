@@ -39,8 +39,10 @@ async function get(url, ms) {
   try {
     const r = await fetch(url, { headers: { "user-agent": UA, accept: "text/html,application/json,*/*" }, redirect: "follow", signal: AbortSignal.timeout(ms) });
     const ct = r.headers.get("content-type") || "";
-    await r.body?.cancel().catch(() => {});
-    return { status: r.status, ct, ms: Date.now() - t0 };
+    let snippet = "";
+    if (r.status !== 200 && /text|json/.test(ct)) snippet = (await r.text().catch(() => "")).replace(/\s+/g, " ").slice(0, 160);
+    else await r.body?.cancel().catch(() => {});
+    return { status: r.status, ct, snippet, ms: Date.now() - t0 };
   } catch (e) {
     return { status: 0, error: String(e?.cause?.code || e?.name || e?.message || e), ms: Date.now() - t0 };
   }
@@ -52,7 +54,7 @@ export async function checkSpaces(spaces) {
     let r = await get(`${s.host}/config`, 25000);
     if (r.status !== 200) { const r2 = await get(`${s.host}/gradio_api/info`, 20000); if (r2.status === 200) r = r2; }
     const up = r.status === 200;
-    out.push({ ...s, up, status: r.status, error: r.error || "", ms: r.ms });
+    out.push({ ...s, up, status: r.status, error: r.error || "", ms: r.ms, ct: r.ct || "", snippet: r.snippet || "" });
   }));
   return out.sort((a, b) => (b.feature ? 1 : 0) - (a.feature ? 1 : 0));
 }
@@ -66,7 +68,7 @@ export async function checkLinks(linkPages, { limit = 600, workers = 10 } = {}) 
     while (queue.length) {
       const [url, pages] = queue.shift();
       let r = await get(url, 15000);
-      if (r.status === 0 && /Timeout|abort/i.test(r.error)) r = await get(url, 20000);
+      if (r.status === 0 && /Timeout|abort|EAI_AGAIN|ECONNRESET/i.test(r.error)) { await new Promise((ok) => setTimeout(ok, 3000)); r = await get(url, 20000); }
       let level = null, why = "";
       if (r.status === 0) {
         if (/ENOTFOUND|EAI_AGAIN/.test(r.error)) { level = "broken"; why = "الموقع مش موجود خالص (الدومين مش شغال)"; }

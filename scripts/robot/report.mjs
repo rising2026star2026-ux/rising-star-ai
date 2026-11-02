@@ -25,8 +25,8 @@ const GROUP_ORDER = { features: 0, tools: 1, ai: 2, pages: 3 };
 export function mergeItems(all) {
   const map = new Map();
   for (const r of all) {
-    const key = r.path;
-    const cur = map.get(key) || { path: key, name: r.name || key, group: r.group, problems: [], tech: [], shots: [], ms: r.ms, notes: [] };
+    const key = r.key || r.path;
+    const cur = map.get(key) || { key, path: r.path, name: r.name || key, group: r.group, problems: [], tech: [], shots: [], ms: r.ms, notes: [] };
     if (r.group !== "pages" && GROUP_ORDER[r.group] < GROUP_ORDER[cur.group]) cur.group = r.group;
     if (r.name && (cur.name === key || r.group !== "pages")) cur.name = r.name;
     for (const p of r.problems || []) if (!cur.problems.some((x) => x.text === p.text)) cur.problems.push(p);
@@ -47,9 +47,10 @@ export function buildReport({ items, spaces, links, meta, prev }) {
   const okCount = items.filter((i) => i.status === "ok").length;
   const downCritical = spaces.filter((s) => !s.up && s.feature);
   const downOther = spaces.filter((s) => !s.up && !s.feature);
+  const sleepy = (s) => s.status >= 200 && s.status < 400;
   const deadLinks = links.filter((l) => l.level === "broken");
   const prevBroken = new Set(prev?.broken || []);
-  const nowBroken = new Set(brokenItems.map((i) => i.path));
+  const nowBroken = new Set(brokenItems.map((i) => i.key));
   const fixed = [...prevBroken].filter((p) => !nowBroken.has(p));
 
   const L = [];
@@ -64,13 +65,28 @@ export function buildReport({ items, spaces, links, meta, prev }) {
 
   if (brokenItems.length) {
     L.push("## ❌ بايظ (المستخدم مش هيعرف يستخدمه)");
-    brokenItems.forEach((it, i) => {
-      const isNew = prev && !prevBroken.has(it.path) ? " 🆕" : "";
+    // نفس العطل في صفحات كتير (غالباً سبب واحد) بيتكتب مرة واحدة
+    const byWhy = new Map();
+    for (const it of brokenItems) {
       const why = it.problems.filter((p) => p.level === "broken").map((p) => p.text).join("، ");
-      const pic = it.shots[0] ? ` · [📷 صورة](${shotUrl(it.shots[0])})` : "";
-      L.push(`${i + 1}. **${it.name}**${isNew}: ${why}  `);
-      L.push(`   [افتح](${B}${it.path})${pic}`);
-    });
+      if (!byWhy.has(why)) byWhy.set(why, []);
+      byWhy.get(why).push(it);
+    }
+    let i = 0;
+    for (const [why, list] of byWhy) {
+      if (list.length >= 5) {
+        const fresh = prev ? list.filter((it) => !prevBroken.has(it.key)).length : 0;
+        L.push(`${++i}. **${list.length} صفحة** فيها نفس العطل${fresh ? ` (${fresh} جديد 🆕)` : ""}: ${why}  `);
+        L.push(`   زي: ${list.slice(0, 4).map((it) => `[${it.name}](${B}${it.path})`).join("، ")}${list[0].shots[0] ? ` · [📷 صورة](${shotUrl(list[0].shots[0])})` : ""}`);
+        continue;
+      }
+      for (const it of list) {
+        const isNew = prev && !prevBroken.has(it.key) ? " 🆕" : "";
+        const pic = it.shots[0] ? ` · [📷 صورة](${shotUrl(it.shots[0])})` : "";
+        L.push(`${++i}. **${it.name}**${isNew}: ${why}  `);
+        L.push(`   [افتح](${B}${it.path})${pic}`);
+      }
+    }
     L.push("");
   } else {
     L.push("## ✅ مفيش حاجة بايظة النهارده");
@@ -79,7 +95,7 @@ export function buildReport({ items, spaces, links, meta, prev }) {
 
   if (downCritical.length || downOther.length) {
     L.push("## 🛰️ سيرفرات مجانية واقعة (مش عيب في كودنا)");
-    for (const s of downCritical) L.push(`- **${s.feature}** واقف دلوقتي (${s.status || s.error || "مش بيرد"})`);
+    for (const s of downCritical) L.push(`- **${s.feature}** ${sleepy(s) ? "نايم أو بيقوم (أول استخدام هيبقى بطيء)" : "واقف دلوقتي"} (${s.status || s.error || "مش بيرد"})`);
     if (downOther.length) L.push(`- ${downOther.length} سيرفر من اللي في «المكتبة» واقفين: ${downOther.slice(0, 6).map((s) => `\`${s.sub}\``).join("، ")}${downOther.length > 6 ? " …" : ""}`);
     L.push("");
   }
@@ -94,9 +110,15 @@ export function buildReport({ items, spaces, links, meta, prev }) {
     }
     for (const [c, list] of groups) {
       L.push(`**${c}** (${list.length})`);
-      const show = list.slice(0, 8);
-      for (const { it, p } of show) L.push(`- [${it.name}](${B}${it.path}): ${p.text}`);
-      if (list.length > show.length) L.push(`- و ${list.length - show.length} كمان`);
+      const byText = new Map();
+      for (const x of list) { if (!byText.has(x.p.text)) byText.set(x.p.text, []); byText.get(x.p.text).push(x.it); }
+      const lines = [];
+      for (const [text, its] of byText) {
+        if (its.length >= 4) lines.push(`- «${text}» في **${its.length} صفحة**، زي: ${its.slice(0, 3).map((it) => `[${it.name}](${B}${it.path})`).join("، ")}`);
+        else for (const it of its) lines.push(`- [${it.name}](${B}${it.path}): ${text}`);
+      }
+      L.push(...lines.slice(0, 8));
+      if (lines.length > 8) L.push(`- و ${lines.length - 8} كمان`);
       L.push("");
     }
     if (deadLinks.length) {
@@ -119,9 +141,9 @@ export function buildReport({ items, spaces, links, meta, prev }) {
   const tech = [];
   for (const it of brokenItems.concat(warnItems)) {
     const lines = [...new Set(it.tech)].filter(Boolean).slice(0, 4).map((t) => t.replace(/\s+/g, " ").slice(0, 300));
-    tech.push(`- \`${it.path}\` [${it.status}] ${it.problems.map((p) => p.text).join(" | ")}${lines.length ? `\n  - ${lines.join("\n  - ")}` : ""}`);
+    tech.push(`- \`${it.key}\` [${it.status}] ${it.problems.map((p) => p.text).join(" | ")}${lines.length ? `\n  - ${lines.join("\n  - ")}` : ""}`);
   }
-  for (const s of spaces.filter((x) => !x.up)) tech.push(`- space \`${s.sub}\` status=${s.status} ${s.error} (${s.files.join(", ")})`);
+  for (const s of spaces.filter((x) => !x.up)) tech.push(`- space \`${s.sub}\` status=${s.status} ${s.error} ${s.ct || ""} «${s.snippet || ""}» (${s.files.join(", ")})`);
   let techText = tech.join("\n");
   if (techText.length > 30000) techText = techText.slice(0, 30000) + "\n…(اتقصّ، الباقي في results.json)";
   L.push("<details><summary>تفاصيل تقنية (لـ Claude وهو بيصلّح)</summary>", "", techText || "مفيش", "", `النتايج كاملة: \`ci-results/robot/latest/results.json\``, "</details>");
@@ -134,7 +156,7 @@ export function summaryOf({ items, spaces, meta }) {
     date: new Date(meta.started).toISOString(),
     total: items.length,
     ok: items.filter((i) => i.status === "ok").length,
-    broken: items.filter((i) => i.status === "broken").map((i) => i.path),
+    broken: items.filter((i) => i.status === "broken").map((i) => i.key),
     warn: items.filter((i) => i.status === "warn").length,
     spacesDown: spaces.filter((s) => !s.up).map((s) => s.sub),
     aiTested: meta.aiTested || [],

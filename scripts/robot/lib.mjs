@@ -102,7 +102,8 @@ export function textProblems(text, { arabic = true } = {}) {
   if (/<\/?think>|<\|[a-z_]+\|>/i.test(t)) out.push(["warn", "النتيجة فيها كلام داخلي للموديل ظاهر للمستخدم"]);
   if (/(^|\n)\s*#{1,4}\s|\*\*[^*\n]{2,60}\*\*/.test(t)) out.push(["warn", "التنسيق مكسور: علامات # أو ** ظاهرة بدل العناوين والخط العريض"]);
   if (/عذراً،? (لا|مش) (أستطيع|اقدر|يمكنني)|I can(no|')t help|as an AI/i.test(t)) out.push(["warn", "الموديل رفض أو اعتذر بدل ما ينفّذ"]);
-  if (/\bundefined\b|\bNaN\b|\[object Object\]/.test(t)) out.push(["broken", "النتيجة فيها كلام بايظ (undefined / NaN)"]);
+  // أدوات البرمجة بتتكلم عن undefined وNaN عادي، فالفحص ده للأدوات العربي بس
+  if (arabic && /\bundefined\b|\bNaN\b|\[object Object\]/.test(t)) out.push(["broken", "النتيجة فيها كلام بايظ (undefined / NaN)"]);
   return out;
 }
 

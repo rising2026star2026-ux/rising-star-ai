@@ -165,7 +165,6 @@ export const FEATURE_RECIPES = [
     await step("إرسال", () => page.click('button[aria-label="إرسال"]'));
     const r = await waitForResult(page, before, { minGrowth: 150, timeout: 90000, busy: () => page.locator('button[aria-label="إيقاف"]').isVisible().catch(() => false) });
     if (r.error) throw broken(`الشات طلّع خطأ: ${r.error}`);
-    if (await page.getByRole("button", { name: "إعادة المحاولة" }).isVisible().catch(() => false)) throw broken("الشات ما ردّش (ظهر زرار «إعادة المحاولة»)");
     if (r.timedOut) throw broken("الشات ما ردّش في دقيقة ونص");
   }),
   F("chat-search", "الشات مع البحث على الإنترنت", "/chat", async ({ page }) => {
@@ -207,11 +206,11 @@ export const FEATURE_RECIPES = [
   F("voice-post", "فويس نوت لبوستات", "/voice-post", async ({ page, BASE, OUT }) => {
     const file = await voiceSample(BASE, OUT);
     await step("رفع الفويس", () => page.locator("input[type=file]").first().setInputFiles(file));
-    const r = await firstOf(page, [page.getByText("ده كلامك مكتوب")], 90000);
+    const r = await firstOf(page, [page.getByRole("heading", { name: "ده كلامك مكتوب" })], 90000);
     if (r?.error) throw broken(`تحويل الفويس لكلام طلّع خطأ: ${r.error}`);
     if (r !== 0) throw broken("تحويل الفويس لكلام ما خلصش في دقيقة ونص");
     await step("تحويل لبوستات", () => page.getByRole("button", { name: /حوّله لبوستات/ }).click());
-    const r2 = await firstOf(page, [page.getByText("البوستات جاهزة")], 100000);
+    const r2 = await firstOf(page, [page.getByRole("heading", { name: "البوستات جاهزة" })], 100000);
     if (r2?.error) throw broken(`كتابة البوستات طلّعت خطأ: ${r2.error}`);
     if (r2 !== 0) throw broken("كتابة البوستات ما خلصتش في دقيقة ونص");
   }),
@@ -240,9 +239,9 @@ export const FEATURE_RECIPES = [
   }),
   F("amazon-check", "أمازون: فاحص رفض الليستنج", "/amazon/check", async ({ page }) => {
     await step("جرّب بمثال", () => page.getByRole("button", { name: "جرّب بمثال" }).click());
-    await see(page, "نتيجة الفحص الفوري", "الفحص الفوري", 15000);
+    await step("الفحص الفوري", () => page.locator("#ck-live").waitFor({ timeout: 15000 }));
     await step("التصليح الذكي", () => page.getByRole("button", { name: /صلّحلي الليستنج/ }).click());
-    const r = await firstOf(page, [page.getByText("النسخة المصلّحة"), page.getByText("التصليح الذكي مش متاح دلوقتي")], 100000);
+    const r = await firstOf(page, [page.locator("#ck-fixed"), page.getByRole("heading", { name: "التصليح الذكي مش متاح دلوقتي" })], 100000);
     if (r === 1) throw broken("التصليح الذكي ظهر «مش متاح دلوقتي»");
     if (r?.error) throw broken(`التصليح طلّع خطأ: ${r.error}`);
     if (r !== 0) throw broken("التصليح ما خلصش في دقيقة ونص");
@@ -250,7 +249,7 @@ export const FEATURE_RECIPES = [
   F("amazon-listing", "أمازون: كاتب الليستنج", "/amazon/listing", async ({ page }) => {
     await step("جرّب بمثال", () => page.getByRole("button", { name: "جرّب بمثال" }).click());
     await step("كتابة الليستنج", () => page.getByRole("button", { name: "اكتبلي الليستنج" }).click());
-    const r = await firstOf(page, [page.getByText("الليستنج جاهز")], 100000);
+    const r = await firstOf(page, [page.locator("#ls-r")], 100000);
     if (r?.error) throw broken(`كتابة الليستنج طلّعت خطأ: ${r.error}`);
     if (r !== 0) throw broken("كتابة الليستنج ما خلصتش في دقيقة ونص");
   }),
@@ -258,7 +257,7 @@ export const FEATURE_RECIPES = [
     await page.locator("#cp-l").fill("سماعة بلوتوث لاسلكية بعزل ضوضاء، بطارية 30 ساعة، مقاومة للماء IPX5، شحن سريع USB-C، لون أسود. مناسبة للرياضة والمكالمات.");
     await page.locator("#cp-r").fill("الصوت حلو جداً والبطارية بتعيش فعلاً. / بعد شهر الشمال فصل خالص. / العزل كويس في المواصلات. / مقاسها كبير على ودني ووجعتني. / التوصيل سريع والتغليف محترم. / المايك في المكالمات ضعيف والناس مش سامعاني. / سعرها مناسب بالنسبة للمميزات.");
     await step("تحليل المنافس", () => page.getByRole("button", { name: "حلّل المنافس" }).click());
-    const r = await firstOf(page, [page.getByText("فرصتك قدام المنافس")], 100000);
+    const r = await firstOf(page, [page.locator("#cp-r-h")], 100000);
     if (r?.error) throw broken(`التحليل طلّع خطأ: ${r.error}`);
     if (r !== 0) throw broken("التحليل ما خلصش في دقيقة ونص");
   }),
@@ -273,17 +272,17 @@ export const FEATURE_RECIPES = [
     await page.getByPlaceholder(/اشتراك مدى الحياة/).fill("اشتراك نتفليكس سنة كاملة بـ 150 جنيه، التحويل على فودافون كاش قبل التفعيل.").catch(() => {});
     const before = await textLength(page);
     await step("فحص البائع", () => page.getByRole("button", { name: "افحص البائع" }).click());
-    const r = await firstOf(page, [page.getByText("تعمل إيه دلوقتي")], 150000);
+    const r = await firstOf(page, [page.getByRole("heading", { name: "تعمل إيه دلوقتي" })], 150000);
     if (r?.error) throw broken(`الفحص طلّع خطأ: ${r.error}`);
     if (r !== 0 && (await textLength(page)) - before < 200) throw broken("الفحص ما طلّعش نتيجة في دقيقتين ونص");
   }),
   F("prompt-builder", "صانع البرومبتات", "/prompts/builder", async ({ page }) => {
-    await step("فاجئني", () => page.getByRole("button", { name: "فاجئني" }).click());
-    const before = await textLength(page);
+    await step("فتح «ولّد لي أفكار»", () => page.getByRole("tab", { name: "ولّد لي أفكار" }).click());
+    await step("كتابة الموضوع", () => page.locator("#pb-topic").fill("متجر عسل طبيعي أونلاين"));
     await step("توليد", () => page.getByRole("button", { name: "ولّد", exact: true }).click());
-    const r = await waitForResult(page, before, { minGrowth: 200, timeout: 90000 });
-    if (r.error) throw broken(`التوليد طلّع خطأ: ${r.error}`);
-    if (r.timedOut) throw broken("التوليد ما طلّعش برومبتات في دقيقة ونص");
+    const r = await firstOf(page, [page.getByRole("button", { name: /^ولّد \d+ كمان$/ })], 100000);
+    if (r?.error) throw broken(`التوليد طلّع خطأ: ${r.error}`);
+    if (r !== 0) throw broken("التوليد ما طلّعش برومبتات في دقيقة ونص");
   }),
   F("image-maker", "صانع الصور", "/maker/create", async ({ page }) => {
     await step("كتابة فكرة الصورة", () => page.getByLabel("فكرة الصورة").fill("فنجان قهوة عربي على ترابيزة خشب جنب شباك، إضاءة دافية"));

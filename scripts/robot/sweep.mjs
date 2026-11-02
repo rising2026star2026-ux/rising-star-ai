@@ -5,6 +5,8 @@ import { shot, sleep } from "./lib.mjs";
 
 export const MOBILE = { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, locale: "ar-EG" };
 const SLOW_MS = 10000;
+// صفحات أدوات البرمجة بتشرح أخطاء زي undefined وNaN، فده مش كلام بايظ
+const CODE_PAGES = /^\/tool\/(debug|code-gen|code-explain|excel-formula|sheet-analyst)$/;
 const SOCIAL = /(^|\.)(facebook|fb|instagram|twitter|x|tiktok|linkedin|youtube|youtu|wa|whatsapp|t|telegram|threads|snapchat|pinterest)\.(com|me|be|net|org)$/i;
 
 /** يجيب كل روابط الموقع من sitemap.xml */
@@ -19,8 +21,15 @@ export async function sitemapUrls(BASE) {
 
 export async function newPage(ctx) {
   const page = await ctx.newPage();
-  const log = { pageErrors: [], console: [], bad: [], failed: [] };
-  page.on("pageerror", (e) => log.pageErrors.push(String(e?.message || e).slice(0, 300)));
+  const log = { pageErrors: [], thirdParty: [], console: [], bad: [], failed: [] };
+  page.on("pageerror", (e) => {
+    const msg = String(e?.message || e).slice(0, 300);
+    const origins = (String(e?.stack || "").match(/https?:\/\/[^\s)]+/g) || []).map((u) => { try { return new URL(u.replace(/:\d+:\d+$/, "")).origin; } catch { return ""; } }).filter(Boolean);
+    const base = new URL(process.env.BASE || "https://rising-star-ai.vercel.app").origin;
+    // خطأ جاي من موقع تاني (أداة متضمّنة في إطار) مش من كودنا
+    if (origins.length && !origins.includes(base)) log.thirdParty.push(`${msg} @ ${new URL(origins[0]).hostname}`);
+    else log.pageErrors.push(msg);
+  });
   page.on("console", (m) => { if (m.type() === "error") log.console.push(m.text().slice(0, 300)); });
   page.on("response", (r) => { if (r.status() >= 400) log.bad.push({ status: r.status(), url: r.url(), method: r.request().method() }); });
   page.on("requestfailed", (r) => { const f = r.failure()?.errorText || ""; if (!/ERR_ABORTED|NS_BINDING_ABORTED/.test(f)) log.failed.push({ url: r.url(), error: f }); });
@@ -114,14 +123,14 @@ export async function checkPage(ctx, url, { OUT, BASE }) {
   if (log.pageErrors.length) add("warn", `خطأ في كود الصفحة: ${log.pageErrors[0].slice(0, 120)}`, log.pageErrors.slice(0, 4).join(" | "));
   if (info.brokenImgs?.length) add("warn", `${info.brokenImgs.length} صورة مكسورة`, info.brokenImgs.join(" | "));
   if (info.overflow) add("warn", `الصفحة أعرض من شاشة الموبايل بـ ${info.overflow} بكسل (بتتحرك يمين وشمال)`, info.offenders.map((o) => `${o.el} +${o.over}px`).join(" | "));
-  if (info.junk?.length) add("warn", `فيه كلام بايظ ظاهر للمستخدم: ${[...new Set(info.junk)].join("، ")}`);
+  if (info.junk?.length && !CODE_PAGES.test(res.path)) add("warn", `فيه كلام بايظ ظاهر للمستخدم: ${[...new Set(info.junk)].join("، ")}`);
   if (res.ms > SLOW_MS) add("warn", `بطيئة: فتحت في ${(res.ms / 1000).toFixed(1)} ثانية`);
 
   // إطار جوه الصفحة (أداة من موقع تاني) مش راضي يفتح
-  for (const f of page.frames()) {
-    if (f === page.mainFrame()) continue;
+  for (const f of page.mainFrame().childFrames()) {
     if (f.url().startsWith("chrome-error://")) add("broken", "الأداة اللي جوه الصفحة (إطار من موقع تاني) مش راضية تفتح", (info.iframes || []).join(" | "));
   }
+  if (log.thirdParty.length) res.tech.push(`أخطاء من مواقع متضمّنة (مش كودنا): ${log.thirdParty.slice(0, 3).join(" | ")}`);
   if (log.console.length) res.tech.push(`console: ${log.console.slice(0, 3).join(" | ")}`);
 
   if (res.problems.length) res.shot = await shot(page, OUT, `page${res.path}`);
