@@ -1,14 +1,12 @@
 {
- "date": "2026-11-02T04:27:35.053Z",
- "total": 488,
- "ok": 478,
+ "date": "2026-11-02T04:44:16.530Z",
+ "total": 504,
+ "ok": 501,
  "broken": [
-  "/chat",
-  "/prompts/builder",
-  "/library/ffmpeg",
-  "/tool/debug"
+  "feature:amazon-listing",
+  "feature:prompt-builder"
  ],
- "warn": 6,
+ "warn": 1,
  "spacesDown": [
   "multimodalart-logo-in-context",
   "eccv2022-dis-background-removal",
