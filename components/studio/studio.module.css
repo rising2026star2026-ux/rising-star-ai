@@ -277,5 +277,17 @@
 .rangeTop { display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--muted); }
 .rangeTop output { font-variant-numeric: tabular-nums; color: var(--text); }
 .qrBox { display: grid; gap: 12px; justify-items: center; }
-.qrBox img { width: 100%; max-width: 280px; height: auto; border-radius: 14px; border: 1px solid var(--hairline); image-rendering: pixelated; background: #fff; }
+.qrBox img { width: 100%; max-width: 320px; height: auto; border-radius: 14px; border: 1px solid var(--hairline); background: #fff; }
 .colorIn { width: 100%; height: 40px; padding: 3px; border-radius: var(--r-sm); border: 1px solid var(--hairline); background: var(--field); cursor: pointer; }
+
+/* مولد QR الكامل */
+.qrTypes { display: flex; flex-wrap: wrap; gap: 6px; }
+.qrType {
+  padding: 7px 14px; border-radius: 999px; font: inherit; font-size: 0.84rem; cursor: pointer;
+  border: 1px solid var(--hairline); background: var(--field); color: var(--muted);
+}
+.qrType:hover { color: var(--text); }
+.qrTypeOn { color: var(--text); border-color: var(--accent-line); background: var(--surface); }
+.qrSep { width: 100%; margin: 2px 0; border: 0; border-top: 1px solid var(--hairline); }
+.qrLogoRow { display: flex; align-items: center; gap: 12px; }
+.qrLogoRow img { border-radius: 10px; border: 1px solid var(--hairline); background: #fff; object-fit: contain; }

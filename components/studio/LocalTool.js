@@ -29,6 +29,7 @@ const Pdf = dynamic(() => import("./Pdf"), { ssr: false, loading });
 const VideoFrame = dynamic(() => import("./VideoFrame"), { ssr: false, loading });
 const Calcs = dynamic(() => import("./Calcs"), { ssr: false, loading });
 const Ocr = dynamic(() => import("./Ocr"), { ssr: false, loading });
+const QrStudio = dynamic(() => import("./QrStudio"), { ssr: false, loading });
 const Apps = dynamic(() => import("./Apps"), { ssr: false, loading });
 const VideoMaker = dynamic(() => import("./VideoMaker"), { ssr: false, loading });
 const RemotionReel = dynamic(() => import("@/components/lab/RemotionReel"), { ssr: false, loading });
@@ -60,7 +61,7 @@ const KINDS = {
   wordcount: [Calcs, { mode: "wordcount" }],
   textclean: [Calcs, { mode: "textclean" }],
   password: [Calcs, { mode: "password" }],
-  qr: [Calcs, { mode: "qr" }],
+  qr: [QrStudio],
   "video-remotion": [RemotionReel],
   "video-factory": [VideoFactory],
   "product-ad": [ProductAd],

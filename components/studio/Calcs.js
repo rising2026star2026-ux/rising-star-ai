@@ -10,7 +10,7 @@ import {
 } from "@/lib/arcalc";
 
 export default function Calcs({ mode }) {
-  const M = { percent: Percent, hourly: Hourly, zakat: Zakat, hijri: Hijri, numwords: NumWords, wordcount: WordCount, textclean: TextClean, password: Password, qr: QrTool }[mode];
+  const M = { percent: Percent, hourly: Hourly, zakat: Zakat, hijri: Hijri, numwords: NumWords, wordcount: WordCount, textclean: TextClean, password: Password }[mode];
   return M ? <M /> : null;
 }
 
@@ -294,74 +294,6 @@ function Password() {
           <label key={k} className={s.check}><input type="checkbox" checked={!!o[k]} onChange={(e) => set(k, e.target.checked)} /> {label}</label>
         ))}
       </div>
-    </Box>
-  );
-}
-
-/* ============ QR ============ */
-let qrLib = null;
-const loadQr = () => {
-  if (!qrLib) qrLib = import(/* webpackIgnore: true */ "https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/+esm").then((m) => m.default || m).catch((e) => { qrLib = null; throw e; });
-  return qrLib;
-};
-
-function QrTool() {
-  const [text, setText] = useState("");
-  const [fg, setFg] = useState("#111111");
-  const [bg, setBg] = useState("#ffffff");
-  const [size, setSize] = useState(768);
-  const [url, setUrl] = useState("");
-  const [err, setErr] = useState("");
-  const [busy, setBusy] = useState(false);
-
-  async function make() {
-    const v = text.trim();
-    if (!v) return;
-    setBusy(true); setErr("");
-    try {
-      const qrcode = await loadQr();
-      const qr = qrcode(0, "M");
-      qr.addData(v);
-      qr.make();
-      const n = qr.getModuleCount();
-      const quiet = 4;
-      const cell = Math.max(1, Math.floor(size / (n + quiet * 2)));
-      const px = cell * (n + quiet * 2);
-      const c = document.createElement("canvas");
-      c.width = c.height = px;
-      const ctx = c.getContext("2d");
-      ctx.fillStyle = bg; ctx.fillRect(0, 0, px, px);
-      ctx.fillStyle = fg;
-      for (let r = 0; r < n; r++) for (let k = 0; k < n; k++) if (qr.isDark(r, k)) ctx.fillRect((k + quiet) * cell, (r + quiet) * cell, cell, cell);
-      setUrl(c.toDataURL("image/png"));
-    } catch {
-      setErr("ما قدرناش نجهّز المولّد. اتأكد من الاتصال وجرّب تاني، أو النص طويل أوي.");
-    } finally {
-      setBusy(false);
-    }
-  }
-
-  return (
-    <Box
-      aside={
-        <div className={s.qrBox}>
-          {url ? <img src={url} alt="رمز QR جاهز" /> : <Note>اكتب الرابط أو النص واضغط «اعمل QR».</Note>}
-          {url && <a className="btn" href={url} download="qr-code.png">نزّل الصورة PNG</a>}
-        </div>
-      }
-    >
-      <label className={s.field}>
-        <span className={s.fieldLabel}>الرابط أو النص</span>
-        <textarea className={s.input} dir="auto" rows={3} maxLength={1200} value={text} onChange={(e) => setText(e.target.value)} placeholder="https://wa.me/201012345678 أو أي نص" />
-      </label>
-      <div className={s.row2}>
-        <label className={s.field}><span className={s.fieldLabel}>لون الرمز</span><input type="color" className={s.colorIn} value={fg} onChange={(e) => setFg(e.target.value)} /></label>
-        <label className={s.field}><span className={s.fieldLabel}>لون الخلفية</span><input type="color" className={s.colorIn} value={bg} onChange={(e) => setBg(e.target.value)} /></label>
-      </div>
-      <Seg label="الحجم" value={size} onChange={setSize} options={[[512, "صغير"], [768, "متوسط"], [1280, "كبير"]]} />
-      <button type="button" className="btn" disabled={!text.trim() || busy} onClick={make}>{busy ? "ثواني…" : "اعمل QR"}</button>
-      {err && <Note tone="warn">{err}</Note>}
-      <Note>لو هتطبعه خلّي اللون الغامق للرمز والفاتح للخلفية، وجرّب مسحه بموبايلك قبل الطباعة.</Note>
     </Box>
   );
 }
