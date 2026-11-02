@@ -1,8 +1,7 @@
 "use client";
 // واجهة تشغيل الوكيل: الحقول ← خطوات شغالة قدامك ← المصادر ← النتيجة
 import { useRef, useState } from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import Md from "@/components/Md";
 import ShareBar from "@/components/ShareBar";
 import s from "./agents.module.css";
 
@@ -94,7 +93,7 @@ export default function AgentRunner({ agent }) {
       {out && (
         <div className={s.result}>
           <div ref={md} className={s.md}>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{out}</ReactMarkdown>
+            <Md>{out}</Md>
           </div>
           {!busy && <ShareBar text={out} getHtml={() => md.current?.innerHTML || ""} title={agent.name} />}
         </div>

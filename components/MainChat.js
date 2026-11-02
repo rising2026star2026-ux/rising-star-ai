@@ -3,8 +3,7 @@
 // واقتراح الأداة المناسبة. نفس الشات بيشتغل جوه «المشاريع» (props: project وما بعدها).
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import Md from "@/components/Md";
 import ModelPicker from "./ModelPicker";
 import ShareBar from "./ShareBar";
 import ToolIcon from "./ToolIcon";
@@ -440,7 +439,7 @@ export default function MainChat({ project = null, initialMessages = null, onMes
                     )}
                     {m.content ? (
                       <div className={s.md} id={`msg-${i}`}>
-                        <ReactMarkdown remarkPlugins={[remarkGfm]}>{m.content}</ReactMarkdown>
+                        <Md>{m.content}</Md>
                       </div>
                     ) : m.fusion ? (
                       <div className={s.fusionWait} aria-label="جاري تجميع الإجابة">

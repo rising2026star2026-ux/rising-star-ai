@@ -728,3 +728,24 @@ html.lite .fx-glow { display: none; }
 @media (prefers-reduced-motion: reduce) { [data-reveal], [data-reveal].fx-pre { transition: none; opacity: 1; transform: none; } }
 @media print { [data-reveal].fx-pre { opacity: 1; transform: none; } }
 html.lite .intro { display: none; }
+
+/* جداول الردود (components/Md.js): تمرير أفقي على الشاشات الواسعة، وبطاقات على الموبايل */
+.md-table { margin: 12px 0; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--hairline-strong); border-radius: var(--r-sm); }
+.md-table table.md-tbl { display: table; width: 100%; margin: 0; border-collapse: collapse; font-size: 0.88rem; line-height: 1.8; }
+.md-table table.md-tbl th, .md-table table.md-tbl td { border: 0; border-bottom: 1px solid var(--hairline); border-inline-end: 1px solid var(--hairline); padding: 9px 12px; text-align: start; vertical-align: top; overflow-wrap: normal; word-break: normal; }
+.md-table table.md-tbl td { min-width: 9.5rem; }
+.md-table table.md-tbl th { white-space: nowrap; background: var(--surface-2); font-weight: 500; }
+.md-table table.md-tbl tr:last-child td { border-bottom: 0; }
+.md-table table.md-tbl th:last-child, .md-table table.md-tbl td:last-child { border-inline-end: 0; }
+@media (max-width: 640px) {
+  .md-table { overflow: visible; border: 0; border-radius: 0; }
+  .md-table table.md-tbl, .md-table table.md-tbl tbody, .md-table table.md-tbl tr, .md-table table.md-tbl td { display: block; width: 100%; min-width: 0; }
+  .md-table table.md-tbl thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } /* العناوين بتظهر فوق كل خانة بدالها */
+  .md-table table.md-tbl tr { margin: 0 0 12px; border: 1px solid var(--hairline-strong); border-radius: var(--r-sm); background: var(--surface); overflow: hidden; }
+  .md-table table.md-tbl td { border: 0; border-bottom: 1px solid var(--hairline); padding: 9px 13px; }
+  .md-table table.md-tbl tr:last-child td { border-bottom: 1px solid var(--hairline); }
+  .md-table table.md-tbl tr td:last-child { border-bottom: 0; }
+  .md-table table.md-tbl td:empty { display: none; }
+  .md-table table.md-tbl td[data-label]::before { content: attr(data-label); display: block; margin-bottom: 1px; font-size: 0.74rem; line-height: 1.6; color: var(--accent); }
+}
+

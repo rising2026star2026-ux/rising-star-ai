@@ -2,8 +2,7 @@
 // تشغيل مهمة كاملة: كل خطوة أداة، ونتيجتها بتدخل في الخطوات اللي بعدها
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import Md from "@/components/Md";
 import { getFlow, fillStep } from "@/lib/flows";
 import { getTool, isListed } from "@/lib/tools";
 import { DEFAULT_SETTINGS } from "@/lib/settings";
@@ -154,7 +153,7 @@ export default function FlowRunner({ flowId }) {
 
               {state.text && (
                 <div className={`md ${s.out} ${state.status === "running" ? "typing" : ""}`}>
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{state.text}</ReactMarkdown>
+                  <Md>{state.text}</Md>
                 </div>
               )}
               {state.status === "running" && !state.text && (

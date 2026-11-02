@@ -1,8 +1,7 @@
 "use client";
 // قارئ الصور: ارفع صورة، اسأل عنها (اختياري)، واستلم الوصف أو النص المقروء
 import { useEffect, useRef, useState } from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import Md from "@/components/Md";
 import ShareBar from "@/components/ShareBar";
 
 async function shrink(file) {
@@ -94,7 +93,7 @@ export default function VisionRunner({ toolName }) {
             <div className="shimmer" aria-label="جاري القراءة"><span /><span /><span /></div>
           ) : (
             <>
-              <div ref={mdRef} className="md"><ReactMarkdown remarkPlugins={[remarkGfm]}>{result}</ReactMarkdown></div>
+              <div ref={mdRef} className="md"><Md>{result}</Md></div>
               <div className="result-actions">
                 <button className="btn ghost" onClick={() => navigator.clipboard?.writeText(result)}>نسخ</button>
                 <button className="btn ghost" onClick={run}>إعادة</button>
