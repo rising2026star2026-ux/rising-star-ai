@@ -17,6 +17,13 @@ import p from "./photoad.module.css";
 const PhotoAdVideo = dynamic(() => import("./PhotoAdVideo"), { ssr: false, loading: () => <p className={s.ctaNote}>بنجهّز الفيديو…</p> });
 
 const STEP_NAMES = ["الصورة", "صور الاستوديو", "كلام الإعلان", "الفيديو"];
+const STAGE_TEXT = { upload: "بنبعت الصورة للسيرفر", process: "السيرفر بيشيل الخلفية", download: "بننزّل النتيجة" };
+const FAIL_TEXT = {
+  quota: "حصتك اليومية من السيرفر المجاني خلصت، فحطينا صورتك زي ما هي جوه إطار شيك. جرّب بكرة، أو من كمبيوتر.",
+  timeout: "السيرفر المجاني بطيء أو نايم دلوقتي، فحطينا صورتك زي ما هي جوه إطار شيك. جرّب تاني بعد شوية.",
+  skipped: "كمّلنا بصورتك زي ما هي جوه إطار شيك. تقدر تجرّب تشيل الخلفية تاني من الزرار تحت.",
+  busy: "ما قدرناش نشيل الخلفية دلوقتي، فحطينا صورتك زي ما هي جوه إطار شيك. جرّب صورة تانية بعد شوية.",
+};
 
 export default function PhotoAd() {
   const [orig, setOrig] = useState(null); // { canvas, url }
@@ -31,6 +38,9 @@ export default function PhotoAd() {
   const [preview, setPreview] = useState(null);
   const [error, setError] = useState("");
   const [videoOn, setVideoOn] = useState(false);
+  const [tick, setTick] = useState(0); // عدّاد ثواني مستني السيرفر
+  const cutCtl = useRef(null);
+  const skipped = useRef(false);
   const urls = useRef(new Set());
   const nameTouched = useRef(false);
   const sec2 = useRef(null), sec3 = useRef(null);
@@ -55,10 +65,31 @@ export default function PhotoAd() {
     removeBg(canvas);
   }
 
+  // عدّاد الثواني بيتحدّث كل ثانية طول ما السيرفر شغال، عشان الزائر يشوف إن الشغل ماشي مش واقف
+  useEffect(() => {
+    if (cut.status !== "work") return;
+    const id = setInterval(() => setTick((n) => n + 1), 1000);
+    return () => clearInterval(id);
+  }, [cut.status]);
+  useEffect(() => () => cutCtl.current?.abort(), []);
+
+  // «كمّل بصورتي»: بنوقف الانتظار ونكمّل بالصورة في إطار، ويقدر يجرّب تاني بعدين
+  function skipCut() {
+    skipped.current = true;
+    cutCtl.current?.abort();
+  }
+
   async function removeBg(canvas) {
-    setCut({ status: "work", pct: 100 });
+    cutCtl.current?.abort();
+    const ctl = new AbortController();
+    cutCtl.current = ctl;
+    skipped.current = false;
+    setTick(0);
+    setCut({ status: "work", pct: 100, t0: Date.now(), stage: "upload", attempt: 1, total: 3 });
     try {
       const { canvas: out } = await removeBackground(canvas, {
+        signal: ctl.signal,
+        onStage: (st) => setCut((c) => (c.status === "work" ? { ...c, ...st } : c)),
         onDevice: () => setCut({ status: "load", pct: 0 }),
         onProgress: progressTracker((pct) => setCut({ status: "load", pct })),
         onReady: () => setCut({ status: "work", pct: 100 }),
@@ -68,9 +99,10 @@ export default function PhotoAd() {
       setProd({ canvas: trimmed, framed: false });
       setCut({ status: "done", pct: 100 });
     } catch (e) {
+      if (ctl.signal.aborted && !skipped.current) return; // اتبدّلت بصورة أحدث
       console.warn(e);
       setProd({ canvas, framed: true });
-      setCut({ status: "failed", pct: 0 });
+      setCut({ status: "failed", pct: 0, why: skipped.current ? "skipped" : e?.reason || "busy" });
     }
     setTimeout(() => sec2.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 150);
   }
@@ -234,11 +266,14 @@ export default function PhotoAd() {
               <b>{cut.status === "done" ? "✓ الخلفية اتشالت" : cut.status === "failed" ? "صورتك هتتحط في إطار" : cut.status === "work" ? "بنشيل الخلفية…" : `بنجهّز أداة إزالة الخلفية… ${cut.pct}%`}</b>
               <small>
                 {cut.status === "load" && "السيرفر مشغول، فبنشيلها على جهازك. أول مرة بس بيحمّل حوالي 50 ميجا."}
-                {cut.status === "work" && "ثواني… الصورة بتتبعت لسيرفر Hugging Face عشان تتشال خلفيتها."}
-                {cut.status === "failed" && "ما قدرناش نشيل الخلفية دلوقتي، فحطينا صورتك زي ما هي جوه إطار شيك. جرّب صورة تانية بعد شوية."}
+                {cut.status === "work" && `${STAGE_TEXT[cut.stage] || STAGE_TEXT.upload}${cut.total > 1 ? ` (سيرفر ${cut.attempt} من ${cut.total})` : ""}. بقالنا ${tick} ثانية.${tick >= 15 ? " السيرفر المجاني بطيء أو نايم دلوقتي، فممكن ياخد لحد دقيقة." : ""}`}
+                {cut.status === "failed" && (FAIL_TEXT[cut.why] || FAIL_TEXT.busy)}
                 {cut.status === "done" && (eye.status === "busy" ? "وبنتعرّف على المنتج…" : eye.status === "done" ? `شكله «${eye.data.name}»` : "")}
               </small>
               {(cut.status === "load" || cut.status === "work") && <div className={p.bar}><i style={{ width: `${cut.status === "work" ? 100 : cut.pct}%` }} className={cut.status === "work" ? p.barWork : ""} /></div>}
+              {cut.status === "work" && tick >= 5 && (
+                <button type="button" className={s.miniBtn} style={{ alignSelf: "flex-start" }} onClick={skipCut}>كمّل بصورتي زي ما هي</button>
+              )}
               <label className={s.miniBtn} style={{ position: "relative", alignSelf: "flex-start" }}>
                 <input type="file" accept="image/*" onChange={onFile} style={{ position: "absolute", inset: 0, opacity: 0 }} aria-label="صورة تانية" />
                 صورة تانية

@@ -14,6 +14,10 @@ const SPACES = [
   ["https://zhengpeng7-birefnet-demo.hf.space", "image", (out) => (Array.isArray(out?.[0]) ? out[0][0] : out?.[0])],
 ];
 
+// ميزانية الوقت: سيرفرات Hugging Face المجانية بتنام وبتتزحم، فمن غير حد وقت الزائر كان بيستنى دقيقتين على شاشة ثابتة
+export const CLOUD_BUDGET_MS = 60_000; // كل المحاولات مع بعض
+export const CLOUD_PER_SPACE_MS = 30_000; // محاولة واحدة على سيرفر واحد
+
 let T = null;
 let session = null; // { seg, conf }
 const bad = new Set(); // طرق تشغيل فشلت على الجهاز ده
@@ -109,17 +113,27 @@ export async function cutoutCanvas(src, onProgress, onReady) {
   throw last || new Error("on-device failed");
 }
 
-/** على سيرفر Hugging Face: بيرجّع كانفاس بنفس مقاس الصورة والخلفية شفافة */
-export async function cutoutCloud(src, { signal } = {}) {
+/**
+ * على سيرفر Hugging Face: بيرجّع كانفاس بنفس مقاس الصورة والخلفية شفافة.
+ * onStage({ stage: "upload" | "process" | "download", attempt, total }) عشان الواجهة تعرّف الزائر الشغل واصل لفين.
+ * لو فشل، الخطأ فيه reason: "quota" (الحصة خلصت) أو "timeout" (بطيء) أو "busy" (مشغول أو واقع).
+ */
+export async function cutoutCloud(src, { signal, onStage, budgetMs = CLOUD_BUDGET_MS } = {}) {
   const small = document.createElement("canvas");
   const k = Math.min(1, 1280 / Math.max(src.width, src.height));
   small.width = Math.round(src.width * k); small.height = Math.round(src.height * k);
   small.getContext("2d").drawImage(src, 0, 0, small.width, small.height);
   const photo = await blobOf(small, "image/jpeg", 0.92);
   let last;
-  for (const [host, api, pick] of SPACES) {
-    const t = withTimeout(40_000, signal);
+  let reason = "";
+  const deadline = Date.now() + budgetMs;
+  for (const [i, [host, api, pick]] of SPACES.entries()) {
+    const left = deadline - Date.now();
+    if (left < 5000) break;
+    const t = withTimeout(Math.min(CLOUD_PER_SPACE_MS, left), signal);
+    const at = (stage) => onStage?.({ stage, attempt: i + 1, total: SPACES.length });
     try {
+      at("upload");
       let base = `${host}/gradio_api`;
       const fd = new FormData();
       fd.append("files", photo, "photo.jpg");
@@ -130,11 +144,14 @@ export async function cutoutCloud(src, { signal } = {}) {
         fd2.append("files", photo, "photo.jpg");
         up = await fetch(`${base}/upload`, { method: "POST", body: fd2, signal: t.signal });
       }
+      if (up.status === 429) throw Object.assign(new Error("upload 429"), { quota: true }); // الحصة أو الحد خلص
       if (!up.ok) throw new Error(`upload ${up.status}`);
       const [p] = await up.json();
+      at("process");
       const { out, base: b2 } = await callSpace(host, api, [{ path: p, meta: { _type: "gradio.FileData" } }], { signal: t.signal });
       const url = fileUrl(pick(out), b2);
       if (!url) throw new Error("no output");
+      at("download");
       const r = await fetch(url, { signal: t.signal });
       if (!r.ok) throw new Error(`file ${r.status}`);
       const blob = await r.blob();
@@ -149,12 +166,13 @@ export async function cutoutCloud(src, { signal } = {}) {
       if (signal?.aborted) throw e;
       last = e;
       // الحصة المجانية للزائر خلصت: كل الـ Spaces بتستخدم نفس الحصة، فمفيش داعي نستنى الباقي
-      if (e?.quota) break;
+      if (e?.quota) { reason = "quota"; break; }
+      reason = t.signal.aborted ? "timeout" : reason || "busy";
     } finally {
       t.done();
     }
   }
-  throw last || new Error("cloud failed");
+  throw Object.assign(last || new Error("cloud failed"), { reason: reason || "busy" });
 }
 
 function hasTransparency(c) {
@@ -168,15 +186,24 @@ function hasTransparency(c) {
  * إزالة الخلفية لأدوات البيّاع: السيرفر الأول (سريع على أي موبايل)، وبعدها الجهاز لو فيه WebGPU.
  * @returns {{ canvas, where: "cloud" | "device" }}
  */
-export async function removeBackground(src, { onProgress, onReady, onDevice } = {}) {
+export async function removeBackground(src, { onProgress, onReady, onDevice, signal, onStage } = {}) {
+  let reason = "busy";
   try {
-    return { canvas: await cutoutCloud(src), where: "cloud" };
+    return { canvas: await cutoutCloud(src, { signal, onStage }), where: "cloud" };
   } catch (e) {
+    if (signal?.aborted) throw e;
+    reason = e?.reason || "busy";
     console.warn("cloud cutout failed", e);
   }
-  if (typeof navigator === "undefined" || !navigator.gpu) throw new Error("no cutout available");
+  if (typeof navigator === "undefined" || !navigator.gpu) throw Object.assign(new Error("no cutout available"), { reason });
   onDevice?.();
-  return { canvas: await cutoutCanvas(src, onProgress, onReady), where: "device" };
+  try {
+    return { canvas: await cutoutCanvas(src, onProgress, onReady), where: "device" };
+  } catch (e) {
+    if (signal?.aborted) throw e;
+    // فشل الجهاز كمان: بنفضل نقول سبب فشل السيرفر (الحصة خلصت أو بطيء...) لأنه الأهم للزائر
+    throw Object.assign(e instanceof Error ? e : new Error("on-device failed"), { reason });
+  }
 }
 
 /** بيقص الفراغ الشفاف حوالين المنتج (عشان يتحط في نص المشهد بالظبط). بيرجّع null لو القص فشل */
