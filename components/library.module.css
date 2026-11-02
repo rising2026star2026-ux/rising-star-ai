@@ -63,7 +63,8 @@ span.logo { background: var(--accent-soft); }
 .barBtns a { background: var(--yellow); color: var(--ink); border-color: var(--yellow); }
 .hfNote { margin: 0; padding: 9px 14px; font-size: 0.78rem; line-height: 1.7; background: #fff8dc; color: #6b4e00; }
 .frame { position: relative; background: #fff; border: 1.5px solid rgba(11, 11, 20, 0.1); border-top: 0; border-radius: 0 0 18px 18px; overflow: hidden; }
-.frame iframe { display: block; width: 100%; height: min(80vh, 820px); min-height: 520px; border: 0; background: #fff; }
+.frame iframe { display: block; width: 100%; height: max(88vh, 700px); height: max(88dvh, 700px); border: 0; background: #fff; }
+@media (max-width: 700px) { .frame { margin-inline: -14px; border-radius: 0; border-inline: 0; } .frame iframe { height: max(92dvh, 640px); } }
 .frame:fullscreen iframe { height: 100vh; }
 .loading { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: 0.9rem; background: var(--surface-2); pointer-events: none; }
 .slow { font-size: 0.82rem; color: var(--muted); margin: 8px 0 0; }
