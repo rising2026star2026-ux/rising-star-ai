@@ -17,7 +17,7 @@ import p from "./photoad.module.css";
 const PhotoAdVideo = dynamic(() => import("./PhotoAdVideo"), { ssr: false, loading: () => <p className={s.ctaNote}>بنجهّز الفيديو…</p> });
 
 const STEP_NAMES = ["الصورة", "صور الاستوديو", "كلام الإعلان", "الفيديو"];
-const STAGE_TEXT = { upload: "بنبعت الصورة للسيرفر", process: "السيرفر بيشيل الخلفية", download: "بننزّل النتيجة", device: "السيرفر مش متاح، فبنجهّز إزالة الخلفية على جهازك", "device-run": "بنشيل الخلفية على جهازك" };
+const STAGE_TEXT = { upload: "بنبعت الصورة للسيرفر", process: "السيرفر بيشيل الخلفية", download: "بننزّل النتيجة", device: "بنجهّز إزالة الخلفية على جهازك", "device-run": "بنشيل الخلفية على جهازك (على الموبايل ممكن تاخد دقيقة أو اتنين)" };
 const CLOUD_STAGES = new Set(["upload", "process", "download"]);
 const FAIL_TEXT = {
   quota: "حصتك اليومية من السيرفر المجاني خلصت، فحطينا صورتك زي ما هي جوه إطار شيك. جرّب بكرة، أو من كمبيوتر.",
@@ -267,7 +267,7 @@ export default function PhotoAd() {
             <div className={p.origInfo}>
               <b>{cut.status === "done" ? "✓ الخلفية اتشالت" : cut.status === "failed" ? "صورتك هتتحط في إطار" : cut.status === "work" ? "بنشيل الخلفية…" : `بنجهّز أداة إزالة الخلفية… ${cut.pct}%`}</b>
               <small>
-                {cut.status === "load" && `السيرفر مش متاح، فبنشيلها على جهازك. أول مرة بس بيحمّل حوالي 50 ميجا. بقالنا ${tick} ثانية.`}
+                {cut.status === "load" && `بنشيلها على جهازك لأن السيرفر مش متاح. أول مرة بس بيحمّل حوالي 50 ميجا وممكن تاخد كام دقيقة، والمرات الجاية أسرع. بقالنا ${tick} ثانية.`}
                 {cut.status === "work" && `${STAGE_TEXT[cut.stage] || STAGE_TEXT.upload}${CLOUD_STAGES.has(cut.stage || "upload") && cut.total > 1 ? ` (سيرفر ${cut.attempt} من ${cut.total})` : ""}. بقالنا ${tick} ثانية.${tick >= 15 && CLOUD_STAGES.has(cut.stage || "upload") ? " السيرفر المجاني بطيء أو نايم دلوقتي، فممكن ياخد لحد دقيقة." : ""}`}
                 {cut.status === "failed" && (FAIL_TEXT[cut.why] || FAIL_TEXT.busy)}
                 {cut.status === "done" && (eye.status === "busy" ? "وبنتعرّف على المنتج…" : eye.status === "done" ? `شكله «${eye.data.name}»` : "")}

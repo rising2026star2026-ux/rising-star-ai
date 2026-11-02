@@ -18,8 +18,11 @@ const SPACES = [
 export const CLOUD_BUDGET_MS = 60_000; // كل المحاولات مع بعض
 export const CLOUD_PER_SPACE_MS = 30_000; // محاولة واحدة على سيرفر واحد
 export const DEVICE_BUDGET_MS = 90_000; // الموديل على الجهاز (تحميل + تشغيل) على الكمبيوتر
+export const DEVICE_BUDGET_PHONE_MS = 240_000; // الموبايل أبطأ بكتير، خصوصاً أول مرة (تحميل 50 ميجا)
+const CLOUD_DOWN_KEY = "rs:cutout-cloud-down";
+const CLOUD_DOWN_MS = 20 * 60_000;
 
-/** الموبايل: الموديل على الجهاز تقيل (50 ميجا وأكتر وذاكرة كبيرة) وبيعلّق بدل ما يفشل، فمش بنجرّبه عليه في أدوات البيّاع */
+/** الموبايل أبطأ في تشغيل الموديل على الجهاز، فبنديله وقت أطول */
 export function isPhone() {
   try {
     return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) || !!window.matchMedia?.("(pointer: coarse)").matches;
@@ -212,21 +215,35 @@ function hasTransparency(c) {
  * إزالة الخلفية لأدوات البيّاع: السيرفر الأول (سريع على أي موبايل)، وبعدها الجهاز لو فيه WebGPU.
  * @returns {{ canvas, where: "cloud" | "device" }}
  */
-export async function removeBackground(src, { onProgress, onReady, onDevice, signal, onStage, allowDevice = !isPhone() } = {}) {
+// لو السيرفر فشل من شوية، الصورة اللي بعدها بتروح للجهاز على طول بدل ما الزائر يستنى دقيقة تانية على سيرفر واقع
+function cloudRecentlyDown() {
+  try { return Date.now() - Number(sessionStorage.getItem(CLOUD_DOWN_KEY) || 0) < CLOUD_DOWN_MS; } catch { return false; }
+}
+function markCloud(down) {
+  try { down ? sessionStorage.setItem(CLOUD_DOWN_KEY, String(Date.now())) : sessionStorage.removeItem(CLOUD_DOWN_KEY); } catch {}
+}
+
+export async function removeBackground(src, { onProgress, onReady, onDevice, signal, onStage, allowDevice = true } = {}) {
   let reason = "busy";
-  try {
-    return { canvas: await cutoutCloud(src, { signal, onStage }), where: "cloud" };
-  } catch (e) {
-    if (signal?.aborted) throw e;
-    reason = e?.reason || "busy";
-    console.warn("cloud cutout failed", e);
+  const deviceOk = allowDevice && typeof navigator !== "undefined" && !!navigator.gpu;
+  if (!(deviceOk && cloudRecentlyDown())) {
+    try {
+      const canvas = await cutoutCloud(src, { signal, onStage });
+      markCloud(false);
+      return { canvas, where: "cloud" };
+    } catch (e) {
+      if (signal?.aborted) throw e;
+      reason = e?.reason || "busy";
+      markCloud(true);
+      console.warn("cloud cutout failed", e);
+    }
   }
-  if (!allowDevice || typeof navigator === "undefined" || !navigator.gpu) throw Object.assign(new Error("no cutout available"), { reason });
+  if (!deviceOk) throw Object.assign(new Error("no cutout available"), { reason });
   onDevice?.();
   onStage?.({ stage: "device" });
   try {
     const run = cutoutCanvas(src, onProgress, () => { onReady?.(); onStage?.({ stage: "device-run" }); });
-    return { canvas: await raceAbort(run, signal, DEVICE_BUDGET_MS), where: "device" };
+    return { canvas: await raceAbort(run, signal, isPhone() ? DEVICE_BUDGET_PHONE_MS : DEVICE_BUDGET_MS), where: "device" };
   } catch (e) {
     if (signal?.aborted) throw e;
     // فشل الجهاز كمان: بنفضل نقول سبب فشل السيرفر (الحصة خلصت أو بطيء...) لأنه الأهم للزائر
