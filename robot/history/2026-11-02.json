@@ -1,12 +1,11 @@
 {
- "date": "2026-11-02T04:44:16.530Z",
+ "date": "2026-11-02T05:39:53.859Z",
  "total": 504,
- "ok": 501,
+ "ok": 503,
  "broken": [
-  "feature:amazon-listing",
-  "feature:prompt-builder"
+  "feature:amazon-listing"
  ],
- "warn": 1,
+ "warn": 0,
  "spacesDown": [
   "multimodalart-logo-in-context",
   "eccv2022-dis-background-removal",
