@@ -1,34 +1,60 @@
 {
- "updated": "2026-11-01T16:58:36.141Z",
+ "updated": "2026-11-02T05:26:05.184Z",
  "providers": [
   "groq",
   "openrouter",
   "gemini"
  ],
  "used": {
-  "groq": 5,
-  "gemini": 4
+  "groq": 6,
+  "gemini": 3
  },
  "feeds": {
   "openai": "ok 69",
-  "verge": "ok 10",
-  "techcrunch": "ok 20",
-  "meta": "ok 9",
-  "aws": "ok 20",
   "deepmind": "ok 9",
+  "techcrunch": "ok 20",
   "apple": "ok 10",
+  "verge": "ok 10",
+  "meta": "ok 9",
   "huggingface": "ok 24",
-  "arstechnica": "ok 20",
-  "google-research": "ok 10",
+  "aws": "ok 20",
   "nvidia": "ok 18",
-  "techwd": "ok 0",
-  "google-ai": "ok 4",
   "marktechpost": "ok 10",
+  "google-research": "ok 10",
+  "google-ai": "ok 4",
+  "arstechnica": "ok 20",
+  "techwd": "ok 0",
   "microsoft": "ok 9",
   "aitnews": "FAIL HTTP 403",
   "venturebeat": "FAIL HTTP 429"
  },
  "items": [
+  {
+   "id": "33c086ca1438",
+   "url": "https://techcrunch.com/2026/11/01/openai-might-rebrand-its-data-centers-as-ai-compute-campuses/",
+   "title": "OpenAI might rebrand its data centers as ‘AI compute campuses’",
+   "date": "2026-11-01T21:55:23.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "OpenAI قد تعيد تسمية مراكز البيانات إلى \"حرم الحوسبة للذكاء الاصطناعي\"",
+    "summary": "مراكز البيانات مش محبوبة، فـ OpenAI بيفكر يغير اسمها لحاجة أكتر جاذبية زي حرم الحوسبة للذكاء الاصطناعي."
+   }
+  },
+  {
+   "id": "0ae10264665c",
+   "url": "https://techcrunch.com/2026/11/01/ai-can-make-tech-ceos-lives-easier-what-about-everyone-else/",
+   "title": "AI can make tech CEOs’ lives easier. What about everyone else?",
+   "date": "2026-11-01T20:57:58.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "الذكاء الاصطناعي يسهل على مدراء التقنية، لكن للناس العاديين؟",
+    "summary": "في حلقة Equity، بنناقش ليه تصريحات مدراء التقنية بتبان غير متوافقة مع الواقع."
+   }
+  },
   {
    "id": "b78eced8d414",
    "url": "https://www.marktechpost.com/2026/11/01/nace-ai-open-sources-drex-max-v1-local-inference/",
@@ -4161,32 +4187,6 @@
    "ar": {
     "title": "داخل Prometheus: رحلة Meta إلى سوبركلاستر بقدرة جيجاواط",
     "summary": "Meta تكشف عن مرحلة أولى من سوبركلاستر Prometheus بقدرة جيجاواط، يهدف لتوسيعها إلى مليون GPU، ويستخدم تقنيات مثل التبريد السائل المغلق."
-   }
-  },
-  {
-   "id": "7a364f356aab",
-   "url": "https://openai.com/index/low-resource-programming-languages",
-   "title": "Advancing coding in low‑resource programming languages",
-   "date": "2026-10-19T12:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "تطوير البرمجة بلغات قليلة الموارد",
-    "summary": "OpenAI بتطور أداء ChatGPT في لغات البرمجة قليلة الموارد، مع تقييمات جديدة لهندسة البرمجيات وSQLite ونقل أكواد COBOL."
-   }
-  },
-  {
-   "id": "9dbc0d55ff91",
-   "url": "https://huggingface.co/blog/hf-torchneuron",
-   "title": "TorchNeuron: running HF models on AWS Trainium is easier than ever",
-   "date": "2026-10-19T00:00:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "تسهيل تشغيل موديلات HF على AWS Trainium",
-    "summary": "بقى تشغيل موديلات Hugging Face على شرائح AWS Trainium أسهل وأسرع بكتير باستخدام TorchNeuron."
    }
   }
  ]
