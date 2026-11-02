@@ -17,6 +17,32 @@ const SPACES = [
 // ميزانية الوقت: سيرفرات Hugging Face المجانية بتنام وبتتزحم، فمن غير حد وقت الزائر كان بيستنى دقيقتين على شاشة ثابتة
 export const CLOUD_BUDGET_MS = 60_000; // كل المحاولات مع بعض
 export const CLOUD_PER_SPACE_MS = 30_000; // محاولة واحدة على سيرفر واحد
+export const DEVICE_BUDGET_MS = 90_000; // الموديل على الجهاز (تحميل + تشغيل) على الكمبيوتر
+
+/** الموبايل: الموديل على الجهاز تقيل (50 ميجا وأكتر وذاكرة كبيرة) وبيعلّق بدل ما يفشل، فمش بنجرّبه عليه في أدوات البيّاع */
+export function isPhone() {
+  try {
+    return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) || !!window.matchMedia?.("(pointer: coarse)").matches;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * بيوقف الانتظار لو الزائر لغى أو الوقت خلص، حتى لو الشغل نفسه (زي موديل على الجهاز) مش بيعرف يتوقف.
+ * الخطأ عند انتهاء الوقت فيه reason: "timeout".
+ */
+export function raceAbort(promise, signal, ms) {
+  return new Promise((resolve, reject) => {
+    let timer = null;
+    const finish = (fn, v) => { clearTimeout(timer); signal?.removeEventListener("abort", onAbort); fn(v); };
+    const onAbort = () => finish(reject, new DOMException("aborted", "AbortError"));
+    if (signal?.aborted) { onAbort(); return; }
+    signal?.addEventListener("abort", onAbort, { once: true });
+    if (ms) timer = setTimeout(() => finish(reject, Object.assign(new Error("timeout"), { reason: "timeout" })), ms);
+    promise.then((v) => finish(resolve, v), (e) => finish(reject, e));
+  });
+}
 
 let T = null;
 let session = null; // { seg, conf }
@@ -186,7 +212,7 @@ function hasTransparency(c) {
  * إزالة الخلفية لأدوات البيّاع: السيرفر الأول (سريع على أي موبايل)، وبعدها الجهاز لو فيه WebGPU.
  * @returns {{ canvas, where: "cloud" | "device" }}
  */
-export async function removeBackground(src, { onProgress, onReady, onDevice, signal, onStage } = {}) {
+export async function removeBackground(src, { onProgress, onReady, onDevice, signal, onStage, allowDevice = !isPhone() } = {}) {
   let reason = "busy";
   try {
     return { canvas: await cutoutCloud(src, { signal, onStage }), where: "cloud" };
@@ -195,10 +221,12 @@ export async function removeBackground(src, { onProgress, onReady, onDevice, sig
     reason = e?.reason || "busy";
     console.warn("cloud cutout failed", e);
   }
-  if (typeof navigator === "undefined" || !navigator.gpu) throw Object.assign(new Error("no cutout available"), { reason });
+  if (!allowDevice || typeof navigator === "undefined" || !navigator.gpu) throw Object.assign(new Error("no cutout available"), { reason });
   onDevice?.();
+  onStage?.({ stage: "device" });
   try {
-    return { canvas: await cutoutCanvas(src, onProgress, onReady), where: "device" };
+    const run = cutoutCanvas(src, onProgress, () => { onReady?.(); onStage?.({ stage: "device-run" }); });
+    return { canvas: await raceAbort(run, signal, DEVICE_BUDGET_MS), where: "device" };
   } catch (e) {
     if (signal?.aborted) throw e;
     // فشل الجهاز كمان: بنفضل نقول سبب فشل السيرفر (الحصة خلصت أو بطيء...) لأنه الأهم للزائر

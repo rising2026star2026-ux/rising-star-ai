@@ -6,7 +6,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { readImage, scaledCanvas, canvasBlob, blobToDataUrl, shareOrDownload, loadFonts } from "@/lib/imagefile";
-import { removeBackground, trimAlpha, progressTracker } from "@/components/studio/cutout";
+import { removeBackground, trimAlpha, progressTracker, raceAbort } from "@/components/studio/cutout";
 import { renderScene, SCENES, FORMATS } from "./scenes";
 import { aiBackground } from "@/lib/aibg";
 import { toast } from "@/lib/store";
@@ -17,7 +17,8 @@ import p from "./photoad.module.css";
 const PhotoAdVideo = dynamic(() => import("./PhotoAdVideo"), { ssr: false, loading: () => <p className={s.ctaNote}>بنجهّز الفيديو…</p> });
 
 const STEP_NAMES = ["الصورة", "صور الاستوديو", "كلام الإعلان", "الفيديو"];
-const STAGE_TEXT = { upload: "بنبعت الصورة للسيرفر", process: "السيرفر بيشيل الخلفية", download: "بننزّل النتيجة" };
+const STAGE_TEXT = { upload: "بنبعت الصورة للسيرفر", process: "السيرفر بيشيل الخلفية", download: "بننزّل النتيجة", device: "السيرفر مش متاح، فبنجهّز إزالة الخلفية على جهازك", "device-run": "بنشيل الخلفية على جهازك" };
+const CLOUD_STAGES = new Set(["upload", "process", "download"]);
 const FAIL_TEXT = {
   quota: "حصتك اليومية من السيرفر المجاني خلصت، فحطينا صورتك زي ما هي جوه إطار شيك. جرّب بكرة، أو من كمبيوتر.",
   timeout: "السيرفر المجاني بطيء أو نايم دلوقتي، فحطينا صورتك زي ما هي جوه إطار شيك. جرّب تاني بعد شوية.",
@@ -67,7 +68,7 @@ export default function PhotoAd() {
 
   // عدّاد الثواني بيتحدّث كل ثانية طول ما السيرفر شغال، عشان الزائر يشوف إن الشغل ماشي مش واقف
   useEffect(() => {
-    if (cut.status !== "work") return;
+    if (cut.status !== "work" && cut.status !== "load") return;
     const id = setInterval(() => setTick((n) => n + 1), 1000);
     return () => clearInterval(id);
   }, [cut.status]);
@@ -87,13 +88,14 @@ export default function PhotoAd() {
     setTick(0);
     setCut({ status: "work", pct: 100, t0: Date.now(), stage: "upload", attempt: 1, total: 3 });
     try {
-      const { canvas: out } = await removeBackground(canvas, {
+      // raceAbort: زرار «كمّل بصورتي» بيوقف الانتظار في أي مرحلة، حتى لو الموديل على الجهاز لسه شغال
+      const { canvas: out } = await raceAbort(removeBackground(canvas, {
         signal: ctl.signal,
-        onStage: (st) => setCut((c) => (c.status === "work" ? { ...c, ...st } : c)),
-        onDevice: () => setCut({ status: "load", pct: 0 }),
-        onProgress: progressTracker((pct) => setCut({ status: "load", pct })),
-        onReady: () => setCut({ status: "work", pct: 100 }),
-      });
+        onStage: (st) => setCut((c) => (c.status === "work" || c.status === "load" ? { ...c, ...st } : c)),
+        onDevice: () => setCut((c) => ({ ...c, status: "load", pct: 0 })),
+        onProgress: progressTracker((pct) => setCut((c) => (c.status === "load" ? { ...c, pct } : c))),
+        onReady: () => setCut((c) => ({ ...c, status: "work", pct: 100 })),
+      }), ctl.signal);
       const trimmed = trimAlpha(out);
       if (!trimmed) throw new Error("empty");
       setProd({ canvas: trimmed, framed: false });
@@ -265,13 +267,13 @@ export default function PhotoAd() {
             <div className={p.origInfo}>
               <b>{cut.status === "done" ? "✓ الخلفية اتشالت" : cut.status === "failed" ? "صورتك هتتحط في إطار" : cut.status === "work" ? "بنشيل الخلفية…" : `بنجهّز أداة إزالة الخلفية… ${cut.pct}%`}</b>
               <small>
-                {cut.status === "load" && "السيرفر مشغول، فبنشيلها على جهازك. أول مرة بس بيحمّل حوالي 50 ميجا."}
-                {cut.status === "work" && `${STAGE_TEXT[cut.stage] || STAGE_TEXT.upload}${cut.total > 1 ? ` (سيرفر ${cut.attempt} من ${cut.total})` : ""}. بقالنا ${tick} ثانية.${tick >= 15 ? " السيرفر المجاني بطيء أو نايم دلوقتي، فممكن ياخد لحد دقيقة." : ""}`}
+                {cut.status === "load" && `السيرفر مش متاح، فبنشيلها على جهازك. أول مرة بس بيحمّل حوالي 50 ميجا. بقالنا ${tick} ثانية.`}
+                {cut.status === "work" && `${STAGE_TEXT[cut.stage] || STAGE_TEXT.upload}${CLOUD_STAGES.has(cut.stage || "upload") && cut.total > 1 ? ` (سيرفر ${cut.attempt} من ${cut.total})` : ""}. بقالنا ${tick} ثانية.${tick >= 15 && CLOUD_STAGES.has(cut.stage || "upload") ? " السيرفر المجاني بطيء أو نايم دلوقتي، فممكن ياخد لحد دقيقة." : ""}`}
                 {cut.status === "failed" && (FAIL_TEXT[cut.why] || FAIL_TEXT.busy)}
                 {cut.status === "done" && (eye.status === "busy" ? "وبنتعرّف على المنتج…" : eye.status === "done" ? `شكله «${eye.data.name}»` : "")}
               </small>
               {(cut.status === "load" || cut.status === "work") && <div className={p.bar}><i style={{ width: `${cut.status === "work" ? 100 : cut.pct}%` }} className={cut.status === "work" ? p.barWork : ""} /></div>}
-              {cut.status === "work" && tick >= 5 && (
+              {(cut.status === "work" || cut.status === "load") && tick >= 5 && (
                 <button type="button" className={s.miniBtn} style={{ alignSelf: "flex-start" }} onClick={skipCut}>كمّل بصورتي زي ما هي</button>
               )}
               <label className={s.miniBtn} style={{ position: "relative", alignSelf: "flex-start" }}>
