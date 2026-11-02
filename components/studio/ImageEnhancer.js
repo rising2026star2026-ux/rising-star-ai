@@ -4,7 +4,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Seg, Range, Note, Busy, styles as s } from "./ui";
 import { download } from "./util";
-import { autoColor, unsharp, upscalePlan } from "@/lib/imgenhance";
+import { autoColor, unsharp, upscalePlan, DEFAULT_LIMITS } from "@/lib/imgenhance";
 
 const PREVIEW_MAX = 900;
 const tick = () => new Promise((r) => setTimeout(r, 0));
@@ -44,6 +44,29 @@ function scaleCanvas(src, tw, th) {
   return cur;
 }
 
+// الكمبيوتر القوي يقدر يطلّع مقاسات أكبر بكتير من الموبايل. بنجرّب فعلاً نحجز كانفاس بالمقاس قبل ما نعرض الخيار،
+// وبنستبعد الموبايل واللمس والأجهزة اللي ذاكرتها قليلة، عشان المتصفح ما يقفلش في وشه.
+const BIG_TRIES = [{ side: 8192, area: 40_000_000 }, { side: 6144, area: 24_000_000 }];
+
+async function probeLimits() {
+  try {
+    const mobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) || window.matchMedia?.("(pointer: coarse)").matches;
+    if (mobile || (navigator.deviceMemory && navigator.deviceMemory < 8)) return DEFAULT_LIMITS;
+    for (const lim of BIG_TRIES) {
+      const w = lim.side, h = Math.floor(lim.area / lim.side);
+      const c = document.createElement("canvas");
+      c.width = w; c.height = h;
+      const ctx = c.getContext("2d", { willReadFrequently: true });
+      if (!ctx) continue;
+      ctx.fillStyle = "#f00";
+      ctx.fillRect(w - 1, h - 1, 1, 1);
+      if (ctx.getImageData(w - 1, h - 1, 1, 1).data[0] === 255) { c.width = c.height = 1; return lim; }
+      c.width = c.height = 1;
+    }
+  } catch { /* بنرجع للحدود العادية */ }
+  return DEFAULT_LIMITS;
+}
+
 const toBlob = (c, type, q) => new Promise((ok, no) => c.toBlob((b) => (b ? ok(b) : no(new Error("الصورة كبيرة على المتصفح ده. جرّب تكبير أقل."))), type, q));
 
 export default function ImageEnhancer({ source, name = "rising-star", onUse }) {
@@ -56,6 +79,7 @@ export default function ImageEnhancer({ source, name = "rising-star", onUse }) {
   const [busy, setBusy] = useState(false);
   const [holdOrig, setHoldOrig] = useState(false);
   const [err, setErr] = useState("");
+  const [limits, setLimits] = useState(DEFAULT_LIMITS);
 
   const bitmapRef = useRef(null);
   const baseRef = useRef(null); // ImageData للنسخة الصغيرة الأصلية
@@ -89,6 +113,7 @@ export default function ImageEnhancer({ source, name = "rising-star", onUse }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [source]);
 
+  useEffect(() => { let dead = false; probeLimits().then((l) => { if (!dead) setLimits(l); }); return () => { dead = true; }; }, []);
   useEffect(() => () => { try { bitmapRef.current?.close?.(); } catch {} }, []);
 
   const draw = useCallback((c, sh) => {
@@ -106,7 +131,8 @@ export default function ImageEnhancer({ source, name = "rising-star", onUse }) {
     return () => clearTimeout(t);
   }, [color, sharp, draw, size]);
 
-  const plan = size ? upscalePlan(size[0], size[1], scale) : null;
+  const plan = size ? upscalePlan(size[0], size[1], scale === 99 ? 64 : scale, limits) : null;
+  const big = limits !== DEFAULT_LIMITS;
 
   async function render() {
     const bmp = bitmapRef.current;
@@ -119,7 +145,7 @@ export default function ImageEnhancer({ source, name = "rising-star", onUse }) {
     autoColor(d0, { color: color / 100 });
     x0.putImageData(d0, 0, 0);
     await tick();
-    const p = upscalePlan(w, h, scale);
+    const p = upscalePlan(w, h, scale === 99 ? 64 : scale, limits);
     const big = p.factor > 1 ? scaleCanvas(c0, p.width, p.height) : c0;
     await tick();
     const xb = big.getContext("2d", { willReadFrequently: true });
@@ -161,8 +187,9 @@ export default function ImageEnhancer({ source, name = "rising-star", onUse }) {
       </div>
       <Range label="كثافة الألوان والتباين" value={color} min={0} max={100} step={5} onChange={setColor} unit="%" />
       <Range label="الحدّة" value={sharp} min={0} max={100} step={5} onChange={setSharp} unit="%" />
-      <Seg label="التكبير" value={scale} onChange={setScale} options={[[1, "بدون"], [2, "2×"], [3, "3×"], [4, "أقصى"]]} />
-      {plan && <Note>الناتج: {plan.width}×{plan.height} بكسل{plan.factor < scale ? " (ده أقصى مقاس يتحمّله المتصفح)" : ""}. التكبير بيخلّي الصورة أكبر وأحدّ، لكنه مش بيضيف تفاصيل جديدة زي مكبّرات الذكاء الاصطناعي.</Note>}
+      <Seg label="التكبير" value={scale} onChange={setScale} options={[[1, "بدون"], [2, "2×"], [3, "3×"], [4, "4×"], [99, big ? "أعلى دقة" : "أقصى"]]} />
+      {plan && <Note>الناتج: {plan.width}×{plan.height} بكسل{plan.factor < (scale === 99 ? 64 : scale) ? (big ? " (ده أقصى مقاس يتحمّله جهازك)" : " (ده أقصى مقاس يتحمّله المتصفح على الجهاز ده)") : ""}. التكبير بيخلّي الصورة أكبر وأحدّ، لكنه مش بيضيف تفاصيل جديدة زي مكبّرات الذكاء الاصطناعي.</Note>}
+      {plan && fmt === "png" && plan.width * plan.height > 16_000_000 && <Note>ملف PNG بالمقاس ده ممكن يوصل لمئات الميجا. JPG أنسب للمقاسات الكبيرة.</Note>}
       <Seg label="صيغة الملف" value={fmt} onChange={setFmt} options={[["jpg", "JPG (أخف)"], ["png", "PNG (أنقى وأتقل)"]]} />
       <button type="button" className="btn" disabled={busy || !size} onClick={() => run("download")}>{busy ? "بنجهّز الصورة بالجودة العالية…" : "نزّل الصورة المحسّنة"}</button>
       {onUse && <button type="button" className="btn ghost" disabled={busy || !size} onClick={() => run("use")}>استخدم النتيجة مكان الصورة</button>}
