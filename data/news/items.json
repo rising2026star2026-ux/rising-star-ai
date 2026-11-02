@@ -1,34 +1,216 @@
 {
- "updated": "2026-11-02T05:26:05.184Z",
+ "updated": "2026-11-02T17:22:41.710Z",
  "providers": [
   "groq",
   "openrouter",
   "gemini"
  ],
  "used": {
-  "groq": 6,
-  "gemini": 3
+  "groq": 5,
+  "gemini": 4
  },
  "feeds": {
-  "openai": "ok 69",
-  "deepmind": "ok 9",
-  "techcrunch": "ok 20",
+  "openai": "ok 70",
+  "deepmind": "ok 10",
   "apple": "ok 10",
-  "verge": "ok 10",
   "meta": "ok 9",
-  "huggingface": "ok 24",
+  "techcrunch": "ok 20",
   "aws": "ok 20",
+  "verge": "ok 10",
   "nvidia": "ok 18",
-  "marktechpost": "ok 10",
   "google-research": "ok 10",
-  "google-ai": "ok 4",
   "arstechnica": "ok 20",
-  "techwd": "ok 0",
+  "huggingface": "ok 24",
+  "google-ai": "ok 4",
+  "techwd": "ok 1",
+  "marktechpost": "ok 10",
   "microsoft": "ok 9",
   "aitnews": "FAIL HTTP 403",
   "venturebeat": "FAIL HTTP 429"
  },
  "items": [
+  {
+   "id": "cb7e6c407ee3",
+   "url": "https://aws.amazon.com/blogs/machine-learning/prepare-web-content-for-amazon-bedrock-knowledge-bases-with-crawl4ai/",
+   "title": "Prepare web content for Amazon Bedrock Knowledge Bases with Crawl4AI",
+   "date": "2026-11-02T17:11:21.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "تحضير محتوى الويب لقاعدة معرفة Amazon Bedrock باستخدام Crawl4AI",
+    "summary": "المقال يوضح إزاي تستخدم Crawl4AI، أداة زاحف ويب مفتوحة المصدر، لتجهيز المحتوى قبل ما يتخزن في S3، مع دعم تنفيذ جافاسكريبت واستخراج انتقائي وإضافة ميتاداتا مخصصة."
+   }
+  },
+  {
+   "id": "de14340539ff",
+   "url": "https://aws.amazon.com/blogs/machine-learning/build-efficient-agents-with-knowledge-distillation-on-amazon-sagemaker-ai/",
+   "title": "Build efficient agents with knowledge distillation on Amazon SageMaker AI",
+   "date": "2026-11-02T17:01:31.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "بناء وكلاء فعالين بالمعرفة المقطوعة على Amazon SageMaker AI",
+    "summary": "المنشور يشرح طريقة تطبيق تقليل المعرفة على مستوى السلسلة (SeqKD) لنقل سلوك الوكيل من نموذج متقدم لنسخة أصغر وأرخص على SageMaker AI."
+   }
+  },
+  {
+   "id": "624d1683c33d",
+   "url": "https://aws.amazon.com/blogs/machine-learning/agentic-engineering-intelligence-with-amazon-nova-multimodal-embeddings-and-amazon-bedrock-agentcore/",
+   "title": "Agentic engineering intelligence with Amazon Nova Multimodal Embeddings and Amazon Bedrock AgentCore",
+   "date": "2026-11-02T17:01:16.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "ذكاء هندسي وكيل مع Amazon Nova وBedrock AgentCore",
+    "summary": "تعلم إزاي تبني مساعد هندسي متعدد الوكلاء يسرّع تقييم بدائل مكوّنات الطيران من أيام لدقايق باستخدام Amazon Nova Multimodal Embeddings وBedrock AgentCore وStrands Agents SDK، مع بقاء المهندس هو المتخذ للقرار."
+   }
+  },
+  {
+   "id": "5818becf105f",
+   "url": "https://aws.amazon.com/blogs/machine-learning/how-circle-k-accelerated-devops-incident-triage-to-under-15-minutes-with-amazon-bedrock/",
+   "title": "How Circle K accelerated DevOps incident triage to under 15 minutes with Amazon Bedrock",
+   "date": "2026-11-02T17:00:58.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "Circle K تقلل وقت تصنيف الحوادث للDevOps لأقل من 15 دقيقة بـ Amazon Bedrock",
+    "summary": "فريق DevOps في Circle K خفض زمن تصنيف الحوادث من 45‑60 دقيقة لأقل من 15 دقيقة عبر بناء نظام تصنيف وكيل على Amazon Bedrock، والبوست يشرح الهندسة والانتقال من Flows لـ AgentCore والدروس المستفادة."
+   }
+  },
+  {
+   "id": "8c02a2f9cf59",
+   "url": "https://www.tech-wd.com/wd/2026/11/02/%d8%b3%d8%a7%d9%85%d8%b3%d9%88%d9%86%d8%ac-%d8%aa%d8%ae%d8%b7%d8%b7-%d9%84%d9%85%d8%b6%d8%a7%d8%b9%d9%81%d8%a9-%d8%b4%d8%ad%d9%86%d8%a7%d8%aa-%d8%a7%d9%84%d8%aa%d9%84%d9%81%d8%b2%d9%8a%d9%88%d9%86/",
+   "title": "سامسونج تخطط لمضاعفة شحنات التلفزيون بمفهوم Ultra وPlus وBasic الجديد",
+   "date": "2026-11-02T16:32:44.000Z",
+   "src": "تك وورلد",
+   "srcId": "techwd",
+   "kind": "arabic",
+   "ar": {
+    "title": "سامسونج تخطط لمضاعفة شحنات التلفزيون بمفهوم Ultra وPlus وBasic الجديد",
+    "summary": ""
+   }
+  },
+  {
+   "id": "6e11dddc7a7c",
+   "url": "https://techcrunch.com/2026/11/02/42ai-comes-out-of-stealth-with-62-5m-and-a-world-model-that-can-predict-human-behavior/",
+   "title": "42AI comes out of stealth with $62.5M and a world model that can ‘predict human behavior’",
+   "date": "2026-11-02T16:30:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "42AI تخرج من الستيل وتعلن عن تمويل 62.5 مليون دولار ونموذج عالمي يتوقع سلوك البشر",
+    "summary": "الشركة بتطرح فكرة خيالية: إذا كان الذكاء الاصطناعي يقدر يتوقع تصرفاتك قبل ما تقررها، حتى في مواقف جديدة تمامًا."
+   }
+  },
+  {
+   "id": "3059ef1574cb",
+   "url": "https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/",
+   "title": "Elon Musk throttles Grok Bot limits due to ‘unsustainably high’ costs",
+   "date": "2026-11-02T16:23:21.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "إيلون ماسك يقلل حدود Grok Bot بسبب تكاليف غير مستدامة",
+    "summary": "ماسك قال إن Grok Bot حقق أسرع نمو شافه في حياته، لكنه اضطر يحد من الاستخدام عشان التكاليف ما تكونش عالية جدًا."
+   }
+  },
+  {
+   "id": "19244c7aa206",
+   "url": "https://openai.com/index/grid-protectors-program",
+   "title": "Introducing the Grid Protectors Program",
+   "date": "2026-11-02T15:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "برنامج Grid Protectors من OpenAI",
+    "summary": "البرنامج هيتعاون مع شركات المرافق لتقوية موثوقية الشبكة وحماية تكلفة الكهرباء للمستهلكين في مراكز الحوسبة المستقبلية."
+   }
+  },
+  {
+   "id": "a43a012fc6e7",
+   "url": "https://techcrunch.com/2026/11/02/omen-ai-adds-liquid-know-how-in-16-million-aquatic-labs-acquisition/",
+   "title": "Omen AI adds liquid know-how in $16 million Aquatic Labs acquisition",
+   "date": "2026-11-02T15:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Omen AI تستحوذ على Aquatic Labs بـ 16 مليون دولار",
+    "summary": "الشركتين اللي بيشتغلوا على مشكلة مياه مراكز البيانات اتحدوا في صفقة قيمتها 16 مليون دولار."
+   }
+  },
+  {
+   "id": "f7151c69ed83",
+   "url": "https://techcrunch.com/2026/11/02/2-days-till-techcrunch-founder-summit-boston-founders-dont-need-a-silicon-valley-address-to-build-something-big/",
+   "title": "2 days till TechCrunch Founder Summit: Boston founders don’t need a Silicon Valley address to build something big",
+   "date": "2026-11-02T14:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "يومين على قمة TechCrunch للمؤسسين في بوسطن",
+    "summary": "القمة هتكون يوم 4 نوفمبر في بوسطن، وتركز على المؤسسين وتوفير فرص اتصال قوية. ممكن توفر لحد 100 دولار أو تحصل على خصومات مع تذاكر المجموعات."
+   }
+  },
+  {
+   "id": "869219a7f133",
+   "url": "https://techcrunch.com/2026/11/02/openai-is-finally-merging-chatgpts-chat-and-work-tabs/",
+   "title": "OpenAI is finally merging ChatGPT’s Chat and Work tabs",
+   "date": "2026-11-02T13:57:53.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "OpenAI توحد تبويبات Chat و Work في ChatGPT",
+    "summary": "OpenAI أعلنت إن دردشة ChatGPT وCodex هيتقاسموا نفس حصة الاستخدام بعد الدمج."
+   }
+  },
+  {
+   "id": "6eb1302ea527",
+   "url": "https://www.marktechpost.com/2026/11/01/nvidia-auto-ontology-open-source-semantic-layer-ai-agents/",
+   "title": "NVIDIA Releases Auto Ontology: An Open Semantic Layer That Grounds AI Agent SQL",
+   "date": "2026-11-02T07:47:12.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "NVIDIA تطلق Auto Ontology للطبقة الدلالية المفتوحة",
+    "summary": "NVIDIA أطلقت مكتبة Auto Ontology تحت رخصة Apache 2.0، بتولد طبقة دلالية من بيانات الميتا في الشركات وتربط استعلامات SQL للوكيل بتعريفات موثقة، وتتوفر عبر MCP وCLI وAPI."
+   }
+  },
+  {
+   "id": "f2dd5ffff012",
+   "url": "https://www.marktechpost.com/2026/11/01/qwengpu-simt-gpu-compiled-into-qwen3-5-2b-weights-runs-cuda/",
+   "title": "Meet qwenGPU: Qwen3.5-2B With 45 Compiled GPU Layers That Run CUDA",
+   "date": "2026-11-02T07:28:29.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "qwenGPU: Qwen3.5-2B بطبقات GPU مُجمَّعة تشغّل CUDA",
+    "summary": "qwenGPU بيحوّل 4‑lane SIMT GPU إلى نموذج Qwen3.5-2B بـ45 طبقة غير مدربة، والنموذج يكتب كل خطوة من تشغيلات CUDA باستخدام حالة Gated DeltaNet كمسجلات وذاكرة."
+   }
+  },
+  {
+   "id": "8b79606d9c8c",
+   "url": "https://machinelearning.apple.com/research/planning-grounding-ui-navigation",
+   "title": "Online Dense Reinforcement Learning with Planning-Grounding Agent for UI Navigation on Live iOS Apps",
+   "date": "2026-11-02T00:00:00.000Z",
+   "src": "Apple ML",
+   "srcId": "apple",
+   "kind": "company",
+   "ar": {
+    "title": "تعلم تعزيزي كثيف على الإنترنت لتصفح UI في تطبيقات iOS",
+    "summary": "نقترح إطار تعلم تعزيزي مباشر يدرب وكلاء تنقل UI مباشرة على التطبيقات الحية، عشان يتغلب على تكلفة الاستدلال العالية للنماذج الكبيرة ومشاكل النماذج الصغيرة اللي بتنسى المسارات."
+   }
+  },
   {
    "id": "33c086ca1438",
    "url": "https://techcrunch.com/2026/11/01/openai-might-rebrand-its-data-centers-as-ai-compute-campuses/",
@@ -573,6 +755,19 @@
    "ar": {
     "title": "ثورة مراكز البيانات في مين وتحديد مستقبل مجلس الشيوخ",
     "summary": "سيناتور مين سوزان كولينز اتعرضت لهتاف من مواطن بيقول إن مراكز بيانات AI بتضر المناخ والمياه، والموضوع بقى سلاح سياسي."
+   }
+  },
+  {
+   "id": "094c331a98fa",
+   "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/",
+   "title": "Speeding up planning decisions with AI",
+   "date": "2026-10-30T14:18:30.000Z",
+   "src": "Google DeepMind",
+   "srcId": "deepmind",
+   "kind": "company",
+   "ar": {
+    "title": "DeepMind وUK يسرّعون قرارات التخطيط بالذكاء الاصطناعي",
+    "summary": "Google DeepMind والحكومة البريطانية بيتعاونوا لتقليل أوقات تقييم التخطيط."
    }
   },
   {
@@ -3992,201 +4187,6 @@
    "ar": {
     "title": "الذكاء الشخصي من Gemini جاي للعربيات",
     "summary": "خدمة Gemini للتذكير الذكي والذكاء الشخصي في طريقها للعربيات، ويظهر وقته الواحد يراجع إعداداته."
-   }
-  },
-  {
-   "id": "748b8e425db0",
-   "url": "https://arstechnica.com/gadgets/2026/10/ukraines-drone-rescue-of-wounded-soldier-puts-much-touted-idea-into-practice/",
-   "title": "Ukraine’s drone rescue of wounded soldier puts much touted idea into practice",
-   "date": "2026-10-20T18:22:54.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "درون أوكرانية لإنقاذ جندي مصاب",
-    "summary": "أوكرانيا نفذت فكرة جديدة ومبتكرة باستخدام الدرون لإنقاذ وإخلاء الجرحى عشان تحسن فرص النجاة الصعبة."
-   }
-  },
-  {
-   "id": "f25d567c798e",
-   "url": "https://arstechnica.com/tech-policy/2026/10/meta-ordered-to-name-execs-who-approved-torrenting-for-ai-training/",
-   "title": "Meta tries to scapegoat staff who downloaded torrents to spare execs",
-   "date": "2026-10-20T17:40:20.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "Meta بتحاول تحط اللوم على الموظفين",
-    "summary": "شركة Meta بتحاول تطلع الموظفين اللي حملوا تورنت هما السبب عشان تحمي المدراء الكبار."
-   }
-  },
-  {
-   "id": "c84a57a97fd6",
-   "url": "https://www.microsoft.com/en-us/research/podcast/called-to-serve-tech-research-and-positive-impact-with-chris-white/",
-   "title": "Called to serve: Tech, research, and positive impact",
-   "date": "2026-10-20T16:00:00.000Z",
-   "src": "Microsoft Research",
-   "srcId": "microsoft",
-   "kind": "company",
-   "ar": {
-    "title": "أبحاث تكنولوجية لتأثير حقيقي وموجب",
-    "summary": "مدير المعامل Chris White بيتكلم في Microsoft Research عن تحديات الأبحاث اللي ليها تأثير واقعي زي تحليل بيانات الحروب ومكافحة الاتجار بالبشر."
-   }
-  },
-  {
-   "id": "fb9936745ef9",
-   "url": "https://arstechnica.com/security/2026/10/meta-muse-exposes-users-personal-and-business-secrets-when-they-share-conversations/",
-   "title": "Meta Muse exposes users' personal and business secrets when they share conversations",
-   "date": "2026-10-20T12:33:13.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "Meta Muse تكشف أسرار المستخدمين",
-    "summary": "أداة Meta Muse بتكشف الأسرار الشخصية والبزنس للمستخدمين وقت ما بيشاركوا المحادثات بتاعتهم."
-   }
-  },
-  {
-   "id": "b3fcb2e42d32",
-   "url": "https://openai.com/index/ted-taylor-restaurant",
-   "title": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
-   "date": "2026-10-20T10:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "توفير الوقت بـ ChatGPT Work",
-    "summary": "واحد صاحب امتياز لـ Schlotzsky و Cinnabon قدر يقلل وقت جرد الكاش بنسبة 94% ووفر وقت تغيير الأسعار بـ 95% باستخدام ChatGPT Work."
-   }
-  },
-  {
-   "id": "a84b6a7bee5c",
-   "url": "https://openai.com/index/terminal-x",
-   "title": "Terminal X matches senior investor judgment 88.6% with GPT-6.1",
-   "date": "2026-10-20T07:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "تقييم Terminal X مع GPT-6.1",
-    "summary": "وكيل التقييم في Terminal X بيطابق أحكام المستثمرين الكبار بنسبة 88.6% باستخدام نموذج GPT-6.1 Sol."
-   }
-  },
-  {
-   "id": "dbaa90254253",
-   "url": "https://openai.com/index/openai-to-acquire-orchestra-bio",
-   "title": "OpenAI acquires Orchestra Bio",
-   "date": "2026-10-20T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "OpenAI تستحوذ على Orchestra Bio",
-    "summary": "شركة OpenAI بتستحوذ على Orchestra Bio عشان تدخل الذكاء الاصطناعي في أبحاث وتطوير علوم الحياة وتسرع إنتاج الأدوية."
-   }
-  },
-  {
-   "id": "84cd8d44e982",
-   "url": "https://huggingface.co/blog/hf-torchtpu",
-   "title": "Hugging Face ❤️ TorchTPU: TPUs, Natively",
-   "date": "2026-10-20T00:00:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "Hugging Face ❤️ TorchTPU: دعم الـTPU أصلاً",
-    "summary": "لا توجد تفاصيل إضافية."
-   }
-  },
-  {
-   "id": "2596ff929aee",
-   "url": "https://huggingface.co/blog/anylanguagemodel-1-0",
-   "title": "AnyLanguageModel 1.0: One Year of Local Models on Apple Platforms",
-   "date": "2026-10-20T00:00:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "AnyLanguageModel 1.0: سنة من النماذج المحلية على منصات Apple",
-    "summary": "لا توجد تفاصيل إضافية."
-   }
-  },
-  {
-   "id": "3eb18e5ff7f2",
-   "url": "https://huggingface.co/blog/mps-pytorch-2-15",
-   "title": "MPS in PyTorch 2.15",
-   "date": "2026-10-20T00:00:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "MPS في PyTorch 2.15",
-    "summary": "لا توجد تفاصيل إضافية."
-   }
-  },
-  {
-   "id": "71a28de11a06",
-   "url": "https://arstechnica.com/tech-policy/2026/10/accused-openai-spy-had-folder-called-saudi-gov-docs-fbi-says/",
-   "title": "Accused OpenAI spy had folder called “Saudi Gov Docs,” FBI says",
-   "date": "2026-10-19T20:21:53.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "متهم تجسس على OpenAI يمتلك مجلد \"Saudi Gov Docs\" حسب FBI",
-    "summary": "لا توجد تفاصيل إضافية."
-   }
-  },
-  {
-   "id": "5d37bd28a169",
-   "url": "https://arstechnica.com/gaming/2026/10/ai-game-clones-are-making-indie-developers-afraid-to-show-their-work/",
-   "title": "AI game clones are making indie developers afraid to show their work",
-   "date": "2026-10-19T16:59:22.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "نسخ ألعاب الذكاء الاصطناعي تخوف مطوري الإ indie",
-    "summary": "لا توجد تفاصيل إضافية."
-   }
-  },
-  {
-   "id": "5bcc766ce19d",
-   "url": "https://engineering.fb.com/2026/10/19/ml-applications/genrecs-tokenization-transforming-ads-recommendation-at-meta-with-stable-model-vocabulary/",
-   "title": "GenRecs Tokenization: Transforming Ads Recommendation at Meta with Stable Model Vocabulary",
-   "date": "2026-10-19T16:00:47.000Z",
-   "src": "Meta Engineering",
-   "srcId": "meta",
-   "kind": "company",
-   "ar": {
-    "title": "تحديث GenRecs Tokenization في Meta",
-    "summary": "ميتا بتطور نظام ترشيح الإعلانات باستخدام الذكاء الاصطناعي ونماذج LLMs عشان تخليه أذكى وأدق بكتير."
-   }
-  },
-  {
-   "id": "5641e45c2126",
-   "url": "https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/",
-   "title": "The Thin Orchestrator: How We Made Our AI Agents More Reliable by Giving the Router Less to Do",
-   "date": "2026-10-19T15:30:37.000Z",
-   "src": "Meta Engineering",
-   "srcId": "meta",
-   "kind": "company",
-   "ar": {
-    "title": "المُنسق النحيف: تحسين موثوقية وكلاء الذكاء الاصطناعي",
-    "summary": "في Meta، تقليل دور طبقة التنسيق في أنظمة الوكلاء أدى لتحسين الكفاءة والدقة؛ الطبقة تنقل المهام وتتحقق من الموثوقية بينما الوكلاء المتخصصون يتعاملون مع التفكير المتخصص."
-   }
-  },
-  {
-   "id": "ad0fcca57292",
-   "url": "https://engineering.fb.com/2026/10/19/data-center-engineering/inside-prometheus-meta-gigawatt-scale-supercluster/",
-   "title": "Inside Prometheus: Meta’s Journey to a Gigawatt-Scale Supercluster",
-   "date": "2026-10-19T13:00:10.000Z",
-   "src": "Meta Engineering",
-   "srcId": "meta",
-   "kind": "company",
-   "ar": {
-    "title": "داخل Prometheus: رحلة Meta إلى سوبركلاستر بقدرة جيجاواط",
-    "summary": "Meta تكشف عن مرحلة أولى من سوبركلاستر Prometheus بقدرة جيجاواط، يهدف لتوسيعها إلى مليون GPU، ويستخدم تقنيات مثل التبريد السائل المغلق."
    }
   }
  ]
