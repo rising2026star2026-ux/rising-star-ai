@@ -1,0 +1,438 @@
+[
+  {
+    "check": "api:voice-tts-transcribe",
+    "ok": true,
+    "ms": 1037,
+    "notes": [
+      "transcribe 200 in 323ms",
+      "said: عندي طقم حلل جرانيت تركي عشر قطع، سعره ألف وتمنمية وخمسين جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام.",
+      "got: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ]
+  },
+  {
+    "check": "home",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 5262,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "home",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 4374,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "seller",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 4140,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "seller",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 3637,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "test-ad",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 25414,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "test-ad",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 22646,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "photo-ad",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 31422,
+    "notes": [
+      "✓ الخلفية اتشالت"
+    ],
+    "errors": [
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license\nPass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear."
+    ]
+  },
+  {
+    "check": "photo-ad",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 29209,
+    "notes": [
+      "✓ الخلفية اتشالت"
+    ],
+    "errors": [
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license\nPass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear."
+    ]
+  },
+  {
+    "check": "voice-post",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 16845,
+    "notes": [
+      "transcript: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ],
+    "errors": [
+      "requestfailed: http://localhost:3000/models?_rsc=iGAD6zesgY1rLyE5 net::ERR_ABORTED"
+    ]
+  },
+  {
+    "check": "voice-post",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 15924,
+    "notes": [
+      "transcript: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ],
+    "errors": [
+      "requestfailed: http://localhost:3000/models?_rsc=iGAD6zesgY1rLyE5 net::ERR_ABORTED"
+    ]
+  },
+  {
+    "check": "catalog",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 77710,
+    "notes": [
+      "after bg: 4 صورة ما اتشالتش خلفيتها، وفضلت زي ما هي. | ",
+      "pdf saved",
+      "page images 4"
+    ],
+    "errors": [
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-2fe",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: \u001b[0;93m2026-11-02 02:54:22.822500 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:54:22.859399 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:54:22.892099 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:54:22.912099 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:54:22.947199 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:54:22.981400 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:54:23.045400 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:54:23.062699 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:54:23.481599 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:54:23.482300 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:54:23.482699 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:54:23.483300 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:54:23.483899 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:54:23.484399 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:54:23.484799 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:54:23.485500 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3/Sub'\u001b[m",
+      "console.error: An error occurred during model execution: \"127873152\".",
+      "console.error: Inputs given to model: {input_image: Object}",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-2fe",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-2fe",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-2fe"
+    ]
+  },
+  {
+    "check": "catalog",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 72931,
+    "notes": [
+      "after bg: ما قدرناش نشيل الخلفيات دلوقتي. جرّب تاني بعد شوية. | ",
+      "pdf saved",
+      "page images 4"
+    ],
+    "errors": [
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-2fe",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: \u001b[0;93m2026-11-02 02:55:36.529599 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:55:36.563799 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:55:36.594899 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:55:36.614099 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:55:36.648399 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:55:36.681899 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:55:36.744399 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:55:36.762599 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:55:37.166199 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:55:37.166699 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:55:37.167199 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:55:37.167799 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:55:37.168399 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:55:37.168899 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:55:37.169399 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:55:37.169799 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3/Sub'\u001b[m",
+      "console.error: An error occurred during model execution: \"127873152\".",
+      "console.error: Inputs given to model: {input_image: Object}",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-2fe",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-2fe",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-2fe",
+      "console.warning: cloud cutout failed l: \"\"\n    at http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29755\n    at n (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:29789)\n    at async o (http://localhost:3000/_next/static/chunks/app/catalog/page-2feab8c25a393917.js:1:30563)\n    at async p (http://localhost:3000/_next/static/chunks/app/catalog/page-2fe"
+    ]
+  },
+  {
+    "check": "chat-pdf",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 9666,
+    "notes": [
+      "has 3000=true has 45=true has 50=true"
+    ],
+    "errors": []
+  },
+  {
+    "check": "tools-grid",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 3863,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "tools-grid",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 3886,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "projects",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 3160,
+    "notes": [],
+    "errors": []
+  },
+  {
+    "check": "tool-qr",
+    "vp": "mobile",
+    "ok": false,
+    "ms": 32158,
+    "notes": [
+      "FAILED: locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('textarea')\n"
+    ],
+    "errors": []
+  },
+  {
+    "check": "tool-calcs",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 4027,
+    "notes": [
+      "",
+      ""
+    ],
+    "errors": []
+  },
+  {
+    "check": "tool-pdf-delete",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 3715,
+    "notes": [
+      "pdf downloaded"
+    ],
+    "errors": []
+  },
+  {
+    "check": "tool-ocr",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 4177,
+    "notes": [
+      "فاتورة رقم 4521\n\nشنطة جلد طبيعي: 850 جنيه\n\nمحفظة حريمي: 320 جنيه\n\nالإجمالي: 1170 جنيه\n\nOrder No. 4521 — Thank you"
+    ],
+    "errors": []
+  },
+  {
+    "check": "remove-bg",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 92531,
+    "notes": [
+      "device failed → trying cloud button",
+      "cloud timeout",
+      "NOT removed"
+    ],
+    "errors": [
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: Error: Error (405) occurred while trying to load file: \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json\".\n    at https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751721\n    at f (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751744)\n    at async _ (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:753508)\n    at async g ",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()"
+    ]
+  },
+  {
+    "check": "remove-bg",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 140094,
+    "notes": [
+      "device failed → trying cloud button",
+      "cloud timeout",
+      "NOT removed"
+    ],
+    "errors": [
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: \u001b[0;93m2026-11-02 02:59:17.063699 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:59:17.100399 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:59:17.132899 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:59:17.151499 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:59:17.174200 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:59:17.202899 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:59:17.266000 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:59:17.283199 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:59:17.677099 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:59:17.677700 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:59:17.678099 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:59:17.678599 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:59:17.679199 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:59:17.679999 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:59:17.680499 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-02 02:59:17.680799 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3/Sub'\u001b[m",
+      "console.error: An error occurred during model execution: \"127873152\".",
+      "console.error: Inputs given to model: {input_image: Object}",
+      "console.error: 127873152"
+    ]
+  },
+  {
+    "check": "receipt",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 20801,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "receipt",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 16374,
+    "notes": [
+      "story saved"
+    ],
+    "errors": []
+  },
+  {
+    "check": "api:chat-research",
+    "ok": false,
+    "ms": 2030,
+    "notes": [
+      "status 200 search=empty sources=0 model=groq/openai/gpt-oss-120b",
+      "why: gemini-flash-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/ | gemini-flash-lite-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/ | ddg: ok but 0 resul",
+      "domains: ",
+      "مش قادر أتحقق من آخر سعر للدولار في مصر اليوم، لكن بحسب بيانات متوفرة لحد أكتوبر 2024 كان سعر الدولار الأمريكي في السوق الرسمي (البنك المركزي) حوالى 31.5 جنيه، وفي السوق الحر بيتراوح بين 32‑34 جنيه حسب البنك أو الصرافة. الأسعار دي بتتقلب يوميًا بناءً على العرض والطلب، وعوامل زي أسعار النفط، وتوقعات الفائدة الأمريكية، وأداء الجنيه المحلي.\n\n**العوامل اللي بتأثر على سعر الدولار اليومي**  \n## 1. السيا"
+    ]
+  },
+  {
+    "check": "api:chat-long-doc",
+    "ok": true,
+    "ms": 4572,
+    "notes": [
+      "status 200 x-docs=long model=gemini/gemini-flash-lite-latest chars=63361",
+      "سعر الجملة لمنتج «مصباح نور» هو 187 جنيه للقطعة بداية من الشهر القادم (تقرير.txt)."
+    ]
+  },
+  {
+    "check": "api:chat-summarize-long",
+    "ok": true,
+    "ms": 31889,
+    "notes": [
+      "status 200 x-docs=long model=gemini/gemini-flash-lite-latest covered=4/4",
+      "يتناول الملف المرفق \"guide.txt\" الدليل الشامل لآليات التسويق الرقمي وبناء المشاريع، مقسماً إلى أربعة فصول رئيسية تغطي الجمهور المستهدف، الإعلانات الممولة، صناعة المحتوى، وقياس النتائج.\n\n## الفصل الأول: اختيار الجمهور المستهدف\n**استهداف الجمهور**\nيركز هذا الفصل على كيفية تحديد وتحليل الشرائح المستهدفة بدقة لضمان وصول الرسالة التسويقية للأشخاص المهتمين حقاً بالمنتج أو الخدمة.\n\n## الفصل الثاني: الإعلانات الممولة وتكلفتها\n**إدارة الميزانيات الإعلانية**\nيشرح هذا الجزء استراتيجيات إطلاق الحملات الإعلا"
+    ]
+  },
+  {
+    "check": "api:test-ad",
+    "ok": true,
+    "ms": 2981,
+    "notes": [
+      "status 200 in 2981ms",
+      "score 66 tally {\"buy\":37,\"maybe\":42,\"skip\":21}"
+    ]
+  },
+  {
+    "check": "api:test-ad-image",
+    "ok": true,
+    "ms": 5191,
+    "notes": [
+      "status 200 in 5191ms",
+      "sawImage=true",
+      "photo=[\"الصورة كرتونية، استبدلها بصورة فوتوغرافية حقيقية للزجاجة.\",\"ضيف إضاءة وظلال طبيعية لتظهر تفاصيل الزجاجة.\",\"حط علامة مائية للماركة أو نص سعر واضح على الصورة.\"]"
+    ]
+  },
+  {
+    "check": "api:product-eye",
+    "ok": true,
+    "ms": 1679,
+    "notes": [
+      "status 200 in 1679ms",
+      "{\"name\":\"زجاجة عسل مستطيلة\",\"category\":\"مستلزمات\",\"colors\":[\"أصفر عسلي\",\"أسود\"],\"visible\":[\"غطاء مربع\",\"شريط إضاءة عمودي أفتح لوناً\"],\"scene\":\"soft beige marble countertop, warm morning window light, blurred kitchen background\",\"seen\":\"بناءً على الصورة الظاهرة:\\n\\n* **1) المنتج:** زجاجة مستطيلة ذات زوايا دائرية مع غطاء مربع.\\n* **2) الألوان والخامة:** الجسم بلون عسلي/بيج داكن مع شريط إضاءة عمودي أ"
+    ]
+  },
+  {
+    "check": "api:catalog-copy",
+    "ok": true,
+    "ms": 303,
+    "notes": [
+      "status 200 in 303ms",
+      "{\"tagline\":\"أزياءك تتكلم معانا\",\"descs\":[\"شنطة يد جلد طبيعي تحافظ على أناقتك\",\"شنطة كروس صغيرة تخليك دايمًا جاهزة\",\"محفظة حريمي بتخلي معاك كل حاجة منظمة\"]}"
+    ]
+  },
+  {
+    "check": "api:ad-pack-voice",
+    "ok": true,
+    "ms": 1566,
+    "notes": [
+      "status 200 in 1566ms",
+      "missing=[] tags=12"
+    ]
+  }
+]

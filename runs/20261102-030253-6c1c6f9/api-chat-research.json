@@ -1,0 +1,9 @@
+{
+  "ok": false,
+  "notes": [
+    "status 200 search=empty sources=0 model=groq/openai/gpt-oss-120b",
+    "why: gemini-flash-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/ | gemini-flash-lite-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/ | ddg: ok but 0 resul",
+    "domains: ",
+    "مش قادر أتحقق من آخر سعر للدولار في مصر اليوم، لكن بحسب بيانات متوفرة لحد أكتوبر 2024 كان سعر الدولار الأمريكي في السوق الرسمي (البنك المركزي) حوالى 31.5 جنيه، وفي السوق الحر بيتراوح بين 32‑34 جنيه حسب البنك أو الصرافة. الأسعار دي بتتقلب يوميًا بناءً على العرض والطلب، وعوامل زي أسعار النفط، وتوقعات الفائدة الأمريكية، وأداء الجنيه المحلي.\n\n**العوامل اللي بتأثر على سعر الدولار اليومي**  \n## 1. السيا"
+  ]
+}
