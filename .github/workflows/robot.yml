@@ -1,0 +1,107 @@
+# 🤖 روبوت فحص الموقع اليومي: بيفتح كل صفحات rising-star-ai.vercel.app ويجرّب الأدوات فعلياً،
+# وبيفتح Issue بالتقرير بالعربي (بيوصلك إيميل). النتايج والصور في فرع ci-results تحت robot/.
+# تشغيل يدوي: GitHub → Actions → robot → Run workflow
+name: robot
+on:
+  schedule:
+    - cron: "41 4 * * *" # 6:41 الصبح بتوقيت القاهرة
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "مجموعات بس: pages,tools,features,ai,outside (فاضي = الكل)"
+        default: ""
+      match:
+        description: "صفحات معيّنة بس، مثلاً /tool/qr-code,/amazon (فاضي = الكل)"
+        default: ""
+      ai_per_day:
+        description: "عدد أدوات الكتابة اللي تتجرب"
+        default: "12"
+      post_issue:
+        description: "يفتح Issue بالتقرير؟ (yes/no)"
+        default: "yes"
+permissions:
+  contents: write
+  issues: write
+concurrency:
+  group: robot
+  cancel-in-progress: false
+jobs:
+  robot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: install
+        run: |
+          mkdir -p /tmp/pw && cd /tmp/pw && npm init -y > /dev/null
+          npm i --no-audit --no-fund playwright@1.63.0 > /tmp/npm.log 2>&1 || (tail -30 /tmp/npm.log; exit 1)
+          mkdir -p "$GITHUB_WORKSPACE/node_modules"
+          ln -sfn /tmp/pw/node_modules/playwright "$GITHUB_WORKSPACE/node_modules/playwright"
+          ln -sfn /tmp/pw/node_modules/playwright-core "$GITHUB_WORKSPACE/node_modules/playwright-core"
+          # Google Chrome الحقيقي (فيه كل صيغ الفيديو والصوت زي متصفح المستخدم)؛ ولو مش موجود Chromium
+          if command -v google-chrome > /dev/null; then echo "BROWSER_CHANNEL=chrome" >> "$GITHUB_ENV"; google-chrome --version
+          else npx playwright install --with-deps chromium > /dev/null 2>&1; fi
+      - name: previous report
+        run: git fetch -q --depth 1 origin ci-results && git show origin/ci-results:robot/latest/summary.json > robot-prev.json 2>/dev/null || echo "no previous report"
+      - name: run robot
+        id: robot
+        timeout-minutes: 65
+        env:
+          BASE: https://rising-star-ai.vercel.app
+          OUT: robot-out
+          PREV: robot-prev.json
+          ONLY: ${{ inputs.only }}
+          MATCH: ${{ inputs.match }}
+          AI_PER_DAY: ${{ inputs.ai_per_day || '12' }}
+        run: node scripts/robot/run.mjs
+      - name: summary
+        if: always()
+        run: cat robot-out/report.md >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || echo "no report" >> "$GITHUB_STEP_SUMMARY"
+      - name: publish results
+        if: always()
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          rm -f robot-out/voice-sample.mp3
+          REPO="https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          D=$(TZ=Africa/Cairo date +%Y-%m-%d)
+          for i in 1 2 3; do
+            rm -rf /tmp/r
+            git clone -q --depth 1 --branch ci-results "$REPO" /tmp/r 2>/dev/null || { mkdir -p /tmp/r && git -C /tmp/r init -q && git -C /tmp/r checkout -q -b ci-results && git -C /tmp/r remote add origin "$REPO"; }
+            cd /tmp/r
+            # الفرع ده نتايج بس: Vercel ما يبنيهوش
+            [ -f vercel.json ] || printf '{ "git": { "deploymentEnabled": false } }\n' > vercel.json
+            rm -rf robot/latest && mkdir -p robot/latest robot/history
+            cp -r "$GITHUB_WORKSPACE/robot-out/." robot/latest/ 2>/dev/null
+            [ -f robot/latest/summary.json ] && cp robot/latest/summary.json "robot/history/$D.json"
+            ls -1 robot/history/*.json 2>/dev/null | sort | head -n -60 | xargs -r git rm -q
+            git add -A
+            git -c user.name=rising-star-robot -c user.email=robot@users.noreply.github.com commit -qm "robot $D" || exit 0
+            git push -q origin HEAD:ci-results && { echo "published robot/latest"; exit 0; }
+            cd "$GITHUB_WORKSPACE"; sleep 7
+          done
+      - name: post report
+        if: always() && (github.event_name == 'schedule' || inputs.post_issue != 'no')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OWNER: ${{ github.repository_owner }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh label create robot --color 5b8def --description "تقارير روبوت الفحص اليومي" 2>/dev/null || true
+          if [ -f robot-out/report.md ]; then
+            TITLE=$(cat robot-out/title.txt); cp robot-out/report.md /tmp/body.md
+          else
+            TITLE="🤖 الروبوت ما كملش الفحص النهارده"
+            printf 'الروبوت نفسه وقع قبل ما يخلّص التقرير (مش شرط يكون الموقع بايظ).\n\nالتفاصيل: %s\n' "$RUN_URL" > /tmp/body.md
+          fi
+          printf '\n\n---\n[تفاصيل التشغيلة](%s)\n' "$RUN_URL" >> /tmp/body.md
+          # لو فيه حاجة بايظة، نعمل منشن لصاحب الموقع عشان الإيميل يوصل أكيد
+          case "$TITLE" in *"❌"*|*"ما كملش"*) printf '\n@%s\n' "$OWNER" >> /tmp/body.md ;; esac
+          OLD=$(gh issue list --label robot --state open --json number --jq '.[].number')
+          URL=$(gh issue create --title "$TITLE" --body-file /tmp/body.md --label robot)
+          echo "$URL"
+          for n in $OLD; do gh issue close "$n" --comment "فيه تقرير أحدث: $URL" > /dev/null; done
