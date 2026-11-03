@@ -1,34 +1,372 @@
 {
- "updated": "2026-11-03T05:19:41.793Z",
+ "updated": "2026-11-03T17:21:34.622Z",
  "providers": [
   "groq",
   "openrouter",
   "gemini"
  ],
  "used": {
-  "groq": 5,
-  "gemini": 4
+  "groq": 8,
+  "gemini": 1
  },
  "feeds": {
-  "openai": "ok 76",
-  "deepmind": "ok 10",
+  "openai": "ok 77",
+  "apple": "ok 10",
+  "aws": "ok 20",
   "verge": "ok 10",
   "techcrunch": "ok 20",
-  "nvidia": "ok 18",
-  "huggingface": "ok 23",
+  "huggingface": "ok 24",
   "arstechnica": "ok 20",
+  "deepmind": "ok 11",
+  "nvidia": "ok 18",
   "meta": "ok 9",
   "marktechpost": "ok 10",
   "google-ai": "ok 5",
-  "aws": "ok 20",
   "google-research": "ok 10",
-  "apple": "ok 10",
-  "microsoft": "ok 9",
+  "techwd": "ok 2",
+  "microsoft": "ok 10",
   "aitnews": "FAIL HTTP 403",
-  "venturebeat": "FAIL HTTP 429",
-  "techwd": "FAIL HTTP 526"
+  "venturebeat": "FAIL HTTP 429"
  },
  "items": [
+  {
+   "id": "a55665cf4895",
+   "url": "https://huggingface.co/blog/allenai/statebench",
+   "title": "StateBench: Testing how language models track state changes over long documents",
+   "date": "2026-11-03T17:15:21.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": {
+    "title": "StateBench: اختبار تتبع النماذج اللغوية لتغيّر الحالة عبر مستندات طويلة",
+    "summary": "StateBench بيقيس قدرة نماذج اللغة على متابعة تغيّر الحالة في نصوص طويلة."
+   }
+  },
+  {
+   "id": "7edcdb24a88e",
+   "url": "https://www.microsoft.com/en-us/research/podcast/learn-the-rules-the-hacker-mindset/",
+   "title": "Learn the rules: The hacker mindset",
+   "date": "2026-11-03T17:14:38.000Z",
+   "src": "Microsoft Research",
+   "srcId": "microsoft",
+   "kind": "company",
+   "ar": {
+    "title": "دروس من عقلية الهاكر",
+    "summary": "Mike Walker من Microsoft Research بيشارك خبرته في ثقافة الهاكر والأمن السيبراني والذكاء الاصطناعي، وبيأكد إن الفضول والحكم السليم والمرونة مهمين لحل المشكلات الصعبة."
+   }
+  },
+  {
+   "id": "2437af63b2f8",
+   "url": "https://techcrunch.com/2026/11/03/anthropic-is-still-grappling-with-the-economics-of-compute/",
+   "title": "Anthropic is still grappling with the economics of compute",
+   "date": "2026-11-03T17:07:01.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Anthropic تواجه صعوبات في اقتصاد الحوسبة",
+    "summary": "رغم إن هوامش الحوسبة عند Anthropic المفروض تتحسن، إلا إن الوضع بيزداد سوءًا."
+   }
+  },
+  {
+   "id": "aa38fd9221c6",
+   "url": "https://www.tech-wd.com/wd/2026/11/03/%d8%b3%d8%a7%d9%85%d8%b3%d9%88%d9%86%d8%ac-%d8%aa%d8%b7%d8%b1%d8%ad-%d9%86%d8%b8%d8%a7%d8%b1%d8%a7%d8%aa-intelligent-eyewear-%d9%81%d9%8a-%d8%af%d9%8a%d8%b3%d9%85%d8%a8%d8%b1-%d8%a8%d9%83%d9%88%d8%b1/",
+   "title": "سامسونج تطرح نظارات Intelligent Eyewear في ديسمبر بكوريا وأمريكا بحسب تقرير",
+   "date": "2026-11-03T17:04:09.000Z",
+   "src": "تك وورلد",
+   "srcId": "techwd",
+   "kind": "arabic",
+   "ar": {
+    "title": "سامسونج تطرح نظارات Intelligent Eyewear في ديسمبر بكوريا وأمريكا بحسب تقرير",
+    "summary": ""
+   }
+  },
+  {
+   "id": "7b04a568c5ad",
+   "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
+   "title": "Agentic cheminformatics with Google Antigravity",
+   "date": "2026-11-03T17:01:49.000Z",
+   "src": "Google DeepMind",
+   "srcId": "deepmind",
+   "kind": "company",
+   "ar": {
+    "title": "Google Antigravity في الكيمياء الحاسوبية",
+    "summary": "Google Antigravity مع مهارات Cheminformatics بيساعدوا في تسريع اكتشاف الأدوية، والبحث عن مركبات، واقتراح ماكروسايكلات صلبة جديدة."
+   }
+  },
+  {
+   "id": "0eaf3e3a7544",
+   "url": "https://www.theverge.com/tech/1025411/google-turn-off-search-ai-features",
+   "title": "Google is entirely disabling Search in schools that don’t want AI",
+   "date": "2026-11-03T17:01:26.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "Google توقف البحث في المدارس اللي ترفض الذكاء الاصطناعي",
+    "summary": "Google هتلغي خدمة Search بالكامل للمدارس اللي مش عايزة ميزات الذكاء الاصطناعي، وكمان هتوقف Gemini وGemini Notebook وGemini in Classroom لحسابات طلاب K‑12."
+   }
+  },
+  {
+   "id": "072a27666339",
+   "url": "https://engineering.fb.com/2026/11/03/ml-applications/f3-lightning-how-meta-accelerates-ads-ml-features-to-production/",
+   "title": "F3 Lightning: How Meta Accelerates Ads ML Features to Production at Scale",
+   "date": "2026-11-03T17:00:35.000Z",
+   "src": "Meta Engineering",
+   "srcId": "meta",
+   "kind": "company",
+   "ar": {
+    "title": "F3 Lightning: تسريع ميزات إعلانات Meta للانتاج",
+    "summary": "Facebook Feature Framework (F3) هو إطار Meta لتأليف وتجميع وتقديم ميزات التعلم الآلي لإعلانات ranking، وبيقلل تكلفة التنفيذ عن طريق دمج كل الميزات في رسم بياني موحد."
+   }
+  },
+  {
+   "id": "85827c831b0b",
+   "url": "https://www.theverge.com/policy/1020640/midterm-elections-2026-all-the-news",
+   "title": "Midterm elections 2026: all the news",
+   "date": "2026-11-03T16:57:17.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "الانتخابات النصفية 2026 وتأثيرها على التقنية",
+    "summary": "الانتخابات النصفية 2026 هتحدد مدى سلطة الرئيس ترامب في السنتين الأخيرتين، وهتظهر أولويات الناخبين قبل انتخابات 2028، مع تركيز على قضايا التكلفة اللي بتأثر على قطاع التكنولوجيا."
+   }
+  },
+  {
+   "id": "cf714de9cceb",
+   "url": "https://aws.amazon.com/blogs/machine-learning/bring-structured-and-unstructured-data-together-with-amazon-quick/",
+   "title": "Bring structured and unstructured data together with Amazon Quick",
+   "date": "2026-11-03T16:49:29.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "Amazon Quick يجمع البيانات المهيكلة وغير المهيكلة",
+    "summary": "Amazon Quick بيوحد البيانات المهيكلة وغير المهيكلة في تجربة واحدة، بيوصل S3 كقاعدة معرفة، ويغني البيانات، ويبني Space، ويخلق شات بوت يجاوب على أسئلة الأعمال عبر واجهة محادثة."
+   }
+  },
+  {
+   "id": "3e5d35744daf",
+   "url": "https://aws.amazon.com/blogs/machine-learning/servicenow-on-behalf-of-token-exchange-with-bedrock-agentcore-gateway/",
+   "title": "ServiceNow on-behalf-of token exchange with Bedrock AgentCore Gateway",
+   "date": "2026-11-03T16:47:40.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "تبادل توكن OBO بين ServiceNow وBedrock",
+    "summary": "اتعلم إزاي تضبط Amazon Bedrock AgentCore Gateway لتبادل توكن OBO مع Microsoft Entra ID، بحيث يقدر الوكيل الذكي ينادي API بتاع ServiceNow وهو محافظ على هوية المستخدم."
+   }
+  },
+  {
+   "id": "8564eb547f9a",
+   "url": "https://aws.amazon.com/blogs/machine-learning/how-gen-digital-built-norton-revamps-ai-curated-news-engine-with-amazon-bedrock-agentcore-web-search/",
+   "title": "How Gen Digital built Norton Revamp’s AI-curated News Engine with Amazon Bedrock AgentCore Web Search",
+   "date": "2026-11-03T16:43:20.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "نظام أخبار AI لمنصة Norton Revamp",
+    "summary": "Gen Digital استخدمت Amazon Bedrock AgentCore لتشغيل محرك أخبار AI بيستند للبحث على الويب، بيوفر اقتراحات محتوى موثقة، وتحديد أهداف، وتغذية أخبار، كل ده من غير خروج بيانات وضمان خصوصية مستوى Norton."
+   }
+  },
+  {
+   "id": "462c228cc8ba",
+   "url": "https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-with-edb-postgres-ai-and-amazon-bedrock-agentcore/",
+   "title": "Build a semantic layer for agentic AI with EDB Postgres AI and Amazon Bedrock AgentCore",
+   "date": "2026-11-03T16:41:13.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "طبقة دلالية للذكاء الوكيل باستخدام EDB Postgres AI",
+    "summary": "اتعلم إزاي تبني طبقة دلالية محكومة للذكاء الوكيل داخل EDB Postgres AI وتستدعيها من Strands Agents على Amazon Bedrock AgentCore، مع التحكم في الوصول عبر GRANT وأمان الصف."
+   }
+  },
+  {
+   "id": "4ed75b5aadb5",
+   "url": "https://aws.amazon.com/blogs/machine-learning/building-ultra-low-latency-voice-ai-applications-on-aws/",
+   "title": "Building ultra-low-latency voice AI applications on AWS",
+   "date": "2026-11-03T16:40:54.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "تطبيقات صوتية AI بزمن استجابة تحت 100 مللي ثانية",
+    "summary": "Cartesia، شريك AWS، بيستخدم نماذج State Space ومرافق AWS لتقديم تحويل نص‑صوت وصوت‑نص بأقل من 100 ms على نطاق عالمي، وبيوضح إزاي تنشر نموذج Sonic على SageMaker أو على EC2 GPU."
+   }
+  },
+  {
+   "id": "bc4177032a04",
+   "url": "https://huggingface.co/blog/ibm-research/palette-deck-building",
+   "title": "Palette: teaching a small model to build decks in your design language",
+   "date": "2026-11-03T16:35:36.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": {
+    "title": "Palette: تدريب نموذج صغير لتصميم الشرائح",
+    "summary": ""
+   }
+  },
+  {
+   "id": "8de1952e3884",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-india-based-inference-for-kimi-k3-on-amazon-bedrock/",
+   "title": "Introducing India-based inference for Kimi K3 on Amazon Bedrock",
+   "date": "2026-11-03T16:32:54.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "تشغيل Kimi K3 داخل الهند",
+    "summary": "Amazon Bedrock بقى بيدعم استدلال Kimi K3 داخل الهند، مع معالجة البيانات في مناطق مومباي وحيدر أباد، والبوست يوضح خيارات الاستدلال عبر المناطق وكود مثال لقراءة مستندات باللغات الهندية."
+   }
+  },
+  {
+   "id": "410d5c941f71",
+   "url": "https://techcrunch.com/2026/11/03/google-will-let-schools-disable-its-ai-tools-but-not-without-sacrificing-search/",
+   "title": "Google will let schools disable its AI tools, but not without sacrificing Search",
+   "date": "2026-11-03T16:30:34.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "جوجل تحرم المدارس من AI وتفقدها البحث",
+    "summary": "لو المدارس تقفل أدوات AI، مش هتقدر تستخدم Google Search لأن ميزات AI دلوقتي مدمجة في محرك البحث."
+   }
+  },
+  {
+   "id": "32791f69eb2c",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1025242/openai-quietly-renames-data-centers-as-compute-campuses",
+   "title": "OpenAI is quietly renaming data centers ‘compute campuses’",
+   "date": "2026-11-03T16:08:35.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "OpenAI تسمي مراكز البيانات بـ \"حُكم الحوسبة\"",
+    "summary": "OpenAI غير اسم مراكز البيانات إلى \"compute campuses\" في محاولة لتقليل الجدل حول مراكز البيانات الضوضائية والمستهلكة للموارد."
+   }
+  },
+  {
+   "id": "c90cd6cc0c02",
+   "url": "https://blogs.nvidia.com/blog/ai-semiconductor-fabs/",
+   "title": "AI Is Changing How Semiconductor Fabs Work — and Engineers Are Moving Faster Because of It",
+   "date": "2026-11-03T16:00:45.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": {
+    "title": "الذكاء الاصطناعي يسرّع عمل مصانع أشباه الموصلات",
+    "summary": "مع ارتفاع طلب الرقائق المتقدمة وتعقيد عمليات تصنيعها، بيقل الهامش للخطأ. الذكاء الاصطناعي بيساعد المهندسين يتوقعوا سلوك التغييرات، تفاعل المواد، وتحديد أسباب العيوب بسرعة."
+   }
+  },
+  {
+   "id": "dde5f3bd6293",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1025245/apple-earnings-q4-ai",
+   "title": "Apple is all in on AI — its own and everyone else’s",
+   "date": "2026-11-03T15:52:53.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "آبل تستثمر في الذكاء الاصطناعي وتحقق أعلى إيرادات",
+    "summary": "النتائج الأخيرة لآبل بتظهر إن الشركة استفادت من موجة الذكاء الاصطناعي من غير ما تصرف كتير على البنية التحتية. السنة المالية دي كانت الأفضل على الإطلاق في الإيرادات وربحية السهم، مع نمو قوي في مبيعات iPhone وMac."
+   }
+  },
+  {
+   "id": "f9c0c715eee2",
+   "url": "https://techcrunch.com/2026/11/03/apple-restricts-dating-apps-and-ai-companions-to-users-18-and-up/",
+   "title": "Apple restricts dating apps and AI companions to users 18 and up",
+   "date": "2026-11-03T15:38:27.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "آبل تحصر تطبيقات المواعدة والرفقاء الذكيين على 18+",
+    "summary": "قواعد جديدة في App Store بتطلب تصنيف 18+ للتطبيقات اللي بتقدّم محتوى رومانسي أو جنسي، سواء كانت تطبيقات مواعدة أو رفقاء ذكاء اصطناعي."
+   }
+  },
+  {
+   "id": "954137d8d070",
+   "url": "https://techcrunch.com/2026/11/03/the-techcrunch-founder-summit-agenda-is-only-half-the-reason-to-be-in-boston-on-nov-4/",
+   "title": "The TechCrunch Founder Summit agenda is only half the reason to be in Boston on Nov. 4",
+   "date": "2026-11-03T14:30:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "قمة TechCrunch Founder في بوسطن يوم 4 نوفمبر",
+    "summary": "الفعالية هتجمع مؤسسين ومستثمرين في SoWa Power Station لتبادل رؤى عملية وتوسيع شبكة العلاقات. احجز تذكرتك قبل ما الأسعار ترتفع عند الباب."
+   }
+  },
+  {
+   "id": "2b376a551173",
+   "url": "https://techcrunch.com/2026/11/03/tomorrow-techcrunch-founder-summit-takes-over-boston-and-when-pass-rates-increase/",
+   "title": "Tomorrow: TechCrunch Founder Summit takes over Boston and when pass rates increase",
+   "date": "2026-11-03T14:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "خصم على تذاكر قمة TechCrunch Founder غداً",
+    "summary": "اللي يشتري تذكرة قبل الساعة 9 صباحًا بتوقيت شرق أمريكا غدًا هيستفيد بخصم يصل لـ100 دولار وتذكرة مجانية تانية."
+   }
+  },
+  {
+   "id": "08b710f1e780",
+   "url": "https://openai.com/index/heimstaden",
+   "title": "Heimstaden is changing residential real estate management with AI",
+   "date": "2026-11-03T08:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "Heimstaden تستخدم ChatGPT Enterprise لتطوير إدارة العقارات",
+    "summary": "الشركة الأوروبية بتستغل أدوات OpenAI زي ChatGPT Enterprise وCodex لتقليل التكاليف وتمكين الموظفين في إدارة المساكن عبر أوروبا."
+   }
+  },
+  {
+   "id": "0e5b1d74afc9",
+   "url": "https://techcrunch.com/2026/11/02/apple-watchs-ai-features-for-rewinding-and-recapping-conversations-begin-beta-testing/",
+   "title": "Apple Watch’s AI features for rewinding and recapping conversations begin beta testing",
+   "date": "2026-11-03T07:20:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "ميزة Audio Intelligence في Apple Watch تدخل مرحلة التجربة",
+    "summary": "الوظيفة الجديدة بتساعد المستخدمين على استرجاع الكلام وتلخيص المحادثات، وده متاح دلوقتي في نسخة تجريبية."
+   }
+  },
+  {
+   "id": "928e7584e6cd",
+   "url": "https://blogs.nvidia.com/blog/cities-physical-agentic-ai-applications/",
+   "title": "Cities Worldwide Build and Scale AI Services With NVIDIA Physical and Agentic AI",
+   "date": "2026-11-03T07:00:12.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": {
+    "title": "المدن تستخدم AI الفيزيائي والوكيل لتطوير الخدمات",
+    "summary": "المدن بتنتج بيانات هائلة من الكاميرات والحساسات، والذكاء الاصطناعي الفيزيائي والوكيل بيساعدوا على تحويلها لإجراءات عملية زي التوأم الرقمي وتطبيقات الرؤية والخدمات."
+   }
+  },
+  {
+   "id": "ab3480bae6a3",
+   "url": "https://www.marktechpost.com/2026/11/02/openai-pando-git-backend-monorepo/",
+   "title": "OpenAI Introduces Pando: A Git Backend That Cuts Median Push Latency ~80%",
+   "date": "2026-11-03T05:51:06.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "OpenAI تطلق Pando لتقليل زمن الدفع في Git",
+    "summary": "OpenAI بنى Pando، نظام خلفي متوافق مع Git للـ monorepo، بيقلل زمن الدفع المتوسط حوالي 80% وبيتعامل مع الفروع بشكل مستقل، وبيوصل تقريبًا بيتابايت من بيانات Git يوميًا."
+   }
+  },
   {
    "id": "4c7d73c3037d",
    "url": "https://techcrunch.com/2026/11/02/google-takes-dreambeans-to-india-in-bid-to-bring-ai-generated-personal-stories-to-the-masses/",
@@ -93,6 +431,16 @@
     "title": "غاري تان من Y Combinator يصرف 200 ألف دولار على توكنات AI",
     "summary": "غاري تان قال إنه بيقضي تقريبًا 200 ألف دولار في السنة على توكنات الذكاء الاصطناعي، وبيعاني من \"سيبر سيكوزيس\" بسبب شغفه بالوكيل."
    }
+  },
+  {
+   "id": "fec0e46ceba4",
+   "url": "https://huggingface.co/blog/transformers-mic",
+   "title": "Transformers Model Integration Contracts",
+   "date": "2026-11-03T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
   },
   {
    "id": "dc6c7ef2ed74",
@@ -3836,357 +4184,6 @@
    "ar": {
     "title": "طرق جديدة لتخصيص النماذج مع SageMaker AI من غير وجع دماغ الـ GPUs",
     "summary": "خدمة SageMaker AI بقت توفر جلسات تدريب سيرفرلس عشان تقدر تعمل تخصيص للموديلات والـ GPUs بتدار لوحدها بالكامل."
-   }
-  },
-  {
-   "id": "df383ee81b1c",
-   "url": "https://aws.amazon.com/blogs/machine-learning/write-your-own-training-loop-without-managing-gpus-with-amazon-sagemaker-training-sessions/",
-   "title": "Write your own training loop — without managing GPUs — with Amazon SageMaker training session APIs",
-   "date": "2026-10-22T18:00:01.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "اكتب حلقة التدريب الخاصة بيك مع Amazon SageMaker من غير ما تشيل هم الـ GPUs",
-    "summary": "APIs تدريب SageMaker AI بتخليك تكتب كود التدريب بتاع الـ LLM براحتك بلغة بايثون، وهي بتتولى تشغيل وإدارة الـ GPUs."
-   }
-  },
-  {
-   "id": "353395321c92",
-   "url": "https://aws.amazon.com/blogs/machine-learning/deploy-ai-in-a-hipaa-eligible-environment-with-amazon-quick/",
-   "title": "Deploy AI in a HIPAA-eligible environment with Amazon Quick",
-   "date": "2026-10-22T17:48:22.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "شغل الذكاء الاصطناعي في بيئة متوافقة مع HIPAA باستخدام Amazon Quick",
-    "summary": "المقال بيشرح إزاي تستخدم خدمة Amazon Quick لتشغيل وكلاء ذكاء اصطناعي متوافقين مع معايير الصحة والبيانات الحساسة HIPAA."
-   }
-  },
-  {
-   "id": "f0c8337af231",
-   "url": "https://aws.amazon.com/blogs/machine-learning/stream-low-latency-speech-from-ai-agents-using-kokoro-tts-on-amazon-sagemaker-ai/",
-   "title": "Stream low-latency speech from AI agents using Kokoro TTS on Amazon SageMaker AI",
-   "date": "2026-10-22T17:45:58.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "تشغيل صوت منخفض التأخير مع Kokoro TTS على SageMaker",
-    "summary": "المقال يوضح إزاي نقدر نبث كل جملة من رد الوكيل الصوتي مباشرة لنموذج Kokoro‑82M على Amazon SageMaker AI، ونوصل الصوت للمتصفح عبر Server‑Sent Events أو بروتوكول ثنائي موحد."
-   }
-  },
-  {
-   "id": "529344d07694",
-   "url": "https://aws.amazon.com/blogs/machine-learning/stop-guessing-auto-scaling-targets-for-tts-on-amazon-sagemaker-ai/",
-   "title": "Stop guessing auto scaling targets for TTS on Amazon SageMaker AI",
-   "date": "2026-10-22T16:30:06.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "تحديد أوتوسكاليينغ لتقنيات TTS على SageMaker",
-    "summary": "المنشور بيشرح إزاي ينشروا نموذج Kokoro‑82M كحاوية مخصصة على Amazon SageMaker AI ويستخلصوا سياسة أوتوسكاليينغ دقيقة من قياسين Q_max و T_total بدل التخمين."
-   }
-  },
-  {
-   "id": "03f220919b75",
-   "url": "https://aws.amazon.com/blogs/machine-learning/how-rescale-built-an-ai-triage-agent-with-strands-agents-and-ai-dlc/",
-   "title": "How Rescale built an AI triage agent with Strands Agents and AI-DLC",
-   "date": "2026-10-22T16:25:57.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "Rescale يبني وكيل تصنيف اختبار بالذكاء الاصطناعي",
-    "summary": "Rescale استخدمت إطار AI‑DLC على AWS مع Strands Agents وAmazon Bedrock لتطوير وكيل تصنيف اختبار ذكي في أسابيع، وبيوضح إزاي بيطبقوا المنهجية دي على باقي فرق الهندسة."
-   }
-  },
-  {
-   "id": "ef05d9c57c78",
-   "url": "https://www.microsoft.com/en-us/research/blog/flint-interactive-a-language-for-creating-interactive-data-visualizations/",
-   "title": "Flint-interactive: A language for creating interactive data visualizations",
-   "date": "2026-10-22T16:00:00.000Z",
-   "src": "Microsoft Research",
-   "srcId": "microsoft",
-   "kind": "company",
-   "ar": {
-    "title": "Flint‑interactive: لغة للرسومات التفاعلية",
-    "summary": "Flint‑interactive بيدي الوكلاء الذكاء الاصطناعي لغة لإنشاء تصورات تفاعلية؛ تقدر تضغط على المخطط، تصفي البيانات، وتبرز المحتوى المرتبط لتستكشف أكتر من اللي المؤلف حدده."
-   }
-  },
-  {
-   "id": "c625905b3719",
-   "url": "https://arstechnica.com/security/2026/10/hackers-got-a-four-day-head-start-on-epic-php2shell-vulnerability/",
-   "title": "Hackers got a four-day head start on epic PHP2Shell vulnerability",
-   "date": "2026-10-22T15:25:02.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "قراصنة استغلوا ثغرة PHP2Shell قبل الكشف",
-    "summary": "القراصنة كانوا بيستكشفوا الثغرة الأمنية PHP2Shell قبل ما المدافعين يتعرفوا عليها، يعني حصلوا على أربع أيام من الأفضلية."
-   }
-  },
-  {
-   "id": "06769efcf6f4",
-   "url": "https://blogs.nvidia.com/blog/minerva-platform-infrastructure/",
-   "title": "NVIDIA Unveils Minerva to Bring End-to-End Observability for AI Factories",
-   "date": "2026-10-22T15:00:02.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "NVIDIA تطلق Minerva لمراقبة مصانع الذكاء الاصطناعي",
-    "summary": "Minerva منصة AIOps من NVIDIA بتجمع بيانات التليمتري من البنية التحتية وحملات الذكاء الاصطناعي، وتستخدم نماذج AI مخصصة لتحويلها لتنبيهات سريعة تساعد على اكتشاف المشكلات مبكراً."
-   }
-  },
-  {
-   "id": "e66e9796ba6b",
-   "url": "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/",
-   "title": "Beyond tree cover: mapping the world’s forest types",
-   "date": "2026-10-22T14:30:24.000Z",
-   "src": "Google DeepMind",
-   "srcId": "deepmind",
-   "kind": "company",
-   "ar": {
-    "title": "خريطة عالمية لأنواع الغابات كل 10 أمتار",
-    "summary": "تم إنشاء خريطة عالمية تصنف كل قطعة أرض بمساحة 10 أمتار إلى نوع غابة مميز، لتوفير رؤية دقيقة لتوزيع الغابات."
-   }
-  },
-  {
-   "id": "0d155a8c6750",
-   "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-call-of-duty-modern-warfare-4/",
-   "title": "Cloud Deployment Incoming: ‘Call of Duty: Modern Warfare 4’ Arrives on GeForce NOW",
-   "date": "2026-10-22T13:00:20.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "Call of Duty: Modern Warfare 4 على GeForce NOW",
-    "summary": "اللعبة هتنزل على منصة GeForce NOW يوم الإطلاق، مع حملة جديدة، وضع متعدد اللاعبين، ووضع DMZ، وكمان أداء RTX 5080 للعضويات الـ Ultimate مع دعم تتبع الأشعة."
-   }
-  },
-  {
-   "id": "5d118fadbe79",
-   "url": "https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1",
-   "title": "Ensemble forecasting with IBM Granite time-series models",
-   "date": "2026-10-22T07:51:31.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "توقعات جماعية بنماذج IBM Granite للسلاسل الزمنية",
-    "summary": "الخبر بيتكلم عن توقعات جماعية باستخدام نماذج IBM Granite للسلاسل الزمنية."
-   }
-  },
-  {
-   "id": "63c31ca523f9",
-   "url": "https://openai.com/index/forward-deployed-engineering-means",
-   "title": "What FDE means at OpenAI",
-   "date": "2026-10-22T06:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "معنى FDE في OpenAI",
-    "summary": "FDE هو اختصار لـ Forward Deployed Engineering في OpenAI، وهو دور بيهندس حلول الذكاء الاصطناعي مباشرةً في الميدان."
-   }
-  },
-  {
-   "id": "8eb5c126f8cf",
-   "url": "https://blogs.nvidia.com/blog/european-financial-services-organizations-open-models-proprietary-intelligence/",
-   "title": "Leading European Financial Services Organizations Embrace Open Models to Build Proprietary Intelligence",
-   "date": "2026-10-22T05:00:56.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "المؤسسات المالية الأوروبية تتبنى نماذج مفتوحة للذكاء",
-    "summary": "في GTC Berlin، بنوك وشركات دفع ومزودي بيانات مالية بيظهروا إزاي بيبنوا ذكاء على مستوى الإنتاج باستخدام حوسبة NVIDIA المسرّعة ونماذج وزن مفتوحة على بنية تحتية خاصة بيهم، مثال Revolut اللي بيعيد بناء تكنولوجياه على نموذج PRAGMA."
-   }
-  },
-  {
-   "id": "381130e24d54",
-   "url": "https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models/",
-   "title": "NVIDIA Cosmos Opens New Tools to Train, Evaluate and Deploy World Models",
-   "date": "2026-10-22T05:00:27.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "NVIDIA Cosmos يضيف أدوات لتدريب نماذج العالم",
-    "summary": "NVIDIA وسّعت منصة Cosmos بأدوات تدريب جديدة، ونقاط فحص محاكاة، وقوالب Cosmos Data Factory، لتسهيل بناء نماذج عالم تساعد الأنظمة الذكية على فهم ومحاكاة الواقع."
-   }
-  },
-  {
-   "id": "761a1716cf64",
-   "url": "https://blogs.nvidia.com/blog/dsx-power/",
-   "title": "How Companies Are Using NVIDIA DSX to Break the Power Bottleneck",
-   "date": "2026-10-22T05:00:25.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "الشركات تستخدم NVIDIA DSX لتجاوز عنق الزجاجة الكهربائي",
-    "summary": "شركات حول العالم بتستفيد من منصة NVIDIA DSX AI Factory لتخطيط ومحاكاة وتشغيل الشبكة ومصنع الذكاء كمنظومة واحدة، لأن الطاقة بقت أكبر عائق في البنية التحتية، مع استثمارات تتجاوز 300 مليار دولار."
-   }
-  },
-  {
-   "id": "231615289514",
-   "url": "https://blogs.nvidia.com/blog/european-retail-open-models-robotics/",
-   "title": "NVIDIA Transforms European Retail, From Digital Discovery to Physical Operations",
-   "date": "2026-10-22T05:00:23.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "NVIDIA تحول التجزئة الأوروبية بالذكاء المفتوح",
-    "summary": "تجار التجزئة في أوروبا بيستخدموا نماذج مفتوحة وذكاء مادي في حالات زي تقليل تكلفة الاستدلال 90% على منصة تجارة، أو محاكاة أساطيل روبوتات في مراكز التوزيع باستخدام التوأم الرقمي."
-   }
-  },
-  {
-   "id": "6d8a31a2427f",
-   "url": "https://blogs.nvidia.com/blog/europe-earth-2-open-models-weather-climate-prediction/",
-   "title": "Pioneers Across Europe Deploy NVIDIA Earth-2 Open Models to Power Real-World Weather and Climate Prediction",
-   "date": "2026-10-22T05:00:19.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "موديلات NVIDIA Earth-2 لتحسين توقعات الطقس",
-    "summary": "جهات أوروبية بتعتمد على موديلات NVIDIA Earth-2 المفتوحة عشان تعمل توقعات دقيقة للطقس والمناخ تفيد قطاعات زي الطاقة والتأمين."
-   }
-  },
-  {
-   "id": "2d9cc8be346c",
-   "url": "https://blogs.nvidia.com/blog/european-public-sector-open-models/",
-   "title": "NVIDIA Open Models Power a New Wave of European Public Sector Projects",
-   "date": "2026-10-22T05:00:02.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "نماذج NVIDIA المفتوحة تدعم مشاريع القطاع العام الأوروبي",
-    "summary": "الحكومات الأوروبية بتستفيد من نماذج مفتوحة لتقديم خدمات عامة مع الحفاظ على البيانات الحساسة، حيث يمكنهم تعديل النماذج للغات المحلية وتشغيلها على بنية تحتية خاصة مع تطبيق ضوابط أمان."
-   }
-  },
-  {
-   "id": "ba6fa07d677a",
-   "url": "https://openai.com/index/uber-chatgpt-work-rollout",
-   "title": "Uber brings ChatGPT Work to all employees with OpenAI",
-   "date": "2026-10-22T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "أوبر توزع ChatGPT Work على 30 ألف موظف",
-    "summary": "أوبر بدأت تنشر أداة ChatGPT Work على أكتر من 30,000 موظف عشان تساعد الفرق في البحث، تحليل البيانات، إعداد العروض، وإنجاز سير العمل المعقد."
-   }
-  },
-  {
-   "id": "a872764d5ef1",
-   "url": "https://aws.amazon.com/blogs/machine-learning/securing-quick-access-from-corporate-networks-with-aws-privatelink/",
-   "title": "Securing Quick access from corporate networks with AWS PrivateLink",
-   "date": "2026-10-21T23:38:38.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "الاتصال بـ Quick عبر AWS PrivateLink",
-    "summary": "الدليل بيشرح إزاي تربط مصادر البيانات داخل الشركة بـ Amazon Quick بشكل خاص باستخدام AWS PrivateLink، مع الحفاظ على حركة التحليل بعيد عن الإنترنت العام وتطبيق سياسات الوصول."
-   }
-  },
-  {
-   "id": "2ed22a61b2f1",
-   "url": "https://openai.com/index/broad-access-through-consistent-standards",
-   "title": "Broad access through consistent standards",
-   "date": "2026-10-21T21:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "معايير موحدة للوصول الآمن لـ OpenAI",
-    "summary": "OpenAI بتشتغل مع شركاء التوزيع لتطبيق ضوابط أمان موحدة، وتدعم الوصول المسؤول وتوضح سياسات الاستخدام."
-   }
-  },
-  {
-   "id": "140d853f0e3f",
-   "url": "https://arstechnica.com/culture/2026/10/the-new-human-crafted-apple-music-brand-matters-in-an-ai-world/",
-   "title": "The new human-crafted Apple Music brand matters in an AI world",
-   "date": "2026-10-21T19:44:40.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "العلامة البشرية لـ Apple Music في زمن الذكاء الاصطناعي",
-    "summary": "في عالم مليان محتوى AI، إبراز اللمسة البشرية في Apple Music بيدل على أهمية الإبداع البشري."
-   }
-  },
-  {
-   "id": "53db5cc10927",
-   "url": "https://arstechnica.com/ai/2026/10/openais-latest-ai-models-are-coming-to-google-cloud-and-antigravity/",
-   "title": "OpenAI's latest AI models are coming to Google Cloud and Antigravity",
-   "date": "2026-10-21T18:51:42.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "نماذج OpenAI الجديدة على Google Cloud",
-    "summary": "Google Cloud هتنشر نماذج GPT 6.1 Astra، Sol، وLuna خلال الأسابيع الجاية."
-   }
-  },
-  {
-   "id": "7104bc51c295",
-   "url": "https://huggingface.co/blog/nvidia/kumo-relational",
-   "title": "NVIDIA Kumo Relational Outperforms Supervised Machine Learning on Relational Data, No Training Required",
-   "date": "2026-10-21T18:26:30.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "NVIDIA Kumo Relational يتفوق على التعلم الخاضع للإشراف",
-    "summary": ""
-   }
-  },
-  {
-   "id": "5cbd98ec79a6",
-   "url": "https://arstechnica.com/tech-policy/2026/10/judge-rejects-trumps-wild-claim-epa-can-dismiss-data-center-pollution-lawsuits/",
-   "title": "Judge rejects Trump’s wild claim EPA can dismiss data center pollution lawsuits",
-   "date": "2026-10-21T18:20:40.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "القاضي يرفض ادعاء ترامب بإن EPA تقدر تلغي دعاوى التلوث",
-    "summary": "المحكمة قررت إن EPA ما تقدرش تلغي دعوى تلوث مراكز البيانات اللي قدمتها SpaceXAI لوحدها."
-   }
-  },
-  {
-   "id": "354f89a6c7db",
-   "url": "https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization",
-   "title": "How Specializing the Vocabulary of SLMs Can Cut Inference Cost by 77% in Real Applications",
-   "date": "2026-10-21T17:35:36.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "تقليل تكلفة الاستدلال بـ 77% بتخصيص مفردات SLMs",
-    "summary": ""
-   }
-  },
-  {
-   "id": "4ab93569e260",
-   "url": "https://openai.com/index/att-legal",
-   "title": "How AT&T is rethinking in-house legal work with OpenAI",
-   "date": "2026-10-21T17:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "AT&T تعيد التفكير في الشغل القانوني الداخلي مع OpenAI",
-    "summary": "AT&T بتشتغل مع OpenAI عشان تسهّل وصول المعرفة القانونية، وفريق LegalEdge بيعيد تصميم طريقة استلام القضايا وتوسيع الحكم القانوني."
    }
   }
  ]
