@@ -11,6 +11,7 @@ import {
   resolveColors, brandTileColors,
 } from "@/lib/logostudio";
 import { ensureLogoFont, fontCssFor, measureEm, svgToPng } from "@/lib/logofonts";
+import { TONE_TO_LOGO_STYLE } from "@/lib/brand";
 import l from "./logo.module.css";
 
 const MOODS = [["", "تلقائي"], ["warm", "دافئ"], ["cool", "هادئ"], ["dark", "غامق وقوي"], ["soft", "ناعم"], ["luxury", "فاخر"], ["nature", "طبيعي"]];
@@ -38,6 +39,8 @@ export default function LogoStudio() {
   const [tile, setTile] = useState({ kind: "brand", shape: "squircle" });
   const [busy, setBusy] = useState("");
   const [saved, setSaved] = useStored("logo-saved", []);
+  const [brand] = useStored("brand", null);
+  const prefilled = useRef(false);
   const run = useRef(0);
   const seed = useRef(0);
   const selRef = useRef(null);
@@ -54,6 +57,13 @@ export default function LogoStudio() {
       ensureLogoFont(c.font, textOf(c)).then(() => setTick((t) => t + 1));
     }
   }, []);
+
+  // من «هوية نشاطي»: بيملا الاسم والنشاط والشعار والأسلوب أول ما الصفحة تفتح (مرة واحدة ولو الخانات فاضية)
+  useEffect(() => {
+    if (prefilled.current || !brand?.name) return;
+    prefilled.current = true;
+    setForm((f) => (f.name ? f : { ...f, name: brand.name, latin: brand.latin || "", desc: brand.field || "", sub: brand.tagline || "", style: TONE_TO_LOGO_STYLE[brand.tone] || f.style }));
+  }, [brand]);
 
   const setF = (k) => (v) => setForm((f) => ({ ...f, [k]: v }));
 

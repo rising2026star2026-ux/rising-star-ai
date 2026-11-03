@@ -3,6 +3,7 @@
 // بيستخدمه «صوّرها بموبايلك» و«اتكلم واحنا نكتب».
 import { fail, clientIp, rateLimiter } from "@/lib/groq";
 import { askJson, str, list } from "@/lib/llmjson";
+import { cleanBrand, brandBlock } from "@/lib/brand";
 
 export const maxDuration = 60;
 const tooMany = rateLimiter(25);
@@ -75,9 +76,10 @@ export async function POST(req) {
   const name = str(body.name, 80);
   const price = str(body.price, 40);
   const offer = str(body.offer, 120);
-  const contact = str(body.contact, 80);
+  const brand = cleanBrand(body.brand);
+  const contact = str(body.contact, 80) || brand?.whatsapp || "";
   const seen = str(body.seen, 1500);
-  const dialect = DIALECTS[body.dialect] ? body.dialect : "egy";
+  const dialect = DIALECTS[body.dialect] ? body.dialect : brand && DIALECTS[brand.dialect] ? brand.dialect : "egy";
   if (!info && !name && !seen) return fail("قولنا المنتج إيه الأول.", 400);
   if (tooMany(clientIp(req))) return fail("جرّبت كتير الساعة دي. استنى شوية.", 429);
 
@@ -91,7 +93,7 @@ export async function POST(req) {
   ].filter(Boolean).join("\n\n");
 
   const pack = await askJson({
-    messages: [{ role: "system", content: system(dialect) }, { role: "user", content: facts }],
+    messages: [{ role: "system", content: brand ? `${system(dialect)}\n\n${brandBlock(brand)}` : system(dialect) }, { role: "user", content: facts }],
     normalize,
     mode: "balanced",
     temperature: 0.7,

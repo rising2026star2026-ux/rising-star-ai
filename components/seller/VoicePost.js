@@ -4,6 +4,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import AdPack from "./AdPack";
+import { read } from "@/lib/store";
 import s from "./seller.module.css";
 import v from "./voice.module.css";
 
@@ -180,7 +181,7 @@ export default function VoicePost() {
   async function write() {
     setBusy(true); setError("");
     try {
-      const r = await fetch("/api/ad-pack", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ source: "voice", info: text, contact }) });
+      const r = await fetch("/api/ad-pack", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ source: "voice", info: text, contact, brand: read("brand", null) }) });
       const j = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error(j.error || "حصلت مشكلة. جرّب تاني.");
       setPack(j);

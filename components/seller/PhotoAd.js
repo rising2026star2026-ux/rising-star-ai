@@ -9,7 +9,7 @@ import { readImage, scaledCanvas, canvasBlob, blobToDataUrl, shareOrDownload, lo
 import { removeBackground, trimAlpha, progressTracker, raceAbort } from "@/components/studio/cutout";
 import { renderScene, SCENES, FORMATS } from "./scenes";
 import { aiBackground } from "@/lib/aibg";
-import { toast } from "@/lib/store";
+import { toast, read } from "@/lib/store";
 import AdPack from "./AdPack";
 import s from "./seller.module.css";
 import p from "./photoad.module.css";
@@ -168,7 +168,7 @@ export default function PhotoAd() {
       const r = await fetch("/api/ad-pack", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ source: "photo", name: info.name, price: info.price, offer: info.oldPrice ? `بدل ${info.oldPrice}` : "", contact: info.contact, seen: eye.data?.seen || "" }),
+        body: JSON.stringify({ source: "photo", name: info.name, price: info.price, offer: info.oldPrice ? `بدل ${info.oldPrice}` : "", contact: info.contact, seen: eye.data?.seen || "", brand: read("brand", null) }),
       });
       const j = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error(j.error || "حصلت مشكلة. جرّب تاني.");

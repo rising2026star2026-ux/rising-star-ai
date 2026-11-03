@@ -116,6 +116,7 @@ export default async function ToolPage({ params }) {
           {tool.extra === "vision" ? <VisionRunner toolName={tool.name} /> : <ToolRunner
             toolId={tool.id}
             toolName={tool.name}
+            cat={tool.cat}
             placeholder={tool.placeholder}
             example={content?.example}
             option={tool.option}

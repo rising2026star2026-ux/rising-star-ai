@@ -4,6 +4,7 @@ import { SETTINGS, REFINES, cleanSettings } from "@/lib/settings";
 import { systemFor, modelKeyFor, temperatureFor } from "@/lib/quality";
 import { getModel } from "@/lib/models";
 import { fail, clientIp, rateLimiter, chainFor, streamFromGroq } from "@/lib/groq";
+import { cleanBrand, brandBlock } from "@/lib/brand";
 
 const MAX_INPUT = 6000;
 const MAX_PREVIOUS = 12000;
@@ -51,6 +52,9 @@ export async function POST(req) {
   const s = cleanSettings(body.settings);
   const userRules = [SETTINGS.voice.rule[s.voice], SETTINGS.depth.rule[s.depth]].filter(Boolean);
   let system = systemFor(tool, optionLine);
+  // هوية نشاط العميل (لو شغّلها): بتتضاف لتعليمات الموديل
+  const brand = brandBlock(cleanBrand(body.brand));
+  if (brand) system += `\n\n${brand}`;
   if (userRules.length) system += `\n\nإعدادات المستخدم (أولوية أعلى من القواعد السابقة):\n${userRules.join("\n")}`;
 
   const messages = [{ role: "system", content: system }, { role: "user", content: input }];

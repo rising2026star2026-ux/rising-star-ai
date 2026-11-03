@@ -4,16 +4,21 @@ import Md from "@/components/Md";
 import { REFINES, DEFAULT_SETTINGS, SETTINGS } from "@/lib/settings";
 import { read, useStored, write, toast } from "@/lib/store";
 import ShareBar from "@/components/ShareBar";
+import Link from "next/link";
+import { BRAND_CATS } from "@/lib/brand";
 
 const MAX = 6000;
 
-export default function ToolRunner({ toolId, toolName, placeholder, example, option, label = "طلبك" }) {
+export default function ToolRunner({ toolId, toolName, cat, placeholder, example, option, label = "طلبك" }) {
   const [input, setInput] = useState("");
   const [choice, setChoice] = useState(option?.choices[0] || "");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [result, setResult] = useState("");
   const [settings] = useStored("settings", DEFAULT_SETTINGS);
+  const [brand] = useStored("brand", null);
+  const [useBrand, setUseBrand] = useState(true);
+  const brandable = !!brand?.name && BRAND_CATS.includes(cat);
   const [favs, setFavs] = useStored("favs", []);
   const stopRef = useRef(null);
   const outRef = useRef(null);
@@ -63,7 +68,7 @@ export default function ToolRunner({ toolId, toolName, placeholder, example, opt
         method: "POST",
         headers: { "Content-Type": "application/json" },
         signal: ctrl.signal,
-        body: JSON.stringify({ toolId, input, option: choice, settings, refine, previous: refine ? previous : undefined }),
+        body: JSON.stringify({ toolId, input, option: choice, settings, brand: brandable && useBrand ? brand : undefined, refine, previous: refine ? previous : undefined }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
@@ -126,6 +131,13 @@ export default function ToolRunner({ toolId, toolName, placeholder, example, opt
           onKeyDown={(e) => { if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) run(); }}
           placeholder={placeholder}
         />
+        {brandable && (
+          <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: "0.82rem", color: "var(--muted)", padding: "2px 4px 6px", cursor: "pointer" }}>
+            <input type="checkbox" checked={useBrand} onChange={(e) => setUseBrand(e.target.checked)} />
+            <span>استخدم هوية نشاطي: <b style={{ color: "var(--text-strong)" }}>{brand.name}</b></span>
+            <Link href="/brand" style={{ color: "var(--blue)", textDecoration: "underline" }}>تعديل</Link>
+          </label>
+        )}
         <div className="composer-bar">
           {option && (
             <div className="segmented" role="radiogroup" aria-label={option.label}>
