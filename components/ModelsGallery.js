@@ -4,7 +4,6 @@ import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import BotIcon from "./BotIcon";
-import ProCode from "./ProCode";
 import { useStored, toast, write } from "@/lib/store";
 import s from "./models.module.css";
 
@@ -13,7 +12,6 @@ export default function ModelsGallery({ sections, bots }) {
   const [code] = useStored("pro-code", "");
   const [open, setOpen] = useState({});
   const [q, setQ] = useState("");
-  const proRef = useRef(null);
 
   const filtered = useMemo(() => {
     const t = q.trim().toLowerCase();
@@ -27,9 +25,7 @@ export default function ModelsGallery({ sections, bots }) {
       return;
     }
     if (b.tier === "pro" && !code) {
-      toast("الموديل ده محتاج كود تفعيل. أدخل الكود الأول");
-      proRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-      proRef.current?.querySelector("input")?.focus({ preventScroll: true });
+      toast("الموديل ده هيتفعّل قريب");
       return;
     }
     write("bot", b.key);
@@ -89,9 +85,6 @@ export default function ModelsGallery({ sections, bots }) {
 
       {!filtered.length && <p className={s.empty}>مفيش موديل أو برنامج بالاسم ده.</p>}
 
-      <div ref={proRef}>
-        <ProCode />
-      </div>
       <p className={s.footNote}>
         أسماء وشعارات الموديلات والبرامج ملك شركاتها، وبتظهر هنا عشان تعرّف كل واحد بشركته. البرامج الخارجية بتفتح في مواقعها الرسمية.
       </p>

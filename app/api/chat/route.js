@@ -133,7 +133,7 @@ export async function POST(req) {
     if (!bot) return fail("الموديل ده مش موجود.", 404);
     if (bot.tier === "pro") {
       if (!validProCode(body.pro)) {
-        return Response.json({ error: "الموديل ده محتاج كود تفعيل. أدخل الكود من صفحة الموديلات.", code: "pro" }, { status: 402 });
+        return Response.json({ error: "الموديل ده هيتفعّل قريب. جرّب موديل تاني دلوقتي.", code: "pro" }, { status: 402 });
       }
       if (tooManyPro(`${ip}|${body.pro || ""}`)) return fail("وصلت لحد الموديلات العالمية الساعة دي. جرّب بعد شوية أو استخدم موديل تاني.", 429);
     }

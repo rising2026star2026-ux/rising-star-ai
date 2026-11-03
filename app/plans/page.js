@@ -1,5 +1,4 @@
 import Link from "next/link";
-import ProCode from "@/components/ProCode";
 
 export const metadata = {
   title: "الباقات",
@@ -35,10 +34,6 @@ export default function Plans() {
             <ul>{p.items.map((i) => <li key={i}>{i}</li>)}</ul>
           </div>
         ))}
-      </div>
-
-      <div style={{ marginTop: 22 }}>
-        <ProCode />
       </div>
 
       <p className="notice">
