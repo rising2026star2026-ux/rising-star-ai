@@ -1,15 +1,14 @@
 "use client";
 // معرض الموديلات والبرامج (زي Poe): أقسام، وكل قسم صف كروت بلوجو واسم، و«عرض الكل» بيفرده شبكة
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import BotIcon from "./BotIcon";
-import { useStored, toast, write } from "@/lib/store";
+import { toast, write } from "@/lib/store";
 import s from "./models.module.css";
 
 export default function ModelsGallery({ sections, bots }) {
   const router = useRouter();
-  const [code] = useStored("pro-code", "");
   const [open, setOpen] = useState({});
   const [q, setQ] = useState("");
 
@@ -21,10 +20,6 @@ export default function ModelsGallery({ sections, bots }) {
 
   function pick(b) {
     if (!b.available) {
-      toast("الموديل ده هيتفعّل قريب");
-      return;
-    }
-    if (b.tier === "pro" && !code) {
       toast("الموديل ده هيتفعّل قريب");
       return;
     }
