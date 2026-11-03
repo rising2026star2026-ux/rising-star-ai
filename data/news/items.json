@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02T17:22:41.710Z",
+ "updated": "2026-11-03T05:19:41.793Z",
  "providers": [
   "groq",
   "openrouter",
@@ -10,25 +10,259 @@
   "gemini": 4
  },
  "feeds": {
-  "openai": "ok 70",
+  "openai": "ok 76",
   "deepmind": "ok 10",
-  "apple": "ok 10",
-  "meta": "ok 9",
-  "techcrunch": "ok 20",
-  "aws": "ok 20",
   "verge": "ok 10",
+  "techcrunch": "ok 20",
   "nvidia": "ok 18",
-  "google-research": "ok 10",
+  "huggingface": "ok 23",
   "arstechnica": "ok 20",
-  "huggingface": "ok 24",
-  "google-ai": "ok 4",
-  "techwd": "ok 1",
+  "meta": "ok 9",
   "marktechpost": "ok 10",
+  "google-ai": "ok 5",
+  "aws": "ok 20",
+  "google-research": "ok 10",
+  "apple": "ok 10",
   "microsoft": "ok 9",
   "aitnews": "FAIL HTTP 403",
-  "venturebeat": "FAIL HTTP 429"
+  "venturebeat": "FAIL HTTP 429",
+  "techwd": "FAIL HTTP 526"
  },
  "items": [
+  {
+   "id": "4c7d73c3037d",
+   "url": "https://techcrunch.com/2026/11/02/google-takes-dreambeans-to-india-in-bid-to-bring-ai-generated-personal-stories-to-the-masses/",
+   "title": "Google takes Dreambeans to India in bid to bring AI-generated personal stories to the masses",
+   "date": "2026-11-03T03:30:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Google تطلق Dreambeans في الهند",
+    "summary": "Dreambeans، تجربة جوجل للذكاء الاصطناعي، بقت تدعم 13 لغة هندية."
+   }
+  },
+  {
+   "id": "9c67c7267a56",
+   "url": "https://techcrunch.com/2026/11/02/apple-may-try-to-increase-revenue-by-doing-something-with-third-party-ai-apps/",
+   "title": "Apple may try to increase revenue by doing…something with third-party AI apps",
+   "date": "2026-11-03T01:49:52.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "آبل ممكن تزود إيراداتها من تطبيقات AI الطرف الثالث",
+    "summary": "آبل ألمحت في مكالمة الأرباح إن فيه فرص لزيادة الدخل من خلال تطبيقات الذكاء الاصطناعي اللي بيطوّرها الطرف التالت."
+   }
+  },
+  {
+   "id": "dbd1a815f4d9",
+   "url": "https://www.marktechpost.com/2026/11/02/zyphra-hierarchical-attention-zha-sparse-attention/",
+   "title": "Zyphra AI Introduces Zyphra Hierarchical Attention (ZHA): A Path to True Subquadratic Attention",
+   "date": "2026-11-03T01:09:49.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "Zyphra AI تطلق ZHA للانتباه الشجري",
+    "summary": "ZHA طريقة انتباه شجرية Sparse بتضيف 4 مليار توكن لتقليل حجم النموذج، وتوصل لأداء يوازي الانتباه الكثيف في مهام التفكير واسترجاع 256K."
+   }
+  },
+  {
+   "id": "5e23b266eaab",
+   "url": "https://www.marktechpost.com/2026/11/02/letter-letterpress-1-growth-engineering-coding-agent/",
+   "title": "The Letter Company Releases Letterpress-1: A Coding Agent Built for Growth Engineering",
+   "date": "2026-11-03T00:43:03.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "Letter تطلق Letterpress-1 لتوليد الكود",
+    "summary": "Letterpress-1 هو وكيل برمجي بيفحص موقع مبني على Git ويفتح Pull Requests لتحسين SEO، الجغرافيا، والتحويل."
+   }
+  },
+  {
+   "id": "bd936fe1d4a2",
+   "url": "https://techcrunch.com/2026/11/02/y-combinators-garry-tan-uses-ai-agents-so-much-he-spends-up-to-200k-a-year-on-tokens/",
+   "title": "Y Combinator’s Garry Tan uses AI agents so much, he spends up to $200K a year on tokens",
+   "date": "2026-11-03T00:35:52.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "غاري تان من Y Combinator يصرف 200 ألف دولار على توكنات AI",
+    "summary": "غاري تان قال إنه بيقضي تقريبًا 200 ألف دولار في السنة على توكنات الذكاء الاصطناعي، وبيعاني من \"سيبر سيكوزيس\" بسبب شغفه بالوكيل."
+   }
+  },
+  {
+   "id": "dc6c7ef2ed74",
+   "url": "https://www.theverge.com/tech/1024588/brave-lawsuit-ai-scraping-new-york-times",
+   "title": "The New York Times sues Brave web browser for AI scraping and bypassing paywalls",
+   "date": "2026-11-02T23:20:01.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "نيويورك تايمز ترفع دعوى ضد Brave",
+    "summary": "نيويورك تايمز ومجموعة من الصحف رفعوا قضية على متصفح Brave بتهمة جمع بيانات لتدريب AI وتجاوز الحواجز المدفوعة."
+   }
+  },
+  {
+   "id": "19ce29ebfa96",
+   "url": "https://techcrunch.com/2026/11/02/trajectory-raises-45m-to-make-ai-model-training-accessible-to-nontechnical-experts/",
+   "title": "Trajectory raises $45M to make AI model training accessible to nontechnical experts",
+   "date": "2026-11-02T23:13:53.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Trajectory تجمع 45 مليون دولار لتسهيل تدريب نماذج AI",
+    "summary": "الشركة الناشئة اللي عمرها سنة قيمتها دلوقتي 300 مليون دولار وبتسعى تخلي تدريب نماذج الذكاء الاصطناعي سهل للناس غير المتخصصين."
+   }
+  },
+  {
+   "id": "e3f3f6c0c50f",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1024632/anthropic-claude-ai-video-game-clones",
+   "title": "Anthropic clamps down on Claude’s AI video game clones",
+   "date": "2026-11-02T22:57:16.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "Anthropic تمنع استنساخ ألعاب فيديو بـ Claude",
+    "summary": "Anthropic عدلت Prompt نظام Claude Code عشان تمنع إعادة إنشاء ألعاب موجودة، لكن لسه بتسمح بإنشاء ألعاب جديدة."
+   }
+  },
+  {
+   "id": "55dd7e97ced5",
+   "url": "https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai/",
+   "title": "Anthropic warns that it’s very close to RSI capability, aka self-building AI",
+   "date": "2026-11-02T22:14:50.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Anthropic تحذر من قرب وصول الذكاء الاصطناعي لمرحلة RSI",
+    "summary": "RSI يعني إن الذكاء الاصطناعي يقدر يدرب نفسه بسرعة هائلة، وده ممكن يسبب تسارع كبير في قدراته، والناس القلقانة شايفة فيه كارثة لا رجوع عنها."
+   }
+  },
+  {
+   "id": "f0d114902300",
+   "url": "https://techcrunch.com/2026/11/02/web-host-squarespace-lays-off-19-of-its-employees/",
+   "title": "Web host Squarespace lays off 19% of its employees",
+   "date": "2026-11-02T19:25:59.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Squarespace تقليص 19% من موظفيها",
+    "summary": "موقع بناء المواقع Squarespace أعلن عن تسريح 19% من فريقه كجزء من إعادة هيكلة أوسع للمنظمة."
+   }
+  },
+  {
+   "id": "8402594bed24",
+   "url": "https://techcrunch.com/2026/11/02/new-york-times-and-other-outlets-sue-web-browser-brave-over-alleged-content-scraping/",
+   "title": "New York Times and other outlets sue web browser Brave over alleged content scraping",
+   "date": "2026-11-02T19:19:17.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "NY Times و غيرها يرفعوا دعوى ضد متصفح Brave",
+    "summary": "صحيفة نيويورك تايمز تقاضي متصفح Brave المتخصص في الخصوصية بتهمة استخراج محتواها المحمي بحقوق النشر وتوزيعه لعملائه مثل Anthropic و Perplexity."
+   }
+  },
+  {
+   "id": "ce16d3e02a32",
+   "url": "https://www.marktechpost.com/2026/11/02/deep-principle-hydrogen-1-0-open-weight-scientific-model/",
+   "title": "Deep Principle Releases Hydrogen-1.0: A 753B Open-Weight Model for Scientific Discovery",
+   "date": "2026-11-02T18:41:41.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "Deep Principle تطلق Hydrogen-1.0 نموذج علمي مفتوح الوزن",
+    "summary": "Deep Principle أطلقت Hydrogen-1.0، نموذج وزن مفتوح 753 مليار بارامتر للكيماويات والمواد والعلوم الحياتية، مبني على GLM-5.3 من Z.ai، ومتوفر تحت رخصة MIT."
+   }
+  },
+  {
+   "id": "95189256059f",
+   "url": "https://arstechnica.com/apple/2026/11/apples-roaming-home-robot-may-do-facetime-switch-lights-on-and-yell-at-your-cat/",
+   "title": "Coming in 2027: Apple’s $1,000 home robot for FaceTime and switching on lights",
+   "date": "2026-11-02T18:32:21.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": {
+    "title": "روبوت Apple المنزلي بـ1000 دولار يُطرح في 2027",
+    "summary": "آبل تخطط لإطلاق روبوت منزلي سعره حوالي ألف دولار يقدر يعمل مكالمات FaceTime ويشغل الإضاءة، لكن استخداماته محدودة."
+   }
+  },
+  {
+   "id": "778dbacaaeb9",
+   "url": "https://arstechnica.com/ai/2026/11/claudes-new-rules-against-game-cloning-wont-stop-the-ai-copying-boom/",
+   "title": "Claude’s new rules against game cloning won’t stop the AI copying boom",
+   "date": "2026-11-02T18:05:31.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": {
+    "title": "قواعد جديدة لـClaude ضد نسخ الألعاب ما هتوقف الازدهار",
+    "summary": "Claude أضاف قواعد لمنع استنساخ الألعاب، لكن موجة النسخ الكبيرة أكبر من أي جهد فردي لأي شركة نموذج."
+   }
+  },
+  {
+   "id": "16194c055af9",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1024604/openai-data-center-grid-protection-program",
+   "title": "OpenAI pitches data center power plants as a way to protect nearby areas",
+   "date": "2026-11-02T18:01:30.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "OpenAI تقترح محطات طاقة لمراكز البيانات لحماية المناطق المجاورة",
+    "summary": "OpenAI أعلنت عن برنامج \"Grid Protectors\" لتجربة توفير ما يصل لـ1000 ميجاواط من الطاقة من مراكز بياناتها في إيفهامنج، جورجيا خلال الطوارئ، لتغطية احتياجات حوالي 700,000 منزل."
+   }
+  },
+  {
+   "id": "6fd6ad7938fa",
+   "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties",
+   "title": "Rewarding defenders with bigger bug bounties",
+   "date": "2026-11-02T18:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "OpenAI تزود مكافآت الثغرات الأمنية",
+    "summary": "OpenAI هترفع جوائز برنامج مكافآت الثغرات الأمنية وتضيف مكافآت جودة التقرير والولاء وحملات الأولوية للباحثين المستقلين."
+   }
+  },
+  {
+   "id": "262cfa35f430",
+   "url": "https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai",
+   "title": "Preparing our next security sprint to harden OpenAI",
+   "date": "2026-11-02T18:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "تحضير سباق أمان لتقوية OpenAI",
+    "summary": "OpenAI بتشتغل مع Cathedral Systems على سباق أمان داخلي لتجربة وتعزيز دفاعاتها باستخدام الذكاء الاصطناعي."
+   }
+  },
+  {
+   "id": "b810030289ed",
+   "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/",
+   "title": "The latest AI news we announced in October 2026",
+   "date": "2026-11-02T17:45:00.000Z",
+   "src": "Google AI",
+   "srcId": "google-ai",
+   "kind": "company",
+   "ar": {
+    "title": "آخر أخبار الذكاء الاصطناعي من Google في أكتوبر 2026",
+    "summary": "Google أعلنت عن أحدث تحديثاتها في مجال الذكاء الاصطناعي لشهر أكتوبر 2026."
+   }
+  },
   {
    "id": "cb7e6c407ee3",
    "url": "https://aws.amazon.com/blogs/machine-learning/prepare-web-content-for-amazon-bedrock-knowledge-bases-with-crawl4ai/",
@@ -121,6 +355,19 @@
    }
   },
   {
+   "id": "de4cf53f9db9",
+   "url": "https://openai.com/index/scaling-git-at-openai",
+   "title": "Scaling Git at OpenAI",
+   "date": "2026-11-02T15:30:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "OpenAI يبني Pando: نظام Git للسكالا",
+    "summary": "OpenAI طوّر Pando، خلفية متوافقة مع Git مصممة لتتحمل حجم التطوير اللي بيسمح بيه Codex."
+   }
+  },
+  {
    "id": "19244c7aa206",
    "url": "https://openai.com/index/grid-protectors-program",
    "title": "Introducing the Grid Protectors Program",
@@ -173,6 +420,19 @@
    }
   },
   {
+   "id": "ed4b58253682",
+   "url": "https://openai.com/index/lifeval",
+   "title": "LifeVal",
+   "date": "2026-11-02T09:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "إطلاق LifeVal: معيار لقياس فاعلية AI في الحياة اليومية",
+    "summary": "LifeVal هو معيار بيقيس مدى مساعدة الذكاء الاصطناعي للناس في مهامهم اليومية زي رعاية الأطفال وإدارة الفلوس والأوراق الحكومية."
+   }
+  },
+  {
    "id": "6eb1302ea527",
    "url": "https://www.marktechpost.com/2026/11/01/nvidia-auto-ontology-open-source-semantic-layer-ai-agents/",
    "title": "NVIDIA Releases Auto Ontology: An Open Semantic Layer That Grounds AI Agent SQL",
@@ -209,6 +469,32 @@
    "ar": {
     "title": "تعلم تعزيزي كثيف على الإنترنت لتصفح UI في تطبيقات iOS",
     "summary": "نقترح إطار تعلم تعزيزي مباشر يدرب وكلاء تنقل UI مباشرة على التطبيقات الحية، عشان يتغلب على تكلفة الاستدلال العالية للنماذج الكبيرة ومشاكل النماذج الصغيرة اللي بتنسى المسارات."
+   }
+  },
+  {
+   "id": "598c6194c0d3",
+   "url": "https://openai.com/index/qodo-codex-plugin",
+   "title": "Qodo builds context into AI code review with Codex",
+   "date": "2026-11-02T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "Qodo يدمج السياق في مراجعة الكود بالذكاء الاصطناعي",
+    "summary": "Qodo بيضيف معرفة الشركة ومعايير الترميز إلى Codex، عشان يساعد المطورين يلقوا مشاكل P0 في المستودعات قبل ما يفتحوا طلب سحب."
+   }
+  },
+  {
+   "id": "ff138f709a7e",
+   "url": "https://openai.com/index/dan-driscoll-joins-openai",
+   "title": "OpenAI appoints Dan Driscoll as Senior Counselor for National Security Modernization",
+   "date": "2026-11-02T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "OpenAI تعين Dan Driscoll مستشار أمان وطني",
+    "summary": "OpenAI عينت Dan Driscoll ليكون مستشارًا رفيع المستوى لتحديث الأمن الوطني، والتركيز على الذكاء الاصطناعي المسؤول، والمرونة السيبرانية، والتعاون مع حلفاء أمريكا."
    }
   },
   {
@@ -261,6 +547,19 @@
    "ar": {
     "title": "DeepSeek يطلق dsh-superagent، وكيل برمجة بنظام Router-Worker",
     "summary": "DeepSeek قدم dsh-superagent تحت رخصة MIT، يحول طلبات GitHub وFeishu إلى جلسات عمل موازية، وقلل متوسط إكمال المهام من 29.5 دقيقة إلى 15.7 دقيقة في محاكاته."
+   }
+  },
+  {
+   "id": "a8e3b1a57cd2",
+   "url": "https://techcrunch.com/2026/10/31/data-centers-are-now-a-midterm-issue-even-in-brooklyn/",
+   "title": "Data centers are now a midterm issue, even in Brooklyn",
+   "date": "2026-11-01T02:22:10.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "مراكز البيانات تتحول لقضية انتخابية في بروكلين",
+    "summary": "في حفلة منتصف المدة في بروكلين قبل الانتخابات بخمسة أيام، كل النقاشات، من حوار عضو المجلس لجدال حول الحزب الديمقراطي، كانت بترجع للذكاء الاصطناعي ومراكز البيانات."
    }
   },
   {
@@ -3888,305 +4187,6 @@
    "ar": {
     "title": "AT&T تعيد التفكير في الشغل القانوني الداخلي مع OpenAI",
     "summary": "AT&T بتشتغل مع OpenAI عشان تسهّل وصول المعرفة القانونية، وفريق LegalEdge بيعيد تصميم طريقة استلام القضايا وتوسيع الحكم القانوني."
-   }
-  },
-  {
-   "id": "2de1f3f85cd4",
-   "url": "https://research.google/blog/empowering-frontline-maternal-care-with-ai-assisted-ultrasound/",
-   "title": "Empowering frontline maternal care with AI-assisted ultrasound",
-   "date": "2026-10-21T16:23:53.000Z",
-   "src": "Google Research",
-   "srcId": "google-research",
-   "kind": "company",
-   "ar": {
-    "title": "الذكاء الاصطناعي بيساعد في فحص الموجات فوق الصوتية للأمهات",
-    "summary": "تقنية AI بتدعم أطباء الخط الأول في رعاية الأمومة عن طريق تحسين فحص الموجات فوق الصوتية."
-   }
-  },
-  {
-   "id": "f9b499debdda",
-   "url": "https://huggingface.co/blog/amazon/profiling-torchneuron-part-1",
-   "title": "Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.",
-   "date": "2026-10-21T16:04:43.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "تحليل TorchNeuron على AWS Trainium (الجزء الأول)",
-    "summary": "المقال بيستعرض طريقة profiling على مستوى النظام لـ TorchNeuron باستخدام AWS Trainium."
-   }
-  },
-  {
-   "id": "2ed826e28d23",
-   "url": "https://www.microsoft.com/en-us/research/blog/solving-a-31-year-old-grand-challenge-in-mathematics-the-kls-conjecture/",
-   "title": "Solving a 31-year-old grand challenge in mathematics – the KLS conjecture",
-   "date": "2026-10-21T16:00:00.000Z",
-   "src": "Microsoft Research",
-   "srcId": "microsoft",
-   "kind": "company",
-   "ar": {
-    "title": "حل لغز رياضي عمره 31 سنة: فرضية KLS",
-    "summary": "بحث جديد أثبت صحة فرضية Kannan–Lovász–Simonovits اللي اتطرحت سنة 1995، وده بيفتح باب لفهم كفاءة الخوارزميات العشوائية في العلوم والحوسبة."
-   }
-  },
-  {
-   "id": "2f67d3a79def",
-   "url": "https://arstechnica.com/ai/2026/10/the-15-billion-ad-powered-ai-startup-your-doctor-may-already-be-using/",
-   "title": "The $15 billion ad-powered AI startup your doctor may already be using",
-   "date": "2026-10-21T15:14:07.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "ستارت أب AI مدعوم بالإعلانات بقيمة 15 مليار دولار",
-    "summary": "OpenEvidence بيكبر بسرعة رغم التساؤلات حول دقته واعتماده على الإعلانات."
-   }
-  },
-  {
-   "id": "9b35c0bfb2f0",
-   "url": "https://huggingface.co/blog/ibm-granite/granite-speech-5",
-   "title": "Granite Speech 5.0: Transcribe, Translate, and Attribute more Accurately and Faster",
-   "date": "2026-10-21T14:58:18.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "Granite Speech 5.0: تحويل وتسجيل أسرع وأدق",
-    "summary": "الإصدار الجديد من Granite Speech بيحسّن عملية النسخ والترجمة وتحديد المتكلم بدقة وسرعة أعلى."
-   }
-  },
-  {
-   "id": "74fcf21eca7a",
-   "url": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
-   "title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
-   "date": "2026-10-21T13:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "إعلانات ChatGPT توسعت لـ 26 دولة",
-    "summary": "أكتر من 100,000 معلن بقى يقدر يوصل لعملائه خلال رحلة البحث والشراء على ChatGPT في 26 دولة جديدة."
-   }
-  },
-  {
-   "id": "61f4d0141ff3",
-   "url": "https://openai.com/index/openai-models-google-cloud",
-   "title": "OpenAI models are coming to Google Cloud",
-   "date": "2026-10-21T12:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "نماذج OpenAI توصل لسحابة جوجل",
-    "summary": "OpenAI وGoogle Cloud بيقدموا نماذج متقدمة وCodex في Gemini’s Model Garden عبر Google Cloud Marketplace."
-   }
-  },
-  {
-   "id": "0b1d731f907e",
-   "url": "https://blogs.nvidia.com/blog/local-ai-gtc-rtx-dgx-spark-station-sync/",
-   "title": "Bringing the Spark to Europe: Local Intelligence Powers Next Wave of Agents",
-   "date": "2026-10-21T10:50:37.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "نڤيديا تكشف عن مجموعة معالجات AI المحلية في برلين",
-    "summary": "في GTC Berlin عرضت نڤيديا RTX Spark لتشغيل الوكلاء الشخصيين على ويندوز، وDGX Spark للمطورين على لينكس، وDGX Station للفرق المؤسسية مع نسخة ويندوز جاية في ديسمبر."
-   }
-  },
-  {
-   "id": "7dbdc8f6d3c5",
-   "url": "https://blogs.nvidia.com/blog/google-cloud-vera-rubin-infrastructure/",
-   "title": "Google Cloud and NVIDIA Announce General Availability of NVIDIA Vera Rubin Infrastructure",
-   "date": "2026-10-21T10:45:17.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "جوجل كلاود ونڤيديا يطلقان خدمة NVIDIA Vera Rubin",
-    "summary": "الخدمة هتوصل للعموم الشهر الجاي وتتوفر في أوروبا، وتجمع بين NVIDIA Vera Rubin NVL72، ConnectX‑9 SuperNICs، شبكة Virgo وتبريد سائل من الجيل الرابع لتدريب وت inference وتعلم التعزيز على السحابة."
-   }
-  },
-  {
-   "id": "f47072a36f45",
-   "url": "https://blogs.nvidia.com/blog/cloud-partners-europe-sovereign-safety-open-agents/",
-   "title": "NVIDIA Cloud Partners Scale Across Europe — Sovereign, Open and Built for Safe AI Agents",
-   "date": "2026-10-21T10:30:41.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "شركاء سحابة نڤيديا يوسّعون قدرات AI في أوروبا",
-    "summary": "الطلب المتزايد من الشركات الناطقة بـ AI بيخلي بيئة السحابة الأوروبية تتسارع، والشركاء بيوفروا حوسبة أقرب للبيانات، نماذج مفتوحة قابلة للتخصيص، وبنية تحتية آمنة من التصميم."
-   }
-  },
-  {
-   "id": "0c405e6fd045",
-   "url": "https://blogs.nvidia.com/blog/europe-industrial-leaders-engineering-manufacturing/",
-   "title": "Europe’s Industrial Leaders Reinvent Engineering and Manufacturing With NVIDIA",
-   "date": "2026-10-21T10:30:40.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "قادة الصناعة الأوروبية يتبنون CUDA‑X وOmniverse",
-    "summary": "الشركات الأوروبية بتستخدم مكتبات CUDA‑X وOmniverse، وكمان نماذج Cosmos وNemotron لتسريع الإنتاجية والابتكار، وطرحوا مخطط NVIDIA Factory Operations Blueprint (FOX) لتطبيقها على أرض المصنع."
-   }
-  },
-  {
-   "id": "64ae1d1ebee7",
-   "url": "https://blogs.nvidia.com/blog/cudss-generally-available-engineering-scientific-simulation/",
-   "title": "NVIDIA cuDSS Now Generally Available to Accelerate Engineering and Scientific Simulations",
-   "date": "2026-10-21T10:30:25.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "مكتبة cuDSS من نڤيديا متاحة الآن لتسريع المحاكاة",
-    "summary": "cuDSS، مكتبة CUDA‑X جديدة، بتنقل جزء كبير من محاكاة الهندسة والعلوم للـ GPU، وده بيساعد على محاكاة تصاميم معقدة زي الرقائق والطائرات قبل التصنيع."
-   }
-  },
-  {
-   "id": "9e8b8c2e1479",
-   "url": "https://blogs.nvidia.com/blog/confidential-computing-model-builders-infrastructure/",
-   "title": "NVIDIA Confidential Computing Expands, Enabling Frontier Model Builders to Securely Scale Across Global Infrastructure",
-   "date": "2026-10-21T10:30:02.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "نڤيديا توسّع الحوسبة السرية للوكيل الآمن",
-    "summary": "أعلنت نڤيديا عن بنية OpenShell Reference Architecture لتشغيل الوكلاء بأمان، مع طبقة Confidential Computing اللي بتحمي النماذج والبيانات أثناء التنفيذ."
-   }
-  },
-  {
-   "id": "7d59293497ac",
-   "url": "https://blogs.nvidia.com/blog/enterprise-platforms-agent-toolkit/",
-   "title": "NVIDIA Agent Toolkit Expands, Grounding Enterprise Agents in Company Data",
-   "date": "2026-10-21T10:10:01.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "مجموعة أدوات الوكيل من نڤيديا تدعم بيانات الشركات",
-    "summary": "تم توسيع NVIDIA Agent Toolkit بأدوات جديدة تسمح للشركات بتخصيص الوكلاء، ربطهم ببيانات الشركة، ومراقبة سلوكهم لضمان الثقة."
-   }
-  },
-  {
-   "id": "be11c18d48ff",
-   "url": "https://blogs.nvidia.com/blog/open-models-europe-industry/",
-   "title": "NVIDIA Open Models Advance Europe’s Sovereign Intelligence Across Industries",
-   "date": "2026-10-21T10:00:07.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "نڤيديا تطلق نماذج مفتوحة للذكاء الاصطناعي في أوروبا",
-    "summary": "أضافت نڤيديا نماذج Nemotron 3.5 Super VL وBolt، بالإضافة لنماذج Nemotron Retriever للتمثيل وإعادة الترتيب، لتدعم اللغات والصناعات المحلية."
-   }
-  },
-  {
-   "id": "d3f519557f32",
-   "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities",
-   "title": "Patch the Planet: global response coordination as agents uncover critical vulnerabilities",
-   "date": "2026-10-21T07:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Patch the Planet يربط الباحثين",
-    "summary": "المبادرة بتجمع باحثين الأمن، صانعي الصيانة، ومستجيبي الحوادث علشان يلاقوا حلول للثغرات الحرجة في البرمجيات المفتوحة المصدر."
-   }
-  },
-  {
-   "id": "edef63b51aed",
-   "url": "https://openai.com/index/building-chatgpt-ad-stack",
-   "title": "How we built ChatGPT’s novel ad stack for user trust and relevance",
-   "date": "2026-10-21T07:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "نظام إعلانات ChatGPT",
-    "summary": "OpenAI شرحوا إزاي بنوا نظام إعلانات مدعوم بالـ LLM بيحدد نية الكلام، ويفصل الإعلانات عن الإجابات، ويعرض إعلانات ملائمة على نطاق واسع."
-   }
-  },
-  {
-   "id": "1de8e62ff715",
-   "url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data",
-   "title": "Using thousands of AI agents to uncover new leads in biological data",
-   "date": "2026-10-21T04:50:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "وكيلات AI لاكتشاف بيانات دماغية",
-    "summary": "OpenAI وPerturbAI ومؤسسة Scripps Research استخدموا آلاف الوكلاء الذكائيين لتحديد مؤشرات بحثية جديدة من بيانات ملايين خلايا الدماغ."
-   }
-  },
-  {
-   "id": "1778fb273dbb",
-   "url": "https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/",
-   "title": "Southeast Asia’s digital economy to hit $368 billion",
-   "date": "2026-10-21T04:00:00.000Z",
-   "src": "Google AI",
-   "srcId": "google-ai",
-   "kind": "company",
-   "ar": {
-    "title": "الاقتصاد الرقمي في جنوب شرق آسيا",
-    "summary": "اعتماد واسع للذكاء الاصطناعي هيدفع قيمة الاقتصاد الرقمي للمنطقة لـ 368 مليار دولار بحلول 2026، وحيصل لتريليون دولار بحلول 2035."
-   }
-  },
-  {
-   "id": "9201054eeb4c",
-   "url": "https://openai.com/index/cloudflare-cyber",
-   "title": "Cloudflare links vulnerability discovery to defense with OpenAI",
-   "date": "2026-10-21T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Cloudflare وتعاونها مع OpenAI",
-    "summary": "Cloudflare بتستعمل OpenAI Daybreak لتحديد الثغرات واقتراح حلول، ومطوريها بيستفيدوا من Codex لتسريع كتابة الكود وتحسين جودته."
-   }
-  },
-  {
-   "id": "b2deaf97c98c",
-   "url": "https://openai.com/index/empowering-cyber-defenders",
-   "title": "Democratic governance of frontier AI, part II: Empowering cyber defenders",
-   "date": "2026-10-21T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "حوكمة ديمقراطية للـ AI المتقدمة",
-    "summary": "OpenAI قدمت خطة لتمكين مدافعين سيبرانيين باستخدام AI المتقدم، وتعزيز الحمايات، وتحديث الأمن السيبراني، وتقوية المؤسسات العامة."
-   }
-  },
-  {
-   "id": "165cb1553146",
-   "url": "https://arstechnica.com/tech-policy/2026/10/meta-drops-the-word-train-from-its-commercial-tos-after-ai-backlash/",
-   "title": "Meta drops the word \"train\" from its commercial TOS after AI backlash",
-   "date": "2026-10-20T20:07:58.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "Meta تشيل كلمة \"تدريب\" من شروط الخدمة",
-    "summary": "شركة Meta غيرت سياسة جمع البيانات للذكاء الاصطناعي وشالت كلمة تدريب بعد الهجوم اللي جيلها، من غير ما تضيف تعهدات لملف robots.txt."
-   }
-  },
-  {
-   "id": "f74f11fae08f",
-   "url": "https://arstechnica.com/google/2026/10/geminis-personal-intelligence-is-coming-to-cars/",
-   "title": "Gemini's Personal Intelligence is coming to cars",
-   "date": "2026-10-20T20:00:33.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "الذكاء الشخصي من Gemini جاي للعربيات",
-    "summary": "خدمة Gemini للتذكير الذكي والذكاء الشخصي في طريقها للعربيات، ويظهر وقته الواحد يراجع إعداداته."
    }
   }
  ]
