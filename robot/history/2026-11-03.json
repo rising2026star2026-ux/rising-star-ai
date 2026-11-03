@@ -1,0 +1,29 @@
+{
+ "date": "2026-11-03T05:33:57.029Z",
+ "total": 505,
+ "ok": 503,
+ "broken": [
+  "/tool/remove-bg"
+ ],
+ "warn": 1,
+ "spacesDown": [
+  "multimodalart-logo-in-context",
+  "eccv2022-dis-background-removal",
+  "doevent-face-real-esrgan",
+  "stepfun-ai-step1x-3d"
+ ],
+ "aiTested": [
+  "/tool/formalize",
+  "/tool/gem-assistant",
+  "/tool/image-prompt",
+  "/tool/interview-qs",
+  "/tool/kids-story",
+  "/tool/landing-page",
+  "/tool/lesson-plan",
+  "/tool/logo-ideas",
+  "/tool/marketing-plan",
+  "/tool/math-solver",
+  "/tool/poem",
+  "/tool/post"
+ ]
+}
