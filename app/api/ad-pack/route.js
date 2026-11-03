@@ -3,7 +3,7 @@
 // بيستخدمه «صوّرها بموبايلك» و«اتكلم واحنا نكتب».
 import { fail, clientIp, rateLimiter } from "@/lib/groq";
 import { askJson, str, list } from "@/lib/llmjson";
-import { cleanBrand, brandBlock } from "@/lib/brand";
+import { cleanBrand, brandBlock } from "@/lib/brandprofile";
 
 export const maxDuration = 60;
 const tooMany = rateLimiter(25);

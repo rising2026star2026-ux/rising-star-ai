@@ -5,7 +5,7 @@ import { REFINES, DEFAULT_SETTINGS, SETTINGS } from "@/lib/settings";
 import { read, useStored, write, toast } from "@/lib/store";
 import ShareBar from "@/components/ShareBar";
 import Link from "next/link";
-import { BRAND_CATS } from "@/lib/brand";
+import { BRAND_CATS } from "@/lib/brandprofile";
 
 const MAX = 6000;
 

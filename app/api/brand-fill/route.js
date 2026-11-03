@@ -1,7 +1,7 @@
 // «اقترح لي الباقي» في هوية نشاطي: من اسم النشاط ووصفه بيقترح الجمهور والنبرة واللهجة وشعارات قصيرة.
 import { fail, clientIp, rateLimiter } from "@/lib/groq";
 import { askJson, str, list } from "@/lib/llmjson";
-import { BRAND_TONES, BRAND_DIALECTS } from "@/lib/brand";
+import { BRAND_TONES, BRAND_DIALECTS } from "@/lib/brandprofile";
 
 export const maxDuration = 40;
 const tooMany = rateLimiter(20);

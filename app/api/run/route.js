@@ -4,7 +4,7 @@ import { SETTINGS, REFINES, cleanSettings } from "@/lib/settings";
 import { systemFor, modelKeyFor, temperatureFor } from "@/lib/quality";
 import { getModel } from "@/lib/models";
 import { fail, clientIp, rateLimiter, chainFor, streamFromGroq } from "@/lib/groq";
-import { cleanBrand, brandBlock } from "@/lib/brand";
+import { cleanBrand, brandBlock } from "@/lib/brandprofile";
 
 const MAX_INPUT = 6000;
 const MAX_PREVIOUS = 12000;

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useStored, toast } from "@/lib/store";
-import { BRAND_TONES, BRAND_DIALECTS, EMPTY_BRAND, brandBlock, cleanBrand } from "@/lib/brand";
+import { BRAND_TONES, BRAND_DIALECTS, EMPTY_BRAND, brandBlock, cleanBrand } from "@/lib/brandprofile";
 import { resolveColors } from "@/lib/logostudio";
 import { Seg } from "./studio/ui";
 import s from "./brand.module.css";

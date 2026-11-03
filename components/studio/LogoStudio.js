@@ -11,7 +11,7 @@ import {
   resolveColors, brandTileColors,
 } from "@/lib/logostudio";
 import { ensureLogoFont, fontCssFor, measureEm, svgToPng } from "@/lib/logofonts";
-import { TONE_TO_LOGO_STYLE } from "@/lib/brand";
+import { TONE_TO_LOGO_STYLE } from "@/lib/brandprofile";
 import l from "./logo.module.css";
 
 const MOODS = [["", "تلقائي"], ["warm", "دافئ"], ["cool", "هادئ"], ["dark", "غامق وقوي"], ["soft", "ناعم"], ["luxury", "فاخر"], ["nature", "طبيعي"]];
