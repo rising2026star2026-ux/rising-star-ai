@@ -8,7 +8,6 @@ import ModelPicker from "./ModelPicker";
 import ShareBar from "./ShareBar";
 import ToolIcon from "./ToolIcon";
 import BotIcon from "./BotIcon";
-import ProCode from "./ProCode";
 import StarMark from "./StarMark";
 import FusionStack from "./FusionStack";
 import { useProofread, ProofIcon } from "@/lib/useProofread";
@@ -514,7 +513,6 @@ export default function MainChat({ project = null, initialMessages = null, onMes
               </div>
             )}
             {error && <div className={s.error} role="alert">{error}</div>}
-            {needPro && <ProCode compact onActivated={() => { setNeedPro(false); setError(""); retry(); }} />}
             <div ref={endRef} />
           </div>
         )}
