@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T05:32:11.123Z",
+ "updated": "2026-11-04T17:29:37.663Z",
  "providers": [
   "gemini",
   "groq",
@@ -7,25 +7,155 @@
  ],
  "used": {},
  "feeds": {
-  "openai": "ok 81",
-  "deepmind": "ok 11",
-  "techcrunch": "ok 20",
-  "verge": "ok 10",
-  "nvidia": "ok 18",
-  "apple": "ok 10",
-  "aws": "ok 20",
-  "marktechpost": "ok 10",
-  "huggingface": "ok 25",
-  "google-research": "ok 10",
   "meta": "ok 9",
-  "google-ai": "ok 5",
-  "techwd": "ok 2",
+  "openai": "ok 81",
+  "google-research": "ok 10",
+  "apple": "ok 10",
+  "verge": "ok 10",
+  "techcrunch": "ok 20",
+  "nvidia": "ok 18",
+  "aws": "ok 20",
+  "huggingface": "ok 25",
   "arstechnica": "ok 20",
+  "deepmind": "ok 11",
+  "google-ai": "ok 5",
+  "marktechpost": "ok 10",
+  "techwd": "ok 2",
   "microsoft": "ok 10",
-  "venturebeat": "FAIL HTTP 429",
-  "aitnews": "FAIL HTTP 403"
+  "aitnews": "FAIL HTTP 403",
+  "venturebeat": "FAIL HTTP 429"
  },
  "items": [
+  {
+   "id": "58f69099baa4",
+   "url": "https://techcrunch.com/2026/11/04/i-tried-apples-siri-recaps-theyre-surprisingly-useful-and-a-little-unsettling/",
+   "title": "I tried Apple’s Siri Recaps. They’re surprisingly useful — and a little unsettling",
+   "date": "2026-11-04T16:51:35.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "8525aff32371",
+   "url": "https://aws.amazon.com/blogs/machine-learning/smart-approvals-in-amazon-quick-human-oversight-where-it-matters/",
+   "title": "Smart Approvals in Amazon Quick: Human oversight where it matters",
+   "date": "2026-11-04T16:33:03.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "24432e46bcb7",
+   "url": "https://aws.amazon.com/blogs/machine-learning/four-layers-of-context-engineering-for-production-ai-agents-how-deep-insight-applies-them-in-working-code/",
+   "title": "Four layers of context engineering for production AI agents: How Deep Insight applies them in working code",
+   "date": "2026-11-04T16:30:40.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "f854773858f4",
+   "url": "https://aws.amazon.com/blogs/machine-learning/how-indegene-is-modernizing-and-scaling-enterprise-data-quality-in-life-sciences/",
+   "title": "How Indegene is modernizing and scaling enterprise data quality in life sciences",
+   "date": "2026-11-04T16:25:57.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "c8cea8f1c174",
+   "url": "https://aws.amazon.com/blogs/machine-learning/how-u-mobile-built-agentic-telco-operations-with-amazon-bedrock-agentcore/",
+   "title": "How U Mobile built agentic telco operations with Amazon Bedrock AgentCore",
+   "date": "2026-11-04T16:23:33.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "eeaf8afe464e",
+   "url": "https://techcrunch.com/2026/11/04/google-faces-backlash-for-plan-that-would-turn-off-search-for-schools-that-restrict-ai/",
+   "title": "Google faces backlash for plan that would turn off Search for schools that restrict AI",
+   "date": "2026-11-04T16:17:22.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "0c9cbd4df150",
+   "url": "https://www.theverge.com/policy/1026365/data-centers-midterms-results",
+   "title": "Data centers lost the midterms",
+   "date": "2026-11-04T16:05:39.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "e818c1486ecf",
+   "url": "https://www.theverge.com/transportation/1026306/uber-ai-agents-q3-earnings-disintermediation",
+   "title": "Uber only fulfilled 4 rides from AI agents last quarter",
+   "date": "2026-11-04T16:05:06.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "1eb19ba95d16",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1026292/sam-altman-ram-shortage-pcs-comments",
+   "title": "Sam Altman addresses RAM comments: people should ‘put as much as they want in their computers’",
+   "date": "2026-11-04T14:46:01.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "3a06f84c0f51",
+   "url": "https://openai.com/index/openai-to-acquire-pierre",
+   "title": "OpenAI to acquire Pierre Computer Company, Inc.",
+   "date": "2026-11-04T14:30:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "9629b9d628e6",
+   "url": "https://techcrunch.com/2026/11/04/techcrunch-founder-summit-2026-todays-the-day/",
+   "title": "TechCrunch Founder Summit 2026: Doors open at 9 a.m. ET in Boston",
+   "date": "2026-11-04T13:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "75679f5aa60b",
+   "url": "https://openai.com/index/daybreak-red-aws-govcloud",
+   "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
+   "date": "2026-11-04T07:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "8c4cd4032a6a",
+   "url": "https://www.marktechpost.com/2026/11/03/tencent-wevisone-vl-vision-language-model/",
+   "title": "Tencent WeVisOne-VL Unifies Detection, OCR, Segmentation and Matting",
+   "date": "2026-11-04T04:39:27.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
   {
    "id": "5d47252e76d4",
    "url": "https://www.theverge.com/games/1026085/nexus-mods-ai-disclosures",
@@ -41,6 +171,16 @@
    "url": "https://www.theverge.com/ai-artificial-intelligence/1025826/ai-bubble-pimco-apollo-bonds",
    "title": "Please stop asking me when the AI bubble will pop",
    "date": "2026-11-03T23:37:45.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "f11d9a22fb66",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1024862/google-search-ai-overviews-alphabet-earnings-q3",
+   "title": "Google hasn’t figured out how to make AI pay like its search engine",
+   "date": "2026-11-03T22:41:23.000Z",
    "src": "The Verge",
    "srcId": "verge",
    "kind": "news",
@@ -3927,188 +4067,6 @@
    "ar": {
     "title": "OpenAI تشارك نتائج أبحاث علمية",
     "summary": "OpenAI نشرت نتائج نماذجها على مسائل زي فرضية Kakeya، فرضية الوقت الأسي، والكروماتوجرافيا الكمية، وبتوضح إزاي الباحثين يقدروا يتحققوا منها ويكملوا الشغل."
-   }
-  },
-  {
-   "id": "1a1d4bf2fc11",
-   "url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
-   "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
-   "date": "2026-10-26T13:45:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "GPT-6.1 Sol يعزز أمان CodeRabbit",
-    "summary": "CodeRabbit بيستعمل GPT-6.1 Sol عشان يكتشف مخاطر الأمان في الكود المعقّد، والوكيل الأمني بيساعد المطورين يراجعوا النتائج والاقتراحات لإصلاحها."
-   }
-  },
-  {
-   "id": "64d59b55a8fb",
-   "url": "https://openai.com/index/chatgpt-expanding-world-of-work",
-   "title": "ChatGPT’s expanding world of work",
-   "date": "2026-10-26T10:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "دراسة OpenAI Signals عن استخدام ChatGPT في الشغل",
-    "summary": "البيانات بتوضح 165 نشاط شغل في حوالي 100 دولة، وبتظهر إزاي الناس بيستعملوا ChatGPT في شغلهم وإزاي الاستخدام بيتغيّر مع الوقت."
-   }
-  },
-  {
-   "id": "3fb44a491dd6",
-   "url": "https://www.marktechpost.com/2026/10/26/tsinghua-akv-kv-cache-engineering-llm-agents/",
-   "title": "Tsinghua AI Open-Sources AKV, a Cache Engineering Server for LLM Agents on SGLang",
-   "date": "2026-10-26T07:56:45.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": {
-    "title": "Tsinghua يطلق AKV لخدمات الكاش للـLLM",
-    "summary": "باحثين من Tsinghua أطلقوا AKV، نظام خدمة مبني على SGLang لتقليل تكلفة التخزين المؤقت للـLLM agents بنسبة 27.7% في أربع اختبارات."
-   }
-  },
-  {
-   "id": "eb7708c5f537",
-   "url": "https://openai.com/index/fanatics-streamline-fan-experience",
-   "title": "How Fanatics and OpenAI streamline the fan experience",
-   "date": "2026-10-26T07:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Fanatics وOpenAI يحسنوا تجربة المشجعين",
-    "summary": "Fanatics بيستخدم OpenAI عشان يسهّل على المشجعين اختيار لبس اليوم بالموقع، واختبار على 30,000 منتج MLB زاد التفاعل 10%."
-   }
-  },
-  {
-   "id": "8f2f08b6e197",
-   "url": "https://openai.com/index/openai-cut-incident-investigation",
-   "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
-   "date": "2026-10-26T07:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Ultrafast يسرّع تحقيق الحوادث في OpenAI",
-    "summary": "مهندسين OpenAI بيستعملوا Codex Ultrafast لتقليل وقت التحقيق من ساعات لدقايق، وبيستفيدوا من تحليل أمان أسرع وإعادة هيكلة الكود."
-   }
-  },
-  {
-   "id": "1758535ac6be",
-   "url": "https://openai.com/index/introducing-gpt-6-1-terra",
-   "title": "Introducing GPT-6.1 Terra",
-   "date": "2026-10-26T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "إطلاق GPT-6.1 Terra",
-    "summary": "GPT-6.1 Terra بيقدّم قدرة وسرعة في استخدام الكمبيوتر للجميع."
-   }
-  },
-  {
-   "id": "4cd82f931931",
-   "url": "https://machinelearning.apple.com/research/gharp-head-animation",
-   "title": "GHARP: Real-Time Gaussian Head Animation from Large-Scale Reconstruction Prior",
-   "date": "2026-10-26T00:00:00.000Z",
-   "src": "Apple ML",
-   "srcId": "apple",
-   "kind": "company",
-   "ar": {
-    "title": "GHARP: تحريك رأس 3D في الوقت الحقيقي",
-    "summary": "GHARP بيحوّل شوية صور لوجه لشخصية 3D متحركة في الوقت الحقيقي، بفصل مرحلة بناء الهوية عن مرحلة التحريك لتقليل الحمل."
-   }
-  },
-  {
-   "id": "a6feae291b1a",
-   "url": "https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/",
-   "title": "Grok releases the first seven minutes of its AI-generated ‘Odyssey’",
-   "date": "2026-10-25T21:31:16.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "Grok يطرح أول 7 دقائق من 'Odyssey'",
-    "summary": "المقاطع الأولية من الفيلم اللي انتجته AI تبدو مقبولة، لكن ما فيهاش إبداع أو إلهام أو طابع إنساني."
-   }
-  },
-  {
-   "id": "c932414b7eb9",
-   "url": "https://www.marktechpost.com/2026/10/25/nanbeige-releases-nanbeige4-3-33b-open-agentic-coding-model/",
-   "title": "Nanbeige Releases Nanbeige4.3-33B, a 33B Open Agentic Coding Model",
-   "date": "2026-10-25T21:15:21.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": {
-    "title": "Nanbeige تطلق نموذج Nanbeige4.3-33B للبرمجة",
-    "summary": "النموذج 33 مليار بارامتر، بيدعم 512 K سياق، جاب 80.9 في Terminal‑Bench 2.1، وهيعلم النموذج الأصغر Nanbeige4.3-3B."
-   }
-  },
-  {
-   "id": "71334093a413",
-   "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
-   "title": "AI delivers ‘zero financial payoff’ to most companies, Apollo economist says",
-   "date": "2026-10-25T16:57:32.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "الذكاء الاصطناعي ما جابش عائد مالي للشركات",
-    "summary": "رغم الاستثمارات الضخمة والضجة، الاقتصادي من Apollo بيقول إن AI ما حققش أي ربح مادي للشركات غير التقنية."
-   }
-  },
-  {
-   "id": "4cd8b15dd649",
-   "url": "https://www.marktechpost.com/2026/10/25/hugging-face-carbon-x-14b-dna-language-model/",
-   "title": "Hugging Face Releases Carbon-X, a 14B Open DNA Language Model that Brings DNA and Natural Language Together for the First Time",
-   "date": "2026-10-25T16:53:40.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": {
-    "title": "Hugging Face تطلق Carbon‑X نموذج DNA بلغة طبيعية",
-    "summary": "Carbon‑X نموذج 14.8 مليار بارامتر مبني على Qwen3‑14B، يقرأ DNA ويجاوب بالإنجليزي، يحقق متوسط 66.7% على 5 معايير DNA، ومتوفر تحت رخصة Apache 2.0."
-   }
-  },
-  {
-   "id": "4262d71f08be",
-   "url": "https://techcrunch.com/2026/10/25/the-hottest-ai-wearables-and-gadgets-you-should-know-about/",
-   "title": "The hottest AI wearables and gadgets you should know about",
-   "date": "2026-10-25T14:10:00.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "أهم الأجهزة القابلة للارتداء والgadgets الذكية",
-    "summary": ""
-   }
-  },
-  {
-   "id": "1a4147d6e8f3",
-   "url": "https://www.marktechpost.com/2026/10/25/stanford-berkeley-tokengate-learned-token-pruning-llm-prefill/",
-   "title": "Researchers from Stanford and UC Berkeley Introduce TokenGate: Token-Gated Attention Makes Long-Context Prefill Up to 11.3x Faster",
-   "date": "2026-10-25T12:12:18.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": {
-    "title": "Stanford وUC Berkeley يقدمان TokenGate لتسريع السياق الطويل",
-    "summary": ""
-   }
-  },
-  {
-   "id": "b7ca3dd28f26",
-   "url": "https://www.marktechpost.com/2026/10/25/anthropic-launches-oss-scanner-a-free-ai-vulnerability-scanner/",
-   "title": "Anthropic Launches OSS Scanner, a Free AI Vulnerability Scanner",
-   "date": "2026-10-25T11:32:29.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": {
-    "title": "Anthropic تطلق OSS Scanner لفحص ثغرات AI",
-    "summary": ""
    }
   }
  ]
