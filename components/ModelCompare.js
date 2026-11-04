@@ -68,7 +68,7 @@ export default function ModelCompare({ bots, sections }) {
       });
       if (!res.ok || !res.body) {
         const d = await res.json().catch(() => ({}));
-        throw new Error(d.error || "حصل خطأ، جرّب تاني.");
+        throw Object.assign(new Error(d.error || "حصل خطأ، جرّب تاني."), { why: d.why || "" });
       }
       const fallback = res.headers.get("x-bot") === "fallback";
       // الموديل اللي رد فعلاً مقابل المطلوب: السيرفر بيبدّل بصمت لو الموديل مشغول أو الرصيد خلص
@@ -87,7 +87,7 @@ export default function ModelCompare({ bots, sections }) {
       patch({ status: "done", ms: performance.now() - t0, fallback, used, swapped });
     } catch (e) {
       if (e.name === "AbortError") patch({ status: "stopped", ms: performance.now() - t0, text: text || "_اتوقف الرد._" });
-      else patch({ status: "error", error: e.message || "الاتصال اتقطع." });
+      else patch({ status: "error", error: e.message || "الاتصال اتقطع.", why: e.why || "" });
     }
   }
 
@@ -224,6 +224,7 @@ export default function ModelCompare({ bots, sections }) {
 
                 <div className={s.body}>
                   {r.status === "error" && <p className={s.err}>{r.error}</p>}
+                  {r.status === "error" && r.why && <p className={s.why}>السبب من المزود: <bdi className={s.mono}>{r.why}</bdi></p>}
                   {r.status === "loading" && !r.text && <p className={s.wait}><span className={s.dots} aria-hidden="true" /> بيكتب...</p>}
                   {r.text && <div className="md" dir="auto"><Md>{r.text}</Md></div>}
                 </div>

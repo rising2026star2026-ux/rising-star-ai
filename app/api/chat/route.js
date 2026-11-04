@@ -231,7 +231,11 @@ export async function POST(req) {
     headers,
   });
   if (strict && !out.ok) {
-    return fail(`«${bot.name}» مش بيرد دلوقتي، غالباً رصيد المزود خلص أو الموديل مشغول. ما استبدلناهوش بموديل تاني عشان المقارنة تفضل صادقة.`, 503);
+    const d = await out.json().catch(() => ({}));
+    return Response.json({
+      error: `«${bot.name}» مش بيرد دلوقتي. ما استبدلناهوش بموديل تاني عشان المقارنة تفضل صادقة.`,
+      why: d.why || "",
+    }, { status: 503 });
   }
   return out;
 }
