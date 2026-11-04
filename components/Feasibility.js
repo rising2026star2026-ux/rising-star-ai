@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Md from "./Md";
 import ShareBar from "./ShareBar";
+import FieldData, { fieldText } from "./FieldData";
 import { read, write, toast } from "@/lib/store";
 import {
   TYPES, GOVERNORATES, SCENARIOS, REPORT_SECTIONS, MONTHS,
@@ -143,6 +144,7 @@ export default function Feasibility() {
   const [data, setData] = useState(null); // { sources, competitors, compNote, apps, queries, market, risks }
   const [a, setA] = useState(null);
   const [report, setReport] = useState(null); // [{key,title,text,status}]
+  const [field, setField] = useState(null); // { survey, phone, paste, ads, videos }
   const [error, setError] = useState("");
   const abortRef = useRef(null);
   const reportRef = useRef(null);
@@ -154,14 +156,15 @@ export default function Feasibility() {
       setData(last.data);
       setA(last.a);
       setReport(last.report || null);
+      setField(last.field || null);
       setStage(last.report ? "done" : "ready");
     }
   }, []);
 
   // نحفظ آخر دراسة على الجهاز (بعد أي تعديل)
   useEffect(() => {
-    if (a && data && stage !== "gathering" && stage !== "writing") write("feasibility-last", { form, data, a, report });
-  }, [a, data, report, stage, form]);
+    if (a && data && stage !== "gathering" && stage !== "writing") write("feasibility-last", { form, data, a, report, field });
+  }, [a, data, report, stage, form, field]);
 
   const t = TYPES[form.type] || TYPES.shop;
   const res = useMemo(() => (a ? runAll(a) : null), [a]);
@@ -209,6 +212,7 @@ export default function Feasibility() {
       sources: (data?.sources || []).map(({ n, title, snippet }) => ({ n, title, snippet })),
       competitors: data?.competitors || [],
       risks: data?.risks || [],
+      field: fieldText(field),
     };
     try {
       for (let i = 0; i < secs.length; i++) {
@@ -252,7 +256,7 @@ export default function Feasibility() {
         facts: factsText(a, res, sens, { ...form, capital: toNum(form.capital) }),
         assumptionsText: assumptionsText(a, t), market: data?.market || "",
         sources: (data?.sources || []).map(({ n, title, snippet }) => ({ n, title, snippet })),
-        competitors: data?.competitors || [], risks: data?.risks || [],
+        competitors: data?.competitors || [], risks: data?.risks || [], field: fieldText(field),
       });
       const reader = r.body.getReader();
       const dec = new TextDecoder();
@@ -277,6 +281,7 @@ export default function Feasibility() {
     setData(null);
     setA(null);
     setReport(null);
+    setField(null);
     setStage("idle");
     setError("");
     write("feasibility-last", null);
@@ -413,6 +418,14 @@ export default function Feasibility() {
               </ul>
             </section>
           )}
+
+          <FieldData
+            form={{ ...form, capital: toNum(form.capital), size: toNum(form.size) }}
+            a={a}
+            field={field}
+            setField={setField}
+            onApplyPrice={(p) => { setA((x) => ({ ...x, price: { ...x.price, mid: Math.round(p), low: Math.min(x.price.low, Math.round(p)), high: Math.max(x.price.high, Math.round(p)), est: false } })); toast("السعر المتوقع اتعدّل من نتيجة الاستبيان"); }}
+          />
 
           <section className={s.card} aria-label="المصادر">
             <details className={s.srcBox}>

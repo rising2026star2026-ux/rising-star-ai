@@ -4,7 +4,8 @@
 // الحسابات نفسها في lib/feasibility.js وبتتعمل في المتصفح، والنموذج ممنوع يحسب أرقام.
 import { fail, clientIp, rateLimiter, chainFor, streamFromGroq } from "@/lib/groq";
 import { getModel } from "@/lib/models";
-import { askJson, str, list, int } from "@/lib/llmjson";
+import { askJson, str, list, int, DATA_IMAGE, MAX_IMAGE } from "@/lib/llmjson";
+import { readAdImages, findVideos, watchVideo } from "@/lib/fieldmedia";
 import { gatherMarket } from "@/lib/marketdata";
 import { TYPES, GOVERNORATES, REPORT_SECTIONS, cleanRange } from "@/lib/feasibility";
 
@@ -12,6 +13,7 @@ export const maxDuration = 60;
 
 const tooManyStudies = rateLimiter(8);
 const tooManySections = rateLimiter(80);
+const tooManyMedia = rateLimiter(15);
 
 function cleanForm(b) {
   const f = b?.form || {};
@@ -137,6 +139,26 @@ export async function POST(req) {
     });
   }
 
+  if (body.step === "images") {
+    if (tooManyMedia(ip)) return fail("وصلت لحد تحليل الصور الساعة دي. جرّب بعد شوية.", 429);
+    const images = list(body.images, 4, (x) => (typeof x === "string" && x.length <= MAX_IMAGE && DATA_IMAGE.test(x) ? x : null));
+    if (!images.length) return fail("ارفع صورة واحدة على الأقل (JPG أو PNG).", 400);
+    const out = await readAdImages(images, form.activity, { signal: req.signal });
+    if (!out) return fail("مقدرتش أقرا الصور دي. جرّب صور أوضح.", 503);
+    return Response.json(out);
+  }
+
+  if (body.step === "youtube") {
+    if (tooManyMedia(ip)) return fail("وصلت لحد البحث في يوتيوب الساعة دي. جرّب بعد شوية.", 429);
+    const videos = await findVideos(form.activity, form.governorate);
+    if (!videos.length) return fail("مالقيتش فيديوهات تجارب عن المشروع ده.", 404);
+    // بنتفرج على أول فيديوهين بس (كل فيديو بياخد وقت وحصة)
+    const watched = await Promise.all(videos.slice(0, 2).map((v) => watchVideo(v, form.activity, { signal: req.signal })));
+    return Response.json({
+      videos: videos.map((v, i) => (i < 2 && watched[i] ? watched[i] : { ...v, relevant: null })),
+    });
+  }
+
   if (body.step === "section") {
     if (tooManySections(ip)) return fail("وصلت لحد كتابة الأقسام الساعة دي. جرّب بعد شوية.", 429);
     const sec = REPORT_SECTIONS.find((s) => s.key === body.key);
@@ -154,6 +176,7 @@ export async function POST(req) {
       return name ? `- ${name}${c?.rating ? ` (${Number(c.rating)}★، ${int(c.reviews, 0, 1e7, 0)} تقييم)` : ""}${c?.address ? ` — ${str(c.address, 100)}` : ""}` : null;
     });
     const risks = list(body.risks, 6, (x) => str(x, 200) || null);
+    const field = str(body.field, 2500);
     const messages = [
       {
         role: "system",
@@ -175,6 +198,7 @@ export async function POST(req) {
           assumptions ? `الافتراضات (مدى أقل / متوقع / أعلى):\n${assumptions}` : "",
           comps.length ? `المنافسين من الخرائط:\n${comps.join("\n")}` : "مفيش بيانات منافسين من الخرائط؛ قول إن تحليل المنافسين محتاج زيارة ميدانية.",
           risks.length ? `مخاطر مبدئية: ${risks.join("؛ ")}` : "",
+          field ? `بيانات ميدانية (استبيان، وإعلانات المنافسين، وتجارب يوتيوب). استخدمها لو تخص القسم، واذكر إنها مؤشرات مبدئية:\n${field}` : "",
           sources.length ? `المصادر:\n${sources.join("\n")}` : "",
           `اكتب قسم «${sec.title}» دلوقتي.`,
         ].filter(Boolean).join("\n\n"),
