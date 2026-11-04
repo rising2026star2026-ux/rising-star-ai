@@ -759,3 +759,6 @@ body.chat-mode .wrap { padding-bottom: 12px; }
   body.chat-typing nav[aria-label="التنقل"] { display: none; }
   body.chat-typing .wrap { padding-bottom: 8px; }
 }
+/* الشات: الشريط العلوي أنحف عشان مساحة القراية تكبر */
+body.chat-mode .topbar { padding-block: 7px; }
+@media (max-width: 879px) { body.chat-mode .logo-name { font-size: 1.25rem; } }

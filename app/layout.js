@@ -17,6 +17,9 @@ export const metadata = {
   openGraph: { siteName: BRAND, locale: "ar_EG", type: "website", title: BRAND, description, url: "/" },
   twitter: { card: "summary", title: BRAND, description },
   formatDetection: { telephone: false },
+  // تثبيت كتطبيق على الآيفون (ملء الشاشة من غير شريط Safari)
+  appleWebApp: { capable: true, title: BRAND, statusBarStyle: "black-translucent" },
+  icons: { apple: "/icons/icon-192.png" },
 };
 
 export const viewport = {
