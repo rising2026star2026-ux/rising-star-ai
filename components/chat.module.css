@@ -418,13 +418,6 @@ button.fileChip:hover { border-color: var(--accent-line); }
 @media (max-width: 879px) { :global(body.chat-typing) .composerWrap { bottom: env(safe-area-inset-bottom, 0px); } }
 
 /* ===== ثيم الشات: خلفية خضرا هادية للعين، ومساحات قليلة ومريحة ===== */
-:global(body.chat-mode) {
-  --bg: #f1f7f3;
-  --chat-green: #15803d;
-  --chat-green-soft: rgba(21, 128, 61, 0.1);
-  --chat-green-line: rgba(21, 128, 61, 0.35);
-  background: #f1f7f3;
-}
 :global(body.chat-mode) .user { background: #fff; box-shadow: 0 1px 0 rgba(17, 24, 39, 0.04); border: 1px solid rgba(21, 128, 61, 0.14); }
 :global(body.chat-mode) .send { background: var(--chat-green); }
 :global(body.chat-mode) .webOn, :global(body.chat-mode) .webOn:hover { color: var(--chat-green); background: var(--chat-green-soft); border-color: var(--chat-green-line); }

@@ -762,3 +762,11 @@ body.chat-mode .wrap { padding-bottom: 12px; }
 /* الشات: الشريط العلوي أنحف عشان مساحة القراية تكبر */
 body.chat-mode .topbar { padding-block: 7px; }
 @media (max-width: 879px) { body.chat-mode .logo-name { font-size: 1.25rem; } }
+/* ثيم الشات: خلفية خضرا هادية (لازم هنا مش في chat.module.css: CSS Modules بترفض قاعدة global لوحدها) */
+body.chat-mode {
+  --bg: #f1f7f3;
+  --chat-green: #15803d;
+  --chat-green-soft: rgba(21, 128, 61, 0.1);
+  --chat-green-line: rgba(21, 128, 61, 0.35);
+  background: #f1f7f3;
+}
