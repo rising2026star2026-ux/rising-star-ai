@@ -10,6 +10,7 @@ import { fusionResponse } from "@/lib/fusion";
 import { cleanDocs, cleanInstructions, docContext, longChain, instructionsBlock } from "@/lib/doccontext";
 import { cleanBrand, brandBlock } from "@/lib/brandprofile";
 import { cleanOpts, optsBlock, optsNeedWeb } from "@/lib/answeropts";
+import { documentImages } from "@/lib/imagesearch";
 
 // توجيه تلقائي: سؤال عن معلومة (مين/فين/إمتى/كام…) بيدوّر على النت لوحده، وسؤال برمجة بيروح لموديل البرمجة.
 // طلبات الكتابة والتأليف («اكتب…»، «لخّص…») ما بتتوجّهش للبحث حتى لو فيها كلمة زي «مين».
@@ -186,6 +187,9 @@ export async function POST(req) {
   // البحث على الإنترنت: من زرار «بحث»، أو موديلات قسم البحث (Sonar بيبحث بنفسه)، أو توجيه تلقائي لسؤال معلومة
   const autoWeb = (route === "web" || optsWeb) && body.web !== true && !!searchProvider();
   const wantsWeb = bot ? bot.web || (body.web === true && !bot.nativeSearch) : body.web === true || autoWeb;
+  // «صور توضيحية»: صور وخرائط توثيقية (Wikimedia Commons + بحث الصور) بالتوازي مع البحث العادي
+  const docImages = opts?.images && !docs.length ? documentImages(lastUser.content).catch(() => []) : null;
+  let searchImages = [];
   if (wantsWeb) {
     if (!searchProvider()) headers["x-search"] = "nokey";
     else if (tooManySearches(ip)) headers["x-search"] = "limit";
@@ -198,7 +202,7 @@ export async function POST(req) {
         if (autoWeb) headers["x-route"] = route === "web" ? "web" : "opts";
         // المصادر بتوصل للمتصفح في الهيدر عشان تتعرض تحت الرد (d = اسم الموقع لو الرابط تحويلة)
         headers["x-sources"] = encodeURIComponent(JSON.stringify(results.map((r) => ({ t: r.title, u: r.url, ...(r.domain ? { d: r.domain } : {}) }))));
-        if (images.length) headers["x-images"] = encodeURIComponent(JSON.stringify(images));
+        searchImages = images;
       } else {
         headers["x-search"] = "empty";
         // سبب فشل البحث لتشخيص الأعطال (رقم الخطأ ورسالته، من غير أي مفاتيح)
@@ -206,6 +210,9 @@ export async function POST(req) {
       }
     }
   }
+
+  const allImages = [...(docImages ? await docImages : []), ...searchImages].filter((im, k, arr) => arr.findIndex((x) => x.s === im.s) === k).slice(0, 8);
+  if (allImages.length) headers["x-images"] = encodeURIComponent(JSON.stringify(allImages));
 
   // المستخدم طلب بحث وما نجحش: نمنع الموديل يجاوب بأسعار وأخبار قديمة كأنها حالية
   if (autoWeb && !/ok/.test(headers["x-search"] || "")) delete headers["x-search"]; // بحث تلقائي ما نجحش: من غير تنبيه للمستخدم

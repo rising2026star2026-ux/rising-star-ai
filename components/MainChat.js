@@ -663,12 +663,16 @@ export default function MainChat({ project = null, initialMessages = null, onMes
                     {m.verify && <VerifyPanel v={m.verify} />}
 
                     {m.images?.length > 0 && (
-                      <div className={s.images} aria-label="صور من نتائج البحث">
-                        {m.images.map((im) => (
-                          <a key={im.s} href={im.h} target="_blank" rel="noopener noreferrer nofollow" className={s.imgCard} title={im.a || ""}>
-                            <img src={im.s} alt={im.a || ""} loading="lazy" referrerPolicy="no-referrer" onError={(e) => { e.currentTarget.closest("a").style.display = "none"; }} />
-                          </a>
-                        ))}
+                      <div className={s.imagesWrap}>
+                        <span className={s.imagesTitle}>صور توضيحية</span>
+                        <div className={s.images} aria-label="صور توضيحية">
+                          {m.images.map((im) => (
+                            <a key={im.s} href={im.h} target="_blank" rel="noopener noreferrer nofollow" className={s.imgCard} title={im.a || ""}>
+                              <img src={im.s} alt={im.a || ""} loading="lazy" referrerPolicy="no-referrer" onError={(e) => { e.currentTarget.closest("a").style.display = "none"; }} />
+                              {(im.a || im.src) && <span className={s.imgCap}><b dir="auto">{im.a}</b>{im.src && <small>{im.src}</small>}</span>}
+                            </a>
+                          ))}
+                        </div>
                       </div>
                     )}
 
