@@ -20,6 +20,7 @@ import { read, write, useStored, toast, PENDING_KEY } from "@/lib/store";
 import { ACCEPT, KIND_ICON, docLabel } from "@/lib/docs";
 import { useAttach } from "@/lib/useAttach";
 import { idbGet, idbSet, idbDel } from "@/lib/idb";
+import { LEVELS, EXTRAS, DEFAULT_OPTS, optsCount, splitDiscuss } from "@/lib/answeropts";
 import s from "./chat.module.css";
 
 const STARTERS = [
@@ -130,6 +131,9 @@ export default function MainChat({ project = null, initialMessages = null, onMes
   const [settings] = useStored("settings", DEFAULT_SETTINGS);
   const [brand] = useStored("brand", null);
   const [useBrand, setUseBrand] = useStored("chat-brand", true);
+  const [opts, setOpts] = useStored("answer-opts", DEFAULT_OPTS);
+  const [optsOpen, setOptsOpen] = useState(false);
+  const nOpts = optsCount(opts);
   const [rewriteOpen, setRewriteOpen] = useState(-1);
   const didInitScroll = useRef(false);
   const [chatDocs, setChatDocs] = useState([]);
@@ -292,6 +296,7 @@ export default function MainChat({ project = null, initialMessages = null, onMes
           ...(currentDocs.length ? { docs: currentDocs.map(({ name, text }) => ({ name, text })) } : {}),
           ...(inProject && project.instructions ? { instructions: project.instructions, project: project.name } : {}),
           ...(myBrand?.name ? { brand: myBrand } : {}),
+          opts: read("answer-opts", DEFAULT_OPTS),
         }),
         signal: controller.signal,
       });
@@ -525,8 +530,53 @@ export default function MainChat({ project = null, initialMessages = null, onMes
               <small>تغيير</small>
             </button>
           </div>
-          {!empty && <button className={s.ghost} onClick={newChat}>+ محادثة جديدة</button>}
+          <div className={s.barEnd}>
+            <button
+              type="button"
+              className={`${s.optsBtn} ${nOpts ? s.optsBtnOn : ""}`}
+              onClick={() => setOptsOpen((o) => !o)}
+              aria-expanded={optsOpen}
+              aria-controls="answer-opts"
+            >
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8" /><circle cx="16" cy="7" r="2" /><circle cx="10" cy="17" r="2" /></svg>
+              خيارات الإجابة{nOpts ? <b>{nOpts}</b> : null}
+            </button>
+            {!empty && <button className={s.ghost} onClick={newChat}>+ جديدة</button>}
+          </div>
         </div>
+
+        {optsOpen && (
+          <section id="answer-opts" className={s.optsPanel} aria-label="خيارات الإجابة">
+            <div className={s.optsGroup}>
+              <span className={s.optsLabel}>الإجابة لمين؟</span>
+              <div className={s.optsLevels} role="radiogroup" aria-label="الإجابة لمين؟">
+                {LEVELS.map(([k, label]) => (
+                  <button key={k} type="button" role="radio" aria-checked={opts.level === k} className={opts.level === k ? s.levelOn : ""} onClick={() => setOpts({ ...DEFAULT_OPTS, ...opts, level: k, ...(k === "researcher" ? { refs: true, sources: true } : {}) })}>
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className={s.optsGroup}>
+              <span className={s.optsLabel}>ضيف للإجابة</span>
+              <div className={s.optsExtras}>
+                {EXTRAS.map(([k, label, hint]) => (
+                  <label key={k} className={`${s.extra} ${opts[k] ? s.extraOn : ""}`}>
+                    <input type="checkbox" checked={!!opts[k]} onChange={(e) => setOpts({ ...DEFAULT_OPTS, ...opts, [k]: e.target.checked })} />
+                    <span><b>{label}</b><small>{hint}</small></span>
+                  </label>
+                ))}
+              </div>
+            </div>
+            <div className={s.optsFoot}>
+              <small>الخيارات بتتحفظ وبتشتغل على كل سؤال جديد. المصادر والصور والمواقع بتدوّر على الإنترنت.</small>
+              <span>
+                {nOpts > 0 && <button type="button" className={s.ghost} onClick={() => setOpts(DEFAULT_OPTS)}>رجّع الافتراضي</button>}
+                <button type="button" className={s.optsDone} onClick={() => setOptsOpen(false)}>تمام</button>
+              </span>
+            </div>
+          </section>
+        )}
 
         {empty ? (
           hero ? (
@@ -578,14 +628,14 @@ export default function MainChat({ project = null, initialMessages = null, onMes
                       </div>
                     )}
                     {m.route && m.content && (
-                      <div className={s.routeTag}>{m.route === "web" ? "دوّرت على الإنترنت لأن سؤالك عن معلومة" : "جاوبتك بموديل البرمجة"}</div>
+                      <div className={s.routeTag}>{m.route === "web" ? "دوّرت على الإنترنت لأن سؤالك عن معلومة" : m.route === "opts" ? "دوّرت على الإنترنت عشان المصادر والصور اللي طلبتها" : "جاوبتك بموديل البرمجة"}</div>
                     )}
                     {m.fromDocs && m.content && (
                       <div className={s.docTag}><ClipIcon /><span>الرد من ملفاتك</span></div>
                     )}
                     {m.content ? (
                       <div className={s.md} id={`msg-${i}`}>
-                        <Md>{m.content}</Md>
+                        <Md>{splitDiscuss(m.content).body}</Md>
                       </div>
                     ) : m.fusion ? (
                       <div className={s.fusionWait} aria-label="جاري تجميع الإجابة">
@@ -602,6 +652,14 @@ export default function MainChat({ project = null, initialMessages = null, onMes
                       </div>
                     )}
 
+                    {m.content && !(busy && i === messages.length - 1) && splitDiscuss(m.content).questions.length > 0 && (
+                      <div className={s.discuss}>
+                        <span>أسئلة تكمّل بيها:</span>
+                        {splitDiscuss(m.content).questions.map((q) => (
+                          <button key={q} type="button" onClick={() => send(q)} disabled={busy}>{q}</button>
+                        ))}
+                      </div>
+                    )}
                     {m.verify && <VerifyPanel v={m.verify} />}
 
                     {m.images?.length > 0 && (

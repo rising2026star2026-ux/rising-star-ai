@@ -9,6 +9,7 @@ import { resolveBot, validProCode } from "@/lib/botcatalog";
 import { fusionResponse } from "@/lib/fusion";
 import { cleanDocs, cleanInstructions, docContext, longChain, instructionsBlock } from "@/lib/doccontext";
 import { cleanBrand, brandBlock } from "@/lib/brandprofile";
+import { cleanOpts, optsBlock, optsNeedWeb } from "@/lib/answeropts";
 
 // توجيه تلقائي: سؤال عن معلومة (مين/فين/إمتى/كام…) بيدوّر على النت لوحده، وسؤال برمجة بيروح لموديل البرمجة.
 // طلبات الكتابة والتأليف («اكتب…»، «لخّص…») ما بتتوجّهش للبحث حتى لو فيها كلمة زي «مين».
@@ -77,7 +78,7 @@ function chainForBot(bot) {
 const SYSTEM = [
   "أنت المساعد الرئيسي لمنصة Rising StarAi العربية.",
   "رد بنفس لغة ولهجة المستخدم، وابدأ بالإجابة مباشرة بدون مقدمات ولا خاتمة مجاملة.",
-  "اكتب كخبير حقيقي وهادي: اشرح السبب لما يفرق، وادّي مثال عملي لما يوضّح، ومن غير ما تطوّل في حاجة المستخدم ما سألش عنها.",
+  "اكتب كخبير حقيقي في المجال: غطّي السؤال بعمق، واشرح السبب والسياق، وادّي أمثلة عملية واقعية ومعلومات محددة (أسماء وتواريخ وأرقام)، ومن غير حشو.",
   "الأسئلة البسيطة (تحية، معلومة سريعة) ردها قصير، لكن أي سؤال فيه تحليل أو شرح أو قرار أو كتابة يتجاوب بإجابة غنية ومنظمة، ومن غير حشو أو تكرار.",
   "ابدأ بالإجابة المباشرة، وبعدها التفاصيل اللي تفرق بس.",
   ANSWER_STYLE,
@@ -171,6 +172,10 @@ export async function POST(req) {
     headers["x-brand"] = "1";
   }
 
+  // «خيارات الإجابة» (الزرار الأزرق): لمين الإجابة والإضافات (أعمق، مصادر، صور، مواقع، مراجع، أسئلة للنقاش)
+  const opts = cleanOpts(body.opts);
+  const optsWeb = optsNeedWeb(opts) && !docs.length && !!searchProvider();
+
   // التوجيه التلقائي (للشات العادي بس، مش للموديلات المختارة بالاسم ولا الملفات)
   const route = !bot && !docs.length && body.noRoute !== true ? routeOf(lastUser.content) : null;
   if (route === "code" && ["fusion", "balanced", "strong"].includes(mode.key)) {
@@ -179,7 +184,7 @@ export async function POST(req) {
   }
 
   // البحث على الإنترنت: من زرار «بحث»، أو موديلات قسم البحث (Sonar بيبحث بنفسه)، أو توجيه تلقائي لسؤال معلومة
-  const autoWeb = route === "web" && body.web !== true && !!searchProvider();
+  const autoWeb = (route === "web" || optsWeb) && body.web !== true && !!searchProvider();
   const wantsWeb = bot ? bot.web || (body.web === true && !bot.nativeSearch) : body.web === true || autoWeb;
   if (wantsWeb) {
     if (!searchProvider()) headers["x-search"] = "nokey";
@@ -190,7 +195,7 @@ export async function POST(req) {
       if (results.length) {
         system += `\n\n${resultsBlock(query, results, notes)}`;
         headers["x-search"] = "ok";
-        if (autoWeb) headers["x-route"] = "web";
+        if (autoWeb) headers["x-route"] = route === "web" ? "web" : "opts";
         // المصادر بتوصل للمتصفح في الهيدر عشان تتعرض تحت الرد (d = اسم الموقع لو الرابط تحويلة)
         headers["x-sources"] = encodeURIComponent(JSON.stringify(results.map((r) => ({ t: r.title, u: r.url, ...(r.domain ? { d: r.domain } : {}) }))));
         if (images.length) headers["x-images"] = encodeURIComponent(JSON.stringify(images));
@@ -206,6 +211,12 @@ export async function POST(req) {
   if (autoWeb && !/ok/.test(headers["x-search"] || "")) delete headers["x-search"]; // بحث تلقائي ما نجحش: من غير تنبيه للمستخدم
   if (wantsWeb && !autoWeb && !/ok/.test(headers["x-search"] || "")) {
     system += "\n\nتنبيه: المستخدم فعّل البحث على الإنترنت لكن البحث ما رجّعش نتايج. لا تذكر أسعاراً أو أخباراً أو أرقاماً حالية من ذاكرتك كأنها محدثة؛ قل في أول الرد إنك مش قادر تتأكد من آخر المعلومات دلوقتي، وبعدها قدّم اللي تعرفه كمعلومة عامة مع تاريخ تقريبي لها.";
+  }
+
+  // تعليمات خيارات الإجابة (بعد البحث عشان نعرف لو فيه نتايج نعتمد عليها)
+  if (opts) {
+    const block = optsBlock(opts, { hasSearch: /ok/.test(headers["x-search"] || "") });
+    if (block) system += `\n\n${block}`;
   }
 
   // «دمج 4 نماذج»: 4 مسودات في نفس الوقت، وبعدين محرر بيكتب منهم رد واحد متدقق
@@ -225,7 +236,8 @@ export async function POST(req) {
 
   const effort = bot ? bot.effort : mode.effort;
   const temperature = docs.length ? 0.3 : SETTINGS.style.temp[s.style] ?? 0.6;
-  const maxTokens = effort === "high" ? 6000 : effort === "medium" || docs.length ? 3200 : 2048;
+  const rich = opts && (opts.deep || opts.level === "researcher" || opts.level === "expert" || opts.refs || opts.sites || opts.discuss);
+  const maxTokens = effort === "high" ? 6000 : rich ? 4200 : effort === "medium" || docs.length ? 3200 : 2400;
   let chain = bot ? chainForBot(bot) : chainFor(mode);
   // الموديل المطلوب فعلاً (للمقارنة): لو اللي رد غيره، الهيدر x-model هيبان مختلف وصفحة المقارنة تنبّه المستخدم
   if (bot) headers["x-asked"] = `${chain[0].provider}/${chain[0].id}`;

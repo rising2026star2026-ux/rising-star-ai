@@ -445,3 +445,66 @@ button.fileChip:hover { border-color: var(--accent-line); }
 .projectsLink b { color: var(--chat-green, var(--accent)); }
 .bar { padding: 0 0 8px; }
 .page { padding-top: 8px; }
+
+/* ===== خيارات الإجابة (الزرار الأزرق) ===== */
+.barEnd { display: flex; align-items: center; gap: 6px; }
+.optsBtn {
+  display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 0.78rem; cursor: pointer;
+  padding: 6px 11px; border-radius: 999px; color: #fff; background: #1f4dff; border: 0;
+  box-shadow: 0 6px 16px -10px #1f4dff;
+}
+.optsBtn b { display: inline-grid; place-items: center; min-width: 18px; height: 18px; padding: 0 4px; border-radius: 999px; font-size: 0.68rem; color: #1f4dff; background: #fff; }
+.optsBtn:hover { background: #1a40db; }
+.optsPanel {
+  display: grid; gap: 14px; max-width: 760px; width: 100%; margin: 0 auto 12px; padding: 14px;
+  border-radius: 18px; background: #fff; border: 1px solid rgba(31, 77, 255, 0.25);
+  box-shadow: 0 16px 40px -28px rgba(31, 77, 255, 0.6);
+}
+.optsGroup { display: grid; gap: 8px; }
+.optsLabel { font-size: 0.8rem; font-weight: 600; color: var(--text-strong); }
+.optsLevels { display: flex; flex-wrap: wrap; gap: 6px; }
+.optsLevels button {
+  font: inherit; font-size: 0.8rem; cursor: pointer; padding: 6px 13px; border-radius: 999px;
+  color: var(--text); background: var(--surface-2); border: 1px solid var(--hairline);
+}
+.optsLevels .levelOn { color: #fff; background: #1f4dff; border-color: #1f4dff; }
+.optsExtras { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+@media (max-width: 420px) { .optsExtras { grid-template-columns: minmax(0, 1fr); } }
+.extra {
+  display: flex; gap: 8px; align-items: flex-start; padding: 8px 10px; border-radius: 12px; cursor: pointer;
+  border: 1px solid var(--hairline); background: var(--surface-2);
+}
+.extra input { margin-top: 4px; accent-color: #1f4dff; flex: none; }
+.extra span { display: grid; gap: 1px; min-width: 0; }
+.extra b { font-size: 0.8rem; font-weight: 600; color: var(--text-strong); }
+.extra small { font-size: 0.7rem; color: var(--faint); line-height: 1.5; }
+.extraOn { border-color: rgba(31, 77, 255, 0.4); background: rgba(31, 77, 255, 0.06); }
+.optsFoot { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.optsFoot small { color: var(--faint); font-size: 0.7rem; flex: 1; min-width: 180px; }
+.optsFoot span { display: flex; gap: 6px; }
+.optsDone { font: inherit; font-size: 0.8rem; cursor: pointer; padding: 6px 16px; border-radius: 999px; color: #fff; background: #1f4dff; border: 0; }
+
+/* أسئلة للنقاش تحت الرد */
+.discuss { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 12px; }
+.discuss span { width: 100%; font-size: 0.76rem; color: var(--faint); }
+.discuss button {
+  font: inherit; font-size: 0.82rem; cursor: pointer; text-align: start; padding: 7px 13px; border-radius: 14px;
+  color: var(--text); background: #fff; border: 1px solid rgba(31, 77, 255, 0.22);
+}
+.discuss button:hover:not(:disabled) { border-color: #1f4dff; }
+/* الشريط فوق الشات ما يتكسرش على سطرين في الموبايل */
+.bar { flex-wrap: nowrap; }
+.barStart { flex-wrap: nowrap; min-width: 0; flex: 1 1 auto; }
+.barStart .modelPill { min-width: 0; max-width: 100%; }
+.modelPill b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.barEnd { flex: none; }
+.optsBtn, .barEnd .ghost { white-space: nowrap; }
+@media (max-width: 480px) {
+  .modelPill small { display: none; }
+  .modelPill { padding: 6px 11px; }
+  .optsExtras { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .optsExtras .extra small { display: none; }
+  .extra { padding: 8px; align-items: center; }
+  .extra input { margin-top: 0; }
+  .optsPanel { padding: 12px; gap: 10px; }
+}
