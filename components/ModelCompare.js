@@ -60,6 +60,7 @@ export default function ModelCompare({ bots, sections }) {
           // لو الموديل مش متاح السيرفر بيرد بـ «متوازن»، فبنحدده بدل ما يروح لـ «دمج 4 نماذج»
           model: "balanced",
           bot: key,
+          strict: true, // مفيش استبدال صامت بموديل تاني: الخطأ بيظهر في العمود
           pro: read("pro-code", "") || undefined,
           settings: read("settings", DEFAULT_SETTINGS),
         }),

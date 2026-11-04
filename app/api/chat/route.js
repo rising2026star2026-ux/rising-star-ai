@@ -221,7 +221,11 @@ export async function POST(req) {
     }
   }
 
-  return streamFromGroq({
+  // «صارم» (صفحة المقارنة): الموديل المطلوب بس. لو ما ردش نرجّع خطأ صريح بدل ما نرد بموديل تاني ونوهم المستخدم إنه هو
+  const strict = !!bot && body.strict === true && !docs.length;
+  if (strict) chain = chain.slice(0, 1);
+
+  const out = await streamFromGroq({
     chain,
     messages: finalMessages,
     temperature,
@@ -229,4 +233,8 @@ export async function POST(req) {
     signal: req.signal,
     headers,
   });
+  if (strict && !out.ok) {
+    return fail(`«${bot.name}» مش بيرد دلوقتي، غالباً رصيد المزود خلص أو الموديل مشغول. ما استبدلناهوش بموديل تاني عشان المقارنة تفضل صادقة.`, 503);
+  }
+  return out;
 }
