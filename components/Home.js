@@ -1,5 +1,6 @@
 "use client";
 // الصفحة الرئيسية — مساحة العمل
+import { enterSends } from "@/lib/keys";
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -97,7 +98,7 @@ export default function Home() {
   }
 
   function onKey(e) {
-    if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
+    if (enterSends(e)) {
       e.preventDefault();
       ask();
     }

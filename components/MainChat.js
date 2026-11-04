@@ -1,6 +1,7 @@
 "use client";
 // الشات الرئيسي: رد فوري كلمة بكلمة، و6 موديلات، وبحث على الإنترنت، وقراءة الملفات (PDF وWord والصور)،
 // واقتراح الأداة المناسبة. نفس الشات بيشتغل جوه «المشاريع» (props: project وما بعدها).
+import { enterSends } from "@/lib/keys";
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Md from "@/components/Md";
@@ -321,7 +322,7 @@ export default function MainChat({ project = null, initialMessages = null, onMes
   }
 
   function onKey(e) {
-    if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
+    if (enterSends(e)) {
       e.preventDefault();
       send();
     }
