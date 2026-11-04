@@ -149,6 +149,7 @@ export default function MainChat({ chatBots = null, project = null, initialMessa
   const [optsOpen, setOptsOpen] = useState(false);
   const [sheet, setSheet] = useState(""); // "plus" | "models" | ""
   const blurTimer = useRef(null);
+  const [confirmNew, setConfirmNew] = useState(false);
   // الموديلات بالاسم في مربع «الموديل»: من السيرفر (المتاح بس)، أو من القايمة الثابتة لو الشات جوه مشروع
   const picks = useMemo(() => (chatBots || CHAT_PICKS.map((k) => getBot(k)).filter(Boolean)).slice(0, 7), [chatBots]);
   const nOpts = optsCount(opts);
@@ -567,10 +568,29 @@ export default function MainChat({ chatBots = null, project = null, initialMessa
             <div><ClipIcon /><b>سيب الملف هنا</b><small>PDF أو Word أو صورة أو ملف نص</small></div>
           </div>
         )}
-        {(barStart || !empty) && (
+        {barStart && (
           <div className={s.bar}>
             <div className={s.barStart}>{barStart}</div>
-            {!empty && <button className={s.ghost} onClick={newChat}>+ محادثة جديدة</button>}
+          </div>
+        )}
+
+        {/* «شات جديد»: ثابت فوق على الجنب طول ما فيه محادثة، وبيسأل قبل ما يمسح */}
+        {!empty && (
+          <button type="button" className={s.newChatFab} onClick={() => setConfirmNew(true)}>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+            شات جديد
+          </button>
+        )}
+        {confirmNew && (
+          <div className={s.confirmScrim} onClick={() => setConfirmNew(false)}>
+            <div className={s.confirmBox} role="alertdialog" aria-modal="true" aria-labelledby="new-chat-q" onClick={(e) => e.stopPropagation()}>
+              <b id="new-chat-q">تبدأ شات جديد؟</b>
+              <p>المحادثة اللي على الشاشة هتتقفل وهتبدأ من الأول.</p>
+              <div>
+                <button type="button" className={s.confirmNo} onClick={() => setConfirmNew(false)}>لأ، كمّل</button>
+                <button type="button" className={s.confirmYes} onClick={() => { setConfirmNew(false); newChat(); }} autoFocus>أيوه، شات جديد</button>
+              </div>
+            </div>
           </div>
         )}
 

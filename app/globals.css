@@ -753,7 +753,11 @@ html.lite .intro { display: none; }
 /* وضع الشات: من غير فوتر الموقع ولا المسافة الكبيرة تحت خانة الكتابة */
 body.chat-mode .footer { display: none; }
 body.chat-mode .wrap { padding-bottom: 12px; }
-@media (max-width: 879px) { body.chat-mode .wrap { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); } }
+/* الشات على الموبايل: من غير شريط التنقل اللي تحت، والخانة لازقة في آخر الشاشة (التنقل من القايمة فوق) */
+@media (max-width: 879px) {
+  body.chat-mode nav[aria-label="التنقل"] { display: none; }
+  body.chat-mode .wrap { padding-bottom: env(safe-area-inset-bottom, 0px); }
+}
 /* وقت الكتابة على الموبايل: شريط التنقل بيستخبى عشان خانة الكتابة تبان كاملة وكبيرة */
 @media (max-width: 879px) {
   body.chat-typing nav[aria-label="التنقل"] { display: none; }
