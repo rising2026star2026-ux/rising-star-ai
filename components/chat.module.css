@@ -624,3 +624,53 @@ button.fileChip:hover { border-color: var(--accent-line); }
 .switchRow input:checked + i { background: #1f4dff; }
 .switchRow input:checked + i::after { inset-inline-end: 19px; }
 .switchRow input:focus-visible + i { outline: 2px solid #1f4dff; outline-offset: 2px; }
+
+/* ===== مقاسات أصغر وأهدى (طلب العميل): الزرار الأزرق أكبر شوية وفي النص، والأزرار والنوافذ أصغر ===== */
+.optsFab {
+  inset-inline-end: auto; left: 50%; transform: translateX(-50%);
+  top: -32px; height: 26px; min-width: 56px; padding: 0 12px; gap: 5px;
+}
+.optsFab:hover { transform: translateX(-50%) translateY(-1px); }
+.optsFab svg { width: 15px; height: 15px; }
+.optsFab b { font-size: 0.7rem; }
+
+.plusBtn { width: 30px; height: 30px; }
+.plusBtn svg { width: 15px; height: 15px; }
+.modeChip { height: 28px; padding: 0 8px; font-size: 0.72rem; max-width: 150px; }
+.send { width: 34px; height: 34px; font-size: 0.95rem; }
+
+.sheet {
+  max-width: 380px; inset-inline: 0; margin-inline: auto; padding: 10px; gap: 8px; border-radius: 20px;
+  max-height: min(56vh, 440px);
+}
+.sheetHead b { font-size: 0.84rem; }
+.sheetX { width: 26px; height: 26px; font-size: 0.7rem; }
+
+.plusGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.plusTile { padding: 8px 4px; gap: 2px; border-radius: 14px; }
+.plusTile i { width: 30px; height: 30px; border-radius: 10px; margin-bottom: 2px; }
+.plusTile i svg { width: 16px; height: 16px; }
+.plusTile b { font-size: 0.72rem; }
+.plusTile small { display: none; }
+
+.modeGrid { gap: 6px; }
+.modeTile { padding: 7px 9px; column-gap: 8px; border-radius: 13px; }
+.modeTile i { width: 26px; height: 26px; border-radius: 9px; font-size: 0.85rem; }
+.modeTile b { font-size: 0.74rem; }
+.modeTile small { font-size: 0.62rem; }
+.allModels { padding: 7px; font-size: 0.72rem; border-radius: 12px; }
+
+.levelSeg { padding: 3px; border-radius: 13px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.levelSeg button { padding: 6px 2px; font-size: 0.7rem; border-radius: 10px; }
+.optsSheet .optsLabel { font-size: 0.72rem; }
+.switches { gap: 4px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.switchRow { padding: 7px 9px; gap: 6px; border-radius: 12px; }
+.switchRow b { font-size: 0.72rem; }
+.switchRow small { display: none; }
+.switchRow i { width: 30px; height: 18px; }
+.switchRow i::after { top: 2px; inset-inline-end: 2px; width: 14px; height: 14px; }
+.switchRow input:checked + i::after { inset-inline-end: 14px; }
+.doneBtn { padding: 6px 16px; font-size: 0.76rem; }
+.linkBtn { font-size: 0.72rem; }
+/* النوافذ تفتح فوق الزرار الأزرق مش فوقه بالظبط */
+.sheet { bottom: calc(100% + 24px); }
