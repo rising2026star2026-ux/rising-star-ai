@@ -413,7 +413,7 @@ button.fileChip:hover { border-color: var(--accent-line); }
 .verifySrc b { display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; font-size: 0.64rem; background: var(--surface-2); color: var(--text); }
 
 /* ===== خانة الكتابة وقت الكتابة: أكبر ===== */
-.composer:has(textarea:focus) textarea { min-height: 96px; }
+.typingBox textarea { min-height: 96px; } /* بحالة React (بتتأخر شوية بعد الـ blur) مش :focus، عشان الشكل ما يتغيرش لحظة اللمسة */
 .compact .brandBtn { display: none; }
 @media (max-width: 879px) { :global(body.chat-typing) .composerWrap { bottom: env(safe-area-inset-bottom, 0px); } }
 

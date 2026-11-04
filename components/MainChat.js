@@ -135,6 +135,7 @@ export default function MainChat({ project = null, initialMessages = null, onMes
   const [opts, setOpts] = useStored("answer-opts", DEFAULT_OPTS);
   const [optsOpen, setOptsOpen] = useState(false);
   const [sheet, setSheet] = useState(""); // "plus" | "models" | ""
+  const blurTimer = useRef(null);
   const nOpts = optsCount(opts);
   const [rewriteOpen, setRewriteOpen] = useState(-1);
   const didInitScroll = useRef(false);
@@ -817,7 +818,7 @@ export default function MainChat({ project = null, initialMessages = null, onMes
               ))}
             </div>
           )}
-          <div className={`${s.composer} ${!empty && !focus && !input.trim() && !docs.length && !attach.pending.length && !attach.note ? s.compact : ""}`}>
+          <div className={`${s.composer} ${!empty && !focus && !sheet && !optsOpen && !input.trim() && !docs.length && !attach.pending.length && !attach.note ? s.compact : ""} ${focus ? s.typingBox : ""}`}>
             {(docs.length > 0 || attach.pending.length > 0 || attach.note) && (
               <div className={s.files}>
                 <div className={s.fileRow}>
@@ -866,8 +867,17 @@ export default function MainChat({ project = null, initialMessages = null, onMes
               onChange={(e) => { setInput(e.target.value); resize(); }}
               onKeyDown={onKey}
               onPaste={onPaste}
-              onFocus={() => { setFocus(true); document.body.classList.add("chat-typing"); }}
-              onBlur={() => { setFocus(false); document.body.classList.remove("chat-typing"); }}
+              onFocus={() => { clearTimeout(blurTimer.current); setFocus(true); document.body.classList.add("chat-typing"); }}
+              // التصغير بيستنى شوية بعد ما الخانة تفقد التركيز: لو اللمسة كانت على زرار جوه الخانة (+ أو الموديل)
+              // الشكل ما يتغيرش تحت إيد المستخدم قبل ما الزرار يستلم اللمسة
+              onBlur={() => {
+                clearTimeout(blurTimer.current);
+                blurTimer.current = setTimeout(() => {
+                  if (document.activeElement === boxRef.current) return;
+                  setFocus(false);
+                  document.body.classList.remove("chat-typing");
+                }, 350);
+              }}
             />
             <div className={s.tools}>
               <input
