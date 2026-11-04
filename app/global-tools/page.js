@@ -22,6 +22,10 @@ export default function GlobalTools() {
         <span className={s.stat}><b>{DIR_TOTAL.toLocaleString("en-US")}</b>أداة</span>
         <span className={`${s.stat} ${s.blue}`}><b>{DIR_CATEGORIES.length}</b>مجال</span>
       </div>
+      <Link href="/global-tools/alternatives" className={s.cat} style={{ marginBottom: 14 }}>
+        <span className={s.catIcon} aria-hidden="true">🔁</span>
+        <span><b>بدائل مجانية لأشهر الأدوات المدفوعة</b><small>20 مجال: المدفوع وبديله المجاني، وإيه المتاح جوه Rising</small></span>
+      </Link>
       <DirSearch index={index} />
       <div className={s.cats}>
         {DIR_CATEGORIES.map((c) => (
