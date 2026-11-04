@@ -99,7 +99,7 @@
 .starter:hover { color: var(--text); border-color: var(--accent-line); transform: translateY(-2px); }
 
 /* ===== المحادثة ===== */
-.thread { flex: 1; display: flex; flex-direction: column; gap: 26px; padding: 6px 0 18px; max-width: 760px; width: 100%; margin: 0 auto; }
+.thread { flex: 1; display: flex; flex-direction: column; gap: 22px; padding: 4px 0 8px; max-width: 760px; width: 100%; margin: 0 auto; }
 .userRow { display: flex; justify-content: flex-start; }
 .botRow { display: flex; justify-content: flex-end; }
 
@@ -177,7 +177,7 @@
 /* ===== خانة الكتابة ===== */
 /* ستارة داكنة شفافة بدل لون صلب، عشان تتماشى مع إضاءة الخلفية */
 .composerWrap {
-  position: sticky; bottom: 0; padding: 14px 0 16px;
+  position: sticky; bottom: 0; padding: 8px 0 10px;
   background: linear-gradient(transparent, color-mix(in srgb, var(--bg) 80%, transparent) 46%, var(--bg) 100%);
 }
 .composer {
@@ -210,7 +210,7 @@
 
 /* الموبايل: خانة الكتابة فوق شريط التنقل السفلي */
 @media (max-width: 879px) {
-  .composerWrap { bottom: calc(64px + env(safe-area-inset-bottom, 0px)); padding-bottom: 10px; }
+  .composerWrap { bottom: calc(64px + env(safe-area-inset-bottom, 0px)); padding: 6px 0 6px; }
   .hero { padding-top: 26px; }
   .user { max-width: 92%; }
   .bot { padding: 0 2px; }
@@ -367,3 +367,12 @@ button.fileChip:hover { border-color: var(--accent-line); }
 .projectsLink b { color: var(--accent); font-weight: 500; }
 .projectsLink:hover { color: var(--text); border-color: var(--accent-line); }
 .typingMode .projectsLink { display: none; }
+
+/* ===== خانة الكتابة وقت القراية: سطر واحد صغير، وبتكبر أول ما تلمسها ===== */
+.compact { flex-direction: row; align-items: center; gap: 4px; padding: 4px 5px 4px 6px; border-radius: 999px; box-shadow: 0 6px 22px -14px rgba(17, 24, 39, 0.3); }
+.compact textarea { flex: 1; min-width: 0; min-height: 40px; height: 40px !important; padding: 8px 10px; white-space: nowrap; overflow: hidden; }
+.compact .tools { flex: none; gap: 4px; }
+.compact .grow, .compact .proofBtn { display: none; }
+.compact .webBtn { width: 36px; padding: 0; justify-content: center; border-color: transparent; }
+.compact .webBtn span { display: none; }
+.compact .webOn { border-color: var(--accent-line); }

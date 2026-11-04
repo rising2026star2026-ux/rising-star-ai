@@ -749,3 +749,8 @@ html.lite .intro { display: none; }
   .md-table table.md-tbl td[data-label]::before { content: attr(data-label); display: block; margin-bottom: 1px; font-size: 0.74rem; line-height: 1.6; color: var(--accent); }
 }
 
+
+/* وضع الشات: من غير فوتر الموقع ولا المسافة الكبيرة تحت خانة الكتابة */
+body.chat-mode .footer { display: none; }
+body.chat-mode .wrap { padding-bottom: 12px; }
+@media (max-width: 879px) { body.chat-mode .wrap { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); } }

@@ -181,6 +181,12 @@ export default function MainChat({ project = null, initialMessages = null, onMes
   }, [messages, busy]);
 
   const lastUser = [...messages].reverse().find((m) => m.role === "user");
+  // وضع الشات: بيشيل فوتر الموقع والمسافة الفاضية تحت خانة الكتابة (globals.css: .chat-mode)
+  useEffect(() => {
+    document.body.classList.add("chat-mode");
+    return () => document.body.classList.remove("chat-mode");
+  }, []);
+
   const suggestions = useMemo(() => (lastUser && !docs.length ? findTools(lastUser.content, 2, 6) : []), [lastUser, docs.length]);
 
   function resize() {
@@ -526,7 +532,7 @@ export default function MainChat({ project = null, initialMessages = null, onMes
               ))}
             </div>
           )}
-          <div className={s.composer}>
+          <div className={`${s.composer} ${!empty && !focus && !input.trim() && !docs.length && !attach.pending.length && !attach.note ? s.compact : ""}`}>
             {(docs.length > 0 || attach.pending.length > 0 || attach.note) && (
               <div className={s.files}>
                 <div className={s.fileRow}>
@@ -636,9 +642,9 @@ export default function MainChat({ project = null, initialMessages = null, onMes
               <button type="button" onClick={proof.dismiss} aria-label="إخفاء">✕</button>
             </div>
           )}
-          <div className={s.note}>
+          {empty && <div className={s.note}>
             «{bot ? bot.name : model.name}»{web ? " • بحث على الإنترنت" : ""}{docs.length ? ` • ${nFiles(docs.length)}` : ""}{inProject && project.instructions ? " • تعليمات المشروع" : ""}{st.voice !== "auto" || st.depth !== "auto" ? " • إعداداتك مفعّلة" : ""} — الردود من ذكاء اصطناعي وممكن يكون فيها أخطاء، راجع المهم منها.
-          </div>
+          </div>}
         </div>
       </div>
     </div>
