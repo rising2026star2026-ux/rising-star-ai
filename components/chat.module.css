@@ -674,3 +674,22 @@ button.fileChip:hover { border-color: var(--accent-line); }
 .linkBtn { font-size: 0.72rem; }
 /* النوافذ تفتح فوق الزرار الأزرق مش فوقه بالظبط */
 .sheet { bottom: calc(100% + 24px); }
+
+/* ===== صف الزرارين فوق الخانة: البحث (أصفر دايري) + خيارات الإجابة (أزرق) في النص ===== */
+.fabRow {
+  position: absolute; top: -32px; left: 50%; transform: translateX(-50%); z-index: 3;
+  display: flex; align-items: center; gap: 8px;
+}
+.fabRow .optsFab { position: static; transform: none; }
+.fabRow .optsFab:hover { transform: translateY(-1px); }
+.webFab {
+  width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; padding: 0;
+  color: #5c4300; background: #ffe58a; border: 1px solid #f5c400;
+  box-shadow: 0 6px 14px -8px rgba(245, 180, 0, 0.9);
+  transition: background-color 0.18s var(--ease), transform 0.18s var(--ease), box-shadow 0.18s var(--ease);
+}
+.webFab:hover { transform: translateY(-1px); }
+.webFabOn { color: #1a1300; background: #ffc61a; border-color: #e0a800; box-shadow: 0 0 0 3px rgba(255, 198, 26, 0.35); }
+
+.swapTag { font-size: 0.74rem; color: #8a5a00; background: #fff6dc; padding: 6px 10px; border-radius: 10px; margin-bottom: 8px; }
+.modeTile i :global(span) { border-radius: 8px; }

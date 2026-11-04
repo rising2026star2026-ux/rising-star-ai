@@ -12,7 +12,7 @@ import BotIcon from "./BotIcon";
 import StarMark from "./StarMark";
 import FusionStack from "./FusionStack";
 import { useProofread, ProofIcon } from "@/lib/useProofread";
-import { getBot } from "@/lib/bots";
+import { getBot, BOTS, CHAT_PICKS } from "@/lib/bots";
 import { findTools } from "@/lib/search";
 import { getModel, DEFAULT_MODEL_KEY, MODEL_OPTIONS } from "@/lib/models";
 import { answerToPng, shareOrDownload } from "@/lib/answerimage";
@@ -76,6 +76,19 @@ const ClipIcon = () => (
  * @param barStart       زرار في أول الشريط (الرجوع للمشروع)
  * @param placeholder    نص خانة الكتابة
  */
+/** «openrouter/anthropic/claude-sonnet-5.5» ← اسم مفهوم للموديل */
+function modelLabel(used) {
+  const id = String(used).replace(/^(groq|gemini|openrouter|pollinations)\//, "");
+  const b = BOTS.find((x) => x.id === id || x.fallbackId === id);
+  if (b) return b.name;
+  if (/flash-lite/.test(id)) return "Gemini Flash Lite";
+  if (/^gemini/.test(id)) return "Gemini Flash";
+  if (/kimi/.test(id)) return "Kimi K2";
+  if (/llama/.test(id)) return "Llama";
+  if (/qwen/.test(id)) return "Qwen";
+  return id.split("/").pop();
+}
+
 const V_MARK = { ok: ["✓", "صح"], wrong: ["✕", "غلط"], unsure: ["؟", "مش متأكد"] };
 const V_HEAD = {
   ok: "المعلومات الأساسية في الرد مطابقة للمصادر.",
@@ -116,7 +129,7 @@ function VerifyPanel({ v }) {
   );
 }
 
-export default function MainChat({ project = null, initialMessages = null, onMessages, onAttach, onNewChat, onShowFiles, onStart, hero = null, barStart = null, placeholder = "" }) {
+export default function MainChat({ chatBots = null, project = null, initialMessages = null, onMessages, onAttach, onNewChat, onShowFiles, onStart, hero = null, barStart = null, placeholder = "" }) {
   const inProject = !!project;
   const [messages, setMessages] = useState(() => (Array.isArray(initialMessages) ? initialMessages : []));
   const [input, setInput] = useState("");
@@ -136,6 +149,8 @@ export default function MainChat({ project = null, initialMessages = null, onMes
   const [optsOpen, setOptsOpen] = useState(false);
   const [sheet, setSheet] = useState(""); // "plus" | "models" | ""
   const blurTimer = useRef(null);
+  // الموديلات بالاسم في مربع «الموديل»: من السيرفر (المتاح بس)، أو من القايمة الثابتة لو الشات جوه مشروع
+  const picks = useMemo(() => (chatBots || CHAT_PICKS.map((k) => getBot(k)).filter(Boolean)).slice(0, 7), [chatBots]);
   const nOpts = optsCount(opts);
   const [rewriteOpen, setRewriteOpen] = useState(-1);
   const didInitScroll = useRef(false);
@@ -282,6 +297,7 @@ export default function MainChat({ project = null, initialMessages = null, onMes
     let fusion = null;
     let fromDocs = false;
     let route = null;
+    let swappedTo = null;
     const myBrand = read("chat-brand", true) ? read("brand", null) : null;
 
     try {
@@ -315,6 +331,9 @@ export default function MainChat({ project = null, initialMessages = null, onMes
       if (res.headers.get("x-bot") === "fallback") toast("الموديل ده مش متاح دلوقتي، فردّ عليك «متوازن»");
       fromDocs = !!res.headers.get("x-docs");
       route = res.headers.get("x-route") || null;
+      const used = res.headers.get("x-model") || "";
+      const asked = res.headers.get("x-asked") || "";
+      swappedTo = used && asked && used !== asked ? modelLabel(used) : null;
       const status = res.headers.get("x-search");
       if (status && SEARCH_NOTES[status]) toast(SEARCH_NOTES[status]);
       try { sources = JSON.parse(decodeURIComponent(res.headers.get("x-sources") || "[]")); } catch { sources = []; }
@@ -326,14 +345,14 @@ export default function MainChat({ project = null, initialMessages = null, onMes
         const { done, value } = await reader.read();
         if (done) break;
         reply += decoder.decode(value, { stream: true });
-        setMessages([...history, { role: "assistant", content: reply, sources, images, fusion, fromDocs, route }]);
+        setMessages([...history, { role: "assistant", content: reply, sources, images, fusion, fromDocs, route, swappedTo }]);
       }
       if (!reply.trim()) throw new Error("ما وصلش رد. جرّب تاني.");
     } catch (e) {
       if (e.name === "AbortError") {
-        setMessages([...history, { role: "assistant", content: reply || "_اتوقف الرد._", sources, images, fusion, fromDocs, route }]);
+        setMessages([...history, { role: "assistant", content: reply || "_اتوقف الرد._", sources, images, fusion, fromDocs, route, swappedTo }]);
       } else {
-        setMessages(reply ? [...history, { role: "assistant", content: reply, sources, images, fusion, fromDocs, route }] : history);
+        setMessages(reply ? [...history, { role: "assistant", content: reply, sources, images, fusion, fromDocs, route, swappedTo }] : history);
         setError(e.message || "الاتصال اتقطع. اتأكد من الإنترنت وجرّب تاني.");
       }
     } finally {
@@ -604,6 +623,9 @@ export default function MainChat({ project = null, initialMessages = null, onMes
                         <span>إجابة مدمجة من {m.fusion.length} نماذج ومتدققة لغوياً</span>
                       </div>
                     )}
+                    {m.swappedTo && m.content && (
+                      <div className={s.swapTag}>الموديل اللي اخترته مش متاح دلوقتي (غالباً محتاج رصيد)، فالرد ده من <bdi>{m.swappedTo}</bdi>.</div>
+                    )}
                     {m.route && m.content && (
                       <div className={s.routeTag}>{m.route === "web" ? "دوّرت على الإنترنت لأن سؤالك عن معلومة" : m.route === "opts" ? "دوّرت على الإنترنت عشان المصادر والصور اللي طلبتها" : "جاوبتك بموديل البرمجة"}</div>
                     )}
@@ -751,10 +773,6 @@ export default function MainChat({ project = null, initialMessages = null, onMes
                 <button type="button" className={s.plusTile} onClick={() => { setSheet(""); fileRef.current?.click(); }} disabled={reading}>
                   <i aria-hidden="true"><ClipIcon /></i><b>ملف أو صورة</b><small>PDF، Word، صورة</small>
                 </button>
-                <button type="button" className={`${s.plusTile} ${web ? s.plusOn : ""}`} onClick={() => { toggleWeb(); setSheet(""); }} aria-pressed={!!web}>
-                  <i aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round"><circle cx="12" cy="12" r="8.5" /><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z" /></svg></i>
-                  <b>بحث على النت</b><small>{web ? "مفعّل" : "معلومات جديدة"}</small>
-                </button>
                 {brand?.name ? (
                   <button type="button" className={`${s.plusTile} ${useBrand ? s.plusOn : ""}`} onClick={() => { setUseBrand(!useBrand); setSheet(""); toast(useBrand ? "الردود مش هتاخد نشاطك في الاعتبار" : `الردود هتتظبط على «${brand.name}»`); }} aria-pressed={!!useBrand}>
                     <i aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M4 9.5l1.4-4h13.2l1.4 4M4 9.5h16v1a2.7 2.7 0 01-5.3.6 2.7 2.7 0 01-5.4 0A2.7 2.7 0 014 10.5zM5.5 12.5V19.5h13v-7" /></svg></i>
@@ -785,20 +803,35 @@ export default function MainChat({ project = null, initialMessages = null, onMes
             <section className={s.sheet} aria-label="الموديل اللي بيجاوب">
               <div className={s.sheetHead}><b>الإجابة من أنهي موديل؟</b><button type="button" className={s.sheetX} onClick={() => setSheet("")} aria-label="إغلاق">✕</button></div>
               <div className={s.modeGrid}>
-                {MODEL_OPTIONS.map((m) => (
-                  <button key={m.key} type="button" className={`${s.modeTile} ${!bot && model.key === m.key ? s.modeOn : ""}`} onClick={() => pickMode(m.key)} aria-pressed={!bot && model.key === m.key}>
-                    <i aria-hidden="true">{m.fusion ? <FusionStack size={14} /> : m.icon}</i>
-                    <b>{m.name}</b><small>{m.tagline}</small>
+                <button type="button" className={`${s.modeTile} ${!bot && model.fusion ? s.modeOn : ""}`} onClick={() => pickMode("fusion")} aria-pressed={!bot && !!model.fusion}>
+                  <i aria-hidden="true">✨</i>
+                  <b>دمج النماذج</b><small>4 نماذج في رد واحد أدق</small>
+                </button>
+                {picks.map((b) => (
+                  <button key={b.key} type="button" className={`${s.modeTile} ${bot?.key === b.key ? s.modeOn : ""}`} onClick={() => { setBotKey(b.key); setNeedPro(false); setSheet(""); }} aria-pressed={bot?.key === b.key}>
+                    <i aria-hidden="true"><BotIcon bot={b} size={26} /></i>
+                    <b dir="auto">{b.name}</b><small>{b.maker}</small>
                   </button>
                 ))}
               </div>
               <button type="button" className={s.allModels} onClick={() => { setSheet(""); setSideOpen(true); }}>
-                كل الموديلات العالمية (GPT وClaude وGemini وغيرهم) ←
+                كل الموديلات ←
               </button>
             </section>
           )}
 
           <div className={s.composerBox}>
+          <div className={s.fabRow}>
+          <button
+            type="button"
+            className={`${s.webFab} ${web ? s.webFabOn : ""}`}
+            onClick={toggleWeb}
+            aria-pressed={!!web}
+            title={web ? "البحث على الإنترنت مفعّل (دوس تقفله)" : "بحث على الإنترنت"}
+            aria-label="بحث على الإنترنت"
+          >
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5" /><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z" /></svg>
+          </button>
           <button
             type="button"
             className={`${s.optsFab} ${nOpts ? s.optsFabOn : ""}`}
@@ -811,6 +844,7 @@ export default function MainChat({ project = null, initialMessages = null, onMes
             <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8" /><circle cx="16" cy="7" r="2" /><circle cx="10" cy="17" r="2" /></svg>
             {nOpts ? <b>{nOpts}</b> : null}
           </button>
+          </div>
           {!empty && !busy && fresh.length > 0 && (
             <div className={s.quickRow}>
               {docActions.map((a) => (
@@ -894,10 +928,9 @@ export default function MainChat({ project = null, initialMessages = null, onMes
               </button>
               <button type="button" className={s.modeChip} onClick={() => { setOptsOpen(false); setSheet(sheet === "models" ? "" : "models"); }} aria-expanded={sheet === "models"} title="الموديل اللي بيجاوب">
                 {bot ? <BotIcon bot={bot} size={16} /> : model.fusion ? <FusionStack size={12} /> : <span aria-hidden="true">{model.icon}</span>}
-                <span dir="auto">{bot ? bot.name : model.name}</span>
+                <span dir="auto">{bot ? bot.name : model.fusion ? "دمج النماذج" : model.name}</span>
                 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6" /></svg>
               </button>
-              {web && <button type="button" className={s.activeChip} onClick={toggleWeb} title="اقفل البحث">بحث ✕</button>}
               <span className={s.grow} />
               {busy ? (
                 <button className={s.send} onClick={stop} aria-label="إيقاف">■</button>
