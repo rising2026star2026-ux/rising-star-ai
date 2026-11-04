@@ -754,3 +754,8 @@ html.lite .intro { display: none; }
 body.chat-mode .footer { display: none; }
 body.chat-mode .wrap { padding-bottom: 12px; }
 @media (max-width: 879px) { body.chat-mode .wrap { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); } }
+/* وقت الكتابة على الموبايل: شريط التنقل بيستخبى عشان خانة الكتابة تبان كاملة وكبيرة */
+@media (max-width: 879px) {
+  body.chat-typing nav[aria-label="التنقل"] { display: none; }
+  body.chat-typing .wrap { padding-bottom: 8px; }
+}

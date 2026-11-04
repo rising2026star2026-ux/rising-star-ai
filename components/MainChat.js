@@ -74,6 +74,46 @@ const ClipIcon = () => (
  * @param barStart       زرار في أول الشريط (الرجوع للمشروع)
  * @param placeholder    نص خانة الكتابة
  */
+const V_MARK = { ok: ["✓", "صح"], wrong: ["✕", "غلط"], unsure: ["؟", "مش متأكد"] };
+const V_HEAD = {
+  ok: "المعلومات الأساسية في الرد مطابقة للمصادر.",
+  mixed: "فيه معلومات صح وفيه معلومات محتاجة تصحيح.",
+  wrong: "الرد فيه معلومات غلط.",
+  unsure: "المصادر اللي لقيتها مش كفاية أتأكد من الرد.",
+};
+const vHost = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; } };
+
+function VerifyPanel({ v }) {
+  if (v.status === "loading") return <div className={s.verify} aria-live="polite"><span className={s.spin} aria-hidden="true" /> بدوّر على الإنترنت وبراجع الرد…</div>;
+  if (v.status === "error") return <div className={`${s.verify} ${s.verifyErr}`} role="status">{v.error}</div>;
+  return (
+    <div className={s.verify} data-verdict={v.verdict} aria-live="polite">
+      <b className={s.verifyHead}>{V_HEAD[v.verdict] || V_HEAD.unsure}</b>
+      {v.summary && <p>{v.summary}</p>}
+      <ul>
+        {(v.claims || []).map((c, k) => (
+          <li key={k} data-status={c.status}>
+            <i aria-hidden="true">{(V_MARK[c.status] || V_MARK.unsure)[0]}</i>
+            <span>
+              <span className="sr">{(V_MARK[c.status] || V_MARK.unsure)[1]}: </span>
+              {c.text}
+              {c.fix && <em> الصح: {c.fix}</em>}
+              {c.src?.length > 0 && <small> {c.src.map((n) => `[${n}]`).join(" ")}</small>}
+            </span>
+          </li>
+        ))}
+      </ul>
+      {v.sources?.length > 0 && (
+        <div className={s.verifySrc}>
+          {v.sources.map((x) => (
+            <a key={x.n} href={x.u} target="_blank" rel="noopener noreferrer nofollow" title={x.t}><b>{x.n}</b>{x.d || vHost(x.u)}</a>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function MainChat({ project = null, initialMessages = null, onMessages, onAttach, onNewChat, onShowFiles, onStart, hero = null, barStart = null, placeholder = "" }) {
   const inProject = !!project;
   const [messages, setMessages] = useState(() => (Array.isArray(initialMessages) ? initialMessages : []));
@@ -88,6 +128,10 @@ export default function MainChat({ project = null, initialMessages = null, onMes
   const [botKey, setBotKey] = useStored("bot", "");
   const [needPro, setNeedPro] = useState(false);
   const [settings] = useStored("settings", DEFAULT_SETTINGS);
+  const [brand] = useStored("brand", null);
+  const [useBrand, setUseBrand] = useStored("chat-brand", true);
+  const [rewriteOpen, setRewriteOpen] = useState(-1);
+  const didInitScroll = useRef(false);
   const [chatDocs, setChatDocs] = useState([]);
   const [fresh, setFresh] = useState([]); // ملفات اتضافت ولسه ما اتسألش عنها
   const [dragging, setDragging] = useState(false);
@@ -175,16 +219,19 @@ export default function MainChat({ project = null, initialMessages = null, onMes
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [messages, busy]);
 
+  // أول ما المحادثة القديمة تفتح ننزل لآخرها مرة واحدة. بعد كده الصفحة ما بتجريش ورا الرد وهو بيتكتب:
+  // سؤالك بيطلع فوق والرد بيتكتب تحته، فتقرا براحتك من غير ما تنزل كل شوية
   useEffect(() => {
-    if (!messages.length) return;
-    endRef.current?.scrollIntoView({ behavior: busy ? "auto" : "smooth", block: "end" });
-  }, [messages, busy]);
+    if (didInitScroll.current || !messages.length) return;
+    didInitScroll.current = true;
+    endRef.current?.scrollIntoView({ block: "end" });
+  }, [messages]);
 
   const lastUser = [...messages].reverse().find((m) => m.role === "user");
   // وضع الشات: بيشيل فوتر الموقع والمسافة الفاضية تحت خانة الكتابة (globals.css: .chat-mode)
   useEffect(() => {
     document.body.classList.add("chat-mode");
-    return () => document.body.classList.remove("chat-mode");
+    return () => document.body.classList.remove("chat-mode", "chat-typing");
   }, []);
 
   const suggestions = useMemo(() => (lastUser && !docs.length ? findTools(lastUser.content, 2, 6) : []), [lastUser, docs.length]);
@@ -215,6 +262,10 @@ export default function MainChat({ project = null, initialMessages = null, onMes
     const history = [...base, { role: "user", content, ...(files ? { files } : {}) }];
     setMessages([...history, { role: "assistant", content: "", searching, reading: currentDocs.length > 0 }]);
     setBusy(true);
+    setRewriteOpen(-1);
+    didInitScroll.current = true;
+    const rowId = `row-${history.length - 1}`;
+    requestAnimationFrame(() => requestAnimationFrame(() => document.getElementById(rowId)?.scrollIntoView({ behavior: "smooth", block: "start" })));
 
     const controller = new AbortController();
     abortRef.current = controller;
@@ -223,6 +274,8 @@ export default function MainChat({ project = null, initialMessages = null, onMes
     let images = [];
     let fusion = null;
     let fromDocs = false;
+    let route = null;
+    const myBrand = read("chat-brand", true) ? read("brand", null) : null;
 
     try {
       const res = await fetch("/api/chat", {
@@ -238,6 +291,7 @@ export default function MainChat({ project = null, initialMessages = null, onMes
           web: searching,
           ...(currentDocs.length ? { docs: currentDocs.map(({ name, text }) => ({ name, text })) } : {}),
           ...(inProject && project.instructions ? { instructions: project.instructions, project: project.name } : {}),
+          ...(myBrand?.name ? { brand: myBrand } : {}),
         }),
         signal: controller.signal,
       });
@@ -252,6 +306,7 @@ export default function MainChat({ project = null, initialMessages = null, onMes
       if (fusion) setMessages([...history, { role: "assistant", content: "", searching, fusion }]);
       if (res.headers.get("x-bot") === "fallback") toast("الموديل ده مش متاح دلوقتي، فردّ عليك «متوازن»");
       fromDocs = !!res.headers.get("x-docs");
+      route = res.headers.get("x-route") || null;
       const status = res.headers.get("x-search");
       if (status && SEARCH_NOTES[status]) toast(SEARCH_NOTES[status]);
       try { sources = JSON.parse(decodeURIComponent(res.headers.get("x-sources") || "[]")); } catch { sources = []; }
@@ -263,14 +318,14 @@ export default function MainChat({ project = null, initialMessages = null, onMes
         const { done, value } = await reader.read();
         if (done) break;
         reply += decoder.decode(value, { stream: true });
-        setMessages([...history, { role: "assistant", content: reply, sources, images, fusion, fromDocs }]);
+        setMessages([...history, { role: "assistant", content: reply, sources, images, fusion, fromDocs, route }]);
       }
       if (!reply.trim()) throw new Error("ما وصلش رد. جرّب تاني.");
     } catch (e) {
       if (e.name === "AbortError") {
-        setMessages([...history, { role: "assistant", content: reply || "_اتوقف الرد._", sources, images, fusion, fromDocs }]);
+        setMessages([...history, { role: "assistant", content: reply || "_اتوقف الرد._", sources, images, fusion, fromDocs, route }]);
       } else {
-        setMessages(reply ? [...history, { role: "assistant", content: reply, sources, images, fusion, fromDocs }] : history);
+        setMessages(reply ? [...history, { role: "assistant", content: reply, sources, images, fusion, fromDocs, route }] : history);
         setError(e.message || "الاتصال اتقطع. اتأكد من الإنترنت وجرّب تاني.");
       }
     } finally {
@@ -283,6 +338,88 @@ export default function MainChat({ project = null, initialMessages = null, onMes
   function openModels() {
     if (window.matchMedia("(max-width: 1199px)").matches) setSideOpen(true);
     else document.querySelector(`.${s.side} button[aria-pressed="true"]`)?.focus();
+  }
+
+  // «غيّر الرد»: نفس الرد أقصر أو أبسط أو بتفصيل، مكانه، ومعاه «رجّع الرد الأصلي»
+  const REWRITE = {
+    short: ["أقصر", "اكتب نفس الرد ده تاني بشكل أقصر بكتير: الخلاصة في 3 أو 4 سطور بس، من غير ما تشيل أهم معلومة."],
+    simple: ["أبسط", "اكتب نفس الرد ده تاني بشكل أبسط، كأنك بتشرح لحد مش متخصص: كلام سهل ومثال من الحياة اليومية."],
+    detail: ["بالتفصيل", "اكتب نفس الرد ده تاني بتفصيل أكتر: اشرح الأسباب، وادّي أمثلة عملية، وخطوات لو تنفع."],
+  };
+
+  async function rewrite(i, kind) {
+    const m = messages[i];
+    const q = [...messages.slice(0, i)].reverse().find((x) => x.role === "user");
+    if (busy || !m || !q || !REWRITE[kind]) return;
+    const orig = m.orig ?? m.content;
+    const patch = (p) => setMessages((list) => list.map((x, k) => (k === i ? { ...x, ...p } : x)));
+    const controller = new AbortController();
+    abortRef.current = controller;
+    setBusy(true);
+    setRewriteOpen(-1);
+    patch({ content: "", orig, variant: kind, verify: undefined });
+    let text = "";
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: [
+            { role: "user", content: q.content },
+            { role: "assistant", content: orig.slice(0, 4000) },
+            { role: "user", content: REWRITE[kind][1] },
+          ],
+          model: "balanced",
+          noRoute: true,
+          settings: read("settings", DEFAULT_SETTINGS),
+        }),
+        signal: controller.signal,
+      });
+      if (!res.ok || !res.body) {
+        const d = await res.json().catch(() => ({}));
+        throw new Error(d.error || "مقدرتش أغيّر الرد دلوقتي. جرّب تاني.");
+      }
+      const reader = res.body.getReader();
+      const dec = new TextDecoder();
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        text += dec.decode(value, { stream: true });
+        patch({ content: text });
+      }
+      if (!text.trim()) throw new Error("ما وصلش رد. جرّب تاني.");
+    } catch (e) {
+      patch({ content: orig, orig: undefined, variant: undefined });
+      if (e.name !== "AbortError") toast(e.message || "الاتصال اتقطع.");
+    } finally {
+      setBusy(false);
+      abortRef.current = null;
+    }
+  }
+
+  function restore(i) {
+    setMessages((list) => list.map((x, k) => (k === i && x.orig ? { ...x, content: x.orig, orig: undefined, variant: undefined, verify: undefined } : x)));
+  }
+
+  // «اتأكد من المعلومة»: بحث على النت + موديل تاني بيراجع الرد
+  async function verify(i) {
+    const m = messages[i];
+    const q = [...messages.slice(0, i)].reverse().find((x) => x.role === "user");
+    if (!m || !q || m.verify?.status === "loading") return;
+    const set = (v) => setMessages((list) => list.map((x, k) => (k === i ? { ...x, verify: v } : x)));
+    set({ status: "loading" });
+    try {
+      const res = await fetch("/api/verify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: q.content, answer: m.content }),
+      });
+      const d = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(d.error || "مقدرتش أراجع الرد دلوقتي.");
+      set({ status: "done", ...d });
+    } catch (e) {
+      set({ status: "error", error: e.message || "الاتصال اتقطع." });
+    }
   }
 
   function stop() {
@@ -422,7 +559,7 @@ export default function MainChat({ project = null, initialMessages = null, onMes
         ) : (
           <div className={s.thread}>
             {messages.map((m, i) => (
-              <div key={i} className={m.role === "user" ? s.userRow : s.botRow}>
+              <div key={i} id={`row-${i}`} className={`${m.role === "user" ? s.userRow : s.botRow} ${busy && i === messages.length - 1 && m.role !== "user" ? s.live : ""}`}>
                 {m.role === "user" ? (
                   <div className={s.userCol}>
                     {m.files?.length > 0 && (
@@ -439,6 +576,9 @@ export default function MainChat({ project = null, initialMessages = null, onMes
                         <FusionStack items={m.fusion} size={18} />
                         <span>إجابة مدمجة من {m.fusion.length} نماذج ومتدققة لغوياً</span>
                       </div>
+                    )}
+                    {m.route && m.content && (
+                      <div className={s.routeTag}>{m.route === "web" ? "دوّرت على الإنترنت لأن سؤالك عن معلومة" : "جاوبتك بموديل البرمجة"}</div>
                     )}
                     {m.fromDocs && m.content && (
                       <div className={s.docTag}><ClipIcon /><span>الرد من ملفاتك</span></div>
@@ -461,6 +601,8 @@ export default function MainChat({ project = null, initialMessages = null, onMes
                         {m.searching ? <em className={s.searchingNote}>بيدوّر على الإنترنت…</em> : m.reading ? <em className={s.searchingNote}>بيقرا ملفاتك…</em> : null}
                       </div>
                     )}
+
+                    {m.verify && <VerifyPanel v={m.verify} />}
 
                     {m.images?.length > 0 && (
                       <div className={s.images} aria-label="صور من نتائج البحث">
@@ -489,6 +631,9 @@ export default function MainChat({ project = null, initialMessages = null, onMes
                     {m.content && !(busy && i === messages.length - 1) && (
                       <div className={s.actions}>
                         <button className={s.ghost} onClick={() => copy(shareText(m), i)}>{copied === i ? "اتنسخ ✓" : "نسخ"}</button>
+                        <button className={s.ghost} onClick={() => verify(i)} disabled={m.verify?.status === "loading"}>اتأكد من المعلومة</button>
+                        <button className={`${s.ghost} ${rewriteOpen === i ? s.ghostOn : ""}`} onClick={() => setRewriteOpen(rewriteOpen === i ? -1 : i)} aria-expanded={rewriteOpen === i}>غيّر الرد</button>
+                        {m.orig && <button className={s.ghost} onClick={() => restore(i)}>رجّع الأصلي</button>}
                         {i === messages.length - 1 && <button className={s.ghost} onClick={retry}>إعادة المحاولة</button>}
                         <ShareBar
                           compact
@@ -498,6 +643,13 @@ export default function MainChat({ project = null, initialMessages = null, onMes
                         />
                       </div>
                     )}
+                    {rewriteOpen === i && !busy && (
+                      <div className={s.rewriteRow}>
+                        {Object.entries(REWRITE).map(([k, [label]]) => (
+                          <button key={k} type="button" onClick={() => rewrite(i, k)} aria-pressed={m.variant === k}>{label}</button>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
@@ -505,18 +657,12 @@ export default function MainChat({ project = null, initialMessages = null, onMes
 
             {!busy && suggestions.length > 0 && (
               <div className={s.suggest}>
-                <div className={s.suggestTitle}>أدوات ممكن تفيدك في ده:</div>
-                <div className={s.suggestGrid}>
-                  {suggestions.map((t) => (
-                    <Link key={t.id} href={`/tool/${t.id}?q=${encodeURIComponent(lastUser.content.slice(0, 1500))}`} className={s.toolCard}>
-                      <ToolIcon tool={t} size="sm" />
-                      <span>
-                        <b>{t.name}</b>
-                        <small>{t.desc}</small>
-                      </span>
-                    </Link>
-                  ))}
-                </div>
+                <span className={s.suggestTitle}>أدوات ممكن تفيدك:</span>
+                {suggestions.map((t) => (
+                  <Link key={t.id} href={`/tool/${t.id}?q=${encodeURIComponent(lastUser.content.slice(0, 1500))}`} className={s.toolChip} title={t.desc}>
+                    {t.name}
+                  </Link>
+                ))}
               </div>
             )}
             {error && <div className={s.error} role="alert">{error}</div>}
@@ -581,8 +727,8 @@ export default function MainChat({ project = null, initialMessages = null, onMes
               onChange={(e) => { setInput(e.target.value); resize(); }}
               onKeyDown={onKey}
               onPaste={onPaste}
-              onFocus={() => setFocus(true)}
-              onBlur={() => setFocus(false)}
+              onFocus={() => { setFocus(true); document.body.classList.add("chat-typing"); }}
+              onBlur={() => { setFocus(false); document.body.classList.remove("chat-typing"); }}
             />
             <div className={s.tools}>
               <input
@@ -617,6 +763,18 @@ export default function MainChat({ project = null, initialMessages = null, onMes
                 </svg>
                 <span>بحث</span>
               </button>
+              {brand?.name && !inProject && (
+                <button
+                  type="button"
+                  className={`${s.webBtn} ${s.brandBtn} ${useBrand ? s.webOn : ""}`}
+                  onClick={() => { setUseBrand(!useBrand); toast(useBrand ? "الردود مش هتاخد نشاطك في الاعتبار" : `الردود هتتظبط على «${brand.name}» لما السؤال عن شغلك`); }}
+                  aria-pressed={!!useBrand}
+                  title={`استخدم هوية نشاطي: ${brand.name}`}
+                >
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 9.5l1.4-4h13.2l1.4 4M4 9.5h16v1a2.7 2.7 0 01-5.3.6 2.7 2.7 0 01-5.4 0A2.7 2.7 0 014 10.5zM5.5 12.5V19.5h13v-7" /></svg>
+                  <span>نشاطي</span>
+                </button>
+              )}
               <button
                 type="button"
                 className={s.proofBtn}

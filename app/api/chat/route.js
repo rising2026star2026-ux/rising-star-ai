@@ -8,6 +8,19 @@ import { RETIRED_BOTS } from "@/lib/bots";
 import { resolveBot, validProCode } from "@/lib/botcatalog";
 import { fusionResponse } from "@/lib/fusion";
 import { cleanDocs, cleanInstructions, docContext, longChain, instructionsBlock } from "@/lib/doccontext";
+import { cleanBrand, brandBlock } from "@/lib/brandprofile";
+
+// توجيه تلقائي: سؤال عن معلومة (مين/فين/إمتى/كام…) بيدوّر على النت لوحده، وسؤال برمجة بيروح لموديل البرمجة.
+// طلبات الكتابة والتأليف («اكتب…»، «لخّص…») ما بتتوجّهش للبحث حتى لو فيها كلمة زي «مين».
+const CREATE = /^\s*(اكتب|اكتبلي|اعمل|اعملي|اعمللي|صمم|ألف|الف|ترجم|ترجملي|لخص|لخّص|لخصلي|صحح|صحّح|حوّل|حول|اقترح|ارسم|رد\s|ردّ|write|create|translate|summari[sz]e)/i;
+const FACT = /(^|\s)(مين|من\s+هو|من\s+هي|من\s+هم|فين|أين|اين|إمتى|امتى|امتي|متى|كام|كم\s|بكام|سعر|أسعار|اسعار|عاصم[ةه]|اتولد|ولد\s|وُلد|مات|توفي|تُوفي|اتوفى|رئيس|وزير|نتيج[ةه]|ماتش|مباراة|أخبار|اخبار|خبر|النهارد[هة]|اليوم|حالياً|حاليا|دلوقتي|الحالي|آخر\s|اخر\s|تاريخ|حصل\s|20[2-3]\d|\b19\d\d\b|who\s|where\s|when\s|how\s+much|how\s+many|price|latest|current)/i;
+const CODE = /(```|\b(javascript|typescript|python|php|java|c\+\+|c#|sql|html|css|react|node|api|json|regex|error|exception|bug|function|class)\b|كود|برمج[ةه]|برنامج\s|سكريبت|دال[ةه]\s|خطأ\s+في\s+الكود)/i;
+function routeOf(text) {
+  const t = String(text || "").slice(0, 600);
+  if (CODE.test(t)) return "code";
+  if (!CREATE.test(t) && FACT.test(t)) return "web";
+  return null;
+}
 
 const MAX_MESSAGES = 16;       // آخر رسائل بتتبعت للنموذج
 const MAX_MSG_CHARS = 4000;    // أقصى طول للرسالة الواحدة
@@ -118,7 +131,7 @@ export async function POST(req) {
     return imageResponse(lastUser.content, req.signal);
   }
 
-  const mode = getModel(body.model);
+  let mode = getModel(body.model);
   const s = cleanSettings(body.settings);
   const headers = {};
 
@@ -151,8 +164,23 @@ export async function POST(req) {
   let system = rules.length ? `${SYSTEM}\n\n${rules.join("\n")}` : SYSTEM;
   if (instructions) system += `\n\n${instructionsBlock(instructions, body.project)}`;
 
-  // البحث على الإنترنت: من زرار «بحث»، أو موديلات قسم البحث (Sonar بيبحث بنفسه)
-  const wantsWeb = bot ? bot.web || (body.web === true && !bot.nativeSearch) : body.web === true;
+  // هوية نشاط العميل (من صفحة «هوية نشاطي»): بتقرّب الرد من شغله، بس في الأسئلة اللي ليها علاقة بيه
+  const brand = cleanBrand(body.brand);
+  if (brand && !bot?.persona) {
+    system += `\n\n${brandBlock(brand)}\nاستخدم هوية النشاط دي بس لو السؤال عن شغل العميل أو نشاطه أو تسويقه أو عملائه. في الأسئلة العامة (تاريخ، علوم، معلومات، دراسة) تجاهلها تماماً وما تذكرهاش.`;
+    headers["x-brand"] = "1";
+  }
+
+  // التوجيه التلقائي (للشات العادي بس، مش للموديلات المختارة بالاسم ولا الملفات)
+  const route = !bot && !docs.length && body.noRoute !== true ? routeOf(lastUser.content) : null;
+  if (route === "code" && ["fusion", "balanced", "strong"].includes(mode.key)) {
+    mode = getModel("coding");
+    headers["x-route"] = "code";
+  }
+
+  // البحث على الإنترنت: من زرار «بحث»، أو موديلات قسم البحث (Sonar بيبحث بنفسه)، أو توجيه تلقائي لسؤال معلومة
+  const autoWeb = route === "web" && body.web !== true && !!searchProvider();
+  const wantsWeb = bot ? bot.web || (body.web === true && !bot.nativeSearch) : body.web === true || autoWeb;
   if (wantsWeb) {
     if (!searchProvider()) headers["x-search"] = "nokey";
     else if (tooManySearches(ip)) headers["x-search"] = "limit";
@@ -162,6 +190,7 @@ export async function POST(req) {
       if (results.length) {
         system += `\n\n${resultsBlock(query, results, notes)}`;
         headers["x-search"] = "ok";
+        if (autoWeb) headers["x-route"] = "web";
         // المصادر بتوصل للمتصفح في الهيدر عشان تتعرض تحت الرد (d = اسم الموقع لو الرابط تحويلة)
         headers["x-sources"] = encodeURIComponent(JSON.stringify(results.map((r) => ({ t: r.title, u: r.url, ...(r.domain ? { d: r.domain } : {}) }))));
         if (images.length) headers["x-images"] = encodeURIComponent(JSON.stringify(images));
@@ -174,7 +203,8 @@ export async function POST(req) {
   }
 
   // المستخدم طلب بحث وما نجحش: نمنع الموديل يجاوب بأسعار وأخبار قديمة كأنها حالية
-  if (wantsWeb && !/ok/.test(headers["x-search"] || "")) {
+  if (autoWeb && !/ok/.test(headers["x-search"] || "")) delete headers["x-search"]; // بحث تلقائي ما نجحش: من غير تنبيه للمستخدم
+  if (wantsWeb && !autoWeb && !/ok/.test(headers["x-search"] || "")) {
     system += "\n\nتنبيه: المستخدم فعّل البحث على الإنترنت لكن البحث ما رجّعش نتايج. لا تذكر أسعاراً أو أخباراً أو أرقاماً حالية من ذاكرتك كأنها محدثة؛ قل في أول الرد إنك مش قادر تتأكد من آخر المعلومات دلوقتي، وبعدها قدّم اللي تعرفه كمعلومة عامة مع تاريخ تقريبي لها.";
   }
 
