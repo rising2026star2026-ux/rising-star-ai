@@ -1,34 +1,221 @@
 {
- "updated": "2026-11-03T17:21:34.622Z",
+ "updated": "2026-11-04T05:32:11.123Z",
  "providers": [
+  "gemini",
   "groq",
-  "openrouter",
-  "gemini"
+  "openrouter"
  ],
- "used": {
-  "groq": 8,
-  "gemini": 1
- },
+ "used": {},
  "feeds": {
-  "openai": "ok 77",
+  "openai": "ok 81",
+  "deepmind": "ok 11",
+  "techcrunch": "ok 20",
+  "verge": "ok 10",
+  "nvidia": "ok 18",
   "apple": "ok 10",
   "aws": "ok 20",
-  "verge": "ok 10",
-  "techcrunch": "ok 20",
-  "huggingface": "ok 24",
-  "arstechnica": "ok 20",
-  "deepmind": "ok 11",
-  "nvidia": "ok 18",
-  "meta": "ok 9",
   "marktechpost": "ok 10",
-  "google-ai": "ok 5",
+  "huggingface": "ok 25",
   "google-research": "ok 10",
+  "meta": "ok 9",
+  "google-ai": "ok 5",
   "techwd": "ok 2",
+  "arstechnica": "ok 20",
   "microsoft": "ok 10",
-  "aitnews": "FAIL HTTP 403",
-  "venturebeat": "FAIL HTTP 429"
+  "venturebeat": "FAIL HTTP 429",
+  "aitnews": "FAIL HTTP 403"
  },
  "items": [
+  {
+   "id": "5d47252e76d4",
+   "url": "https://www.theverge.com/games/1026085/nexus-mods-ai-disclosures",
+   "title": "The biggest modding site in PC gaming is taking a stance on AI",
+   "date": "2026-11-04T00:42:54.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "64fbdbf83ed1",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1025826/ai-bubble-pimco-apollo-bonds",
+   "title": "Please stop asking me when the AI bubble will pop",
+   "date": "2026-11-03T23:37:45.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "f901cc10a3c4",
+   "url": "https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/",
+   "title": "Anthropic is working on a system to prove AI models’ identity",
+   "date": "2026-11-03T22:41:03.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "59cb8a96ca92",
+   "url": "https://techcrunch.com/2026/11/03/data-centers-are-turning-to-old-jet-engines-as-the-wait-for-power-grows/",
+   "title": "Data centers are turning to old jet engines as the wait for power grows",
+   "date": "2026-11-03T22:19:53.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "2b36c11db627",
+   "url": "https://www.marktechpost.com/2026/11/03/anthropic-flashprove-provable-inference-zksnark/",
+   "title": "Anthropic Releases FlashProve: Cryptographic Proofs That a Reply Came From Committed Weights",
+   "date": "2026-11-03T22:08:22.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "db1d0915e442",
+   "url": "https://www.theverge.com/games/1025596/valve-steam-indie-games-missing-launch-dates",
+   "title": "Indie games are missing launch dates because Steam is backed up",
+   "date": "2026-11-03T21:56:58.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "d37889a9ebdd",
+   "url": "https://techcrunch.com/2026/11/03/ted-schleins-ballistic-ventures-seeks-490m-for-new-funds-amid-ai-driven-cybersecurity-boom/",
+   "title": "Ted Schlein’s Ballistic Ventures seeks $490M for new funds amid AI-driven cybersecurity boom",
+   "date": "2026-11-03T21:43:08.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "39cfcbde58ed",
+   "url": "https://www.theverge.com/tech/1025745/fake-jeff-bezos-hair-replacement-photos-debunk",
+   "title": "Those Jeff Bezos hair transplant photos are very fake",
+   "date": "2026-11-03T21:09:00.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "dd34e5bf1c5e",
+   "url": "https://techcrunch.com/2026/11/03/hiding-inside-palantirs-skyrocketing-quarter-is-a-foreboding-signal/",
+   "title": "Hiding inside Palantir’s skyrocketing quarter is a foreboding signal",
+   "date": "2026-11-03T21:05:55.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "2f70d6c369eb",
+   "url": "https://arstechnica.com/ai/2026/11/russia-looks-to-hide-data-centers-underground-as-ukrainian-drones-strike-back/",
+   "title": "Ukraine’s drone strikes spur hasty Russian plans for underground data centers",
+   "date": "2026-11-03T20:39:55.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "90a8b08254cc",
+   "url": "https://www.marktechpost.com/2026/11/03/nvidia-dgx-spark-moe-inference-ling-3-0-flash/",
+   "title": "NVIDIA Shows 3 Ways to Speed Up MoE Inference on DGX Spark, Lifting Ling-3.0-flash Throughput 42.5%",
+   "date": "2026-11-03T20:28:22.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "49792679d79f",
+   "url": "https://www.theverge.com/tech/1025694/apple-siri-ai-third-party-apps",
+   "title": "Apple starts giving Siri AI access to third-party apps",
+   "date": "2026-11-03T20:19:55.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "af914e6869a5",
+   "url": "https://www.marktechpost.com/2026/11/03/soniox-stt-v6-agent-text-input-echo-cancellation/",
+   "title": "Soniox STT v6 Adds Agent Text Input and Echo Filtering for Voice Agents",
+   "date": "2026-11-03T20:18:22.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "c69664e34de2",
+   "url": "https://techcrunch.com/2026/11/03/ai-inference-startup-fal-doubles-its-valuation-to-16b-as-demand-surges/",
+   "title": "AI inference startup Fal doubles its valuation to $16B as demand surges",
+   "date": "2026-11-03T19:34:43.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "62af55115339",
+   "url": "https://www.theverge.com/tech/1025002/apple-watch-audio-intelligence-watchos-beta",
+   "title": "Apple’s latest watchOS beta includes its new always-on Audio Intelligence features",
+   "date": "2026-11-03T18:52:30.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "2023d4b1aafd",
+   "url": "https://techcrunch.com/2026/11/03/netflixs-new-ai-discover-tab-helps-you-find-something-to-watch-based-on-your-mood/",
+   "title": "Netflix’s new AI Discover tab helps you find something to watch based on your mood",
+   "date": "2026-11-03T18:42:16.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "662bf89dbff2",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1025482/openai-says-chatgpt-is-catching-up-to-google-in-search",
+   "title": "OpenAI says ChatGPT is catching up to Google in search",
+   "date": "2026-11-03T18:38:47.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "b121628aeba0",
+   "url": "https://arstechnica.com/ai/2026/11/google-will-let-schools-skip-ai-tools-but-they-have-to-give-up-search-too/",
+   "title": "Google will let schools skip AI tools, but they have to give up search, too",
+   "date": "2026-11-03T17:54:43.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "c65f77dcf81d",
+   "url": "https://www.theverge.com/streaming/1025029/netflix-ai-discover-recommendations",
+   "title": "Netflix will show you themed recommendations through a new ‘AI Discover’ tab",
+   "date": "2026-11-03T17:28:14.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
   {
    "id": "a55665cf4895",
    "url": "https://huggingface.co/blog/allenai/statebench",
@@ -316,6 +503,16 @@
    }
   },
   {
+   "id": "26c6032e1d26",
+   "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world",
+   "title": "Accelerating engineering for the physical world",
+   "date": "2026-11-03T12:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
    "id": "08b710f1e780",
    "url": "https://openai.com/index/heimstaden",
    "title": "Heimstaden is changing residential real estate management with AI",
@@ -327,6 +524,16 @@
     "title": "Heimstaden تستخدم ChatGPT Enterprise لتطوير إدارة العقارات",
     "summary": "الشركة الأوروبية بتستغل أدوات OpenAI زي ChatGPT Enterprise وCodex لتقليل التكاليف وتمكين الموظفين في إدارة المساكن عبر أوروبا."
    }
+  },
+  {
+   "id": "a2357e701f02",
+   "url": "https://openai.com/index/cisco-cyber",
+   "title": "How Cisco defends at machine speed with OpenAI",
+   "date": "2026-11-03T08:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
   },
   {
    "id": "0e5b1d74afc9",
@@ -436,6 +643,26 @@
    "id": "fec0e46ceba4",
    "url": "https://huggingface.co/blog/transformers-mic",
    "title": "Transformers Model Integration Contracts",
+   "date": "2026-11-03T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "3d509e27bae2",
+   "url": "https://openai.com/index/jill-hazelbaker-chief-corporate-affairs-officer",
+   "title": "OpenAI appoints Jill Hazelbaker as Chief Corporate Affairs Officer",
+   "date": "2026-11-03T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "20954e3ac0ff",
+   "url": "https://huggingface.co/blog/cwe-bench",
+   "title": "CWE-bench v2: More coverage, quality, and transparency",
    "date": "2026-11-03T00:00:00.000Z",
    "src": "Hugging Face",
    "srcId": "huggingface",
@@ -2302,6 +2529,16 @@
    }
   },
   {
+   "id": "bbd4d7a8dcb5",
+   "url": "https://openai.com/ads/customers/evernote",
+   "title": "Evernote turns AI-driven discovery into paid subscriptions",
+   "date": "2026-10-28T19:40:49.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
    "id": "2ede9b7f3431",
    "url": "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/",
    "title": "Anthropic just launched tools to show companies what their AI spending is buying",
@@ -3872,318 +4109,6 @@
    "ar": {
     "title": "Anthropic تطلق OSS Scanner لفحص ثغرات AI",
     "summary": ""
-   }
-  },
-  {
-   "id": "770c71828f23",
-   "url": "https://techcrunch.com/2026/10/24/will-ai-expose-the-rickety-infrastructure-of-the-internet/",
-   "title": "Will AI expose the rickety infrastructure of the internet?",
-   "date": "2026-10-24T20:15:33.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "هل AI هيكشف ضعف بنية الإنترنت؟",
-    "summary": ""
-   }
-  },
-  {
-   "id": "b0af889ad05f",
-   "url": "https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
-   "title": "The AI graveyard: a running list of projects and startups that didn’t make it",
-   "date": "2026-10-24T19:00:00.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "قائمة AI Graveyard للمشاريع الفاشلة",
-    "summary": ""
-   }
-  },
-  {
-   "id": "35d668020c86",
-   "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/",
-   "title": "Block’s new voice model sounds eerily human",
-   "date": "2026-10-24T16:00:00.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "نموذج صوت جديد من Block يبدو بشريًا جدًا",
-    "summary": "النسخة الجديدة من نموذج الصوت اللي طلقته Block بتدي صوت شبه صوت الإنسان لدرجة مخيفة."
-   }
-  },
-  {
-   "id": "110fd09f65f2",
-   "url": "https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/",
-   "title": "Forced to pick, Grok’s AI model chooses Republicans. OpenAI’s picks Democrats.",
-   "date": "2026-10-24T15:00:00.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "نموذج Grok يختار الجمهوريين، وOpenAI يختار الديمقراطيين",
-    "summary": "لما يُطلب من نموذج AI يختار، نموذج Grok بيميل للريپابليكان، بينما نماذج OpenAI بتميل للديمقراطيين."
-   }
-  },
-  {
-   "id": "79a2ae436951",
-   "url": "https://aitnews.com/2026/10/24/%d8%aa%d9%82%d8%b1%d9%8a%d8%b1-%d8%a7%d9%84%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d9%84%d8%a7%d8%b5%d8%b7%d9%86%d8%a7%d8%b9%d9%8a-%d9%8a%d8%ad%d8%b1%d8%b1-%d8%a3%d8%ac%d9%87%d8%b2%d8%a9-%d8%a7%d9%84%d8%aa/",
-   "title": "تقرير.. الذكاء الاصطناعي يحرر أجهزة التلفاز الذكية من الإعلانات وجمع البيانات",
-   "date": "2026-10-23T21:20:33.000Z",
-   "src": "البوابة العربية للأخبار التقنية",
-   "srcId": "aitnews",
-   "kind": "arabic",
-   "ar": {
-    "title": "تقرير.. الذكاء الاصطناعي يحرر أجهزة التلفاز الذكية من الإعلانات وجمع البيانات",
-    "summary": ""
-   }
-  },
-  {
-   "id": "3e249e7fc631",
-   "url": "https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising/",
-   "title": "Updated Google privacy policy says your Gmail might be used for advertising",
-   "date": "2026-10-23T20:19:55.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "سياسة خصوصية جوجل الجديدة تسمح باستخدام Gmail للإعلانات",
-    "summary": "جوجل هتستخدم بيانات Gmail في استهداف الإعلانات لما تشغل خاصية Personal Intelligence."
-   }
-  },
-  {
-   "id": "1828cc13c803",
-   "url": "https://aitnews.com/2026/10/23/%d9%88%d8%af%d8%a7%d8%b9%d9%8b%d8%a7-arc-%d9%85%d8%aa%d8%b5%d9%81%d8%ad-%d9%88%d9%8a%d8%a8-%d8%b4%d9%87%d9%8a%d8%b1-%d9%8a%d8%aa%d9%88%d9%82%d9%81-%d9%86%d9%87%d8%a7%d8%a6%d9%8a%d9%8b%d8%a7-%d9%81/",
-   "title": "وداعًا Arc.. متصفح ويب شهير يتوقف نهائيًا في ديسمبر المقبل",
-   "date": "2026-10-23T19:50:37.000Z",
-   "src": "البوابة العربية للأخبار التقنية",
-   "srcId": "aitnews",
-   "kind": "arabic",
-   "ar": {
-    "title": "وداعًا Arc.. متصفح ويب شهير يتوقف نهائيًا في ديسمبر المقبل",
-    "summary": ""
-   }
-  },
-  {
-   "id": "3c115b0c264d",
-   "url": "https://research.google/blog/bringing-foundational-models-to-the-front-lines-of-tb-screening/",
-   "title": "Bringing foundational models to the front lines of TB screening",
-   "date": "2026-10-23T18:51:33.000Z",
-   "src": "Google Research",
-   "srcId": "google-research",
-   "kind": "company",
-   "ar": {
-    "title": "نماذج أساسية للذكاء الاصطناعي في فحص السل",
-    "summary": "الذكاء الاصطناعي التوليدي بيتطبق دلوقتي في فحص مرض السل على الأرض."
-   }
-  },
-  {
-   "id": "bc7694eb1503",
-   "url": "https://aws.amazon.com/blogs/machine-learning/multi-turn-reinforcement-learning-on-amazon-sagemaker-ai-a-hands-on-guide/",
-   "title": "Multi-Turn Reinforcement Learning on Amazon SageMaker AI: A hands-on guide",
-   "date": "2026-10-23T17:48:54.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "دليل عملي لتعلم Multi‑Turn Reinforcement Learning على Amazon SageMaker",
-    "summary": "الدليل بيشرح خطوة بخطوة إزاي تدرب نموذج MTRL على مهمة متعددة الخطوات باستخدام Wordle، وتنشّره على Amazon Bedrock AgentCore وتقييمه."
-   }
-  },
-  {
-   "id": "e44aee2d4402",
-   "url": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs/",
-   "title": "Intel gets waiver after worries fuzzy US ban on foreign-made robots may hit fabs",
-   "date": "2026-10-23T17:18:31.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "إنتل تحصل على استثناء من حظر الروبوتات الأجنبية",
-    "summary": "إنتل بتقول إن العربات الروبوتية المصنوعة بره مهمة لإنتاج الرقائق في أمريكا، فطلبت استثناء من الحظر."
-   }
-  },
-  {
-   "id": "298c8de07d18",
-   "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
-   "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
-   "date": "2026-10-23T17:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "توسيع سعة التخزين لتلبية مليار مستخدم ChatGPT (الجزء الثاني)",
-    "summary": "OpenAI حسّنت Habitat باستخدام تعدد المستأجرين، كاش عالمي، وAzure Cosmos DB لتسرّع قراءة البيانات 12 مرة."
-   }
-  },
-  {
-   "id": "1c58a8d6e4eb",
-   "url": "https://aws.amazon.com/blogs/machine-learning/orchestrating-sagemaker-ai-endpoint-auto-scaling-with-aws-cdk/",
-   "title": "Orchestrating SageMaker AI endpoint auto scaling with AWS CDK",
-   "date": "2026-10-23T16:30:10.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "تلقيم تلقائي لنقاط النهاية في SageMaker باستخدام AWS CDK",
-    "summary": "المقال بيورّيك إزاي تبني مكوّن CDK يلغى ويسجّل تلقائيًا Auto Scaling لنقطة النهاية، علشان تقدر تحدثها في نشر واحد."
-   }
-  },
-  {
-   "id": "7b49b44d9736",
-   "url": "https://aws.amazon.com/blogs/machine-learning/visualize-points-and-routes-with-geojson-in-amazon-quick-sight-layer-maps/",
-   "title": "Visualize points and routes with GeoJSON in Amazon Quick Sight layer maps",
-   "date": "2026-10-23T16:24:55.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "عرض نقاط ومسارات بـ GeoJSON على خرائط Amazon QuickSight",
-    "summary": "الخرائط الطبقية في Amazon QuickSight بقت تدعم أشكال Point و LineString من نفس ملف GeoJSON، تقدر ترسم مواقع الفروع وتربطهم بالخطوط وتتحكم في العرض وتحديث البيانات ديناميكياً."
-   }
-  },
-  {
-   "id": "6fc2c0f171e0",
-   "url": "https://aws.amazon.com/blogs/machine-learning/how-bayer-crop-science-built-an-agentic-decision-engine-on-amazon-bedrock-agentcore-with-aws-unified-operations/",
-   "title": "How Bayer Crop Science built an agentic decision engine on Amazon Bedrock AgentCore with AWS Unified Operations",
-   "date": "2026-10-23T16:21:36.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "Bayer Crop Science تبني محرك قرار وكيل على Amazon Bedrock",
-    "summary": "Bayer Crop Science أنشأت منصة ADE متعددة الوكلاء على Amazon Bedrock AgentCore، بتسمح للمزارعين والباحثين يطرحوا أسئلة بلغة طبيعية على منصة التحليل، والبوست بيشرح الهندسة وخمس قرارات تصميمية وإعدادها للإنتاج باستخدام AWS Unified Operations."
-   }
-  },
-  {
-   "id": "48e2274fdf2b",
-   "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
-   "title": "Securing our frontier model training environment",
-   "date": "2026-10-23T10:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "OpenAI تعزز أمان بيئة تدريب النماذج المتقدمة",
-    "summary": "OpenAI وضحت إزاي زودت إجراءات العزل لتدريب وتقييم النماذج المتقدمة، بما فيها بيئات غير متصلة وفريق اختبار عالي القوة."
-   }
-  },
-  {
-   "id": "b21a97b1b273",
-   "url": "https://blogs.nvidia.com/blog/kazakhstan-ai-compute-ecosystem/",
-   "title": "Kazakhstan Expands Compute for Its AI Future",
-   "date": "2026-10-23T02:00:13.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "كازاخستان توسّع قدرات الحوسبة للذكاء الاصطناعي",
-    "summary": "منظمة كازاخستان للذكاء الاصطناعي بتنتقل من التخطيط للبنية التحتية لتطبيقات فعلية، مع زيادة موارد الحوسبة المتسارعة، وده ظهر خلال زيارة مؤسس NVIDIA جينسن هوانغ لأستانا."
-   }
-  },
-  {
-   "id": "c6099fc8919f",
-   "url": "https://openai.com/index/anima",
-   "title": "Anima helps clinics cut call waits by 75% with GPT-6 and GPT-Live",
-   "date": "2026-10-23T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Anima تقلل انتظار المكالمات 75% باستخدام GPT-6",
-    "summary": "Anima بتستفيد من نماذج OpenAI GPT-6 و GPT‑Live لتزويد فرق الرعاية بقدرة أكبر على الرد على المرضى وتقليل وقت الانتظار."
-   }
-  },
-  {
-   "id": "15c1f8ef7a58",
-   "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership",
-   "title": "OpenAI and Poland’s NASK partner to advance AI safety and security",
-   "date": "2026-10-23T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "OpenAI وNASK في بولندا يتعاونوا لتعزيز أمان الذكاء الاصطناعي",
-    "summary": "OpenAI وشركة NASK البولندية دخلوا شراكة للبحث التقني في أمان الذكاء الاصطناعي وتعزيز الحماية الرقمية."
-   }
-  },
-  {
-   "id": "6430909168b5",
-   "url": "https://huggingface.co/blog/torch-neuronx-model-support",
-   "title": "Does Your Model Run on AWS Trainium? Look It Up",
-   "date": "2026-10-23T00:00:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "موديلك بيشتغل على AWS Trainium ولا لأ؟ تقدر تعرف دلوقتي",
-    "summary": "تقدر دلوقتي تبحث وتعرف لو الموديل بتاعك بيشتغل على شرائح AWS Trainium ولا لأ بكل سهولة."
-   }
-  },
-  {
-   "id": "95eb6975ad24",
-   "url": "https://huggingface.co/blog/microsoft/thinkingbox-training",
-   "title": "Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox",
-   "date": "2026-10-22T22:24:34.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "تحويل تقييم الداتابيز لمكافأة تعزيزية باستخدام ThinkingBox",
-    "summary": "إزاي تحول عملية تقييم قواعد البيانات لمكافأة تعليم تعزيزي عشان تدرب الأージェنتس بذكاء أكتر."
-   }
-  },
-  {
-   "id": "27825e300358",
-   "url": "https://openai.com/index/decisions-api",
-   "title": "Build more responsive apps with the Decisions API",
-   "date": "2026-10-22T19:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "اعمل تطبيقات أسرع في الاستجابة مع Decisions API",
-    "summary": "أداة Decisions API بتوفرلك قرارات سريعة وموجهة وبتكلفة قليلة لأي تطبيق."
-   }
-  },
-  {
-   "id": "bb00f30901ce",
-   "url": "https://aws.amazon.com/blogs/machine-learning/amazon-polly-delivers-a-major-upgrade-to-its-generative-engine/",
-   "title": "Amazon Polly delivers a major upgrade to its Generative engine",
-   "date": "2026-10-22T18:06:35.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "تحديث كبير لمحرك الـ Generative في Amazon Polly",
-    "summary": "Amazon Polly نزلت تحديث بيقدم صوت أدق وأكثر تعبيرية وبسرعة عالية، مع 14 صوت جديد ودعم للغات جديدة من غير ما تحتاج تغير في الكود."
-   }
-  },
-  {
-   "id": "ff227324e376",
-   "url": "https://aws.amazon.com/blogs/machine-learning/how-iskaypet-unified-corporate-knowledge-with-amazon-bedrock-managed-knowledge-bases/",
-   "title": "How IskayPet unified corporate knowledge with Amazon Bedrock Managed Knowledge Bases",
-   "date": "2026-10-22T18:01:53.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "إزاي IskayPet جمعت المعرفة الشركة بـ Amazon Bedrock",
-    "summary": "شركة IskayPet قدرت تعمل مساعد ذكي متعدد اللغات لخدمة الموظفين في كذا دولة ومن غير ما تدير بنية تحتية لـ RAG."
-   }
-  },
-  {
-   "id": "f70f2a2dbc3b",
-   "url": "https://aws.amazon.com/blogs/machine-learning/announcing-new-ways-to-customize-models-with-sagemaker-ai-without-managing-gpus/",
-   "title": "Announcing new ways to customize models with SageMaker AI, without managing GPUs",
-   "date": "2026-10-22T18:00:04.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "طرق جديدة لتخصيص النماذج مع SageMaker AI من غير وجع دماغ الـ GPUs",
-    "summary": "خدمة SageMaker AI بقت توفر جلسات تدريب سيرفرلس عشان تقدر تعمل تخصيص للموديلات والـ GPUs بتدار لوحدها بالكامل."
    }
   }
  ]
