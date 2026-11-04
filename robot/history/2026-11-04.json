@@ -1,0 +1,31 @@
+{
+ "date": "2026-11-04T05:38:19.299Z",
+ "total": 506,
+ "ok": 503,
+ "broken": [
+  "/tool/remove-bg",
+  "feature:prompt-builder"
+ ],
+ "warn": 1,
+ "spacesDown": [
+  "multimodalart-logo-in-context",
+  "eccv2022-dis-background-removal",
+  "doevent-face-real-esrgan",
+  "stepfun-ai-step1x-3d",
+  "prithivmlmods-florence-2-image-caption"
+ ],
+ "aiTested": [
+  "/tool/product-desc",
+  "/tool/proofread",
+  "/tool/proposal",
+  "/tool/quiz",
+  "/tool/report",
+  "/tool/review-reply",
+  "/tool/rewrite",
+  "/tool/seo-article",
+  "/tool/sheet-analyst",
+  "/tool/short-story",
+  "/tool/speech",
+  "/tool/study-plan"
+ ]
+}
