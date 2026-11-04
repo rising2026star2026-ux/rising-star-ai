@@ -70,16 +70,20 @@ export default function ModelCompare({ bots, sections }) {
         throw new Error(d.error || "حصل خطأ، جرّب تاني.");
       }
       const fallback = res.headers.get("x-bot") === "fallback";
+      // الموديل اللي رد فعلاً مقابل المطلوب: السيرفر بيبدّل بصمت لو الموديل مشغول أو الرصيد خلص
+      const used = res.headers.get("x-model") || "";
+      const asked = res.headers.get("x-asked") || "";
+      const swapped = !!used && !!asked && used !== asked;
       const reader = res.body.getReader();
       const dec = new TextDecoder();
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
         text += dec.decode(value, { stream: true });
-        patch({ text, fallback });
+        patch({ text, fallback, used, swapped });
       }
       if (!text.trim()) throw new Error("ما وصلش رد. جرّب تاني.");
-      patch({ status: "done", ms: performance.now() - t0, fallback });
+      patch({ status: "done", ms: performance.now() - t0, fallback, used, swapped });
     } catch (e) {
       if (e.name === "AbortError") patch({ status: "stopped", ms: performance.now() - t0, text: text || "_اتوقف الرد._" });
       else patch({ status: "error", error: e.message || "الاتصال اتقطع." });
@@ -211,12 +215,19 @@ export default function ModelCompare({ bots, sections }) {
                 </header>
 
                 {r.fallback && <p className={s.warn}>الموديل ده مش متاح دلوقتي، فالرد ده من «متوازن».</p>}
+                {r.swapped && !r.fallback && (
+                  <p className={s.warn}>
+                    الموديل ده كان مشغول أو مش متاح، فالرد جه من موديل بديل: <bdi className={s.mono}>{r.used.replace(/^[a-z]+\//, "")}</bdi>. الرد ده مش بتاع {bot.name}.
+                  </p>
+                )}
 
                 <div className={s.body}>
                   {r.status === "error" && <p className={s.err}>{r.error}</p>}
                   {r.status === "loading" && !r.text && <p className={s.wait}><span className={s.dots} aria-hidden="true" /> بيكتب...</p>}
                   {r.text && <div className="md" dir="auto"><Md>{r.text}</Md></div>}
                 </div>
+
+                {r.used && !r.swapped && !r.fallback && <p className={s.used}>اشتغل فعلاً: <bdi className={s.mono}>{r.used.replace(/^[a-z]+\//, "")}</bdi></p>}
 
                 <footer className={s.colFoot}>
                   <button type="button" onClick={() => copy(k)} disabled={!r.text || r.status === "loading"}>نسخ</button>

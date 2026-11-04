@@ -200,6 +200,8 @@ export async function POST(req) {
   const temperature = docs.length ? 0.3 : SETTINGS.style.temp[s.style] ?? 0.6;
   const maxTokens = effort === "high" ? 6000 : effort === "medium" || docs.length ? 3200 : 2048;
   let chain = bot ? chainForBot(bot) : chainFor(mode);
+  // الموديل المطلوب فعلاً (للمقارنة): لو اللي رد غيره، الهيدر x-model هيبان مختلف وصفحة المقارنة تنبّه المستخدم
+  if (bot) headers["x-asked"] = `${chain[0].provider}/${chain[0].id}`;
   let finalMessages = [{ role: "system", content: system }, ...messages];
 
   if (docCtx) {
