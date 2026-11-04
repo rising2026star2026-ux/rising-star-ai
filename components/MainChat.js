@@ -181,7 +181,7 @@ export default function MainChat({ project = null, initialMessages = null, onMes
   }, [messages, busy]);
 
   const lastUser = [...messages].reverse().find((m) => m.role === "user");
-  const suggestions = useMemo(() => (lastUser && !docs.length ? findTools(lastUser.content, 3) : []), [lastUser, docs.length]);
+  const suggestions = useMemo(() => (lastUser && !docs.length ? findTools(lastUser.content, 2, 6) : []), [lastUser, docs.length]);
 
   function resize() {
     const el = boxRef.current;
