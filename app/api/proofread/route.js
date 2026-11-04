@@ -1,5 +1,6 @@
 // المدقق اللغوي: بيصحّح الإملاء والنحو وعلامات الترقيم في نص المستخدم من غير ما يغيّر معناه
-import { fail, clientIp, rateLimiter, completeOnce } from "@/lib/groq";
+import { fail, clientIp, rateLimiter, completeOnce, chainFor } from "@/lib/groq";
+import { getModel } from "@/lib/models";
 
 const tooMany = rateLimiter(40); // 40 تدقيق في الساعة لكل زائر
 const MAX = 4000;
@@ -25,7 +26,7 @@ export async function POST(req) {
 
   const messages = [{ role: "system", content: RULES }, { role: "user", content: text }];
   let fixed = null;
-  for (const m of [{ id: "openai/gpt-oss-120b", effort: "low" }, { id: "openai/gpt-oss-20b", effort: "low" }]) {
+  for (const m of chainFor(getModel("arabic")).slice(0, 5)) {
     fixed = await completeOnce(m, { messages, temperature: 0.1, maxTokens: 2400, signal: req.signal });
     if (fixed) break;
   }

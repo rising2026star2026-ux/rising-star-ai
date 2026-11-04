@@ -42,7 +42,7 @@ const NAV = [
   { href: "/plans", label: "الباقات", icon: <svg {...I}><path d="M4 8l4 3.5L12 5l4 6.5L20 8l-1.5 10h-13z" /></svg> },
 ];
 
-const SIDE_BOTS = ["claude-opus", "gpt-astra", "gemini-pro", "grok", "deepseek", "gpt-oss-120b"]
+const SIDE_BOTS = ["claude-opus", "gpt-astra", "gemini-pro", "grok", "deepseek", "gemini-direct"]
   .map((k) => BOTS.find((b) => b.key === k))
   .filter(Boolean);
 

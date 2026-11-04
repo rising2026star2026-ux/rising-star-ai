@@ -5,7 +5,7 @@
 // {t:"err",m}  مشكلة
 import { getAgent } from "@/lib/agents";
 import { getModel } from "@/lib/models";
-import { fail, clientIp, rateLimiter, chainFor, completeOnce, streamFromGroq } from "@/lib/groq";
+import { fail, clientIp, rateLimiter, chainFor, quickChain, completeOnce, streamFromGroq } from "@/lib/groq";
 import { webSearch, searchProvider } from "@/lib/websearch";
 
 export const maxDuration = 120;
@@ -40,11 +40,7 @@ async function planQueries(agent, inputText, signal) {
     { role: "system", content: `انت مخطط بحث. ${agent.plan}\nرجّع JSON بس بالشكل ده: {"q":["...","...","..."]} من غير أي كلام تاني.` },
     { role: "user", content: inputText },
   ];
-  const models = [
-    { id: "openai/gpt-oss-20b", effort: "low", provider: "groq" },
-    { id: "gemini-flash-lite-latest", effort: null, provider: "gemini" },
-  ];
-  for (const m of models) {
+  for (const m of quickChain().slice(0, 4)) {
     const out = await completeOnce(m, { messages: msg, temperature: 0.3, maxTokens: 500, signal });
     const j = out && out.match(/\{[\s\S]*\}/);
     try {

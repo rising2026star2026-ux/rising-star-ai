@@ -1,5 +1,5 @@
 // بيحوّل فكرة المستخدم بالعربي لوصف إنجليزي مفصّل لمولّدات الصور والفيديو (أغلبها بيفهم الإنجليزي أحسن)
-import { fail, clientIp, rateLimiter, completeOnce } from "@/lib/groq";
+import { fail, clientIp, rateLimiter, completeOnce, quickChain } from "@/lib/groq";
 
 const tooMany = rateLimiter(60); // 60 طلب في الساعة لكل زائر
 export const maxDuration = 30;
@@ -25,12 +25,7 @@ export async function POST(req) {
   if (tooMany(clientIp(req))) return fail("وصلت للحد الساعة دي. جرّب بعد شوية.", 429);
   const messages = [{ role: "system", content: rules(kind) }, { role: "user", content: text }];
   let out = null;
-  for (const m of [
-    { id: "openai/gpt-oss-20b", effort: "low", provider: "groq" },
-    { id: "openai/gpt-oss-120b", effort: "low", provider: "groq" },
-    ...(process.env.OPENROUTER_API_KEY ? [{ id: "openai/gpt-oss-120b", effort: null, provider: "openrouter" }] : []),
-    { id: "openai", effort: null, provider: "pollinations" },
-  ]) {
+  for (const m of quickChain()) {
     out = await completeOnce(m, { messages, temperature: 0.6, maxTokens: 500, signal: req.signal });
     if (out) break;
   }

@@ -60,9 +60,10 @@ for (const it of fresh) {
 
 // ترجمة/تلخيص بالعربي للجديد بس
 const PROVIDERS = [
-  process.env.GROQ_API_KEY && { name: "groq", url: process.env.GROQ_URL || "https://api.groq.com/openai/v1/chat/completions", key: process.env.GROQ_API_KEY, model: process.env.GROQ_MODEL || "openai/gpt-oss-120b" },
-  process.env.OPENROUTER_API_KEY && { name: "openrouter", url: "https://openrouter.ai/api/v1/chat/completions", key: process.env.OPENROUTER_API_KEY, model: process.env.OPENROUTER_MODEL || "openai/gpt-oss-120b" },
-  process.env.GEMINI_API_KEY && { name: "gemini", url: "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions", key: process.env.GEMINI_API_KEY, model: process.env.GEMINI_MODEL || "gemini-flash-lite-latest" },
+  // GPT-OSS اتشال (نوفمبر 2026): Gemini الأول، وبعده Groq وOpenRouter
+  process.env.GEMINI_API_KEY && { name: "gemini", url: "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions", key: process.env.GEMINI_API_KEY, model: process.env.GEMINI_MODEL || "gemini-flash-latest" },
+  process.env.GROQ_API_KEY && { name: "groq", url: process.env.GROQ_URL || "https://api.groq.com/openai/v1/chat/completions", key: process.env.GROQ_API_KEY, model: process.env.GROQ_MODEL || "moonshotai/kimi-k2-instruct-0905" },
+  process.env.OPENROUTER_API_KEY && { name: "openrouter", url: "https://openrouter.ai/api/v1/chat/completions", key: process.env.OPENROUTER_API_KEY, model: process.env.OPENROUTER_MODEL || "meta-llama/llama-3.3-70b-instruct:free" },
 ].filter(Boolean);
 console.log("providers:", PROVIDERS.map((p) => p.name).join(", ") || "none");
 const used = {};

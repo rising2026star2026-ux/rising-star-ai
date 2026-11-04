@@ -33,7 +33,7 @@ const SHORTCUTS = ["ad-copy", "product-desc", "remove-bg", "product-ad", "poster
 const HOME_APPS = ["chatgpt", "claude", "gemini", "canva", "capcut", "midjourney", "kling", "suno", "elevenlabs", "perplexity"]
   .map((k) => APPS.find((a) => a.key === `app-${k}`))
   .filter(Boolean);
-const HOME_BOTS = ["claude-opus", "gpt-astra", "gemini-pro", "grok", "claude-sonnet", "kimi", "gpt-oss-120b", "llama-70b", "search-fast", "deepseek"]
+const HOME_BOTS = ["claude-opus", "gpt-astra", "gemini-pro", "grok", "claude-sonnet", "kimi", "gemini-direct", "llama-70b", "search-fast", "deepseek"]
   .map((k) => BOTS.find((b) => b.key === k))
   .filter(Boolean);
 

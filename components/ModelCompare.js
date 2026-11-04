@@ -12,7 +12,7 @@ import s from "./compare.module.css";
 const MIN = 2;
 const MAX = 3;
 const MAX_CHARS = 3000;
-const DEFAULT_PICK = ["gpt-oss-120b", "qwen-27b", "llama-70b"];
+const DEFAULT_PICK = ["gemini-direct", "kimi-k2", "llama-70b"];
 
 const EXAMPLES = [
   "اكتبلي إعلان قصير لعباية سوداء مطرزة بلهجة مصرية",

@@ -8,7 +8,7 @@ import s from "./chat.module.css";
 import m from "./models.module.css";
 
 // أيقونات سريعة من صفحة «الموديلات»
-const QUICK = ["claude-opus", "gpt-astra", "gemini-pro", "grok", "gpt-oss-120b", "search-fast"];
+const QUICK = ["claude-opus", "gpt-astra", "gemini-pro", "grok", "gemini-direct", "search-fast"];
 
 // اللوحة الجانبية: الاختيارات الـ6 الأساسية، وتحتها اختصار لكل الموديلات. على الموبايل بتطلع من الجنب
 export default function ModelPicker({ value, bot, onChange, onBot, open, onClose }) {

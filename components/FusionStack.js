@@ -2,7 +2,7 @@
 import BotIcon from "./BotIcon";
 import { BOTS } from "@/lib/bots";
 
-const DEFAULT = ["gpt-oss-120b", "kimi-k2", "llama4-maverick", "qwen3-32b"]
+const DEFAULT = ["kimi-k2", "llama4-maverick", "qwen3-32b", "llama-70b"]
   .map((k) => BOTS.find((b) => b.key === k))
   .filter(Boolean)
   .map((b) => ({ name: b.name, logo: b.logo }));

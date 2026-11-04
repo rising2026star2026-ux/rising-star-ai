@@ -2,9 +2,9 @@
 import { ANSWER_STYLE } from "@/lib/answerstyle";
 import { getModel } from "@/lib/models";
 import { SETTINGS, cleanSettings } from "@/lib/settings";
-import { fail, clientIp, rateLimiter, chainFor, streamFromGroq, completeOnce } from "@/lib/groq";
+import { fail, clientIp, rateLimiter, chainFor, quickChain, streamFromGroq, completeOnce } from "@/lib/groq";
 import { searchProvider, searchQuery, webSearchFull, resultsBlock } from "@/lib/websearch";
-import { FALLBACK_IDS } from "@/lib/models";
+import { RETIRED_BOTS } from "@/lib/bots";
 import { resolveBot, validProCode } from "@/lib/botcatalog";
 import { fusionResponse } from "@/lib/fusion";
 import { cleanDocs, cleanInstructions, docContext, longChain, instructionsBlock } from "@/lib/doccontext";
@@ -40,13 +40,7 @@ const IMAGE_PROMPT_RULES = [
 
 async function imageResponse(idea, signal) {
   let prompt = null;
-  for (const m of [
-    { id: "openai/gpt-oss-20b", effort: "low", provider: "groq" },
-    { id: "openai/gpt-oss-120b", effort: "low", provider: "groq" },
-    { id: "openai/gpt-oss-120b", effort: null, provider: "openrouter" },
-    { id: "gemini-flash-lite-latest", effort: null, provider: "gemini" },
-    { id: "openai", effort: null, provider: "pollinations" },
-  ]) {
+  for (const m of quickChain()) {
     prompt = await completeOnce(m, { messages: [{ role: "system", content: IMAGE_PROMPT_RULES }, { role: "user", content: idea }], temperature: 0.6, maxTokens: 300, signal });
     if (prompt) break;
   }
@@ -58,10 +52,12 @@ async function imageResponse(idea, signal) {
   return new Response(md, { headers: { "Content-Type": "text/plain; charset=utf-8", "x-image": "server" } });
 }
 
-/** سلسلة المحاولات لموديل من صفحة «الموديلات»: الموديل نفسه، وبعده موديلات Groq احتياطي */
+/** سلسلة المحاولات لموديل من صفحة «الموديلات»: الموديل نفسه، وبعده سلسلة الموقع الأساسية احتياطي */
 function chainForBot(bot) {
+  // المساعدين والبحث (provider: site) شغالين على سلسلة الموقع نفسها
+  if (bot.provider === "site") return chainFor(getModel(bot.mode || "balanced"));
   const first = { id: bot.id, effort: bot.provider === "groq" ? bot.effort || "low" : null, provider: bot.provider };
-  const rest = FALLBACK_IDS.filter((id) => id !== bot.id).map((id) => ({ id, effort: "low", provider: "groq" }));
+  const rest = chainFor(getModel("balanced")).filter((m) => !(m.provider === first.provider && m.id === first.id));
   return [first, ...rest];
 }
 
@@ -128,7 +124,8 @@ export async function POST(req) {
 
   // موديل من صفحة «الموديلات» (زي Poe)
   let bot = null;
-  if (typeof body.bot === "string" && body.bot) {
+  // موديل اتشال من الموقع (زي GPT-OSS) ولسه محفوظ على جهاز الزائر: بنرد بـ«متوازن» بدل ما نرفض
+  if (typeof body.bot === "string" && body.bot && !RETIRED_BOTS.includes(body.bot)) {
     bot = await resolveBot(body.bot);
     if (!bot) return fail("الموديل ده مش موجود.", 404);
     if (bot.tier === "pro") {
@@ -137,7 +134,7 @@ export async function POST(req) {
       }
       if (tooManyPro(`${ip}|${body.pro || ""}`)) return fail("وصلت لحد الموديلات العالمية الساعة دي. جرّب بعد شوية أو استخدم موديل تاني.", 429);
     }
-    if (!bot.available || !bot.id) {
+    if (!bot.available || (!bot.id && bot.provider !== "site")) {
       // الموديل مش متاح دلوقتي: نرد بالمتوازن بدل ما نوقف المستخدم
       headers["x-bot"] = "fallback";
       bot = null;
