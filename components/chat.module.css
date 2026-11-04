@@ -416,3 +416,32 @@ button.fileChip:hover { border-color: var(--accent-line); }
 .composer:focus-within textarea { min-height: 96px; }
 .compact .brandBtn { display: none; }
 @media (max-width: 879px) { :global(body.chat-typing) .composerWrap { bottom: env(safe-area-inset-bottom, 0px); } }
+
+/* ===== ثيم الشات: خلفية خضرا هادية للعين، ومساحات قليلة ومريحة ===== */
+:global(body.chat-mode) {
+  --bg: #f1f7f3;
+  --chat-green: #15803d;
+  --chat-green-soft: rgba(21, 128, 61, 0.1);
+  --chat-green-line: rgba(21, 128, 61, 0.35);
+  background: #f1f7f3;
+}
+:global(body.chat-mode) .user { background: #fff; box-shadow: 0 1px 0 rgba(17, 24, 39, 0.04); border: 1px solid rgba(21, 128, 61, 0.14); }
+:global(body.chat-mode) .send { background: var(--chat-green); }
+:global(body.chat-mode) .webOn, :global(body.chat-mode) .webOn:hover { color: var(--chat-green); background: var(--chat-green-soft); border-color: var(--chat-green-line); }
+:global(body.chat-mode) .md a, :global(body.chat-mode) .modelPill small { color: var(--chat-green); }
+:global(body.chat-mode) .verify, :global(body.chat-mode) .rewriteRow button { background: #fff; }
+:global(body.chat-mode) .composer { border-color: rgba(21, 128, 61, 0.22); }
+:global(body.chat-mode) .composer:focus-within { border-color: var(--chat-green-line); }
+
+/* شاشة البداية مختصرة: عنوان صغير وسطر واحد واقتراحات صغيرة في صفين */
+.hero { padding: 22px 0 10px; }
+.spark { margin-bottom: 8px; filter: drop-shadow(0 6px 12px rgba(245, 158, 11, 0.3)); }
+.hero h1 { font-size: clamp(1.25rem, 3.6vw, 1.6rem); font-weight: 500; margin-bottom: 4px; }
+.hero p { font-size: 0.86rem; margin-bottom: 16px; }
+.starters { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; max-width: 520px; }
+.starter { padding: 10px 12px; border-radius: 14px; font-size: 0.82rem; text-align: center; background: #fff; border-color: rgba(21, 128, 61, 0.14); }
+.starter:hover { border-color: var(--chat-green-line, var(--accent-line)); transform: none; }
+.projectsLink { margin-top: 12px; font-size: 0.76rem; padding: 5px 12px; }
+.projectsLink b { color: var(--chat-green, var(--accent)); }
+.bar { padding: 0 0 8px; }
+.page { padding-top: 8px; }

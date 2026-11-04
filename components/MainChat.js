@@ -23,10 +23,10 @@ import { idbGet, idbSet, idbDel } from "@/lib/idb";
 import s from "./chat.module.css";
 
 const STARTERS = [
-  "اكتبلي إعلان لمحل ملابس في القاهرة",
-  "اشرحلي الذكاء الاصطناعي ببساطة",
-  "اعملي خطة مذاكرة لأسبوع",
-  "صحح الكود ده واشرحلي الغلط",
+  "إعلان لمحل ملابس",
+  "اشرحلي الذكاء الاصطناعي",
+  "خطة مذاكرة لأسبوع",
+  "صحّح كود واشرح الغلط",
 ];
 
 // أوامر جاهزة لما يكون فيه ملف مرفوع
@@ -536,13 +536,13 @@ export default function MainChat({ project = null, initialMessages = null, onMes
               {bot ? (
                 <div className={s.botHero}><BotIcon bot={bot} size={58} /></div>
               ) : (
-                <div className={s.spark}><StarMark size={42} /></div>
+                <div className={s.spark}><StarMark size={30} /></div>
               )}
               <h1>{docs.length ? (docs.length > 1 ? `${nFiles(docs.length)} ${docs.length === 2 ? "جاهزين" : "جاهزة"}` : "الملف جاهز") : bot ? <>بتتكلم مع <bdi>{bot.name}</bdi></> : "عايز تعمل إيه النهارده؟"}</h1>
               <p>
                 {docs.length
                   ? "اسأل أي سؤال عن الملف، أو اختار أمر جاهز:"
-                  : "اسأل أي سؤال بالعربي، والرد هيوصلك فوراً. ارفع PDF أو ملف Word وهلخّصهولك وأجاوب منه، وفعّل «بحث» عشان معلومات جديدة من الإنترنت ومعاها المصادر."}
+                  : "اسأل بالعربي، أو ارفع ملف، أو فعّل البحث."}
               </p>
               <div className={s.starters}>
                 {(docs.length ? docActions : STARTERS.map((q) => ({ label: q, q }))).map((a) => (
