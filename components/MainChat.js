@@ -14,7 +14,8 @@ import FusionStack from "./FusionStack";
 import { useProofread, ProofIcon } from "@/lib/useProofread";
 import { getBot } from "@/lib/bots";
 import { findTools } from "@/lib/search";
-import { getModel, DEFAULT_MODEL_KEY } from "@/lib/models";
+import { getModel, DEFAULT_MODEL_KEY, MODEL_OPTIONS } from "@/lib/models";
+import { answerToPng, shareOrDownload } from "@/lib/answerimage";
 import { DEFAULT_SETTINGS } from "@/lib/settings";
 import { read, write, useStored, toast, PENDING_KEY } from "@/lib/store";
 import { ACCEPT, KIND_ICON, docLabel } from "@/lib/docs";
@@ -133,6 +134,7 @@ export default function MainChat({ project = null, initialMessages = null, onMes
   const [useBrand, setUseBrand] = useStored("chat-brand", true);
   const [opts, setOpts] = useStored("answer-opts", DEFAULT_OPTS);
   const [optsOpen, setOptsOpen] = useState(false);
+  const [sheet, setSheet] = useState(""); // "plus" | "models" | ""
   const nOpts = optsCount(opts);
   const [rewriteOpen, setRewriteOpen] = useState(-1);
   const didInitScroll = useRef(false);
@@ -427,6 +429,30 @@ export default function MainChat({ project = null, initialMessages = null, onMes
     }
   }
 
+  // «صورة للإجابة»: آخر رد (أو رد معيّن) كصورة PNG للحفظ أو المشاركة
+  async function answerImage(i) {
+    const idx = typeof i === "number" ? i : messages.map((m) => m.role).lastIndexOf("assistant");
+    const m = messages[idx];
+    const q = [...messages.slice(0, idx)].reverse().find((x) => x.role === "user");
+    setSheet("");
+    if (!m?.content || !q) return toast("لسه مفيش إجابة أعملها صورة");
+    try {
+      toast("بجهّز الصورة…");
+      const blob = await answerToPng({ question: q.content, answer: splitDiscuss(m.content).body });
+      const how = await shareOrDownload(blob);
+      if (how === "downloaded") toast("الصورة اتنزلت على جهازك");
+    } catch {
+      toast("مقدرتش أعمل الصورة على الجهاز ده");
+    }
+  }
+
+  function pickMode(k) {
+    setModelKey(k);
+    setBotKey("");
+    setNeedPro(false);
+    setSheet("");
+  }
+
   function stop() {
     abortRef.current?.abort();
   }
@@ -521,61 +547,11 @@ export default function MainChat({ project = null, initialMessages = null, onMes
             <div><ClipIcon /><b>سيب الملف هنا</b><small>PDF أو Word أو صورة أو ملف نص</small></div>
           </div>
         )}
-        <div className={s.bar}>
-          <div className={s.barStart}>
-            {barStart}
-            <button className={s.modelPill} onClick={openModels} aria-haspopup="dialog">
-              {bot ? <BotIcon bot={bot} size={22} /> : model.fusion ? <FusionStack size={18} /> : <span aria-hidden="true">{model.icon}</span>}
-              <b dir="auto">{bot ? bot.name : model.name}</b>
-              <small>تغيير</small>
-            </button>
+        {(barStart || !empty) && (
+          <div className={s.bar}>
+            <div className={s.barStart}>{barStart}</div>
+            {!empty && <button className={s.ghost} onClick={newChat}>+ محادثة جديدة</button>}
           </div>
-          <div className={s.barEnd}>
-            <button
-              type="button"
-              className={`${s.optsBtn} ${nOpts ? s.optsBtnOn : ""}`}
-              onClick={() => setOptsOpen((o) => !o)}
-              aria-expanded={optsOpen}
-              aria-controls="answer-opts"
-            >
-              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8" /><circle cx="16" cy="7" r="2" /><circle cx="10" cy="17" r="2" /></svg>
-              خيارات الإجابة{nOpts ? <b>{nOpts}</b> : null}
-            </button>
-            {!empty && <button className={s.ghost} onClick={newChat}>+ جديدة</button>}
-          </div>
-        </div>
-
-        {optsOpen && (
-          <section id="answer-opts" className={s.optsPanel} aria-label="خيارات الإجابة">
-            <div className={s.optsGroup}>
-              <span className={s.optsLabel}>الإجابة لمين؟</span>
-              <div className={s.optsLevels} role="radiogroup" aria-label="الإجابة لمين؟">
-                {LEVELS.map(([k, label]) => (
-                  <button key={k} type="button" role="radio" aria-checked={opts.level === k} className={opts.level === k ? s.levelOn : ""} onClick={() => setOpts({ ...DEFAULT_OPTS, ...opts, level: k, ...(k === "researcher" ? { refs: true, sources: true } : {}) })}>
-                    {label}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div className={s.optsGroup}>
-              <span className={s.optsLabel}>ضيف للإجابة</span>
-              <div className={s.optsExtras}>
-                {EXTRAS.map(([k, label, hint]) => (
-                  <label key={k} className={`${s.extra} ${opts[k] ? s.extraOn : ""}`}>
-                    <input type="checkbox" checked={!!opts[k]} onChange={(e) => setOpts({ ...DEFAULT_OPTS, ...opts, [k]: e.target.checked })} />
-                    <span><b>{label}</b><small>{hint}</small></span>
-                  </label>
-                ))}
-              </div>
-            </div>
-            <div className={s.optsFoot}>
-              <small>الخيارات بتتحفظ وبتشتغل على كل سؤال جديد. المصادر والصور والمواقع بتدوّر على الإنترنت.</small>
-              <span>
-                {nOpts > 0 && <button type="button" className={s.ghost} onClick={() => setOpts(DEFAULT_OPTS)}>رجّع الافتراضي</button>}
-                <button type="button" className={s.optsDone} onClick={() => setOptsOpen(false)}>تمام</button>
-              </span>
-            </div>
-          </section>
         )}
 
         {empty ? (
@@ -696,6 +672,7 @@ export default function MainChat({ project = null, initialMessages = null, onMes
                         <button className={s.ghost} onClick={() => verify(i)} disabled={m.verify?.status === "loading"}>اتأكد من المعلومة</button>
                         <button className={`${s.ghost} ${rewriteOpen === i ? s.ghostOn : ""}`} onClick={() => setRewriteOpen(rewriteOpen === i ? -1 : i)} aria-expanded={rewriteOpen === i}>غيّر الرد</button>
                         {m.orig && <button className={s.ghost} onClick={() => restore(i)}>رجّع الأصلي</button>}
+                        <button className={s.ghost} onClick={() => answerImage(i)}>صورة</button>
                         {i === messages.length - 1 && <button className={s.ghost} onClick={retry}>إعادة المحاولة</button>}
                         <ShareBar
                           compact
@@ -733,6 +710,106 @@ export default function MainChat({ project = null, initialMessages = null, onMes
         )}
 
         <div className={s.composerWrap}>
+          {(sheet || optsOpen) && <div className={s.sheetScrim} onClick={() => { setSheet(""); setOptsOpen(false); }} aria-hidden="true" />}
+
+          {optsOpen && (
+            <section id="answer-opts" className={`${s.sheet} ${s.optsSheet}`} aria-label="خيارات الإجابة">
+              <div className={s.sheetHead}>
+                <b>خيارات الإجابة</b>
+                <button type="button" className={s.sheetX} onClick={() => setOptsOpen(false)} aria-label="إغلاق">✕</button>
+              </div>
+              <span className={s.optsLabel}>الإجابة لمين؟</span>
+              <div className={s.levelSeg} role="radiogroup" aria-label="الإجابة لمين؟">
+                {LEVELS.map(([k, label]) => (
+                  <button key={k} type="button" role="radio" aria-checked={opts.level === k} onClick={() => setOpts({ ...DEFAULT_OPTS, ...opts, level: k, ...(k === "researcher" ? { refs: true, sources: true } : {}) })}>
+                    {label}
+                  </button>
+                ))}
+              </div>
+              <span className={s.optsLabel}>ضيف للإجابة</span>
+              <div className={s.switches}>
+                {EXTRAS.map(([k, label, hint]) => (
+                  <label key={k} className={s.switchRow}>
+                    <span><b>{label}</b><small>{hint}</small></span>
+                    <input type="checkbox" role="switch" checked={!!opts[k]} onChange={(e) => setOpts({ ...DEFAULT_OPTS, ...opts, [k]: e.target.checked })} />
+                    <i aria-hidden="true" />
+                  </label>
+                ))}
+              </div>
+              <div className={s.sheetFoot}>
+                {nOpts > 0 ? <button type="button" className={s.linkBtn} onClick={() => setOpts(DEFAULT_OPTS)}>رجّع الافتراضي</button> : <span />}
+                <button type="button" className={s.doneBtn} onClick={() => setOptsOpen(false)}>تمام</button>
+              </div>
+            </section>
+          )}
+
+          {sheet === "plus" && (
+            <section className={s.sheet} aria-label="إضافات">
+              <div className={s.sheetHead}><b>ضيف لرسالتك</b><button type="button" className={s.sheetX} onClick={() => setSheet("")} aria-label="إغلاق">✕</button></div>
+              <div className={s.plusGrid}>
+                <button type="button" className={s.plusTile} onClick={() => { setSheet(""); fileRef.current?.click(); }} disabled={reading}>
+                  <i aria-hidden="true"><ClipIcon /></i><b>ملف أو صورة</b><small>PDF، Word، صورة</small>
+                </button>
+                <button type="button" className={`${s.plusTile} ${web ? s.plusOn : ""}`} onClick={() => { toggleWeb(); setSheet(""); }} aria-pressed={!!web}>
+                  <i aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round"><circle cx="12" cy="12" r="8.5" /><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z" /></svg></i>
+                  <b>بحث على النت</b><small>{web ? "مفعّل" : "معلومات جديدة"}</small>
+                </button>
+                {brand?.name ? (
+                  <button type="button" className={`${s.plusTile} ${useBrand ? s.plusOn : ""}`} onClick={() => { setUseBrand(!useBrand); setSheet(""); toast(useBrand ? "الردود مش هتاخد نشاطك في الاعتبار" : `الردود هتتظبط على «${brand.name}»`); }} aria-pressed={!!useBrand}>
+                    <i aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M4 9.5l1.4-4h13.2l1.4 4M4 9.5h16v1a2.7 2.7 0 01-5.3.6 2.7 2.7 0 01-5.4 0A2.7 2.7 0 014 10.5zM5.5 12.5V19.5h13v-7" /></svg></i>
+                    <b>هوية نشاطي</b><small dir="auto">{useBrand ? brand.name : "مقفولة"}</small>
+                  </button>
+                ) : (
+                  <Link href="/brand" className={s.plusTile} onClick={() => setSheet("")}>
+                    <i aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M4 9.5l1.4-4h13.2l1.4 4M4 9.5h16v1a2.7 2.7 0 01-5.3.6 2.7 2.7 0 01-5.4 0A2.7 2.7 0 014 10.5zM5.5 12.5V19.5h13v-7" /></svg></i>
+                    <b>هوية نشاطي</b><small>الردود على قد شغلك</small>
+                  </Link>
+                )}
+                <button type="button" className={s.plusTile} onClick={() => { setSheet(""); proof.run(); }} disabled={proof.busy || !input.trim()}>
+                  <i aria-hidden="true"><ProofIcon /></i><b>تدقيق لغوي</b><small>صحّح رسالتك</small>
+                </button>
+                <button type="button" className={s.plusTile} onClick={() => answerImage()} disabled={busy || !messages.some((m) => m.role === "assistant" && m.content)}>
+                  <i aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="3" /><circle cx="9" cy="10" r="1.6" /><path d="M20.5 15l-4.5-4.5L7 19" /></svg></i>
+                  <b>صورة للإجابة</b><small>احفظها أو شاركها</small>
+                </button>
+                <Link href={lastUser ? `/compare?q=${encodeURIComponent(lastUser.content.slice(0, 500))}` : "/compare"} className={s.plusTile} onClick={() => setSheet("")}>
+                  <i aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round"><rect x="3.5" y="4.5" width="7" height="15" rx="2" /><rect x="13.5" y="4.5" width="7" height="15" rx="2" /></svg></i>
+                  <b>قارن الموديلات</b><small>نفس السؤال لأكتر من موديل</small>
+                </Link>
+              </div>
+            </section>
+          )}
+
+          {sheet === "models" && (
+            <section className={s.sheet} aria-label="الموديل اللي بيجاوب">
+              <div className={s.sheetHead}><b>الإجابة من أنهي موديل؟</b><button type="button" className={s.sheetX} onClick={() => setSheet("")} aria-label="إغلاق">✕</button></div>
+              <div className={s.modeGrid}>
+                {MODEL_OPTIONS.map((m) => (
+                  <button key={m.key} type="button" className={`${s.modeTile} ${!bot && model.key === m.key ? s.modeOn : ""}`} onClick={() => pickMode(m.key)} aria-pressed={!bot && model.key === m.key}>
+                    <i aria-hidden="true">{m.fusion ? <FusionStack size={14} /> : m.icon}</i>
+                    <b>{m.name}</b><small>{m.tagline}</small>
+                  </button>
+                ))}
+              </div>
+              <button type="button" className={s.allModels} onClick={() => { setSheet(""); setSideOpen(true); }}>
+                كل الموديلات العالمية (GPT وClaude وGemini وغيرهم) ←
+              </button>
+            </section>
+          )}
+
+          <div className={s.composerBox}>
+          <button
+            type="button"
+            className={`${s.optsFab} ${nOpts ? s.optsFabOn : ""}`}
+            onClick={() => { setSheet(""); setOptsOpen((o) => !o); }}
+            aria-expanded={optsOpen}
+            aria-controls="answer-opts"
+            title="خيارات الإجابة"
+            aria-label={`خيارات الإجابة${nOpts ? ` (${nOpts} مفعّلة)` : ""}`}
+          >
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8" /><circle cx="16" cy="7" r="2" /><circle cx="10" cy="17" r="2" /></svg>
+            {nOpts ? <b>{nOpts}</b> : null}
+          </button>
           {!empty && !busy && fresh.length > 0 && (
             <div className={s.quickRow}>
               {docActions.map((a) => (
@@ -802,51 +879,15 @@ export default function MainChat({ project = null, initialMessages = null, onMes
                 data-testid="chat-file"
                 onChange={(e) => { attach.addFiles(e.target.files); e.target.value = ""; }}
               />
-              <button
-                type="button"
-                className={s.webBtn}
-                onClick={() => fileRef.current?.click()}
-                disabled={reading}
-                title="ارفع PDF أو Word أو صورة وأنا أقراه"
-              >
-                <ClipIcon />
-                <span>ملف</span>
+              <button type="button" className={`${s.plusBtn} ${sheet === "plus" ? s.plusBtnOn : ""}`} onClick={() => { setOptsOpen(false); setSheet(sheet === "plus" ? "" : "plus"); }} aria-expanded={sheet === "plus"} aria-label="إضافات: ملف، بحث، تدقيق، صورة للإجابة">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
               </button>
-              <button
-                type="button"
-                className={`${s.webBtn} ${web ? s.webOn : ""}`}
-                onClick={toggleWeb}
-                aria-pressed={web}
-                title="بحث على الإنترنت"
-              >
-                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="8.5" />
-                  <path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z" />
-                </svg>
-                <span>بحث</span>
+              <button type="button" className={s.modeChip} onClick={() => { setOptsOpen(false); setSheet(sheet === "models" ? "" : "models"); }} aria-expanded={sheet === "models"} title="الموديل اللي بيجاوب">
+                {bot ? <BotIcon bot={bot} size={16} /> : model.fusion ? <FusionStack size={12} /> : <span aria-hidden="true">{model.icon}</span>}
+                <span dir="auto">{bot ? bot.name : model.name}</span>
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6" /></svg>
               </button>
-              {brand?.name && !inProject && (
-                <button
-                  type="button"
-                  className={`${s.webBtn} ${s.brandBtn} ${useBrand ? s.webOn : ""}`}
-                  onClick={() => { setUseBrand(!useBrand); toast(useBrand ? "الردود مش هتاخد نشاطك في الاعتبار" : `الردود هتتظبط على «${brand.name}» لما السؤال عن شغلك`); }}
-                  aria-pressed={!!useBrand}
-                  title={`استخدم هوية نشاطي: ${brand.name}`}
-                >
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 9.5l1.4-4h13.2l1.4 4M4 9.5h16v1a2.7 2.7 0 01-5.3.6 2.7 2.7 0 01-5.4 0A2.7 2.7 0 014 10.5zM5.5 12.5V19.5h13v-7" /></svg>
-                  <span>نشاطي</span>
-                </button>
-              )}
-              <button
-                type="button"
-                className={s.proofBtn}
-                onClick={proof.run}
-                disabled={proof.busy || !input.trim()}
-                title="تدقيق لغوي: صحّح الإملاء والنحو"
-                aria-label="تدقيق لغوي"
-              >
-                {proof.busy ? <span className={s.spin} /> : <ProofIcon />}
-              </button>
+              {web && <button type="button" className={s.activeChip} onClick={toggleWeb} title="اقفل البحث">بحث ✕</button>}
               <span className={s.grow} />
               {busy ? (
                 <button className={s.send} onClick={stop} aria-label="إيقاف">■</button>
@@ -854,6 +895,7 @@ export default function MainChat({ project = null, initialMessages = null, onMes
                 <button className={s.send} onClick={() => send()} disabled={!input.trim() || reading} aria-label="إرسال">↑</button>
               )}
             </div>
+          </div>
           </div>
           {proof.undo !== null && (
             <div className={s.undoNote}>

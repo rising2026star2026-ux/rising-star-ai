@@ -186,7 +186,7 @@ export async function POST(req) {
 
   // البحث على الإنترنت: من زرار «بحث»، أو موديلات قسم البحث (Sonar بيبحث بنفسه)، أو توجيه تلقائي لسؤال معلومة
   const autoWeb = (route === "web" || optsWeb) && body.web !== true && !!searchProvider();
-  const wantsWeb = bot ? bot.web || (body.web === true && !bot.nativeSearch) : body.web === true || autoWeb;
+  const wantsWeb = bot ? bot.web || (body.web === true && !bot.nativeSearch) : body.web === true || autoWeb || (mode.web === true && !!searchProvider());
   // «صور توضيحية»: صور وخرائط توثيقية (Wikimedia Commons + بحث الصور) بالتوازي مع البحث العادي
   const docImages = opts?.images && !docs.length ? documentImages(lastUser.content).catch(() => []) : null;
   let searchImages = [];

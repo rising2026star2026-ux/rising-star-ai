@@ -1,7 +1,7 @@
 "use client";
 // مقارنة الموديلات: سؤال واحد يتبعت لـ 2-3 موديلات في نفس الوقت، والردود بتتعرض جنب بعض وهي بتتكتب.
 // بنستخدم نفس /api/chat بتاع الشات (نفس الحدود والموديلات)، فكل مقارنة بتحسب رسالة لكل موديل.
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import BotIcon from "./BotIcon";
 import Md from "./Md";
@@ -32,6 +32,14 @@ export default function ModelCompare({ bots, sections }) {
   const [busy, setBusy] = useState(false);
   const [listOpen, setListOpen] = useState(true);
   const abortRef = useRef(null);
+
+  // جاي من الشات («قارن الموديلات»): السؤال بيتحط في الخانة
+  useEffect(() => {
+    try {
+      const q = new URLSearchParams(window.location.search).get("q");
+      if (q) setQuestion(q.slice(0, MAX_CHARS));
+    } catch {}
+  }, []);
 
   // الموديلات المختارة: المحفوظة لو لسه موجودة، وإلا الافتراضية
   const picked = useMemo(() => {
