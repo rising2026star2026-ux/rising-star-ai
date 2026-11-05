@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Research from "@/components/Research";
 
-const description = "باحث أكاديمي بالعربي: بيدوّر في مكتبات أبحاث وكتب حقيقية (OpenAlex وSemantic Scholar وarXiv وOpen Library)، ويكتبلك تقرير بحثي مفصّل لحد 15 صفحة بمراجع حقيقية وروابطها.";
+const description = "باحث أكاديمي بالعربي: بيدوّر في مكتبات أبحاث وكتب حقيقية (OpenAlex وCORE وSemantic Scholar وarXiv وOpen Library ومجلات بنك المعرفة المصري)، ويكتبلك تقرير بحثي مفصّل لحد 15 صفحة بمراجع حقيقية وروابطها.";
 
 export const metadata = {
   title: "الباحث الأكاديمي: تقرير بحثي بمراجع حقيقية",

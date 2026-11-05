@@ -232,7 +232,7 @@ export default function Research() {
           )}
           {(found || report) && !busy && <button type="button" className={s.ghost} onClick={reset}>بحث جديد</button>}
         </div>
-        <p className={s.libs}>المكتبات: OpenAlex • Semantic Scholar • arXiv • Open Library</p>
+        <p className={s.libs}>المكتبات: OpenAlex • CORE • Semantic Scholar • arXiv • Open Library • مجلات بنك المعرفة المصري • شمعة</p>
       </section>
 
       {stage === "searching" && <div className={s.status}><span className={s.spin} aria-hidden="true" /> بدوّر في مكتبات الأبحاث والكتب…</div>}

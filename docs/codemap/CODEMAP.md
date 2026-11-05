@@ -1,6 +1,6 @@
 # خريطة كود Rising StarAi
 
-اتعملت أوتوماتيك بـ `node scripts/codemap/build.mjs`. 358 ملف، 767 علاقة استيراد، 58 صفحة، 34 مسار API.
+اتعملت أوتوماتيك بـ `node scripts/codemap/build.mjs`. 358 ملف، 768 علاقة استيراد، 58 صفحة، 34 مسار API.
 الخريطة التفاعلية: افتح `docs/codemap/graph.html` في المتصفح. ولمعرفة أثر تعديل أي ملف: `node scripts/codemap/query.mjs lib/groq.js`.
 
 ## أكتر الملفات اللي المشروع معتمد عليها
@@ -20,11 +20,11 @@
 | `components/seller/SellerHero.js` | 12 | 12 | رأس صفحات «ستوديو البيّاع»: سما ليل بعرض الشاشة، عنوان كبير، وخطوات قصيرة |
 | `lib/bots.js` | 11 | 16 | صفحة «الموديلات» (زي Poe): كل موديل كارت بأيقونة، مقسمين على أقسام. provider: "site" معناه إن الموديل ده (المس |
 | `components/Md.js` | 10 | 23 | عرض Markdown موحّد لكل ردود الموقع. الفرق عن العرض العادي: الجداول بتتلف في غلاف بيتحكم في عرضها (جدول بتمرير  |
+| `lib/websearch.js` | 9 | 13 |  |
 | `components/ShareBar.js` | 8 | 17 |  |
 | `components/ToolIcon.js` | 8 | 15 |  |
 | `lib/apps.js` | 8 | 14 | برامج الذكاء الاصطناعي المشهورة (70 برنامج): كل برنامج بلوجو شركته واسمه، وليه صفحة عربي جوه الموقع /program/[ |
 | `lib/site.js` | 8 | 52 | رابط الموقع الأساسي: بيستخدم في جوجل وخريطة الموقع وتوقيع المشاركة. على Vercel ضيف NEXT_PUBLIC_SITE_URL بالدوم |
-| `lib/websearch.js` | 8 | 11 |  |
 | `components/amazon/icons.js` | 7 | 15 | أيقونات خطية بسيطة (SVG) لأدوات أمازون. بدل الإيموجي عشان الشكل يبقى ثابت على كل الأجهزة. |
 | `lib/brandprofile.js` | 7 | 10 | «هوية نشاطي»: بيانات النشاط اللي العميل بيكتبها مرة واحدة وبتتحفظ على جهازه، والأدوات بتبعتها مع الطلب (لو الع |
 | `lib/settings.js` | 7 | 14 | خيارات لوحة التحكم — نفس الملف بيستخدمه المتصفح والسيرفر عشان نتأكد إن القيم سليمة |
@@ -58,10 +58,10 @@
 | `/api/proofread` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY | api.groq.com، generativelanguage.googleapis.com، openrouter.ai | groq، models |
 | `/api/realestate` | ANTHROPIC_API_KEY، GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY، SERPER_API_KEY، SUPABASE_SERVICE_ROLE_KEY، TAVILY_API_KEY | api.anthropic.com، api.groq.com، api.tavily.com، generativelanguage.googleapis.com، google.serper.dev | groq، models، llmjson، realdata، realestate، claude، supa |
 | `/api/reel` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY | api.groq.com، generativelanguage.googleapis.com، openrouter.ai | models، groq |
-| `/api/research` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY | api.groq.com، api.openalex.org، api.semanticscholar.org، generativelanguage.googleapis.com، openrouter.ai | groq، models، llmjson، scholar |
+| `/api/research` | CORE_API_KEY، GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY، SERPER_API_KEY، TAVILY_API_KEY | api.core.ac.uk، api.groq.com، api.openalex.org، api.semanticscholar.org، api.tavily.com | groq، models، llmjson، scholar |
 | `/api/run` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY | api.groq.com، generativelanguage.googleapis.com، openrouter.ai | tools، settings، quality، models، groq، brandprofile |
 | `/api/scam-scan` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY، SERPER_API_KEY، TAVILY_API_KEY | api.groq.com، api.tavily.com، generativelanguage.googleapis.com، google.serper.dev، openrouter.ai | groq، scamscan |
-| `/api/source-chat` | ANTHROPIC_API_KEY، GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY، SERPER_API_KEY، SUPABASE_SERVICE_ROLE_KEY، TAVILY_API_KEY | api.anthropic.com، api.groq.com، api.openalex.org، api.semanticscholar.org، api.tavily.com | groq، models، llmjson، scholar، websearch، claude، supa، realestate |
+| `/api/source-chat` | ANTHROPIC_API_KEY، CORE_API_KEY، GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY، SERPER_API_KEY، SUPABASE_SERVICE_ROLE_KEY، TAVILY_API_KEY | api.anthropic.com، api.core.ac.uk، api.groq.com، api.openalex.org، api.semanticscholar.org | groq، models، llmjson، scholar، websearch، claude، supa، realestate |
 | `/api/speak` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY | api.groq.com، generativelanguage.googleapis.com، openrouter.ai | groq، speech |
 | `/api/speak-pro` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY | api.groq.com، generativelanguage.googleapis.com، openrouter.ai | groq، speech، geminitts |
 | `/api/test-ad` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY | api.groq.com، generativelanguage.googleapis.com، openrouter.ai | groq، llmjson، testad |
@@ -106,6 +106,7 @@
 | `GROQ_MODEL` | 1 | `lib/groq.js` |
 | `POLLINATIONS_MODEL` | 1 | `lib/groq.js` |
 | `GEMINI_MODEL` | 1 | `lib/models.js` |
+| `CORE_API_KEY` | 1 | `lib/scholar.js` |
 | `VERCEL_PROJECT_PRODUCTION_URL` | 1 | `lib/site.js` |
 | `SUPABASE_SERVICE_ROLE_KEY` | 1 | `lib/supa.js` |
 | `SUPABASE_URL` | 1 | `lib/supa.js` |

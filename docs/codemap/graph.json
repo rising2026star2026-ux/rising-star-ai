@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-05T02:49:44.940Z",
+ "generated": "2026-11-05T03:17:21.320Z",
  "counts": {
   "files": 358,
-  "edges": 767,
+  "edges": 768,
   "pages": 58,
   "api": 34
  },
@@ -4168,11 +4168,16 @@
   {
    "id": "lib/scholar.js",
    "kind": "lib",
-   "lines": 183,
+   "lines": 238,
    "about": "الباحث الأكاديمي: بحث في مكتبات أبحاث وكتب حقيقية مجانية (على السيرفر بس، ومن غير مفاتيح). OpenAlex — أكتر من 250 مليون بحث وكتاب ورسالة، بالملخص والمؤلفين وعدد الاستشهادات (api.openalex.org) Semantic Scholar — أبحاث بال",
+   "env": [
+    "CORE_API_KEY"
+   ],
    "hosts": [
+    "api.core.ac.uk",
     "api.openalex.org",
     "api.semanticscholar.org",
+    "core.ac.uk",
     "doi.org",
     "export.arxiv.org",
     "openlibrary.org"
@@ -4181,7 +4186,7 @@
     "researchQueries",
     "findSources"
    ],
-   "imports": 2,
+   "imports": 3,
    "usedBy": 2
   },
   {
@@ -4572,7 +4577,7 @@
     "resultsBlock"
    ],
    "imports": 1,
-   "usedBy": 8
+   "usedBy": 9
   }
  ],
  "edges": [
@@ -7619,6 +7624,10 @@
   {
    "from": "lib/scholar.js",
    "to": "lib/llmjson.js"
+  },
+  {
+   "from": "lib/scholar.js",
+   "to": "lib/websearch.js"
   },
   {
    "from": "lib/search.js",
