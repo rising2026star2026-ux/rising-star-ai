@@ -1,6 +1,6 @@
 # خريطة كود Rising StarAi
 
-اتعملت أوتوماتيك بـ `node scripts/codemap/build.mjs`. 348 ملف، 743 علاقة استيراد، 56 صفحة، 33 مسار API.
+اتعملت أوتوماتيك بـ `node scripts/codemap/build.mjs`. 358 ملف، 767 علاقة استيراد، 58 صفحة، 34 مسار API.
 الخريطة التفاعلية: افتح `docs/codemap/graph.html` في المتصفح. ولمعرفة أثر تعديل أي ملف: `node scripts/codemap/query.mjs lib/groq.js`.
 
 ## أكتر الملفات اللي المشروع معتمد عليها
@@ -8,31 +8,31 @@
 
 | الملف | بيستخدمه مباشرةً | بيتأثر بيه إجمالاً | وصفه |
 |---|---|---|---|
-| `lib/store.js` | 53 | 92 | تخزين بسيط على جهاز الزائر (المفضلة، السجل، الإعدادات). لو المتصفح منعه، الموقع يكمل عادي. |
-| `lib/groq.js` | 41 | 42 | الاتصال بالموديلات — بيستخدمه الشات والأدوات (على السيرفر بس) المزود الأساسي Groq، ومعاه طبقة احتياطية اختياري |
+| `lib/store.js` | 54 | 95 | تخزين بسيط على جهاز الزائر (المفضلة، السجل، الإعدادات). لو المتصفح منعه، الموقع يكمل عادي. |
+| `lib/groq.js` | 42 | 44 | الاتصال بالموديلات — بيستخدمه الشات والأدوات (على السيرفر بس) المزود الأساسي Groq، ومعاه طبقة احتياطية اختياري |
 | `components/studio/ui.js` | 22 | 31 | عناصر الواجهة المشتركة لأدوات الاستوديو |
 | `components/studio/util.js` | 21 | 31 | أدوات مشتركة لكل أدوات الاستوديو. كله بيشتغل جوه المتصفح، ومفيش أي ملف بيترفع لأي سيرفر. |
-| `lib/models.js` | 18 | 50 | الاختيارات الـ6 اللي المستخدم بيختار منها في الشات (وبتستخدمها الأدوات كمان). نوفمبر 2026: شلنا GPT-OSS (120B  |
+| `lib/models.js` | 19 | 52 | الاختيارات الـ6 اللي المستخدم بيختار منها في الشات (وبتستخدمها الأدوات كمان). نوفمبر 2026: شلنا GPT-OSS (120B  |
+| `lib/llmjson.js` | 18 | 21 | طلب من الموديل يرجّع JSON منظم (على السيرفر بس). بيجرب الموديلات بالترتيب لحد ما يرجع JSON سليم ويعدّي التحقق، |
 | `components/BotIcon.js` | 17 | 31 | أيقونة الموديل أو البرنامج: 1) لو فيه لوجو رسمي في public/logos → بيظهر هو 2) مساعد أو برنامج → أيقونة خطية مو |
-| `lib/llmjson.js` | 17 | 19 | طلب من الموديل يرجّع JSON منظم (على السيرفر بس). بيجرب الموديلات بالترتيب لحد ما يرجع JSON سليم ويعدّي التحقق، |
-| `lib/imagefile.js` | 16 | 39 | تجهيز صور العميل في المتصفح قبل أي حاجة: تصغير، وتحويل لـ JPG/WebP خفيف، أو لرابط data. |
+| `lib/imagefile.js` | 17 | 42 | تجهيز صور العميل في المتصفح قبل أي حاجة: تصغير، وتحويل لـ JPG/WebP خفيف، أو لرابط data. |
 | `lib/tools.js` | 16 | 22 | كل أداة هنا سطر واحد. عشان تضيف أداة جديدة: انسخ سطر وعدّل فيه. T(المعرّف, التصنيف, الاسم, الوصف, مهمة النموذج |
 | `components/seller/SellerHero.js` | 12 | 12 | رأس صفحات «ستوديو البيّاع»: سما ليل بعرض الشاشة، عنوان كبير، وخطوات قصيرة |
 | `lib/bots.js` | 11 | 16 | صفحة «الموديلات» (زي Poe): كل موديل كارت بأيقونة، مقسمين على أقسام. provider: "site" معناه إن الموديل ده (المس |
-| `components/Md.js` | 9 | 20 | عرض Markdown موحّد لكل ردود الموقع. الفرق عن العرض العادي: الجداول بتتلف في غلاف بيتحكم في عرضها (جدول بتمرير  |
+| `components/Md.js` | 10 | 23 | عرض Markdown موحّد لكل ردود الموقع. الفرق عن العرض العادي: الجداول بتتلف في غلاف بيتحكم في عرضها (جدول بتمرير  |
+| `components/ShareBar.js` | 8 | 17 |  |
 | `components/ToolIcon.js` | 8 | 15 |  |
 | `lib/apps.js` | 8 | 14 | برامج الذكاء الاصطناعي المشهورة (70 برنامج): كل برنامج بلوجو شركته واسمه، وليه صفحة عربي جوه الموقع /program/[ |
-| `lib/site.js` | 8 | 50 | رابط الموقع الأساسي: بيستخدم في جوجل وخريطة الموقع وتوقيع المشاركة. على Vercel ضيف NEXT_PUBLIC_SITE_URL بالدوم |
-| `components/ShareBar.js` | 7 | 15 |  |
+| `lib/site.js` | 8 | 52 | رابط الموقع الأساسي: بيستخدم في جوجل وخريطة الموقع وتوقيع المشاركة. على Vercel ضيف NEXT_PUBLIC_SITE_URL بالدوم |
+| `lib/websearch.js` | 8 | 11 |  |
 | `components/amazon/icons.js` | 7 | 15 | أيقونات خطية بسيطة (SVG) لأدوات أمازون. بدل الإيموجي عشان الشكل يبقى ثابت على كل الأجهزة. |
 | `lib/brandprofile.js` | 7 | 10 | «هوية نشاطي»: بيانات النشاط اللي العميل بيكتبها مرة واحدة وبتتحفظ على جهازه، والأدوات بتبعتها مع الطلب (لو الع |
 | `lib/settings.js` | 7 | 14 | خيارات لوحة التحكم — نفس الملف بيستخدمه المتصفح والسيرفر عشان نتأكد إن القيم سليمة |
-| `lib/websearch.js` | 7 | 9 |  |
 | `components/lab/ReelComp.js` | 6 | 12 | ريلز بـ Remotion: 6 تصاميم (layouts) × ألوان. التصدير بيتم في متصفح العميل. المُصدّر بيدعم مجموعة محدودة من HT |
 | `lib/botcatalog.js` | 6 | 6 | بيعرف أنهي موديلات متاحة فعلاً دلوقتي (على السيرفر بس). بيسأل OpenRouter وGroq عن قايمتهم، والنتيجة بتتحفظ 6 س |
 | `lib/hfspace.js` | 6 | 19 | تشغيل موديل على Hugging Face Space من متصفح الزائر نفسه (مش من السيرفر). الفكرة: حصة الـ GPU المجانية (ZeroGPU |
+| `lib/realestate.js` | 6 | 10 | الباحث العقاري: محرك الحسابات (بيشتغل في المتصفح والسيرفر). كل الأرقام هنا بتتحسب بالكود، مش بالنموذج. الحاسبا |
 | `lib/subscriptions.js` | 6 | 9 | بيانات الاشتراكات: أسعار خطط أشهر أدوات الذكاء الاصطناعي. الأسعار بالدولار شهرياً كما هي منشورة في أكتوبر 2026 |
-| `components/StarMark.js` | 5 | 14 | نجمة Rising StarAi: نجمة خماسية بحواف مدورة وتدرّج أصفر ذهبي (هوية الموقع، مختلفة عن أشكال الشركات التانية) |
 
 ## مسارات API
 | المسار | المفاتيح | خدمات خارجية | مكتبات المشروع |
@@ -56,11 +56,12 @@
 | `/api/prompt-en` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY | api.groq.com، generativelanguage.googleapis.com، openrouter.ai | groq |
 | `/api/prompt-gen` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY | api.groq.com، generativelanguage.googleapis.com، openrouter.ai | groq، llmjson، promptgen |
 | `/api/proofread` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY | api.groq.com، generativelanguage.googleapis.com، openrouter.ai | groq، models |
+| `/api/realestate` | ANTHROPIC_API_KEY، GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY، SERPER_API_KEY، SUPABASE_SERVICE_ROLE_KEY، TAVILY_API_KEY | api.anthropic.com، api.groq.com، api.tavily.com، generativelanguage.googleapis.com، google.serper.dev | groq، models، llmjson، realdata، realestate، claude، supa |
 | `/api/reel` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY | api.groq.com، generativelanguage.googleapis.com، openrouter.ai | models، groq |
 | `/api/research` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY | api.groq.com، api.openalex.org، api.semanticscholar.org، generativelanguage.googleapis.com، openrouter.ai | groq، models، llmjson، scholar |
 | `/api/run` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY | api.groq.com، generativelanguage.googleapis.com، openrouter.ai | tools، settings، quality، models، groq، brandprofile |
 | `/api/scam-scan` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY، SERPER_API_KEY، TAVILY_API_KEY | api.groq.com، api.tavily.com، generativelanguage.googleapis.com، google.serper.dev، openrouter.ai | groq، scamscan |
-| `/api/source-chat` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY، SERPER_API_KEY، TAVILY_API_KEY | api.groq.com، api.openalex.org، api.semanticscholar.org، api.tavily.com، generativelanguage.googleapis.com | groq، models، llmjson، scholar، websearch |
+| `/api/source-chat` | ANTHROPIC_API_KEY، GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY، SERPER_API_KEY، SUPABASE_SERVICE_ROLE_KEY، TAVILY_API_KEY | api.anthropic.com، api.groq.com، api.openalex.org، api.semanticscholar.org، api.tavily.com | groq، models، llmjson، scholar، websearch، claude، supa، realestate |
 | `/api/speak` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY | api.groq.com، generativelanguage.googleapis.com، openrouter.ai | groq، speech |
 | `/api/speak-pro` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY | api.groq.com، generativelanguage.googleapis.com، openrouter.ai | groq، speech، geminitts |
 | `/api/test-ad` | GEMINI_API_KEY، GROQ_API_KEY، OPENROUTER_API_KEY | api.groq.com، generativelanguage.googleapis.com، openrouter.ai | groq، llmjson، testad |
@@ -78,7 +79,7 @@
 |---|---|---|
 | `GEMINI_API_KEY` | 8 | `app/api/podcast/route.js`، `app/api/speak-pro/route.js`، `app/api/transcribe-long/route.js` |
 | `GROQ_API_KEY` | 7 | `app/api/chat/route.js`، `app/api/proofread/route.js`، `app/api/reel/route.js` |
-| `SERPER_API_KEY` | 3 | `lib/imagesearch.js`، `lib/marketdata.js`، `lib/websearch.js` |
+| `SERPER_API_KEY` | 4 | `lib/imagesearch.js`، `lib/marketdata.js`، `lib/realdata.js` |
 | `GEMINI_TTS_MODEL` | 2 | `app/api/podcast/route.js`، `app/api/speak-pro/route.js` |
 | `GEMINI_AUDIO_MODEL` | 2 | `app/api/transcribe-long/route.js`، `app/api/transcribe/route.js` |
 | `NEXT_PUBLIC_SITE_URL` | 2 | `components/ShareBar.js`، `lib/site.js` |
@@ -94,6 +95,10 @@
 | `LONG_TRANSCRIBE_LIMIT` | 1 | `app/api/transcribe-long/route.js` |
 | `PRO_CODES` | 1 | `lib/botcatalog.js` |
 | `PRO_OPEN` | 1 | `lib/botcatalog.js` |
+| `ANTHROPIC_API_KEY` | 1 | `lib/claude.js` |
+| `CLAUDE_MODEL_FAST` | 1 | `lib/claude.js` |
+| `CLAUDE_MODEL_STRONG` | 1 | `lib/claude.js` |
+| `REALESTATE_DAILY_USD` | 1 | `lib/claude.js` |
 | `GEMINI_LONG_MODEL` | 1 | `lib/doccontext.js` |
 | `YOUTUBE_API_KEY` | 1 | `lib/fieldmedia.js` |
 | `FUSION_MODELS` | 1 | `lib/fusion.js` |
@@ -102,6 +107,8 @@
 | `POLLINATIONS_MODEL` | 1 | `lib/groq.js` |
 | `GEMINI_MODEL` | 1 | `lib/models.js` |
 | `VERCEL_PROJECT_PRODUCTION_URL` | 1 | `lib/site.js` |
+| `SUPABASE_SERVICE_ROLE_KEY` | 1 | `lib/supa.js` |
+| `SUPABASE_URL` | 1 | `lib/supa.js` |
 | `GEMINI_SEARCH_MODEL` | 1 | `lib/websearch.js` |
 | `TAVILY_API_KEY` | 1 | `lib/websearch.js` |
 
@@ -146,6 +153,8 @@
 - `/projects/[id]` ← projects/ProjectWorkspace.js
 - `/prompts` ← PromptsGrid.js، prompts.module.css
 - `/prompts/builder` ← prompts/Builder.js
+- `/realestate` ← RealEstate.js
+- `/realestate/chat` ← SourceChat.js
 - `/research` ← Research.js
 - `/research/chat` ← SourceChat.js
 - `/resources` ← directory.module.css
@@ -193,8 +202,8 @@
 - `long-transcribe` (تفريغ التسجيلات الطويلة) ← `components/studio/LongTranscribe.js`
 
 ## مكتبات خارجية
-- `react`: 88 ملف
-- `next`: 69 ملف
+- `react`: 89 ملف
+- `next`: 71 ملف
 - `@remotion/player`: 4 ملف
 - `@remotion/web-renderer`: 4 ملف
 - `remotion`: 3 ملف

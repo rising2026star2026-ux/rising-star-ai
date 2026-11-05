@@ -1,10 +1,10 @@
 {
- "generated": "2026-11-05T02:13:34.587Z",
+ "generated": "2026-11-05T02:49:44.940Z",
  "counts": {
-  "files": 348,
-  "edges": 743,
-  "pages": 56,
-  "api": 33
+  "files": 358,
+  "edges": 767,
+  "pages": 58,
+  "api": 34
  },
  "nodes": [
   {
@@ -383,6 +383,20 @@
    "usedBy": 0
   },
   {
+   "id": "app/api/realestate/route.js",
+   "kind": "api",
+   "lines": 246,
+   "url": "/api/realestate",
+   "about": "الباحث العقاري: 3 خطوات. step: \"gather\" ← بحث في مواقع العقارات والأخبار والخرائط، وأسعار المتر والإيجار من العينات (بالكود)، ولو العينات قليلة النموذج بيقدّر من نتايج البحث نفسها ويتعلّم إنه تقدير. step: \"section\" ← كتا",
+   "exports": [
+    "maxDuration",
+    "runtime",
+    "POST"
+   ],
+   "imports": 7,
+   "usedBy": 0
+  },
+  {
    "id": "app/api/reel/route.js",
    "kind": "api",
    "lines": 45,
@@ -443,7 +457,7 @@
   {
    "id": "app/api/source-chat/route.js",
    "kind": "api",
-   "lines": 150,
+   "lines": 219,
    "url": "/api/source-chat",
    "about": "الشات المتخصص للباحث الأكاديمي والتجاري: حوار زي الشات العادي، بس كل رد مبني على مصادر الأداة academic: مكتبات الأبحاث والكتب (OpenAlex وSemantic Scholar وarXiv وOpen Library) + مصادر البحث المفتوح في صفحة الباحث busines",
    "hosts": [
@@ -453,7 +467,7 @@
     "maxDuration",
     "POST"
    ],
-   "imports": 5,
+   "imports": 8,
    "usedBy": 0
   },
   {
@@ -1004,6 +1018,28 @@
    "usedBy": 0
   },
   {
+   "id": "app/realestate/chat/page.js",
+   "kind": "page",
+   "lines": 12,
+   "url": "/realestate/chat",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
+   "id": "app/realestate/page.js",
+   "kind": "page",
+   "lines": 24,
+   "url": "/realestate",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
    "id": "app/research/chat/page.js",
    "kind": "page",
    "lines": 12,
@@ -1081,7 +1117,7 @@
   {
    "id": "app/sitemap.js",
    "kind": "app",
-   "lines": 65,
+   "lines": 67,
    "imports": 10,
    "usedBy": 0
   },
@@ -1267,7 +1303,7 @@
   {
    "id": "components/Chrome.js",
    "kind": "component",
-   "lines": 305,
+   "lines": 306,
    "about": "الشريط العلوي + البحث السريع (Ctrl+K) + لوحة التحكم + الإشعارات الصغيرة",
    "imports": 9,
    "usedBy": 1
@@ -1458,7 +1494,7 @@
    "lines": 34,
    "about": "عرض Markdown موحّد لكل ردود الموقع. الفرق عن العرض العادي: الجداول بتتلف في غلاف بيتحكم في عرضها (جدول بتمرير أفقي على الشاشات الواسعة، وبطاقات متراصّة على الموبايل بدل ما الأعمدة تتزنق والكلام يتقطّع).",
    "imports": 0,
-   "usedBy": 9
+   "usedBy": 10
   },
   {
    "id": "components/ModelCompare.js",
@@ -1523,6 +1559,14 @@
    "usedBy": 1
   },
   {
+   "id": "components/RealEstate.js",
+   "kind": "component",
+   "lines": 625,
+   "about": "الباحث العقاري: 3 أجزاء في صفحة واحدة. 1) الباحث: منطقة ونوع وهدف ← أسعار المتر والإيجار من الإعلانات والخدمات القريبة ← حسابات (تقسيط، كاش، إيجار، عائد) ← تقرير. 2) الحاسبات: تقسيط، عائد إيجاري، الإيجار القديم، ضريبة ال",
+   "imports": 7,
+   "usedBy": 1
+  },
+  {
    "id": "components/Research.js",
    "kind": "component",
    "lines": 338,
@@ -1557,15 +1601,15 @@
     "NEXT_PUBLIC_SITE_URL"
    ],
    "imports": 2,
-   "usedBy": 7
+   "usedBy": 8
   },
   {
    "id": "components/SourceChat.js",
    "kind": "component",
-   "lines": 262,
+   "lines": 299,
    "about": "الشات المتخصص: حوار زي الشات العادي، بس كل رد مبني على مصادر الباحث (مكتبات أكاديمية أو بحث السوق ودراسة الجدوى)",
-   "imports": 6,
-   "usedBy": 2
+   "imports": 7,
+   "usedBy": 3
   },
   {
    "id": "components/SourceMap.js",
@@ -2098,6 +2142,14 @@
    "kind": "style",
    "lines": 84,
    "about": "مولّد البرومبتات */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/realestate.module.css",
+   "kind": "style",
+   "lines": 108,
+   "about": "الباحث العقاري */",
    "imports": 0,
    "usedBy": 1
   },
@@ -3060,6 +3112,31 @@
    "usedBy": 1
   },
   {
+   "id": "lib/claude.js",
+   "kind": "lib",
+   "lines": 114,
+   "about": "Claude API (على السيرفر بس): استدعاء بأدوات (Tool Use) لحد ما النموذج يخلّص، وحساب تكلفة كل طلب. بيشتغل بس لو ANTHROPIC_API_KEY موجود في Vercel. لو مش موجود، المسارات بترجع للنماذج الحالية (lib/groq). الأسعار بالدولار لك",
+   "env": [
+    "ANTHROPIC_API_KEY",
+    "CLAUDE_MODEL_FAST",
+    "CLAUDE_MODEL_STRONG",
+    "REALESTATE_DAILY_USD"
+   ],
+   "hosts": [
+    "api.anthropic.com"
+   ],
+   "exports": [
+    "CLAUDE_MODELS",
+    "hasClaude",
+    "costUsd",
+    "underDailyCap",
+    "claudeWithTools",
+    "textStream"
+   ],
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
    "id": "lib/content/analysis.js",
    "kind": "lib",
    "lines": 167,
@@ -3451,7 +3528,7 @@
     "thinkFilter"
    ],
    "imports": 2,
-   "usedBy": 41
+   "usedBy": 42
   },
   {
    "id": "lib/hfspace.js",
@@ -3511,7 +3588,7 @@
     "WORD_FONT"
    ],
    "imports": 0,
-   "usedBy": 16
+   "usedBy": 17
   },
   {
    "id": "lib/imagesearch.js",
@@ -3661,7 +3738,7 @@
     "list"
    ],
    "imports": 2,
-   "usedBy": 17
+   "usedBy": 18
   },
   {
    "id": "lib/logofonts.js",
@@ -3774,10 +3851,11 @@
     "www.imf.org"
    ],
    "exports": [
+    "inflation",
     "gatherMarket"
    ],
    "imports": 4,
-   "usedBy": 1
+   "usedBy": 2
   },
   {
    "id": "lib/models.js",
@@ -3799,7 +3877,7 @@
     "OPENROUTER_FALLBACK_IDS"
    ],
    "imports": 0,
-   "usedBy": 18
+   "usedBy": 19
   },
   {
    "id": "lib/offer.js",
@@ -3956,6 +4034,55 @@
    "usedBy": 1
   },
   {
+   "id": "lib/realdata.js",
+   "kind": "lib",
+   "lines": 181,
+   "about": "الباحث العقاري: جمع البيانات (على السيرفر بس). 1) بحث في مواقع العقارات المصرية (عقار ماب، Property Finder، بيوت، نوي، دوبيزل) وأخبار السوق عن نفس المنطقة. 2) استخراج الأسعار والمساحات من نصوص النتايج بالكود، وحساب سعر ا",
+   "env": [
+    "SERPER_API_KEY"
+   ],
+   "hosts": [
+    "google.serper.dev"
+   ],
+   "exports": [
+    "PORTALS",
+    "findPrices",
+    "findAreas",
+    "findPpm",
+    "sampleFrom",
+    "gatherProperty"
+   ],
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/realestate.js",
+   "kind": "lib",
+   "lines": 218,
+   "about": "الباحث العقاري: محرك الحسابات (بيشتغل في المتصفح والسيرفر). كل الأرقام هنا بتتحسب بالكود، مش بالنموذج. الحاسبات: تقسيط المطوّر، المقارنة بين الكاش والتقسيط والإيجار، العائد الإيجاري، الإيجار القديم، تكاليف نقل الملكية.",
+   "exports": [
+    "PURPOSES",
+    "UNIT_TYPES",
+    "MODES",
+    "egp",
+    "n0",
+    "pct",
+    "stats",
+    "installmentPlan",
+    "compareOptions",
+    "rentalYield",
+    "OLD_RENT_ZONES",
+    "OLD_RENT_LAW",
+    "oldRent",
+    "transferCosts",
+    "factsText",
+    "REPORT_SECTIONS",
+    "DISCLAIMER"
+   ],
+   "imports": 0,
+   "usedBy": 6
+  },
+  {
    "id": "lib/receipt.js",
    "kind": "lib",
    "lines": 113,
@@ -3972,6 +4099,24 @@
    ],
    "imports": 1,
    "usedBy": 2
+  },
+  {
+   "id": "lib/rescore.js",
+   "kind": "lib",
+   "lines": 108,
+   "about": "محرك التقييم العقاري من 100 (بالكود، بيشتغل في المتصفح). 6 معايير، وأوزان لكل هدف، والمستخدم يقدر يغيّرها. أي معيار بياناته مش موجودة بيتشال من الحساب، والأوزان بتتوزّع على الباقي، و«التغطية» بتقول قد إيه البيانات كاملة.",
+   "exports": [
+    "CRITERIA",
+    "GOALS",
+    "DEV_TIERS",
+    "DOCS",
+    "UNIT0",
+    "criteriaScores",
+    "goalScore",
+    "compareUnits"
+   ],
+   "imports": 1,
+   "usedBy": 1
   },
   {
    "id": "lib/resources.js",
@@ -4188,7 +4333,7 @@
     "toast"
    ],
    "imports": 0,
-   "usedBy": 53
+   "usedBy": 54
   },
   {
    "id": "lib/subscriptions.js",
@@ -4246,6 +4391,24 @@
    ],
    "imports": 0,
    "usedBy": 6
+  },
+  {
+   "id": "lib/supa.js",
+   "kind": "lib",
+   "lines": 71,
+   "about": "Supabase من السيرفر (REST عن طريق PostgREST، من غير مكتبات). شغال بس لو SUPABASE_URL و SUPABASE_SERVICE_ROLE_KEY موجودين. لو مش موجودين كل الدوال بترجع من غير ما تعمل حاجة، والموقع يكمّل عادي. الجداول في supabase/realest",
+   "env": [
+    "SUPABASE_SERVICE_ROLE_KEY",
+    "SUPABASE_URL"
+   ],
+   "exports": [
+    "hasSupabase",
+    "recordSamples",
+    "areaStats",
+    "logUsage"
+   ],
+   "imports": 0,
+   "usedBy": 2
   },
   {
    "id": "lib/survey.js",
@@ -4409,7 +4572,7 @@
     "resultsBlock"
    ],
    "imports": 1,
-   "usedBy": 7
+   "usedBy": 8
   }
  ],
  "edges": [
@@ -4738,6 +4901,34 @@
    "to": "lib/models.js"
   },
   {
+   "from": "app/api/realestate/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/realestate/route.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "app/api/realestate/route.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "app/api/realestate/route.js",
+   "to": "lib/realdata.js"
+  },
+  {
+   "from": "app/api/realestate/route.js",
+   "to": "lib/realestate.js"
+  },
+  {
+   "from": "app/api/realestate/route.js",
+   "to": "lib/claude.js"
+  },
+  {
+   "from": "app/api/realestate/route.js",
+   "to": "lib/supa.js"
+  },
+  {
    "from": "app/api/reel/route.js",
    "to": "lib/models.js"
   },
@@ -4812,6 +5003,18 @@
   {
    "from": "app/api/source-chat/route.js",
    "to": "lib/websearch.js"
+  },
+  {
+   "from": "app/api/source-chat/route.js",
+   "to": "lib/claude.js"
+  },
+  {
+   "from": "app/api/source-chat/route.js",
+   "to": "lib/supa.js"
+  },
+  {
+   "from": "app/api/source-chat/route.js",
+   "to": "lib/realestate.js"
   },
   {
    "from": "app/api/speak-pro/route.js",
@@ -5260,6 +5463,14 @@
   {
    "from": "app/prompts/page.js",
    "to": "components/prompts.module.css"
+  },
+  {
+   "from": "app/realestate/chat/page.js",
+   "to": "components/SourceChat.js"
+  },
+  {
+   "from": "app/realestate/page.js",
+   "to": "components/RealEstate.js"
   },
   {
    "from": "app/research/chat/page.js",
@@ -6054,6 +6265,34 @@
    "to": "components/prompts.module.css"
   },
   {
+   "from": "components/RealEstate.js",
+   "to": "components/Md.js"
+  },
+  {
+   "from": "components/RealEstate.js",
+   "to": "components/ShareBar.js"
+  },
+  {
+   "from": "components/RealEstate.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/RealEstate.js",
+   "to": "lib/imagefile.js"
+  },
+  {
+   "from": "components/RealEstate.js",
+   "to": "lib/realestate.js"
+  },
+  {
+   "from": "components/RealEstate.js",
+   "to": "lib/rescore.js"
+  },
+  {
+   "from": "components/RealEstate.js",
+   "to": "components/realestate.module.css"
+  },
+  {
    "from": "components/Research.js",
    "to": "components/Md.js"
   },
@@ -6108,6 +6347,10 @@
   {
    "from": "components/SourceChat.js",
    "to": "components/FieldData.js"
+  },
+  {
+   "from": "components/SourceChat.js",
+   "to": "lib/realestate.js"
   },
   {
    "from": "components/SourceChat.js",
@@ -7334,8 +7577,24 @@
    "to": "lib/promptbuilder.js"
   },
   {
+   "from": "lib/realdata.js",
+   "to": "lib/websearch.js"
+  },
+  {
+   "from": "lib/realdata.js",
+   "to": "lib/marketdata.js"
+  },
+  {
+   "from": "lib/realdata.js",
+   "to": "lib/realestate.js"
+  },
+  {
    "from": "lib/receipt.js",
    "to": "lib/subscriptions.js"
+  },
+  {
+   "from": "lib/rescore.js",
+   "to": "lib/realestate.js"
   },
   {
    "from": "lib/scamscan.js",
@@ -7409,6 +7668,7 @@
    "app/plans/page.js",
    "app/program/[key]/page.js",
    "app/prompts/page.js",
+   "app/realestate/page.js",
    "app/research/page.js",
    "app/resources/[cat]/page.js",
    "app/resources/page.js",
@@ -7435,6 +7695,7 @@
    "components/ModelsGallery.js",
    "components/ProgramsGrid.js",
    "components/PromptsGrid.js",
+   "components/RealEstate.js",
    "components/Research.js",
    "components/SourceChat.js",
    "components/SubsNav.js",
@@ -7490,6 +7751,7 @@
    "components/NewsList.js",
    "components/ProCode.js",
    "components/PromptsGrid.js",
+   "components/RealEstate.js",
    "components/Research.js",
    "components/ScamChecker.js",
    "components/ScrollBands.js",

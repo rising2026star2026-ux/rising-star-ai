@@ -25,6 +25,7 @@ const NAV = [
   { href: "/compare", label: "مقارنة الموديلات", match: ["/compare"], icon: <svg {...I}><rect x="3.5" y="4.5" width="7" height="15" rx="2" /><rect x="13.5" y="4.5" width="7" height="15" rx="2" /><path d="M7 9h.01M17 9h.01M5.5 13h3M15.5 13h3" /></svg> },
   { href: "/research", label: "الباحث الأكاديمي", match: ["/research"], icon: <svg {...I}><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 1 4 17.5z" /><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 0 1.5-1.5z" /></svg> },
   { href: "/feasibility", label: "الباحث التجاري", match: ["/feasibility"], icon: <svg {...I}><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" /></svg> },
+  { href: "/realestate", label: "الباحث العقاري", match: ["/realestate"], icon: <svg {...I}><path d="M3 11l9-7 9 7M5 9.5V20h14V9.5M10 20v-6h4v6" /></svg> },
   { href: "/my-tools", label: "أدواتي", match: ["/my-tools"], icon: <svg {...I}><rect x="3.5" y="3.5" width="7" height="7" rx="2" /><rect x="13.5" y="3.5" width="7" height="7" rx="2" /><rect x="3.5" y="13.5" width="7" height="7" rx="2" /><path d="M17 13.5v7M13.5 17h7" /></svg> },
   { href: "/brand", label: "هوية نشاطي", match: ["/brand"], icon: <svg {...I}><circle cx="12" cy="9" r="4.5" /><path d="M4.5 20.5c1-3.6 3.8-5.5 7.5-5.5s6.5 1.9 7.5 5.5M9.5 9h5" /></svg> },
   { href: "/tools", label: "كل الأدوات", match: ["/tools", "/tool/"], icon: <svg {...I}><path d="M14.5 6.5l3-3 3 3-3 3zM4 20l9-9M3.5 7.5h6M6.5 4.5v6M14 17.5h6.5" /></svg> },

@@ -7,6 +7,7 @@ import { read, write } from "@/lib/store";
 import { enterSends } from "@/lib/keys";
 import { runAll, sensitivity, factsText } from "@/lib/feasibility";
 import { fieldText } from "./FieldData";
+import { factsText as reFacts, installmentPlan, compareOptions, rentalYield, transferCosts } from "@/lib/realestate";
 import s from "./sourcechat.module.css";
 
 const MODES = {
@@ -36,6 +37,19 @@ const MODES = {
       "إزاي أموّل الفرق من غير قروض بفايدة؟",
     ],
   },
+  realestate: {
+    title: "الشات العقاري",
+    sub: "اسأل عن منطقة أو وحدة أو عقد. كل رد بيدوّر في سوق العقارات المصري ويعتمد على أرقام تقريرك.",
+    back: { href: "/realestate", label: "الباحث العقاري" },
+    store: "srcchat-realestate",
+    placeholder: "اسأل عن منطقة أو سعر أو عقد…",
+    suggestions: [
+      "السعر ده مناسب للمنطقة ولا مبالغ فيه؟",
+      "أدفع كاش بخصم ولا أقسّط على 8 سنين؟",
+      "إيه الأوراق اللي لازم أطلبها قبل ما أدفع المقدم؟",
+      "إزاي أتفاوض مع المطوّر على السعر أو نظام السداد؟",
+    ],
+  },
 };
 
 /** سياق الصفحة: البحث أو الدراسة المفتوحة على الجهاز */
@@ -47,6 +61,29 @@ function loadContext(mode) {
     const picked = new Set(last.picked || all.map((x) => x.n));
     const pinned = all.filter((x) => picked.has(x.n)).map(({ kind, title, authors, year, venue, doi, url, abstract, lib }) => ({ kind, title, authors, year, venue, doi, url, abstract, lib }));
     return { label: last.topic || last.report?.title || "بحثك", count: pinned.length, topic: last.topic || "", pinned };
+  }
+  if (mode === "realestate") {
+    const last = read("realestate-last", null);
+    if (!last?.data?.market) return null;
+    try {
+      const d = last.data, m = d.market, i = last.inp || {};
+      const sale = d.form.mode === "sale";
+      const calc = i.price ? {
+        price: Number(i.price) || 0,
+        plan: sale ? installmentPlan({ price: i.price, downPct: i.downPct, years: i.years, perYear: i.perYear, maintenancePct: i.maintenancePct, deliveryYears: i.deliveryYears, inflation: i.inflation }) : null,
+        compare: sale ? compareOptions({ price: i.price, cashDiscountPct: i.cashDiscountPct, plan: { downPct: i.downPct, years: i.years, perYear: i.perYear }, rentMonthly: i.rentMonthly, appreciation: i.appreciation, inflation: i.inflation, horizon: i.horizon }) : null,
+        yield: sale && i.rentMonthly ? rentalYield({ price: i.price, rentMonthly: i.rentMonthly, vacancyMonths: i.vacancyMonths }) : null,
+        costs: sale ? transferCosts({ price: i.price }) : null,
+      } : null;
+      const where = [d.form.district, d.form.city].filter(Boolean).join("، ");
+      return {
+        label: where || "بحثك العقاري",
+        count: (d.sources || []).length,
+        study: { facts: reFacts(d.form, m, calc), summary: m.summary || "", where, sources: (d.sources || []).map(({ title, url, snippet }) => ({ title, url, snippet })) },
+      };
+    } catch {
+      return null;
+    }
   }
   const last = read("feasibility-last", null);
   if (!last?.a || !last?.data) return null;
@@ -181,7 +218,7 @@ export default function SourceChat({ mode = "academic" }) {
 
   const empty = msgs.length === 0;
   const ctxNote = useMemo(() => {
-    if (!ctx) return mode === "academic" ? "مفيش بحث مفتوح، فهدوّر في المكتبات لكل سؤال." : "مفيش دراسة مفتوحة، فهدوّر في السوق لكل سؤال.";
+    if (!ctx) return mode === "academic" ? "مفيش بحث مفتوح، فهدوّر في المكتبات لكل سؤال." : mode === "realestate" ? "مفيش بحث عقاري مفتوح، فهدوّر في السوق لكل سؤال." : "مفيش دراسة مفتوحة، فهدوّر في السوق لكل سؤال.";
     return null;
   }, [ctx, mode]);
 
@@ -221,7 +258,7 @@ export default function SourceChat({ mode = "academic" }) {
             {m.role === "user" ? (
               <p dir="auto">{m.content}</p>
             ) : m.pending && !m.content ? (
-              <p className={s.wait}><span className={s.spin} aria-hidden="true" /> {mode === "academic" ? "بدوّر في المكتبات…" : "بدوّر في السوق…"}</p>
+              <p className={s.wait}><span className={s.spin} aria-hidden="true" /> {mode === "academic" ? "بدوّر في المكتبات…" : mode === "realestate" ? "بدوّر في سوق العقارات وبحسب…" : "بدوّر في السوق…"}</p>
             ) : (
               <>
                 <div className={`md ${s.md}`} dir="auto"><Md>{m.content}</Md></div>

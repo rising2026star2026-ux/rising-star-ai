@@ -23,6 +23,8 @@ export default function sitemap() {
     { url: `${SITE_URL}/feasibility`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/research/chat`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/feasibility/chat`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/realestate`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/realestate/chat`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/global-tools/alternatives`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/seller`, lastModified: now, changeFrequency: "weekly", priority: 0.95 },
     { url: `${SITE_URL}/test-ad`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
