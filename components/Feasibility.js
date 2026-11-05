@@ -1,6 +1,7 @@
 "use client";
 // الباحث التجاري: مقابلة قصيرة ← بحث السوق والافتراضات (بمصادرها) ← العميل يراجع ويعدّل والأرقام تتحسب فوراً ← تقرير دراسة جدوى
 import { useEffect, useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import Md from "./Md";
 import ShareBar from "./ShareBar";
 import FieldData, { fieldText } from "./FieldData";
@@ -477,6 +478,7 @@ export default function Feasibility() {
           {stage === "done" && (
             <>
               <p className={s.note}>{DISCLAIMER}</p>
+              <Link href="/feasibility/chat" className="chat-jump"><span aria-hidden="true">💬</span> ناقش دراستك في الشات المتخصص<small>بنفس الأرقام والمصادر</small></Link>
               <ShareBar text={fullText} title={title} getHtml={() => document.getElementById("feasibility-report")?.innerHTML || ""} />
             </>
           )}

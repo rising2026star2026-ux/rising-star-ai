@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Feasibility from "@/components/Feasibility";
 
 const description = "الباحث التجاري: دراسة جدوى أولية لمشروعك في مصر (محل، كافيه، مصنع، شركة ناشئة، مخزن) بأسعار السوق الحالية ومنافسين حقيقيين من الخرائط، وحسابات التعادل والاسترداد والسيناريوهات بالكود.";
@@ -15,6 +16,7 @@ export default function FeasibilityPage() {
     <>
       <h1 className="page-title">الباحث التجاري</h1>
       <p className="page-sub">قولّي مشروعك وفين، وهدوّر على أسعار السوق والمنافسين، وأحسبلك الاستثمار والتعادل والاسترداد في 3 سيناريوهات، وأكتبلك دراسة جدوى أولية تقدر تعدّل أرقامها.</p>
+      <Link href="/feasibility/chat" className="chat-jump"><span aria-hidden="true">💬</span> توجه للشات المتخصص<small>الشات التجاري: حوار ونقاش بالمصادر</small></Link>
       <Feasibility />
     </>
   );

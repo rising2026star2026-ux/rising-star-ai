@@ -1,6 +1,7 @@
 "use client";
 // الباحث الأكاديمي: موضوع ← مصادر من المكتبات (العميل بيراجعها) ← خطة ← كتابة الأقسام واحد واحد ← تقرير بمراجع
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import Md from "./Md";
 import ShareBar from "./ShareBar";
 import { read, write, toast } from "@/lib/store";
@@ -319,6 +320,7 @@ export default function Research() {
               <p className={s.note}>
                 التقرير مكتوب بالذكاء الاصطناعي من ملخصات المصادر. ارجع للمصادر الأصلية قبل الاقتباس أو التسليم، وراجع كل رقم ونتيجة مهمة. ده مساعد للباحث، مش بديل عن قراية المراجع.
               </p>
+              <Link href="/research/chat" className="chat-jump"><span aria-hidden="true">💬</span> ناقش البحث ده في الشات المتخصص<small>بنفس المصادر اللي اخترتها</small></Link>
               <ShareBar text={fullText + refsText} title={report.title} getHtml={() => document.getElementById("research-report")?.innerHTML || ""} />
             </>
           )}

@@ -1,0 +1,42 @@
+/* الشات المتخصص (أكاديمي / تجاري): نفس هدوء الشات الرئيسي */
+.wrap { max-width: 780px; margin: 0 auto; min-height: calc(100dvh - 70px); display: flex; flex-direction: column; gap: 10px; padding-top: 14px; }
+.top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap; }
+.title { margin: 0; font-size: 1.25rem; font-weight: 700; color: var(--text-strong); }
+.sub { margin: 2px 0 0; font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
+.topActions { display: flex; gap: 6px; flex-wrap: wrap; }
+.ghost { font: inherit; font-size: 0.78rem; cursor: pointer; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--hairline-strong); background: #fff; color: var(--text); text-decoration: none; }
+.ctx { display: flex; gap: 8px; align-items: center; font-size: 0.8rem; color: var(--muted); background: #fff; border: 1px solid var(--chat-green-line, var(--hairline-strong)); border-radius: 14px; padding: 8px 12px; cursor: pointer; }
+.ctx input { accent-color: var(--chat-green, #15803d); }
+.ctx b { color: var(--text-strong); font-weight: 600; }
+.ctxNote { margin: 0; font-size: 0.76rem; color: var(--faint); }
+.thread { flex: 1; display: grid; align-content: start; gap: 14px; padding: 6px 0 12px; }
+.empty { display: grid; gap: 10px; padding: 24px 0; }
+.empty p { margin: 0; font-size: 0.86rem; color: var(--muted); }
+.suggest { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; }
+.suggest button { text-align: start; font: inherit; font-size: 0.84rem; line-height: 1.6; cursor: pointer; padding: 12px 14px; border-radius: 16px; border: 1px solid var(--hairline-strong); background: #fff; color: var(--text); }
+.suggest button:hover { border-color: var(--chat-green-line, #1f4dff); }
+.user { justify-self: end; max-width: 85%; background: #fff; border: 1px solid var(--hairline); border-radius: 18px 18px 4px 18px; padding: 10px 14px; }
+.user p { margin: 0; font-size: 0.94rem; line-height: 1.8; white-space: pre-wrap; }
+.bot { display: grid; gap: 8px; min-width: 0; }
+.md { font-size: 0.96rem; line-height: 1.95; }
+.md :global(p) { margin: 0 0 10px; }
+.md :global(h2), .md :global(h3) { font-size: 1rem; margin: 14px 0 6px; }
+.wait { display: flex; gap: 8px; align-items: center; margin: 0; font-size: 0.84rem; color: var(--muted); }
+.spin { width: 15px; height: 15px; border-radius: 50%; border: 2px solid var(--hairline-strong); border-top-color: var(--chat-green, #1f4dff); animation: scspin 0.8s linear infinite; }
+@keyframes scspin { to { transform: rotate(360deg); } }
+.sources { background: #fff; border: 1px solid var(--hairline); border-radius: 14px; padding: 10px 12px; }
+.srcHead { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.srcHead b { font-size: 0.76rem; color: var(--muted); font-weight: 600; }
+.srcHead button { font: inherit; font-size: 0.72rem; border: 0; background: none; color: var(--chat-green, #1f4dff); cursor: pointer; }
+.sources ol { margin: 6px 0 0; padding-inline-start: 22px; display: grid; gap: 5px; }
+.sources li { font-size: 0.8rem; line-height: 1.6; }
+.sources a { color: var(--text-strong); }
+.sources small { display: block; font-size: 0.7rem; color: var(--faint); }
+.error { color: #b42318; background: #fef3f2; padding: 8px 12px; border-radius: 12px; font-size: 0.84rem; }
+.composer { position: sticky; bottom: 10px; display: flex; gap: 8px; align-items: flex-end; background: #fff; border: 1px solid var(--hairline-strong); border-radius: 22px; padding: 8px 8px 8px 12px; box-shadow: 0 12px 30px -18px rgba(5, 5, 16, 0.35); }
+.composer textarea { flex: 1; min-width: 0; resize: none; border: 0; outline: none; font: inherit; font-size: 0.95rem; line-height: 1.7; padding: 6px 4px; background: transparent; color: var(--text); max-height: 180px; }
+.send, .stop { flex: none; width: 36px; height: 36px; border-radius: 50%; border: 0; font-size: 1rem; cursor: pointer; color: #fff; background: var(--chat-green, #1f4dff); }
+.send:disabled { opacity: 0.35; cursor: default; }
+.stop { background: var(--ink); font-size: 0.7rem; }
+.foot { margin: 0 0 6px; text-align: center; font-size: 0.68rem; color: var(--faint); }
+@media (prefers-reduced-motion: reduce) { .spin { animation: none; } }
