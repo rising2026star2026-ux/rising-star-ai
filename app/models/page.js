@@ -45,7 +45,7 @@ export default async function ModelsPage() {
     <>
       <h1 className="page-title">الموديلات والبرامج</h1>
       <p className="page-sub">أشهر موديلات وبرامج الذكاء الاصطناعي في مكان واحد، والمحادثة كلها بالعربي.</p>
-      <p className="page-sub"><Link href="/models/all">شوف كل الموديلات المفتوحة والبحث فيها</Link></p>
+      <p className="page-sub"><Link href="/models/all">كل الموديلات المفتوحة: شات وصور وصوت</Link></p>
       <ModelsGallery sections={sections} bots={[...models, ...APPS, ...siteApps]} />
     </>
   );

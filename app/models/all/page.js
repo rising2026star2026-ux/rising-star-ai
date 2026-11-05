@@ -3,13 +3,14 @@ import { allModels } from "@/lib/allmodels";
 
 export const metadata = {
   title: "كل الموديلات المفتوحة",
-  description: "مئات موديلات الذكاء الاصطناعي المفتوحة للتجربة على Rising StarAi: اختار أي موديل وابدأ الشات معاه.",
+  description: "مئات موديلات الذكاء الاصطناعي للشات والصور والصوت على Rising StarAi: اختار أي موديل وابدأ على طول.",
   alternates: { canonical: "/models/all" },
 };
 
 export const revalidate = 21600;
 
 export default async function Page() {
-  const list = await allModels();
+  // بنبعت للمتصفح اللي الصفحة محتاجاه بس
+  const list = (await allModels()).map(({ params, inputs, textOut, created, ...m }) => m);
   return <AllModels models={list} />;
 }

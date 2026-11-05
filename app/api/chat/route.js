@@ -147,6 +147,7 @@ export async function POST(req) {
       // أي موديل نصي من قايمة OpenRouter. المدفوع بيتحاسب من الرصيد، فبيتحمي بالكود والحد في الساعة
       const m = await findModel(body.bot.slice(3));
       if (!m) return fail("الموديل ده مش موجود.", 404);
+      if (m.kind !== "text") return fail("الموديل ده للصور أو الصوت، افتحه من استوديو الموديلات.", 400);
       if (!process.env.OPENROUTER_API_KEY) return Response.json({ error: "الموديل ده هيتفعّل قريب. جرّب موديل تاني.", code: "pro" }, { status: 402 });
       if (!m.free) {
         if (!validProCode(body.pro)) return Response.json({ error: "الموديل ده هيتفعّل قريب. جرّب موديل تاني.", code: "pro" }, { status: 402 });
