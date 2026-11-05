@@ -2,6 +2,7 @@ import ModelsGallery from "@/components/ModelsGallery";
 import { BOT_SECTIONS } from "@/lib/bots";
 import { APP_SECTIONS, APPS } from "@/lib/apps";
 import { resolveBots, publicBot } from "@/lib/botcatalog";
+import Link from "next/link";
 import { tools } from "@/lib/tools";
 
 export const metadata = {
@@ -44,6 +45,7 @@ export default async function ModelsPage() {
     <>
       <h1 className="page-title">الموديلات والبرامج</h1>
       <p className="page-sub">أشهر موديلات وبرامج الذكاء الاصطناعي في مكان واحد، والمحادثة كلها بالعربي.</p>
+      <p className="page-sub"><Link href="/models/all">شوف كل الموديلات المفتوحة والبحث فيها</Link></p>
       <ModelsGallery sections={sections} bots={[...models, ...APPS, ...siteApps]} />
     </>
   );

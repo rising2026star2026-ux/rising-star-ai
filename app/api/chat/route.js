@@ -6,6 +6,7 @@ import { fail, clientIp, rateLimiter, chainFor, quickChain, streamFromGroq, comp
 import { searchProvider, searchQuery, webSearchFull, resultsBlock } from "@/lib/websearch";
 import { RETIRED_BOTS } from "@/lib/bots";
 import { resolveBot, validProCode } from "@/lib/botcatalog";
+import { isFreeModel } from "@/lib/freemodels";
 import { fusionResponse } from "@/lib/fusion";
 import { cleanDocs, cleanInstructions, docContext, longChain, instructionsBlock } from "@/lib/doccontext";
 import { cleanBrand, brandBlock } from "@/lib/brandprofile";
@@ -30,6 +31,7 @@ const MAX_TOTAL_CHARS = 14000; // أقصى طول للمحادثة كلها
 const tooMany = rateLimiter(40);        // 40 رسالة في الساعة لكل زائر لحد ما نضيف تسجيل الدخول
 const tooManySearches = rateLimiter(20); // 20 بحث في الساعة لكل زائر (البحث بفلوس)
 const tooManyFusion = rateLimiter(25);   // 25 سؤال مدمج في الساعة لكل زائر (كل سؤال = 5 طلبات)
+const tooManyFree = rateLimiter(40);     // موديلات مجانية من القايمة الكاملة
 const tooManyPro = rateLimiter(60);      // 60 رسالة في الساعة لكل مشترك على الموديلات العالمية (بفلوس)
 const tooManyImages = rateLimiter(20);   // 20 صورة في الساعة لكل زائر (توليد الصور جوه الشات)
 const tooManyLong = rateLimiter(30);     // 30 سؤال في الساعة على ملفات كبيرة (كل سؤال بيقرا الملف كله)
@@ -141,7 +143,15 @@ export async function POST(req) {
   let bot = null;
   // موديل اتشال من الموقع (زي GPT-OSS) ولسه محفوظ على جهاز الزائر: بنرد بـ«متوازن» بدل ما نرفض
   if (typeof body.bot === "string" && body.bot && !RETIRED_BOTS.includes(body.bot)) {
-    bot = await resolveBot(body.bot);
+    if (body.bot.startsWith("or:")) {
+      // موديل مجاني من القايمة الكاملة: لازم يكون موجود وسعره صفر عند OpenRouter، غير كده بنرفض
+      const m = await isFreeModel(body.bot.slice(3));
+      if (!m) return fail("الموديل ده مش موجود أو مش مجاني.", 404);
+      if (tooManyFree(ip)) return fail("وصلت لحد الموديلات الإضافية الساعة دي. جرّب بعد شوية أو استخدم موديل تاني.", 429);
+      bot = { key: body.bot, id: m.id, name: m.name, maker: m.maker, tier: "free", provider: "openrouter", available: true };
+    } else {
+      bot = await resolveBot(body.bot);
+    }
     if (!bot) return fail("الموديل ده مش موجود.", 404);
     if (bot.tier === "pro") {
       if (!validProCode(body.pro)) {
