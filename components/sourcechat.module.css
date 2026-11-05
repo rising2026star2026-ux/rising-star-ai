@@ -40,3 +40,39 @@
 .stop { background: var(--ink); font-size: 0.7rem; }
 .foot { margin: 0 0 6px; text-align: center; font-size: 0.68rem; color: var(--faint); }
 @media (prefers-reduced-motion: reduce) { .spin { animation: none; } }
+
+/* ===== المستشار العقاري: واجهة مكتب استشارات ===== */
+.re { --re-ink: #14252e; --re-brass: #a87b2e; --re-brass-soft: rgba(168, 123, 46, 0.12); --re-palm: #1d6a55; --re-stone: #f2f4f5; max-width: 820px; gap: 14px; }
+.re .top { background: var(--re-ink); color: #fff; border-radius: 20px; padding: 18px 20px; align-items: center; }
+.re .title { color: #fff; font-size: 1.3rem; font-weight: 600; letter-spacing: 0; }
+.re .sub { color: rgba(255, 255, 255, 0.72); font-size: 0.82rem; max-width: 46ch; }
+.re .ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.28); }
+.re .ghost:hover { border-color: var(--re-brass); color: #fff; }
+.re .ctx { background: var(--re-stone); border: 0; border-inline-start: 3px solid var(--re-palm); border-radius: 10px; color: var(--text); }
+.re .ctx input { accent-color: var(--re-palm); }
+.re .ctxNote { color: var(--muted); font-size: 0.78rem; padding-inline: 4px; }
+.re .empty { padding: 10px 0 4px; gap: 12px; }
+.re .empty > p { font-size: 1rem; font-weight: 600; color: var(--text-strong); }
+.tasks { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
+.tasks button { display: grid; gap: 4px; text-align: start; font: inherit; cursor: pointer; padding: 14px 16px; border: 1px solid var(--hairline-strong); border-inline-start: 3px solid var(--re-brass); border-radius: 12px; background: #fff; color: var(--text); transition: background 0.15s, border-color 0.15s; }
+.tasks button:hover { background: var(--re-stone); border-color: var(--re-brass); }
+.tasks button:focus-visible { outline: 2px solid var(--re-ink); outline-offset: 2px; }
+.tasks b { font-size: 0.95rem; font-weight: 600; color: var(--text-strong); }
+.tasks span { font-size: 0.8rem; line-height: 1.7; color: var(--muted); }
+.re .user { background: var(--re-ink); color: #fff; border: 0; border-radius: 16px 16px 4px 16px; max-width: 80%; }
+.re .user p { font-size: 0.92rem; }
+.re .bot { background: #fff; border: 1px solid var(--hairline-strong); border-inline-start: 3px solid var(--re-brass); border-radius: 4px 14px 14px 14px; padding: 14px 16px; box-shadow: 0 1px 2px rgba(20, 37, 46, 0.04); }
+.re .md { font-size: 0.95rem; line-height: 1.95; font-variant-numeric: lining-nums tabular-nums; }
+.re .md :global(p:last-child) { margin-bottom: 0; }
+.re .md :global(strong) { color: var(--text-strong); font-weight: 600; }
+.md a[href^="#src-"] { display: inline-block; min-width: 1.5em; padding: 0 0.4em; margin-inline: 2px; font-size: 0.72em; line-height: 1.6; text-align: center; vertical-align: super; text-decoration: none; border-radius: 6px; background: var(--re-brass-soft, rgba(168, 123, 46, 0.12)); color: #7a5618; font-weight: 600; }
+.md a[href^="#src-"]:hover { background: #a87b2e; color: #fff; }
+.searchNote { margin: 0; font-size: 0.78rem; line-height: 1.7; color: #7a5618; background: rgba(168, 123, 46, 0.1); border-radius: 8px; padding: 6px 10px; }
+.re .sources { background: var(--re-stone); border: 0; border-radius: 10px; }
+.re .srcHead b { color: var(--text); }
+.re .srcHead button { color: var(--re-ink); text-decoration: underline; }
+.re .sources li:target { background: var(--re-brass-soft); border-radius: 6px; }
+.re .composer { border-radius: 14px; border: 1px solid var(--re-ink); box-shadow: 0 10px 28px -18px rgba(20, 37, 46, 0.5); }
+.re .send, .re .stop { border-radius: 10px; background: var(--re-ink); }
+.re .spin { border-top-color: var(--re-brass); }
+.re .foot { color: var(--muted); }

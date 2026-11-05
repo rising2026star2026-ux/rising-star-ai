@@ -49,8 +49,17 @@ const MODES = {
       "إيه الأوراق اللي لازم أطلبها قبل ما أدفع المقدم؟",
       "إزاي أتفاوض مع المطوّر على السعر أو نظام السداد؟",
     ],
+    tasks: [
+      { t: "قيّم السعر", d: "هل السعر في حدود المنطقة؟ مقارنة بأسعار منشورة.", q: "السعر ده مناسب للمنطقة ولا مبالغ فيه؟ قارنه بالأسعار المنشورة وقولي حدود السعر العادل." },
+      { t: "قارن طرق الدفع", d: "كاش بخصم أو تقسيط أو إيجار، بقيمة فلوس النهارده.", q: "أدفع كاش بخصم ولا أقسّط على 8 سنين؟ احسبها بقيمة فلوس النهارده." },
+      { t: "افحص قبل ما تدفع", d: "الأوراق والتراخيص المطلوبة قبل المقدم.", q: "إيه الأوراق والتراخيص اللي لازم أطلبها وأتأكد منها قبل ما أدفع المقدم؟" },
+      { t: "جهّز التفاوض", d: "نقاط الضغط على السعر ونظام السداد.", q: "إزاي أتفاوض مع المطوّر على السعر أو نظام السداد؟ إيه النقط اللي أضغط عليها؟" },
+    ],
   },
 };
+
+/** [3] في الرد تتحول لرابط على المصدر رقم 3 في الأسفل */
+const linkCites = (t) => String(t || "").replace(/\[(\d{1,2})\](?!\()/g, "[$1](#src-$1)");
 
 /** سياق الصفحة: البحث أو الدراسة المفتوحة على الجهاز */
 function loadContext(mode) {
@@ -121,7 +130,7 @@ function Sources({ list, text }) {
       </div>
       <ol>
         {shown.map((x) => (
-          <li key={x.n} value={x.n}>
+          <li key={x.n} value={x.n} id={`src-${x.n}`}>
             {x.u ? <a href={x.u} target="_blank" rel="noopener noreferrer nofollow" dir="auto">{x.t}</a> : <span dir="auto">{x.t}</span>}
             <small dir="auto">{[x.a, x.y, x.l || x.d].filter(Boolean).join(" · ")}</small>
           </li>
@@ -185,7 +194,7 @@ export default function SourceChat({ mode = "academic" }) {
       let sources = [];
       try { sources = JSON.parse(decodeURIComponent(res.headers.get("x-sources") || "[]")); } catch { sources = []; }
       const patch = (p) => setMsgs((m) => m.map((x, i) => (i === m.length - 1 ? { ...x, ...p } : x)));
-      patch({ sources });
+      patch({ sources, search: res.headers.get("x-search") || "" });
       const reader = res.body.getReader();
       const dec = new TextDecoder();
       while (true) {
@@ -223,11 +232,11 @@ export default function SourceChat({ mode = "academic" }) {
   }, [ctx, mode]);
 
   return (
-    <div className={s.wrap}>
+    <div className={`${s.wrap} ${mode === "realestate" ? s.re : ""}`}>
       <header className={s.top}>
         <div>
-          <h1 className={s.title}>{M.title}</h1>
-          <p className={s.sub}>{M.sub}</p>
+          <h1 className={s.title}>{mode === "realestate" ? "المستشار العقاري" : M.title}</h1>
+          <p className={s.sub}>{mode === "realestate" ? "رأي محايد مبني على أسعار منشورة وحسابات دقيقة. كل رقم ليه مصدر أو معادلة." : M.sub}</p>
         </div>
         <div className={s.topActions}>
           <Link href={M.back.href} className={s.ghost}>↩ {M.back.label}</Link>
@@ -247,10 +256,26 @@ export default function SourceChat({ mode = "academic" }) {
       <div className={s.thread} aria-live="polite">
         {empty && (
           <div className={s.empty}>
-            <p>ابدأ بسؤال، أو اختار واحد من دول:</p>
-            <div className={s.suggest}>
-              {M.suggestions.map((q) => <button key={q} type="button" onClick={() => send(q)}>{q}</button>)}
-            </div>
+            {M.tasks ? (
+              <>
+                <p>تحب نبدأ بإيه؟</p>
+                <div className={s.tasks}>
+                  {M.tasks.map((x) => (
+                    <button key={x.t} type="button" onClick={() => send(x.q)}>
+                      <b>{x.t}</b>
+                      <span>{x.d}</span>
+                    </button>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <>
+                <p>ابدأ بسؤال، أو اختار واحد من دول:</p>
+                <div className={s.suggest}>
+                  {M.suggestions.map((q) => <button key={q} type="button" onClick={() => send(q)}>{q}</button>)}
+                </div>
+              </>
+            )}
           </div>
         )}
         {msgs.map((m, i) => (
@@ -261,7 +286,8 @@ export default function SourceChat({ mode = "academic" }) {
               <p className={s.wait}><span className={s.spin} aria-hidden="true" /> {mode === "academic" ? "بدوّر في المكتبات…" : mode === "realestate" ? "بدوّر في سوق العقارات وبحسب…" : "بدوّر في السوق…"}</p>
             ) : (
               <>
-                <div className={`md ${s.md}`} dir="auto"><Md>{m.content}</Md></div>
+                <div className={`md ${s.md}`} dir="auto"><Md>{linkCites(m.content)}</Md></div>
+                {!m.pending && mode === "realestate" && m.search === "empty" && <p className={s.searchNote}>بحث السوق ما رجّعش نتايج للسؤال ده، فالرد من معرفة عامة ومن غير أرقام موثّقة.</p>}
                 {!m.pending && <Sources list={m.sources} text={m.content} />}
               </>
             )}
