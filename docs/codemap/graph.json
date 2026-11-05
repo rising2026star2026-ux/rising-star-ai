@@ -1,0 +1,7750 @@
+{
+ "generated": "2026-11-05T02:13:34.587Z",
+ "counts": {
+  "files": 348,
+  "edges": 743,
+  "pages": 56,
+  "api": 33
+ },
+ "nodes": [
+  {
+   "id": "app/agents/[id]/page.js",
+   "kind": "page",
+   "lines": 33,
+   "url": "/agents/[id]",
+   "exports": [
+    "generateStaticParams",
+    "dynamicParams",
+    "generateMetadata"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/agents/page.js",
+   "kind": "page",
+   "lines": 33,
+   "url": "/agents",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/ai/[slug]/page.js",
+   "kind": "page",
+   "lines": 119,
+   "url": "/ai/[slug]",
+   "hosts": [
+    "schema.org"
+   ],
+   "exports": [
+    "generateStaticParams",
+    "dynamicParams",
+    "generateMetadata"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/amazon/check/page.js",
+   "kind": "page",
+   "lines": 30,
+   "url": "/amazon/check",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/amazon/competitor/page.js",
+   "kind": "page",
+   "lines": 30,
+   "url": "/amazon/competitor",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/amazon/listing/page.js",
+   "kind": "page",
+   "lines": 30,
+   "url": "/amazon/listing",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/amazon/page.js",
+   "kind": "page",
+   "lines": 37,
+   "url": "/amazon",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 4,
+   "usedBy": 0
+  },
+  {
+   "id": "app/amazon/profit/page.js",
+   "kind": "page",
+   "lines": 30,
+   "url": "/amazon/profit",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/ad-pack/route.js",
+   "kind": "api",
+   "lines": 106,
+   "url": "/api/ad-pack",
+   "about": "«باكدج الإعلان»: من معلومات المنتج (أو كلام البياع في فويس) بيكتب كل اللي محتاجه عشان ينشر: بوست فيسبوك، كابشن إنستجرام، رسالة واتساب، سكريبت تيك توك، وصف للمتجر، عناوين، هاشتاجات، وشعار ومميزات للفيديو. بيستخدمه «صوّرها",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/adcopy/route.js",
+   "kind": "api",
+   "lines": 50,
+   "url": "/api/adcopy",
+   "about": "نص إعلان قصير لمنتج: شعار + 3 مميزات (من سلسلة الموديلات المعتادة)",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/agent/route.js",
+   "kind": "api",
+   "lines": 133,
+   "url": "/api/agent",
+   "about": "تشغيل وكيل: تخطيط ← بحث ← قراءة المصادر ← كتابة. بيرجّع أحداث سطر بسطر (NDJSON): {t:\"step\",m} خطوة شغالة دلوقتي {t:\"src\",items:[{n,title,url}]} المصادر {t:\"x\",d} جزء من الرد النهائي {t:\"err\",m} مشكلة",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 4,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/amazon/check/route.js",
+   "kind": "api",
+   "lines": 27,
+   "url": "/api/amazon/check",
+   "about": "«فاحص الرفض»: فحص ثابت بالكود لليستنج + اقتراح تصحيح من الموديل، والتصحيح نفسه بيتفحص تاني بالكود.",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/amazon/competitor/route.js",
+   "kind": "api",
+   "lines": 25,
+   "url": "/api/amazon/competitor",
+   "about": "«تحليل المنافس»: التاجر بيلصق ليستنج المنافس وتقييماته (إحنا مش بنسحب صفحات أمازون)، والاقتباسات في النتيجة بتتراجع بالكود على النص الملصوق، وأي اقتباس مش موجود بيتشال.",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/amazon/listing/route.js",
+   "kind": "api",
+   "lines": 36,
+   "url": "/api/amazon/listing",
+   "about": "«ليستنج من وصف عامي أو صورة»: عربي وإنجليزي، وكل ناتج بيتفحص بالكود قبل ما يوصل للتاجر.",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 4,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/brand-fill/route.js",
+   "kind": "api",
+   "lines": 45,
+   "url": "/api/brand-fill",
+   "about": "«اقترح لي الباقي» في هوية نشاطي: من اسم النشاط ووصفه بيقترح الجمهور والنبرة واللهجة وشعارات قصيرة.",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/catalog-copy/route.js",
+   "kind": "api",
+   "lines": 42,
+   "url": "/api/catalog-copy",
+   "about": "«كتالوجك في دقيقة»: وصف قصير لكل منتج + جملة للغلاف، من أسماء المنتجات وأسعارها بس",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/chat/route.js",
+   "kind": "api",
+   "lines": 291,
+   "url": "/api/chat",
+   "about": "الشات الرئيسي: رد متدفق (كلمة بكلمة) بالموديل اللي المستخدم اختاره، ومعاه بحث على الإنترنت لو مفعّل",
+   "env": [
+    "GROQ_API_KEY"
+   ],
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 12,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/feasibility/route.js",
+   "kind": "api",
+   "lines": 212,
+   "url": "/api/feasibility",
+   "about": "الباحث التجاري: خطوتين منفصلتين عشان كل طلب يخلص في أقل من دقيقة على Vercel step: \"gather\" ← بحث السوق (أسعار، منافسين، تضخم) + النموذج يطلّع الافتراضات بمداها ومصادرها step: \"section\" ← كتابة قسم واحد من التقرير (رد متد",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 6,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/image/route.js",
+   "kind": "api",
+   "lines": 87,
+   "url": "/api/image",
+   "about": "مولّد صور احتياطي على السيرفر: بيشتغل بس لو حصة الزائر المجانية على Hugging Face خلصت أو الموديل مشغول. الترتيب: Cloudflare Workers AI (لو المفاتيح موجودة) ← Together (لو المفتاح موجود) ← Pollinations بدون مفتاح. كل المص",
+   "env": [
+    "CF_ACCOUNT_ID",
+    "CF_API_TOKEN",
+    "TOGETHER_API_KEY"
+   ],
+   "hosts": [
+    "api.cloudflare.com",
+    "api.together.xyz",
+    "image.pollinations.ai"
+   ],
+   "exports": [
+    "maxDuration",
+    "GET",
+    "POST"
+   ],
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/logo-gen/route.js",
+   "kind": "api",
+   "lines": 57,
+   "url": "/api/logo-gen",
+   "about": "مولّد اللوجو: الذكاء الاصطناعي بيفهم نشاط العميل ويختار رموز وألوان وخطوط من القوائم الجاهزة (من غير ما يرسم بنفسه)، ويقترح شعارات قصيرة واسم لاتيني. الرسم نفسه بيتم في المتصفح.",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/pexels/route.js",
+   "kind": "api",
+   "lines": 44,
+   "url": "/api/pexels",
+   "about": "بحث فيديوهات Pexels (مجاني). المفتاح PEXELS_API_KEY في Vercel. بنرجّع روابط الملفات بس، والفيديو بيتحمّل من Pexels مباشرة.",
+   "env": [
+    "PEXELS_API_KEY"
+   ],
+   "hosts": [
+    "api.pexels.com"
+   ],
+   "exports": [
+    "maxDuration",
+    "GET"
+   ],
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/podcast/route.js",
+   "kind": "api",
+   "lines": 132,
+   "url": "/api/podcast",
+   "about": "البودكاست بصوتين: خطوتين. 1) step=script: نموذج قوي بيكتب حوار بين مذيعين باللهجة المختارة من موضوع أو نص ملزوق، ويرجّعه سطور. 2) step=audio: جزء من السطور بيتحوّل لصوت WAV بصوتين عن طريق Gemini TTS (multi-speaker)، والو",
+   "env": [
+    "GEMINI_API_KEY",
+    "GEMINI_TTS_MODEL",
+    "PODCAST_AUDIO_LIMIT",
+    "PODCAST_SCRIPT_LIMIT"
+   ],
+   "hosts": [
+    "generativelanguage.googleapis.com"
+   ],
+   "exports": [
+    "maxDuration",
+    "runtime",
+    "GET",
+    "POST"
+   ],
+   "imports": 4,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/pro/route.js",
+   "kind": "api",
+   "lines": 14,
+   "url": "/api/pro",
+   "about": "التأكد من كود الاشتراك (للموديلات العالمية). الأكواد في PRO_CODES في إعدادات Vercel.",
+   "exports": [
+    "POST"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/product-eye/route.js",
+   "kind": "api",
+   "lines": 54,
+   "url": "/api/product-eye",
+   "about": "«صوّرها بموبايلك»: بيتعرّف على المنتج من الصورة (اسم مقترح، النوع، الألوان، الكلام المكتوب عليه)، وبيقترح وصف إنجليزي لخلفية تصوير مناسبة ليه (للخلفية بالذكاء الاصطناعي). العميل بيأكد الاسم قبل الكتابة.",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/prompt-en/route.js",
+   "kind": "api",
+   "lines": 35,
+   "url": "/api/prompt-en",
+   "about": "بيحوّل فكرة المستخدم بالعربي لوصف إنجليزي مفصّل لمولّدات الصور والفيديو (أغلبها بيفهم الإنجليزي أحسن)",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/prompt-gen/route.js",
+   "kind": "api",
+   "lines": 36,
+   "url": "/api/prompt-gen",
+   "about": "مولّد البرومبتات بالذكاء الاصطناعي: وضعين، «ideas» لتوليد أفكار جديدة بمعاييرك، و«improve» لتحسين برومبت ضعيف. الحد الأقصى 15 برومبت في الطلب الواحد (البرومبتات الطويلة بتتقطع لو زودنا)، والواجهة بتبعت على دفعات لو طلبت ",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/proofread/route.js",
+   "kind": "api",
+   "lines": 37,
+   "url": "/api/proofread",
+   "about": "المدقق اللغوي: بيصحّح الإملاء والنحو وعلامات الترقيم في نص المستخدم من غير ما يغيّر معناه",
+   "env": [
+    "GROQ_API_KEY"
+   ],
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/reel/route.js",
+   "kind": "api",
+   "lines": 45,
+   "url": "/api/reel",
+   "about": "سكريبت فيديو قصير لأداة «صانع الريلز» — الفيديو نفسه بيترسم في متصفح المستخدم",
+   "env": [
+    "GROQ_API_KEY"
+   ],
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/research/route.js",
+   "kind": "api",
+   "lines": 190,
+   "url": "/api/research",
+   "about": "الباحث الأكاديمي: 3 خطوات منفصلة عشان كل طلب يخلص في أقل من دقيقة على Vercel step: \"sources\" ← بحث في المكتبات (OpenAlex وSemantic Scholar وarXiv وOpen Library) step: \"outline\" ← خطة التقرير (أقسام ونقاط ومصادر كل قسم) م",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 4,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/run/route.js",
+   "kind": "api",
+   "lines": 75,
+   "url": "/api/run",
+   "about": "تشغيل أي أداة ذكاء اصطناعي: رد متدفق (كلمة بكلمة)",
+   "env": [
+    "GROQ_API_KEY"
+   ],
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 6,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/scam-scan/route.js",
+   "kind": "api",
+   "lines": 26,
+   "url": "/api/scam-scan",
+   "about": "كاشف النصب: بيفحص موقع البائع وصفحته فعلياً ويرجّع تقرير بالأدلة (شوف lib/scamscan.js)",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/source-chat/route.js",
+   "kind": "api",
+   "lines": 150,
+   "url": "/api/source-chat",
+   "about": "الشات المتخصص للباحث الأكاديمي والتجاري: حوار زي الشات العادي، بس كل رد مبني على مصادر الأداة academic: مكتبات الأبحاث والكتب (OpenAlex وSemantic Scholar وarXiv وOpen Library) + مصادر البحث المفتوح في صفحة الباحث busines",
+   "hosts": [
+    "doi.org"
+   ],
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 5,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/speak-pro/route.js",
+   "kind": "api",
+   "lines": 74,
+   "url": "/api/speak-pro",
+   "about": "الصوت المعبّر: بيحوّل فقرة (حتى 500 حرف) لصوت WAV بإحساس ونبرة حقيقيين عن طريق Gemini TTS. بيشتغل بنفس مفتاح GEMINI_API_KEY الموجود. لو المفتاح مش موجود الوضع ده بيتقفل والواجهة بتخفيه. اللهجة والنبرة والصوت بيتحددوا بمف",
+   "env": [
+    "GEMINI_API_KEY",
+    "GEMINI_TTS_MODEL",
+    "SPEAK_PRO_LIMIT"
+   ],
+   "hosts": [
+    "generativelanguage.googleapis.com"
+   ],
+   "exports": [
+    "maxDuration",
+    "runtime",
+    "GET",
+    "POST"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/speak/route.js",
+   "kind": "api",
+   "lines": 57,
+   "url": "/api/speak",
+   "about": "مولد الأصوات والكتاب المسموع: بيحوّل فقرة نص (حتى 600 حرف) لصوت MP3 بأصوات Microsoft Edge العصبية. الواجهة بتقسّم الكتاب فقرات وبتطلبها واحدة واحدة، فالطلب الواحد دايماً سريع. الخدمة دي غير رسمية من مايكروسوفت، فلو اتحجب",
+   "exports": [
+    "maxDuration",
+    "runtime",
+    "POST"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/test-ad/route.js",
+   "kind": "api",
+   "lines": 148,
+   "url": "/api/test-ad",
+   "about": "«جرّب إعلانك على 100 زبون»: الموديل بيتقمص 10 شخصيات مصرية (كل شخصية شريحة من 100 شخص)، وكل شخصية بتعلّق على الإعلان زي فيسبوك وتحكم: هتشتري ولا محتاجة تفكر ولا هتعدّي. الأرقام النهائية (نسبة الشراء والدرجة) بتتحسب هنا ف",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/transcribe-long/route.js",
+   "kind": "api",
+   "lines": 95,
+   "url": "/api/transcribe-long",
+   "about": "التفريغ الطويل: جزء واحد من التسجيل (WAV مونو 16 كيلوهرتز، حوالي 100 ثانية) بيتفرّغ بـ Gemini مع تمييز المتكلمين والتوقيت. الواجهة بتبعت الجزء كملف خام في جسم الطلب، والسياق (المتكلمين اللي ظهروا قبل كده وآخر جملة) في هي",
+   "env": [
+    "GEMINI_API_KEY",
+    "GEMINI_AUDIO_MODEL",
+    "LONG_TRANSCRIBE_LIMIT"
+   ],
+   "hosts": [
+    "generativelanguage.googleapis.com"
+   ],
+   "exports": [
+    "maxDuration",
+    "runtime",
+    "GET",
+    "POST"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/transcribe/route.js",
+   "kind": "api",
+   "lines": 75,
+   "url": "/api/transcribe",
+   "about": "تفريغ فويس البياع لنص (عربي ومصري). Whisper على Groq، ولو مش متاح بنجرب Gemini (بيسمع الصوت مباشرة).",
+   "env": [
+    "GEMINI_API_KEY",
+    "GEMINI_AUDIO_MODEL",
+    "GROQ_API_KEY"
+   ],
+   "hosts": [
+    "api.groq.com",
+    "generativelanguage.googleapis.com"
+   ],
+   "exports": [
+    "runtime",
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/tts/route.js",
+   "kind": "api",
+   "lines": 40,
+   "url": "/api/tts",
+   "about": "تحويل نص لصوت (MP3) بصوت Microsoft Edge العصبي. بيرجّع ملف صوت، والعميل بيفضل مسؤول عن الباقي. الخدمة دي غير رسمية من مايكروسوفت، فلو اتحجبت بنرجّع 502 والعميل بيروح للصوت البديل.",
+   "exports": [
+    "maxDuration",
+    "runtime",
+    "POST"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/verify/route.js",
+   "kind": "api",
+   "lines": 62,
+   "url": "/api/verify",
+   "about": "«اتأكد من المعلومة»: بنبحث على الإنترنت عن السؤال، وموديل تاني (Gemini الأول) بيراجع رد الشات جملة جملة قدام نتايج البحث، وبيقول كل معلومة صح ولا غلط ولا مش متأكدين، مع التصحيح ورقم المصدر.",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/vision/route.js",
+   "kind": "api",
+   "lines": 69,
+   "url": "/api/vision",
+   "about": "قارئ الصور: يوصف الصورة أو يقرا النص اللي فيها ويرد على سؤال المستخدم عنها",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
+   "id": "app/api/vscript/route.js",
+   "kind": "api",
+   "lines": 45,
+   "url": "/api/vscript",
+   "about": "سكريبت فيديو بمشاهد، وكل مشهد معاه كلمة بحث إنجليزية للفيديو المناسب (من سلسلة الموديلات المعتادة)",
+   "exports": [
+    "maxDuration",
+    "POST"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/brand/page.js",
+   "kind": "page",
+   "lines": 18,
+   "url": "/brand",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
+   "id": "app/catalog/page.js",
+   "kind": "page",
+   "lines": 27,
+   "url": "/catalog",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/chat/page.js",
+   "kind": "page",
+   "lines": 20,
+   "url": "/chat",
+   "exports": [
+    "metadata",
+    "revalidate"
+   ],
+   "imports": 4,
+   "usedBy": 0
+  },
+  {
+   "id": "app/compare/page.js",
+   "kind": "page",
+   "lines": 34,
+   "url": "/compare",
+   "exports": [
+    "metadata",
+    "revalidate"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/creators/[slug]/page.js",
+   "kind": "page",
+   "lines": 80,
+   "url": "/creators/[slug]",
+   "exports": [
+    "generateStaticParams",
+    "dynamicParams",
+    "generateMetadata"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/creators/page.js",
+   "kind": "page",
+   "lines": 39,
+   "url": "/creators",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/feasibility/chat/page.js",
+   "kind": "page",
+   "lines": 12,
+   "url": "/feasibility/chat",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
+   "id": "app/feasibility/page.js",
+   "kind": "page",
+   "lines": 24,
+   "url": "/feasibility",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
+   "id": "app/flow/[id]/page.js",
+   "kind": "page",
+   "lines": 69,
+   "url": "/flow/[id]",
+   "hosts": [
+    "schema.org"
+   ],
+   "exports": [
+    "generateStaticParams",
+    "generateMetadata"
+   ],
+   "imports": 5,
+   "usedBy": 0
+  },
+  {
+   "id": "app/flows/page.js",
+   "kind": "page",
+   "lines": 21,
+   "url": "/flows",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/global-tools/[cat]/page.js",
+   "kind": "page",
+   "lines": 35,
+   "url": "/global-tools/[cat]",
+   "exports": [
+    "generateStaticParams",
+    "dynamicParams",
+    "generateMetadata"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/global-tools/alternatives/page.js",
+   "kind": "page",
+   "lines": 70,
+   "url": "/global-tools/alternatives",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/global-tools/page.js",
+   "kind": "page",
+   "lines": 45,
+   "url": "/global-tools",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/globals.css",
+   "kind": "style",
+   "lines": 782,
+   "about": "==================================================================",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "app/history/page.js",
+   "kind": "page",
+   "lines": 48,
+   "url": "/history",
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/lab/remotion/page.js",
+   "kind": "page",
+   "lines": 19,
+   "url": "/lab/remotion",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/layout.js",
+   "kind": "app",
+   "lines": 61,
+   "hosts": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com"
+   ],
+   "exports": [
+    "metadata",
+    "viewport"
+   ],
+   "imports": 7,
+   "usedBy": 0
+  },
+  {
+   "id": "app/learn/page.js",
+   "kind": "page",
+   "lines": 40,
+   "url": "/learn",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/library/[slug]/page.js",
+   "kind": "page",
+   "lines": 53,
+   "url": "/library/[slug]",
+   "exports": [
+    "generateStaticParams",
+    "dynamicParams",
+    "generateMetadata"
+   ],
+   "imports": 5,
+   "usedBy": 0
+  },
+  {
+   "id": "app/library/page.js",
+   "kind": "page",
+   "lines": 52,
+   "url": "/library",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 4,
+   "usedBy": 0
+  },
+  {
+   "id": "app/maker/[slug]/page.js",
+   "kind": "page",
+   "lines": 96,
+   "url": "/maker/[slug]",
+   "hosts": [
+    "gen.pollinations.ai",
+    "image.pollinations.ai"
+   ],
+   "exports": [
+    "generateStaticParams",
+    "dynamicParams",
+    "generateMetadata"
+   ],
+   "imports": 7,
+   "usedBy": 0
+  },
+  {
+   "id": "app/maker/create/page.js",
+   "kind": "page",
+   "lines": 31,
+   "url": "/maker/create",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/maker/page.js",
+   "kind": "page",
+   "lines": 66,
+   "url": "/maker",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 4,
+   "usedBy": 0
+  },
+  {
+   "id": "app/manifest.js",
+   "kind": "app",
+   "lines": 23,
+   "about": "تثبيت الموقع كتطبيق على الموبايل (من قايمة المتصفح ← «إضافة إلى الشاشة الرئيسية» أو «تثبيت التطبيق»). display: standalone معناه إن الموقع بيفتح ملء الشاشة من غير شريط عنوان المتصفح اللي فوق.",
+   "imports": 0,
+   "usedBy": 0
+  },
+  {
+   "id": "app/models/page.js",
+   "kind": "page",
+   "lines": 51,
+   "url": "/models",
+   "exports": [
+    "metadata",
+    "revalidate"
+   ],
+   "imports": 5,
+   "usedBy": 0
+  },
+  {
+   "id": "app/my-tools/page.js",
+   "kind": "page",
+   "lines": 18,
+   "url": "/my-tools",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
+   "id": "app/news/page.js",
+   "kind": "page",
+   "lines": 30,
+   "url": "/news",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/page.js",
+   "kind": "page",
+   "lines": 6,
+   "url": "/",
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
+   "id": "app/photo-ad/page.js",
+   "kind": "page",
+   "lines": 27,
+   "url": "/photo-ad",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/plans/page.js",
+   "kind": "page",
+   "lines": 47,
+   "url": "/plans",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 0,
+   "usedBy": 0
+  },
+  {
+   "id": "app/program/[key]/page.js",
+   "kind": "page",
+   "lines": 91,
+   "url": "/program/[key]",
+   "exports": [
+    "generateStaticParams",
+    "dynamicParams",
+    "generateMetadata"
+   ],
+   "imports": 4,
+   "usedBy": 0
+  },
+  {
+   "id": "app/projects/[id]/page.js",
+   "kind": "page",
+   "lines": 12,
+   "url": "/projects/[id]",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
+   "id": "app/projects/page.js",
+   "kind": "page",
+   "lines": 30,
+   "url": "/projects",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/prompts/builder/page.js",
+   "kind": "page",
+   "lines": 25,
+   "url": "/prompts/builder",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
+   "id": "app/prompts/page.js",
+   "kind": "page",
+   "lines": 31,
+   "url": "/prompts",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/research/chat/page.js",
+   "kind": "page",
+   "lines": 12,
+   "url": "/research/chat",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
+   "id": "app/research/page.js",
+   "kind": "page",
+   "lines": 24,
+   "url": "/research",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
+   "id": "app/resources/[cat]/page.js",
+   "kind": "page",
+   "lines": 42,
+   "url": "/resources/[cat]",
+   "exports": [
+    "generateStaticParams",
+    "dynamicParams",
+    "generateMetadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/resources/page.js",
+   "kind": "page",
+   "lines": 31,
+   "url": "/resources",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/robots.js",
+   "kind": "app",
+   "lines": 10,
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
+   "id": "app/scam-check/page.js",
+   "kind": "page",
+   "lines": 20,
+   "url": "/scam-check",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/seller/page.js",
+   "kind": "page",
+   "lines": 31,
+   "url": "/seller",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/sitemap.js",
+   "kind": "app",
+   "lines": 65,
+   "imports": 10,
+   "usedBy": 0
+  },
+  {
+   "id": "app/subscriptions/calculator/page.js",
+   "kind": "page",
+   "lines": 20,
+   "url": "/subscriptions/calculator",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/subscriptions/page.js",
+   "kind": "page",
+   "lines": 21,
+   "url": "/subscriptions",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/subscriptions/receipt/page.js",
+   "kind": "page",
+   "lines": 30,
+   "url": "/subscriptions/receipt",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 3,
+   "usedBy": 0
+  },
+  {
+   "id": "app/survey/page.js",
+   "kind": "page",
+   "lines": 12,
+   "url": "/survey",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 1,
+   "usedBy": 0
+  },
+  {
+   "id": "app/task/[slug]/page.js",
+   "kind": "page",
+   "lines": 113,
+   "url": "/task/[slug]",
+   "hosts": [
+    "schema.org"
+   ],
+   "exports": [
+    "generateStaticParams",
+    "dynamicParams",
+    "generateMetadata"
+   ],
+   "imports": 7,
+   "usedBy": 0
+  },
+  {
+   "id": "app/tasks/page.js",
+   "kind": "page",
+   "lines": 29,
+   "url": "/tasks",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/test-ad/page.js",
+   "kind": "page",
+   "lines": 27,
+   "url": "/test-ad",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "app/tool/[id]/page.js",
+   "kind": "page",
+   "lines": 146,
+   "url": "/tool/[id]",
+   "hosts": [
+    "schema.org"
+   ],
+   "exports": [
+    "generateStaticParams",
+    "generateMetadata"
+   ],
+   "imports": 10,
+   "usedBy": 0
+  },
+  {
+   "id": "app/tools/page.js",
+   "kind": "page",
+   "lines": 30,
+   "url": "/tools",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 5,
+   "usedBy": 0
+  },
+  {
+   "id": "app/voice-post/page.js",
+   "kind": "page",
+   "lines": 27,
+   "url": "/voice-post",
+   "exports": [
+    "metadata"
+   ],
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "components/AgentRunner.js",
+   "kind": "component",
+   "lines": 115,
+   "about": "واجهة تشغيل الوكيل: الحقول ← خطوات شغالة قدامك ← المصادر ← النتيجة",
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "components/AskAbout.js",
+   "kind": "component",
+   "lines": 16,
+   "about": "زرار «اسأل عنه بالعربي»: بيفتح الشات بسؤال جاهز عن البرنامج",
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "components/BotIcon.js",
+   "kind": "component",
+   "lines": 29,
+   "about": "أيقونة الموديل أو البرنامج: 1) لو فيه لوجو رسمي في public/logos → بيظهر هو 2) مساعد أو برنامج → أيقونة خطية موحدة 3) غير كده → اسم مختصر بخط نضيف على مربع داكن موحد",
+   "imports": 2,
+   "usedBy": 17
+  },
+  {
+   "id": "components/BottomNav.js",
+   "kind": "component",
+   "lines": 85,
+   "about": "شريط التنقل السفلي على الموبايل (بيختفي على الشاشات الكبيرة)",
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "components/BrandLogo.js",
+   "kind": "component",
+   "lines": 19,
+   "about": "شعار الشركة/الموديل؛ لو ما اتحمّلش بنعرض أول حرف من الاسم في دايرة ملوّنة",
+   "imports": 2,
+   "usedBy": 3
+  },
+  {
+   "id": "components/BrandProfile.js",
+   "kind": "component",
+   "lines": 143,
+   "about": "«هوية نشاطي»: العميل يكتب نشاطه مرة، وبتتحفظ على جهازه، والأدوات بتستخدمها.",
+   "imports": 5,
+   "usedBy": 1
+  },
+  {
+   "id": "components/Catalog.js",
+   "kind": "component",
+   "lines": 78,
+   "about": "كتالوج كل الأدوات: بحث بالاسم + تصنيفات. التصنيف بيتحفظ في الرابط (?cat=writing) عشان يتشارك",
+   "exports": [
+    "CatalogFromUrl",
+    "CatalogStatic"
+   ],
+   "imports": 5,
+   "usedBy": 1
+  },
+  {
+   "id": "components/Chrome.js",
+   "kind": "component",
+   "lines": 305,
+   "about": "الشريط العلوي + البحث السريع (Ctrl+K) + لوحة التحكم + الإشعارات الصغيرة",
+   "imports": 9,
+   "usedBy": 1
+  },
+  {
+   "id": "components/CreatorAvatar.js",
+   "kind": "component",
+   "lines": 19,
+   "about": "صورة صانع المحتوى: لو صاحبها بعتها بموافقته بتظهر، وإلا أول حرف من الاسم على دايرة ملونة",
+   "imports": 1,
+   "usedBy": 2
+  },
+  {
+   "id": "components/DirSearch.js",
+   "kind": "component",
+   "lines": 29,
+   "about": "بحث سريع في كل أدوات الدليل بالاسم",
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "components/DirTools.js",
+   "kind": "component",
+   "lines": 56,
+   "about": "قايمة أدوات المجال: بحث بالاسم وفلتر بنوع التسعير",
+   "imports": 2,
+   "usedBy": 2
+  },
+  {
+   "id": "components/ExternalLinks.js",
+   "kind": "component",
+   "lines": 101,
+   "hosts": [
+    "adawatly.com",
+    "poe.com",
+    "theresanaiforthat.com",
+    "topai.tools",
+    "www.futurepedia.io",
+    "www.futuretools.io",
+    "www.genspark.ai",
+    "www.toolify.ai",
+    "www.toolsurf.com"
+   ],
+   "imports": 1,
+   "usedBy": 2
+  },
+  {
+   "id": "components/Feasibility.js",
+   "kind": "component",
+   "lines": 490,
+   "about": "الباحث التجاري: مقابلة قصيرة ← بحث السوق والافتراضات (بمصادرها) ← العميل يراجع ويعدّل والأرقام تتحسب فوراً ← تقرير دراسة جدوى",
+   "imports": 6,
+   "usedBy": 1
+  },
+  {
+   "id": "components/FieldData.js",
+   "kind": "component",
+   "lines": 250,
+   "about": "البيانات الميدانية في الباحث التجاري: استبيان العملاء، وإعلانات المنافسين (صور)، وتجارب يوتيوب",
+   "hosts": [
+    "adstransparency.google.com",
+    "wa.me",
+    "www.facebook.com"
+   ],
+   "exports": [
+    "fieldText"
+   ],
+   "imports": 5,
+   "usedBy": 2
+  },
+  {
+   "id": "components/FlowCards.js",
+   "kind": "component",
+   "lines": 28,
+   "imports": 2,
+   "usedBy": 2
+  },
+  {
+   "id": "components/FlowRunner.js",
+   "kind": "component",
+   "lines": 202,
+   "about": "تشغيل مهمة كاملة: كل خطوة أداة، ونتيجتها بتدخل في الخطوات اللي بعدها",
+   "imports": 8,
+   "usedBy": 1
+  },
+  {
+   "id": "components/FusionStack.js",
+   "kind": "component",
+   "lines": 21,
+   "about": "لوجوهات النماذج المشتركة في «دمج 4 نماذج» فوق بعض",
+   "imports": 2,
+   "usedBy": 2
+  },
+  {
+   "id": "components/Home.js",
+   "kind": "component",
+   "lines": 386,
+   "about": "الصفحة الرئيسية — مساحة العمل",
+   "imports": 22,
+   "usedBy": 1
+  },
+  {
+   "id": "components/Intro.js",
+   "kind": "component",
+   "lines": 52,
+   "about": "الشاشة الافتتاحية: نجوم صفراء بتطلع وتلمع، والنجمة الكبيرة بتنزل وتنور، والاسم بيظهر حرف حرف (أول مرة في الجلسة بس)",
+   "imports": 2,
+   "usedBy": 1
+  },
+  {
+   "id": "components/IntroDone.js",
+   "kind": "component",
+   "lines": 18,
+   "about": "بيعلّم إن الشاشة الافتتاحية اتشافت، وبيشيلها بعد ما تخلص (أو لو المستخدم داس عليها)",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/LibraryFrame.js",
+   "kind": "component",
+   "lines": 115,
+   "about": "بيفتح الأداة جوه الموقع بواجهتها الأصلية + شريط تحكم + صندوق «احفظ وشارك شغلك»",
+   "hosts": [
+    "t.me",
+    "wa.me"
+   ],
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "components/LibraryGrid.js",
+   "kind": "component",
+   "lines": 60,
+   "about": "شبكة المكتبة: فلترة بالتصنيف + بحث",
+   "imports": 2,
+   "usedBy": 1
+  },
+  {
+   "id": "components/MainChat.js",
+   "kind": "component",
+   "lines": 978,
+   "about": "الشات الرئيسي: رد فوري كلمة بكلمة، و6 موديلات، وبحث على الإنترنت، وقراءة الملفات (PDF وWord والصور)، واقتراح الأداة المناسبة. نفس الشات بيشتغل جوه «المشاريع» (props: project وما بعدها).",
+   "exports": [
+    "DOC_ACTIONS",
+    "nFiles"
+   ],
+   "imports": 20,
+   "usedBy": 2
+  },
+  {
+   "id": "components/MakerFluxGen.js",
+   "kind": "component",
+   "lines": 172,
+   "about": "«صورة من وصف عربي»: اكتب بالعربي ← بنكتب وصف إنجليزي ← Flux بيرسم الصورة. الرسم بيتم من متصفح الزائر على Hugging Face (حصته المجانية هو)، ولو خلصت بنحوّل لمولّد السيرفر الاحتياطي.",
+   "hosts": [
+    "black-forest-labs-flux-1-schnell.hf.space"
+   ],
+   "imports": 4,
+   "usedBy": 1
+  },
+  {
+   "id": "components/MakerFrame.js",
+   "kind": "component",
+   "lines": 25,
+   "about": "بيفتح الأداة جوه الموقع (لو موقعها بيسمح)، ولو ما اتفتحتش في ثواني بنقولك تفتحها في تبويب",
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "components/MakerImageGen.js",
+   "kind": "component",
+   "lines": 79,
+   "about": "مولّد صور جوه الموقع (Pollinations): اكتب بالعربي، بنترجم الوصف وبنطلعلك الصورة هنا",
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "components/MakerPrompt.js",
+   "kind": "component",
+   "lines": 49,
+   "about": "اكتب فكرتك بالعربي → نترجمها ونحسّنها لوصف إنجليزي (أغلب المولّدات بتفهمه أحسن) → انسخه والصقه في الأداة",
+   "imports": 2,
+   "usedBy": 1
+  },
+  {
+   "id": "components/Md.js",
+   "kind": "component",
+   "lines": 34,
+   "about": "عرض Markdown موحّد لكل ردود الموقع. الفرق عن العرض العادي: الجداول بتتلف في غلاف بيتحكم في عرضها (جدول بتمرير أفقي على الشاشات الواسعة، وبطاقات متراصّة على الموبايل بدل ما الأعمدة تتزنق والكلام يتقطّع).",
+   "imports": 0,
+   "usedBy": 9
+  },
+  {
+   "id": "components/ModelCompare.js",
+   "kind": "component",
+   "lines": 257,
+   "about": "مقارنة الموديلات: سؤال واحد يتبعت لـ 2-3 موديلات في نفس الوقت، والردود بتتعرض جنب بعض وهي بتتكتب. بنستخدم نفس /api/chat بتاع الشات (نفس الحدود والموديلات)، فكل مقارنة بتحسب رسالة لكل موديل.",
+   "imports": 5,
+   "usedBy": 1
+  },
+  {
+   "id": "components/ModelPicker.js",
+   "kind": "component",
+   "lines": 78,
+   "imports": 6,
+   "usedBy": 1
+  },
+  {
+   "id": "components/ModelsGallery.js",
+   "kind": "component",
+   "lines": 89,
+   "about": "معرض الموديلات والبرامج (زي Poe): أقسام، وكل قسم صف كروت بلوجو واسم، و«عرض الكل» بيفرده شبكة",
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "components/MyTools.js",
+   "kind": "component",
+   "lines": 155,
+   "about": "«أدواتي»: العميل يختار أدواته، يسجّل في كل أداة بحسابه مرة واحدة، وبعد كده زرار واحد يفتحها كلها. بنحفظ الاختيارات على جهازه لحد ما نضيف حسابات. ما بنخزّنش أي باسورد، والدخول بيفضل محفوظ في متصفحه عند كل أداة.",
+   "imports": 4,
+   "usedBy": 1
+  },
+  {
+   "id": "components/NewsList.js",
+   "kind": "component",
+   "lines": 43,
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "components/ProCode.js",
+   "kind": "component",
+   "lines": 69,
+   "about": "تفعيل كود الاشتراك (للموديلات العالمية). الكود بيتحفظ على جهاز المستخدم بس.",
+   "imports": 2,
+   "usedBy": 0
+  },
+  {
+   "id": "components/ProgramsGrid.js",
+   "kind": "component",
+   "lines": 42,
+   "about": "البرامج العالمية بالعربي: صف لكل قسم، وكل برنامج بلوجو شركته وبيفتح صفحته العربي جوه الموقع",
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "components/PromptsGrid.js",
+   "kind": "component",
+   "lines": 95,
+   "about": "مكتبة البرومبتات: بحث + تصنيفات + نسخ بضغطة + تعبئة الأقواس [زي كده] قبل النسخ",
+   "imports": 2,
+   "usedBy": 1
+  },
+  {
+   "id": "components/Research.js",
+   "kind": "component",
+   "lines": 338,
+   "about": "الباحث الأكاديمي: موضوع ← مصادر من المكتبات (العميل بيراجعها) ← خطة ← كتابة الأقسام واحد واحد ← تقرير بمراجع",
+   "hosts": [
+    "doi.org"
+   ],
+   "imports": 6,
+   "usedBy": 1
+  },
+  {
+   "id": "components/ScamChecker.js",
+   "kind": "component",
+   "lines": 194,
+   "about": "كاشف النصب: العميل بيحط لينك الموقع و/أو صفحة الفيسبوك واسم البائع، والموقع بيحقق بنفسه (عمر الدومين، الأمان، محتوى الموقع، انتحال الأسماء، الشكاوى، شفافية الصفحة) ويطلع تقرير بالأدلة.",
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "components/ScrollBands.js",
+   "kind": "component",
+   "lines": 39,
+   "about": "أقسام الرئيسية (ليل / نهار): بنسجّل القسم اللي واقف عليه المستخدم في html[data-band] عشان أي عنصر يقدر يتلوّن على حسبه. الشريط العلوي ولون شريط المتصفح ثابتين على الليل.",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/ShareBar.js",
+   "kind": "component",
+   "lines": 192,
+   "env": [
+    "NEXT_PUBLIC_SITE_URL"
+   ],
+   "imports": 2,
+   "usedBy": 7
+  },
+  {
+   "id": "components/SourceChat.js",
+   "kind": "component",
+   "lines": 262,
+   "about": "الشات المتخصص: حوار زي الشات العادي، بس كل رد مبني على مصادر الباحث (مكتبات أكاديمية أو بحث السوق ودراسة الجدوى)",
+   "imports": 6,
+   "usedBy": 2
+  },
+  {
+   "id": "components/SourceMap.js",
+   "kind": "component",
+   "lines": 219,
+   "about": "خريطة المصادر: شبكة تفاعلية بتوضح المصادر اللي بتستشهد ببعض أو بتشترك في مراجع، والمؤلفين والمواضيع المشتركة، ومعاها تحليل (محاور البحث، الفجوات، تبدأ قراءة بإيه). بتتفتح من صفحة الباحث الأكاديمي بعد ما المصادر تظهر.",
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "components/StarMark.js",
+   "kind": "component",
+   "lines": 34,
+   "about": "نجمة Rising StarAi: نجمة خماسية بحواف مدورة وتدرّج أصفر ذهبي (هوية الموقع، مختلفة عن أشكال الشركات التانية)",
+   "exports": [
+    "STAR_PATH"
+   ],
+   "imports": 0,
+   "usedBy": 5
+  },
+  {
+   "id": "components/SubsCalculator.js",
+   "kind": "component",
+   "lines": 138,
+   "about": "حاسبة «أنا محتاج إيه؟»: تختار احتياجاتك ومستوى استخدامك، وتطلع لك أقل مجموعة اشتراكات تغطيها",
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "components/SubsHub.js",
+   "kind": "component",
+   "lines": 179,
+   "about": "مقارن الاشتراكات + متابعة الأسعار (محفوظة على جهازك) + سجل التغيّرات",
+   "imports": 4,
+   "usedBy": 1
+  },
+  {
+   "id": "components/SubsNav.js",
+   "kind": "component",
+   "lines": 24,
+   "about": "تبويبات صفحات الاشتراكات",
+   "imports": 1,
+   "usedBy": 4
+  },
+  {
+   "id": "components/SurveyForm.js",
+   "kind": "component",
+   "lines": 71,
+   "about": "صفحة المشارك في الاستبيان: الأسئلة جاية من الرابط، والرد بيتبعت لصاحب المشروع على واتساب",
+   "hosts": [
+    "wa.me"
+   ],
+   "imports": 2,
+   "usedBy": 1
+  },
+  {
+   "id": "components/ThemeShift.js",
+   "kind": "component",
+   "lines": 37,
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "components/ToolGuide.js",
+   "kind": "component",
+   "lines": 75,
+   "exports": [
+    "howToSteps",
+    "faqFor"
+   ],
+   "imports": 2,
+   "usedBy": 1
+  },
+  {
+   "id": "components/ToolIcon.js",
+   "kind": "component",
+   "lines": 24,
+   "imports": 3,
+   "usedBy": 8
+  },
+  {
+   "id": "components/ToolPitch.js",
+   "kind": "component",
+   "lines": 28,
+   "imports": 2,
+   "usedBy": 1
+  },
+  {
+   "id": "components/ToolRunner.js",
+   "kind": "component",
+   "lines": 198,
+   "imports": 5,
+   "usedBy": 1
+  },
+  {
+   "id": "components/TryExample.js",
+   "kind": "component",
+   "lines": 15,
+   "about": "بيحط المثال في خانة الطلب فوق (ToolRunner بيسمع الحدث rs-fill)",
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "components/VisionRunner.js",
+   "kind": "component",
+   "lines": 109,
+   "about": "قارئ الصور: ارفع صورة، اسأل عنها (اختياري)، واستلم الوصف أو النص المقروء",
+   "imports": 2,
+   "usedBy": 1
+  },
+  {
+   "id": "components/agents.module.css",
+   "kind": "style",
+   "lines": 46,
+   "about": "الوكلاء */",
+   "imports": 0,
+   "usedBy": 3
+  },
+  {
+   "id": "components/alternatives.module.css",
+   "kind": "style",
+   "lines": 36,
+   "about": "صفحة البدائل المجانية (دليل أدوات عالمية) */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/amazon/CheckTool.js",
+   "kind": "component",
+   "lines": 198,
+   "about": "«فاحص الرفض»: الفحص بيشتغل فوراً في المتصفح وانت بتكتب (بالكود، من غير انتظار)، وزرار التصليح بيطلب من الموديل نسخة نضيفة، والنسخة دي بتتفحص تاني بنفس القواعد قبل ما تظهر لك.",
+   "exports": [
+    "CHECK_HANDOFF"
+   ],
+   "imports": 4,
+   "usedBy": 2
+  },
+  {
+   "id": "components/amazon/CompetitorTool.js",
+   "kind": "component",
+   "lines": 141,
+   "about": "«تحليل المنافس»: التاجر بيلصق ليستنج المنافس وتقييماته. إحنا مش بنسحب صفحات أمازون ولا بنخمّن أرقام مبيعات. كل اقتباس بيظهر كدليل بيتراجع بالكود على النص اللي لصقته، واللي مش موجود بيتشال.",
+   "imports": 4,
+   "usedBy": 1
+  },
+  {
+   "id": "components/amazon/Hub.js",
+   "kind": "component",
+   "lines": 51,
+   "about": "صفحة «أدوات أمازون»: أربع أدوات، كل واحدة بتحل مشكلة واحدة في دقيقة",
+   "exports": [
+    "AMAZON_TOOLS"
+   ],
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "components/amazon/ListingTool.js",
+   "kind": "component",
+   "lines": 171,
+   "about": "«ليستنج من وصف عامي أو صورة»: التاجر يكتب بكلامه، ونطلّع له عربي وإنجليزي جاهزين. أي ناتج بيتفحص بنفس قواعد الفاحص قبل ما يتعرض، ولو فيه مخالفة بيتصلح تلقائياً مرة.",
+   "imports": 6,
+   "usedBy": 1
+  },
+  {
+   "id": "components/amazon/ProfitTool.js",
+   "kind": "component",
+   "lines": 167,
+   "about": "«حاسبة الربح الصافي»: حساب في المتصفح بس (من غير ذكاء اصطناعي ومن غير ما حاجة تتبعت لأي سيرفر). نسب العمولة والرسوم بيكتبها التاجر من حاسبة الرسوم الرسمية في Seller Central، لأن أرقامها بتتغير حسب التصنيف والسعر والمقاس،",
+   "imports": 7,
+   "usedBy": 1
+  },
+  {
+   "id": "components/amazon/amazon.module.css",
+   "kind": "style",
+   "lines": 104,
+   "about": "أدوات أمازون: بتستخدم نفس مكونات ستوديو البيّاع (seller.module.css) وبتزود اللي ناقص */",
+   "imports": 0,
+   "usedBy": 5
+  },
+  {
+   "id": "components/amazon/icons.js",
+   "kind": "component",
+   "lines": 18,
+   "about": "أيقونات خطية بسيطة (SVG) لأدوات أمازون. بدل الإيموجي عشان الشكل يبقى ثابت على كل الأجهزة.",
+   "exports": [
+    "ICONS"
+   ],
+   "imports": 0,
+   "usedBy": 7
+  },
+  {
+   "id": "components/amazon/shared.js",
+   "kind": "component",
+   "lines": 119,
+   "about": "أجزاء مشتركة بين أدوات أمازون",
+   "exports": [
+    "MarketChips",
+    "Meter",
+    "StatusBanner",
+    "IssueList",
+    "CopyBlock",
+    "ListingView"
+   ],
+   "imports": 6,
+   "usedBy": 4
+  },
+  {
+   "id": "components/brand.module.css",
+   "kind": "style",
+   "lines": 33,
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/chat.module.css",
+   "kind": "style",
+   "lines": 721,
+   "about": "الشات الرئيسي — هادي ومنمق: الرد نص مريح من غير كروت، ورسالة المستخدم فقاعة هادية، وخانة كتابة بيضا */",
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "components/compare.module.css",
+   "kind": "style",
+   "lines": 90,
+   "about": "مقارنة الموديلات: نفس لغة الموقع (كروت بيضا بحواف واضحة) */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/creators.module.css",
+   "kind": "style",
+   "lines": 53,
+   "about": "صناع المحتوى */",
+   "imports": 0,
+   "usedBy": 3
+  },
+  {
+   "id": "components/directory.module.css",
+   "kind": "style",
+   "lines": 87,
+   "about": "دليل «أدوات عالمية» */",
+   "imports": 0,
+   "usedBy": 13
+  },
+  {
+   "id": "components/external.module.css",
+   "kind": "style",
+   "lines": 72,
+   "about": "زراير المواقع الخارجية وأدلة الأدوات */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/feasibility.module.css",
+   "kind": "style",
+   "lines": 198,
+   "about": "الباحث التجاري: مبني على ستايل الباحث الأكاديمي */",
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "components/flow.module.css",
+   "kind": "style",
+   "lines": 78,
+   "about": "المهام الكاملة */",
+   "imports": 0,
+   "usedBy": 3
+  },
+  {
+   "id": "components/fx/RevealOnScroll.js",
+   "kind": "component",
+   "lines": 28,
+   "about": "ظهور هادي للأقسام اللي تحت الشاشة (فكرة AnimatedContent في ReactBits، من غير GSAP): مراقب واحد (IntersectionObserver) لكل الصفحة، والحركة opacity وtransform بس (على كرت الرسوميات، من غير إعادة رسم). الأقسام اللي ظاهرة أص",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/fx/SpotRoot.js",
+   "kind": "component",
+   "lines": 38,
+   "about": "نور بيتبع الماوس على الكروت. فكرته من SpotlightCard في ReactBits، بس بتنفيذ أخف بكتير: المكتبة الأصلية بتركّب 5 مستمعين على window وdocument «لكل كارت» وبتحسب مكانه كل إطار، يعني 200 كارت = 1000 مستمع. هنا مستمع واحد على",
+   "exports": [
+    "Glow"
+   ],
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "components/glyphs.js",
+   "kind": "component",
+   "lines": 43,
+   "about": "أيقونات خطية موحدة (24×24، خط 1.6) للمساعدين والبرامج — نفس السُمك ونفس الطابع في كل الموقع",
+   "exports": [
+    "GLYPHS",
+    "Glyph"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/home.module.css",
+   "kind": "style",
+   "lines": 376,
+   "about": "الصفحة الرئيسية — مساحة العمل */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/lab/AdComp.js",
+   "kind": "component",
+   "lines": 183,
+   "about": "فيديو إعلان من صورة المنتج: تعريف ← مميزات ← عرض ← دعوة للشراء. التصدير بيتم في متصفح العميل. المُصدّر بيدعم مجموعة محدودة من CSS، فبنستخدم div وgradient وأبعاد صريحة بس (من غير filter ولا object-fit).",
+   "exports": [
+    "FPS",
+    "FORMATS",
+    "planScenes",
+    "sceneFrames",
+    "totalFrames",
+    "AdComp"
+   ],
+   "imports": 1,
+   "usedBy": 2
+  },
+  {
+   "id": "components/lab/FactoryComp.js",
+   "kind": "component",
+   "lines": 76,
+   "about": "مصنع الفيديو: كل مشهد = فيديو خلفية + تعليق صوتي + كلام مكتوب. التصدير بيتم في متصفح العميل.",
+   "exports": [
+    "sceneFrames",
+    "totalFrames",
+    "FactoryComp"
+   ],
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "components/lab/ProductAd.js",
+   "kind": "component",
+   "lines": 266,
+   "about": "فيديو إعلان من صورة المنتج: صور + بيانات ← معاينة ← (تعليق صوتي اختياري) ← تصدير. كله على جهاز العميل.",
+   "imports": 6,
+   "usedBy": 1
+  },
+  {
+   "id": "components/lab/ReelComp.js",
+   "kind": "component",
+   "lines": 234,
+   "about": "ريلز بـ Remotion: 6 تصاميم (layouts) × ألوان. التصدير بيتم في متصفح العميل. المُصدّر بيدعم مجموعة محدودة من HTML/CSS، فبنستخدم div وgradient وtransform بس، والكلام العربي بيترسم الأول على كانفاس المتصفح (بيشكّله صح) وبنح",
+   "exports": [
+    "FPS",
+    "SIZE",
+    "THEMES",
+    "toLines",
+    "lineImage",
+    "Line",
+    "ReelComp"
+   ],
+   "imports": 0,
+   "usedBy": 6
+  },
+  {
+   "id": "components/lab/RemotionLoader.js",
+   "kind": "component",
+   "lines": 6,
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "components/lab/RemotionReel.js",
+   "kind": "component",
+   "lines": 141,
+   "about": "تجربة: ريلز بـ Remotion. المعاينة بالـ Player، والتصدير بيتم في متصفح العميل (WebCodecs) من غير أي سيرفر.",
+   "imports": 5,
+   "usedBy": 2
+  },
+  {
+   "id": "components/lab/VideoFactory.js",
+   "kind": "component",
+   "lines": 281,
+   "about": "مصنع الفيديو: فكرة ← سكريبت ← صوت ← فيديوهات ← معاينة ← تصدير. كله بيتصدّر عند العميل (ما فيش Render على السيرفر).",
+   "hosts": [
+    "resembleai-chatterbox-multilingual-tts.hf.space",
+    "www.pexels.com"
+   ],
+   "imports": 6,
+   "usedBy": 1
+  },
+  {
+   "id": "components/lab/ad.module.css",
+   "kind": "style",
+   "lines": 15,
+   "about": "فيديو إعلان من صورة المنتج */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/lab/factory.module.css",
+   "kind": "style",
+   "lines": 36,
+   "about": "مصنع الفيديو: معاينة فوق، وخط زمني تحتها (زي CapCut) */",
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "components/lab/templates.js",
+   "kind": "component",
+   "lines": 12,
+   "about": "قايمة القوالب (بيانات بس، من غير كود تقيل). كل قالب = تصميم (layout) + مثال جاهز.",
+   "exports": [
+    "TEMPLATES",
+    "getTemplate"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/learn.module.css",
+   "kind": "style",
+   "lines": 37,
+   "imports": 0,
+   "usedBy": 3
+  },
+  {
+   "id": "components/library.module.css",
+   "kind": "style",
+   "lines": 87,
+   "about": "مكتبة الأدوات */",
+   "imports": 0,
+   "usedBy": 5
+  },
+  {
+   "id": "components/maker.module.css",
+   "kind": "style",
+   "lines": 46,
+   "about": "صانع الصور والفيديو */",
+   "imports": 0,
+   "usedBy": 6
+  },
+  {
+   "id": "components/models.module.css",
+   "kind": "style",
+   "lines": 130,
+   "about": "معرض الموديلات والبرامج — كروت بيضا بلوجو الشركة واسم البرنامج (زي Poe) */",
+   "imports": 0,
+   "usedBy": 6
+  },
+  {
+   "id": "components/my-tools.module.css",
+   "kind": "style",
+   "lines": 50,
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/nav.module.css",
+   "kind": "style",
+   "lines": 50,
+   "about": "شريط التنقل السفلي — زي تطبيقات الموبايل */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/program.module.css",
+   "kind": "style",
+   "lines": 32,
+   "about": "صفحة البرنامج بالعربي */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/projects/ProjectWorkspace.js",
+   "kind": "component",
+   "lines": 384,
+   "about": "مشروع مفتوح: صفحة المشروع (الملفات والتعليمات والمحادثات) والشات نفسه، وكل محادثة فاكرة الملفات والتعليمات",
+   "imports": 7,
+   "usedBy": 1
+  },
+  {
+   "id": "components/projects/ProjectsHome.js",
+   "kind": "component",
+   "lines": 82,
+   "about": "صفحة «المشاريع»: مشاريعك اللي على الجهاز، وقوالب جاهزة تبدأ منها",
+   "imports": 4,
+   "usedBy": 1
+  },
+  {
+   "id": "components/projects/projects.module.css",
+   "kind": "style",
+   "lines": 197,
+   "about": "المشاريع: نفس لغة الموقع (كروت بيضا بحواف واضحة، أصفر وأزرق، خط إسكندرية للعناوين) */",
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "components/projects/time.js",
+   "kind": "component",
+   "lines": 25,
+   "about": "«من ساعتين» و«3 ملفات» بالمصري",
+   "exports": [
+    "ago",
+    "countLabel"
+   ],
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "components/prompts.module.css",
+   "kind": "style",
+   "lines": 40,
+   "about": "مكتبة البرومبتات */",
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "components/prompts/Builder.js",
+   "kind": "component",
+   "lines": 309,
+   "about": "مولّد البرومبتات: ابنِ بنفسك (فوري) · ولّد لي أفكار (من 10 لـ 100) · حسّن برومبتي · برومبتاتي",
+   "exports": [
+    "IMPROVE_HANDOFF"
+   ],
+   "imports": 4,
+   "usedBy": 2
+  },
+  {
+   "id": "components/prompts/builder.module.css",
+   "kind": "style",
+   "lines": 84,
+   "about": "مولّد البرومبتات */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/research.module.css",
+   "kind": "style",
+   "lines": 83,
+   "about": "الباحث الأكاديمي: نفس لغة الموقع (كروت بيضا بحواف ناعمة) */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/scam.module.css",
+   "kind": "style",
+   "lines": 94,
+   "about": "كاشف النصب: فورم أبيض بحدود حبر، وتقرير بيبدأ بكارت ليل فيه الدرجة */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/seller/AdPack.js",
+   "kind": "component",
+   "lines": 71,
+   "about": "عرض «باكدج الإعلان»: بوست لكل منصة في تبويب، ونسخ بضغطة، وإرسال واتساب، واختبار على 100 زبون",
+   "hosts": [
+    "wa.me"
+   ],
+   "exports": [
+    "packText"
+   ],
+   "imports": 5,
+   "usedBy": 2
+  },
+  {
+   "id": "components/seller/Catalog.js",
+   "kind": "component",
+   "lines": 368,
+   "about": "«كتالوجك في دقيقة»: صور المنتجات ← كتالوج PDF شيك بزراير طلب واتساب حقيقية، وصور للحالة، وكتالوج نصي. كل حاجة بتتحفظ على جهاز البياع، فيرجع يكمّل أو يحدّث الأسعار في أي وقت.",
+   "imports": 7,
+   "usedBy": 1
+  },
+  {
+   "id": "components/seller/PhotoAd.js",
+   "kind": "component",
+   "lines": 417,
+   "about": "«صوّرها بموبايلك.. وخد إعلان كامل» صورة عادية من الموبايل ← الخلفية بتتشال على الجهاز + الذكاء الاصطناعي بيتعرّف على المنتج ← 6 صور شكل الاستوديو (ومشهد بالذكاء الاصطناعي لو حب) ← بوستات لكل منصة ← فيديو 15 ثانية.",
+   "imports": 9,
+   "usedBy": 1
+  },
+  {
+   "id": "components/seller/PhotoAdVideo.js",
+   "kind": "component",
+   "lines": 103,
+   "about": "فيديو إعلان 15 ثانية من صور المنتج والكلام اللي اتكتب (Remotion). المعاينة والتصدير على جهاز العميل.",
+   "imports": 5,
+   "usedBy": 1
+  },
+  {
+   "id": "components/seller/Receipt.js",
+   "kind": "component",
+   "lines": 324,
+   "about": "«كشف حساب اشتراكاتك»: اختار اللي بتدفعه، وخد إيصال بيطبع قدامك بالإجمالي واللي بيضيع وتوفيرك في السنة، وشاركه ستوري.",
+   "hosts": [
+    "wa.me"
+   ],
+   "imports": 9,
+   "usedBy": 1
+  },
+  {
+   "id": "components/seller/SellerHero.js",
+   "kind": "component",
+   "lines": 34,
+   "about": "رأس صفحات «ستوديو البيّاع»: سما ليل بعرض الشاشة، عنوان كبير، وخطوات قصيرة",
+   "imports": 1,
+   "usedBy": 12
+  },
+  {
+   "id": "components/seller/Showcase.js",
+   "kind": "component",
+   "lines": 100,
+   "about": "كروت «ستوديو البيّاع»: في الرئيسية (شريط) وفي صفحة الستوديو (كبيرة بالتفاصيل)",
+   "exports": [
+    "FEATURES",
+    "RECEIPT",
+    "AMAZON",
+    "ShowcaseStrip",
+    "ShowcaseFull"
+   ],
+   "imports": 2,
+   "usedBy": 2
+  },
+  {
+   "id": "components/seller/TestAd.js",
+   "kind": "component",
+   "lines": 535,
+   "about": "«جرّب إعلانك على 100 زبون قبل ما تصرف جنيه» الإعلان بيتعرض على 10 شخصيات مصرية (كل شخصية شريحة من 100)، التعليقات بتظهر واحدة ورا التانية زي فيسبوك، وبعدها الدرجة وشبكة الـ100 زبون واللي هيطلب واللي عدّى، والاعتراضات وال",
+   "hosts": [
+    "wa.me"
+   ],
+   "imports": 6,
+   "usedBy": 1
+  },
+  {
+   "id": "components/seller/VoicePost.js",
+   "kind": "component",
+   "lines": 270,
+   "about": "«اتكلم بس.. واحنا نكتب»: البياع بيسجّل فويس بالمصري عن منتجه (أو يرفع فويس من واتساب)، الكلام بيظهر وهو بيتكلم (لو المتصفح بيدعم)، وبعدين بيتفرّغ بدقة، ويتحوّل لبوستات لكل منصة.",
+   "imports": 4,
+   "usedBy": 1
+  },
+  {
+   "id": "components/seller/catalog.module.css",
+   "kind": "style",
+   "lines": 57,
+   "about": "«كتالوجك في دقيقة» */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/seller/catalogPdf.js",
+   "kind": "component",
+   "lines": 59,
+   "about": "تحويل صفحات الكتالوج (كانفاس) لملف PDF، وكل زرار «اطلب» بيبقى لينك واتساب حقيقي جوه الملف",
+   "hosts": [
+    "cdn.jsdelivr.net"
+   ],
+   "exports": [
+    "buildPdf",
+    "pageImages",
+    "makeQr"
+   ],
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "components/seller/catalogRender.js",
+   "kind": "component",
+   "lines": 324,
+   "about": "رسم صفحات الكتالوج على الكانفاس (عشان العربي يطلع مظبوط في الـ PDF والصور)، وبيرجّع أماكن زراير الطلب عشان تتحول لينكات واتساب جوه الـ PDF.",
+   "hosts": [
+    "wa.me"
+   ],
+   "exports": [
+    "THEMES",
+    "LAYOUTS",
+    "waLink",
+    "renderCover",
+    "renderProducts",
+    "renderHowTo",
+    "renderCatalog"
+   ],
+   "imports": 1,
+   "usedBy": 2
+  },
+  {
+   "id": "components/seller/photoad.module.css",
+   "kind": "style",
+   "lines": 112,
+   "about": "«صوّرها بموبايلك» + باكدج الإعلان + الفيديو */",
+   "imports": 0,
+   "usedBy": 3
+  },
+  {
+   "id": "components/seller/receipt.module.css",
+   "kind": "style",
+   "lines": 109,
+   "about": "«كشف حساب اشتراكاتك»: إيصال حراري بيطبع قدامك */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/seller/scenes.js",
+   "kind": "component",
+   "lines": 368,
+   "about": "مشاهد تصوير المنتج: المنتج بعد ما خلفيته اتشالت بيتحط في مشهد مرسوم بالكود (ضوء، ظل، انعكاس، بوديوم). كله على جهاز العميل وببلاش، والمنتج نفسه بيفضل زي ما هو بالظبط (مفيش ذكاء اصطناعي بيغيّر شكله).",
+   "exports": [
+    "FORMATS",
+    "SCENES",
+    "renderScene"
+   ],
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "components/seller/seller.module.css",
+   "kind": "style",
+   "lines": 183,
+   "about": "ستوديو البيّاع: نفس لغة الموقع (ليل ونهار، أصفر وأزرق، خط إسكندرية للعناوين) */",
+   "imports": 0,
+   "usedBy": 15
+  },
+  {
+   "id": "components/seller/showcase.module.css",
+   "kind": "style",
+   "lines": 54,
+   "about": "كروت ستوديو البيّاع */",
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "components/seller/testad.module.css",
+   "kind": "style",
+   "lines": 160,
+   "about": "«جرّب إعلانك على 100 زبون» */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/seller/voice.module.css",
+   "kind": "style",
+   "lines": 40,
+   "about": "«اتكلم بس.. واحنا نكتب» */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/share.module.css",
+   "kind": "style",
+   "lines": 101,
+   "about": "شريط المشاركة",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/sourcechat.module.css",
+   "kind": "style",
+   "lines": 43,
+   "about": "الشات المتخصص (أكاديمي / تجاري): نفس هدوء الشات الرئيسي */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/sourcemap.module.css",
+   "kind": "style",
+   "lines": 67,
+   "about": "خريطة المصادر في الباحث الأكاديمي */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/AdLibrary.js",
+   "kind": "component",
+   "lines": 84,
+   "about": "جزء «Adspy عربي»: يفتح مكتبات الإعلانات الرسمية بكلمة البحث والدولة، وبعدين المستخدم يلصق الإعلان اللي عجبه في الخانة اللي تحت عشان يتحلل.",
+   "hosts": [
+    "ads.tiktok.com",
+    "adstransparency.google.com",
+    "www.facebook.com",
+    "www.linkedin.com"
+   ],
+   "exports": [
+    "libraryLinks"
+   ],
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/AiRemoveBg.js",
+   "kind": "component",
+   "lines": 116,
+   "about": "إزالة الخلفية بالذكاء الاصطناعي، على جهاز الزائر بالكامل (Transformers.js في المتصفح). مفيش سيرفر ومفيش مفتاح ومفيش حد: الموديل بيتحمّل مرة واحدة وبعدها بيفضل في كاش المتصفح. الموديل: BiRefNet lite (رخصة MIT، مسموح تجاري",
+   "imports": 4,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/Apps.js",
+   "kind": "component",
+   "lines": 79,
+   "about": "برامج تصميم أونلاين: بدائل مجانية أو فيها خطة مجانية لبرامج أدوبي. بتفتح في صفحة جديدة، والمستخدم بيدخل بحسابه هو هناك.",
+   "hosts": [
+    "clipchamp.com",
+    "new.express.adobe.com",
+    "www.canva.com",
+    "www.capcut.com",
+    "www.figma.com",
+    "www.ilovepdf.com",
+    "www.photopea.com",
+    "www.remove.bg",
+    "www.vectorpea.com"
+   ],
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/Batch.js",
+   "kind": "component",
+   "lines": 156,
+   "about": "ضغط الصور وتحويل صيغتها: كذا صورة مرة واحدة",
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/Calcs.js",
+   "kind": "component",
+   "lines": 300,
+   "about": "حاسبات وأدوات نصوص عربية: كلها بتشتغل على جهازك من غير سيرفر ومن غير ذكاء اصطناعي.",
+   "imports": 4,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/Colors.js",
+   "kind": "component",
+   "lines": 121,
+   "about": "ألوان من صورة: استخراج أهم ألوان أي صورة بأكوادها",
+   "exports": [
+    "extractPalette"
+   ],
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/Enhance.js",
+   "kind": "component",
+   "lines": 18,
+   "about": "تحسين وتكبير أي صورة: ارفع صورة باهتة أو صغيرة، كثّف ألوانها وكبّرها بجودة أعلى. بيشتغل على جهازك.",
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/ImageEnhancer.js",
+   "kind": "component",
+   "lines": 200,
+   "about": "تحسين صورة بعد التوليد: كثافة ألوان، حدّة، وتكبير لدقة أعلى. كله بيشتغل على جهازك. المعاينة بتتعمل على نسخة صغيرة (سريعة)، والتطبيق الكامل بيشتغل على الصورة بحجمها الأصلي ثم بيكبّرها.",
+   "imports": 3,
+   "usedBy": 3
+  },
+  {
+   "id": "components/studio/LocalTool.js",
+   "kind": "component",
+   "lines": 93,
+   "about": "بيختار أداة الاستوديو المناسبة. كل أداة بتتحمل لوحدها عشان الصفحة تفضل خفيفة.",
+   "imports": 24,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/LogoStudio.js",
+   "kind": "component",
+   "lines": 374,
+   "about": "مولّد لوجو: اكتب اسمك ونشاطك ← 8 تصميمات مقترحة ← عدّل الرمز والألوان والخط والتركيب ← نزّل SVG وPNG وصورة بروفايل. الرسم بيتم على جهازك. بس فهم النشاط واقتراح الشعارات بيتم بالذكاء الاصطناعي.",
+   "imports": 7,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/LongTranscribe.js",
+   "kind": "component",
+   "lines": 214,
+   "about": "تفريغ التسجيلات الطويلة (لحد حوالي ساعة): محاضرة، اجتماع، بودكاست، مقابلة. المتصفح بيفك الصوت ويحوّله مونو 16 كيلوهرتز ويقسمه أجزاء عند لحظات السكوت، وكل جزء بيتفرّغ على السيرفر بأسماء المتكلمين والتوقيت. الملف الأصلي ما",
+   "imports": 4,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/Ocr.js",
+   "kind": "component",
+   "lines": 76,
+   "about": "استخراج نص من صورة (OCR): الصورة بتتصغّر على جهازك وبتتبعت لقارئ الصور عشان يرجّع النص، ومبتتحفظش.",
+   "imports": 4,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/Pdf.js",
+   "kind": "component",
+   "lines": 332,
+   "about": "أدوات PDF: صور إلى PDF، دمج، وتقسيم. كله على جهاز المستخدم بمكتبة pdf-lib.",
+   "exports": [
+    "parseRanges"
+   ],
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/PhotoEditor.js",
+   "kind": "component",
+   "lines": 259,
+   "about": "محرر الصور: بديل خفيف لفوتوشوب. إضاءة وألوان وفلاتر وقص وتدوير، وكله على جهاز المستخدم.",
+   "exports": [
+    "render"
+   ],
+   "imports": 4,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/Podcast.js",
+   "kind": "component",
+   "lines": 215,
+   "about": "بودكاست بصوتين: موضوع أو نص ← سكربت حوار تقدر تعدّله ← صوت بمذيعين ← تشغيل وتحميل. الصوت بيتعمل على أجزاء صغيرة، ولو جزء وقع تقدر تكمّل من نفس المكان من غير ما تعيد اللي خلص.",
+   "imports": 4,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/Poster.js",
+   "kind": "component",
+   "lines": 321,
+   "about": "مصمم البوستات: بديل سريع لكانفا. مقاس، قالب ألوان، كلامك، وتحميل.",
+   "exports": [
+    "drawPoster"
+   ],
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/QrStudio.js",
+   "kind": "component",
+   "lines": 256,
+   "about": "مولد QR كامل: رابط، واتساب برسالة جاهزة، نص، تليفون، إيميل، واي فاي، كارت شخصي. ألوان، شكل النقاط، لوجو في النص، تصحيح أخطاء، وتحميل PNG أو SVG. كله بيشتغل على جهازك.",
+   "hosts": [
+    "cdn.jsdelivr.net"
+   ],
+   "imports": 5,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/RemoveBg.js",
+   "kind": "component",
+   "lines": 226,
+   "about": "إزالة الخلفية السادة: بتدوس على لون الخلفية، والأداة بتشيله من الأطراف لجوه. بتشتغل أحسن مع صور المنتجات واللوجوهات والصور اللي خلفيتها لون واحد.",
+   "hosts": [
+    "www.remove.bg"
+   ],
+   "exports": [
+    "removeBackground"
+   ],
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/Resize.js",
+   "kind": "component",
+   "lines": 184,
+   "about": "تغيير مقاس الصور بمقاسات السوشيال ميديا الجاهزة أو مقاس حر",
+   "exports": [
+    "SIZE_PRESETS",
+    "draw"
+   ],
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/Speak.js",
+   "kind": "component",
+   "lines": 623,
+   "about": "مولد الأصوات والكتاب المسموع: نص أو كتاب كامل يتحوّل لصوت عربي بثلاث لهجات، ذكر وأنثى، بنبرات مختلفة، مع مؤثرات ومزيكا خلفية. الكتاب بيتقسّم فقرات والمتصفح بيطلبها واحدة واحدة، فالسماع بيبدأ في ثواني.",
+   "imports": 9,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/SpeakCompare.js",
+   "kind": "component",
+   "lines": 105,
+   "about": "مقارنة الأصوات: نفس الجملة بنفس اللهجة والنوع والنبرة على ثلاثة محركات، عشان الزائر يسمع الفرق بنفسه ويختار.",
+   "hosts": [
+    "resembleai-chatterbox-multilingual-tts.hf.space"
+   ],
+   "imports": 4,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/VideoFrame.js",
+   "kind": "component",
+   "lines": 91,
+   "about": "صورة من الفيديو: اختار اللحظة ونزّلها صورة بجودة الفيديو الأصلية",
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/VideoMaker.js",
+   "kind": "component",
+   "lines": 605,
+   "about": "صانع الفيديو: الفيديو بيترسم جوه متصفح المستخدم، فمفيش أي تكلفة ولا حد للعدد. 3 أوضاع: ai (الذكاء الاصطناعي بيكتب المشاهد)، text (كلام متحرك)، photos (فيديو من الصور).",
+   "exports": [
+    "parseScript",
+    "renderFrame"
+   ],
+   "imports": 4,
+   "usedBy": 2
+  },
+  {
+   "id": "components/studio/Watermark.js",
+   "kind": "component",
+   "lines": 167,
+   "about": "العلامة المائية: اسمك أو لوجوك على صورة أو كذا صورة مرة واحدة",
+   "exports": [
+    "stamp"
+   ],
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/audio.module.css",
+   "kind": "style",
+   "lines": 63,
+   "about": "البودكاست بصوتين والتفريغ الطويل */",
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "components/studio/cutout.js",
+   "kind": "component",
+   "lines": 276,
+   "about": "إزالة الخلفية بالذكاء الاصطناعي (BiRefNet، رخصة MIT) بطريقتين: 1) على سيرفر Hugging Face بحصة الزائر نفسه المجانية (زي مولّد الصور): بتشتغل على أي موبايل في 3-5 ثواني 2) على جهاز الزائر (Transformers.js): الصورة ما بتطلع",
+   "hosts": [
+    "cdn.jsdelivr.net",
+    "not-lain-background-removal.hf.space",
+    "zhengpeng7-birefnet-demo.hf.space"
+   ],
+   "exports": [
+    "CLOUD_BUDGET_MS",
+    "CLOUD_PER_SPACE_MS",
+    "DEVICE_BUDGET_MS",
+    "DEVICE_BUDGET_PHONE_MS",
+    "isPhone",
+    "raceAbort",
+    "getSegmenter",
+    "progressTracker",
+    "cutoutCanvas",
+    "cutoutCloud",
+    "removeBackground",
+    "trimAlpha"
+   ],
+   "imports": 1,
+   "usedBy": 3
+  },
+  {
+   "id": "components/studio/logo.module.css",
+   "kind": "style",
+   "lines": 91,
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/pixels.js",
+   "kind": "component",
+   "lines": 77,
+   "about": "تعديل ألوان الصورة بكسل بكسل. بنعملها بنفسنا بدل فلاتر المتصفح عشان النتيجة تطلع واحدة على كل المتصفحات (سفاري قديماً مكانش بيدعم فلاتر الكانفاس).",
+   "exports": [
+    "NEUTRAL",
+    "isNeutral",
+    "applyAdjust",
+    "canBlur"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "components/studio/studio.module.css",
+   "kind": "style",
+   "lines": 316,
+   "about": "استوديو التصميم — نفس روح الموقع: أسطح شفافة، حواف شعرة، وخط خفيف */",
+   "imports": 0,
+   "usedBy": 4
+  },
+  {
+   "id": "components/studio/ui.js",
+   "kind": "component",
+   "lines": 150,
+   "about": "عناصر الواجهة المشتركة لأدوات الاستوديو",
+   "exports": [
+    "Drop",
+    "Range",
+    "Seg",
+    "ColorField",
+    "TextField",
+    "Workbench",
+    "Note",
+    "Busy"
+   ],
+   "imports": 1,
+   "usedBy": 22
+  },
+  {
+   "id": "components/studio/util.js",
+   "kind": "component",
+   "lines": 172,
+   "about": "أدوات مشتركة لكل أدوات الاستوديو. كله بيشتغل جوه المتصفح، ومفيش أي ملف بيترفع لأي سيرفر.",
+   "exports": [
+    "IMAGE_TYPES",
+    "FORMATS",
+    "loadImage",
+    "makeCanvas",
+    "canvasToBlob",
+    "extFor",
+    "baseName",
+    "download",
+    "downloadAll",
+    "formatBytes",
+    "fitWithin",
+    "clamp",
+    "hex",
+    "hexToRgb",
+    "readableOn",
+    "siteFont",
+    "ensureFont",
+    "wrapLines",
+    "checker",
+    "readBytes"
+   ],
+   "imports": 0,
+   "usedBy": 21
+  },
+  {
+   "id": "components/subs.module.css",
+   "kind": "style",
+   "lines": 134,
+   "about": "صفحات الاشتراكات: المقارن، الحاسبة، كاشف النصب */",
+   "imports": 0,
+   "usedBy": 3
+  },
+  {
+   "id": "components/survey.module.css",
+   "kind": "style",
+   "lines": 19,
+   "about": "صفحة الاستبيان للمشارك */",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/agents.js",
+   "kind": "lib",
+   "lines": 106,
+   "about": "«الوكلاء»: مهام بخطوات متعددة بتشتغل على السيرفر (تخطيط ← بحث ← قراءة مصادر ← كتابة) إضافة وكيل جديد = إضافة عنصر هنا بس. الموديلات والمفاتيح بتيجي من lib/groq.js (أي موديل جديد بيتضاف هناك يوصل للوكلاء تلقائي)",
+   "exports": [
+    "AGENTS",
+    "getAgent"
+   ],
+   "imports": 0,
+   "usedBy": 4
+  },
+  {
+   "id": "lib/aibg.js",
+   "kind": "lib",
+   "lines": 37,
+   "about": "خلفية تصوير بالذكاء الاصطناعي (فاضية من غير منتج) عشان المنتج الحقيقي يتحط عليها. الرسم على Hugging Face بحصة الزائر نفسه، ولو مشغول بنروح لمولّد السيرفر الاحتياطي (/api/image).",
+   "hosts": [
+    "black-forest-labs-flux-1-schnell.hf.space"
+   ],
+   "exports": [
+    "aiBackground"
+   ],
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/alternatives.js",
+   "kind": "lib",
+   "lines": 196,
+   "about": "بدائل مجانية لأشهر الأدوات المدفوعة (صفحة في دليل «أدوات عالمية»، والكلمة «مجاني» مسموحة هنا بس) اتراجعت يدوياً في 4 نوفمبر 2026. الأسعار بالدولار في الشهر لو الدفع شهري، ومن مصادر منشورة؛ لو السعر مش مؤكد مش بنكتبه. kin",
+   "hosts": [
+    "analytics.google.com",
+    "answersocrates.com",
+    "business.facebook.com",
+    "buzzsumo.com",
+    "chatgpt.com",
+    "clarity.microsoft.com",
+    "clickup.com",
+    "docs.google.com",
+    "elevenlabs.io",
+    "firefly.adobe.com",
+    "gamma.app",
+    "huggingface.co",
+    "ideogram.ai",
+    "inkscape.org",
+    "knowlify.com",
+    "languagetool.org",
+    "leonardo.ai",
+    "mailchimp.com",
+    "murf.ai",
+    "neilpatel.com",
+    "obsidian.md",
+    "pictory.ai",
+    "quillbot.com",
+    "runwayml.com",
+    "search.google.com",
+    "seranking.com",
+    "sites.google.com",
+    "slides.google.com",
+    "translate.google.com",
+    "trello.com"
+   ],
+   "exports": [
+    "ALT_UPDATED_AR",
+    "KIND",
+    "ALTERNATIVES"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/amazon.js",
+   "kind": "lib",
+   "lines": 269,
+   "about": "أدوات أمازون: القواعد المشتركة بين الصفحات والسيرفر. الفحص هنا بالكود (مش بالذكاء الاصطناعي) عشان النتيجة تبقى ثابتة وتتكرر بنفس الشكل كل مرة. ملحوظة مهمة: أمازون ما بتنشرش قايمة رسمية كاملة بالكلمات الممنوعة، والقوايم ه",
+   "exports": [
+    "MARKETS",
+    "LIMITS",
+    "FIELD_LABEL",
+    "LEVEL_LABEL",
+    "normAr",
+    "utf8Bytes",
+    "trimToBytes",
+    "newNumbers",
+    "checkListing",
+    "computeProfit"
+   ],
+   "imports": 0,
+   "usedBy": 5
+  },
+  {
+   "id": "lib/amazonapi.js",
+   "kind": "lib",
+   "lines": 22,
+   "about": "مساعدات مشتركة لـ API أدوات أمازون (على السيرفر بس)",
+   "exports": [
+    "marketKey",
+    "timedAsk",
+    "cleanText"
+   ],
+   "imports": 2,
+   "usedBy": 3
+  },
+  {
+   "id": "lib/amazonprompts.js",
+   "kind": "lib",
+   "lines": 302,
+   "about": "منطق أدوات أمازون اللي بيستخدم الموديل: البرومبتات + تنظيف المخرجات + التحقق منها بالكود. الملف ده من غير أي اتصال بالشبكة: الموديل بيتبعت له كدالة `ask` من الـ API route، فنقدر نختبره بموديل وهمي. القاعدة: الموديل بيقتر",
+   "exports": [
+    "fixSystemPrompt",
+    "normalizeFix",
+    "runCheck",
+    "listingSystemPrompt",
+    "normalizeListingGen",
+    "runListing",
+    "competitorSystemPrompt",
+    "normalizeCompetitor",
+    "runCompetitor"
+   ],
+   "imports": 1,
+   "usedBy": 3
+  },
+  {
+   "id": "lib/ambience.js",
+   "kind": "lib",
+   "lines": 242,
+   "about": "مؤثرات صوتية ومزيكا خلفية بتتولّد بالكود نفسه (مطر، رياح، موج، نار، ليل، مزيكا هادية)، من غير أي ملفات خارجية ولا مشاكل حقوق. كل نوع بيرجّع مقطع قصير بيتكرر من غير فاصل ملحوظ، والواجهة بتشغّله في حلقة تحت الصوت أو بتدمجه",
+   "exports": [
+    "AMBIENCE",
+    "AMBIENCE_KINDS",
+    "renderAmbience",
+    "encodeWav"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/answerimage.js",
+   "kind": "lib",
+   "lines": 165,
+   "about": "«صورة للإجابة»: بيرسم السؤال والرد في صورة PNG مرتبة (زي سكرين شوت نضيف) عشان العميل يحفظها أو يشاركها. الرسم على canvas مباشرة بالعربي (من اليمين للشمال)، فمش محتاج أي مكتبة.",
+   "exports": [
+    "answerToPng",
+    "shareOrDownload"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/answeropts.js",
+   "kind": "lib",
+   "lines": 67,
+   "about": "«خيارات الإجابة» (الزرار الأزرق فوق الشات): لمين الإجابة، وإيه الإضافات اللي العميل عايزها. نفس الملف بيستخدمه المتصفح (الواجهة) والسيرفر (تعليمات الموديل) عشان القيم تفضل سليمة.",
+   "exports": [
+    "LEVELS",
+    "EXTRAS",
+    "DEFAULT_OPTS",
+    "DISCUSS_HEAD",
+    "cleanOpts",
+    "optsNeedWeb",
+    "optsCount",
+    "optsBlock",
+    "splitDiscuss"
+   ],
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "lib/answerstyle.js",
+   "kind": "lib",
+   "lines": 15,
+   "about": "دليل أسلوب الردود. بيتحط في تعليمات الشات العادي ودمج النماذج وإجابات البحث. الهدف: رد منظم وفيه محتوى حقيقي (عناصر وأفكار واضحة)، ومقروء على الموبايل، من غير حشو ولا زحمة.",
+   "exports": [
+    "ANSWER_STYLE"
+   ],
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "lib/apps.js",
+   "kind": "lib",
+   "lines": 338,
+   "about": "برامج الذكاء الاصطناعي المشهورة (70 برنامج): كل برنامج بلوجو شركته واسمه، وليه صفحة عربي جوه الموقع /program/[key] فيها: بيعمل إيه، ينفع في إيه، المجاني والمدفوع (لو اتأكدنا منه)، وبدائل، وزرار يفتح الموقع الرسمي. اللوجو",
+   "hosts": [
+    "aistudio.google.com",
+    "bfl.ai",
+    "chat.deepseek.com",
+    "chat.mistral.ai",
+    "chat.qwen.ai",
+    "chat.z.ai",
+    "chatgpt.com",
+    "claude.ai",
+    "cline.bot",
+    "clipchamp.com",
+    "clipdrop.co",
+    "colab.research.google.com",
+    "copilot.microsoft.com",
+    "cursor.com",
+    "designer.microsoft.com",
+    "devin.ai",
+    "elevenlabs.io",
+    "firefly.adobe.com",
+    "fish.audio",
+    "gemini.google.com",
+    "github.com",
+    "grok.com",
+    "hailuoai.video",
+    "huggingface.co",
+    "ideogram.ai",
+    "klingai.com",
+    "leonardo.ai",
+    "lovable.dev",
+    "ltx.studio",
+    "lumalabs.ai"
+   ],
+   "exports": [
+    "APP_SECTIONS",
+    "FREE_NOTE",
+    "APPS",
+    "getApp",
+    "altsFor"
+   ],
+   "imports": 0,
+   "usedBy": 8
+  },
+  {
+   "id": "lib/arcalc.js",
+   "kind": "lib",
+   "lines": 226,
+   "about": "منطق الحاسبات والتحويلات العربية (من غير واجهة، عشان يتجرب لوحده)",
+   "exports": [
+    "latinDigits",
+    "num",
+    "fmt",
+    "percentOf",
+    "whatPercent",
+    "changePercent",
+    "NISAB_GOLD_GRAMS",
+    "NISAB_SILVER_GRAMS",
+    "ZAKAT_RATE",
+    "zakat",
+    "hourlyRate",
+    "HIJRI_MONTHS",
+    "GREG_MONTHS",
+    "WEEKDAYS",
+    "toHijri",
+    "fromHijri",
+    "intToWords",
+    "CURRENCIES",
+    "numberToWords",
+    "cleanText",
+    "textStats",
+    "genPassword"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/botcatalog.js",
+   "kind": "lib",
+   "lines": 100,
+   "about": "بيعرف أنهي موديلات متاحة فعلاً دلوقتي (على السيرفر بس). بيسأل OpenRouter وGroq عن قايمتهم، والنتيجة بتتحفظ 6 ساعات عشان الصفحة تفضل سريعة.",
+   "env": [
+    "GEMINI_API_KEY",
+    "GROQ_API_KEY",
+    "OPENROUTER_API_KEY",
+    "PRO_CODES",
+    "PRO_OPEN"
+   ],
+   "hosts": [
+    "api.groq.com",
+    "openrouter.ai"
+   ],
+   "exports": [
+    "groqModels",
+    "proOpen",
+    "validProCode",
+    "resolveBots",
+    "resolveBot",
+    "publicBot"
+   ],
+   "imports": 1,
+   "usedBy": 6
+  },
+  {
+   "id": "lib/bots.js",
+   "kind": "lib",
+   "lines": 220,
+   "about": "صفحة «الموديلات» (زي Poe): كل موديل كارت بأيقونة، مقسمين على أقسام. provider: \"site\" معناه إن الموديل ده (المساعدين والبحث) بيشتغل على سلسلة الموقع الأساسية (Gemini ثم Groq)، مش موديل ثابت. GPT-OSS اتشال من الموقع (نوفمب",
+   "exports": [
+    "RETIRED_BOTS",
+    "BOT_SECTIONS",
+    "BOTS",
+    "getBot",
+    "botsIn",
+    "CHAT_PICKS"
+   ],
+   "imports": 0,
+   "usedBy": 11
+  },
+  {
+   "id": "lib/brand.js",
+   "kind": "lib",
+   "lines": 41,
+   "about": "شعار الشركة/الموديل لكل أداة في المكتبة. بنجيب الأيقونة من دومين الشركة (مش بنخزن صور). الترتيب: تخصيص بالـslug ← اسم الموديل ← صاحب الـSpace على Hugging Face ← دومين الأداة نفسها.",
+   "hosts": [
+    "t1.gstatic.com"
+   ],
+   "exports": [
+    "brandDomain",
+    "logoSrc"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/brandprofile.js",
+   "kind": "lib",
+   "lines": 61,
+   "about": "«هوية نشاطي»: بيانات النشاط اللي العميل بيكتبها مرة واحدة وبتتحفظ على جهازه، والأدوات بتبعتها مع الطلب (لو العميل سابها شغالة) عشان النتيجة تطلع على مقاس نشاطه.",
+   "exports": [
+    "BRAND_TONES",
+    "BRAND_DIALECTS",
+    "BRAND_CATS",
+    "EMPTY_BRAND",
+    "cleanBrand",
+    "brandBlock",
+    "TONE_TO_LOGO_STYLE"
+   ],
+   "imports": 0,
+   "usedBy": 7
+  },
+  {
+   "id": "lib/cite.js",
+   "kind": "lib",
+   "lines": 6,
+   "about": "صيغة المراجع للباحث الأكاديمي (بتشتغل في المتصفح والسيرفر)",
+   "hosts": [
+    "doi.org"
+   ],
+   "exports": [
+    "citation"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/content/analysis.js",
+   "kind": "lib",
+   "lines": 167,
+   "about": "📊 تحليل وبيانات",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/content/business.js",
+   "kind": "lib",
+   "lines": 121,
+   "about": "💼 أعمال وريادة",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/content/career.js",
+   "kind": "lib",
+   "lines": 121,
+   "about": "🧑‍💼 وظائف ومهنة",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/content/code.js",
+   "kind": "lib",
+   "lines": 121,
+   "about": "💻 برمجة وتقنية",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/content/communication.js",
+   "kind": "lib",
+   "lines": 121,
+   "about": "✉️ تواصل ورسائل",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/content/creative.js",
+   "kind": "lib",
+   "lines": 121,
+   "about": "🎭 إبداع وكتابة أدبية",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/content/design.js",
+   "kind": "lib",
+   "lines": 121,
+   "about": "🎨 تصميم وإبداع بصري",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/content/ecommerce.js",
+   "kind": "lib",
+   "lines": 121,
+   "about": "🛒 تجارة إلكترونية",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/content/education.js",
+   "kind": "lib",
+   "lines": 130,
+   "about": "🎓 تعليم ودراسة",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/content/index.js",
+   "kind": "lib",
+   "lines": 54,
+   "about": "محتوى صفحات الأدوات: شرح، استخدامات، مثال جاهز، وأسئلة شائعة لكل أداة. كل تصنيف في ملف لوحده عشان يبقى سهل التعديل.",
+   "exports": [
+    "getContent",
+    "SHARED_FAQ",
+    "STUDIO_FAQ",
+    "CALC_FAQ"
+   ],
+   "imports": 16,
+   "usedBy": 2
+  },
+  {
+   "id": "lib/content/language.js",
+   "kind": "lib",
+   "lines": 121,
+   "about": "🌐 لغة وترجمة",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/content/lifestyle.js",
+   "kind": "lib",
+   "lines": 121,
+   "about": "🏡 حياة يومية",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/content/marketing.js",
+   "kind": "lib",
+   "lines": 140,
+   "about": "📣 تسويق وإعلانات",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/content/productivity.js",
+   "kind": "lib",
+   "lines": 121,
+   "about": "✅ إنتاجية وتنظيم",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/content/social.js",
+   "kind": "lib",
+   "lines": 130,
+   "about": "📱 سوشيال ميديا",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/content/studio.js",
+   "kind": "lib",
+   "lines": 498,
+   "about": "🖌️ استوديو التصميم: أدوات بتشتغل على جهاز المستخدم (من غير ذكاء اصطناعي ومن غير رفع ملفات) steps هنا بتظهر في «إزاي تستخدمها؟» بدل الخطوات التلقائية بتاعة أدوات الذكاء الاصطناعي.",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/content/writing.js",
+   "kind": "lib",
+   "lines": 130,
+   "about": "✍️ كتابة ومحتوى",
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/creators.js",
+   "kind": "lib",
+   "lines": 245,
+   "about": "صناع محتوى الذكاء الاصطناعي بالعربي كل معلومة هنا متاخدة من صفحة الشخص الرسمية أو من مقال منشور (مكتوب في source). الصور الشخصية: مش بنحط صور حد من غير إذنه. لو صاحب الصفحة بعت صورته بموافقته، احفظها في public/creators/<",
+   "hosts": [
+    "facebook.com",
+    "fakhrcs.com",
+    "fedniy.com",
+    "freecoursesandbooks.net",
+    "github.com",
+    "hiveinfluence.io",
+    "khabeer.online",
+    "omaralshal.com",
+    "t.me",
+    "www.ashaffik.com",
+    "www.facebook.com",
+    "www.heepsy.com",
+    "www.instagram.com",
+    "www.manjmy.com",
+    "www.tiktok.com",
+    "www.youtube.com",
+    "x.com",
+    "yehia.tech",
+    "youtube.com"
+   ],
+   "exports": [
+    "CREATORS",
+    "LINK_LABELS",
+    "getCreator"
+   ],
+   "imports": 0,
+   "usedBy": 3
+  },
+  {
+   "id": "lib/dircats.js",
+   "kind": "lib",
+   "lines": 48,
+   "about": "مجالات دليل «أدوات عالمية» (40 مجال). ملف عادي من غير imports عشان سكربت جمع البيانات يقراه كمان. [id, الاسم, أيقونة, وصف قصير, كلمات إنجليزي بتساعد في التصنيف] */",
+   "exports": [
+    "DIR_CATEGORIES"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/directory.js",
+   "kind": "lib",
+   "lines": 55,
+   "about": "دليل «أدوات عالمية»: 40 مجال، وكل أداة ليها صفحة بالعربي في /ai/[slug] البيانات في data/directory/tools.json وبيعملها السكربت scripts/directory (شوف README هناك): بيجمع أسماء وروابط الأدوات، يزور الموقع الرسمي لكل أداة، ",
+   "exports": [
+    "getDirCategory",
+    "PRICING",
+    "pricingOf",
+    "DIR_APPS",
+    "DIR_TOOLS",
+    "getDirTool",
+    "toolsIn",
+    "dirCount",
+    "DIR_TOTAL",
+    "card"
+   ],
+   "imports": 3,
+   "usedBy": 5
+  },
+  {
+   "id": "lib/doccontext.js",
+   "kind": "lib",
+   "lines": 172,
+   "about": "ملفات المستخدم في الشات والمشاريع (على السيرفر): بنحوّلها لسياق الموديل. - ملفات صغيرة: النص كله يروح لأي موديل. - ملفات كبيرة: النص كله يروح لـ Gemini (بيقرا لحد مليون توكن)، ولو Gemini مش متاح بنختار أنسب أجزاء الملف ل",
+   "env": [
+    "GEMINI_LONG_MODEL"
+   ],
+   "exports": [
+    "MAX_DOCS",
+    "MAX_DOC_CHARS",
+    "MAX_ALL_CHARS",
+    "SMALL_CHARS",
+    "cleanDocs",
+    "cleanInstructions",
+    "docContext",
+    "longChain",
+    "instructionsBlock"
+   ],
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/docs.js",
+   "kind": "lib",
+   "lines": 265,
+   "about": "قراءة الملفات في متصفح الزائر وتحويلها لنص: PDF (بـ pdf.js)، وورد DOCX، وملفات النص، والصور والـ PDF المصوّر (بقارئ الصور /api/vision). الملف نفسه ما بيترفعش، النص بس هو اللي بيتبعت مع السؤال.",
+   "hosts": [
+    "cdn.jsdelivr.net"
+   ],
+   "exports": [
+    "ACCEPT",
+    "MAX_FILE",
+    "MAX_CHARS",
+    "MAX_ALL",
+    "MAX_COUNT",
+    "OCR_PAGES",
+    "kindOf",
+    "KIND_ICON",
+    "extractFile",
+    "docLabel"
+   ],
+   "imports": 0,
+   "usedBy": 4
+  },
+  {
+   "id": "lib/feasibility.js",
+   "kind": "lib",
+   "lines": 215,
+   "about": "محرك أرقام دراسة الجدوى (الباحث التجاري) النموذج بيجيب الافتراضات بس (كل رقم مدى: أقل / متوقع / أعلى + مصدره)، والحسابات كلها هنا بالكود. بيشتغل في المتصفح والسيرفر، ومن غير أي مكتبات.",
+   "exports": [
+    "TYPES",
+    "GOVERNORATES",
+    "MONTHS",
+    "SCENARIOS",
+    "cleanRange",
+    "runModel",
+    "runAll",
+    "sensitivity",
+    "egp",
+    "n0",
+    "pct",
+    "monthsText",
+    "financialTables",
+    "REPORT_SECTIONS",
+    "factsText"
+   ],
+   "imports": 0,
+   "usedBy": 5
+  },
+  {
+   "id": "lib/fieldmedia.js",
+   "kind": "lib",
+   "lines": 136,
+   "about": "البيانات الميدانية للباحث التجاري (على السيرفر بس): - صور إعلانات المنافسين أو بوستات الأسعار (من مكتبة إعلانات ميتا أو جروبات فيس بوك) → عروض وأسعار منظمة - تجارب من يوتيوب: Gemini بيتفرج على الفيديو من الرابط ويطلّع ال",
+   "env": [
+    "GEMINI_API_KEY",
+    "GEMINI_CHAT_MODEL",
+    "YOUTUBE_API_KEY"
+   ],
+   "hosts": [
+    "generativelanguage.googleapis.com",
+    "www.googleapis.com",
+    "www.youtube.com"
+   ],
+   "exports": [
+    "readAdImages",
+    "findVideos",
+    "watchVideo"
+   ],
+   "imports": 3,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/flows.js",
+   "kind": "lib",
+   "lines": 170,
+   "about": "المهام الكاملة: طلب واحد بيشغّل كذا أداة ورا بعض. كل خطوة بتستخدم أداة من lib/tools.js. في نص الخطوة: {input} = اللي كتبه المستخدم {1} {2} ... = نتيجة الخطوة رقم 1 أو 2 ... option = اختيار الأداة (لازم يكون من اختياراتها",
+   "exports": [
+    "FLOWS",
+    "getFlow",
+    "fillStep"
+   ],
+   "imports": 0,
+   "usedBy": 5
+  },
+  {
+   "id": "lib/fusion.js",
+   "kind": "lib",
+   "lines": 135,
+   "about": "«دمج 4 نماذج»: نفس السؤال بيروح لـ 4 نماذج قوية في نفس الوقت، وبعدين محرر نهائي بيكتب منهم إجابة واحدة هي الأدق، ومعاها تدقيق لغوي كامل (على السيرفر بس). النماذج بتتختار لوحدها من اللي متاح على Groq دلوقتي (بالترتيب اللي",
+   "env": [
+    "FUSION_MODELS"
+   ],
+   "exports": [
+    "pickFusionModels",
+    "fusionLineup",
+    "fusionResponse"
+   ],
+   "imports": 5,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/geminitts.js",
+   "kind": "lib",
+   "lines": 71,
+   "about": "الصوت المعبّر: Gemini TTS من جوجل بيقبل تعليمات إحساس ونبرة بكلام عادي (style) بدل ما يكتفي بتغيير السرعة والدرجة. الملف ده بيبني الطلب ويقرا الرد. كل تعليمات الإحساس بتتبني هنا من قوائم ثابتة، ونص الزائر بيروح كنص منطوق",
+   "exports": [
+    "PRO_MODEL",
+    "MAX_PRO_CHARS",
+    "PRO_VOICES",
+    "proVoice",
+    "proStyle",
+    "buildInteractionBody",
+    "extractWav"
+   ],
+   "imports": 1,
+   "usedBy": 2
+  },
+  {
+   "id": "lib/genimage.js",
+   "kind": "lib",
+   "lines": 36,
+   "about": "توليد صورة من وصف عربي من متصفح الزائر: الرسم على Hugging Face بحصة الزائر نفسه (من غير تكلفة علينا)، ولو خلصت الحصة أو الموديل مشغول بنحوّل لمولّد السيرفر الاحتياطي.",
+   "hosts": [
+    "black-forest-labs-flux-1-schnell.hf.space"
+   ],
+   "exports": [
+    "genImageBlob"
+   ],
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/groq.js",
+   "kind": "lib",
+   "lines": 294,
+   "about": "الاتصال بالموديلات — بيستخدمه الشات والأدوات (على السيرفر بس) المزود الأساسي Groq، ومعاه طبقة احتياطية اختيارية من OpenRouter (انظر lib/models.js)",
+   "env": [
+    "GEMINI_API_KEY",
+    "GEMINI_VISION_MODEL",
+    "GROQ_API_KEY",
+    "GROQ_MODEL",
+    "OPENROUTER_API_KEY",
+    "POLLINATIONS_MODEL"
+   ],
+   "hosts": [
+    "api.groq.com",
+    "generativelanguage.googleapis.com",
+    "openrouter.ai",
+    "text.pollinations.ai"
+   ],
+   "exports": [
+    "fail",
+    "clientIp",
+    "rateLimiter",
+    "fallbackTail",
+    "quickChain",
+    "visionChain",
+    "chainFor",
+    "completeOnce",
+    "streamFromGroq",
+    "thinkFilter"
+   ],
+   "imports": 2,
+   "usedBy": 41
+  },
+  {
+   "id": "lib/hfspace.js",
+   "kind": "lib",
+   "lines": 96,
+   "about": "تشغيل موديل على Hugging Face Space من متصفح الزائر نفسه (مش من السيرفر). الفكرة: حصة الـ GPU المجانية (ZeroGPU) بتتحسب على الزائر، فكل عضو ليه حصته اليومية، وموقعنا ما بيدفعش حاجة ومش بيتقفل لما الأعضاء يزيدوا. بيكلّم وا",
+   "exports": [
+    "SpaceError",
+    "callSpace",
+    "fileUrl",
+    "withTimeout"
+   ],
+   "imports": 0,
+   "usedBy": 6
+  },
+  {
+   "id": "lib/icons.js",
+   "kind": "lib",
+   "lines": 58,
+   "about": "أيقونة خاصة لكل أداة. لو أداة مش موجودة هنا، بتاخد أيقونة التصنيف.",
+   "exports": [
+    "ICONS",
+    "LOGOS"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/idb.js",
+   "kind": "lib",
+   "lines": 33,
+   "about": "تخزين كبير على جهاز الزائر (IndexedDB): المشاريع وملفاتها ومحادثاتها، وملفات الشات. localStorage حده حوالي 5 ميجا، والملفات بتعدّيه بسرعة، فده المكان الصح ليها.",
+   "exports": [
+    "idbGet",
+    "idbSet",
+    "idbDel"
+   ],
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "lib/imagefile.js",
+   "kind": "lib",
+   "lines": 101,
+   "about": "تجهيز صور العميل في المتصفح قبل أي حاجة: تصغير، وتحويل لـ JPG/WebP خفيف، أو لرابط data.",
+   "exports": [
+    "readImage",
+    "scaledCanvas",
+    "canvasBlob",
+    "blobToDataUrl",
+    "fileToDataUrl",
+    "shareOrDownload",
+    "copyText",
+    "loadFonts",
+    "DISPLAY_FONT",
+    "UI_FONT",
+    "WORD_FONT"
+   ],
+   "imports": 0,
+   "usedBy": 16
+  },
+  {
+   "id": "lib/imagesearch.js",
+   "kind": "lib",
+   "lines": 86,
+   "about": "صور توثيقية للإجابة (خيار «صور توضيحية»): صور وخرائط حقيقية من Wikimedia Commons (مجاني ومن غير مفتاح)، ولو فيه SERPER_API_KEY بنضيف صور من بحث جوجل كمان. على السيرفر بس. Commons فيه صور تاريخية وخرائط ولوحات بتراخيص مفت",
+   "env": [
+    "SERPER_API_KEY"
+   ],
+   "hosts": [
+    "commons.wikimedia.org",
+    "google.serper.dev"
+   ],
+   "exports": [
+    "documentImages"
+   ],
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/imgenhance.js",
+   "kind": "lib",
+   "lines": 176,
+   "about": "تحسين الصور بعد التوليد: كثافة ألوان وتباين وحدّة. دوال صافية على بيانات البكسل (RGBA)، فبتشتغل على ImageData في المتصفح وتتجرّب في Node. مفيش أي حاجة بتتبعت لسيرفر. الصور اللي بتطلع باهتة مشكلتها إن قيمها متجمّعة في نص ",
+   "exports": [
+    "lumaHistogram",
+    "percentile",
+    "stats",
+    "autoColor",
+    "unsharp",
+    "MAX_SIDE",
+    "MAX_AREA",
+    "DEFAULT_LIMITS",
+    "upscalePlan"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/keys.js",
+   "kind": "lib",
+   "lines": 11,
+   "about": "Enter بيبعت على الكمبيوتر بس. على الموبايل والتابلت (شاشة لمس) زرار Enter في الكيبورد بينزل سطر جديد، والإرسال من زرار الإرسال، عشان المستخدم يقدر يكتب سؤال طويل على كذا سطر من غير ما يتبعت نص.",
+   "exports": [
+    "enterSends"
+   ],
+   "imports": 0,
+   "usedBy": 3
+  },
+  {
+   "id": "lib/landing.js",
+   "kind": "lib",
+   "lines": 15,
+   "about": "رسالة صفحة الأداة لأصحاب المشاريع: عنوان بالنتيجة، 3 فوائد، وخطوات. الأدوات اللي مالهاش مدخل هنا بتظهر زي ما هي.",
+   "exports": [
+    "LANDING"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/learn.js",
+   "kind": "lib",
+   "lines": 24,
+   "about": "تعلّم الذكاء الاصطناعي: خطة تعلّم + روابط لمواقع عربية خارجية.",
+   "hosts": [
+    "academy.hsoub.com",
+    "aitnews.com",
+    "ar.khanacademy.org",
+    "learn.microsoft.com",
+    "mawdoo3.com",
+    "www.coursera.org",
+    "www.edraak.org",
+    "www.maharah.net",
+    "www.rwaq.org",
+    "www.tech-wd.com"
+   ],
+   "exports": [
+    "PATH",
+    "SITES",
+    "SITE_TYPES"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/library.js",
+   "kind": "lib",
+   "lines": 206,
+   "about": "«مكتبة الأدوات»: أدوات بتفتح جوه الموقع بواجهة الشركة الأصلية (iframe) كل أداة هنا اتجربت في إطار فعلي واتصورت، واتراجعت رخصتها/شروطها قبل الإضافة: مجانية بالكامل، ومفيش مانع تجاري معروف (مفتوحة المصدر، أو الشركة نفسها ب",
+   "hosts": [
+    "app.rawgraphs.io",
+    "ar.wikipedia.org",
+    "ar.wiktionary.org",
+    "arcade.makecode.com",
+    "aryadytm-remove-photo-object.hf.space",
+    "audiomass.co",
+    "babeljs.io",
+    "black-forest-labs-flux-1-dev.hf.space",
+    "black-forest-labs-flux-1-kontext-dev.hf.space",
+    "black-forest-labs-flux-1-schnell.hf.space",
+    "blockly.games",
+    "chatgpt.com",
+    "cssgrid-generator.netlify.app",
+    "cssgridgarden.com",
+    "deepseek-ai-deepseek-vl2-small.hf.space",
+    "deepseek-ai-janus-pro-7b.hf.space",
+    "devdocs.io",
+    "dillinger.io",
+    "docs.google.com",
+    "doevent-face-real-esrgan.hf.space",
+    "eccv2022-dis-background-removal.hf.space",
+    "editor.method.ac",
+    "elevenlabs-tts.hf.space",
+    "elevenlabs.io",
+    "embed.windy.com",
+    "excalidraw.com",
+    "ffmpegwasm.netlify.app",
+    "flexboxfroggy.com",
+    "gchq.github.io",
+    "gokaygokay-flux-prompt-generator.hf.space"
+   ],
+   "exports": [
+    "LIB_CATS",
+    "LIBRARY",
+    "getLibTool",
+    "libByCat",
+    "LIB_HF_NOTE",
+    "BLOCKED"
+   ],
+   "imports": 0,
+   "usedBy": 3
+  },
+  {
+   "id": "lib/llmjson.js",
+   "kind": "lib",
+   "lines": 79,
+   "about": "طلب من الموديل يرجّع JSON منظم (على السيرفر بس). بيجرب الموديلات بالترتيب لحد ما يرجع JSON سليم ويعدّي التحقق، فالمستخدم دايماً بياخد نتيجة مكتملة.",
+   "exports": [
+    "extractJson",
+    "askJson",
+    "describeImage",
+    "DATA_IMAGE",
+    "MAX_IMAGE",
+    "str",
+    "int",
+    "list"
+   ],
+   "imports": 2,
+   "usedBy": 17
+  },
+  {
+   "id": "lib/logofonts.js",
+   "kind": "lib",
+   "lines": 97,
+   "about": "تحميل خطوط اللوجو في المتصفح، وقياس النص، وتصدير SVG وPNG. الخطوط بتتحمّل من Fontsource (jsDelivr)، وبتتضمّن جوه ملف الـSVG عشان يظهر بنفس الشكل في أي مكان.",
+   "exports": [
+    "ensureLogoFont",
+    "fontCssFor",
+    "measureEm",
+    "svgToPng"
+   ],
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/logostudio.js",
+   "kind": "lib",
+   "lines": 585,
+   "about": "محرك مولّد اللوجو: رموز مرسومة بالكود، ألوان، خطوط عربي، وتركيبات جاهزة. الملف ده نقي (من غير متصفح)، فبيشتغل على السيرفر والمتصفح ونقدر نختبره. كل رمز بيترسم جوه مربع 100×100.",
+   "hosts": [
+    "cdn.jsdelivr.net"
+   ],
+   "exports": [
+    "SYMBOLS",
+    "PALETTES",
+    "FONTS",
+    "STYLES",
+    "LAYOUTS",
+    "detectTags",
+    "esc",
+    "isArabic",
+    "luminance",
+    "mix",
+    "onColor",
+    "getPalette",
+    "getFont",
+    "getSymbol",
+    "resolveColors",
+    "adaptForDark",
+    "brandTileColors",
+    "estimateWidth",
+    "buildLogo",
+    "wrapSvg",
+    "buildIconTile",
+    "generateConcepts",
+    "cleanAiHints",
+    "buildCardMockup",
+    "SYMBOL_IDS",
+    "PALETTE_IDS",
+    "FONT_IDS",
+    "TAG_IDS",
+    "FONT_RANGES",
+    "fontUrls"
+   ],
+   "imports": 0,
+   "usedBy": 4
+  },
+  {
+   "id": "lib/longaudio.js",
+   "kind": "lib",
+   "lines": 135,
+   "about": "التفريغ الطويل: دوال صافية للمتصفح والسيرفر. التسجيل بيتقسم في المتصفح لأجزاء (حوالي 100 ثانية) عند لحظات السكوت، وكل جزء بيتفرّغ لوحده، وبعدين المقاطع بتتجمع بتوقيتها الحقيقي (بداية الجزء + توقيت الجملة جوّاه).",
+   "exports": [
+    "RATE",
+    "CHUNK_SECONDS",
+    "MAX_MINUTES",
+    "MAX_FILE_MB",
+    "MAX_BODY",
+    "fmtTime",
+    "parseTime",
+    "normalizeSegments",
+    "withEnds",
+    "toTxt",
+    "toSrt",
+    "speakersOf",
+    "quietCut",
+    "planChunks",
+    "floatToWav"
+   ],
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "lib/makers.js",
+   "kind": "lib",
+   "lines": 83,
+   "about": "قسم «صانع الصور والفيديو»: 41 أداة مجانية أو فيها جزء مجاني أو بالرصيد (أكتوبر 2026). معلومات الحدود من مقالات منشورة في 2026 وبتتغير بسرعة، والصفحة بتقول للمستخدم يتأكد من الموقع الرسمي. بيانات الفحص الآلي (الشعار، وهل ",
+   "exports": [
+    "MAKER_KINDS",
+    "MAKER_LIST",
+    "getMaker",
+    "makersIn",
+    "POLL"
+   ],
+   "imports": 2,
+   "usedBy": 3
+  },
+  {
+   "id": "lib/marketdata.js",
+   "kind": "lib",
+   "lines": 131,
+   "about": "جمع بيانات السوق للباحث التجاري (على السيرفر بس) بحث في الإنترنت عن الأسعار والتكاليف + المنافسين من الخرائط + التضخم من صندوق النقد + تطبيقات متجر أبل للشركات الناشئة.",
+   "env": [
+    "SERPER_API_KEY"
+   ],
+   "hosts": [
+    "google.serper.dev",
+    "itunes.apple.com",
+    "www.imf.org"
+   ],
+   "exports": [
+    "gatherMarket"
+   ],
+   "imports": 4,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/models.js",
+   "kind": "lib",
+   "lines": 143,
+   "about": "الاختيارات الـ6 اللي المستخدم بيختار منها في الشات (وبتستخدمها الأدوات كمان). نوفمبر 2026: شلنا GPT-OSS (120B و20B) من الموقع كله لأنه بيخترع معلومات بثقة في الأسئلة الواقعية بالعربي. الترتيب دلوقتي: Gemini Flash الأول (",
+   "env": [
+    "GEMINI_CHAT_MODEL",
+    "GEMINI_MODEL"
+   ],
+   "exports": [
+    "GEMINI_STRONG",
+    "GEMINI_FAST",
+    "MODEL_OPTIONS",
+    "DEFAULT_MODEL_KEY",
+    "getModel",
+    "GROQ_IDS",
+    "FALLBACK_IDS",
+    "OPENROUTER_FALLBACK_IDS"
+   ],
+   "imports": 0,
+   "usedBy": 18
+  },
+  {
+   "id": "lib/offer.js",
+   "kind": "lib",
+   "lines": 70,
+   "about": "عرض «وفّر فاتورتك مع Rising StarAi»: بنقارن اشتراكاتك بباقة الموقع (250 ج/شهر). قاعدة صارمة: الاشتراك بيتحسب «بيتغطى» بس لو الموقع فعلاً بيعمل شغله (الكتابة، البحث، تلخيص PDF، المشاريع، الصور...). مفيش حاجة بتتحسب لو الم",
+   "exports": [
+    "SITE_PLAN_EGP",
+    "SITE_PLAN_NAME",
+    "SITE_NEEDS",
+    "TOOLSURF",
+    "siteOffer"
+   ],
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/podcast.js",
+   "kind": "lib",
+   "lines": 82,
+   "about": "البودكاست بصوتين: دوال صافية بتتستخدم في السيرفر (/api/podcast) وفي الواجهة. السكربت سطور، كل سطر ليه متكلم (0 أو 1) ونص. الصوت بيتعمل على أجزاء صغيرة وبيتلزق في المتصفح.",
+   "exports": [
+    "MAX_LINE",
+    "MAX_LINES",
+    "MAX_CHUNK",
+    "MAX_SOURCE",
+    "LENGTHS",
+    "STYLES",
+    "VOICE_PAIRS",
+    "DIALECT_NAMES",
+    "pairFor",
+    "normalizeLines",
+    "chunkLines",
+    "ttsTranscript",
+    "scriptText",
+    "estimateMinutes"
+   ],
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "lib/projects.js",
+   "kind": "lib",
+   "lines": 152,
+   "about": "المشاريع: مساحة لكل شغلانة فيها ملفات وتعليمات ثابتة ومحادثات كتير، كلهم فاكرين الملفات والتعليمات. محفوظة على جهاز الزائر (IndexedDB) لحد ما نضيف الحسابات.",
+   "exports": [
+    "uid",
+    "ICONS",
+    "TEMPLATES",
+    "templateOf",
+    "listProjects",
+    "createProject",
+    "getProject",
+    "saveProject",
+    "deleteProject",
+    "getThread",
+    "saveThread",
+    "deleteThread"
+   ],
+   "imports": 1,
+   "usedBy": 2
+  },
+  {
+   "id": "lib/promptbuilder.js",
+   "kind": "lib",
+   "lines": 430,
+   "about": "«مولّد البرومبتات»: بيبني برومبت منظم من فكرة + معايير بتختارها (بالكود، فوري ومن غير تكلفة ذكاء اصطناعي). كل نوع (شات، إعلان، ريلز، صورة، فيديو) ليه حقول، وكل حقل ليه اختيارات. الاختيارات × الأنواع = آلاف التركيبات بدل ",
+   "exports": [
+    "TYPES",
+    "TYPE_BY_ID",
+    "emptyState",
+    "compile",
+    "score",
+    "randomize",
+    "encodeState",
+    "decodeState",
+    "criteriaSummary",
+    "combinations"
+   ],
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "lib/promptgen.js",
+   "kind": "lib",
+   "lines": 118,
+   "about": "توليد البرومبتات بالذكاء الاصطناعي: «ولّد لي أفكار» (من 10 لـ 100 برومبت) و«حسّن برومبتي». الموديل بيقترح والكود بيراجع: اللغة الصح للنوع، حذف المتكرر، وحدود الطول. من غير أي اتصال بالشبكة هنا، الـask بيتبعت له من الـAPI",
+   "exports": [
+    "latinRatio",
+    "similarity",
+    "ideasSystemPrompt",
+    "normalizeIdeas",
+    "runIdeas",
+    "improveSystemPrompt",
+    "normalizeImprove",
+    "runImprove",
+    "VALID_TYPES"
+   ],
+   "imports": 1,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/prompts.js",
+   "kind": "lib",
+   "lines": 130,
+   "about": "«مكتبة البرومبتات»: أوامر جاهزة تنسخها وتحطها في أي أداة. إضافة برومبت = إضافة سطر P(...) هنا بس. الأقواس [زي كده] مكان اللي تغيّره بكلامك. برومبتات الصور والفيديو إنجليزي لأن الموديلات بتفهمه أدق.",
+   "exports": [
+    "PROMPT_CATS",
+    "PROMPTS",
+    "getPromptCat"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/qrstudio.js",
+   "kind": "lib",
+   "lines": 213,
+   "about": "مولد QR: بناء النص اللي بيتحط جوه الرمز (رابط، واتساب، واي فاي، كارت...) ورسم الرمز كـ SVG. دوال صافية من غير شبكة ومن غير DOM، فتتجرّب بسهولة. المكتبة اللي بتحوّل النص لمربعات بتتحمّل في المكوّن.",
+   "hosts": [
+    "wa.me"
+   ],
+   "exports": [
+    "COUNTRIES",
+    "QR_TYPES",
+    "latinDigits",
+    "normalizePhone",
+    "buildPayload",
+    "contrastRatio",
+    "colorWarning",
+    "DOT_STYLES",
+    "QUIET",
+    "qrSvg"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/quality.js",
+   "kind": "lib",
+   "lines": 428,
+   "about": "=================================================================== ملف جودة المخرجات — Rising StarAi الملف ده بيتحط جنب lib/tools.js ومش بيعدّل فيه. فيه 3 حاجات: 1) BASE_RULES — قواعد بتتطبق على كل الـ200 أداة مرة واحدة",
+   "exports": [
+    "BASE_RULES",
+    "TOOL_PROMPTS",
+    "TOOL_MODEL",
+    "CATEGORY_MODEL",
+    "taskFor",
+    "modelKeyFor",
+    "systemFor",
+    "temperatureFor"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/receipt.js",
+   "kind": "lib",
+   "lines": 113,
+   "about": "«كشف حساب اشتراكاتك»: بيحسب اللي بتدفعه فعلاً، وفين الفلوس اللي بتضيع، بقواعد واضحة وقابلة للشرح. القواعد (كل اشتراك بياخد أكبر توفير واحد بس): 1) تكرار: اشتراكين بيعملوا نفس الشغل ← خلي الأكتر استخداماً، والتاني يتلغى 2",
+   "exports": [
+    "USAGE",
+    "toolById",
+    "POPULAR",
+    "paidPlans",
+    "defaultPlan",
+    "monthlyUsd",
+    "analyze",
+    "SITE_FOR"
+   ],
+   "imports": 1,
+   "usedBy": 2
+  },
+  {
+   "id": "lib/resources.js",
+   "kind": "lib",
+   "lines": 14,
+   "about": "«مكتبة الموارد»: قوالب وتصميمات وكتب وكورسات للمشتركين. الأقسام جاهزة، والمحتوى بيتضاف بعد التأكد من حقوق كل جزء.",
+   "exports": [
+    "RES_CATS",
+    "getResCat"
+   ],
+   "imports": 0,
+   "usedBy": 3
+  },
+  {
+   "id": "lib/scamflags.js",
+   "kind": "lib",
+   "lines": 39,
+   "about": "علامات النصب في عروض الاشتراكات. crit = علامة خطر قاطعة بتخلي النتيجة «عالية» لوحدها. re = كلمات بتتعرف عليها خاصية «الصق نص العرض» (عربي وإنجليزي ولهجة).",
+   "exports": [
+    "FLAGS",
+    "LEVELS_TEXT",
+    "score",
+    "detect"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/scamscan.js",
+   "kind": "lib",
+   "lines": 530,
+   "about": "كاشف النصب (على السيرفر بس): بيفحص موقع البائع وصفحته فعلياً، وبيطلع أدلة ودرجة خطر. الدرجة بتتحسب بقواعد ثابتة من الأدلة (مش من الذكاء الاصطناعي)، عشان تبقى ثابتة ومتفسّرة. الذكاء الاصطناعي بيكتب الملخص والنصايح بس، من ",
+   "hosts": [
+    "data.iana.org",
+    "r.jina.ai",
+    "rdap.org",
+    "tranco-list.eu"
+   ],
+   "exports": [
+    "normalizeUrl",
+    "registrable",
+    "isChallenge",
+    "scan",
+    "summarize"
+   ],
+   "imports": 4,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/scholar.js",
+   "kind": "lib",
+   "lines": 183,
+   "about": "الباحث الأكاديمي: بحث في مكتبات أبحاث وكتب حقيقية مجانية (على السيرفر بس، ومن غير مفاتيح). OpenAlex — أكتر من 250 مليون بحث وكتاب ورسالة، بالملخص والمؤلفين وعدد الاستشهادات (api.openalex.org) Semantic Scholar — أبحاث بال",
+   "hosts": [
+    "api.openalex.org",
+    "api.semanticscholar.org",
+    "doi.org",
+    "export.arxiv.org",
+    "openlibrary.org"
+   ],
+   "exports": [
+    "researchQueries",
+    "findSources"
+   ],
+   "imports": 2,
+   "usedBy": 2
+  },
+  {
+   "id": "lib/search.js",
+   "kind": "lib",
+   "lines": 49,
+   "exports": [
+    "norm",
+    "findTools"
+   ],
+   "imports": 1,
+   "usedBy": 5
+  },
+  {
+   "id": "lib/settings.js",
+   "kind": "lib",
+   "lines": 43,
+   "about": "خيارات لوحة التحكم — نفس الملف بيستخدمه المتصفح والسيرفر عشان نتأكد إن القيم سليمة",
+   "exports": [
+    "SETTINGS",
+    "DEFAULT_SETTINGS",
+    "REFINES",
+    "cleanSettings"
+   ],
+   "imports": 0,
+   "usedBy": 7
+  },
+  {
+   "id": "lib/share.js",
+   "kind": "lib",
+   "lines": 274,
+   "about": "=================================================================== أدوات المشاركة — دوال صافية من غير React عشان تتختبر لوحدها ===================================================================",
+   "hosts": [
+    "fonts.googleapis.com",
+    "wa.me"
+   ],
+   "exports": [
+    "BRAND",
+    "WA_MAX",
+    "brandLine",
+    "escapeHtml",
+    "safeFileName",
+    "toWhatsApp",
+    "whatsAppText",
+    "whatsAppUrl",
+    "wordDocument",
+    "printDocument",
+    "plainToHtml"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/sharecard.js",
+   "kind": "lib",
+   "lines": 115,
+   "about": "رسم كروت المشاركة (ستوري 1080×1920) على الكانفاس بهوية الموقع: سما ليل، نجمة صفرا، وخط إسكندرية.",
+   "exports": [
+    "STORY",
+    "storyCanvas",
+    "rr",
+    "night",
+    "star",
+    "wrap",
+    "text",
+    "brandFooter",
+    "toBlob"
+   ],
+   "imports": 2,
+   "usedBy": 2
+  },
+  {
+   "id": "lib/site.js",
+   "kind": "lib",
+   "lines": 8,
+   "about": "رابط الموقع الأساسي: بيستخدم في جوجل وخريطة الموقع وتوقيع المشاركة. على Vercel ضيف NEXT_PUBLIC_SITE_URL بالدومين بتاعك (مثلاً https://risingstar.ai). لو مش موجود، بيستخدم رابط Vercel تلقائياً.",
+   "env": [
+    "NEXT_PUBLIC_SITE_URL",
+    "VERCEL_PROJECT_PRODUCTION_URL"
+   ],
+   "hosts": [
+    "risingstar.ai"
+   ],
+   "exports": [
+    "SITE_URL",
+    "BRAND"
+   ],
+   "imports": 0,
+   "usedBy": 8
+  },
+  {
+   "id": "lib/sourcemap.js",
+   "kind": "lib",
+   "lines": 169,
+   "about": "خريطة المصادر في الباحث الأكاديمي: بتحوّل قايمة المصادر لشبكة مترابطة. النقط: المصادر نفسها، والمؤلفين اللي ظهروا في أكتر من مصدر، والمواضيع المشتركة. الروابط: مصدر بيستشهد بمصدر تاني في القايمة، أو مصدرين بيستشهدوا بنفس",
+   "exports": [
+    "buildMap",
+    "layout",
+    "mapText"
+   ],
+   "imports": 0,
+   "usedBy": 1
+  },
+  {
+   "id": "lib/speakclient.js",
+   "kind": "lib",
+   "lines": 41,
+   "about": "طلب الصوت من الموقع (الصوت العادي أو المعبّر). مشترك بين أداة الأصوات وصفحة المقارنة.",
+   "exports": [
+    "SpeakError",
+    "requestAudio"
+   ],
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "lib/speech.js",
+   "kind": "lib",
+   "lines": 154,
+   "about": "مولد الأصوات والكتاب المسموع: اللهجات والأصوات والنبرات وتقسيم النصوص الطويلة لفقرات. دوال صافية، بتتستخدم في السيرفر (/api/speak) وفي الواجهة، فالقوائم دي هي المرجع الوحيد للأصوات والنبرات.",
+   "exports": [
+    "DIALECTS",
+    "GENDERS",
+    "VOICE_IDS",
+    "voiceFor",
+    "TONES",
+    "MAX_PITCH_ADJUST",
+    "MAX_CHARS_PER_REQUEST",
+    "prosodyFor",
+    "cleanForSpeech",
+    "splitText",
+    "estimateSeconds",
+    "formatDuration",
+    "bookId"
+   ],
+   "imports": 0,
+   "usedBy": 4
+  },
+  {
+   "id": "lib/store.js",
+   "kind": "lib",
+   "lines": 42,
+   "about": "تخزين بسيط على جهاز الزائر (المفضلة، السجل، الإعدادات). لو المتصفح منعه، الموقع يكمل عادي.",
+   "exports": [
+    "PENDING_KEY",
+    "read",
+    "write",
+    "useStored",
+    "toast"
+   ],
+   "imports": 0,
+   "usedBy": 53
+  },
+  {
+   "id": "lib/subscriptions.js",
+   "kind": "lib",
+   "lines": 466,
+   "about": "بيانات الاشتراكات: أسعار خطط أشهر أدوات الذكاء الاصطناعي. الأسعار بالدولار شهرياً كما هي منشورة في أكتوبر 2026 (مصادر منشورة، مش من صفحات الشركات نفسها). لتحديث الأسعار: عدّل الرقم هنا وزوّد DATA_VERSION، وبعدها أي مستخد",
+   "hosts": [
+    "ai-toolbox.co",
+    "aicompare.tech",
+    "bolt.new",
+    "chat.deepseek.com",
+    "chatgpt.com",
+    "claude.com",
+    "costbench.com",
+    "creatify.ai",
+    "cursor.com",
+    "dev.to",
+    "eesel.ai",
+    "elevenlabs.io",
+    "gamma.app",
+    "github.com",
+    "grok.com",
+    "hailuoai.video",
+    "ideogram.ai",
+    "klingai.com",
+    "krater.ai",
+    "leonardo.ai",
+    "lovable.dev",
+    "lumalabs.ai",
+    "mistral.ai",
+    "one.google.com",
+    "otter.ai",
+    "pika.art",
+    "piktochart.com",
+    "quillbot.com",
+    "replit.com",
+    "runwayml.com"
+   ],
+   "exports": [
+    "USD_EGP",
+    "PRICES_UPDATED",
+    "PRICES_UPDATED_AR",
+    "DATA_VERSION",
+    "NEEDS",
+    "LEVELS",
+    "SUB_TOOLS",
+    "PRICE_CHANGES",
+    "toEgp",
+    "fmtEgp",
+    "fmtUsd",
+    "ALL_OPTIONS",
+    "priceSnapshot",
+    "cheapestBundle",
+    "alternativesFor"
+   ],
+   "imports": 0,
+   "usedBy": 6
+  },
+  {
+   "id": "lib/survey.js",
+   "kind": "lib",
+   "lines": 130,
+   "about": "الاستبيان الميداني للباحث التجاري — من غير قاعدة بيانات: الأسئلة بتتحط في الرابط نفسه (#…)، والمشارك بيبعت رده لصاحب المشروع على واتساب كرسالة فيها كود قصير، وصاحب المشروع بيلزق الرسايل في الدراسة، والكود هنا بيعدّها ويط",
+   "exports": [
+    "buildSurvey",
+    "surveyLink",
+    "readSurveyHash",
+    "cleanPhone",
+    "answerCode",
+    "parseResponses",
+    "tallySurvey",
+    "surveyText"
+   ],
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "lib/tasks.js",
+   "kind": "lib",
+   "lines": 58,
+   "about": "صفحات المهام: «أداة ذكاء اصطناعي لـ...» بالعربي. كل مهمة بتجمع أدوات موقعنا وأنسب أدوات الدليل ليها. الأدوات بتتختار تلقائي من الدليل (cats = المجالات، kw = كلمات بتتقدّم)، فلما الدليل يكبر الصفحات تتحدث لوحدها. عشان تضي",
+   "exports": [
+    "TASKS",
+    "getTask",
+    "pickTools"
+   ],
+   "imports": 0,
+   "usedBy": 3
+  },
+  {
+   "id": "lib/testad.js",
+   "kind": "lib",
+   "lines": 24,
+   "about": "إعدادات «جرّب إعلانك على 100 زبون» المشتركة بين الصفحة والسيرفر",
+   "exports": [
+    "PLATFORMS",
+    "AUDIENCES",
+    "AUDIENCE_LABELS",
+    "SCORE_LABELS",
+    "VERDICT_LABELS",
+    "REACTION_EMOJI",
+    "HANDOFF_KEY"
+   ],
+   "imports": 0,
+   "usedBy": 3
+  },
+  {
+   "id": "lib/toolglyphs.js",
+   "kind": "lib",
+   "lines": 151,
+   "about": "رموز الأدوات: أشكال مرسومة خصيصاً للموقع (شبكة 24×24)، كل رمز من طبقتين: l = خطوط الرمز (بتتلون أبيض)، f = طبقة تظليل ناعمة وراها (بتدّي عمق من غير ما الشكل يتقل). الأيقونة النهائية بلاطة متدرجة بلون التصنيف + الرمز. الأ",
+   "exports": [
+    "GL",
+    "TOOL_GLYPH",
+    "CATEGORY_GLYPH",
+    "glyphFor",
+    "Glyph",
+    "PALETTES",
+    "brandFor"
+   ],
+   "imports": 0,
+   "usedBy": 3
+  },
+  {
+   "id": "lib/tools.js",
+   "kind": "lib",
+   "lines": 363,
+   "about": "كل أداة هنا سطر واحد. عشان تضيف أداة جديدة: انسخ سطر وعدّل فيه. T(المعرّف, التصنيف, الاسم, الوصف, مهمة النموذج, نص الخانة, خيار إضافي)",
+   "exports": [
+    "categories",
+    "isListed",
+    "tools",
+    "getTool",
+    "getCategory"
+   ],
+   "imports": 0,
+   "usedBy": 16
+  },
+  {
+   "id": "lib/useAttach.js",
+   "kind": "lib",
+   "lines": 49,
+   "about": "رفع الملفات وقراءتها (للشات وللمشاريع): ملف ورا التاني، مع حالة لكل ملف ورسالة لو حصلت مشكلة",
+   "exports": [
+    "useAttach"
+   ],
+   "imports": 1,
+   "usedBy": 2
+  },
+  {
+   "id": "lib/useModal.js",
+   "kind": "lib",
+   "lines": 18,
+   "exports": [
+    "useModal"
+   ],
+   "imports": 0,
+   "usedBy": 2
+  },
+  {
+   "id": "lib/useProofread.js",
+   "kind": "lib",
+   "lines": 50,
+   "about": "زرار «تدقيق لغوي» في صناديق الكتابة: بيصحّح النص في مكانه، ومعاه تراجع",
+   "exports": [
+    "useProofread",
+    "ProofIcon"
+   ],
+   "imports": 1,
+   "usedBy": 2
+  },
+  {
+   "id": "lib/voices.js",
+   "kind": "lib",
+   "lines": 10,
+   "about": "أصوات التعليق الصوتي المتاحة (Microsoft Edge neural voices)",
+   "exports": [
+    "VOICES"
+   ],
+   "imports": 0,
+   "usedBy": 3
+  },
+  {
+   "id": "lib/wav.js",
+   "kind": "lib",
+   "lines": 68,
+   "about": "قراءة وكتابة وضم ملفات WAV (PCM). بنستخدمها لأن الصوت المعبّر بيرجع WAV، والكتاب بيتجمّع من فقرات. دوال صافية على Uint8Array، بتشتغل في المتصفح والسيرفر.",
+   "exports": [
+    "parseWav",
+    "pcmToWav",
+    "joinWavs",
+    "wavSeconds"
+   ],
+   "imports": 0,
+   "usedBy": 3
+  },
+  {
+   "id": "lib/websearch.js",
+   "kind": "lib",
+   "lines": 230,
+   "env": [
+    "GEMINI_API_KEY",
+    "GEMINI_SEARCH_MODEL",
+    "SERPER_API_KEY",
+    "TAVILY_API_KEY"
+   ],
+   "hosts": [
+    "api.tavily.com",
+    "generativelanguage.googleapis.com",
+    "google.serper.dev",
+    "html.duckduckgo.com"
+   ],
+   "exports": [
+    "searchProvider",
+    "webSearch",
+    "webSearchFull",
+    "searchQuery",
+    "resultsBlock"
+   ],
+   "imports": 1,
+   "usedBy": 7
+  }
+ ],
+ "edges": [
+  {
+   "from": "app/agents/[id]/page.js",
+   "to": "lib/agents.js"
+  },
+  {
+   "from": "app/agents/[id]/page.js",
+   "to": "components/AgentRunner.js"
+  },
+  {
+   "from": "app/agents/[id]/page.js",
+   "to": "components/agents.module.css"
+  },
+  {
+   "from": "app/agents/page.js",
+   "to": "lib/agents.js"
+  },
+  {
+   "from": "app/agents/page.js",
+   "to": "components/agents.module.css"
+  },
+  {
+   "from": "app/ai/[slug]/page.js",
+   "to": "components/BotIcon.js"
+  },
+  {
+   "from": "app/ai/[slug]/page.js",
+   "to": "lib/directory.js"
+  },
+  {
+   "from": "app/ai/[slug]/page.js",
+   "to": "components/directory.module.css"
+  },
+  {
+   "from": "app/amazon/check/page.js",
+   "to": "components/seller/SellerHero.js"
+  },
+  {
+   "from": "app/amazon/check/page.js",
+   "to": "components/amazon/CheckTool.js"
+  },
+  {
+   "from": "app/amazon/competitor/page.js",
+   "to": "components/seller/SellerHero.js"
+  },
+  {
+   "from": "app/amazon/competitor/page.js",
+   "to": "components/amazon/CompetitorTool.js"
+  },
+  {
+   "from": "app/amazon/listing/page.js",
+   "to": "components/seller/SellerHero.js"
+  },
+  {
+   "from": "app/amazon/listing/page.js",
+   "to": "components/amazon/ListingTool.js"
+  },
+  {
+   "from": "app/amazon/page.js",
+   "to": "components/seller/SellerHero.js"
+  },
+  {
+   "from": "app/amazon/page.js",
+   "to": "components/amazon/Hub.js"
+  },
+  {
+   "from": "app/amazon/page.js",
+   "to": "components/amazon/icons.js"
+  },
+  {
+   "from": "app/amazon/page.js",
+   "to": "components/seller/seller.module.css"
+  },
+  {
+   "from": "app/amazon/profit/page.js",
+   "to": "components/seller/SellerHero.js"
+  },
+  {
+   "from": "app/amazon/profit/page.js",
+   "to": "components/amazon/ProfitTool.js"
+  },
+  {
+   "from": "app/api/ad-pack/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/ad-pack/route.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "app/api/ad-pack/route.js",
+   "to": "lib/brandprofile.js"
+  },
+  {
+   "from": "app/api/adcopy/route.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "app/api/adcopy/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/agent/route.js",
+   "to": "lib/agents.js"
+  },
+  {
+   "from": "app/api/agent/route.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "app/api/agent/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/agent/route.js",
+   "to": "lib/websearch.js"
+  },
+  {
+   "from": "app/api/amazon/check/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/amazon/check/route.js",
+   "to": "lib/amazonprompts.js"
+  },
+  {
+   "from": "app/api/amazon/check/route.js",
+   "to": "lib/amazonapi.js"
+  },
+  {
+   "from": "app/api/amazon/competitor/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/amazon/competitor/route.js",
+   "to": "lib/amazonprompts.js"
+  },
+  {
+   "from": "app/api/amazon/competitor/route.js",
+   "to": "lib/amazonapi.js"
+  },
+  {
+   "from": "app/api/amazon/listing/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/amazon/listing/route.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "app/api/amazon/listing/route.js",
+   "to": "lib/amazonprompts.js"
+  },
+  {
+   "from": "app/api/amazon/listing/route.js",
+   "to": "lib/amazonapi.js"
+  },
+  {
+   "from": "app/api/brand-fill/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/brand-fill/route.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "app/api/brand-fill/route.js",
+   "to": "lib/brandprofile.js"
+  },
+  {
+   "from": "app/api/catalog-copy/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/catalog-copy/route.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "app/api/chat/route.js",
+   "to": "lib/answerstyle.js"
+  },
+  {
+   "from": "app/api/chat/route.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "app/api/chat/route.js",
+   "to": "lib/settings.js"
+  },
+  {
+   "from": "app/api/chat/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/chat/route.js",
+   "to": "lib/websearch.js"
+  },
+  {
+   "from": "app/api/chat/route.js",
+   "to": "lib/bots.js"
+  },
+  {
+   "from": "app/api/chat/route.js",
+   "to": "lib/botcatalog.js"
+  },
+  {
+   "from": "app/api/chat/route.js",
+   "to": "lib/fusion.js"
+  },
+  {
+   "from": "app/api/chat/route.js",
+   "to": "lib/doccontext.js"
+  },
+  {
+   "from": "app/api/chat/route.js",
+   "to": "lib/brandprofile.js"
+  },
+  {
+   "from": "app/api/chat/route.js",
+   "to": "lib/answeropts.js"
+  },
+  {
+   "from": "app/api/chat/route.js",
+   "to": "lib/imagesearch.js"
+  },
+  {
+   "from": "app/api/feasibility/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/feasibility/route.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "app/api/feasibility/route.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "app/api/feasibility/route.js",
+   "to": "lib/fieldmedia.js"
+  },
+  {
+   "from": "app/api/feasibility/route.js",
+   "to": "lib/marketdata.js"
+  },
+  {
+   "from": "app/api/feasibility/route.js",
+   "to": "lib/feasibility.js"
+  },
+  {
+   "from": "app/api/image/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/logo-gen/route.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "app/api/logo-gen/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/logo-gen/route.js",
+   "to": "lib/logostudio.js"
+  },
+  {
+   "from": "app/api/pexels/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/podcast/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/podcast/route.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "app/api/podcast/route.js",
+   "to": "lib/geminitts.js"
+  },
+  {
+   "from": "app/api/podcast/route.js",
+   "to": "lib/podcast.js"
+  },
+  {
+   "from": "app/api/pro/route.js",
+   "to": "lib/botcatalog.js"
+  },
+  {
+   "from": "app/api/pro/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/product-eye/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/product-eye/route.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "app/api/prompt-en/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/prompt-gen/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/prompt-gen/route.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "app/api/prompt-gen/route.js",
+   "to": "lib/promptgen.js"
+  },
+  {
+   "from": "app/api/proofread/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/proofread/route.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "app/api/reel/route.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "app/api/reel/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/research/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/research/route.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "app/api/research/route.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "app/api/research/route.js",
+   "to": "lib/scholar.js"
+  },
+  {
+   "from": "app/api/run/route.js",
+   "to": "lib/tools.js"
+  },
+  {
+   "from": "app/api/run/route.js",
+   "to": "lib/settings.js"
+  },
+  {
+   "from": "app/api/run/route.js",
+   "to": "lib/quality.js"
+  },
+  {
+   "from": "app/api/run/route.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "app/api/run/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/run/route.js",
+   "to": "lib/brandprofile.js"
+  },
+  {
+   "from": "app/api/scam-scan/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/scam-scan/route.js",
+   "to": "lib/scamscan.js"
+  },
+  {
+   "from": "app/api/source-chat/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/source-chat/route.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "app/api/source-chat/route.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "app/api/source-chat/route.js",
+   "to": "lib/scholar.js"
+  },
+  {
+   "from": "app/api/source-chat/route.js",
+   "to": "lib/websearch.js"
+  },
+  {
+   "from": "app/api/speak-pro/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/speak-pro/route.js",
+   "to": "lib/speech.js"
+  },
+  {
+   "from": "app/api/speak-pro/route.js",
+   "to": "lib/geminitts.js"
+  },
+  {
+   "from": "app/api/speak/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/speak/route.js",
+   "to": "lib/speech.js"
+  },
+  {
+   "from": "app/api/test-ad/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/test-ad/route.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "app/api/test-ad/route.js",
+   "to": "lib/testad.js"
+  },
+  {
+   "from": "app/api/transcribe-long/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/transcribe-long/route.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "app/api/transcribe-long/route.js",
+   "to": "lib/longaudio.js"
+  },
+  {
+   "from": "app/api/transcribe/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/tts/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/tts/route.js",
+   "to": "lib/voices.js"
+  },
+  {
+   "from": "app/api/verify/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/verify/route.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "app/api/verify/route.js",
+   "to": "lib/websearch.js"
+  },
+  {
+   "from": "app/api/vision/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/api/vscript/route.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "app/api/vscript/route.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "app/brand/page.js",
+   "to": "components/BrandProfile.js"
+  },
+  {
+   "from": "app/catalog/page.js",
+   "to": "components/seller/SellerHero.js"
+  },
+  {
+   "from": "app/catalog/page.js",
+   "to": "components/seller/Catalog.js"
+  },
+  {
+   "from": "app/chat/page.js",
+   "to": "components/MainChat.js"
+  },
+  {
+   "from": "app/chat/page.js",
+   "to": "lib/tools.js"
+  },
+  {
+   "from": "app/chat/page.js",
+   "to": "lib/botcatalog.js"
+  },
+  {
+   "from": "app/chat/page.js",
+   "to": "lib/bots.js"
+  },
+  {
+   "from": "app/compare/page.js",
+   "to": "components/ModelCompare.js"
+  },
+  {
+   "from": "app/compare/page.js",
+   "to": "lib/bots.js"
+  },
+  {
+   "from": "app/compare/page.js",
+   "to": "lib/botcatalog.js"
+  },
+  {
+   "from": "app/creators/[slug]/page.js",
+   "to": "lib/creators.js"
+  },
+  {
+   "from": "app/creators/[slug]/page.js",
+   "to": "components/CreatorAvatar.js"
+  },
+  {
+   "from": "app/creators/[slug]/page.js",
+   "to": "components/creators.module.css"
+  },
+  {
+   "from": "app/creators/page.js",
+   "to": "lib/creators.js"
+  },
+  {
+   "from": "app/creators/page.js",
+   "to": "components/CreatorAvatar.js"
+  },
+  {
+   "from": "app/creators/page.js",
+   "to": "components/creators.module.css"
+  },
+  {
+   "from": "app/feasibility/chat/page.js",
+   "to": "components/SourceChat.js"
+  },
+  {
+   "from": "app/feasibility/page.js",
+   "to": "components/Feasibility.js"
+  },
+  {
+   "from": "app/flow/[id]/page.js",
+   "to": "lib/flows.js"
+  },
+  {
+   "from": "app/flow/[id]/page.js",
+   "to": "lib/tools.js"
+  },
+  {
+   "from": "app/flow/[id]/page.js",
+   "to": "lib/site.js"
+  },
+  {
+   "from": "app/flow/[id]/page.js",
+   "to": "components/FlowRunner.js"
+  },
+  {
+   "from": "app/flow/[id]/page.js",
+   "to": "components/flow.module.css"
+  },
+  {
+   "from": "app/flows/page.js",
+   "to": "components/FlowCards.js"
+  },
+  {
+   "from": "app/flows/page.js",
+   "to": "lib/flows.js"
+  },
+  {
+   "from": "app/global-tools/[cat]/page.js",
+   "to": "lib/directory.js"
+  },
+  {
+   "from": "app/global-tools/[cat]/page.js",
+   "to": "components/DirTools.js"
+  },
+  {
+   "from": "app/global-tools/[cat]/page.js",
+   "to": "components/directory.module.css"
+  },
+  {
+   "from": "app/global-tools/alternatives/page.js",
+   "to": "lib/alternatives.js"
+  },
+  {
+   "from": "app/global-tools/alternatives/page.js",
+   "to": "lib/subscriptions.js"
+  },
+  {
+   "from": "app/global-tools/alternatives/page.js",
+   "to": "components/alternatives.module.css"
+  },
+  {
+   "from": "app/global-tools/page.js",
+   "to": "lib/directory.js"
+  },
+  {
+   "from": "app/global-tools/page.js",
+   "to": "components/DirSearch.js"
+  },
+  {
+   "from": "app/global-tools/page.js",
+   "to": "components/directory.module.css"
+  },
+  {
+   "from": "app/history/page.js",
+   "to": "lib/tools.js"
+  },
+  {
+   "from": "app/history/page.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "app/history/page.js",
+   "to": "components/ToolIcon.js"
+  },
+  {
+   "from": "app/lab/remotion/page.js",
+   "to": "components/lab/RemotionLoader.js"
+  },
+  {
+   "from": "app/lab/remotion/page.js",
+   "to": "components/directory.module.css"
+  },
+  {
+   "from": "app/layout.js",
+   "to": "components/ThemeShift.js"
+  },
+  {
+   "from": "app/layout.js",
+   "to": "components/Chrome.js"
+  },
+  {
+   "from": "app/layout.js",
+   "to": "components/BottomNav.js"
+  },
+  {
+   "from": "app/layout.js",
+   "to": "components/Intro.js"
+  },
+  {
+   "from": "app/layout.js",
+   "to": "lib/tools.js"
+  },
+  {
+   "from": "app/layout.js",
+   "to": "lib/site.js"
+  },
+  {
+   "from": "app/layout.js",
+   "to": "app/globals.css"
+  },
+  {
+   "from": "app/learn/page.js",
+   "to": "lib/learn.js"
+  },
+  {
+   "from": "app/learn/page.js",
+   "to": "components/learn.module.css"
+  },
+  {
+   "from": "app/library/[slug]/page.js",
+   "to": "lib/library.js"
+  },
+  {
+   "from": "app/library/[slug]/page.js",
+   "to": "lib/site.js"
+  },
+  {
+   "from": "app/library/[slug]/page.js",
+   "to": "components/BrandLogo.js"
+  },
+  {
+   "from": "app/library/[slug]/page.js",
+   "to": "components/LibraryFrame.js"
+  },
+  {
+   "from": "app/library/[slug]/page.js",
+   "to": "components/library.module.css"
+  },
+  {
+   "from": "app/library/page.js",
+   "to": "lib/library.js"
+  },
+  {
+   "from": "app/library/page.js",
+   "to": "components/BrandLogo.js"
+  },
+  {
+   "from": "app/library/page.js",
+   "to": "components/LibraryGrid.js"
+  },
+  {
+   "from": "app/library/page.js",
+   "to": "components/library.module.css"
+  },
+  {
+   "from": "app/maker/[slug]/page.js",
+   "to": "components/BotIcon.js"
+  },
+  {
+   "from": "app/maker/[slug]/page.js",
+   "to": "components/MakerPrompt.js"
+  },
+  {
+   "from": "app/maker/[slug]/page.js",
+   "to": "components/MakerImageGen.js"
+  },
+  {
+   "from": "app/maker/[slug]/page.js",
+   "to": "components/MakerFrame.js"
+  },
+  {
+   "from": "app/maker/[slug]/page.js",
+   "to": "lib/makers.js"
+  },
+  {
+   "from": "app/maker/[slug]/page.js",
+   "to": "components/directory.module.css"
+  },
+  {
+   "from": "app/maker/[slug]/page.js",
+   "to": "components/maker.module.css"
+  },
+  {
+   "from": "app/maker/create/page.js",
+   "to": "components/MakerFluxGen.js"
+  },
+  {
+   "from": "app/maker/create/page.js",
+   "to": "components/directory.module.css"
+  },
+  {
+   "from": "app/maker/page.js",
+   "to": "components/BotIcon.js"
+  },
+  {
+   "from": "app/maker/page.js",
+   "to": "lib/makers.js"
+  },
+  {
+   "from": "app/maker/page.js",
+   "to": "components/directory.module.css"
+  },
+  {
+   "from": "app/maker/page.js",
+   "to": "components/maker.module.css"
+  },
+  {
+   "from": "app/models/page.js",
+   "to": "components/ModelsGallery.js"
+  },
+  {
+   "from": "app/models/page.js",
+   "to": "lib/bots.js"
+  },
+  {
+   "from": "app/models/page.js",
+   "to": "lib/apps.js"
+  },
+  {
+   "from": "app/models/page.js",
+   "to": "lib/botcatalog.js"
+  },
+  {
+   "from": "app/models/page.js",
+   "to": "lib/tools.js"
+  },
+  {
+   "from": "app/my-tools/page.js",
+   "to": "components/MyTools.js"
+  },
+  {
+   "from": "app/news/page.js",
+   "to": "components/NewsList.js"
+  },
+  {
+   "from": "app/news/page.js",
+   "to": "components/learn.module.css"
+  },
+  {
+   "from": "app/page.js",
+   "to": "components/Home.js"
+  },
+  {
+   "from": "app/photo-ad/page.js",
+   "to": "components/seller/SellerHero.js"
+  },
+  {
+   "from": "app/photo-ad/page.js",
+   "to": "components/seller/PhotoAd.js"
+  },
+  {
+   "from": "app/program/[key]/page.js",
+   "to": "components/BotIcon.js"
+  },
+  {
+   "from": "app/program/[key]/page.js",
+   "to": "components/AskAbout.js"
+  },
+  {
+   "from": "app/program/[key]/page.js",
+   "to": "lib/apps.js"
+  },
+  {
+   "from": "app/program/[key]/page.js",
+   "to": "components/program.module.css"
+  },
+  {
+   "from": "app/projects/[id]/page.js",
+   "to": "components/projects/ProjectWorkspace.js"
+  },
+  {
+   "from": "app/projects/page.js",
+   "to": "components/seller/SellerHero.js"
+  },
+  {
+   "from": "app/projects/page.js",
+   "to": "components/projects/ProjectsHome.js"
+  },
+  {
+   "from": "app/prompts/builder/page.js",
+   "to": "components/prompts/Builder.js"
+  },
+  {
+   "from": "app/prompts/page.js",
+   "to": "lib/prompts.js"
+  },
+  {
+   "from": "app/prompts/page.js",
+   "to": "components/PromptsGrid.js"
+  },
+  {
+   "from": "app/prompts/page.js",
+   "to": "components/prompts.module.css"
+  },
+  {
+   "from": "app/research/chat/page.js",
+   "to": "components/SourceChat.js"
+  },
+  {
+   "from": "app/research/page.js",
+   "to": "components/Research.js"
+  },
+  {
+   "from": "app/resources/[cat]/page.js",
+   "to": "lib/resources.js"
+  },
+  {
+   "from": "app/resources/[cat]/page.js",
+   "to": "components/directory.module.css"
+  },
+  {
+   "from": "app/resources/page.js",
+   "to": "lib/resources.js"
+  },
+  {
+   "from": "app/resources/page.js",
+   "to": "components/directory.module.css"
+  },
+  {
+   "from": "app/robots.js",
+   "to": "lib/site.js"
+  },
+  {
+   "from": "app/scam-check/page.js",
+   "to": "components/SubsNav.js"
+  },
+  {
+   "from": "app/scam-check/page.js",
+   "to": "components/ScamChecker.js"
+  },
+  {
+   "from": "app/seller/page.js",
+   "to": "components/seller/SellerHero.js"
+  },
+  {
+   "from": "app/seller/page.js",
+   "to": "components/seller/Showcase.js"
+  },
+  {
+   "from": "app/seller/page.js",
+   "to": "components/seller/seller.module.css"
+  },
+  {
+   "from": "app/sitemap.js",
+   "to": "lib/tools.js"
+  },
+  {
+   "from": "app/sitemap.js",
+   "to": "lib/apps.js"
+  },
+  {
+   "from": "app/sitemap.js",
+   "to": "lib/flows.js"
+  },
+  {
+   "from": "app/sitemap.js",
+   "to": "lib/site.js"
+  },
+  {
+   "from": "app/sitemap.js",
+   "to": "lib/makers.js"
+  },
+  {
+   "from": "app/sitemap.js",
+   "to": "lib/creators.js"
+  },
+  {
+   "from": "app/sitemap.js",
+   "to": "lib/directory.js"
+  },
+  {
+   "from": "app/sitemap.js",
+   "to": "lib/tasks.js"
+  },
+  {
+   "from": "app/sitemap.js",
+   "to": "lib/library.js"
+  },
+  {
+   "from": "app/sitemap.js",
+   "to": "lib/agents.js"
+  },
+  {
+   "from": "app/subscriptions/calculator/page.js",
+   "to": "components/SubsNav.js"
+  },
+  {
+   "from": "app/subscriptions/calculator/page.js",
+   "to": "components/SubsCalculator.js"
+  },
+  {
+   "from": "app/subscriptions/page.js",
+   "to": "components/SubsNav.js"
+  },
+  {
+   "from": "app/subscriptions/page.js",
+   "to": "components/SubsHub.js"
+  },
+  {
+   "from": "app/subscriptions/page.js",
+   "to": "lib/subscriptions.js"
+  },
+  {
+   "from": "app/subscriptions/receipt/page.js",
+   "to": "components/seller/SellerHero.js"
+  },
+  {
+   "from": "app/subscriptions/receipt/page.js",
+   "to": "components/SubsNav.js"
+  },
+  {
+   "from": "app/subscriptions/receipt/page.js",
+   "to": "components/seller/Receipt.js"
+  },
+  {
+   "from": "app/survey/page.js",
+   "to": "components/SurveyForm.js"
+  },
+  {
+   "from": "app/task/[slug]/page.js",
+   "to": "lib/tasks.js"
+  },
+  {
+   "from": "app/task/[slug]/page.js",
+   "to": "lib/directory.js"
+  },
+  {
+   "from": "app/task/[slug]/page.js",
+   "to": "lib/tools.js"
+  },
+  {
+   "from": "app/task/[slug]/page.js",
+   "to": "lib/site.js"
+  },
+  {
+   "from": "app/task/[slug]/page.js",
+   "to": "components/ToolIcon.js"
+  },
+  {
+   "from": "app/task/[slug]/page.js",
+   "to": "components/DirTools.js"
+  },
+  {
+   "from": "app/task/[slug]/page.js",
+   "to": "components/directory.module.css"
+  },
+  {
+   "from": "app/tasks/page.js",
+   "to": "lib/tasks.js"
+  },
+  {
+   "from": "app/tasks/page.js",
+   "to": "components/directory.module.css"
+  },
+  {
+   "from": "app/test-ad/page.js",
+   "to": "components/seller/SellerHero.js"
+  },
+  {
+   "from": "app/test-ad/page.js",
+   "to": "components/seller/TestAd.js"
+  },
+  {
+   "from": "app/tool/[id]/page.js",
+   "to": "lib/tools.js"
+  },
+  {
+   "from": "app/tool/[id]/page.js",
+   "to": "lib/content/index.js"
+  },
+  {
+   "from": "app/tool/[id]/page.js",
+   "to": "components/ToolPitch.js"
+  },
+  {
+   "from": "app/tool/[id]/page.js",
+   "to": "lib/site.js"
+  },
+  {
+   "from": "app/tool/[id]/page.js",
+   "to": "components/ToolRunner.js"
+  },
+  {
+   "from": "app/tool/[id]/page.js",
+   "to": "components/studio/LocalTool.js"
+  },
+  {
+   "from": "app/tool/[id]/page.js",
+   "to": "components/studio/AdLibrary.js"
+  },
+  {
+   "from": "app/tool/[id]/page.js",
+   "to": "components/VisionRunner.js"
+  },
+  {
+   "from": "app/tool/[id]/page.js",
+   "to": "components/ToolIcon.js"
+  },
+  {
+   "from": "app/tool/[id]/page.js",
+   "to": "components/ToolGuide.js"
+  },
+  {
+   "from": "app/tools/page.js",
+   "to": "lib/tools.js"
+  },
+  {
+   "from": "app/tools/page.js",
+   "to": "components/Catalog.js"
+  },
+  {
+   "from": "app/tools/page.js",
+   "to": "components/ExternalLinks.js"
+  },
+  {
+   "from": "app/tools/page.js",
+   "to": "components/ProgramsGrid.js"
+  },
+  {
+   "from": "app/tools/page.js",
+   "to": "lib/apps.js"
+  },
+  {
+   "from": "app/voice-post/page.js",
+   "to": "components/seller/SellerHero.js"
+  },
+  {
+   "from": "app/voice-post/page.js",
+   "to": "components/seller/VoicePost.js"
+  },
+  {
+   "from": "components/AgentRunner.js",
+   "to": "components/Md.js"
+  },
+  {
+   "from": "components/AgentRunner.js",
+   "to": "components/ShareBar.js"
+  },
+  {
+   "from": "components/AgentRunner.js",
+   "to": "components/agents.module.css"
+  },
+  {
+   "from": "components/AskAbout.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/BotIcon.js",
+   "to": "components/models.module.css"
+  },
+  {
+   "from": "components/BotIcon.js",
+   "to": "components/glyphs.js"
+  },
+  {
+   "from": "components/BottomNav.js",
+   "to": "components/nav.module.css"
+  },
+  {
+   "from": "components/BrandLogo.js",
+   "to": "lib/brand.js"
+  },
+  {
+   "from": "components/BrandLogo.js",
+   "to": "components/library.module.css"
+  },
+  {
+   "from": "components/BrandProfile.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/BrandProfile.js",
+   "to": "lib/brandprofile.js"
+  },
+  {
+   "from": "components/BrandProfile.js",
+   "to": "lib/logostudio.js"
+  },
+  {
+   "from": "components/BrandProfile.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/BrandProfile.js",
+   "to": "components/brand.module.css"
+  },
+  {
+   "from": "components/Catalog.js",
+   "to": "lib/tools.js"
+  },
+  {
+   "from": "components/Catalog.js",
+   "to": "lib/search.js"
+  },
+  {
+   "from": "components/Catalog.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/Catalog.js",
+   "to": "components/ToolIcon.js"
+  },
+  {
+   "from": "components/Catalog.js",
+   "to": "lib/toolglyphs.js"
+  },
+  {
+   "from": "components/Chrome.js",
+   "to": "lib/tools.js"
+  },
+  {
+   "from": "components/Chrome.js",
+   "to": "lib/search.js"
+  },
+  {
+   "from": "components/Chrome.js",
+   "to": "lib/settings.js"
+  },
+  {
+   "from": "components/Chrome.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/Chrome.js",
+   "to": "components/ToolIcon.js"
+  },
+  {
+   "from": "components/Chrome.js",
+   "to": "components/StarMark.js"
+  },
+  {
+   "from": "components/Chrome.js",
+   "to": "components/BotIcon.js"
+  },
+  {
+   "from": "components/Chrome.js",
+   "to": "lib/resources.js"
+  },
+  {
+   "from": "components/Chrome.js",
+   "to": "lib/bots.js"
+  },
+  {
+   "from": "components/CreatorAvatar.js",
+   "to": "components/creators.module.css"
+  },
+  {
+   "from": "components/DirSearch.js",
+   "to": "components/directory.module.css"
+  },
+  {
+   "from": "components/DirTools.js",
+   "to": "components/BotIcon.js"
+  },
+  {
+   "from": "components/DirTools.js",
+   "to": "components/directory.module.css"
+  },
+  {
+   "from": "components/ExternalLinks.js",
+   "to": "components/external.module.css"
+  },
+  {
+   "from": "components/Feasibility.js",
+   "to": "components/Md.js"
+  },
+  {
+   "from": "components/Feasibility.js",
+   "to": "components/ShareBar.js"
+  },
+  {
+   "from": "components/Feasibility.js",
+   "to": "components/FieldData.js"
+  },
+  {
+   "from": "components/Feasibility.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/Feasibility.js",
+   "to": "lib/feasibility.js"
+  },
+  {
+   "from": "components/Feasibility.js",
+   "to": "components/feasibility.module.css"
+  },
+  {
+   "from": "components/FieldData.js",
+   "to": "lib/survey.js"
+  },
+  {
+   "from": "components/FieldData.js",
+   "to": "lib/imagefile.js"
+  },
+  {
+   "from": "components/FieldData.js",
+   "to": "lib/feasibility.js"
+  },
+  {
+   "from": "components/FieldData.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/FieldData.js",
+   "to": "components/feasibility.module.css"
+  },
+  {
+   "from": "components/FlowCards.js",
+   "to": "lib/flows.js"
+  },
+  {
+   "from": "components/FlowCards.js",
+   "to": "components/flow.module.css"
+  },
+  {
+   "from": "components/FlowRunner.js",
+   "to": "components/Md.js"
+  },
+  {
+   "from": "components/FlowRunner.js",
+   "to": "lib/flows.js"
+  },
+  {
+   "from": "components/FlowRunner.js",
+   "to": "lib/tools.js"
+  },
+  {
+   "from": "components/FlowRunner.js",
+   "to": "lib/settings.js"
+  },
+  {
+   "from": "components/FlowRunner.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/FlowRunner.js",
+   "to": "components/ToolIcon.js"
+  },
+  {
+   "from": "components/FlowRunner.js",
+   "to": "components/ShareBar.js"
+  },
+  {
+   "from": "components/FlowRunner.js",
+   "to": "components/flow.module.css"
+  },
+  {
+   "from": "components/FusionStack.js",
+   "to": "components/BotIcon.js"
+  },
+  {
+   "from": "components/FusionStack.js",
+   "to": "lib/bots.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "lib/keys.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "lib/tools.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "lib/search.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "lib/useProofread.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "components/FusionStack.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "lib/useModal.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "components/ToolIcon.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "lib/toolglyphs.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "components/ExternalLinks.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "components/FlowCards.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "components/BotIcon.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "components/StarMark.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "components/ScrollBands.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "components/fx/RevealOnScroll.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "components/fx/SpotRoot.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "components/seller/Showcase.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "lib/bots.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "lib/apps.js"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "components/models.module.css"
+  },
+  {
+   "from": "components/Home.js",
+   "to": "components/home.module.css"
+  },
+  {
+   "from": "components/Intro.js",
+   "to": "components/IntroDone.js"
+  },
+  {
+   "from": "components/Intro.js",
+   "to": "components/StarMark.js"
+  },
+  {
+   "from": "components/LibraryFrame.js",
+   "to": "components/library.module.css"
+  },
+  {
+   "from": "components/LibraryGrid.js",
+   "to": "components/BrandLogo.js"
+  },
+  {
+   "from": "components/LibraryGrid.js",
+   "to": "components/library.module.css"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "lib/keys.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "components/Md.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "components/ModelPicker.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "components/ShareBar.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "components/ToolIcon.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "components/BotIcon.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "components/StarMark.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "components/FusionStack.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "lib/useProofread.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "lib/bots.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "lib/search.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "lib/answerimage.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "lib/settings.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "lib/docs.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "lib/useAttach.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "lib/idb.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "lib/answeropts.js"
+  },
+  {
+   "from": "components/MainChat.js",
+   "to": "components/chat.module.css"
+  },
+  {
+   "from": "components/MakerFluxGen.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/MakerFluxGen.js",
+   "to": "lib/hfspace.js"
+  },
+  {
+   "from": "components/MakerFluxGen.js",
+   "to": "components/maker.module.css"
+  },
+  {
+   "from": "components/MakerFluxGen.js",
+   "to": "components/studio/ImageEnhancer.js"
+  },
+  {
+   "from": "components/MakerFrame.js",
+   "to": "components/maker.module.css"
+  },
+  {
+   "from": "components/MakerImageGen.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/MakerImageGen.js",
+   "to": "components/maker.module.css"
+  },
+  {
+   "from": "components/MakerImageGen.js",
+   "to": "components/studio/ImageEnhancer.js"
+  },
+  {
+   "from": "components/MakerPrompt.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/MakerPrompt.js",
+   "to": "components/maker.module.css"
+  },
+  {
+   "from": "components/ModelCompare.js",
+   "to": "components/BotIcon.js"
+  },
+  {
+   "from": "components/ModelCompare.js",
+   "to": "components/Md.js"
+  },
+  {
+   "from": "components/ModelCompare.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/ModelCompare.js",
+   "to": "lib/settings.js"
+  },
+  {
+   "from": "components/ModelCompare.js",
+   "to": "components/compare.module.css"
+  },
+  {
+   "from": "components/ModelPicker.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "components/ModelPicker.js",
+   "to": "lib/bots.js"
+  },
+  {
+   "from": "components/ModelPicker.js",
+   "to": "lib/useModal.js"
+  },
+  {
+   "from": "components/ModelPicker.js",
+   "to": "components/BotIcon.js"
+  },
+  {
+   "from": "components/ModelPicker.js",
+   "to": "components/chat.module.css"
+  },
+  {
+   "from": "components/ModelPicker.js",
+   "to": "components/models.module.css"
+  },
+  {
+   "from": "components/ModelsGallery.js",
+   "to": "components/BotIcon.js"
+  },
+  {
+   "from": "components/ModelsGallery.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/ModelsGallery.js",
+   "to": "components/models.module.css"
+  },
+  {
+   "from": "components/MyTools.js",
+   "to": "lib/apps.js"
+  },
+  {
+   "from": "components/MyTools.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/MyTools.js",
+   "to": "components/BotIcon.js"
+  },
+  {
+   "from": "components/MyTools.js",
+   "to": "components/my-tools.module.css"
+  },
+  {
+   "from": "components/NewsList.js",
+   "to": "components/learn.module.css"
+  },
+  {
+   "from": "components/ProCode.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/ProCode.js",
+   "to": "components/models.module.css"
+  },
+  {
+   "from": "components/ProgramsGrid.js",
+   "to": "components/BotIcon.js"
+  },
+  {
+   "from": "components/ProgramsGrid.js",
+   "to": "lib/apps.js"
+  },
+  {
+   "from": "components/ProgramsGrid.js",
+   "to": "components/models.module.css"
+  },
+  {
+   "from": "components/PromptsGrid.js",
+   "to": "components/prompts/Builder.js"
+  },
+  {
+   "from": "components/PromptsGrid.js",
+   "to": "components/prompts.module.css"
+  },
+  {
+   "from": "components/Research.js",
+   "to": "components/Md.js"
+  },
+  {
+   "from": "components/Research.js",
+   "to": "components/SourceMap.js"
+  },
+  {
+   "from": "components/Research.js",
+   "to": "components/ShareBar.js"
+  },
+  {
+   "from": "components/Research.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/Research.js",
+   "to": "lib/cite.js"
+  },
+  {
+   "from": "components/Research.js",
+   "to": "components/research.module.css"
+  },
+  {
+   "from": "components/ScamChecker.js",
+   "to": "components/scam.module.css"
+  },
+  {
+   "from": "components/ShareBar.js",
+   "to": "lib/share.js"
+  },
+  {
+   "from": "components/ShareBar.js",
+   "to": "components/share.module.css"
+  },
+  {
+   "from": "components/SourceChat.js",
+   "to": "components/Md.js"
+  },
+  {
+   "from": "components/SourceChat.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/SourceChat.js",
+   "to": "lib/keys.js"
+  },
+  {
+   "from": "components/SourceChat.js",
+   "to": "lib/feasibility.js"
+  },
+  {
+   "from": "components/SourceChat.js",
+   "to": "components/FieldData.js"
+  },
+  {
+   "from": "components/SourceChat.js",
+   "to": "components/sourcechat.module.css"
+  },
+  {
+   "from": "components/SourceMap.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/SourceMap.js",
+   "to": "lib/sourcemap.js"
+  },
+  {
+   "from": "components/SourceMap.js",
+   "to": "components/sourcemap.module.css"
+  },
+  {
+   "from": "components/SubsCalculator.js",
+   "to": "components/BotIcon.js"
+  },
+  {
+   "from": "components/SubsCalculator.js",
+   "to": "lib/subscriptions.js"
+  },
+  {
+   "from": "components/SubsCalculator.js",
+   "to": "components/subs.module.css"
+  },
+  {
+   "from": "components/SubsHub.js",
+   "to": "components/BotIcon.js"
+  },
+  {
+   "from": "components/SubsHub.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/SubsHub.js",
+   "to": "lib/subscriptions.js"
+  },
+  {
+   "from": "components/SubsHub.js",
+   "to": "components/subs.module.css"
+  },
+  {
+   "from": "components/SubsNav.js",
+   "to": "components/subs.module.css"
+  },
+  {
+   "from": "components/SurveyForm.js",
+   "to": "lib/survey.js"
+  },
+  {
+   "from": "components/SurveyForm.js",
+   "to": "components/survey.module.css"
+  },
+  {
+   "from": "components/ThemeShift.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/ToolGuide.js",
+   "to": "components/TryExample.js"
+  },
+  {
+   "from": "components/ToolGuide.js",
+   "to": "lib/content/index.js"
+  },
+  {
+   "from": "components/ToolIcon.js",
+   "to": "lib/tools.js"
+  },
+  {
+   "from": "components/ToolIcon.js",
+   "to": "lib/icons.js"
+  },
+  {
+   "from": "components/ToolIcon.js",
+   "to": "lib/toolglyphs.js"
+  },
+  {
+   "from": "components/ToolPitch.js",
+   "to": "lib/landing.js"
+  },
+  {
+   "from": "components/ToolPitch.js",
+   "to": "components/TryExample.js"
+  },
+  {
+   "from": "components/ToolRunner.js",
+   "to": "components/Md.js"
+  },
+  {
+   "from": "components/ToolRunner.js",
+   "to": "lib/settings.js"
+  },
+  {
+   "from": "components/ToolRunner.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/ToolRunner.js",
+   "to": "components/ShareBar.js"
+  },
+  {
+   "from": "components/ToolRunner.js",
+   "to": "lib/brandprofile.js"
+  },
+  {
+   "from": "components/VisionRunner.js",
+   "to": "components/Md.js"
+  },
+  {
+   "from": "components/VisionRunner.js",
+   "to": "components/ShareBar.js"
+  },
+  {
+   "from": "components/amazon/CheckTool.js",
+   "to": "lib/amazon.js"
+  },
+  {
+   "from": "components/amazon/CheckTool.js",
+   "to": "components/amazon/shared.js"
+  },
+  {
+   "from": "components/amazon/CheckTool.js",
+   "to": "components/seller/seller.module.css"
+  },
+  {
+   "from": "components/amazon/CheckTool.js",
+   "to": "components/amazon/amazon.module.css"
+  },
+  {
+   "from": "components/amazon/CompetitorTool.js",
+   "to": "components/amazon/shared.js"
+  },
+  {
+   "from": "components/amazon/CompetitorTool.js",
+   "to": "components/amazon/icons.js"
+  },
+  {
+   "from": "components/amazon/CompetitorTool.js",
+   "to": "components/seller/seller.module.css"
+  },
+  {
+   "from": "components/amazon/CompetitorTool.js",
+   "to": "components/amazon/amazon.module.css"
+  },
+  {
+   "from": "components/amazon/Hub.js",
+   "to": "components/seller/showcase.module.css"
+  },
+  {
+   "from": "components/amazon/Hub.js",
+   "to": "components/fx/SpotRoot.js"
+  },
+  {
+   "from": "components/amazon/Hub.js",
+   "to": "components/amazon/icons.js"
+  },
+  {
+   "from": "components/amazon/ListingTool.js",
+   "to": "lib/imagefile.js"
+  },
+  {
+   "from": "components/amazon/ListingTool.js",
+   "to": "components/amazon/shared.js"
+  },
+  {
+   "from": "components/amazon/ListingTool.js",
+   "to": "components/amazon/CheckTool.js"
+  },
+  {
+   "from": "components/amazon/ListingTool.js",
+   "to": "components/amazon/icons.js"
+  },
+  {
+   "from": "components/amazon/ListingTool.js",
+   "to": "components/seller/seller.module.css"
+  },
+  {
+   "from": "components/amazon/ListingTool.js",
+   "to": "components/amazon/amazon.module.css"
+  },
+  {
+   "from": "components/amazon/ProfitTool.js",
+   "to": "lib/amazon.js"
+  },
+  {
+   "from": "components/amazon/ProfitTool.js",
+   "to": "components/amazon/shared.js"
+  },
+  {
+   "from": "components/amazon/ProfitTool.js",
+   "to": "lib/imagefile.js"
+  },
+  {
+   "from": "components/amazon/ProfitTool.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/amazon/ProfitTool.js",
+   "to": "components/amazon/icons.js"
+  },
+  {
+   "from": "components/amazon/ProfitTool.js",
+   "to": "components/seller/seller.module.css"
+  },
+  {
+   "from": "components/amazon/ProfitTool.js",
+   "to": "components/amazon/amazon.module.css"
+  },
+  {
+   "from": "components/amazon/shared.js",
+   "to": "lib/amazon.js"
+  },
+  {
+   "from": "components/amazon/shared.js",
+   "to": "lib/imagefile.js"
+  },
+  {
+   "from": "components/amazon/shared.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/amazon/shared.js",
+   "to": "components/seller/seller.module.css"
+  },
+  {
+   "from": "components/amazon/shared.js",
+   "to": "components/amazon/amazon.module.css"
+  },
+  {
+   "from": "components/amazon/shared.js",
+   "to": "components/amazon/icons.js"
+  },
+  {
+   "from": "components/lab/AdComp.js",
+   "to": "components/lab/ReelComp.js"
+  },
+  {
+   "from": "components/lab/FactoryComp.js",
+   "to": "components/lab/ReelComp.js"
+  },
+  {
+   "from": "components/lab/ProductAd.js",
+   "to": "components/lab/AdComp.js"
+  },
+  {
+   "from": "components/lab/ProductAd.js",
+   "to": "components/lab/ReelComp.js"
+  },
+  {
+   "from": "components/lab/ProductAd.js",
+   "to": "lib/voices.js"
+  },
+  {
+   "from": "components/lab/ProductAd.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/lab/ProductAd.js",
+   "to": "components/lab/factory.module.css"
+  },
+  {
+   "from": "components/lab/ProductAd.js",
+   "to": "components/lab/ad.module.css"
+  },
+  {
+   "from": "components/lab/RemotionLoader.js",
+   "to": "components/lab/RemotionReel.js"
+  },
+  {
+   "from": "components/lab/RemotionReel.js",
+   "to": "components/lab/ReelComp.js"
+  },
+  {
+   "from": "components/lab/RemotionReel.js",
+   "to": "components/lab/templates.js"
+  },
+  {
+   "from": "components/lab/RemotionReel.js",
+   "to": "components/studio/studio.module.css"
+  },
+  {
+   "from": "components/lab/RemotionReel.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/lab/RemotionReel.js",
+   "to": "components/studio/VideoMaker.js"
+  },
+  {
+   "from": "components/lab/VideoFactory.js",
+   "to": "components/lab/FactoryComp.js"
+  },
+  {
+   "from": "components/lab/VideoFactory.js",
+   "to": "components/lab/ReelComp.js"
+  },
+  {
+   "from": "components/lab/VideoFactory.js",
+   "to": "lib/voices.js"
+  },
+  {
+   "from": "components/lab/VideoFactory.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/lab/VideoFactory.js",
+   "to": "lib/hfspace.js"
+  },
+  {
+   "from": "components/lab/VideoFactory.js",
+   "to": "components/lab/factory.module.css"
+  },
+  {
+   "from": "components/projects/ProjectWorkspace.js",
+   "to": "components/MainChat.js"
+  },
+  {
+   "from": "components/projects/ProjectWorkspace.js",
+   "to": "lib/projects.js"
+  },
+  {
+   "from": "components/projects/ProjectWorkspace.js",
+   "to": "lib/useAttach.js"
+  },
+  {
+   "from": "components/projects/ProjectWorkspace.js",
+   "to": "lib/docs.js"
+  },
+  {
+   "from": "components/projects/ProjectWorkspace.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/projects/ProjectWorkspace.js",
+   "to": "components/projects/time.js"
+  },
+  {
+   "from": "components/projects/ProjectWorkspace.js",
+   "to": "components/projects/projects.module.css"
+  },
+  {
+   "from": "components/projects/ProjectsHome.js",
+   "to": "lib/projects.js"
+  },
+  {
+   "from": "components/projects/ProjectsHome.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/projects/ProjectsHome.js",
+   "to": "components/projects/time.js"
+  },
+  {
+   "from": "components/projects/ProjectsHome.js",
+   "to": "components/projects/projects.module.css"
+  },
+  {
+   "from": "components/prompts/Builder.js",
+   "to": "lib/promptbuilder.js"
+  },
+  {
+   "from": "components/prompts/Builder.js",
+   "to": "lib/imagefile.js"
+  },
+  {
+   "from": "components/prompts/Builder.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/prompts/Builder.js",
+   "to": "components/prompts/builder.module.css"
+  },
+  {
+   "from": "components/seller/AdPack.js",
+   "to": "lib/imagefile.js"
+  },
+  {
+   "from": "components/seller/AdPack.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/seller/AdPack.js",
+   "to": "lib/testad.js"
+  },
+  {
+   "from": "components/seller/AdPack.js",
+   "to": "components/seller/seller.module.css"
+  },
+  {
+   "from": "components/seller/AdPack.js",
+   "to": "components/seller/photoad.module.css"
+  },
+  {
+   "from": "components/seller/Catalog.js",
+   "to": "lib/imagefile.js"
+  },
+  {
+   "from": "components/seller/Catalog.js",
+   "to": "components/studio/cutout.js"
+  },
+  {
+   "from": "components/seller/Catalog.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/seller/Catalog.js",
+   "to": "components/seller/catalogRender.js"
+  },
+  {
+   "from": "components/seller/Catalog.js",
+   "to": "components/seller/catalogPdf.js"
+  },
+  {
+   "from": "components/seller/Catalog.js",
+   "to": "components/seller/seller.module.css"
+  },
+  {
+   "from": "components/seller/Catalog.js",
+   "to": "components/seller/catalog.module.css"
+  },
+  {
+   "from": "components/seller/PhotoAd.js",
+   "to": "lib/imagefile.js"
+  },
+  {
+   "from": "components/seller/PhotoAd.js",
+   "to": "components/studio/cutout.js"
+  },
+  {
+   "from": "components/seller/PhotoAd.js",
+   "to": "components/seller/scenes.js"
+  },
+  {
+   "from": "components/seller/PhotoAd.js",
+   "to": "lib/aibg.js"
+  },
+  {
+   "from": "components/seller/PhotoAd.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/seller/PhotoAd.js",
+   "to": "components/seller/AdPack.js"
+  },
+  {
+   "from": "components/seller/PhotoAd.js",
+   "to": "components/seller/seller.module.css"
+  },
+  {
+   "from": "components/seller/PhotoAd.js",
+   "to": "components/seller/photoad.module.css"
+  },
+  {
+   "from": "components/seller/PhotoAd.js",
+   "to": "components/seller/PhotoAdVideo.js"
+  },
+  {
+   "from": "components/seller/PhotoAdVideo.js",
+   "to": "components/lab/AdComp.js"
+  },
+  {
+   "from": "components/seller/PhotoAdVideo.js",
+   "to": "components/lab/ReelComp.js"
+  },
+  {
+   "from": "components/seller/PhotoAdVideo.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/seller/PhotoAdVideo.js",
+   "to": "components/seller/seller.module.css"
+  },
+  {
+   "from": "components/seller/PhotoAdVideo.js",
+   "to": "components/seller/photoad.module.css"
+  },
+  {
+   "from": "components/seller/Receipt.js",
+   "to": "components/BotIcon.js"
+  },
+  {
+   "from": "components/seller/Receipt.js",
+   "to": "lib/subscriptions.js"
+  },
+  {
+   "from": "components/seller/Receipt.js",
+   "to": "lib/receipt.js"
+  },
+  {
+   "from": "components/seller/Receipt.js",
+   "to": "lib/offer.js"
+  },
+  {
+   "from": "components/seller/Receipt.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/seller/Receipt.js",
+   "to": "lib/imagefile.js"
+  },
+  {
+   "from": "components/seller/Receipt.js",
+   "to": "lib/sharecard.js"
+  },
+  {
+   "from": "components/seller/Receipt.js",
+   "to": "components/seller/seller.module.css"
+  },
+  {
+   "from": "components/seller/Receipt.js",
+   "to": "components/seller/receipt.module.css"
+  },
+  {
+   "from": "components/seller/SellerHero.js",
+   "to": "components/seller/seller.module.css"
+  },
+  {
+   "from": "components/seller/Showcase.js",
+   "to": "components/seller/showcase.module.css"
+  },
+  {
+   "from": "components/seller/Showcase.js",
+   "to": "components/amazon/icons.js"
+  },
+  {
+   "from": "components/seller/TestAd.js",
+   "to": "lib/testad.js"
+  },
+  {
+   "from": "components/seller/TestAd.js",
+   "to": "lib/imagefile.js"
+  },
+  {
+   "from": "components/seller/TestAd.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/seller/TestAd.js",
+   "to": "lib/sharecard.js"
+  },
+  {
+   "from": "components/seller/TestAd.js",
+   "to": "components/seller/seller.module.css"
+  },
+  {
+   "from": "components/seller/TestAd.js",
+   "to": "components/seller/testad.module.css"
+  },
+  {
+   "from": "components/seller/VoicePost.js",
+   "to": "components/seller/AdPack.js"
+  },
+  {
+   "from": "components/seller/VoicePost.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/seller/VoicePost.js",
+   "to": "components/seller/seller.module.css"
+  },
+  {
+   "from": "components/seller/VoicePost.js",
+   "to": "components/seller/voice.module.css"
+  },
+  {
+   "from": "components/seller/catalogPdf.js",
+   "to": "components/seller/catalogRender.js"
+  },
+  {
+   "from": "components/seller/catalogRender.js",
+   "to": "lib/imagefile.js"
+  },
+  {
+   "from": "components/seller/scenes.js",
+   "to": "lib/imagefile.js"
+  },
+  {
+   "from": "components/studio/AdLibrary.js",
+   "to": "components/studio/studio.module.css"
+  },
+  {
+   "from": "components/studio/AiRemoveBg.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/AiRemoveBg.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/studio/AiRemoveBg.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/AiRemoveBg.js",
+   "to": "components/studio/cutout.js"
+  },
+  {
+   "from": "components/studio/Apps.js",
+   "to": "components/studio/studio.module.css"
+  },
+  {
+   "from": "components/studio/Batch.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/Batch.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/studio/Batch.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/Calcs.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/Calcs.js",
+   "to": "lib/imagefile.js"
+  },
+  {
+   "from": "components/studio/Calcs.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/Calcs.js",
+   "to": "lib/arcalc.js"
+  },
+  {
+   "from": "components/studio/Colors.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/Colors.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/studio/Colors.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/Enhance.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/Enhance.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/studio/Enhance.js",
+   "to": "components/studio/ImageEnhancer.js"
+  },
+  {
+   "from": "components/studio/ImageEnhancer.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/ImageEnhancer.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/studio/ImageEnhancer.js",
+   "to": "lib/imgenhance.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/PhotoEditor.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/Poster.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/RemoveBg.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/AiRemoveBg.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/Resize.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/Batch.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/Watermark.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/Colors.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/Pdf.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/VideoFrame.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/Calcs.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/Ocr.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/LogoStudio.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/QrStudio.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/Speak.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/Podcast.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/LongTranscribe.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/Enhance.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/Apps.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/studio/VideoMaker.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/lab/RemotionReel.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/lab/VideoFactory.js"
+  },
+  {
+   "from": "components/studio/LocalTool.js",
+   "to": "components/lab/ProductAd.js"
+  },
+  {
+   "from": "components/studio/LogoStudio.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/LogoStudio.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/studio/LogoStudio.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/LogoStudio.js",
+   "to": "lib/logostudio.js"
+  },
+  {
+   "from": "components/studio/LogoStudio.js",
+   "to": "lib/logofonts.js"
+  },
+  {
+   "from": "components/studio/LogoStudio.js",
+   "to": "lib/brandprofile.js"
+  },
+  {
+   "from": "components/studio/LogoStudio.js",
+   "to": "components/studio/logo.module.css"
+  },
+  {
+   "from": "components/studio/LongTranscribe.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/LongTranscribe.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/LongTranscribe.js",
+   "to": "lib/longaudio.js"
+  },
+  {
+   "from": "components/studio/LongTranscribe.js",
+   "to": "components/studio/audio.module.css"
+  },
+  {
+   "from": "components/studio/Ocr.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/Ocr.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/studio/Ocr.js",
+   "to": "lib/imagefile.js"
+  },
+  {
+   "from": "components/studio/Ocr.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/Pdf.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/Pdf.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/studio/Pdf.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/PhotoEditor.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/PhotoEditor.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/studio/PhotoEditor.js",
+   "to": "components/studio/pixels.js"
+  },
+  {
+   "from": "components/studio/PhotoEditor.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/Podcast.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/Podcast.js",
+   "to": "lib/wav.js"
+  },
+  {
+   "from": "components/studio/Podcast.js",
+   "to": "lib/podcast.js"
+  },
+  {
+   "from": "components/studio/Podcast.js",
+   "to": "components/studio/audio.module.css"
+  },
+  {
+   "from": "components/studio/Poster.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/Poster.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/studio/Poster.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/QrStudio.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/QrStudio.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/studio/QrStudio.js",
+   "to": "lib/imagefile.js"
+  },
+  {
+   "from": "components/studio/QrStudio.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/QrStudio.js",
+   "to": "lib/qrstudio.js"
+  },
+  {
+   "from": "components/studio/RemoveBg.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/RemoveBg.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/studio/RemoveBg.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/Resize.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/Resize.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/studio/Resize.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/Speak.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/Speak.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/studio/Speak.js",
+   "to": "lib/docs.js"
+  },
+  {
+   "from": "components/studio/Speak.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/Speak.js",
+   "to": "lib/speech.js"
+  },
+  {
+   "from": "components/studio/Speak.js",
+   "to": "lib/ambience.js"
+  },
+  {
+   "from": "components/studio/Speak.js",
+   "to": "lib/speakclient.js"
+  },
+  {
+   "from": "components/studio/Speak.js",
+   "to": "lib/wav.js"
+  },
+  {
+   "from": "components/studio/Speak.js",
+   "to": "components/studio/SpeakCompare.js"
+  },
+  {
+   "from": "components/studio/SpeakCompare.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/SpeakCompare.js",
+   "to": "lib/speakclient.js"
+  },
+  {
+   "from": "components/studio/SpeakCompare.js",
+   "to": "lib/hfspace.js"
+  },
+  {
+   "from": "components/studio/SpeakCompare.js",
+   "to": "lib/speech.js"
+  },
+  {
+   "from": "components/studio/VideoFrame.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/VideoFrame.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/studio/VideoFrame.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/VideoMaker.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/VideoMaker.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/studio/VideoMaker.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/VideoMaker.js",
+   "to": "lib/genimage.js"
+  },
+  {
+   "from": "components/studio/Watermark.js",
+   "to": "components/studio/ui.js"
+  },
+  {
+   "from": "components/studio/Watermark.js",
+   "to": "components/studio/util.js"
+  },
+  {
+   "from": "components/studio/Watermark.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "components/studio/cutout.js",
+   "to": "lib/hfspace.js"
+  },
+  {
+   "from": "components/studio/ui.js",
+   "to": "components/studio/studio.module.css"
+  },
+  {
+   "from": "lib/aibg.js",
+   "to": "lib/hfspace.js"
+  },
+  {
+   "from": "lib/amazonapi.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "lib/amazonapi.js",
+   "to": "lib/amazon.js"
+  },
+  {
+   "from": "lib/amazonprompts.js",
+   "to": "lib/amazon.js"
+  },
+  {
+   "from": "lib/botcatalog.js",
+   "to": "lib/bots.js"
+  },
+  {
+   "from": "lib/content/index.js",
+   "to": "lib/content/writing.js"
+  },
+  {
+   "from": "lib/content/index.js",
+   "to": "lib/content/marketing.js"
+  },
+  {
+   "from": "lib/content/index.js",
+   "to": "lib/content/social.js"
+  },
+  {
+   "from": "lib/content/index.js",
+   "to": "lib/content/business.js"
+  },
+  {
+   "from": "lib/content/index.js",
+   "to": "lib/content/ecommerce.js"
+  },
+  {
+   "from": "lib/content/index.js",
+   "to": "lib/content/education.js"
+  },
+  {
+   "from": "lib/content/index.js",
+   "to": "lib/content/language.js"
+  },
+  {
+   "from": "lib/content/index.js",
+   "to": "lib/content/code.js"
+  },
+  {
+   "from": "lib/content/index.js",
+   "to": "lib/content/career.js"
+  },
+  {
+   "from": "lib/content/index.js",
+   "to": "lib/content/productivity.js"
+  },
+  {
+   "from": "lib/content/index.js",
+   "to": "lib/content/communication.js"
+  },
+  {
+   "from": "lib/content/index.js",
+   "to": "lib/content/creative.js"
+  },
+  {
+   "from": "lib/content/index.js",
+   "to": "lib/content/design.js"
+  },
+  {
+   "from": "lib/content/index.js",
+   "to": "lib/content/analysis.js"
+  },
+  {
+   "from": "lib/content/index.js",
+   "to": "lib/content/lifestyle.js"
+  },
+  {
+   "from": "lib/content/index.js",
+   "to": "lib/content/studio.js"
+  },
+  {
+   "from": "lib/directory.js",
+   "to": "data/directory/tools.json"
+  },
+  {
+   "from": "lib/directory.js",
+   "to": "lib/apps.js"
+  },
+  {
+   "from": "lib/directory.js",
+   "to": "lib/dircats.js"
+  },
+  {
+   "from": "lib/doccontext.js",
+   "to": "lib/search.js"
+  },
+  {
+   "from": "lib/fieldmedia.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "lib/fieldmedia.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "lib/fieldmedia.js",
+   "to": "lib/websearch.js"
+  },
+  {
+   "from": "lib/fusion.js",
+   "to": "lib/bots.js"
+  },
+  {
+   "from": "lib/fusion.js",
+   "to": "lib/answerstyle.js"
+  },
+  {
+   "from": "lib/fusion.js",
+   "to": "lib/botcatalog.js"
+  },
+  {
+   "from": "lib/fusion.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "lib/fusion.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "lib/geminitts.js",
+   "to": "lib/wav.js"
+  },
+  {
+   "from": "lib/genimage.js",
+   "to": "lib/hfspace.js"
+  },
+  {
+   "from": "lib/groq.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "lib/groq.js",
+   "to": "lib/site.js"
+  },
+  {
+   "from": "lib/imagesearch.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "lib/llmjson.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "lib/llmjson.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "lib/logofonts.js",
+   "to": "lib/logostudio.js"
+  },
+  {
+   "from": "lib/makers.js",
+   "to": "data/makers-probe.json"
+  },
+  {
+   "from": "lib/makers.js",
+   "to": "scripts/makers/list.mjs"
+  },
+  {
+   "from": "lib/marketdata.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "lib/marketdata.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "lib/marketdata.js",
+   "to": "lib/websearch.js"
+  },
+  {
+   "from": "lib/marketdata.js",
+   "to": "lib/feasibility.js"
+  },
+  {
+   "from": "lib/offer.js",
+   "to": "lib/receipt.js"
+  },
+  {
+   "from": "lib/projects.js",
+   "to": "lib/idb.js"
+  },
+  {
+   "from": "lib/promptgen.js",
+   "to": "lib/promptbuilder.js"
+  },
+  {
+   "from": "lib/receipt.js",
+   "to": "lib/subscriptions.js"
+  },
+  {
+   "from": "lib/scamscan.js",
+   "to": "lib/scamflags.js"
+  },
+  {
+   "from": "lib/scamscan.js",
+   "to": "lib/websearch.js"
+  },
+  {
+   "from": "lib/scamscan.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "lib/scamscan.js",
+   "to": "lib/models.js"
+  },
+  {
+   "from": "lib/scholar.js",
+   "to": "lib/groq.js"
+  },
+  {
+   "from": "lib/scholar.js",
+   "to": "lib/llmjson.js"
+  },
+  {
+   "from": "lib/search.js",
+   "to": "lib/tools.js"
+  },
+  {
+   "from": "lib/sharecard.js",
+   "to": "components/StarMark.js"
+  },
+  {
+   "from": "lib/sharecard.js",
+   "to": "lib/imagefile.js"
+  },
+  {
+   "from": "lib/useAttach.js",
+   "to": "lib/docs.js"
+  },
+  {
+   "from": "lib/useProofread.js",
+   "to": "lib/store.js"
+  },
+  {
+   "from": "lib/websearch.js",
+   "to": "lib/groq.js"
+  }
+ ],
+ "packages": {
+  "next": [
+   "app/agents/[id]/page.js",
+   "app/agents/page.js",
+   "app/ai/[slug]/page.js",
+   "app/creators/[slug]/page.js",
+   "app/creators/page.js",
+   "app/feasibility/page.js",
+   "app/flow/[id]/page.js",
+   "app/global-tools/[cat]/page.js",
+   "app/global-tools/alternatives/page.js",
+   "app/global-tools/page.js",
+   "app/history/page.js",
+   "app/lab/remotion/page.js",
+   "app/learn/page.js",
+   "app/library/[slug]/page.js",
+   "app/library/page.js",
+   "app/maker/[slug]/page.js",
+   "app/maker/create/page.js",
+   "app/maker/page.js",
+   "app/plans/page.js",
+   "app/program/[key]/page.js",
+   "app/prompts/page.js",
+   "app/research/page.js",
+   "app/resources/[cat]/page.js",
+   "app/resources/page.js",
+   "app/task/[slug]/page.js",
+   "app/tasks/page.js",
+   "app/tool/[id]/page.js",
+   "components/AskAbout.js",
+   "components/BottomNav.js",
+   "components/BrandProfile.js",
+   "components/Catalog.js",
+   "components/Chrome.js",
+   "components/DirSearch.js",
+   "components/DirTools.js",
+   "components/Feasibility.js",
+   "components/FlowCards.js",
+   "components/FlowRunner.js",
+   "components/Home.js",
+   "components/LibraryGrid.js",
+   "components/MainChat.js",
+   "components/MakerFluxGen.js",
+   "components/MakerImageGen.js",
+   "components/ModelCompare.js",
+   "components/ModelPicker.js",
+   "components/ModelsGallery.js",
+   "components/ProgramsGrid.js",
+   "components/PromptsGrid.js",
+   "components/Research.js",
+   "components/SourceChat.js",
+   "components/SubsNav.js",
+   "components/ToolPitch.js",
+   "components/ToolRunner.js",
+   "components/amazon/CheckTool.js",
+   "components/amazon/Hub.js",
+   "components/amazon/ListingTool.js",
+   "components/lab/ProductAd.js",
+   "components/lab/RemotionLoader.js",
+   "components/projects/ProjectWorkspace.js",
+   "components/projects/ProjectsHome.js",
+   "components/seller/AdPack.js",
+   "components/seller/Catalog.js",
+   "components/seller/PhotoAd.js",
+   "components/seller/Receipt.js",
+   "components/seller/SellerHero.js",
+   "components/seller/Showcase.js",
+   "components/seller/TestAd.js",
+   "components/seller/VoicePost.js",
+   "components/studio/LocalTool.js",
+   "components/studio/Speak.js"
+  ],
+  "msedge-tts": [
+   "app/api/speak/route.js",
+   "app/api/tts/route.js"
+  ],
+  "react": [
+   "app/tools/page.js",
+   "components/AgentRunner.js",
+   "components/BrandLogo.js",
+   "components/BrandProfile.js",
+   "components/Catalog.js",
+   "components/Chrome.js",
+   "components/DirSearch.js",
+   "components/DirTools.js",
+   "components/Feasibility.js",
+   "components/FieldData.js",
+   "components/FlowRunner.js",
+   "components/Home.js",
+   "components/IntroDone.js",
+   "components/LibraryFrame.js",
+   "components/LibraryGrid.js",
+   "components/MainChat.js",
+   "components/MakerFluxGen.js",
+   "components/MakerFrame.js",
+   "components/MakerImageGen.js",
+   "components/MakerPrompt.js",
+   "components/Md.js",
+   "components/ModelCompare.js",
+   "components/ModelsGallery.js",
+   "components/MyTools.js",
+   "components/NewsList.js",
+   "components/ProCode.js",
+   "components/PromptsGrid.js",
+   "components/Research.js",
+   "components/ScamChecker.js",
+   "components/ScrollBands.js",
+   "components/ShareBar.js",
+   "components/SourceChat.js",
+   "components/SourceMap.js",
+   "components/StarMark.js",
+   "components/SubsCalculator.js",
+   "components/SubsHub.js",
+   "components/SurveyForm.js",
+   "components/ThemeShift.js",
+   "components/ToolRunner.js",
+   "components/VisionRunner.js",
+   "components/amazon/CheckTool.js",
+   "components/amazon/CompetitorTool.js",
+   "components/amazon/ListingTool.js",
+   "components/amazon/ProfitTool.js",
+   "components/amazon/shared.js",
+   "components/fx/RevealOnScroll.js",
+   "components/fx/SpotRoot.js",
+   "components/lab/ProductAd.js",
+   "components/lab/RemotionReel.js",
+   "components/lab/VideoFactory.js",
+   "components/projects/ProjectWorkspace.js",
+   "components/projects/ProjectsHome.js",
+   "components/prompts/Builder.js",
+   "components/seller/AdPack.js",
+   "components/seller/Catalog.js",
+   "components/seller/PhotoAd.js",
+   "components/seller/PhotoAdVideo.js",
+   "components/seller/Receipt.js",
+   "components/seller/TestAd.js",
+   "components/seller/VoicePost.js",
+   "components/studio/AdLibrary.js",
+   "components/studio/AiRemoveBg.js",
+   "components/studio/Batch.js",
+   "components/studio/Calcs.js",
+   "components/studio/Colors.js",
+   "components/studio/Enhance.js",
+   "components/studio/ImageEnhancer.js",
+   "components/studio/LocalTool.js",
+   "components/studio/LogoStudio.js",
+   "components/studio/LongTranscribe.js",
+   "components/studio/Ocr.js",
+   "components/studio/Pdf.js",
+   "components/studio/PhotoEditor.js",
+   "components/studio/Podcast.js",
+   "components/studio/Poster.js",
+   "components/studio/QrStudio.js",
+   "components/studio/RemoveBg.js",
+   "components/studio/Resize.js",
+   "components/studio/Speak.js",
+   "components/studio/SpeakCompare.js",
+   "components/studio/VideoFrame.js",
+   "components/studio/VideoMaker.js",
+   "components/studio/Watermark.js",
+   "components/studio/ui.js",
+   "lib/store.js",
+   "lib/useAttach.js",
+   "lib/useModal.js",
+   "lib/useProofread.js"
+  ],
+  "react-markdown": [
+   "components/Md.js"
+  ],
+  "remark-gfm": [
+   "components/Md.js"
+  ],
+  "remotion": [
+   "components/lab/AdComp.js",
+   "components/lab/FactoryComp.js",
+   "components/lab/ReelComp.js"
+  ],
+  "@remotion/media": [
+   "components/lab/AdComp.js",
+   "components/lab/FactoryComp.js"
+  ],
+  "@remotion/player": [
+   "components/lab/ProductAd.js",
+   "components/lab/RemotionReel.js",
+   "components/lab/VideoFactory.js",
+   "components/seller/PhotoAdVideo.js"
+  ],
+  "@remotion/web-renderer": [
+   "components/lab/ProductAd.js",
+   "components/lab/RemotionReel.js",
+   "components/lab/VideoFactory.js",
+   "components/seller/PhotoAdVideo.js"
+  ],
+  "pdf-lib": [
+   "components/seller/catalogPdf.js",
+   "components/studio/Pdf.js"
+  ]
+ },
+ "tools": [
+  {
+   "id": "reel-pro",
+   "name": "ريلز بحركة احترافية",
+   "local": "video-remotion",
+   "component": "components/lab/RemotionReel.js"
+  },
+  {
+   "id": "product-ad",
+   "name": "فيديو إعلان من صورة المنتج",
+   "local": "product-ad",
+   "component": "components/lab/ProductAd.js"
+  },
+  {
+   "id": "video-factory",
+   "name": "مصنع الفيديو بالصوت",
+   "local": "video-factory",
+   "component": "components/lab/VideoFactory.js"
+  },
+  {
+   "id": "ai-video",
+   "name": "صانع الريلز بالذكاء الاصطناعي",
+   "local": "video-ai",
+   "component": "components/studio/VideoMaker.js"
+  },
+  {
+   "id": "text-video",
+   "name": "فيديو كلام متحرك",
+   "local": "video-text",
+   "component": "components/studio/VideoMaker.js"
+  },
+  {
+   "id": "photo-video",
+   "name": "فيديو من الصور",
+   "local": "video-photos",
+   "component": "components/studio/VideoMaker.js"
+  },
+  {
+   "id": "photo-editor",
+   "name": "محرر الصور",
+   "local": "photo",
+   "component": "components/studio/PhotoEditor.js"
+  },
+  {
+   "id": "poster-maker",
+   "name": "مصمم البوستات",
+   "local": "poster",
+   "component": "components/studio/Poster.js"
+  },
+  {
+   "id": "remove-bg",
+   "name": "إزالة الخلفية",
+   "local": "removebg"
+  },
+  {
+   "id": "image-resize",
+   "name": "تغيير مقاس الصور",
+   "local": "resize",
+   "component": "components/studio/Resize.js"
+  },
+  {
+   "id": "image-compress",
+   "name": "ضغط الصور",
+   "local": "compress",
+   "component": "components/studio/Batch.js"
+  },
+  {
+   "id": "image-convert",
+   "name": "تحويل صيغة الصور",
+   "local": "convert",
+   "component": "components/studio/Batch.js"
+  },
+  {
+   "id": "watermark",
+   "name": "العلامة المائية",
+   "local": "watermark",
+   "component": "components/studio/Watermark.js"
+  },
+  {
+   "id": "color-extract",
+   "name": "ألوان من صورة",
+   "local": "colors",
+   "component": "components/studio/Colors.js"
+  },
+  {
+   "id": "images-to-pdf",
+   "name": "صور إلى PDF",
+   "local": "img2pdf",
+   "component": "components/studio/Pdf.js"
+  },
+  {
+   "id": "pdf-merge",
+   "name": "دمج ملفات PDF",
+   "local": "pdfmerge",
+   "component": "components/studio/Pdf.js"
+  },
+  {
+   "id": "pdf-split",
+   "name": "تقسيم PDF",
+   "local": "pdfsplit",
+   "component": "components/studio/Pdf.js"
+  },
+  {
+   "id": "video-frame",
+   "name": "صورة من الفيديو",
+   "local": "frame",
+   "component": "components/studio/VideoFrame.js"
+  },
+  {
+   "id": "design-apps",
+   "name": "برامج تصميم أونلاين",
+   "local": "apps",
+   "component": "components/studio/Apps.js"
+  },
+  {
+   "id": "image-to-text",
+   "name": "استخراج نص من صورة",
+   "local": "ocr",
+   "component": "components/studio/Ocr.js"
+  },
+  {
+   "id": "pdf-delete-pages",
+   "name": "حذف صفحات من PDF",
+   "local": "pdfdelete",
+   "component": "components/studio/Pdf.js"
+  },
+  {
+   "id": "logo-maker",
+   "name": "مولد اللوجو",
+   "local": "logo",
+   "component": "components/studio/LogoStudio.js"
+  },
+  {
+   "id": "qr-code",
+   "name": "مولد QR كود",
+   "local": "qr",
+   "component": "components/studio/QrStudio.js"
+  },
+  {
+   "id": "image-enhance",
+   "name": "تحسين الصور وتكبيرها",
+   "local": "enhance",
+   "component": "components/studio/Enhance.js"
+  },
+  {
+   "id": "voice-studio",
+   "name": "مولد الأصوات والكتاب المسموع",
+   "local": "speak",
+   "component": "components/studio/Speak.js"
+  },
+  {
+   "id": "podcast",
+   "name": "بودكاست بصوتين",
+   "local": "podcast",
+   "component": "components/studio/Podcast.js"
+  },
+  {
+   "id": "long-transcribe",
+   "name": "تفريغ التسجيلات الطويلة",
+   "local": "longtranscribe",
+   "component": "components/studio/LongTranscribe.js"
+  }
+ ]
+}

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Md from "./Md";
+import SourceMap from "./SourceMap";
 import ShareBar from "./ShareBar";
 import { read, write, toast } from "@/lib/store";
 import { citation } from "@/lib/cite";
@@ -37,6 +38,7 @@ export default function Research() {
   const [stage, setStage] = useState("idle"); // idle | searching | review | outlining | writing | done
   const [found, setFound] = useState(null); // { queries, sources, libs }
   const [picked, setPicked] = useState(new Set());
+  const [mapOpen, setMapOpen] = useState(false);
   const [report, setReport] = useState(null); // { title, sections:[{h, points, src, text, status}] }
   const [error, setError] = useState("");
   const abortRef = useRef(null);
@@ -242,6 +244,10 @@ export default function Research() {
             <b>المصادر اللي لقيتها ({found.sources.length})</b>
             <small>اختار اللي يناسب بحثك ({chosen.length} مختار)</small>
           </div>
+          <div className={s.actions}>
+            <button type="button" className={s.ghost} aria-expanded={mapOpen} onClick={() => setMapOpen((v) => !v)}>{mapOpen ? "اقفل خريطة المصادر" : "اعرض خريطة المصادر"}</button>
+          </div>
+          {mapOpen && <SourceMap topic={topic} sources={found.sources} picked={picked} onToggle={busy ? null : toggle} />}
           {found.queries?.en && <p className={s.query}>بحثت عن: <bdi dir="ltr">{found.queries.en}</bdi>{found.queries.ar ? <> و«{found.queries.ar}»</> : null}</p>}
           <ul className={s.sources}>
             {found.sources.map((x) => (

@@ -1,0 +1,66 @@
+/* خريطة المصادر في الباحث الأكاديمي */
+.wrap { display: grid; gap: 12px; padding: 16px; border-radius: 20px; background: var(--surface); border: 1px solid var(--hairline); }
+.top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap; }
+.title { font-size: 0.98rem; color: var(--ink); }
+.sum { margin: 2px 0 0; font-size: 0.8rem; color: var(--muted); line-height: 1.7; }
+.toggles { display: flex; gap: 12px; font-size: 0.82rem; color: var(--muted); }
+.toggles label { display: inline-flex; gap: 5px; align-items: center; cursor: pointer; }
+.hint { margin: 0; font-size: 0.8rem; color: var(--faint); line-height: 1.7; }
+
+.canvas { width: 100%; overflow: hidden; border-radius: 16px; background: var(--field); border: 1px solid var(--hairline); }
+.canvas svg { display: block; touch-action: manipulation; }
+.node { cursor: pointer; outline: none; }
+.node:focus-visible circle { stroke: var(--ink); stroke-width: 3; }
+.num { font-size: 11px; font-weight: 700; fill: #fff; pointer-events: none; font-family: system-ui, sans-serif; }
+.topicLabel { font-size: 11px; fill: var(--muted); pointer-events: none; paint-order: stroke; stroke: var(--field); stroke-width: 3px; }
+.authorLabel { font-size: 10px; fill: var(--faint); pointer-events: none; paint-order: stroke; stroke: var(--field); stroke-width: 3px; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 0.74rem; color: var(--faint); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { display: inline-block; width: 18px; height: 0; border-top: 2px solid; }
+.lCite { border-color: #e0791b; }
+.lShared { border-color: #1f4dff; border-top-style: dashed !important; }
+.lTopic { width: 9px !important; height: 9px !important; border: 1.3px solid #8a8fa8 !important; transform: rotate(45deg); background: #fff; }
+.lAuthor { width: 9px !important; height: 9px !important; border: 0 !important; border-radius: 50%; background: #8a8fa8; }
+.lHub { width: 12px !important; height: 12px !important; border: 1.5px dashed #1f4dff !important; border-radius: 50%; }
+
+.detail { display: grid; gap: 6px; padding: 12px 14px; border-radius: 16px; background: var(--surface-2); }
+.dTop { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 0.76rem; color: var(--faint); }
+.dTop em { font-style: normal; color: #1f4dff; }
+.dTop b { color: var(--ink); }
+.hub { color: #12a36b; }
+.detail strong { font-size: 0.9rem; line-height: 1.6; color: var(--ink); font-weight: 600; }
+.dSub { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+.rel { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.rel button, .start button {
+  font: inherit; font-size: 0.8rem; color: var(--text); background: none; border: 0; padding: 2px 0; cursor: pointer; text-align: start; line-height: 1.6;
+}
+.rel button:hover, .start button:hover { color: #1f4dff; }
+.dActions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; font-size: 0.82rem; }
+.dActions a { color: #1f4dff; }
+.pick { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+
+.ai { display: grid; gap: 10px; }
+.aiStart { display: grid; gap: 8px; justify-items: start; }
+.aiStart p { margin: 0; font-size: 0.84rem; color: var(--muted); line-height: 1.75; }
+.aiTitle { font-size: 0.88rem; color: var(--ink); }
+.btn, .ghost { font: inherit; font-size: 0.84rem; cursor: pointer; padding: 9px 16px; border-radius: 999px; border: 0; justify-self: start; }
+.btn { color: #fff; background: #1f4dff; }
+.btn:disabled, .ghost:disabled { opacity: 0.5; cursor: default; }
+.ghost { color: var(--text); background: var(--surface-2); }
+.err { margin: 0; color: #b42318; font-size: 0.84rem; }
+.clusters { display: grid; gap: 8px; }
+.cluster {
+  display: flex; gap: 10px; align-items: flex-start; text-align: start; font: inherit; color: var(--text);
+  padding: 10px 12px; border-radius: 14px; border: 1px solid var(--hairline); background: var(--field); cursor: pointer;
+}
+.clusterOn { border-color: #1f4dff; background: var(--accent-soft, rgba(31, 77, 255, 0.08)); }
+.cluster b { font-size: 0.86rem; }
+.cluster small { color: var(--faint); font-size: 0.74rem; }
+.note { display: block; font-size: 0.8rem; color: var(--muted); line-height: 1.7; margin-top: 2px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; flex: none; margin-top: 5px; }
+.start, .gaps { margin: 0; padding-inline-start: 20px; display: grid; gap: 4px; font-size: 0.84rem; line-height: 1.75; color: var(--text); }
+
+@media (max-width: 640px) {
+  .wrap { padding: 12px; }
+}
