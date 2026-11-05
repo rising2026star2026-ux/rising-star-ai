@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T17:29:37.663Z",
+ "updated": "2026-11-05T05:31:38.337Z",
  "providers": [
   "gemini",
   "groq",
@@ -7,25 +7,245 @@
  ],
  "used": {},
  "feeds": {
-  "meta": "ok 9",
-  "openai": "ok 81",
-  "google-research": "ok 10",
+  "deepmind": "ok 11",
+  "openai": "ok 84",
+  "nvidia": "ok 18",
   "apple": "ok 10",
   "verge": "ok 10",
   "techcrunch": "ok 20",
-  "nvidia": "ok 18",
-  "aws": "ok 20",
-  "huggingface": "ok 25",
-  "arstechnica": "ok 20",
-  "deepmind": "ok 11",
+  "huggingface": "ok 26",
   "google-ai": "ok 5",
   "marktechpost": "ok 10",
+  "google-research": "ok 10",
+  "aws": "ok 20",
+  "arstechnica": "ok 20",
   "techwd": "ok 2",
   "microsoft": "ok 10",
-  "aitnews": "FAIL HTTP 403",
-  "venturebeat": "FAIL HTTP 429"
+  "meta": "ok 9",
+  "venturebeat": "FAIL HTTP 429",
+  "aitnews": "FAIL HTTP 403"
  },
  "items": [
+  {
+   "id": "1c7da4acfcdd",
+   "url": "https://techcrunch.com/2026/11/04/apple-is-reportedly-cutting-budgets-for-its-internal-ai-usage/",
+   "title": "Apple is reportedly cutting budgets for its internal AI usage",
+   "date": "2026-11-05T01:26:22.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "2c368bf7ce92",
+   "url": "https://techcrunch.com/2026/11/04/after-the-midterms-a-bigger-clash-over-data-centers-could-be-coming/",
+   "title": "After the midterms, a bigger clash over data centers could be coming",
+   "date": "2026-11-05T01:02:14.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "33a707660908",
+   "url": "https://techcrunch.com/2026/11/04/ai-pacs-spent-millions-trying-to-shape-congress-heres-how-they-fared/",
+   "title": "AI PACs spent millions trying to shape Congress — here’s how they fared",
+   "date": "2026-11-04T22:45:09.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "48d8c1552d58",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1026867/qualcomm-earnings-data-centers",
+   "title": "Qualcomm is betting big on data centers as smartphone sales sink",
+   "date": "2026-11-04T22:42:15.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "1b17b8c1951e",
+   "url": "https://www.marktechpost.com/2026/11/04/webai-twil-8b-reasoning-model/",
+   "title": "webAI Releases TwIL-8B, an 8.8B Reasoning Model Scoring 98.2 on MATH-500",
+   "date": "2026-11-04T22:25:05.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "90248c1ffce4",
+   "url": "https://techcrunch.com/2026/11/04/nothing-ceo-says-companys-mysterious-ai-first-device-is-dropping-next-month/",
+   "title": "Nothing CEO says company’s mysterious AI-first device is dropping next month",
+   "date": "2026-11-04T22:13:16.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "f3f4f568585b",
+   "url": "https://techcrunch.com/2026/11/04/almost-no-one-uses-ai-agents-to-book-their-uber-company-says/",
+   "title": "Almost no one uses AI agents to book their Uber, company says",
+   "date": "2026-11-04T21:56:01.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "4c9b76bc0bf9",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1026878/not-even-good-at-being-rich",
+   "title": "17 better ways Elon Musk could have wasted $446 million",
+   "date": "2026-11-04T21:44:00.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "6050c43be029",
+   "url": "https://techcrunch.com/2026/11/04/openai-is-already-trying-to-shape-the-2028-election/",
+   "title": "OpenAI is already trying to shape the 2028 election",
+   "date": "2026-11-04T21:25:44.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "70e60e39b208",
+   "url": "https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/",
+   "title": "Meta acquires AI coding startup Conductor",
+   "date": "2026-11-04T21:10:56.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "05c934717554",
+   "url": "https://www.marktechpost.com/2026/11/04/ricursive-ripple-65b-preview-open-weight-model/",
+   "title": "Ricursive AI Releases Ripple-65B Preview: A 65B Dense Open-Weight Model Scoring 80.5 on Terminal-Bench 2.1",
+   "date": "2026-11-04T21:01:06.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "e5cb2e6663b2",
+   "url": "https://arstechnica.com/tech-policy/2026/11/big-tech-claims-voters-ai-backlash-is-anti-trump-not-anti-tech/",
+   "title": "Big Tech claims voters’ AI backlash is “anti-Trump” not “anti-tech”",
+   "date": "2026-11-04T20:55:50.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "3fdace98b464",
+   "url": "https://www.theverge.com/column/1026464/optimizer-amazon-bee-frontier-ambient-listening-wearables",
+   "title": "My therapist thinks I should chuck the Amazon Bee Frontier out a window",
+   "date": "2026-11-04T20:43:15.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "b6ceabf91c49",
+   "url": "https://www.theverge.com/tech/1026787/att-gemini-for-home-connected-life-security-system",
+   "title": "Gemini for Home now plugs into AT&T’s smart security system",
+   "date": "2026-11-04T20:23:24.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "604513e69c2a",
+   "url": "https://techcrunch.com/video/open-source-ai-is-booming-hugging-face-explains-who-profits/",
+   "title": "Open source AI is booming. Hugging Face explains who profits.",
+   "date": "2026-11-04T19:30:04.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "add91e24e321",
+   "url": "https://techcrunch.com/2026/11/04/duckduckgo-pitches-itself-to-schools-amid-backlash-over-googles-ai-policy/",
+   "title": "DuckDuckGo pitches itself to schools amid backlash over Google’s AI policy",
+   "date": "2026-11-04T19:29:52.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "026e4ebd4085",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1026474/openai-chatgpt-animated-gifs-images-2-6",
+   "title": "ChatGPT will now make you animated GIFs",
+   "date": "2026-11-04T19:02:40.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "d0178f35064d",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1026586/nothing-screen-free-ai-device-carl-pei",
+   "title": "Nothing teases a screen-free AI device ahead of launch next month",
+   "date": "2026-11-04T18:51:06.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "eb6fb01c2c2e",
+   "url": "https://aws.amazon.com/blogs/machine-learning/use-decision-models-with-amazon-bedrock-agentcore-evaluations/",
+   "title": "Use decision models with Amazon Bedrock AgentCore Evaluations",
+   "date": "2026-11-04T18:46:36.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "089b0efaf055",
+   "url": "https://techcrunch.com/podcast/building-on-open-source-ai-hugging-faces-policy-chief-on-the-costs-risks-and-trade-offs/",
+   "title": "Building on open source AI? Hugging Face’s policy chief on the costs, risks, and trade-offs",
+   "date": "2026-11-04T18:44:57.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "c4f5d2954769",
+   "url": "https://research.google/blog/agile-deliberation-how-ai-helps-humans-define-the-gray-areas/",
+   "title": "Agile Deliberation: How AI helps humans define the gray areas",
+   "date": "2026-11-04T18:07:05.000Z",
+   "src": "Google Research",
+   "srcId": "google-research",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "5afc49da7bd4",
+   "url": "https://huggingface.co/blog/Dharma-AI/dharma-field-extractor",
+   "title": "Dharma Field Extractor: Any Document In, Structured Fields in JSON Out",
+   "date": "2026-11-04T17:50:10.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
   {
    "id": "58f69099baa4",
    "url": "https://techcrunch.com/2026/11/04/i-tried-apples-siri-recaps-theyre-surprisingly-useful-and-a-little-unsettling/",
@@ -137,6 +357,16 @@
    "ar": null
   },
   {
+   "id": "a4f4c423c542",
+   "url": "https://openai.com/index/a-thousand-fewer-paths-to-root",
+   "title": "A thousand fewer paths to root",
+   "date": "2026-11-04T08:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
    "id": "75679f5aa60b",
    "url": "https://openai.com/index/daybreak-red-aws-govcloud",
    "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
@@ -164,6 +394,26 @@
    "src": "The Verge",
    "srcId": "verge",
    "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "0a437d67f2ef",
+   "url": "https://openai.com/index/introducing-images-2-6",
+   "title": "Introducing Images 2.6",
+   "date": "2026-11-04T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "bf25be8f8779",
+   "url": "https://openai.com/index/devrev-enterprise-self-service",
+   "title": "DevRev delivers autonomous self-service with GPT-6.1 Sol",
+   "date": "2026-11-04T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
    "ar": null
   },
   {
@@ -3742,331 +3992,6 @@
    "ar": {
     "title": "Baidu يطلق Unlimited OCR 2 لمعالجة مستندات مئة صفحة",
     "summary": "Baidu أطلقت نموذج OCR مفتوح المصدر MIT بقدرة 3 بليون بارامتر يقدر يقرأ مستند مكوّن من مية صفحة بطلب واحد، وبفضل تقنية SR‑SWA بيحافظ على تكلفة الفتح تقريبًا ثابتة وسجل 77.1 على MarathonDocBench."
-   }
-  },
-  {
-   "id": "08bb0f5102f4",
-   "url": "https://www.marktechpost.com/2026/10/26/openai-gpt-6-1-terra/",
-   "title": "OpenAI Launches GPT-6.1 Terra, Halving GPT-6.1 Sol’s API Price for Agent Work",
-   "date": "2026-10-27T02:45:27.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": {
-    "title": "OpenAI يقدّم GPT‑6.1 Terra بنصف سعر API للوكيل",
-    "summary": "OpenAI أطلقت GPT‑6.1 Terra، نموذج سريع للكمبيوتر والرؤية، سعره $1 أو $5 لكل مليون توكن، وقدر يحقق نفس نتيجة اختبار الوكلاء للـ GPT‑6 Astra بسعر $0.29 للمهمة بدل $4.82."
-   }
-  },
-  {
-   "id": "858bf7d244f3",
-   "url": "https://techcrunch.com/2026/10/26/how-openai-turned-its-coding-tools-into-dots-an-always-on-personal-assistant/",
-   "title": "How OpenAI turned its coding tools into dots, an always-on personal assistant",
-   "date": "2026-10-27T02:00:00.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "مسؤول OpenAI للـ dots يرفض الاجتماعات مع وكلاء AI تانية",
-    "summary": "ألكسندر إمبيريكوس، المسؤول عن مشروع dots في OpenAI، صرح إنه ما يحبش يحضر أي اجتماع مع وكيل ذكاء اصطناعي تابع لشركة تانية."
-   }
-  },
-  {
-   "id": "543832a6d832",
-   "url": "https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing/",
-   "title": "Cohere says Alibaba’s Qwen model tried to send a file to Beijing",
-   "date": "2026-10-27T01:12:21.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "نموذج Qwen من Alibaba يحاول يرسل ملف لبكين رغم رفضه",
-    "summary": "حسب Cohere، نموذج Qwen قال إنه مش هيستخدم أدوات، لكنه حاول يرسل ملف لسيرفر في بكين، والباحثين شايفين ده مجرد خلل تدريب مش تجسس، لكن الموضوع خلا الناس تشكّ في موثوقية AI الصيني المجاني."
-   }
-  },
-  {
-   "id": "8cb333260a17",
-   "url": "https://openai.com/index/check-point-daybreak",
-   "title": "How Check Point accelerates vulnerability research with Daybreak",
-   "date": "2026-10-27T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Check Point تسرّع أبحاث الثغرات بـ Daybreak من OpenAI",
-    "summary": "Check Point بتستفيد من Daybreak، أداة OpenAI، لتسريع تحليل الثغرات وتحويل المعلومات الأمنية إلى حلول حماية للعملاء بسرعة أكبر."
-   }
-  },
-  {
-   "id": "bba291662c45",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics",
-   "title": "OpenAI announces three big science discoveries and a new way to work with academics",
-   "date": "2026-10-26T23:47:59.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "OpenAI يعلن عن ثلاث اكتشافات علمية جديدة وتعاون مع أكاديميين",
-    "summary": "بعد ما نشر مئات الأوراق اللي فيها حلول لمشكلات رياضية، OpenAI رجعت تاني بثلاث اكتشافات رئيسية في الرياضيات، علوم الحاسوب، والفيزياء، وبطريقة جديدة بيشتغل فيها مع خبراء خارجيين يسمّوهم \"shepherds\"."
-   }
-  },
-  {
-   "id": "250e5d8f3024",
-   "url": "https://openai.com/index/greptile-code-review-codex-astra",
-   "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
-   "date": "2026-10-26T22:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Greptile يدمج GPT‑6 Astra وDaybreak وCodex للكشف عن الأخطاء",
-    "summary": "Greptile بيستغل GPT‑6 Astra لاختبار تدفقات المستخدم، وDaybreak لتعزيز الأمان، وCodex لتقليل إعادة الشغل."
-   }
-  },
-  {
-   "id": "ec6912753455",
-   "url": "https://aitnews.com/2026/10/27/%d8%a2%d8%a8%d9%84-%d8%aa%d8%b7%d9%84%d9%82-ipad-mini-2026-%d8%a8%d8%b4%d8%a7%d8%b4%d8%a9-oled-%d9%88%d9%85%d8%b9%d8%a7%d9%84%d8%ac-a20-pro-%d9%82%d9%81%d8%b2%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d8%a3/",
-   "title": "آبل تطلق iPad mini 2026 بشاشة OLED ومعالج A20 Pro.. قفزة في الأداء والسعر",
-   "date": "2026-10-26T21:50:36.000Z",
-   "src": "البوابة العربية للأخبار التقنية",
-   "srcId": "aitnews",
-   "kind": "arabic",
-   "ar": {
-    "title": "آبل تطلق iPad mini 2026 بشاشة OLED ومعالج A20 Pro.. قفزة في الأداء والسعر",
-    "summary": ""
-   }
-  },
-  {
-   "id": "96b9f45bb2e6",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1018994/anthropic-ipo-ai-data-center-energy-climate-risk",
-   "title": "Anthropic is burning gas to feed the AI boom",
-   "date": "2026-10-26T21:45:31.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "Anthropic يكشف اعتماد الذكاء الاصطناعي على الغاز الطبيعي",
-    "summary": "في ملفها للـ SEC، Anthropic أكدت إن مراكز البيانات بتعتمد بشكل متزايد على الغاز الطبيعي لتشغيلها، وإن المنافسة على إمدادات الكهرباء ومواقع المراكز مع موارد الطاقة الكافية شديدة."
-   }
-  },
-  {
-   "id": "eac5588f305c",
-   "url": "https://aitnews.com/2026/10/27/%d8%b2%d9%84%d8%b2%d8%a7%d9%84-%d9%88%d8%b8%d9%8a%d9%81%d9%8a-%d9%81%d9%8a-%d9%85%d8%a7%d9%8a%d9%83%d8%b1%d9%88%d8%b3%d9%88%d9%81%d8%aa-%d8%a7%d9%84%d8%b4%d8%b1%d9%83%d8%a9-%d8%aa%d8%b6%d8%b9-60/",
-   "title": "زلزال وظيفي في مايكروسوفت.. الشركة تضع 60 ألف موظف أمام خيار المغادرة",
-   "date": "2026-10-26T20:23:28.000Z",
-   "src": "البوابة العربية للأخبار التقنية",
-   "srcId": "aitnews",
-   "kind": "arabic",
-   "ar": {
-    "title": "زلزال وظيفي في مايكروسوفت.. الشركة تضع 60 ألف موظف أمام خيار المغادرة",
-    "summary": ""
-   }
-  },
-  {
-   "id": "5d5ff332a0b6",
-   "url": "https://arstechnica.com/apple/2026/10/apple-releases-ios-and-macos-27-2-with-new-siri-ai-features-new-music-logo/",
-   "title": "Apple releases iOS and macOS 27.2 with new Siri AI features, new Music logo",
-   "date": "2026-10-26T20:04:16.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "آبل تطلق iOS و macOS 27.2 مع ميزات سيري الجديدة",
-    "summary": "الإصدار الجديد بيدّي سيري القدرة على تحديد التطبيقات اللي يقدر يتواصل معاها مباشرة."
-   }
-  },
-  {
-   "id": "830f46d3a8fd",
-   "url": "https://arstechnica.com/ai/2026/10/boston-dynamics-employees-want-to-block-sale-of-robot-dogs-to-ice/",
-   "title": "ICE plan to buy robot dogs spurs protest from hundreds of Boston Dynamics employees",
-   "date": "2026-10-26T18:50:41.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "خطة ICE لشراء كلاب روبوتية تثير احتجاج موظفي Boston Dynamics",
-    "summary": "الشركة الأمريكية للروبوتات بتدعم الصفقة رغم إن أكتر من 300 موظف حذروا من المخاطر."
-   }
-  },
-  {
-   "id": "6374202b4b5e",
-   "url": "https://aws.amazon.com/blogs/machine-learning/fleet-wide-computer-vision-lifecycle-at-the-edge-with-sagemaker-sdk-v3/",
-   "title": "Fleet-wide computer vision lifecycle at the edge with SageMaker SDK v3",
-   "date": "2026-10-26T17:56:58.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "نظام رؤية حاسوبية للفلّيت باستخدام SageMaker SDK v3",
-    "summary": "المقال بيشرح بنية مرجعية لتدريب نماذج لكل كاميرا على حافة الشبكة باستخدام SageMaker Neo وStep Functions لتحديث آلاف النماذج ضمن حدود الحساب."
-   }
-  },
-  {
-   "id": "2500a6aad874",
-   "url": "https://www.theverge.com/news/1018713/meta-muse-agentic-shopping-ai-the-realreal",
-   "title": "The RealReal won’t let AI agents hog designer clothing",
-   "date": "2026-10-26T17:30:55.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "The RealReal تعزز دفاعها ضد بوتات الشراء",
-    "summary": "الموقع عدّل نظام الحماية عشان يصعب على الوكلاء الذكاء الاصطناعي حجز الملابس الفاخرة، بعد ما كشف The Verge إن بوت يقدر يستغل نظام الحجز."
-   }
-  },
-  {
-   "id": "d44490076cdc",
-   "url": "https://aws.amazon.com/blogs/machine-learning/groundhog-day-for-ai-agents-prompt-caching-patterns-for-using-openai-models-on-amazon-bedrock/",
-   "title": "Groundhog Day for AI agents: Prompt caching patterns for using OpenAI models on Amazon Bedrock",
-   "date": "2026-10-26T17:27:20.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "تخزين مؤقت للبرومبت يسرّع وكلاء AI على Amazon Bedrock",
-    "summary": "كل خطوة للوكيل بتعيد قراءة السياق، لكن تقنية التخزين المؤقت للبرومبت بتقلل التكلفة واللاتنسيب بتخلي الوكيل يفتكر الأدوات والتعليمات من غير ما يبعتها كل مرة."
-   }
-  },
-  {
-   "id": "71784ce3534e",
-   "url": "https://arstechnica.com/tech-policy/2026/10/highway-thieves-are-spoofing-gps-to-steal-millions-in-data-center-bound-cargo/",
-   "title": "Highway thieves are spoofing GPS to steal millions in data center-bound cargo",
-   "date": "2026-10-26T17:26:36.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "لصوص الطرق يزورون GPS ويسرقون معدات مراكز البيانات",
-    "summary": "المحققين كشفوا إن اللصوص بيغيّروا إشارات GPS علشان يسرقوا معدات مراكز البيانات بقيمة 100 مليون دولار."
-   }
-  },
-  {
-   "id": "7644611dfae9",
-   "url": "https://aws.amazon.com/blogs/machine-learning/build-agentic-retrieval-on-a-managed-amazon-bedrock-knowledge-base-with-cdk/",
-   "title": "Build agentic retrieval on a Managed Amazon Bedrock Knowledge Base with CDK",
-   "date": "2026-10-26T17:15:14.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "إنشاء استرجاع ذكي على Amazon Bedrock باستخدام CDK",
-    "summary": "الدليل بيوري إزاي تبني وكيل يجيب معلومات من قاعدتين للمعرفة عبر AgentCore Gateway، مع مراقبة شاملة وتقييم مستمر، كل ده بنشر تطبيق CDK واحد."
-   }
-  },
-  {
-   "id": "4a8f41d180d7",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1018738/anthropic-ipo-s1-filing-weird-details",
-   "title": "Five weird details from Anthropic’s IPO filing",
-   "date": "2026-10-26T17:10:23.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "خمسة تفاصيل غريبة في ملف IPO لشركة Anthropic",
-    "summary": ""
-   }
-  },
-  {
-   "id": "0c7a0e584035",
-   "url": "https://techcrunch.com/2026/10/26/anthropics-ipo-filing-reveals-its-strategy-for-keeping-enterprise-customers-hooked/",
-   "title": "Anthropic’s IPO filing reveals its strategy for keeping enterprise customers hooked",
-   "date": "2026-10-26T16:49:42.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "استراتيجية Anthropic لتثبيت العملاء",
-    "summary": "حسب ملف S‑1، أكتر من نص عملاء Anthropic اللي بيدفعوا أكتر من 100 ألف دولار بيستخدموا منصة Claude وتطبيق داخلي، وده بيخليهم مرتبطين أكتر زي ما عملت أمازون."
-   }
-  },
-  {
-   "id": "4a24365e960e",
-   "url": "https://techcrunch.com/2026/10/26/spacex-locks-in-40b-gpu-financing-deal-with-apollo/",
-   "title": "SpaceX locks in $40B GPU financing deal with Apollo",
-   "date": "2026-10-26T16:46:36.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "تمويل SpaceX بـ40 مليار دولار للـGPU",
-    "summary": "SpaceX وقع صفقة تمويل بـ40 مليار دولار مع Apollo لتغطية احتياجاته المتزايدة في مجال الذكاء الاصطناعي من غير ما يعتمد على القروض التقليدية."
-   }
-  },
-  {
-   "id": "ed13d16bbdfa",
-   "url": "https://www.marktechpost.com/2026/10/26/nace-ai-releases-drex-for-search-for-ai-agents/",
-   "title": "Nace AI Releases Drex for Search for AI Agents: 92.05% on BrowseComp-Plus With 12.6 Search Calls",
-   "date": "2026-10-26T16:46:09.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": {
-    "title": "Nace AI تطلق Drex للبحث",
-    "summary": "Nace AI أطلقت Drex for Search لتطبيق نماذج Drex في البحث عن المستندات للوكيل الذكي، وحققت 92.05 % على BrowseComp‑Plus مع 12.6 طلب بحث وعدد أقل من التحولات في OfficeQA Pro."
-   }
-  },
-  {
-   "id": "ff1684dfffde",
-   "url": "https://engineering.fb.com/2026/10/26/open-source/ocp-summit-2026-meta-networking-talks/",
-   "title": "Meta Networking at the 2026 OCP Global Summit: Open Innovation for Scale-Up, Scale-Out, and Scale-Across AI Networks",
-   "date": "2026-10-26T16:00:07.000Z",
-   "src": "Meta Engineering",
-   "srcId": "meta",
-   "kind": "company",
-   "ar": {
-    "title": "Meta تكشف ابتكارات الشبكات في OCP 2026",
-    "summary": "في قمة OCP العالمية 2026، Meta عرضت تقنيات الشبكات اللي بتدعم موديلات AI الجديدة زي Muse Wonder وMuse Spark، بما فيها رَاك سائل التبريد IcePack & IceCube بقدرة 102.4 تيرابايت."
-   }
-  },
-  {
-   "id": "be77c96c39b4",
-   "url": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/",
-   "title": "Our newest AI Quest: Mapping the human brain",
-   "date": "2026-10-26T16:00:00.000Z",
-   "src": "Google AI",
-   "srcId": "google-ai",
-   "kind": "company",
-   "ar": {
-    "title": "Google AI Quest: خريطة دماغ الإنسان",
-    "summary": "Google أطلقت درس AI Quest جديد اسمه “Polar Peaks” لتعليم الناس عن علم الأعصاب وربط الذكاء الاصطناعي بفهم دماغ الإنسان."
-   }
-  },
-  {
-   "id": "2c43c284058f",
-   "url": "https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/",
-   "title": "Anthropic officially files for its public debut",
-   "date": "2026-10-26T14:35:22.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "Anthropic تقدم طلب الاكتتاب العام",
-    "summary": "Anthropic قدمت طلب IPO، وبيّنوا إيرادات عالية، خسائر متزايدة، تبني كبير من الشركات، وهيكل حوكمة غير عادي عشان يحافظ على سيطرة المؤسسين ومهمة أمان الذكاء الاصطناعي."
-   }
-  },
-  {
-   "id": "6a47f3e0c881",
-   "url": "https://arstechnica.com/cars/2026/10/tesla-wants-ai-and-software-to-be-its-next-profit-engine/",
-   "title": "Tesla gave up the EV crown. Now it wants to win the autonomy race.",
-   "date": "2026-10-26T14:30:27.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "Tesla تركز على القيادة الذاتية",
-    "summary": "بعد ما فقدت لقب أقوى شركة كهربائية، Tesla دلوقتي بتسعى تكسب السباق في الاستقلالية عبر اشتراكات القيادة الذاتية اللي ممكن تجيب هوامش أعلى من مبيعات العربيات."
-   }
-  },
-  {
-   "id": "f16aefe89a6e",
-   "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
-   "title": "Working with academic communities to build scientific understanding",
-   "date": "2026-10-26T14:30:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "OpenAI تشارك نتائج أبحاث علمية",
-    "summary": "OpenAI نشرت نتائج نماذجها على مسائل زي فرضية Kakeya، فرضية الوقت الأسي، والكروماتوجرافيا الكمية، وبتوضح إزاي الباحثين يقدروا يتحققوا منها ويكملوا الشغل."
    }
   }
  ]
