@@ -1,0 +1,22 @@
+.wrap { max-width: 640px; margin: 0 auto; min-height: calc(100dvh - 70px); display: flex; flex-direction: column; gap: 12px; padding-top: 14px; }
+.top h1 { margin: 0; font-size: 1.3rem; font-weight: 600; color: var(--text-strong); }
+.top p { margin: 4px 0 0; font-size: 0.84rem; line-height: 1.8; color: var(--muted); max-width: 52ch; }
+.thread { flex: 1; display: grid; align-content: start; gap: 12px; padding: 4px 0 10px; }
+.starters { display: grid; gap: 8px; }
+.starters button { text-align: start; font: inherit; font-size: 0.9rem; cursor: pointer; padding: 13px 15px; border: 1px solid var(--hairline-strong); border-inline-start: 3px solid #14252e; border-radius: 12px; background: #fff; color: var(--text); }
+.starters button:hover { background: #f2f4f5; }
+.starters button:focus-visible, .composer button:focus-visible, .human a:focus-visible { outline: 2px solid #14252e; outline-offset: 2px; }
+.user { justify-self: end; max-width: 82%; background: #14252e; color: #fff; border-radius: 16px 16px 4px 16px; padding: 10px 14px; }
+.user p { margin: 0; font-size: 0.92rem; line-height: 1.8; white-space: pre-wrap; }
+.bot { background: #fff; border: 1px solid var(--hairline-strong); border-radius: 4px 14px 14px 14px; padding: 12px 15px; font-size: 0.94rem; line-height: 1.9; }
+.bot :global(p) { margin: 0 0 8px; }
+.bot :global(p:last-child) { margin-bottom: 0; }
+.wait { margin: 0; font-size: 0.84rem; color: var(--muted); }
+.error { color: #b42318; background: #fef3f2; padding: 8px 12px; border-radius: 10px; font-size: 0.84rem; }
+.composer { position: sticky; bottom: 8px; display: flex; gap: 8px; align-items: flex-end; background: #fff; border: 1px solid #14252e; border-radius: 14px; padding: 8px 8px 8px 12px; }
+.composer textarea { flex: 1; min-width: 0; resize: none; border: 0; outline: none; font: inherit; font-size: 0.95rem; line-height: 1.7; padding: 6px 4px; background: transparent; color: var(--text); max-height: 140px; }
+.composer button { flex: none; width: 36px; height: 36px; border-radius: 10px; border: 0; font-size: 1rem; cursor: pointer; color: #fff; background: #14252e; }
+.composer button:disabled { opacity: 0.35; cursor: default; }
+.human { display: grid; gap: 4px; justify-items: center; padding: 4px 0 14px; }
+.human a { display: inline-block; padding: 10px 18px; border-radius: 12px; background: #1d6a55; color: #fff; font-size: 0.9rem; text-decoration: none; }
+.human p, .human small { margin: 0; font-size: 0.78rem; color: var(--muted); }
