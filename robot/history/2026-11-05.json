@@ -1,0 +1,32 @@
+{
+ "date": "2026-11-05T05:40:14.977Z",
+ "total": 515,
+ "ok": 509,
+ "broken": [
+  "/tool/ad-copy",
+  "feature:photo-ad",
+  "feature:chat",
+  "feature:chat-search"
+ ],
+ "warn": 2,
+ "spacesDown": [
+  "multimodalart-logo-in-context",
+  "eccv2022-dis-background-removal",
+  "doevent-face-real-esrgan",
+  "stepfun-ai-step1x-3d"
+ ],
+ "aiTested": [
+  "/tool/summarize",
+  "/tool/tiktok-script",
+  "/tool/translate",
+  "/tool/translate-dialect",
+  "/tool/travel-plan",
+  "/tool/video-prompt",
+  "/tool/video-qa",
+  "/tool/whatsapp-sales",
+  "/tool/youtube-title",
+  "/tool/ad-copy",
+  "/tool/adspy",
+  "/tool/article"
+ ]
+}
