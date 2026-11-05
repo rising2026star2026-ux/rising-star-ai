@@ -32,6 +32,8 @@ const Ocr = dynamic(() => import("./Ocr"), { ssr: false, loading });
 const LogoStudio = dynamic(() => import("./LogoStudio"), { ssr: false, loading });
 const QrStudio = dynamic(() => import("./QrStudio"), { ssr: false, loading });
 const Speak = dynamic(() => import("./Speak"), { ssr: false, loading });
+const Podcast = dynamic(() => import("./Podcast"), { ssr: false, loading });
+const LongTranscribe = dynamic(() => import("./LongTranscribe"), { ssr: false, loading });
 const Enhance = dynamic(() => import("./Enhance"), { ssr: false, loading });
 const Apps = dynamic(() => import("./Apps"), { ssr: false, loading });
 const VideoMaker = dynamic(() => import("./VideoMaker"), { ssr: false, loading });
@@ -67,6 +69,8 @@ const KINDS = {
   qr: [QrStudio],
   logo: [LogoStudio],
   speak: [Speak],
+  podcast: [Podcast],
+  longtranscribe: [LongTranscribe],
   enhance: [Enhance],
   "video-remotion": [RemotionReel],
   "video-factory": [VideoFactory],
