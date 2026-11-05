@@ -8,10 +8,11 @@ const ctx = (n) => (n >= 1e6 ? `${Math.round(n / 1e5) / 10}M` : n >= 1000 ? `${M
 export default function AllModels({ models }) {
   const [q, setQ] = useState("");
   const [vision, setVision] = useState(false);
+  const [free, setFree] = useState(false);
   const list = useMemo(() => {
     const t = q.trim().toLowerCase();
-    return models.filter((m) => (!vision || m.vision) && (!t || `${m.name} ${m.maker} ${m.id}`.toLowerCase().includes(t)));
-  }, [models, q, vision]);
+    return models.filter((m) => (!vision || m.vision) && (!free || m.free) && (!t || `${m.name} ${m.maker} ${m.id}`.toLowerCase().includes(t)));
+  }, [models, q, vision, free]);
 
   return (
     <main className={s.page}>
@@ -20,9 +21,10 @@ export default function AllModels({ models }) {
         <p>{models.length ? `${models.length} موديل من شركات العالم، اختار أي واحد وابدأ الشات معاه.` : "القايمة مش متاحة دلوقتي، جرّب بعد شوية."}</p>
         <div className={s.tools}>
           <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="دوّر باسم الموديل أو الشركة" aria-label="بحث في الموديلات" dir="auto" />
+          <label className={s.chk}><input type="checkbox" checked={free} onChange={(e) => setFree(e.target.checked)} /> المجانية بس</label>
           <label className={s.chk}><input type="checkbox" checked={vision} onChange={(e) => setVision(e.target.checked)} /> بيفهم الصور</label>
         </div>
-        <p className={s.note}>الموديلات دي تجريبية من مزوّدين خارجيين، فممكن تبطّأ أو تتوقف في وقت الزحمة. لو وقف موديل، الموقع بيكمل الرد بموديل بديل.</p>
+        <p className={s.note}>ممكن موديل يبطّأ أو يتوقف في وقت الزحمة. لو وقف، الموقع بيكمل الرد بموديل بديل.</p>
       </header>
       <ul className={s.grid}>
         {list.map((m) => (
@@ -30,7 +32,7 @@ export default function AllModels({ models }) {
             <Link href={`/chat?bot=${encodeURIComponent(`or:${m.id}`)}`} className={s.card}>
               <b dir="auto">{m.name}</b>
               <span dir="auto">{m.maker}</span>
-              <em>{[ctx(m.context) && `سياق ${ctx(m.context)}`, m.vision && "صور"].filter(Boolean).join(" • ")}</em>
+              <em>{[ctx(m.context) && `سياق ${ctx(m.context)}`, m.vision && "صور", m.free ? "مجاني" : null].filter(Boolean).join(" • ")}</em>
             </Link>
           </li>
         ))}

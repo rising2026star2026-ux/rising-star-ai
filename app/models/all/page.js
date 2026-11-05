@@ -1,5 +1,5 @@
 import AllModels from "@/components/AllModels";
-import { freeModels } from "@/lib/freemodels";
+import { allModels } from "@/lib/allmodels";
 
 export const metadata = {
   title: "كل الموديلات المفتوحة",
@@ -10,6 +10,6 @@ export const metadata = {
 export const revalidate = 21600;
 
 export default async function Page() {
-  const list = await freeModels();
+  const list = await allModels();
   return <AllModels models={list} />;
 }

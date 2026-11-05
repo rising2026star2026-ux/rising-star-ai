@@ -6,7 +6,7 @@ import { fail, clientIp, rateLimiter, chainFor, quickChain, streamFromGroq, comp
 import { searchProvider, searchQuery, webSearchFull, resultsBlock } from "@/lib/websearch";
 import { RETIRED_BOTS } from "@/lib/bots";
 import { resolveBot, validProCode } from "@/lib/botcatalog";
-import { isFreeModel } from "@/lib/freemodels";
+import { findModel } from "@/lib/allmodels";
 import { fusionResponse } from "@/lib/fusion";
 import { cleanDocs, cleanInstructions, docContext, longChain, instructionsBlock } from "@/lib/doccontext";
 import { cleanBrand, brandBlock } from "@/lib/brandprofile";
@@ -144,11 +144,15 @@ export async function POST(req) {
   // موديل اتشال من الموقع (زي GPT-OSS) ولسه محفوظ على جهاز الزائر: بنرد بـ«متوازن» بدل ما نرفض
   if (typeof body.bot === "string" && body.bot && !RETIRED_BOTS.includes(body.bot)) {
     if (body.bot.startsWith("or:")) {
-      // موديل مجاني من القايمة الكاملة: لازم يكون موجود وسعره صفر عند OpenRouter، غير كده بنرفض
-      const m = await isFreeModel(body.bot.slice(3));
-      if (!m) return fail("الموديل ده مش موجود أو مش مجاني.", 404);
-      if (tooManyFree(ip)) return fail("وصلت لحد الموديلات الإضافية الساعة دي. جرّب بعد شوية أو استخدم موديل تاني.", 429);
-      bot = { key: body.bot, id: m.id, name: m.name, maker: m.maker, tier: "free", provider: "openrouter", available: true };
+      // أي موديل نصي من قايمة OpenRouter. المدفوع بيتحاسب من الرصيد، فبيتحمي بالكود والحد في الساعة
+      const m = await findModel(body.bot.slice(3));
+      if (!m) return fail("الموديل ده مش موجود.", 404);
+      if (!process.env.OPENROUTER_API_KEY) return Response.json({ error: "الموديل ده هيتفعّل قريب. جرّب موديل تاني.", code: "pro" }, { status: 402 });
+      if (!m.free) {
+        if (!validProCode(body.pro)) return Response.json({ error: "الموديل ده هيتفعّل قريب. جرّب موديل تاني.", code: "pro" }, { status: 402 });
+        if (tooManyPro(`${ip}|${body.pro || ""}`)) return fail("وصلت لحد الموديلات العالمية الساعة دي. جرّب بعد شوية أو استخدم موديل تاني.", 429);
+      } else if (tooManyFree(ip)) return fail("وصلت لحد الموديلات الإضافية الساعة دي. جرّب بعد شوية أو استخدم موديل تاني.", 429);
+      bot = { key: body.bot, id: m.id, name: m.name, maker: m.maker, tier: m.free ? "free" : "pro", provider: "openrouter", available: true };
     } else {
       bot = await resolveBot(body.bot);
     }
