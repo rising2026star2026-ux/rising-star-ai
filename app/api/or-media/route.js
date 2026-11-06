@@ -6,7 +6,7 @@ import { findModel } from "@/lib/allmodels";
 import { validProCode } from "@/lib/botcatalog";
 import { generateImages, speech, audioReply, arabicError, ASPECTS, RESOLUTIONS, QUALITIES, FORMATS, BACKGROUNDS } from "@/lib/ormedia";
 
-export const maxDuration = 300;
+export const maxDuration = 60; // Hobby بدون Fluid compute بيقبل لحد 60 ثانية بس. 300 كانت بتفشّل النشر
 
 const tooManyImages = rateLimiter(30); // 30 صورة في الساعة لكل زائر
 const tooManyAudio = rateLimiter(30);  // 30 مقطع صوت في الساعة لكل زائر
