@@ -1,0 +1,2 @@
+Source: https://github.com/benjitaylor/skills (commit 299140f), MIT licence. Installed as a project skill for Claude Code.
+App icons in assets/app-icons.ts and brand marks in kit/brands are third-party artwork (see NOTICE.md); do not use them in Rising StarAi pages.
