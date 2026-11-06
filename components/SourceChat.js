@@ -140,6 +140,33 @@ function Sources({ list, text }) {
   );
 }
 
+// شريط الأسعار المحسوبة من إعلانات عقار ماب وProperty Finder (أرقام من الكود، مش من الموديل)
+const egp = (v) => Math.round(v).toLocaleString("en");
+function MarketLine({ market }) {
+  if (!market || !market.listings) return null;
+  const rows = [
+    market.ppm && ["سعر المتر", market.ppm],
+    market.price && ["سعر الوحدة", market.price],
+    market.rent && ["الإيجار الشهري", market.rent],
+  ].filter(Boolean);
+  if (!rows.length) return <p className={s.searchNote}>لقينا {market.listings} إعلان، بس الأسعار مش ظاهرة في نتايج البحث. افتح روابط الإعلانات في المصادر.</p>;
+  return (
+    <div className={s.market}>
+      <b>من {market.listings} إعلان على عقار ماب وProperty Finder</b>
+      <dl>
+        {rows.map(([label, st]) => (
+          <div key={label}>
+            <dt>{label}</dt>
+            <dd dir="ltr">{egp(st.low)} – {egp(st.high)} ج</dd>
+            <small>الوسيط {egp(st.mid)} • {st.n} إعلان</small>
+          </div>
+        ))}
+      </dl>
+      <small>أسعار معروضة في الإعلانات، والسعر النهائي بيتحدد بالتفاوض والمعاينة.</small>
+    </div>
+  );
+}
+
 export default function SourceChat({ mode = "academic" }) {
   const M = MODES[mode] || MODES.academic;
   const [msgs, setMsgs] = useState([]);
@@ -194,7 +221,9 @@ export default function SourceChat({ mode = "academic" }) {
       let sources = [];
       try { sources = JSON.parse(decodeURIComponent(res.headers.get("x-sources") || "[]")); } catch { sources = []; }
       const patch = (p) => setMsgs((m) => m.map((x, i) => (i === m.length - 1 ? { ...x, ...p } : x)));
-      patch({ sources, search: res.headers.get("x-search") || "" });
+      let market = null;
+      try { market = JSON.parse(decodeURIComponent(res.headers.get("x-market") || "null")); } catch { market = null; }
+      patch({ sources, search: res.headers.get("x-search") || "", market });
       const reader = res.body.getReader();
       const dec = new TextDecoder();
       while (true) {
@@ -287,6 +316,7 @@ export default function SourceChat({ mode = "academic" }) {
             ) : (
               <>
                 <div className={`md ${s.md}`} dir="auto"><Md>{linkCites(m.content)}</Md></div>
+                {!m.pending && mode === "realestate" && <MarketLine market={m.market} />}
                 {!m.pending && mode === "realestate" && m.search === "empty" && <p className={s.searchNote}>بحث السوق ما رجّعش نتايج للسؤال ده، فالرد من معرفة عامة ومن غير أرقام موثّقة.</p>}
                 {!m.pending && <Sources list={m.sources} text={m.content} />}
               </>

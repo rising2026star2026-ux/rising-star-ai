@@ -10,7 +10,8 @@ import { webSearchFull } from "@/lib/websearch";
 import { completeOnce, quickChain } from "@/lib/groq";
 import { hasClaude, claudeWithTools, textStream, CLAUDE_MODELS } from "@/lib/claude";
 import { logUsage } from "@/lib/supa";
-import { installmentPlan, rentalYield, oldRent, transferCosts, compareOptions } from "@/lib/realestate";
+import { installmentPlan, rentalYield, oldRent, transferCosts, compareOptions, stats } from "@/lib/realestate";
+import { sampleFrom } from "@/lib/realdata";
 
 export const maxDuration = 60;
 const tooMany = rateLimiter(60);
@@ -116,6 +117,77 @@ async function planRealestateSearch(messages, where) {
   const t = messages.filter((m) => m.role === "user").map((m) => m.content).join(" ");
   return /[؟?\d]|سعر|كام|منطقة|مشروع|شقة|فيلا|ايجار|إيجار|عقار|التجمع|زايد|اكتوبر|أكتوبر|العاصمة|الساحل|مدينة|مليون/.test(t) ? t.slice(-140) : "";
 }
+// أسئلة فيها سعر أو تكلفة: بنجيب كمان عينة إعلانات حقيقية من عقار ماب وProperty Finder ونحسب الأرقام بالكود
+const PRICE_INTENT = /سعر|أسعار|اسعار|كام|بكام|متر|تمن|ثمن|قسط|مقدم|إيجار|ايجار|شقة|شقه|فيلا|دوبلكس|وحدة|وحده|مليون|ألف|الف|price|rent/i;
+const PRICE_PORTALS = [
+  { host: "aqarmap.com.eg", name: "عقار ماب" },
+  { host: "propertyfinder.eg", name: "Property Finder" },
+];
+const fmtEgp = (v) => Math.round(v).toLocaleString("en");
+
+// نفس سؤال الأسعار في نفس اليوم ما يتدفعش عليه بحث تاني
+const portalCache = new Map();
+async function portalPrices(q) {
+  const key = q.toLowerCase().replace(/\s+/g, " ").trim();
+  const hit = portalCache.get(key);
+  if (hit && Date.now() - hit.t < 24 * 3600_000) return hit.v;
+  const v = await portalPricesLive(q);
+  if (v.items.length) {
+    portalCache.set(key, { t: Date.now(), v });
+    if (portalCache.size > 300) portalCache.delete(portalCache.keys().next().value);
+  }
+  return v;
+}
+
+async function portalPricesLive(q) {
+  const rent = /إيجار|ايجار|rent/i.test(q);
+  const runs = await Promise.all(PRICE_PORTALS.map((p) => webSearchFull(`${q} site:${p.host}`).catch(() => ({ results: [] }))));
+  const items = [];
+  runs.forEach((r, i) => {
+    for (const x of (r.results || []).slice(0, 8)) {
+      let host = "";
+      try { host = new URL(x.url).hostname.replace(/^www\./, ""); } catch {}
+      if (!host.endsWith(PRICE_PORTALS[i].host)) continue;
+      const smp = sampleFrom(`${x.title || ""} ${x.snippet || ""}`, rent ? "rent" : "sale");
+      items.push({ title: str(x.title, 160), url: x.url, snippet: str(x.snippet, 400), site: PRICE_PORTALS[i].name, smp });
+    }
+  });
+  return { rent, items };
+}
+
+function priceBlock({ rent, items }, numbered) {
+  const ppm = [], price = [], rents = [];
+  for (const it of numbered) {
+    const sm = it.smp;
+    if (!sm) continue;
+    if (sm.ppm) ppm.push({ v: sm.ppm, n: it.n });
+    if (sm.rent) rents.push({ v: sm.rent, n: it.n });
+    else if (sm.price) price.push({ v: sm.price, n: it.n });
+  }
+  const pack = (list) => {
+    const st = stats(list.map((x) => x.v));
+    if (!st) return null;
+    const src = [...new Set(list.filter((x) => x.v >= st.low * 0.8 && x.v <= st.high * 1.2).map((x) => x.n))].slice(0, 6);
+    return { ...st, src };
+  };
+  const out = { listings: items.length, ppm: pack(ppm), price: pack(price), rent: pack(rents), isRent: rent };
+  const lines = [];
+  const cite = (p) => p.src.map((n) => `[${n}]`).join("");
+  if (out.ppm) lines.push(`سعر المتر المعروض: أغلب الإعلانات بين ${fmtEgp(out.ppm.low)} و${fmtEgp(out.ppm.high)} جنيه، والوسيط ${fmtEgp(out.ppm.mid)} (من ${out.ppm.n} إعلان) ${cite(out.ppm)}`);
+  if (out.price) lines.push(`سعر الوحدة المعروض: أغلب الإعلانات بين ${fmtEgp(out.price.low)} و${fmtEgp(out.price.high)} جنيه، والوسيط ${fmtEgp(out.price.mid)} (من ${out.price.n} إعلان) ${cite(out.price)}`);
+  if (out.rent) lines.push(`الإيجار الشهري المعروض: أغلب الإعلانات بين ${fmtEgp(out.rent.low)} و${fmtEgp(out.rent.high)} جنيه، والوسيط ${fmtEgp(out.rent.mid)} (من ${out.rent.n} إعلان) ${cite(out.rent)}`);
+  const text = lines.length
+    ? [
+        `أرقام من إعلانات حقيقية على عقار ماب وProperty Finder (اتحسبت بالكود من ${items.length} إعلان، ودي أسعار معروضة مش أسعار بيع نهائية):`,
+        ...lines,
+        "استخدم الأرقام دي بالظبط لما تتكلم عن الأسعار ومعاها أرقام مصادرها، وقول إنها أسعار معروضة والتفاوض بيقللها عادةً. ممنوع تكتب أرقام أسعار تانية من عندك للمنطقة دي.",
+      ].join("\n")
+    : items.length
+      ? "لقينا إعلانات على عقار ماب وProperty Finder بس الأسعار مش ظاهرة في نتايج البحث. ما تخترعش أرقام: قول للمستخدم يفتح روابط الإعلانات اللي في المصادر."
+      : "";
+  return { stats: out, text };
+}
+
 const query0 = (messages) => ([...messages].reverse().find((m) => m.role === "user")?.content || "");
 
 export async function POST(req) {
@@ -133,6 +205,7 @@ export async function POST(req) {
   let sources = [];
   let context = "";
   let searchStateOut = "";
+  let marketOut = null;
 
   if (mode === "academic") {
     const pinned = cleanPinnedAcademic(body.pinned);
@@ -169,14 +242,26 @@ export async function POST(req) {
       const q = await planRealestateSearch(messages, where);
       if (!q) searchState = "skipped";
       else {
-        const r = await webSearchFull(`${q} مصر`).catch(() => ({ results: [] }));
+        const wantPrices = PRICE_INTENT.test(`${q} ${last.content}`);
+        const [r, portals] = await Promise.all([
+          webSearchFull(`${q} مصر`).catch(() => ({ results: [] })),
+          wantPrices ? portalPrices(q) : Promise.resolve(null),
+        ]);
+        // الإعلانات الحقيقية الأول في المصادر، عشان أرقامها تبقى أول أرقام
+        if (portals?.items.length) {
+          const numbered = portals.items.slice(0, 10).map((it, i) => ({ ...it, n: i + 1 }));
+          for (const it of numbered) sources.push({ title: it.title, url: it.url, snippet: it.snippet, n: it.n });
+          const pb = priceBlock(portals, numbered);
+          if (pb.text) context += `${pb.text}\n\n`;
+          marketOut = pb.stats;
+        }
         web = (r.results || []).slice(0, 6).map((x) => ({ title: str(x.title || x.domain, 160), url: x.url, snippet: str(x.snippet, 400) }));
         if (r.notes) context += `ملخص بحث جوجل عن «${q.slice(0, 80)}»:\n${str(r.notes, 2500)}\n\n`;
-        searchState = web.length || r.notes ? "ok" : "empty";
+        searchState = web.length || r.notes || portals?.items.length ? "ok" : "empty";
         if (searchState === "empty") console.error("realestate search empty:", q, r.why || "");
       }
     }
-    const seen = new Set();
+    const seen = new Set(sources.map((x) => x.url));
     for (const x of [...web, ...ctxSources]) {
       if (!x.url || seen.has(x.url) || sources.length >= 20) continue;
       seen.add(x.url);
@@ -232,7 +317,7 @@ export async function POST(req) {
     { role: "system", content: `${rules}\n\n${context}` },
     ...messages,
   ];
-  const headers = { "x-sources": encodeURIComponent(JSON.stringify(header)), "x-mode": mode, ...(searchStateOut ? { "x-search": searchStateOut } : {}) };
+  const headers = { "x-sources": encodeURIComponent(JSON.stringify(header)), "x-mode": mode, ...(searchStateOut ? { "x-search": searchStateOut } : {}), ...(marketOut ? { "x-market": encodeURIComponent(JSON.stringify(marketOut)) } : {}) };
   // العقارات: Claude بأدوات الحساب لو المفتاح موجود، وإلا النماذج الحالية
   if (mode === "realestate" && hasClaude()) {
     const out = await claudeWithTools({ system: chatMessages[0].content, messages, tools: RE_TOOLS, handlers: RE_HANDLERS, model: CLAUDE_MODELS.strong, maxTokens: 2000, signal: req.signal });

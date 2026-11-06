@@ -76,3 +76,12 @@
 .re .send, .re .stop { border-radius: var(--r-sm); background: var(--re-ink); }
 .re .spin { border-top-color: var(--re-brass); }
 .re .foot { color: var(--muted); }
+
+/* أسعار السوق المحسوبة من الإعلانات (المستشار العقاري) */
+.market { margin: 10px 0 0; padding: 12px 14px; border-radius: var(--r-sm); background: rgba(29, 106, 85, 0.07); border: 1px solid rgba(29, 106, 85, 0.22); display: grid; gap: 8px; }
+.market > b { font-size: var(--fs-sm); color: #1d6a55; }
+.market dl { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+.market dl div { display: grid; gap: 2px; }
+.market dt { font-size: var(--fs-xs); color: var(--muted); }
+.market dd { margin: 0; font-weight: 700; color: var(--text-strong); font-variant-numeric: tabular-nums; text-align: start; }
+.market small { font-size: var(--fs-xs); color: var(--faint); }
