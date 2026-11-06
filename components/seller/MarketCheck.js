@@ -176,6 +176,39 @@ export default function MarketCheck() {
               </table>
             </section>
 
+            {res.search && (
+              <section className={s.card} aria-labelledby="mk-search">
+                <h2 id="mk-search">البحث على جوجل في مصر</h2>
+                <dl className={m.prices}>
+                  <div><dt>بحث شهري عن «{res.search.top}»</dt><dd>{res.search.volume != null ? res.search.volume.toLocaleString("en") : "—"}</dd></div>
+                  {Number.isFinite(res.search.change) && <div><dt>آخر 3 شهور</dt><dd dir="ltr">{res.search.change > 0 ? "+" : ""}{res.search.change}%</dd></div>}
+                  {res.search.cpc != null && <div><dt>تكلفة النقرة في إعلانات جوجل</dt><dd dir="ltr">${res.search.cpc.toFixed(2)}</dd></div>}
+                  {res.search.competition && <div><dt>المنافسة على الإعلانات</dt><dd>{{ LOW: "قليلة", MEDIUM: "متوسطة", HIGH: "عالية" }[res.search.competition]}</dd></div>}
+                </dl>
+                {res.search.trend?.length >= 3 && (() => {
+                  const max = Math.max(1, ...res.search.trend.map((t) => t.v));
+                  return (
+                    <div className={m.trend} role="img" aria-label={`البحث الشهري آخر ${res.search.trend.length} شهر`}>
+                      {res.search.trend.map((t) => (
+                        <span key={`${t.y}-${t.m}`} title={`${t.m}/${t.y}: ${t.v.toLocaleString("en")}`} style={{ height: `${Math.max(4, (t.v / max) * 100)}%` }} />
+                      ))}
+                    </div>
+                  );
+                })()}
+                {res.search.keywords.length > 1 && (
+                  <table className={m.table}>
+                    <thead><tr><th scope="col">كلمة البحث</th><th scope="col">بحث شهري</th></tr></thead>
+                    <tbody>
+                      {res.search.keywords.map((k) => (
+                        <tr key={k.keyword}><th scope="row" dir="auto">{k.keyword}</th><td>{k.volume != null ? k.volume.toLocaleString("en") : "—"}</td></tr>
+                      ))}
+                    </tbody>
+                  </table>
+                )}
+                <p className={m.small}>أرقام Google Ads لمصر، متوسط شهري مقرّب. كلمة البحث اللي مفيهاش رقم معناها إن جوجل مش بيدّي بيانات ليها.</p>
+              </section>
+            )}
+
             {a ? (
               <section className={s.card} aria-labelledby="mk-advice">
                 <h2 id="mk-advice">التحليل</h2>

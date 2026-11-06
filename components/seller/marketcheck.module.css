@@ -60,3 +60,7 @@
 .sources a { color: var(--blue); text-decoration: none; display: block; line-height: 1.6; }
 .sources a:hover { text-decoration: underline; }
 .sources span { display: block; font-size: var(--fs-xs); color: var(--muted); }
+
+.trend { display: flex; align-items: flex-end; gap: 4px; height: 64px; margin: 4px 0 6px; }
+.trend span { flex: 1; min-width: 6px; border-radius: var(--r-xs) var(--r-xs) 0 0; background: var(--accent-line); }
+.trend span:last-child { background: var(--blue); }
