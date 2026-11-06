@@ -12,6 +12,7 @@ import { hasClaude, claudeWithTools, textStream, CLAUDE_MODELS } from "@/lib/cla
 import { logUsage } from "@/lib/supa";
 import { installmentPlan, rentalYield, oldRent, transferCosts, compareOptions, stats } from "@/lib/realestate";
 import { sampleFrom } from "@/lib/realdata";
+import { hasApifyRe, apifyForQuery } from "@/lib/apifyre";
 
 export const maxDuration = 60;
 const tooMany = rateLimiter(60);
@@ -141,6 +142,23 @@ async function portalPrices(q) {
 
 async function portalPricesLive(q) {
   const rent = /إيجار|ايجار|rent/i.test(q);
+  // الأول: إعلانات Apify الكاملة (سعر ومساحة من صفحة الإعلان نفسه) لو متضافة، وبعدين نتايج جوجل
+  if (hasApifyRe()) {
+    const list = await apifyForQuery(q, rent).catch(() => []);
+    if (list.length >= 3) {
+      return {
+        rent,
+        source: "apify",
+        items: list.slice(0, 400).map((x) => ({
+          title: x.title || `${x.site} إعلان`,
+          url: x.url,
+          snippet: [x.site, x.price || x.rent ? `${fmtEgp(x.price || x.rent)} جنيه` : "", x.area ? `${x.area} م²` : ""].filter(Boolean).join(" • "),
+          site: x.site,
+          smp: rent ? { rent: x.rent, area: x.area } : { ppm: x.ppm, price: x.price, area: x.area },
+        })),
+      };
+    }
+  }
   const runs = await Promise.all(PRICE_PORTALS.map((p) => webSearchFull(`${q} site:${p.host}`).catch(() => ({ results: [] }))));
   const items = [];
   runs.forEach((r, i) => {
@@ -167,10 +185,11 @@ function priceBlock({ rent, items }, numbered) {
   const pack = (list) => {
     const st = stats(list.map((x) => x.v));
     if (!st) return null;
-    const src = [...new Set(list.filter((x) => x.v >= st.low * 0.8 && x.v <= st.high * 1.2).map((x) => x.n))].slice(0, 6);
+    const src = [...new Set(list.filter((x) => x.n && x.v >= st.low * 0.8 && x.v <= st.high * 1.2).map((x) => x.n))].slice(0, 6);
     return { ...st, src };
   };
-  const out = { listings: items.length, ppm: pack(ppm), price: pack(price), rent: pack(rents), isRent: rent };
+  const sites = [...new Set(items.map((x) => x.site).filter(Boolean))].slice(0, 4);
+  const out = { listings: items.length, ppm: pack(ppm), price: pack(price), rent: pack(rents), isRent: rent, sites };
   const lines = [];
   const cite = (p) => p.src.map((n) => `[${n}]`).join("");
   if (out.ppm) lines.push(`سعر المتر المعروض: أغلب الإعلانات بين ${fmtEgp(out.ppm.low)} و${fmtEgp(out.ppm.high)} جنيه، والوسيط ${fmtEgp(out.ppm.mid)} (من ${out.ppm.n} إعلان) ${cite(out.ppm)}`);
@@ -178,12 +197,12 @@ function priceBlock({ rent, items }, numbered) {
   if (out.rent) lines.push(`الإيجار الشهري المعروض: أغلب الإعلانات بين ${fmtEgp(out.rent.low)} و${fmtEgp(out.rent.high)} جنيه، والوسيط ${fmtEgp(out.rent.mid)} (من ${out.rent.n} إعلان) ${cite(out.rent)}`);
   const text = lines.length
     ? [
-        `أرقام من إعلانات حقيقية على عقار ماب وProperty Finder (اتحسبت بالكود من ${items.length} إعلان، ودي أسعار معروضة مش أسعار بيع نهائية):`,
+        `أرقام من إعلانات حقيقية على ${sites.join(" و") || "مواقع العقارات المصرية"} (اتحسبت بالكود من ${items.length} إعلان، ودي أسعار معروضة مش أسعار بيع نهائية):`,
         ...lines,
         "استخدم الأرقام دي بالظبط لما تتكلم عن الأسعار ومعاها أرقام مصادرها، وقول إنها أسعار معروضة والتفاوض بيقللها عادةً. ممنوع تكتب أرقام أسعار تانية من عندك للمنطقة دي.",
       ].join("\n")
     : items.length
-      ? "لقينا إعلانات على عقار ماب وProperty Finder بس الأسعار مش ظاهرة في نتايج البحث. ما تخترعش أرقام: قول للمستخدم يفتح روابط الإعلانات اللي في المصادر."
+      ? "لقينا إعلانات على مواقع العقارات بس الأسعار مش ظاهرة فيها. ما تخترعش أرقام: قول للمستخدم يفتح روابط الإعلانات اللي في المصادر."
       : "";
   return { stats: out, text };
 }
@@ -249,8 +268,9 @@ export async function POST(req) {
         ]);
         // الإعلانات الحقيقية الأول في المصادر، عشان أرقامها تبقى أول أرقام
         if (portals?.items.length) {
-          const numbered = portals.items.slice(0, 10).map((it, i) => ({ ...it, n: i + 1 }));
-          for (const it of numbered) sources.push({ title: it.title, url: it.url, snippet: it.snippet, n: it.n });
+          // أول 10 بس بيظهروا في المصادر بأرقام، والإحصائيات من كل الإعلانات
+          const numbered = portals.items.map((it, i) => ({ ...it, n: i < 10 ? i + 1 : null }));
+          for (const it of numbered) if (it.n) sources.push({ title: it.title, url: it.url, snippet: it.snippet, n: it.n });
           const pb = priceBlock(portals, numbered);
           if (pb.text) context += `${pb.text}\n\n`;
           marketOut = pb.stats;

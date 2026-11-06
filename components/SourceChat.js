@@ -152,7 +152,7 @@ function MarketLine({ market }) {
   if (!rows.length) return <p className={s.searchNote}>لقينا {market.listings} إعلان، بس الأسعار مش ظاهرة في نتايج البحث. افتح روابط الإعلانات في المصادر.</p>;
   return (
     <div className={s.market}>
-      <b>من {market.listings} إعلان على عقار ماب وProperty Finder</b>
+      <b>من {market.listings} إعلان على {(market.sites?.length ? market.sites : ["مواقع العقارات المصرية"]).join(" و")}</b>
       <dl>
         {rows.map(([label, st]) => (
           <div key={label}>
