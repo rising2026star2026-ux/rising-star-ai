@@ -1,4 +1,5 @@
 import "./globals.css";
+import Script from "next/script";
 import ThemeShift from "@/components/ThemeShift";
 import Chrome from "@/components/Chrome";
 import BottomNav from "@/components/BottomNav";
@@ -29,6 +30,10 @@ export const viewport = {
   viewportFit: "cover",
 };
 
+// Microsoft Clarity: بيقيس الزوار بيدوسوا فين وبيتوهوا فين، عشان نصلّح الديزين بأرقام.
+// بيشتغل بس لما NEXT_PUBLIC_CLARITY_ID يتحط في Vercel. المحادثات وكل اللي بيكتبه الزائر متخفي (data-clarity-mask).
+const CLARITY_ID = /^[a-z0-9]{6,20}$/i.test(process.env.NEXT_PUBLIC_CLARITY_ID || "") ? process.env.NEXT_PUBLIC_CLARITY_ID : "";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl">
@@ -52,8 +57,14 @@ export default function RootLayout({ children }) {
         <main className="wrap">{children}</main>
         <footer className="footer">
           النتايج من نماذج ذكاء اصطناعي وممكن يكون فيها أخطاء، راجعها قبل ما تستخدمها. اللي بتكتبه بيتبعت لمزوّد خارجي للمعالجة.
+          {CLARITY_ID && " وبنقيس استخدام الصفحات (الضغطات والتمرير) بأداة Microsoft Clarity عشان نحسّن الموقع، والمحادثات وأي حاجة بتكتبها متخفية فيها."}
         </footer>
         <BottomNav />
+        {CLARITY_ID && (
+          <Script id="clarity" strategy="afterInteractive">
+            {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${CLARITY_ID}");`}
+          </Script>
+        )}
       </body>
     </html>
   );

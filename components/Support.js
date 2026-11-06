@@ -75,7 +75,7 @@ export default function Support() {
         <p>اسأل وهتاخد إجابة فورية. لو محتاج حد يتابع معاك، كلّم الفريق وإحنا بنبعت له ملخص سؤالك.</p>
       </header>
 
-      <div className={s.thread} aria-live="polite">
+      <div className={s.thread} aria-live="polite" data-clarity-mask="True">
         {msgs.length === 0 && (
           <div className={s.starters}>
             {STARTERS.map((q) => <button key={q} type="button" onClick={() => send(q)}>{q}</button>)}

@@ -308,7 +308,7 @@ export default function SourceChat({ mode = "academic" }) {
           </div>
         )}
         {msgs.map((m, i) => (
-          <div key={i} className={m.role === "user" ? s.user : s.bot}>
+          <div key={i} className={m.role === "user" ? s.user : s.bot} data-clarity-mask="True">
             {m.role === "user" ? (
               <p dir="auto">{m.content}</p>
             ) : m.pending && !m.content ? (

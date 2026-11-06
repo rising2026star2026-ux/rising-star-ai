@@ -623,7 +623,7 @@ export default function MainChat({ chatBots = null, project = null, initialMessa
             </section>
           )
         ) : (
-          <div className={s.thread}>
+          <div className={s.thread} data-clarity-mask="True">
             {messages.map((m, i) => (
               <div key={i} id={`row-${i}`} className={`${m.role === "user" ? s.userRow : s.botRow} ${busy && i === messages.length - 1 && m.role !== "user" ? s.live : ""}`}>
                 {m.role === "user" ? (
