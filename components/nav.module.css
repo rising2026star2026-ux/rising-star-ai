@@ -26,9 +26,9 @@
   align-items: center;
   gap: 4px;
   padding: 7px 4px 5px;
-  border-radius: 14px;
+  border-radius: var(--r-md);
   color: rgba(255, 255, 255, 0.55);
-  font-size: 0.68rem;
+  font-size: var(--fs-xs);
   text-align: center;
   transition: color 0.2s var(--ease);
 }

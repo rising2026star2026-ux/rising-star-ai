@@ -1,18 +1,18 @@
 /* صفحة الاستبيان للمشارك */
 .wrap { max-width: 560px; margin: 18px auto 40px; }
-.card { display: grid; gap: 14px; background: #fff; border: 1px solid rgba(5, 5, 16, 0.1); border-radius: 22px; padding: 20px; box-shadow: 0 24px 50px -40px rgba(5, 5, 16, 0.5); }
+.card { display: grid; gap: 14px; background: #fff; border: 1px solid rgba(5, 5, 16, 0.1); border-radius: var(--r-xl); padding: 20px; box-shadow: 0 24px 50px -40px rgba(5, 5, 16, 0.5); }
 .title { margin: 0; font-size: 1.25rem; font-weight: 700; line-height: 1.5; color: var(--text-strong); }
-.sub { margin: 0; font-size: 0.84rem; color: var(--muted); }
+.sub { margin: 0; font-size: var(--fs-md); color: var(--muted); }
 .q { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
-.q legend { font-size: 0.92rem; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+.q legend { font-size: var(--fs-base); font-weight: 600; margin-bottom: 8px; color: var(--text); }
 .opts { display: grid; gap: 6px; }
-.opts label { display: flex; gap: 10px; align-items: center; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--hairline-strong); background: var(--field); font-size: 0.88rem; cursor: pointer; }
+.opts label { display: flex; gap: 10px; align-items: center; padding: 10px 12px; border-radius: var(--r-sm); border: 1px solid var(--hairline-strong); background: var(--field); font-size: var(--fs-md); cursor: pointer; }
 .opts label.on { border-color: #1f4dff; background: rgba(31, 77, 255, 0.06); }
 .opts input { accent-color: #1f4dff; }
 .actions { display: flex; gap: 8px; flex-wrap: wrap; }
-.send { flex: 1; text-align: center; text-decoration: none; color: #fff; background: #12a150; padding: 12px 16px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; }
+.send { flex: 1; text-align: center; text-decoration: none; color: #fff; background: #12a150; padding: 12px 16px; border-radius: 999px; font-weight: 600; font-size: var(--fs-base); }
 .send.off { opacity: 0.4; pointer-events: none; }
-.copy { font: inherit; font-size: 0.86rem; padding: 12px 16px; border-radius: 999px; border: 1px solid var(--hairline-strong); background: #fff; cursor: pointer; }
+.copy { font: inherit; font-size: var(--fs-md); padding: 12px 16px; border-radius: 999px; border: 1px solid var(--hairline-strong); background: #fff; cursor: pointer; }
 .copy:disabled { opacity: 0.4; cursor: default; }
-.hint { margin: 0; font-size: 0.78rem; color: var(--faint); }
-.thanks { margin: 0; font-size: 0.86rem; color: #067647; background: #ecfdf3; padding: 10px 12px; border-radius: 12px; }
+.hint { margin: 0; font-size: var(--fs-sm); color: var(--faint); }
+.thanks { margin: 0; font-size: var(--fs-md); color: #067647; background: #ecfdf3; padding: 10px 12px; border-radius: var(--r-sm); }

@@ -5,7 +5,7 @@
 .tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--hairline-strong); margin-bottom: 14px; }
 .tab, .tabOn { font: inherit; font-weight: 600; background: none; border: 0; border-bottom: 2px solid transparent; padding: 10px 14px; margin-bottom: -1px; color: var(--muted); cursor: pointer; }
 .tabOn { color: var(--accent); border-bottom-color: var(--accent); }
-.tab span, .tabOn span { font-weight: 400; font-size: .8rem; opacity: .8; }
+.tab span, .tabOn span { font-weight: 400; font-size: var(--fs-sm); opacity: .8; }
 .tab:focus-visible, .tabOn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .tools { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
@@ -16,13 +16,13 @@
 .tools input[type="search"] { flex: 1 1 260px; }
 .tools select { flex: 0 1 220px; }
 .chk { display: flex; gap: 6px; align-items: center; cursor: pointer; color: var(--text); }
-.note { font-size: .85rem; color: var(--faint); margin: 0 0 4px; }
+.note { font-size: var(--fs-md); color: var(--faint); margin: 0 0 4px; }
 
 .grid { list-style: none; padding: 0; margin: 16px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
 .card { display: flex; flex-direction: column; gap: 4px; padding: 14px; border-radius: var(--r-md); border: 1px solid var(--hairline-strong); background: var(--card); text-decoration: none; color: var(--text); height: 100%; }
 .card:hover { border-color: var(--accent-line); }
 .card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.card b { font-size: 1rem; color: var(--text-strong); }
-.card span { color: var(--muted); font-size: .88rem; }
-.card em { font-style: normal; color: var(--faint); font-size: .8rem; min-height: 1em; }
+.card b { font-size: var(--fs-lg); color: var(--text-strong); }
+.card span { color: var(--muted); font-size: var(--fs-md); }
+.card em { font-style: normal; color: var(--faint); font-size: var(--fs-sm); min-height: 1em; }
 .empty { margin-top: 24px; color: var(--muted); }

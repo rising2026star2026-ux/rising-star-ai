@@ -25,21 +25,21 @@
 
 .searchRow {
   display: flex; align-items: center; gap: 10px; padding: 0 16px; height: 50px;
-  border-radius: 16px; border: 1px solid var(--hairline); background: var(--card);
+  border-radius: var(--r-md); border: 1px solid var(--hairline); background: var(--card);
   color: var(--faint); box-shadow: var(--shadow-soft); transition: border-color 0.2s var(--ease);
 }
 .searchRow:focus-within { border-color: var(--accent-line); }
 .searchRow svg { width: 18px; height: 18px; flex: none; }
-.searchRow input { flex: 1; min-width: 0; background: none; border: 0; outline: 0; font: inherit; font-size: 0.95rem; color: var(--text); }
+.searchRow input { flex: 1; min-width: 0; background: none; border: 0; outline: 0; font: inherit; font-size: var(--fs-base); color: var(--text); }
 .searchRow input::placeholder { color: var(--faint); }
 
 .section { display: grid; gap: 12px; }
 .sectionHead { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
 .sectionHead h2 { margin: 0; font-size: clamp(1.1rem, 3.2vw, 1.35rem); font-weight: 500; letter-spacing: -0.01em; color: var(--text-strong); }
-.sectionHead p { margin: 3px 0 0; font-size: 0.84rem; color: var(--muted); }
+.sectionHead p { margin: 3px 0 0; font-size: var(--fs-md); color: var(--muted); }
 .seeAll {
   flex: none; display: inline-flex; align-items: center; gap: 2px;
-  background: none; border: 0; cursor: pointer; font: inherit; font-size: 0.92rem; font-weight: 500;
+  background: none; border: 0; cursor: pointer; font: inherit; font-size: var(--fs-base); font-weight: 500;
   color: var(--accent); padding: 4px 2px;
 }
 .seeAll svg { width: 17px; height: 17px; }
@@ -58,7 +58,7 @@
 .tile {
   position: relative;
   display: grid; justify-items: center; align-content: start; gap: 10px; text-align: center;
-  padding: 14px 6px 12px; border-radius: 18px; cursor: pointer; text-decoration: none;
+  padding: 14px 6px 12px; border-radius: var(--r-lg); cursor: pointer; text-decoration: none;
   background: var(--card); border: 1px solid var(--hairline); color: inherit; font: inherit;
   box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 22px -12px rgba(16, 24, 40, 0.14);
   scroll-snap-align: start;
@@ -66,17 +66,17 @@
 }
 .tile:hover { transform: translateY(-3px); border-color: var(--hairline-strong); box-shadow: 0 2px 4px rgba(16, 24, 40, 0.05), 0 18px 36px -16px rgba(16, 24, 40, 0.22); }
 .tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.tileName { font-size: 0.84rem; font-weight: 400; line-height: 1.35; color: var(--text-strong); max-width: 100%; overflow-wrap: anywhere; }
-.tileDesc { font-size: 0.76rem; color: var(--muted); line-height: 1.6; }
+.tileName { font-size: var(--fs-md); font-weight: 400; line-height: 1.35; color: var(--text-strong); max-width: 100%; overflow-wrap: anywhere; }
+.tileDesc { font-size: var(--fs-xs); color: var(--muted); line-height: 1.6; }
 .tileOff .icon { filter: saturate(0.85); }
 .soon {
   position: absolute; top: 8px; inset-inline-end: 8px; z-index: 1;
-  font-style: normal; font-size: 0.66rem; font-weight: 600; padding: 2px 8px; border-radius: 999px;
+  font-style: normal; font-size: var(--fs-xs); font-weight: 600; padding: 2px 8px; border-radius: 999px;
   color: var(--accent); background: #eef0ff; border: 1px solid var(--accent-line);
 }
 
 .empty { color: var(--muted); text-align: center; margin: 10px 0; }
-.footNote { margin: -10px 0 0; font-size: 0.74rem; color: var(--faint); line-height: 1.7; }
+.footNote { margin: -10px 0 0; font-size: var(--fs-xs); color: var(--faint); line-height: 1.7; }
 
 /* ===== كود الاشتراك ===== */
 .pro {
@@ -88,24 +88,24 @@
 }
 .proOn { border-color: rgba(16, 185, 129, 0.35); }
 .proDot {
-  width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center;
-  color: var(--on-accent); background: var(--accent); font-size: 1rem;
+  width: 38px; height: 38px; border-radius: var(--r-sm); display: grid; place-items: center;
+  color: var(--on-accent); background: var(--accent); font-size: var(--fs-lg);
 }
 .proOn .proDot { background: #10b981; color: #fff; }
 .proText { display: grid; gap: 3px; }
-.proText b { font-weight: 500; font-size: 0.94rem; }
-.proText small { color: var(--muted); font-size: 0.78rem; line-height: 1.6; }
+.proText b { font-weight: 500; font-size: var(--fs-base); }
+.proText small { color: var(--muted); font-size: var(--fs-sm); line-height: 1.6; }
 .proForm { display: flex; gap: 8px; }
 .proInput {
-  width: 150px; font: inherit; font-size: 0.9rem; color: var(--text); text-align: center; letter-spacing: 0.06em;
-  background: var(--field); border: 1px solid var(--hairline-strong); border-radius: 12px; padding: 0 12px; height: 40px;
+  width: 150px; font: inherit; font-size: var(--fs-base); color: var(--text); text-align: center; letter-spacing: 0.06em;
+  background: var(--field); border: 1px solid var(--hairline-strong); border-radius: var(--r-sm); padding: 0 12px; height: 40px;
 }
 .proInput:focus { outline: none; border-color: var(--accent-line); }
 .proGhost {
-  background: none; border: 1px solid var(--hairline); color: var(--muted); border-radius: 10px;
-  padding: 7px 12px; cursor: pointer; font: inherit; font-size: 0.8rem;
+  background: none; border: 1px solid var(--hairline); color: var(--muted); border-radius: var(--r-sm);
+  padding: 7px 12px; cursor: pointer; font: inherit; font-size: var(--fs-sm);
 }
-.proError { grid-column: 1 / -1; color: var(--danger); font-size: 0.8rem; }
+.proError { grid-column: 1 / -1; color: var(--danger); font-size: var(--fs-sm); }
 .proCompact { padding: 12px; }
 @media (max-width: 640px) {
   .pro { grid-template-columns: auto minmax(0, 1fr); }
@@ -119,7 +119,7 @@
 .strip::-webkit-scrollbar { display: none; }
 .stripItem {
   flex: none; width: 82px; display: grid; justify-items: center; gap: 6px; text-align: center;
-  padding: 8px 4px; border-radius: 14px; color: inherit; text-decoration: none; font: inherit; font-size: 0.74rem;
+  padding: 8px 4px; border-radius: var(--r-md); color: inherit; text-decoration: none; font: inherit; font-size: var(--fs-xs);
   background: none; border: 1px solid transparent; cursor: pointer;
   transition: background 0.2s var(--ease);
 }

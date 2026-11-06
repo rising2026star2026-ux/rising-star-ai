@@ -14,7 +14,7 @@
 
 .label {
   color: var(--faint, var(--muted, #8d8a96));
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
 }
 
 .row {
@@ -29,7 +29,7 @@
   align-items: center;
   gap: 7px;
   font: inherit;
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   line-height: 1;
   cursor: pointer;
   text-decoration: none;
@@ -59,7 +59,7 @@
   flex-basis: 100%;
   margin: 0;
   color: #e9b46b;
-  font-size: 0.78rem;
+  font-size: var(--fs-sm);
 }
 
 /* ===== النسخة الصغيرة للشات: أيقونات بس ===== */
@@ -71,7 +71,7 @@
 }
 .compact .btn {
   padding: 6px 9px;
-  border-radius: 10px;
+  border-radius: var(--r-sm);
   color: var(--faint, var(--muted, #8d8a96));
   background: transparent;
 }
@@ -94,7 +94,7 @@
     justify-content: center;
     min-width: 0;
     padding: 9px 6px;
-    font-size: 0.78rem;
+    font-size: var(--fs-sm);
     gap: 5px;
   }
 }

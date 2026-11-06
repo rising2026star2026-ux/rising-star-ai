@@ -5,9 +5,9 @@
 
 .head {
   display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap;
-  color: var(--muted); font-size: 0.87rem; margin-bottom: 11px;
+  color: var(--muted); font-size: var(--fs-md); margin-bottom: 11px;
 }
-.head small { color: var(--faint); font-size: 0.74rem; }
+.head small { color: var(--faint); font-size: var(--fs-xs); }
 
 .row {
   display: grid;
@@ -18,7 +18,7 @@
 .card {
   --h: var(--accent);
   display: flex; align-items: center; gap: 12px; min-width: 0;
-  padding: 13px 14px; border-radius: 16px;
+  padding: 13px 14px; border-radius: var(--r-md);
   color: var(--text);
   background: var(--card);
   border: 1px solid var(--hairline);
@@ -42,20 +42,20 @@
 .text { flex: 1; min-width: 0; line-height: 1.45; }
 .text b {
   display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
-  font-size: 0.88rem; font-weight: 500;
+  font-size: var(--fs-md); font-weight: 500;
 }
 .text b em {
-  font-style: normal; font-size: 0.6rem; font-weight: 500; letter-spacing: 0.04em;
+  font-style: normal; font-size: var(--fs-xs); font-weight: 500; letter-spacing: 0.04em;
   padding: 0 6px; border-radius: 999px; line-height: 1.6;
   color: var(--faint); border: 1px solid var(--hairline-strong);
 }
 .text b em.ar { color: var(--accent); border-color: var(--accent-line); background: var(--accent-soft); }
-.text small { display: block; color: var(--faint); font-size: 0.74rem; }
+.text small { display: block; color: var(--faint); font-size: var(--fs-xs); }
 
 .out { flex: none; color: var(--faint); transition: color 0.2s var(--ease); }
 .card:hover .out { color: var(--text); }
 
-.note { margin: 12px 2px 0; color: var(--faint); font-size: 0.72rem; line-height: 1.7; }
+.note { margin: 12px 2px 0; color: var(--faint); font-size: var(--fs-xs); line-height: 1.7; }
 
 /* الموبايل */
 @media (max-width: 680px) {
