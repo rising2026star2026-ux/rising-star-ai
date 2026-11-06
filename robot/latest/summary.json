@@ -1,32 +1,30 @@
 {
- "date": "2026-11-05T05:40:14.977Z",
- "total": 515,
- "ok": 509,
+ "date": "2026-11-06T05:42:06.751Z",
+ "total": 518,
+ "ok": 515,
  "broken": [
-  "/tool/ad-copy",
-  "feature:photo-ad",
-  "feature:chat",
-  "feature:chat-search"
+  "feature:amazon-competitor"
  ],
  "warn": 2,
  "spacesDown": [
+  "aryadytm-remove-photo-object",
   "multimodalart-logo-in-context",
   "eccv2022-dis-background-removal",
   "doevent-face-real-esrgan",
   "stepfun-ai-step1x-3d"
  ],
  "aiTested": [
-  "/tool/summarize",
-  "/tool/tiktok-script",
-  "/tool/translate",
-  "/tool/translate-dialect",
-  "/tool/travel-plan",
-  "/tool/video-prompt",
-  "/tool/video-qa",
-  "/tool/whatsapp-sales",
-  "/tool/youtube-title",
-  "/tool/ad-copy",
-  "/tool/adspy",
-  "/tool/article"
+  "/tool/brainstorm",
+  "/tool/business-ideas",
+  "/tool/business-plan",
+  "/tool/caption",
+  "/tool/code-explain",
+  "/tool/code-gen",
+  "/tool/compare",
+  "/tool/content-calendar",
+  "/tool/cover-letter",
+  "/tool/cv",
+  "/tool/daily-plan",
+  "/tool/debug"
  ]
 }

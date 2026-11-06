@@ -2,9 +2,9 @@
  "meta": {
   "base": "https://rising-star-ai.vercel.app",
   "repo": "rising2026star2026-ux/rising-star-ai",
-  "started": 1793857214977,
-  "durationMs": 636016,
-  "pagesChecked": 499,
+  "started": 1793943726751,
+  "durationMs": 627985,
+  "pagesChecked": 502,
   "dirChecked": 40,
   "dirTotal": 591,
   "toolsRun": 26,
@@ -12,18 +12,18 @@
   "aiRun": 12,
   "aiTotal": 53,
   "aiTested": [
-   "/tool/summarize",
-   "/tool/tiktok-script",
-   "/tool/translate",
-   "/tool/translate-dialect",
-   "/tool/travel-plan",
-   "/tool/video-prompt",
-   "/tool/video-qa",
-   "/tool/whatsapp-sales",
-   "/tool/youtube-title",
-   "/tool/ad-copy",
-   "/tool/adspy",
-   "/tool/article"
+   "/tool/brainstorm",
+   "/tool/business-ideas",
+   "/tool/business-plan",
+   "/tool/caption",
+   "/tool/code-explain",
+   "/tool/code-gen",
+   "/tool/compare",
+   "/tool/content-calendar",
+   "/tool/cover-letter",
+   "/tool/cv",
+   "/tool/daily-plan",
+   "/tool/debug"
   ],
   "pageOnly": [
    "reel-pro",
@@ -45,21 +45,7 @@
     "console: Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 1254,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/projects",
-   "path": "/projects",
-   "name": "المشاريع: مساحة لكل شغلانة",
-   "group": "pages",
-   "problems": [],
-   "tech": [
-    "console: Failed to load resource: the server responded with a status of 404 ()"
-   ],
-   "shots": [],
-   "ms": 1151,
+   "ms": 755,
    "notes": [],
    "status": "ok"
   },
@@ -73,7 +59,19 @@
     "console: Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 1353,
+   "ms": 969,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/models/all",
+   "path": "/models/all",
+   "name": "كل الموديلات المفتوحة",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 1239,
    "notes": [],
    "status": "ok"
   },
@@ -87,19 +85,19 @@
     "console: Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 1299,
+   "ms": 1070,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/compare",
-   "path": "/compare",
-   "name": "مقارنة الموديلات",
+   "key": "/projects",
+   "path": "/projects",
+   "name": "المشاريع: مساحة لكل شغلانة",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 404,
+   "ms": 413,
    "notes": [],
    "status": "ok"
   },
@@ -111,7 +109,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 600,
+   "ms": 467,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/compare",
+   "path": "/compare",
+   "name": "مقارنة الموديلات",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 484,
    "notes": [],
    "status": "ok"
   },
@@ -123,7 +133,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 309,
+   "ms": 472,
    "notes": [],
    "status": "ok"
   },
@@ -135,7 +145,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 277,
+   "ms": 336,
    "notes": [],
    "status": "ok"
   },
@@ -147,7 +157,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 273,
+   "ms": 433,
    "notes": [],
    "status": "ok"
   },
@@ -159,7 +169,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 403,
+   "ms": 544,
    "notes": [],
    "status": "ok"
   },
@@ -171,19 +181,43 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 428,
+   "ms": 374,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/map",
+   "path": "/map",
+   "name": "خريطة الموقع",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 718,
    "notes": [],
    "status": "ok"
   },
   {
    "key": "/realestate/chat",
    "path": "/realestate/chat",
-   "name": "الشات العقاري",
+   "name": "المستشار العقاري",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 293,
+   "ms": 441,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/market-check",
+   "path": "/market-check",
+   "name": "منتجك هيبيع في مصر؟",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 475,
    "notes": [],
    "status": "ok"
   },
@@ -195,31 +229,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 342,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/test-ad",
-   "path": "/test-ad",
-   "name": "جرّب إعلانك على 100 زبون",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 395,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/photo-ad",
-   "path": "/photo-ad",
-   "name": "صوّرها بموبايلك.. وخد إعلان كامل",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 292,
+   "ms": 517,
    "notes": [],
    "status": "ok"
   },
@@ -241,9 +251,33 @@
    "shots": [
     "shots/page_global-tools_alternatives.jpg"
    ],
-   "ms": 398,
+   "ms": 672,
    "notes": [],
    "status": "warn"
+  },
+  {
+   "key": "/test-ad",
+   "path": "/test-ad",
+   "name": "جرّب إعلانك على 100 زبون",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 538,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/photo-ad",
+   "path": "/photo-ad",
+   "name": "صوّرها بموبايلك.. وخد إعلان كامل",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 356,
+   "notes": [],
+   "status": "ok"
   },
   {
    "key": "/voice-post",
@@ -253,19 +287,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 438,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/amazon",
-   "path": "/amazon",
-   "name": "أدوات بيّاع أمازون",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 464,
+   "ms": 668,
    "notes": [],
    "status": "ok"
   },
@@ -277,7 +299,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 535,
+   "ms": 661,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/amazon",
+   "path": "/amazon",
+   "name": "أدوات بيّاع أمازون",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 643,
    "notes": [],
    "status": "ok"
   },
@@ -289,7 +323,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 423,
+   "ms": 406,
    "notes": [],
    "status": "ok"
   },
@@ -301,7 +335,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 313,
+   "ms": 828,
    "notes": [],
    "status": "ok"
   },
@@ -313,7 +347,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 270,
+   "ms": 675,
    "notes": [],
    "status": "ok"
   },
@@ -325,7 +359,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 485,
+   "ms": 487,
    "notes": [],
    "status": "ok"
   },
@@ -337,7 +371,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 513,
+   "ms": 845,
    "notes": [],
    "status": "ok"
   },
@@ -349,7 +383,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 390,
+   "ms": 559,
    "notes": [],
    "status": "ok"
   },
@@ -361,7 +395,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 388,
+   "ms": 437,
    "notes": [],
    "status": "ok"
   },
@@ -373,7 +407,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 340,
+   "ms": 307,
    "notes": [],
    "status": "ok"
   },
@@ -385,7 +419,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 526,
+   "ms": 792,
    "notes": [],
    "status": "ok"
   },
@@ -397,7 +431,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 261,
+   "ms": 436,
    "notes": [],
    "status": "ok"
   },
@@ -409,7 +443,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 267,
+   "ms": 376,
    "notes": [],
    "status": "ok"
   },
@@ -421,7 +455,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 329,
+   "ms": 553,
    "notes": [],
    "status": "ok"
   },
@@ -433,7 +467,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 273,
+   "ms": 349,
    "notes": [],
    "status": "ok"
   },
@@ -445,7 +479,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 745,
+   "ms": 353,
    "notes": [],
    "status": "ok"
   },
@@ -457,7 +491,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 347,
+   "ms": 524,
    "notes": [],
    "status": "ok"
   },
@@ -469,7 +503,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 458,
+   "ms": 565,
    "notes": [],
    "status": "ok"
   },
@@ -481,7 +515,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 347,
+   "ms": 412,
    "notes": [],
    "status": "ok"
   },
@@ -493,7 +527,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 343,
+   "ms": 334,
    "notes": [],
    "status": "ok"
   },
@@ -505,7 +539,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 319,
+   "ms": 491,
    "notes": [],
    "status": "ok"
   },
@@ -517,7 +551,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 380,
+   "ms": 542,
    "notes": [],
    "status": "ok"
   },
@@ -529,7 +563,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 354,
+   "ms": 401,
    "notes": [],
    "status": "ok"
   },
@@ -541,7 +575,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 273,
+   "ms": 317,
    "notes": [],
    "status": "ok"
   },
@@ -553,7 +587,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 317,
+   "ms": 458,
    "notes": [],
    "status": "ok"
   },
@@ -565,7 +599,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 463,
+   "ms": 629,
    "notes": [],
    "status": "ok"
   },
@@ -577,7 +611,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 398,
+   "ms": 575,
    "notes": [],
    "status": "ok"
   },
@@ -589,7 +623,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 268,
+   "ms": 408,
    "notes": [],
    "status": "ok"
   },
@@ -601,19 +635,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 256,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/maker/recraft",
-   "path": "/maker/recraft",
-   "name": "Recraft",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 354,
+   "ms": 551,
    "notes": [],
    "status": "ok"
   },
@@ -625,7 +647,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 631,
+   "ms": 505,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/maker/recraft",
+   "path": "/maker/recraft",
+   "name": "Recraft",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 627,
    "notes": [],
    "status": "ok"
   },
@@ -637,19 +671,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 323,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/maker/mage-space",
-   "path": "/maker/mage-space",
-   "name": "Mage.space",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 304,
+   "ms": 475,
    "notes": [],
    "status": "ok"
   },
@@ -661,7 +683,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 424,
+   "ms": 641,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/maker/mage-space",
+   "path": "/maker/mage-space",
+   "name": "Mage.space",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 714,
    "notes": [],
    "status": "ok"
   },
@@ -673,7 +707,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 383,
+   "ms": 593,
    "notes": [],
    "status": "ok"
   },
@@ -685,19 +719,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 285,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/maker/canva-magic",
-   "path": "/maker/canva-magic",
-   "name": "Canva Magic Media",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 254,
+   "ms": 457,
    "notes": [],
    "status": "ok"
   },
@@ -709,7 +731,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 469,
+   "ms": 547,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/maker/canva-magic",
+   "path": "/maker/canva-magic",
+   "name": "Canva Magic Media",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 636,
    "notes": [],
    "status": "ok"
   },
@@ -721,7 +755,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 364,
+   "ms": 593,
    "notes": [],
    "status": "ok"
   },
@@ -733,7 +767,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 270,
+   "ms": 527,
    "notes": [],
    "status": "ok"
   },
@@ -745,7 +779,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 403,
+   "ms": 696,
    "notes": [],
    "status": "ok"
   },
@@ -757,7 +791,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 376,
+   "ms": 634,
    "notes": [],
    "status": "ok"
   },
@@ -769,7 +803,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 378,
+   "ms": 637,
    "notes": [],
    "status": "ok"
   },
@@ -781,7 +815,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 277,
+   "ms": 462,
    "notes": [],
    "status": "ok"
   },
@@ -793,19 +827,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 304,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/maker/wan-space",
-   "path": "/maker/wan-space",
-   "name": "Wan 2.2 (Hugging Face)",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 382,
+   "ms": 632,
    "notes": [],
    "status": "ok"
   },
@@ -817,7 +839,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 394,
+   "ms": 662,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/maker/wan-space",
+   "path": "/maker/wan-space",
+   "name": "Wan 2.2 (Hugging Face)",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 622,
    "notes": [],
    "status": "ok"
   },
@@ -829,7 +863,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 265,
+   "ms": 490,
    "notes": [],
    "status": "ok"
   },
@@ -841,7 +875,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 294,
+   "ms": 485,
    "notes": [],
    "status": "ok"
   },
@@ -853,7 +887,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 384,
+   "ms": 583,
    "notes": [],
    "status": "ok"
   },
@@ -865,7 +899,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 343,
+   "ms": 572,
    "notes": [],
    "status": "ok"
   },
@@ -877,7 +911,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 321,
+   "ms": 493,
    "notes": [],
    "status": "ok"
   },
@@ -889,7 +923,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 271,
+   "ms": 493,
    "notes": [],
    "status": "ok"
   },
@@ -901,7 +935,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 358,
+   "ms": 438,
    "notes": [],
    "status": "ok"
   },
@@ -920,19 +954,19 @@
     "dead link https://www.maharah.net/ 0 EAI_AGAIN"
    ],
    "shots": [],
-   "ms": 523,
+   "ms": 460,
    "notes": [],
    "status": "warn"
   },
   {
-   "key": "/creators",
-   "path": "/creators",
-   "name": "صناع المحتوى",
+   "key": "/news",
+   "path": "/news",
+   "name": "جديد الذكاء الاصطناعي",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 375,
+   "ms": 582,
    "notes": [],
    "status": "ok"
   },
@@ -944,19 +978,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 290,
+   "ms": 504,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/news",
-   "path": "/news",
-   "name": "جديد الذكاء الاصطناعي",
+   "key": "/creators",
+   "path": "/creators",
+   "name": "صناع المحتوى",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 522,
+   "ms": 484,
    "notes": [],
    "status": "ok"
   },
@@ -968,7 +1002,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 314,
+   "ms": 345,
    "notes": [],
    "status": "ok"
   },
@@ -980,7 +1014,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 340,
+   "ms": 486,
    "notes": [],
    "status": "ok"
   },
@@ -992,7 +1026,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 350,
+   "ms": 605,
    "notes": [],
    "status": "ok"
   },
@@ -1004,7 +1038,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 342,
+   "ms": 445,
    "notes": [],
    "status": "ok"
   },
@@ -1016,7 +1050,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 290,
+   "ms": 402,
    "notes": [],
    "status": "ok"
   },
@@ -1028,7 +1062,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 341,
+   "ms": 614,
    "notes": [],
    "status": "ok"
   },
@@ -1040,7 +1074,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 502,
+   "ms": 577,
    "notes": [],
    "status": "ok"
   },
@@ -1052,7 +1086,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 465,
+   "ms": 546,
    "notes": [],
    "status": "ok"
   },
@@ -1064,7 +1098,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 329,
+   "ms": 478,
    "notes": [],
    "status": "ok"
   },
@@ -1076,7 +1110,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 258,
+   "ms": 461,
    "notes": [],
    "status": "ok"
   },
@@ -1088,7 +1122,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 443,
+   "ms": 590,
    "notes": [],
    "status": "ok"
   },
@@ -1100,7 +1134,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 396,
+   "ms": 465,
    "notes": [],
    "status": "ok"
   },
@@ -1112,7 +1146,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 475,
+   "ms": 522,
    "notes": [],
    "status": "ok"
   },
@@ -1124,7 +1158,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 237,
+   "ms": 488,
    "notes": [],
    "status": "ok"
   },
@@ -1136,19 +1170,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 722,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/creators/motaz-saad",
-   "path": "/creators/motaz-saad",
-   "name": "معتز سعد",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 360,
+   "ms": 598,
    "notes": [],
    "status": "ok"
   },
@@ -1160,7 +1182,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 401,
+   "ms": 508,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/creators/motaz-saad",
+   "path": "/creators/motaz-saad",
+   "name": "معتز سعد",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 604,
    "notes": [],
    "status": "ok"
   },
@@ -1172,7 +1206,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 249,
+   "ms": 592,
    "notes": [],
    "status": "ok"
   },
@@ -1184,7 +1218,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 311,
+   "ms": 721,
    "notes": [],
    "status": "ok"
   },
@@ -1196,7 +1230,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 382,
+   "ms": 633,
    "notes": [],
    "status": "ok"
   },
@@ -1208,7 +1242,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 453,
+   "ms": 580,
    "notes": [],
    "status": "ok"
   },
@@ -1220,7 +1254,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 244,
+   "ms": 540,
    "notes": [],
    "status": "ok"
   },
@@ -1232,7 +1266,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 365,
+   "ms": 565,
    "notes": [],
    "status": "ok"
   },
@@ -1244,7 +1278,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 438,
+   "ms": 507,
    "notes": [],
    "status": "ok"
   },
@@ -1256,7 +1290,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 325,
+   "ms": 435,
    "notes": [],
    "status": "ok"
   },
@@ -1268,7 +1302,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 289,
+   "ms": 507,
    "notes": [],
    "status": "ok"
   },
@@ -1280,19 +1314,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 464,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/flux-schnell",
-   "path": "/library/flux-schnell",
-   "name": "فلَكس السريع",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 379,
+   "ms": 582,
    "notes": [],
    "status": "ok"
   },
@@ -1304,7 +1326,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 503,
+   "ms": 787,
    "notes": [],
    "status": "ok"
   },
@@ -1316,7 +1338,55 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 578,
+   "ms": 550,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/flux-schnell",
+   "path": "/library/flux-schnell",
+   "name": "فلَكس السريع",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 403,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/sd35-large",
+   "path": "/library/sd35-large",
+   "name": "ستيبل ديفيوجن 3.5",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 435,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/qwen-image",
+   "path": "/library/qwen-image",
+   "name": "كوين إيمدج",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 494,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/qwen-image-2512",
+   "path": "/library/qwen-image-2512",
+   "name": "كوين إيمدج (أحدث)",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 507,
    "notes": [],
    "status": "ok"
   },
@@ -1330,31 +1400,7 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 349,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/sd35-large",
-   "path": "/library/sd35-large",
-   "name": "ستيبل ديفيوجن 3.5",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 533,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/qwen-image",
-   "path": "/library/qwen-image",
-   "name": "كوين إيمدج",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 495,
+   "ms": 510,
    "notes": [],
    "status": "ok"
   },
@@ -1366,19 +1412,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 333,
+   "ms": 623,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/library/qwen-image-2512",
-   "path": "/library/qwen-image-2512",
-   "name": "كوين إيمدج (أحدث)",
+   "key": "/library/logo-in-context",
+   "path": "/library/logo-in-context",
+   "name": "شعارك على منتج",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 771,
+   "ms": 664,
    "notes": [],
    "status": "ok"
   },
@@ -1392,19 +1438,7 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 352,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/logo-in-context",
-   "path": "/library/logo-in-context",
-   "name": "شعارك على منتج",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 504,
+   "ms": 733,
    "notes": [],
    "status": "ok"
   },
@@ -1418,7 +1452,7 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 463,
+   "ms": 697,
    "notes": [],
    "status": "ok"
   },
@@ -1430,19 +1464,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 466,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/flux-prompt",
-   "path": "/library/flux-prompt",
-   "name": "مولّد أوصاف الصور",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 322,
+   "ms": 707,
    "notes": [],
    "status": "ok"
   },
@@ -1456,7 +1478,19 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 431,
+   "ms": 755,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/flux-prompt",
+   "path": "/library/flux-prompt",
+   "name": "مولّد أوصاف الصور",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 732,
    "notes": [],
    "status": "ok"
   },
@@ -1468,19 +1502,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 536,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/qwen-edit-2511",
-   "path": "/library/qwen-edit-2511",
-   "name": "تعديل صور (أحدث)",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 411,
+   "ms": 594,
    "notes": [],
    "status": "ok"
   },
@@ -1492,7 +1514,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 427,
+   "ms": 766,
    "notes": [],
    "status": "ok"
   },
@@ -1506,7 +1528,7 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 () | Blocked autofocusing on a <textarea> element in a cross-origin subframe."
    ],
    "shots": [],
-   "ms": 420,
+   "ms": 745,
    "notes": [],
    "status": "ok"
   },
@@ -1518,7 +1540,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 365,
+   "ms": 665,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/qwen-edit-2511",
+   "path": "/library/qwen-edit-2511",
+   "name": "تعديل صور (أحدث)",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 697,
    "notes": [],
    "status": "ok"
   },
@@ -1530,7 +1564,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 325,
+   "ms": 396,
    "notes": [],
    "status": "ok"
   },
@@ -1542,7 +1576,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 324,
+   "ms": 527,
    "notes": [],
    "status": "ok"
   },
@@ -1554,19 +1588,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 319,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/face-restore",
-   "path": "/library/face-restore",
-   "name": "تحسين الوشوش والصور القديمة",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 314,
+   "ms": 661,
    "notes": [],
    "status": "ok"
   },
@@ -1578,7 +1600,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 392,
+   "ms": 674,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/face-restore",
+   "path": "/library/face-restore",
+   "name": "تحسين الوشوش والصور القديمة",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 405,
    "notes": [],
    "status": "ok"
   },
@@ -1590,7 +1624,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 365,
+   "ms": 431,
    "notes": [],
    "status": "ok"
   },
@@ -1602,47 +1636,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 407,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/elevenlabs",
-   "path": "/library/elevenlabs",
-   "name": "إيليفن لابز (تجربة رسمية)",
-   "group": "pages",
-   "problems": [],
-   "tech": [
-    "console: Failed to load resource: the server responded with a status of 404 ()"
-   ],
-   "shots": [],
-   "ms": 316,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/kokoro",
-   "path": "/library/kokoro",
-   "name": "كوكورو للنطق",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 359,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/whisper-turbo",
-   "path": "/library/whisper-turbo",
-   "name": "تفريغ سريع من المايك",
-   "group": "pages",
-   "problems": [],
-   "tech": [
-    "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
-   ],
-   "shots": [],
-   "ms": 502,
+   "ms": 588,
    "notes": [],
    "status": "ok"
   },
@@ -1661,6 +1655,46 @@
    "status": "ok"
   },
   {
+   "key": "/library/elevenlabs",
+   "path": "/library/elevenlabs",
+   "name": "إيليفن لابز (تجربة رسمية)",
+   "group": "pages",
+   "problems": [],
+   "tech": [
+    "console: Failed to load resource: the server responded with a status of 404 ()"
+   ],
+   "shots": [],
+   "ms": 395,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/kokoro",
+   "path": "/library/kokoro",
+   "name": "كوكورو للنطق",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 408,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/whisper-turbo",
+   "path": "/library/whisper-turbo",
+   "name": "تفريغ سريع من المايك",
+   "group": "pages",
+   "problems": [],
+   "tech": [
+    "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
+   ],
+   "shots": [],
+   "ms": 663,
+   "notes": [],
+   "status": "ok"
+  },
+  {
    "key": "/library/qwen-tts",
    "path": "/library/qwen-tts",
    "name": "كوين للنطق",
@@ -1670,7 +1704,7 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 319,
+   "ms": 503,
    "notes": [],
    "status": "ok"
   },
@@ -1682,21 +1716,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 396,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/k2-tts",
-   "path": "/library/k2-tts",
-   "name": "نطق بلغات كتير",
-   "group": "pages",
-   "problems": [],
-   "tech": [
-    "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
-   ],
-   "shots": [],
-   "ms": 528,
+   "ms": 430,
    "notes": [],
    "status": "ok"
   },
@@ -1710,7 +1730,21 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 508,
+   "ms": 564,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/k2-tts",
+   "path": "/library/k2-tts",
+   "name": "نطق بلغات كتير",
+   "group": "pages",
+   "problems": [],
+   "tech": [
+    "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
+   ],
+   "shots": [],
+   "ms": 507,
    "notes": [],
    "status": "ok"
   },
@@ -1722,7 +1756,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 583,
+   "ms": 555,
    "notes": [],
    "status": "ok"
   },
@@ -1733,11 +1767,10 @@
    "group": "pages",
    "problems": [],
    "tech": [
-    "أخطاء من مواقع متضمّنة (مش كودنا): Objects are not valid as a React child (found: object with keys {text, files}). If you meant to render a collection of children, use an array instead. @ qwen-qwen3-demo.hf.space | Objects are not valid as a React child (found: object with keys {text, files}). If you meant to render a collection of children, use an array instead. @ qwen-qwen3-demo.hf.space | Objects are not valid as a React child (found: object with keys {text, files}). If you meant to render a collection of children, use an array instead. @ qwen-qwen3-demo.hf.space",
-    "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 () | Error: Objects are not valid as a React child (found: object with keys {text, files}). If you meant to render a collection of children, use an array instead.\n    at c4 (https://qwen-qwen3-demo.hf.space/gradio_api/custom_component/e0d61849f8aea9c751d8c852c8d343206eb10860e20ec84a9756a81321acdcfc/clien"
+    "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 375,
+   "ms": 549,
    "notes": [],
    "status": "ok"
   },
@@ -1751,19 +1784,7 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 708,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/multimodal-ocr",
-   "path": "/library/multimodal-ocr",
-   "name": "قراءة مستندات",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 349,
+   "ms": 795,
    "notes": [],
    "status": "ok"
   },
@@ -1775,7 +1796,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 720,
+   "ms": 652,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/multimodal-ocr",
+   "path": "/library/multimodal-ocr",
+   "name": "قراءة مستندات",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 344,
    "notes": [],
    "status": "ok"
   },
@@ -1787,7 +1820,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 292,
+   "ms": 420,
    "notes": [],
    "status": "ok"
   },
@@ -1797,11 +1830,9 @@
    "name": "أفاتار بيتكلم",
    "group": "pages",
    "problems": [],
-   "tech": [
-    "أخطاء من مواقع متضمّنة (مش كودنا): Cannot read properties of undefined (reading '0') @ victor-longcat-video-avatar-1-5.hf.space | Cannot read properties of undefined (reading '0') @ victor-longcat-video-avatar-1-5.hf.space | Cannot read properties of undefined (reading '0') @ victor-longcat-video-avatar-1-5.hf.space"
-   ],
+   "tech": [],
    "shots": [],
-   "ms": 639,
+   "ms": 643,
    "notes": [],
    "status": "ok"
   },
@@ -1815,7 +1846,7 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 470,
+   "ms": 568,
    "notes": [],
    "status": "ok"
   },
@@ -1827,19 +1858,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 334,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/deepseek-vl2",
-   "path": "/library/deepseek-vl2",
-   "name": "DeepSeek يفهم الصور",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 419,
+   "ms": 348,
    "notes": [],
    "status": "ok"
   },
@@ -1851,7 +1870,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 554,
+   "ms": 526,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/deepseek-vl2",
+   "path": "/library/deepseek-vl2",
+   "name": "DeepSeek يفهم الصور",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 2667,
    "notes": [],
    "status": "ok"
   },
@@ -1866,7 +1897,7 @@
     "console: Permissions policy violation: xr-spatial-tracking is not allowed in this document."
    ],
    "shots": [],
-   "ms": 298,
+   "ms": 393,
    "notes": [],
    "status": "ok"
   },
@@ -1878,7 +1909,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 301,
+   "ms": 477,
    "notes": [],
    "status": "ok"
   },
@@ -1892,7 +1923,7 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 398,
+   "ms": 384,
    "notes": [],
    "status": "ok"
   },
@@ -1906,7 +1937,7 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 300,
+   "ms": 543,
    "notes": [],
    "status": "ok"
   },
@@ -1920,7 +1951,7 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 315,
+   "ms": 534,
    "notes": [],
    "status": "ok"
   },
@@ -1934,21 +1965,7 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 390,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/method-draw",
-   "path": "/library/method-draw",
-   "name": "رسم فيكتور SVG",
-   "group": "pages",
-   "problems": [],
-   "tech": [
-    "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
-   ],
-   "shots": [],
-   "ms": 477,
+   "ms": 440,
    "notes": [],
    "status": "ok"
   },
@@ -1962,7 +1979,21 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 469,
+   "ms": 398,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/method-draw",
+   "path": "/library/method-draw",
+   "name": "رسم فيكتور SVG",
+   "group": "pages",
+   "problems": [],
+   "tech": [
+    "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
+   ],
+   "shots": [],
+   "ms": 501,
    "notes": [],
    "status": "ok"
   },
@@ -1976,7 +2007,7 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 578,
+   "ms": 646,
    "notes": [],
    "status": "ok"
   },
@@ -1990,7 +2021,7 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 483,
+   "ms": 640,
    "notes": [],
    "status": "ok"
   },
@@ -2004,7 +2035,7 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 () | Blocked autofocusing on a <input> element in a cross-origin subframe."
    ],
    "shots": [],
-   "ms": 341,
+   "ms": 376,
    "notes": [],
    "status": "ok"
   },
@@ -2018,7 +2049,7 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 507,
+   "ms": 521,
    "notes": [],
    "status": "ok"
   },
@@ -2032,7 +2063,7 @@
     "أخطاء من مواقع متضمّنة (مش كودنا): action is not defined @ excalidraw.com"
    ],
    "shots": [],
-   "ms": 558,
+   "ms": 727,
    "notes": [],
    "status": "ok"
   },
@@ -2044,7 +2075,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 552,
+   "ms": 677,
    "notes": [],
    "status": "ok"
   },
@@ -2056,7 +2087,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 597,
+   "ms": 676,
    "notes": [],
    "status": "ok"
   },
@@ -2068,7 +2099,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 280,
+   "ms": 584,
    "notes": [],
    "status": "ok"
   },
@@ -2080,19 +2111,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 385,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/tailwind-play",
-   "path": "/library/tailwind-play",
-   "name": "جرّب Tailwind CSS",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 533,
+   "ms": 402,
    "notes": [],
    "status": "ok"
   },
@@ -2109,6 +2128,18 @@
    "status": "ok"
   },
   {
+   "key": "/library/tailwind-play",
+   "path": "/library/tailwind-play",
+   "name": "جرّب Tailwind CSS",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 691,
+   "notes": [],
+   "status": "ok"
+  },
+  {
    "key": "/library/pyodide",
    "path": "/library/pyodide",
    "name": "بايثون في المتصفح",
@@ -2116,7 +2147,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 605,
+   "ms": 673,
    "notes": [],
    "status": "ok"
   },
@@ -2128,19 +2159,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 687,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/devdocs",
-   "path": "/library/devdocs",
-   "name": "توثيق كل اللغات",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 519,
+   "ms": 840,
    "notes": [],
    "status": "ok"
   },
@@ -2152,7 +2171,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 809,
+   "ms": 790,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/devdocs",
+   "path": "/library/devdocs",
+   "name": "توثيق كل اللغات",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 790,
    "notes": [],
    "status": "ok"
   },
@@ -2164,19 +2195,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 630,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/babel",
-   "path": "/library/babel",
-   "name": "محوّل JavaScript",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 425,
+   "ms": 614,
    "notes": [],
    "status": "ok"
   },
@@ -2190,7 +2209,7 @@
     "console: Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 620,
+   "ms": 681,
    "notes": [],
    "status": "ok"
   },
@@ -2202,19 +2221,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 773,
+   "ms": 648,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/library/css-grid",
-   "path": "/library/css-grid",
-   "name": "مولّد CSS Grid",
+   "key": "/library/babel",
+   "path": "/library/babel",
+   "name": "محوّل JavaScript",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 413,
+   "ms": 659,
    "notes": [],
    "status": "ok"
   },
@@ -2226,21 +2245,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 544,
+   "ms": 480,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/library/makecode",
-   "path": "/library/makecode",
-   "name": "اعمل لعبتك",
+   "key": "/library/css-grid",
+   "path": "/library/css-grid",
+   "name": "مولّد CSS Grid",
    "group": "pages",
    "problems": [],
-   "tech": [
-    "console: Permissions policy violation: usb is not allowed in this document."
-   ],
+   "tech": [],
    "shots": [],
-   "ms": 335,
+   "ms": 638,
    "notes": [],
    "status": "ok"
   },
@@ -2250,9 +2267,11 @@
    "name": "ألعاب بلوكلي",
    "group": "pages",
    "problems": [],
-   "tech": [],
+   "tech": [
+    "console: Failed to load resource: the server responded with a status of 404 ()"
+   ],
    "shots": [],
-   "ms": 698,
+   "ms": 585,
    "notes": [],
    "status": "ok"
   },
@@ -2264,19 +2283,21 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 498,
+   "ms": 460,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/library/wikipedia",
-   "path": "/library/wikipedia",
-   "name": "ويكيبيديا",
+   "key": "/library/makecode",
+   "path": "/library/makecode",
+   "name": "اعمل لعبتك",
    "group": "pages",
    "problems": [],
-   "tech": [],
+   "tech": [
+    "console: Failed to load resource: the server responded with a status of 404 () | Permissions policy violation: usb is not allowed in this document. | loc.errors: block has non matching arguments"
+   ],
    "shots": [],
-   "ms": 659,
+   "ms": 561,
    "notes": [],
    "status": "ok"
   },
@@ -2288,7 +2309,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 739,
+   "ms": 659,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/wikipedia",
+   "path": "/library/wikipedia",
+   "name": "ويكيبيديا",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 857,
    "notes": [],
    "status": "ok"
   },
@@ -2300,7 +2333,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 625,
+   "ms": 679,
    "notes": [],
    "status": "ok"
   },
@@ -2312,7 +2345,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 860,
+   "ms": 581,
    "notes": [],
    "status": "ok"
   },
@@ -2324,7 +2357,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 640,
+   "ms": 480,
    "notes": [],
    "status": "ok"
   },
@@ -2336,7 +2369,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 660,
+   "ms": 650,
    "notes": [],
    "status": "ok"
   },
@@ -2348,7 +2381,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 582,
+   "ms": 550,
    "notes": [],
    "status": "ok"
   },
@@ -2360,43 +2393,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 308,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/phet-gravity-force-lab",
-   "path": "/library/phet-gravity-force-lab",
-   "name": "محاكاة قوة الجاذبية",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 677,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/phet-fractions-intro",
-   "path": "/library/phet-fractions-intro",
-   "name": "محاكاة الكسور",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 770,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/phet-wave-on-a-string",
-   "path": "/library/phet-wave-on-a-string",
-   "name": "محاكاة الموجات",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 546,
+   "ms": 438,
    "notes": [],
    "status": "ok"
   },
@@ -2408,19 +2405,43 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 430,
+   "ms": 462,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/library/phet-molecule-shapes",
-   "path": "/library/phet-molecule-shapes",
-   "name": "محاكاة أشكال الجزيئات",
+   "key": "/library/phet-fractions-intro",
+   "path": "/library/phet-fractions-intro",
+   "name": "محاكاة الكسور",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 646,
+   "ms": 490,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/phet-gravity-force-lab",
+   "path": "/library/phet-gravity-force-lab",
+   "name": "محاكاة قوة الجاذبية",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 685,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/phet-wave-on-a-string",
+   "path": "/library/phet-wave-on-a-string",
+   "name": "محاكاة الموجات",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 674,
    "notes": [],
    "status": "ok"
   },
@@ -2432,7 +2453,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 424,
+   "ms": 412,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/phet-molecule-shapes",
+   "path": "/library/phet-molecule-shapes",
+   "name": "محاكاة أشكال الجزيئات",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 701,
    "notes": [],
    "status": "ok"
   },
@@ -2444,19 +2477,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 745,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/phet-energy-skate-park",
-   "path": "/library/phet-energy-skate-park",
-   "name": "محاكاة حفظ الطاقة",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 676,
+   "ms": 556,
    "notes": [],
    "status": "ok"
   },
@@ -2468,31 +2489,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 589,
+   "ms": 558,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/library/phet-area-builder",
-   "path": "/library/phet-area-builder",
-   "name": "محاكاة المساحة",
+   "key": "/library/phet-energy-skate-park",
+   "path": "/library/phet-energy-skate-park",
+   "name": "محاكاة حفظ الطاقة",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 679,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/phet-equality-explorer",
-   "path": "/library/phet-equality-explorer",
-   "name": "محاكاة المعادلات",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 677,
+   "ms": 689,
    "notes": [],
    "status": "ok"
   },
@@ -2504,7 +2513,31 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 675,
+   "ms": 575,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/phet-equality-explorer",
+   "path": "/library/phet-equality-explorer",
+   "name": "محاكاة المعادلات",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 517,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/phet-area-builder",
+   "path": "/library/phet-area-builder",
+   "name": "محاكاة المساحة",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 815,
    "notes": [],
    "status": "ok"
   },
@@ -2516,7 +2549,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 363,
+   "ms": 698,
    "notes": [],
    "status": "ok"
   },
@@ -2528,7 +2561,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 520,
+   "ms": 383,
    "notes": [],
    "status": "ok"
   },
@@ -2540,7 +2573,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 511,
+   "ms": 492,
    "notes": [],
    "status": "ok"
   },
@@ -2554,7 +2587,7 @@
     "console: Failed to load resource: the server responded with a status of 404 () | Access to XMLHttpRequest at 'https://gweb-musiclab-site.appspot.com/static/locales/ar_EG/locale-music-lab.json' from origin 'https://musiclab.chromeexperiments.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. | Failed to load resource: net::ERR_FAILED"
    ],
    "shots": [],
-   "ms": 555,
+   "ms": 540,
    "notes": [],
    "status": "ok"
   },
@@ -2566,7 +2599,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 454,
+   "ms": 461,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/strudel",
+   "path": "/library/strudel",
+   "name": "موسيقى بالكود",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 532,
    "notes": [],
    "status": "ok"
   },
@@ -2580,19 +2625,7 @@
     "console: Blocked autofocusing on a <input> element in a cross-origin subframe."
    ],
    "shots": [],
-   "ms": 466,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/strudel",
-   "path": "/library/strudel",
-   "name": "موسيقى بالكود",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 357,
+   "ms": 377,
    "notes": [],
    "status": "ok"
   },
@@ -2604,7 +2637,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 519,
+   "ms": 499,
    "notes": [],
    "status": "ok"
   },
@@ -2618,7 +2651,7 @@
     "أخطاء من مواقع متضمّنة (مش كودنا): url.indexOf is not a function @ wordcounter.net"
    ],
    "shots": [],
-   "ms": 283,
+   "ms": 495,
    "notes": [],
    "status": "ok"
   },
@@ -2630,7 +2663,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 476,
+   "ms": 389,
    "notes": [],
    "status": "ok"
   },
@@ -2641,10 +2674,10 @@
    "group": "pages",
    "problems": [],
    "tech": [
-    "console: Blocked autofocusing on a <textarea> element in a cross-origin subframe."
+    "console: Failed to load resource: the server responded with a status of 404 () | Blocked autofocusing on a <textarea> element in a cross-origin subframe."
    ],
    "shots": [],
-   "ms": 429,
+   "ms": 333,
    "notes": [],
    "status": "ok"
   },
@@ -2655,10 +2688,10 @@
    "group": "pages",
    "problems": [],
    "tech": [
-    "console: Blocked autofocusing on a <textarea> element in a cross-origin subframe."
+    "console: Failed to load resource: the server responded with a status of 404 () | Blocked autofocusing on a <textarea> element in a cross-origin subframe."
    ],
    "shots": [],
-   "ms": 460,
+   "ms": 610,
    "notes": [],
    "status": "ok"
   },
@@ -2670,7 +2703,31 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 345,
+   "ms": 573,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/stopwatch",
+   "path": "/library/stopwatch",
+   "name": "ساعة إيقاف",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 513,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/library/alarm",
+   "path": "/library/alarm",
+   "name": "منبّه أونلاين",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 371,
    "notes": [],
    "status": "ok"
   },
@@ -2687,30 +2744,6 @@
    "status": "ok"
   },
   {
-   "key": "/library/stopwatch",
-   "path": "/library/stopwatch",
-   "name": "ساعة إيقاف",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 365,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/alarm",
-   "path": "/library/alarm",
-   "name": "منبّه أونلاين",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 320,
-   "notes": [],
-   "status": "ok"
-  },
-  {
    "key": "/library/windy",
    "path": "/library/windy",
    "name": "طقس مباشر",
@@ -2718,19 +2751,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 330,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/library/tf-playground",
-   "path": "/library/tf-playground",
-   "name": "افهم الشبكات العصبية",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 419,
+   "ms": 593,
    "notes": [],
    "status": "ok"
   },
@@ -2742,19 +2763,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 337,
+   "ms": 557,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/task/logo",
-   "path": "/task/logo",
-   "name": "أداة ذكاء اصطناعي لـعمل شعار",
+   "key": "/library/tf-playground",
+   "path": "/library/tf-playground",
+   "name": "افهم الشبكات العصبية",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 377,
+   "ms": 404,
    "notes": [],
    "status": "ok"
   },
@@ -2766,7 +2787,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 410,
+   "ms": 469,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/task/logo",
+   "path": "/task/logo",
+   "name": "أداة ذكاء اصطناعي لـعمل شعار",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 447,
    "notes": [],
    "status": "ok"
   },
@@ -2778,7 +2811,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 385,
+   "ms": 619,
    "notes": [],
    "status": "ok"
   },
@@ -2790,7 +2823,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 402,
+   "ms": 505,
    "notes": [],
    "status": "ok"
   },
@@ -2802,7 +2835,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 500,
+   "ms": 402,
    "notes": [],
    "status": "ok"
   },
@@ -2814,7 +2847,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 455,
+   "ms": 427,
    "notes": [],
    "status": "ok"
   },
@@ -2826,7 +2859,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 320,
+   "ms": 560,
    "notes": [],
    "status": "ok"
   },
@@ -2838,7 +2871,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 408,
+   "ms": 433,
    "notes": [],
    "status": "ok"
   },
@@ -2850,7 +2883,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 686,
+   "ms": 420,
    "notes": [],
    "status": "ok"
   },
@@ -2862,7 +2895,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 445,
+   "ms": 439,
    "notes": [],
    "status": "ok"
   },
@@ -2874,7 +2907,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 349,
+   "ms": 504,
    "notes": [],
    "status": "ok"
   },
@@ -2886,7 +2919,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 617,
+   "ms": 498,
    "notes": [],
    "status": "ok"
   },
@@ -2898,7 +2931,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 488,
+   "ms": 397,
    "notes": [],
    "status": "ok"
   },
@@ -2910,7 +2943,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 498,
+   "ms": 453,
    "notes": [],
    "status": "ok"
   },
@@ -2922,7 +2955,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 344,
+   "ms": 409,
    "notes": [],
    "status": "ok"
   },
@@ -2934,7 +2967,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 516,
+   "ms": 668,
    "notes": [],
    "status": "ok"
   },
@@ -2946,7 +2979,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 534,
+   "ms": 509,
    "notes": [],
    "status": "ok"
   },
@@ -2958,7 +2991,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 509,
+   "ms": 413,
    "notes": [],
    "status": "ok"
   },
@@ -2970,7 +3003,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 353,
+   "ms": 527,
    "notes": [],
    "status": "ok"
   },
@@ -2982,7 +3015,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 636,
+   "ms": 536,
    "notes": [],
    "status": "ok"
   },
@@ -2994,7 +3027,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 512,
+   "ms": 526,
    "notes": [],
    "status": "ok"
   },
@@ -3006,7 +3039,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 488,
+   "ms": 483,
    "notes": [],
    "status": "ok"
   },
@@ -3018,7 +3051,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 324,
+   "ms": 614,
    "notes": [],
    "status": "ok"
   },
@@ -3030,7 +3063,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 521,
+   "ms": 598,
    "notes": [],
    "status": "ok"
   },
@@ -3042,7 +3075,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 524,
+   "ms": 590,
    "notes": [],
    "status": "ok"
   },
@@ -3054,7 +3087,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 603,
+   "ms": 396,
    "notes": [],
    "status": "ok"
   },
@@ -3066,7 +3099,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 430,
+   "ms": 564,
    "notes": [],
    "status": "ok"
   },
@@ -3078,7 +3111,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 615,
+   "ms": 703,
    "notes": [],
    "status": "ok"
   },
@@ -3090,19 +3123,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 708,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/task/3d",
-   "path": "/task/3d",
-   "name": "أداة ذكاء اصطناعي لـالتصميم ثلاثي الأبعاد والعمارة",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 577,
+   "ms": 616,
    "notes": [],
    "status": "ok"
   },
@@ -3114,31 +3135,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 673,
+   "ms": 429,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/global-tools/copywriting",
-   "path": "/global-tools/copywriting",
-   "name": "📣 الإعلانات والكتابة التسويقية",
+   "key": "/task/3d",
+   "path": "/task/3d",
+   "name": "أداة ذكاء اصطناعي لـالتصميم ثلاثي الأبعاد والعمارة",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 417,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/global-tools",
-   "path": "/global-tools",
-   "name": "أدوات عالمية",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 583,
+   "ms": 552,
    "notes": [],
    "status": "ok"
   },
@@ -3150,7 +3159,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 736,
+   "ms": 489,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/global-tools",
+   "path": "/global-tools",
+   "name": "أدوات عالمية",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 646,
    "notes": [],
    "status": "ok"
   },
@@ -3162,7 +3183,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 663,
+   "ms": 674,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/global-tools/copywriting",
+   "path": "/global-tools/copywriting",
+   "name": "📣 الإعلانات والكتابة التسويقية",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 357,
    "notes": [],
    "status": "ok"
   },
@@ -3174,7 +3207,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 249,
+   "ms": 571,
    "notes": [],
    "status": "ok"
   },
@@ -3186,7 +3219,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 447,
+   "ms": 635,
    "notes": [],
    "status": "ok"
   },
@@ -3198,7 +3231,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 497,
+   "ms": 535,
    "notes": [],
    "status": "ok"
   },
@@ -3210,19 +3243,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 399,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/global-tools/logo",
-   "path": "/global-tools/logo",
-   "name": "🏷️ اللوجو والهوية",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 506,
+   "ms": 376,
    "notes": [],
    "status": "ok"
   },
@@ -3234,19 +3255,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 629,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/global-tools/image-gen",
-   "path": "/global-tools/image-gen",
-   "name": "🎨 توليد الصور",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 350,
+   "ms": 693,
    "notes": [],
    "status": "ok"
   },
@@ -3258,7 +3267,31 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 482,
+   "ms": 539,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/global-tools/logo",
+   "path": "/global-tools/logo",
+   "name": "🏷️ اللوجو والهوية",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 421,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/global-tools/image-gen",
+   "path": "/global-tools/image-gen",
+   "name": "🎨 توليد الصور",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 619,
    "notes": [],
    "status": "ok"
   },
@@ -3270,7 +3303,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 481,
+   "ms": 387,
    "notes": [],
    "status": "ok"
   },
@@ -3282,19 +3315,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 554,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/global-tools/voice",
-   "path": "/global-tools/voice",
-   "name": "🎙️ الصوت والتعليق الصوتي",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 552,
+   "ms": 516,
    "notes": [],
    "status": "ok"
   },
@@ -3306,7 +3327,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 650,
+   "ms": 525,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/global-tools/voice",
+   "path": "/global-tools/voice",
+   "name": "🎙️ الصوت والتعليق الصوتي",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 384,
    "notes": [],
    "status": "ok"
   },
@@ -3318,7 +3351,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 395,
+   "ms": 418,
    "notes": [],
    "status": "ok"
   },
@@ -3330,7 +3363,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 441,
+   "ms": 585,
    "notes": [],
    "status": "ok"
   },
@@ -3342,7 +3375,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 334,
+   "ms": 447,
    "notes": [],
    "status": "ok"
   },
@@ -3354,19 +3387,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 412,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/global-tools/agents",
-   "path": "/global-tools/agents",
-   "name": "🤖 الوكلاء الأذكياء",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 354,
+   "ms": 559,
    "notes": [],
    "status": "ok"
   },
@@ -3378,7 +3399,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 369,
+   "ms": 434,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/global-tools/agents",
+   "path": "/global-tools/agents",
+   "name": "🤖 الوكلاء الأذكياء",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 464,
    "notes": [],
    "status": "ok"
   },
@@ -3390,7 +3423,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 358,
+   "ms": 426,
    "notes": [],
    "status": "ok"
   },
@@ -3402,7 +3435,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 293,
+   "ms": 417,
    "notes": [],
    "status": "ok"
   },
@@ -3414,7 +3447,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 390,
+   "ms": 420,
    "notes": [],
    "status": "ok"
   },
@@ -3426,7 +3459,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 382,
+   "ms": 359,
    "notes": [],
    "status": "ok"
   },
@@ -3438,7 +3471,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 431,
+   "ms": 458,
    "notes": [],
    "status": "ok"
   },
@@ -3450,7 +3483,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 483,
+   "ms": 518,
    "notes": [],
    "status": "ok"
   },
@@ -3462,19 +3495,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 439,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/global-tools/business",
-   "path": "/global-tools/business",
-   "name": "💼 ريادة الأعمال والإدارة",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 295,
+   "ms": 471,
    "notes": [],
    "status": "ok"
   },
@@ -3486,7 +3507,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 426,
+   "ms": 526,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/global-tools/business",
+   "path": "/global-tools/business",
+   "name": "💼 ريادة الأعمال والإدارة",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 340,
    "notes": [],
    "status": "ok"
   },
@@ -3498,7 +3531,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 260,
+   "ms": 424,
    "notes": [],
    "status": "ok"
   },
@@ -3510,7 +3543,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 259,
+   "ms": 443,
    "notes": [],
    "status": "ok"
   },
@@ -3522,7 +3555,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 354,
+   "ms": 410,
    "notes": [],
    "status": "ok"
   },
@@ -3534,7 +3567,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 370,
+   "ms": 332,
    "notes": [],
    "status": "ok"
   },
@@ -3546,7 +3579,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 242,
+   "ms": 463,
    "notes": [],
    "status": "ok"
   },
@@ -3558,7 +3591,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 258,
+   "ms": 414,
    "notes": [],
    "status": "ok"
   },
@@ -3570,7 +3603,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 443,
+   "ms": 470,
    "notes": [],
    "status": "ok"
   },
@@ -3582,7 +3615,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 455,
+   "ms": 376,
    "notes": [],
    "status": "ok"
   },
@@ -3594,7 +3627,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 298,
+   "ms": 492,
    "notes": [],
    "status": "ok"
   },
@@ -3606,7 +3639,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 295,
+   "ms": 467,
    "notes": [],
    "status": "ok"
   },
@@ -3618,7 +3651,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 456,
+   "ms": 529,
    "notes": [],
    "status": "ok"
   },
@@ -3630,7 +3663,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 532,
+   "ms": 426,
    "notes": [],
    "status": "ok"
   },
@@ -3642,7 +3675,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 362,
+   "ms": 401,
    "notes": [],
    "status": "ok"
   },
@@ -3654,7 +3687,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 273,
+   "ms": 347,
    "notes": [],
    "status": "ok"
   },
@@ -3666,7 +3699,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 460,
+   "ms": 473,
    "notes": [],
    "status": "ok"
   },
@@ -3678,7 +3711,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 513,
+   "ms": 383,
    "notes": [],
    "status": "ok"
   },
@@ -3690,7 +3723,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 398,
+   "ms": 505,
    "notes": [],
    "status": "ok"
   },
@@ -3702,7 +3735,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 284,
+   "ms": 391,
    "notes": [],
    "status": "ok"
   },
@@ -3714,7 +3747,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 532,
+   "ms": 467,
    "notes": [],
    "status": "ok"
   },
@@ -3726,7 +3759,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 463,
+   "ms": 402,
    "notes": [],
    "status": "ok"
   },
@@ -3738,7 +3771,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 385,
+   "ms": 498,
    "notes": [],
    "status": "ok"
   },
@@ -3750,7 +3783,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 263,
+   "ms": 372,
    "notes": [],
    "status": "ok"
   },
@@ -3762,7 +3795,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 349,
+   "ms": 454,
    "notes": [],
    "status": "ok"
   },
@@ -3774,7 +3807,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 372,
+   "ms": 462,
    "notes": [],
    "status": "ok"
   },
@@ -3786,7 +3819,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 398,
+   "ms": 446,
    "notes": [],
    "status": "ok"
   },
@@ -3798,7 +3831,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 343,
+   "ms": 410,
    "notes": [],
    "status": "ok"
   },
@@ -3810,7 +3843,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 412,
+   "ms": 468,
    "notes": [],
    "status": "ok"
   },
@@ -3822,19 +3855,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 496,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/program/copilot",
-   "path": "/program/copilot",
-   "name": "Copilot",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 372,
+   "ms": 435,
    "notes": [],
    "status": "ok"
   },
@@ -3846,7 +3867,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 520,
+   "ms": 441,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/program/copilot",
+   "path": "/program/copilot",
+   "name": "Copilot",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 374,
    "notes": [],
    "status": "ok"
   },
@@ -3858,7 +3891,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 382,
+   "ms": 438,
    "notes": [],
    "status": "ok"
   },
@@ -3870,7 +3903,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 393,
+   "ms": 437,
    "notes": [],
    "status": "ok"
   },
@@ -3882,7 +3915,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 431,
+   "ms": 407,
    "notes": [],
    "status": "ok"
   },
@@ -3894,7 +3927,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 413,
+   "ms": 416,
    "notes": [],
    "status": "ok"
   },
@@ -3906,7 +3939,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 330,
+   "ms": 441,
    "notes": [],
    "status": "ok"
   },
@@ -3918,7 +3951,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 421,
+   "ms": 378,
    "notes": [],
    "status": "ok"
   },
@@ -3930,7 +3963,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 461,
+   "ms": 482,
    "notes": [],
    "status": "ok"
   },
@@ -3942,7 +3975,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 342,
+   "ms": 496,
    "notes": [],
    "status": "ok"
   },
@@ -3954,7 +3987,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 423,
+   "ms": 420,
    "notes": [],
    "status": "ok"
   },
@@ -3966,7 +3999,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 398,
+   "ms": 477,
    "notes": [],
    "status": "ok"
   },
@@ -3978,7 +4011,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 434,
+   "ms": 425,
    "notes": [],
    "status": "ok"
   },
@@ -3990,7 +4023,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 330,
+   "ms": 459,
    "notes": [],
    "status": "ok"
   },
@@ -4002,7 +4035,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 355,
+   "ms": 393,
    "notes": [],
    "status": "ok"
   },
@@ -4014,7 +4047,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 391,
+   "ms": 427,
    "notes": [],
    "status": "ok"
   },
@@ -4026,7 +4059,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 372,
+   "ms": 403,
    "notes": [],
    "status": "ok"
   },
@@ -4038,7 +4071,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 385,
+   "ms": 426,
    "notes": [],
    "status": "ok"
   },
@@ -4050,7 +4083,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 341,
+   "ms": 395,
    "notes": [],
    "status": "ok"
   },
@@ -4062,19 +4095,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 390,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/program/adobefirefly",
-   "path": "/program/adobefirefly",
-   "name": "Adobe Firefly",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 380,
+   "ms": 434,
    "notes": [],
    "status": "ok"
   },
@@ -4086,7 +4107,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 457,
+   "ms": 435,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/program/adobefirefly",
+   "path": "/program/adobefirefly",
+   "name": "Adobe Firefly",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 425,
    "notes": [],
    "status": "ok"
   },
@@ -4098,7 +4131,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 237,
+   "ms": 433,
    "notes": [],
    "status": "ok"
   },
@@ -4110,7 +4143,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 293,
+   "ms": 396,
    "notes": [],
    "status": "ok"
   },
@@ -4122,7 +4155,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 389,
+   "ms": 416,
    "notes": [],
    "status": "ok"
   },
@@ -4134,7 +4167,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 334,
+   "ms": 415,
    "notes": [],
    "status": "ok"
   },
@@ -4146,7 +4179,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 341,
+   "ms": 483,
    "notes": [],
    "status": "ok"
   },
@@ -4158,7 +4191,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 254,
+   "ms": 363,
    "notes": [],
    "status": "ok"
   },
@@ -4170,7 +4203,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 380,
+   "ms": 399,
    "notes": [],
    "status": "ok"
   },
@@ -4182,7 +4215,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 359,
+   "ms": 441,
    "notes": [],
    "status": "ok"
   },
@@ -4194,7 +4227,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 304,
+   "ms": 430,
    "notes": [],
    "status": "ok"
   },
@@ -4206,7 +4239,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 396,
+   "ms": 402,
    "notes": [],
    "status": "ok"
   },
@@ -4218,7 +4251,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 403,
+   "ms": 386,
    "notes": [],
    "status": "ok"
   },
@@ -4230,7 +4263,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 432,
+   "ms": 400,
    "notes": [],
    "status": "ok"
   },
@@ -4242,7 +4275,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 263,
+   "ms": 424,
    "notes": [],
    "status": "ok"
   },
@@ -4254,7 +4287,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 250,
+   "ms": 388,
    "notes": [],
    "status": "ok"
   },
@@ -4266,7 +4299,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 370,
+   "ms": 418,
    "notes": [],
    "status": "ok"
   },
@@ -4278,7 +4311,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 354,
+   "ms": 439,
    "notes": [],
    "status": "ok"
   },
@@ -4290,7 +4323,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 250,
+   "ms": 445,
    "notes": [],
    "status": "ok"
   },
@@ -4302,7 +4335,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 248,
+   "ms": 369,
    "notes": [],
    "status": "ok"
   },
@@ -4314,7 +4347,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 352,
+   "ms": 438,
    "notes": [],
    "status": "ok"
   },
@@ -4326,7 +4359,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 312,
+   "ms": 418,
    "notes": [],
    "status": "ok"
   },
@@ -4338,7 +4371,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 253,
+   "ms": 499,
    "notes": [],
    "status": "ok"
   },
@@ -4350,7 +4383,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 247,
+   "ms": 372,
    "notes": [],
    "status": "ok"
   },
@@ -4362,7 +4395,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 297,
+   "ms": 374,
    "notes": [],
    "status": "ok"
   },
@@ -4374,7 +4407,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 317,
+   "ms": 423,
    "notes": [],
    "status": "ok"
   },
@@ -4386,7 +4419,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 256,
+   "ms": 424,
    "notes": [],
    "status": "ok"
   },
@@ -4398,7 +4431,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 455,
+   "ms": 355,
    "notes": [],
    "status": "ok"
   },
@@ -4410,7 +4443,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 344,
+   "ms": 393,
    "notes": [],
    "status": "ok"
   },
@@ -4422,19 +4455,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 287,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/program/githubcopilot",
-   "path": "/program/githubcopilot",
-   "name": "GitHub Copilot",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 295,
+   "ms": 440,
    "notes": [],
    "status": "ok"
   },
@@ -4446,7 +4467,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 343,
+   "ms": 355,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/program/githubcopilot",
+   "path": "/program/githubcopilot",
+   "name": "GitHub Copilot",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 1140,
    "notes": [],
    "status": "ok"
   },
@@ -4458,7 +4491,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 374,
+   "ms": 477,
    "notes": [],
    "status": "ok"
   },
@@ -4470,7 +4503,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 383,
+   "ms": 349,
    "notes": [],
    "status": "ok"
   },
@@ -4482,7 +4515,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 257,
+   "ms": 321,
    "notes": [],
    "status": "ok"
   },
@@ -4494,7 +4527,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 278,
+   "ms": 563,
    "notes": [],
    "status": "ok"
   },
@@ -4506,7 +4539,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 352,
+   "ms": 496,
    "notes": [],
    "status": "ok"
   },
@@ -4518,7 +4551,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 374,
+   "ms": 442,
    "notes": [],
    "status": "ok"
   },
@@ -4542,7 +4575,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 281,
+   "ms": 518,
    "notes": [],
    "status": "ok"
   },
@@ -4554,7 +4587,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 380,
+   "ms": 381,
    "notes": [],
    "status": "ok"
   },
@@ -4566,7 +4599,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 354,
+   "ms": 547,
    "notes": [],
    "status": "ok"
   },
@@ -4574,14 +4607,12 @@
    "key": "/tool/article",
    "path": "/tool/article",
    "name": "كاتب المقالات",
-   "group": "ai",
+   "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 362,
-   "notes": [
-    "214 حرف في 1 ثانية"
-   ],
+   "ms": 399,
+   "notes": [],
    "status": "ok"
   },
   {
@@ -4592,22 +4623,8 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 360,
+   "ms": 612,
    "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/tool/summarize",
-   "path": "/tool/summarize",
-   "name": "تلخيص النصوص",
-   "group": "ai",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 429,
-   "notes": [
-    "588 حرف في 1 ثانية"
-   ],
    "status": "ok"
   },
   {
@@ -4618,7 +4635,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 614,
+   "ms": 564,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/tool/summarize",
+   "path": "/tool/summarize",
+   "name": "تلخيص النصوص",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 659,
    "notes": [],
    "status": "ok"
   },
@@ -4630,7 +4659,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 566,
+   "ms": 414,
    "notes": [],
    "status": "ok"
   },
@@ -4638,24 +4667,13 @@
    "key": "/tool/ad-copy",
    "path": "/tool/ad-copy",
    "name": "نص إعلاني",
-   "group": "ai",
-   "problems": [
-    {
-     "level": "broken",
-     "text": "النتيجة فاضية أو قصيرة جداً (67 حرف)"
-    }
-   ],
-   "tech": [
-    "sample: النسخة ١\n\nالنسخة ١\n\n**قهوتك المختصة مستحك في المعادي.. ابدأ يومك به"
-   ],
-   "shots": [
-    "shots/ai-ad-copy_tool_ad-copy.jpg"
-   ],
-   "ms": 483,
-   "notes": [
-    "67 حرف في 4 ثانية"
-   ],
-   "status": "broken"
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 648,
+   "notes": [],
+   "status": "ok"
   },
   {
    "key": "/tool/landing-page",
@@ -4665,7 +4683,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 575,
+   "ms": 606,
    "notes": [],
    "status": "ok"
   },
@@ -4677,7 +4695,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 428,
+   "ms": 514,
    "notes": [],
    "status": "ok"
   },
@@ -4689,22 +4707,8 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 323,
+   "ms": 410,
    "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/tool/adspy",
-   "path": "/tool/adspy",
-   "name": "Adspy عربي: جاسوس الإعلانات",
-   "group": "ai",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 318,
-   "notes": [
-    "996 حرف في 3 ثانية"
-   ],
    "status": "ok"
   },
   {
@@ -4715,7 +4719,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 465,
+   "ms": 588,
    "notes": [],
    "status": "ok"
   },
@@ -4723,11 +4727,25 @@
    "key": "/tool/caption",
    "path": "/tool/caption",
    "name": "كابشن إنستجرام",
+   "group": "ai",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 581,
+   "notes": [
+    "401 حرف في 2 ثانية"
+   ],
+   "status": "ok"
+  },
+  {
+   "key": "/tool/adspy",
+   "path": "/tool/adspy",
+   "name": "Adspy عربي: جاسوس الإعلانات",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 503,
+   "ms": 638,
    "notes": [],
    "status": "ok"
   },
@@ -4735,64 +4753,66 @@
    "key": "/tool/tiktok-script",
    "path": "/tool/tiktok-script",
    "name": "سكريبت فيديو قصير",
-   "group": "ai",
+   "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 319,
-   "notes": [
-    "1247 حرف في 8 ثانية"
-   ],
+   "ms": 421,
+   "notes": [],
    "status": "ok"
   },
   {
    "key": "/tool/youtube-title",
    "path": "/tool/youtube-title",
    "name": "عناوين يوتيوب",
-   "group": "ai",
+   "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 332,
-   "notes": [
-    "705 حرف في 2 ثانية"
-   ],
+   "ms": 628,
+   "notes": [],
    "status": "ok"
   },
   {
    "key": "/tool/content-calendar",
    "path": "/tool/content-calendar",
    "name": "جدول محتوى 30 يوم",
-   "group": "pages",
+   "group": "ai",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 398,
-   "notes": [],
+   "ms": 703,
+   "notes": [
+    "3207 حرف في 6 ثانية"
+   ],
    "status": "ok"
   },
   {
    "key": "/tool/business-plan",
    "path": "/tool/business-plan",
    "name": "خطة عمل مختصرة",
-   "group": "pages",
+   "group": "ai",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 451,
-   "notes": [],
+   "ms": 767,
+   "notes": [
+    "2040 حرف في 4 ثانية"
+   ],
    "status": "ok"
   },
   {
    "key": "/tool/business-ideas",
    "path": "/tool/business-ideas",
    "name": "أفكار مشاريع",
-   "group": "pages",
+   "group": "ai",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 392,
-   "notes": [],
+   "ms": 535,
+   "notes": [
+    "2901 حرف في 8 ثانية"
+   ],
    "status": "ok"
   },
   {
@@ -4803,7 +4823,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 323,
+   "ms": 805,
    "notes": [],
    "status": "ok"
   },
@@ -4815,7 +4835,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 417,
+   "ms": 807,
    "notes": [],
    "status": "ok"
   },
@@ -4827,7 +4847,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 458,
+   "ms": 635,
    "notes": [],
    "status": "ok"
   },
@@ -4835,14 +4855,12 @@
    "key": "/tool/whatsapp-sales",
    "path": "/tool/whatsapp-sales",
    "name": "رسائل واتساب للبيع",
-   "group": "ai",
+   "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 444,
-   "notes": [
-    "587 حرف في 1 ثانية"
-   ],
+   "ms": 605,
+   "notes": [],
    "status": "ok"
   },
   {
@@ -4853,7 +4871,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 305,
+   "ms": 785,
    "notes": [],
    "status": "ok"
   },
@@ -4865,7 +4883,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 343,
+   "ms": 688,
    "notes": [],
    "status": "ok"
   },
@@ -4877,7 +4895,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 463,
+   "ms": 705,
    "notes": [],
    "status": "ok"
   },
@@ -4889,7 +4907,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 422,
+   "ms": 584,
    "notes": [],
    "status": "ok"
   },
@@ -4901,7 +4919,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 352,
+   "ms": 674,
    "notes": [],
    "status": "ok"
   },
@@ -4909,28 +4927,24 @@
    "key": "/tool/translate",
    "path": "/tool/translate",
    "name": "المترجم",
-   "group": "ai",
+   "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 329,
-   "notes": [
-    "80 حرف في 1 ثانية"
-   ],
+   "ms": 702,
+   "notes": [],
    "status": "ok"
   },
   {
    "key": "/tool/translate-dialect",
    "path": "/tool/translate-dialect",
    "name": "محوّل اللهجات",
-   "group": "ai",
+   "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 501,
-   "notes": [
-    "183 حرف في 1 ثانية"
-   ],
+   "ms": 669,
+   "notes": [],
    "status": "ok"
   },
   {
@@ -4941,7 +4955,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 513,
+   "ms": 607,
    "notes": [],
    "status": "ok"
   },
@@ -4949,36 +4963,42 @@
    "key": "/tool/code-gen",
    "path": "/tool/code-gen",
    "name": "كاتب الأكواد",
-   "group": "pages",
+   "group": "ai",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 436,
-   "notes": [],
+   "ms": 638,
+   "notes": [
+    "1400 حرف في 2 ثانية"
+   ],
    "status": "ok"
   },
   {
    "key": "/tool/code-explain",
    "path": "/tool/code-explain",
    "name": "شرح الكود",
-   "group": "pages",
+   "group": "ai",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 327,
-   "notes": [],
+   "ms": 803,
+   "notes": [
+    "496 حرف في 1 ثانية"
+   ],
    "status": "ok"
   },
   {
    "key": "/tool/debug",
    "path": "/tool/debug",
    "name": "مكتشف الأخطاء",
-   "group": "pages",
+   "group": "ai",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 521,
-   "notes": [],
+   "ms": 608,
+   "notes": [
+    "524 حرف في 28 ثانية"
+   ],
    "status": "ok"
   },
   {
@@ -4989,7 +5009,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 504,
+   "ms": 570,
    "notes": [],
    "status": "ok"
   },
@@ -4997,24 +5017,28 @@
    "key": "/tool/cv",
    "path": "/tool/cv",
    "name": "السيرة الذاتية",
-   "group": "pages",
+   "group": "ai",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 375,
-   "notes": [],
+   "ms": 453,
+   "notes": [
+    "742 حرف في 2 ثانية"
+   ],
    "status": "ok"
   },
   {
    "key": "/tool/cover-letter",
    "path": "/tool/cover-letter",
    "name": "خطاب التقديم",
-   "group": "pages",
+   "group": "ai",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 354,
-   "notes": [],
+   "ms": 583,
+   "notes": [
+    "959 حرف في 2 ثانية"
+   ],
    "status": "ok"
   },
   {
@@ -5025,7 +5049,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 644,
+   "ms": 638,
    "notes": [],
    "status": "ok"
   },
@@ -5033,24 +5057,28 @@
    "key": "/tool/daily-plan",
    "path": "/tool/daily-plan",
    "name": "خطة اليوم",
-   "group": "pages",
+   "group": "ai",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 581,
-   "notes": [],
+   "ms": 527,
+   "notes": [
+    "685 حرف في 2 ثانية"
+   ],
    "status": "ok"
   },
   {
    "key": "/tool/brainstorm",
    "path": "/tool/brainstorm",
    "name": "العصف الذهني",
-   "group": "pages",
+   "group": "ai",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 480,
-   "notes": [],
+   "ms": 430,
+   "notes": [
+    "1730 حرف في 4 ثانية"
+   ],
    "status": "ok"
   },
   {
@@ -5061,7 +5089,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 399,
+   "ms": 561,
    "notes": [],
    "status": "ok"
   },
@@ -5073,7 +5101,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 719,
+   "ms": 554,
    "notes": [],
    "status": "ok"
   },
@@ -5085,7 +5113,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 680,
+   "ms": 568,
    "notes": [],
    "status": "ok"
   },
@@ -5097,7 +5125,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 545,
+   "ms": 451,
    "notes": [],
    "status": "ok"
   },
@@ -5109,7 +5137,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 306,
+   "ms": 606,
    "notes": [],
    "status": "ok"
   },
@@ -5121,7 +5149,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 663,
+   "ms": 568,
    "notes": [],
    "status": "ok"
   },
@@ -5133,7 +5161,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 518,
+   "ms": 564,
    "notes": [],
    "status": "ok"
   },
@@ -5145,7 +5173,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 490,
+   "ms": 433,
    "notes": [],
    "status": "ok"
   },
@@ -5153,39 +5181,25 @@
    "key": "/tool/video-prompt",
    "path": "/tool/video-prompt",
    "name": "برومبت الفيديو",
-   "group": "ai",
+   "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 306,
-   "notes": [
-    "578 حرف في 1 ثانية"
-   ],
+   "ms": 665,
+   "notes": [],
    "status": "ok"
   },
   {
    "key": "/tool/compare",
    "path": "/tool/compare",
    "name": "المقارنة",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 644,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/tool/video-qa",
-   "path": "/tool/video-qa",
-   "name": "أسئلة عن فيديو",
    "group": "ai",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 630,
+   "ms": 569,
    "notes": [
-    "255 حرف في 2 ثانية"
+    "1145 حرف في 4 ثانية"
    ],
    "status": "ok"
   },
@@ -5197,19 +5211,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 716,
+   "ms": 624,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/tool/gem-assistant",
-   "path": "/tool/gem-assistant",
-   "name": "مساعد مخصص",
+   "key": "/tool/video-qa",
+   "path": "/tool/video-qa",
+   "name": "أسئلة عن فيديو",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 486,
+   "ms": 472,
    "notes": [],
    "status": "ok"
   },
@@ -5221,7 +5235,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 342,
+   "ms": 652,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/tool/gem-assistant",
+   "path": "/tool/gem-assistant",
+   "name": "مساعد مخصص",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 720,
    "notes": [],
    "status": "ok"
   },
@@ -5233,7 +5259,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 632,
+   "ms": 487,
    "notes": [],
    "status": "ok"
   },
@@ -5241,37 +5267,11 @@
    "key": "/tool/travel-plan",
    "path": "/tool/travel-plan",
    "name": "خطة السفر",
-   "group": "ai",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 549,
-   "notes": [
-    "1454 حرف في 4 ثانية"
-   ],
-   "status": "ok"
-  },
-  {
-   "key": "/tool/reel-pro",
-   "path": "/tool/reel-pro",
-   "name": "ريلز بحركة احترافية",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 539,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/tool/product-ad",
-   "path": "/tool/product-ad",
-   "name": "فيديو إعلان من صورة المنتج",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 351,
+   "ms": 435,
    "notes": [],
    "status": "ok"
   },
@@ -5283,7 +5283,31 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 588,
+   "ms": 645,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/tool/reel-pro",
+   "path": "/tool/reel-pro",
+   "name": "ريلز بحركة احترافية",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 606,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/tool/product-ad",
+   "path": "/tool/product-ad",
+   "name": "فيديو إعلان من صورة المنتج",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 627,
    "notes": [],
    "status": "ok"
   },
@@ -5295,19 +5319,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 630,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/tool/text-video",
-   "path": "/tool/text-video",
-   "name": "فيديو كلام متحرك",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 455,
+   "ms": 436,
    "notes": [],
    "status": "ok"
   },
@@ -5319,7 +5331,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 402,
+   "ms": 588,
    "notes": [],
    "status": "ok"
   },
@@ -5331,19 +5343,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 477,
+   "ms": 658,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/tool/remove-bg",
-   "path": "/tool/remove-bg",
-   "name": "إزالة الخلفية",
-   "group": "tools",
+   "key": "/tool/text-video",
+   "path": "/tool/text-video",
+   "name": "فيديو كلام متحرك",
+   "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 339,
+   "ms": 675,
    "notes": [],
    "status": "ok"
   },
@@ -5355,7 +5367,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 487,
+   "ms": 399,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/tool/remove-bg",
+   "path": "/tool/remove-bg",
+   "name": "إزالة الخلفية",
+   "group": "tools",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 599,
    "notes": [],
    "status": "ok"
   },
@@ -5367,7 +5391,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 335,
+   "ms": 643,
    "notes": [],
    "status": "ok"
   },
@@ -5379,7 +5403,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 363,
+   "ms": 652,
    "notes": [],
    "status": "ok"
   },
@@ -5391,7 +5415,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 493,
+   "ms": 419,
    "notes": [],
    "status": "ok"
   },
@@ -5403,7 +5427,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 394,
+   "ms": 502,
    "notes": [],
    "status": "ok"
   },
@@ -5415,7 +5439,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 334,
+   "ms": 664,
    "notes": [],
    "status": "ok"
   },
@@ -5427,7 +5451,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 383,
+   "ms": 537,
    "notes": [],
    "status": "ok"
   },
@@ -5439,7 +5463,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 435,
+   "ms": 573,
    "notes": [],
    "status": "ok"
   },
@@ -5451,7 +5475,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 565,
+   "ms": 463,
    "notes": [],
    "status": "ok"
   },
@@ -5463,7 +5487,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 347,
+   "ms": 644,
    "notes": [],
    "status": "ok"
   },
@@ -5475,7 +5499,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 333,
+   "ms": 527,
    "notes": [],
    "status": "ok"
   },
@@ -5487,7 +5511,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 463,
+   "ms": 585,
    "notes": [],
    "status": "ok"
   },
@@ -5499,7 +5523,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 437,
+   "ms": 604,
    "notes": [],
    "status": "ok"
   },
@@ -5511,7 +5535,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 326,
+   "ms": 630,
    "notes": [],
    "status": "ok"
   },
@@ -5523,7 +5547,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 351,
+   "ms": 574,
    "notes": [],
    "status": "ok"
   },
@@ -5535,43 +5559,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 490,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/tool/voice-studio",
-   "path": "/tool/voice-studio",
-   "name": "مولد الأصوات والكتاب المسموع",
-   "group": "tools",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 422,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/tool/podcast",
-   "path": "/tool/podcast",
-   "name": "بودكاست بصوتين",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 345,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/tool/long-transcribe",
-   "path": "/tool/long-transcribe",
-   "name": "تفريغ التسجيلات الطويلة",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 317,
+   "ms": 614,
    "notes": [],
    "status": "ok"
   },
@@ -5583,7 +5571,43 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 526,
+   "ms": 596,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/tool/podcast",
+   "path": "/tool/podcast",
+   "name": "بودكاست بصوتين",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 608,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/tool/voice-studio",
+   "path": "/tool/voice-studio",
+   "name": "مولد الأصوات والكتاب المسموع",
+   "group": "tools",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 406,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/tool/long-transcribe",
+   "path": "/tool/long-transcribe",
+   "name": "تفريغ التسجيلات الطويلة",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 576,
    "notes": [],
    "status": "ok"
   },
@@ -5595,7 +5619,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 412,
+   "ms": 681,
    "notes": [],
    "status": "ok"
   },
@@ -5607,19 +5631,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 629,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/tool/zakat-calc",
-   "path": "/tool/zakat-calc",
-   "name": "حاسبة الزكاة",
-   "group": "tools",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 397,
+   "ms": 846,
    "notes": [],
    "status": "ok"
   },
@@ -5631,7 +5643,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 323,
+   "ms": 671,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/tool/zakat-calc",
+   "path": "/tool/zakat-calc",
+   "name": "حاسبة الزكاة",
+   "group": "tools",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 698,
    "notes": [],
    "status": "ok"
   },
@@ -5643,7 +5667,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 509,
+   "ms": 736,
    "notes": [],
    "status": "ok"
   },
@@ -5655,7 +5679,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 591,
+   "ms": 635,
    "notes": [],
    "status": "ok"
   },
@@ -5667,62 +5691,14 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 434,
+   "ms": 721,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/seedance-20",
-   "path": "/ai/seedance-20",
-   "name": "Seedance 2.0",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 307,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/ai/sharegpt",
-   "path": "/ai/sharegpt",
-   "name": "ShareGPT",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 461,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/ai/slidesai",
-   "path": "/ai/slidesai",
-   "name": "SlidesAI",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 486,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/ai/snowpixel",
-   "path": "/ai/snowpixel",
-   "name": "Snowpixel",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 407,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/ai/socialbu",
-   "path": "/ai/socialbu",
-   "name": "SocialBu",
+   "key": "/ai/ai-video-maker",
+   "path": "/ai/ai-video-maker",
+   "name": "AI Video Maker",
    "group": "pages",
    "problems": [],
    "tech": [],
@@ -5732,422 +5708,470 @@
    "status": "ok"
   },
   {
-   "key": "/ai/speechify",
-   "path": "/ai/speechify",
-   "name": "Speechify",
+   "key": "/ai/ai-virtual-staging",
+   "path": "/ai/ai-virtual-staging",
+   "name": "AI Virtual Staging",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 312,
+   "ms": 622,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/starryai",
-   "path": "/ai/starryai",
-   "name": "starryai",
+   "key": "/ai/ai-voice-agents",
+   "path": "/ai/ai-voice-agents",
+   "name": "AI Voice Agents",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 429,
+   "ms": 706,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/superagi",
-   "path": "/ai/superagi",
-   "name": "SuperAGI",
+   "key": "/ai/ai-voice-generator",
+   "path": "/ai/ai-voice-generator",
+   "name": "AI Voice Generator",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 395,
+   "ms": 612,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/telex",
-   "path": "/ai/telex",
-   "name": "Telex",
+   "key": "/ai/ai-watermark-remover",
+   "path": "/ai/ai-watermark-remover",
+   "name": "AI Watermark Remover",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 307,
+   "ms": 518,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/text2sql",
-   "path": "/ai/text2sql",
-   "name": "Text2SQL",
+   "key": "/ai/ai2-asta",
+   "path": "/ai/ai2-asta",
+   "name": "Ai2 ASTA",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 295,
+   "ms": 644,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/twelve-labs",
-   "path": "/ai/twelve-labs",
-   "name": "Twelve Labs",
+   "key": "/ai/aicallerio",
+   "path": "/ai/aicallerio",
+   "name": "AICaller.io",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 415,
+   "ms": 568,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/uizard",
-   "path": "/ai/uizard",
-   "name": "Uizard",
+   "key": "/ai/aiart",
+   "path": "/ai/aiart",
+   "name": "AIArt",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 428,
+   "ms": 712,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/unpkgai",
-   "path": "/ai/unpkgai",
-   "name": "unpkg.ai",
+   "key": "/ai/aisaver",
+   "path": "/ai/aisaver",
+   "name": "AISaver",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 308,
+   "ms": 563,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/whatthediff",
-   "path": "/ai/whatthediff",
-   "name": "Whatthediff",
+   "key": "/ai/aminer",
+   "path": "/ai/aminer",
+   "name": "AMiner",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 339,
+   "ms": 584,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/yobiyoba",
-   "path": "/ai/yobiyoba",
-   "name": "YobiYoba",
+   "key": "/ai/android-studio-bot",
+   "path": "/ai/android-studio-bot",
+   "name": "Android Studio Bot",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 320,
+   "ms": 764,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/xai",
-   "path": "/ai/xai",
-   "name": "X.AI",
+   "key": "/ai/andy",
+   "path": "/ai/andy",
+   "name": "Andy",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 382,
+   "ms": 574,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/adal",
-   "path": "/ai/adal",
-   "name": "AdaL",
+   "key": "/ai/ankidecks-ai",
+   "path": "/ai/ankidecks-ai",
+   "name": "AnkiDecks AI",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 493,
+   "ms": 582,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/affogato",
-   "path": "/ai/affogato",
-   "name": "Affogato",
+   "key": "/ai/anvevoice",
+   "path": "/ai/anvevoice",
+   "name": "AnveVoice",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 327,
+   "ms": 477,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/agent-skills",
-   "path": "/ai/agent-skills",
-   "name": "Agent Skills",
+   "key": "/ai/api",
+   "path": "/ai/api",
+   "name": "API",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 395,
+   "ms": 654,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/agenta",
-   "path": "/ai/agenta",
-   "name": "Agenta",
+   "key": "/ai/artificial-analysis",
+   "path": "/ai/artificial-analysis",
+   "name": "Artificial Analysis",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 425,
+   "ms": 546,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/agentdock",
-   "path": "/ai/agentdock",
-   "name": "AgentDock",
+   "key": "/ai/artificialwatch",
+   "path": "/ai/artificialwatch",
+   "name": "ArtificialWatch",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 327,
+   "ms": 463,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/agentmail",
-   "path": "/ai/agentmail",
-   "name": "AgentMail",
+   "key": "/ai/askcodi",
+   "path": "/ai/askcodi",
+   "name": "AskCodi",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 352,
+   "ms": 788,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/agentprobe",
-   "path": "/ai/agentprobe",
-   "name": "Agentprobe",
+   "key": "/ai/asreview",
+   "path": "/ai/asreview",
+   "name": "ASReview",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 354,
+   "ms": 599,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/agentskb",
-   "path": "/ai/agentskb",
-   "name": "AgentsKB",
+   "key": "/ai/askyourdatabase",
+   "path": "/ai/askyourdatabase",
+   "name": "AskYourDatabase",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 357,
+   "ms": 577,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/agentsmesh",
-   "path": "/ai/agentsmesh",
-   "name": "AgentsMesh",
+   "key": "/ai/audify-ai",
+   "path": "/ai/audify-ai",
+   "name": "Audify AI",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 293,
+   "ms": 507,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/agentstackwatch",
-   "path": "/ai/agentstackwatch",
-   "name": "AgentStackWatch",
+   "key": "/ai/audiocraft",
+   "path": "/ai/audiocraft",
+   "name": "AudioCraft",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 309,
+   "ms": 698,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/agi-inc",
-   "path": "/ai/agi-inc",
-   "name": "AGI, Inc.",
+   "key": "/ai/backgrounderdev",
+   "path": "/ai/backgrounderdev",
+   "name": "Backgrounder.dev",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 294,
+   "ms": 610,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/ai-assistant-for-smbs",
-   "path": "/ai/ai-assistant-for-smbs",
-   "name": "AI Assistant for SMBs",
+   "key": "/ai/aurcue",
+   "path": "/ai/aurcue",
+   "name": "Aurcue",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 309,
+   "ms": 746,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/ai-code-convert",
-   "path": "/ai/ai-code-convert",
-   "name": "AI Code Convert",
+   "key": "/ai/based-ai",
+   "path": "/ai/based-ai",
+   "name": "Based AI",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 289,
+   "ms": 610,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/ai-coding-compare",
-   "path": "/ai/ai-coding-compare",
-   "name": "AI Coding Compare",
+   "key": "/ai/baz",
+   "path": "/ai/baz",
+   "name": "Baz",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 347,
+   "ms": 701,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/ai-dictation",
-   "path": "/ai/ai-dictation",
-   "name": "AI Dictation",
+   "key": "/ai/beam",
+   "path": "/ai/beam",
+   "name": "Beam",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 345,
+   "ms": 772,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/ai-dungeon",
-   "path": "/ai/ai-dungeon",
-   "name": "AI Dungeon",
+   "key": "/ai/benchgecko",
+   "path": "/ai/benchgecko",
+   "name": "BenchGecko",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 467,
+   "ms": 632,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/ai-for-database",
-   "path": "/ai/ai-for-database",
-   "name": "AI for Database",
+   "key": "/ai/betterwriter",
+   "path": "/ai/betterwriter",
+   "name": "BetterWriter",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 341,
+   "ms": 607,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/ai-for-google-slides",
-   "path": "/ai/ai-for-google-slides",
-   "name": "AI for Google Slides",
+   "key": "/ai/bidclub",
+   "path": "/ai/bidclub",
+   "name": "BidClub",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 314,
+   "ms": 662,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/ai-gahaku",
-   "path": "/ai/ai-gahaku",
-   "name": "AI Gahaku",
+   "key": "/ai/bigmodel",
+   "path": "/ai/bigmodel",
+   "name": "BigModel",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 282,
+   "ms": 603,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/ai-logo-generator",
-   "path": "/ai/ai-logo-generator",
-   "name": "AI Logo Generator",
+   "key": "/ai/black-headshots",
+   "path": "/ai/black-headshots",
+   "name": "Black Headshots",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 389,
+   "ms": 576,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/ai-music-generator",
-   "path": "/ai/ai-music-generator",
-   "name": "AI Music Generator",
+   "key": "/ai/blackbox-ai",
+   "path": "/ai/blackbox-ai",
+   "name": "Blackbox AI",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 369,
+   "ms": 502,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/ai-photo-forge",
-   "path": "/ai/ai-photo-forge",
-   "name": "AI Photo Forge",
+   "key": "/ai/breeze-ai",
+   "path": "/ai/breeze-ai",
+   "name": "Breeze AI",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 313,
+   "ms": 529,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/ai-platform",
-   "path": "/ai/ai-platform",
-   "name": "AI Platform",
+   "key": "/ai/broadn",
+   "path": "/ai/broadn",
+   "name": "broadn",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 321,
+   "ms": 599,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "/ai/ai-video-creator",
-   "path": "/ai/ai-video-creator",
-   "name": "AI Video Creator",
+   "key": "/ai/bugfreeai",
+   "path": "/ai/bugfreeai",
+   "name": "bugfree.ai",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 287,
+   "ms": 549,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/ai/butterfish",
+   "path": "/ai/butterfish",
+   "name": "Butterfish",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 579,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/ai/butternut-ai",
+   "path": "/ai/butternut-ai",
+   "name": "Butternut AI",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 608,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/ai/caldai",
+   "path": "/ai/caldai",
+   "name": "Cald.ai",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 530,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/ai/calmo",
+   "path": "/ai/calmo",
+   "name": "Calmo",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 476,
    "notes": [],
    "status": "ok"
   },
@@ -6159,7 +6183,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 8102,
+   "ms": 8610,
    "notes": [],
    "status": "ok"
   },
@@ -6171,7 +6195,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 19076,
+   "ms": 22074,
    "notes": [],
    "status": "ok"
   },
@@ -6180,21 +6204,12 @@
    "path": "/photo-ad",
    "name": "صوّرها بموبايلك (إعلان من صورة)",
    "group": "features",
-   "problems": [
-    {
-     "level": "broken",
-     "text": "كتابة الإعلان ما خلصتش في دقيقة ونص"
-    }
-   ],
-   "tech": [
-    "api: 504 POST https://rising-star-ai.vercel.app/api/ad-pack"
-   ],
-   "shots": [
-    "shots/features-photo-ad_photo-ad.jpg"
-   ],
-   "ms": 110636,
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 23362,
    "notes": [],
-   "status": "broken"
+   "status": "ok"
   },
   {
    "key": "feature:test-ad",
@@ -6204,19 +6219,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 11576,
+   "ms": 10436,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "feature:voice-post",
-   "path": "/voice-post",
-   "name": "فويس نوت لبوستات",
+   "key": "feature:chat-search",
+   "path": "/chat",
+   "name": "الشات مع البحث على الإنترنت",
    "group": "features",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 10583,
+   "ms": 12987,
    "notes": [],
    "status": "ok"
   },
@@ -6228,7 +6243,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 6236,
+   "ms": 6006,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "feature:voice-post",
+   "path": "/voice-post",
+   "name": "فويس نوت لبوستات",
+   "group": "features",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 9204,
    "notes": [],
    "status": "ok"
   },
@@ -6240,7 +6267,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 4445,
+   "ms": 3892,
    "notes": [],
    "status": "ok"
   },
@@ -6252,28 +6279,9 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 5962,
+   "ms": 8075,
    "notes": [],
    "status": "ok"
-  },
-  {
-   "key": "feature:chat",
-   "path": "/chat",
-   "name": "الشات الرئيسي",
-   "group": "features",
-   "problems": [
-    {
-     "level": "broken",
-     "text": "الشات ما ردّش في دقيقة ونص"
-    }
-   ],
-   "tech": [],
-   "shots": [
-    "shots/features-chat_chat.jpg"
-   ],
-   "ms": 93377,
-   "notes": [],
-   "status": "broken"
   },
   {
    "key": "feature:amazon-profit",
@@ -6283,19 +6291,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 2502,
+   "ms": 2414,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "feature:amazon-competitor",
-   "path": "/amazon/competitor",
-   "name": "أمازون: تحليل المنافس",
+   "key": "feature:chat",
+   "path": "/chat",
+   "name": "الشات الرئيسي",
    "group": "features",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 7442,
+   "ms": 34790,
    "notes": [],
    "status": "ok"
   },
@@ -6305,44 +6313,32 @@
    "name": "صانع البرومبتات",
    "group": "features",
    "problems": [],
-   "tech": [
-    "api: 503 POST https://rising-star-ai.vercel.app/api/prompt-gen"
-   ],
+   "tech": [],
    "shots": [],
-   "ms": 22116,
+   "ms": 19255,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "feature:chat-search",
-   "path": "/chat",
-   "name": "الشات مع البحث على الإنترنت",
+   "key": "feature:amazon-competitor",
+   "path": "/amazon/competitor",
+   "name": "أمازون: تحليل المنافس",
    "group": "features",
    "problems": [
     {
      "level": "broken",
-     "text": "الشات مع البحث ما ردّش في دقيقتين"
+     "text": "التحليل طلّع خطأ: المحلل مشغول دلوقتي 😅 جرّب تاني بعد دقيقة."
     }
    ],
-   "tech": [],
-   "shots": [
-    "shots/features-chat-search_chat.jpg"
+   "tech": [
+    "api: 503 POST https://rising-star-ai.vercel.app/api/amazon/competitor"
    ],
-   "ms": 122585,
+   "shots": [
+    "shots/features-amazon-competitor_amazon_competitor.jpg"
+   ],
+   "ms": 36498,
    "notes": [],
    "status": "broken"
-  },
-  {
-   "key": "feature:voice-pro",
-   "path": "/tool/voice-studio",
-   "name": "الصوت المعبّر (Gemini)",
-   "group": "features",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 2826,
-   "notes": [],
-   "status": "ok"
   },
   {
    "key": "feature:image-reader",
@@ -6352,7 +6348,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 7970,
+   "ms": 7229,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "feature:voice-pro",
+   "path": "/tool/voice-studio",
+   "name": "الصوت المعبّر (Gemini)",
+   "group": "features",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 3065,
    "notes": [],
    "status": "ok"
   },
@@ -6364,7 +6372,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 35153,
+   "ms": 35141,
    "notes": [],
    "status": "ok"
   }
@@ -6377,7 +6385,7 @@
    "name": "إزالة الخلفية",
    "problems": [],
    "tech": [],
-   "ms": 10872,
+   "ms": 11009,
    "note": ""
   },
   {
@@ -6387,7 +6395,7 @@
    "name": "صانع الصور",
    "problems": [],
    "tech": [],
-   "ms": 8102,
+   "ms": 8610,
    "note": ""
   },
   {
@@ -6397,7 +6405,7 @@
    "name": "كتالوج في دقيقة",
    "problems": [],
    "tech": [],
-   "ms": 19076,
+   "ms": 22074,
    "note": ""
   },
   {
@@ -6407,7 +6415,17 @@
    "name": "محرر الصور",
    "problems": [],
    "tech": [],
-   "ms": 2640,
+   "ms": 2482,
+   "note": ""
+  },
+  {
+   "group": "features",
+   "key": "feature:photo-ad",
+   "path": "/photo-ad",
+   "name": "صوّرها بموبايلك (إعلان من صورة)",
+   "problems": [],
+   "tech": [],
+   "ms": 23362,
    "note": ""
   },
   {
@@ -6417,7 +6435,7 @@
    "name": "مصمم البوستات",
    "problems": [],
    "tech": [],
-   "ms": 2545,
+   "ms": 2629,
    "note": ""
   },
   {
@@ -6427,7 +6445,7 @@
    "name": "تغيير مقاس الصور",
    "problems": [],
    "tech": [],
-   "ms": 2584,
+   "ms": 2543,
    "note": ""
   },
   {
@@ -6437,7 +6455,7 @@
    "name": "ضغط الصور",
    "problems": [],
    "tech": [],
-   "ms": 2799,
+   "ms": 2483,
    "note": ""
   },
   {
@@ -6447,7 +6465,7 @@
    "name": "تحويل صيغة الصور",
    "problems": [],
    "tech": [],
-   "ms": 2610,
+   "ms": 2752,
    "note": ""
   },
   {
@@ -6457,7 +6475,7 @@
    "name": "العلامة المائية",
    "problems": [],
    "tech": [],
-   "ms": 2450,
+   "ms": 2664,
    "note": ""
   },
   {
@@ -6467,17 +6485,7 @@
    "name": "ألوان من صورة",
    "problems": [],
    "tech": [],
-   "ms": 2536,
-   "note": ""
-  },
-  {
-   "group": "tools",
-   "key": "/tool/images-to-pdf",
-   "path": "/tool/images-to-pdf",
-   "name": "صور إلى PDF",
-   "problems": [],
-   "tech": [],
-   "ms": 3368,
+   "ms": 2568,
    "note": ""
   },
   {
@@ -6487,7 +6495,17 @@
    "name": "دمج ملفات PDF",
    "problems": [],
    "tech": [],
-   "ms": 2566,
+   "ms": 2743,
+   "note": ""
+  },
+  {
+   "group": "tools",
+   "key": "/tool/images-to-pdf",
+   "path": "/tool/images-to-pdf",
+   "name": "صور إلى PDF",
+   "problems": [],
+   "tech": [],
+   "ms": 3614,
    "note": ""
   },
   {
@@ -6497,7 +6515,7 @@
    "name": "تقسيم PDF",
    "problems": [],
    "tech": [],
-   "ms": 2640,
+   "ms": 3007,
    "note": ""
   },
   {
@@ -6507,7 +6525,7 @@
    "name": "حذف صفحات من PDF",
    "problems": [],
    "tech": [],
-   "ms": 2469,
+   "ms": 2580,
    "note": ""
   },
   {
@@ -6517,17 +6535,7 @@
    "name": "استخراج نص من صورة",
    "problems": [],
    "tech": [],
-   "ms": 4122,
-   "note": ""
-  },
-  {
-   "group": "tools",
-   "key": "/tool/video-frame",
-   "path": "/tool/video-frame",
-   "name": "صورة من الفيديو",
-   "problems": [],
-   "tech": [],
-   "ms": 5050,
+   "ms": 4358,
    "note": ""
   },
   {
@@ -6537,7 +6545,17 @@
    "name": "برامج تصميم أونلاين",
    "problems": [],
    "tech": [],
-   "ms": 2655,
+   "ms": 2310,
+   "note": ""
+  },
+  {
+   "group": "tools",
+   "key": "/tool/video-frame",
+   "path": "/tool/video-frame",
+   "name": "صورة من الفيديو",
+   "problems": [],
+   "tech": [],
+   "ms": 5214,
    "note": ""
   },
   {
@@ -6547,7 +6565,7 @@
    "name": "مولد QR كود",
    "problems": [],
    "tech": [],
-   "ms": 2496,
+   "ms": 2650,
    "note": ""
   },
   {
@@ -6557,7 +6575,7 @@
    "name": "تحسين الصور وتكبيرها",
    "problems": [],
    "tech": [],
-   "ms": 2880,
+   "ms": 3036,
    "note": ""
   },
   {
@@ -6567,7 +6585,7 @@
    "name": "حاسبة النسبة المئوية",
    "problems": [],
    "tech": [],
-   "ms": 3087,
+   "ms": 3205,
    "note": ""
   },
   {
@@ -6577,7 +6595,7 @@
    "name": "مولد الأصوات والكتاب المسموع",
    "problems": [],
    "tech": [],
-   "ms": 4488,
+   "ms": 5295,
    "note": ""
   },
   {
@@ -6587,7 +6605,7 @@
    "name": "حاسبة سعر ساعة الفريلانسر",
    "problems": [],
    "tech": [],
-   "ms": 3417,
+   "ms": 3167,
    "note": ""
   },
   {
@@ -6597,7 +6615,7 @@
    "name": "الرقم بالحروف",
    "problems": [],
    "tech": [],
-   "ms": 3220,
+   "ms": 3159,
    "note": ""
   },
   {
@@ -6607,7 +6625,7 @@
    "name": "حاسبة الزكاة",
    "problems": [],
    "tech": [],
-   "ms": 3293,
+   "ms": 3272,
    "note": ""
   },
   {
@@ -6617,7 +6635,7 @@
    "name": "محول التاريخ هجري وميلادي",
    "problems": [],
    "tech": [],
-   "ms": 3184,
+   "ms": 3389,
    "note": ""
   },
   {
@@ -6627,7 +6645,7 @@
    "name": "عداد الكلمات والحروف",
    "problems": [],
    "tech": [],
-   "ms": 3350,
+   "ms": 3243,
    "note": ""
   },
   {
@@ -6637,7 +6655,7 @@
    "name": "منظف النصوص",
    "problems": [],
    "tech": [],
-   "ms": 3218,
+   "ms": 3145,
    "note": ""
   },
   {
@@ -6647,26 +6665,8 @@
    "name": "مولد كلمات مرور قوية",
    "problems": [],
    "tech": [],
-   "ms": 3395,
+   "ms": 3155,
    "note": ""
-  },
-  {
-   "group": "features",
-   "key": "feature:photo-ad",
-   "path": "/photo-ad",
-   "name": "صوّرها بموبايلك (إعلان من صورة)",
-   "problems": [
-    {
-     "level": "broken",
-     "text": "كتابة الإعلان ما خلصتش في دقيقة ونص"
-    }
-   ],
-   "tech": [
-    "api: 504 POST https://rising-star-ai.vercel.app/api/ad-pack"
-   ],
-   "ms": 110636,
-   "note": "",
-   "shot": "shots/features-photo-ad_photo-ad.jpg"
   },
   {
    "group": "features",
@@ -6675,17 +6675,17 @@
    "name": "اختبر إعلانك على 100 زبون",
    "problems": [],
    "tech": [],
-   "ms": 11576,
+   "ms": 10436,
    "note": ""
   },
   {
    "group": "features",
-   "key": "feature:voice-post",
-   "path": "/voice-post",
-   "name": "فويس نوت لبوستات",
+   "key": "feature:chat-search",
+   "path": "/chat",
+   "name": "الشات مع البحث على الإنترنت",
    "problems": [],
    "tech": [],
-   "ms": 10583,
+   "ms": 12987,
    "note": ""
   },
   {
@@ -6695,7 +6695,17 @@
    "name": "كشف حساب الاشتراكات",
    "problems": [],
    "tech": [],
-   "ms": 6236,
+   "ms": 6006,
+   "note": ""
+  },
+  {
+   "group": "features",
+   "key": "feature:voice-post",
+   "path": "/voice-post",
+   "name": "فويس نوت لبوستات",
+   "problems": [],
+   "tech": [],
+   "ms": 9204,
    "note": ""
   },
   {
@@ -6705,7 +6715,7 @@
    "name": "أمازون: فاحص رفض الليستنج",
    "problems": [],
    "tech": [],
-   "ms": 4445,
+   "ms": 3892,
    "note": ""
   },
   {
@@ -6715,24 +6725,8 @@
    "name": "أمازون: كاتب الليستنج",
    "problems": [],
    "tech": [],
-   "ms": 5962,
+   "ms": 8075,
    "note": ""
-  },
-  {
-   "group": "features",
-   "key": "feature:chat",
-   "path": "/chat",
-   "name": "الشات الرئيسي",
-   "problems": [
-    {
-     "level": "broken",
-     "text": "الشات ما ردّش في دقيقة ونص"
-    }
-   ],
-   "tech": [],
-   "ms": 93377,
-   "note": "",
-   "shot": "shots/features-chat_chat.jpg"
   },
   {
    "group": "features",
@@ -6741,17 +6735,17 @@
    "name": "أمازون: حاسبة الربح الصافي",
    "problems": [],
    "tech": [],
-   "ms": 2502,
+   "ms": 2414,
    "note": ""
   },
   {
    "group": "features",
-   "key": "feature:amazon-competitor",
-   "path": "/amazon/competitor",
-   "name": "أمازون: تحليل المنافس",
+   "key": "feature:chat",
+   "path": "/chat",
+   "name": "الشات الرئيسي",
    "problems": [],
    "tech": [],
-   "ms": 7442,
+   "ms": 34790,
    "note": ""
   },
   {
@@ -6760,37 +6754,27 @@
    "path": "/prompts/builder",
    "name": "صانع البرومبتات",
    "problems": [],
-   "tech": [
-    "api: 503 POST https://rising-star-ai.vercel.app/api/prompt-gen"
-   ],
-   "ms": 22116,
+   "tech": [],
+   "ms": 19255,
    "note": ""
   },
   {
    "group": "features",
-   "key": "feature:chat-search",
-   "path": "/chat",
-   "name": "الشات مع البحث على الإنترنت",
+   "key": "feature:amazon-competitor",
+   "path": "/amazon/competitor",
+   "name": "أمازون: تحليل المنافس",
    "problems": [
     {
      "level": "broken",
-     "text": "الشات مع البحث ما ردّش في دقيقتين"
+     "text": "التحليل طلّع خطأ: المحلل مشغول دلوقتي 😅 جرّب تاني بعد دقيقة."
     }
    ],
-   "tech": [],
-   "ms": 122585,
+   "tech": [
+    "api: 503 POST https://rising-star-ai.vercel.app/api/amazon/competitor"
+   ],
+   "ms": 36498,
    "note": "",
-   "shot": "shots/features-chat-search_chat.jpg"
-  },
-  {
-   "group": "features",
-   "key": "feature:voice-pro",
-   "path": "/tool/voice-studio",
-   "name": "الصوت المعبّر (Gemini)",
-   "problems": [],
-   "tech": [],
-   "ms": 2826,
-   "note": ""
+   "shot": "shots/features-amazon-competitor_amazon_competitor.jpg"
   },
   {
    "group": "features",
@@ -6799,7 +6783,17 @@
    "name": "قارئ الصور",
    "problems": [],
    "tech": [],
-   "ms": 7970,
+   "ms": 7229,
+   "note": ""
+  },
+  {
+   "group": "features",
+   "key": "feature:voice-pro",
+   "path": "/tool/voice-studio",
+   "name": "الصوت المعبّر (Gemini)",
+   "problems": [],
+   "tech": [],
+   "ms": 3065,
    "note": ""
   },
   {
@@ -6809,136 +6803,128 @@
    "name": "فاحص النصب",
    "problems": [],
    "tech": [],
-   "ms": 35153,
+   "ms": 35141,
    "note": ""
   },
   {
    "group": "ai",
-   "key": "/tool/summarize",
-   "path": "/tool/summarize",
-   "name": "تلخيص النصوص",
+   "key": "/tool/brainstorm",
+   "path": "/tool/brainstorm",
+   "name": "العصف الذهني",
    "problems": [],
    "tech": [],
-   "ms": 4645,
-   "note": "588 حرف في 1 ثانية"
+   "ms": 6878,
+   "note": "1730 حرف في 4 ثانية"
   },
   {
    "group": "ai",
-   "key": "/tool/translate",
-   "path": "/tool/translate",
-   "name": "المترجم",
+   "key": "/tool/caption",
+   "path": "/tool/caption",
+   "name": "كابشن إنستجرام",
    "problems": [],
    "tech": [],
-   "ms": 3358,
-   "note": "80 حرف في 1 ثانية"
+   "ms": 4705,
+   "note": "401 حرف في 2 ثانية"
   },
   {
    "group": "ai",
-   "key": "/tool/translate-dialect",
-   "path": "/tool/translate-dialect",
-   "name": "محوّل اللهجات",
+   "key": "/tool/business-ideas",
+   "path": "/tool/business-ideas",
+   "name": "أفكار مشاريع",
    "problems": [],
    "tech": [],
-   "ms": 4676,
-   "note": "183 حرف في 1 ثانية"
+   "ms": 10495,
+   "note": "2901 حرف في 8 ثانية"
   },
   {
    "group": "ai",
-   "key": "/tool/tiktok-script",
-   "path": "/tool/tiktok-script",
-   "name": "سكريبت فيديو قصير",
+   "key": "/tool/business-plan",
+   "path": "/tool/business-plan",
+   "name": "خطة عمل مختصرة",
    "problems": [],
    "tech": [],
-   "ms": 10558,
-   "note": "1247 حرف في 8 ثانية"
+   "ms": 7113,
+   "note": "2040 حرف في 4 ثانية"
   },
   {
    "group": "ai",
-   "key": "/tool/travel-plan",
-   "path": "/tool/travel-plan",
-   "name": "خطة السفر",
+   "key": "/tool/code-explain",
+   "path": "/tool/code-explain",
+   "name": "شرح الكود",
    "problems": [],
    "tech": [],
-   "ms": 6281,
-   "note": "1454 حرف في 4 ثانية"
+   "ms": 4315,
+   "note": "496 حرف في 1 ثانية"
   },
   {
    "group": "ai",
-   "key": "/tool/video-prompt",
-   "path": "/tool/video-prompt",
-   "name": "برومبت الفيديو",
+   "key": "/tool/code-gen",
+   "path": "/tool/code-gen",
+   "name": "كاتب الأكواد",
    "problems": [],
    "tech": [],
-   "ms": 4092,
-   "note": "578 حرف في 1 ثانية"
+   "ms": 4856,
+   "note": "1400 حرف في 2 ثانية"
   },
   {
    "group": "ai",
-   "key": "/tool/video-qa",
-   "path": "/tool/video-qa",
-   "name": "أسئلة عن فيديو",
+   "key": "/tool/compare",
+   "path": "/tool/compare",
+   "name": "المقارنة",
    "problems": [],
    "tech": [],
-   "ms": 4759,
-   "note": "255 حرف في 2 ثانية"
+   "ms": 6198,
+   "note": "1145 حرف في 4 ثانية"
   },
   {
    "group": "ai",
-   "key": "/tool/whatsapp-sales",
-   "path": "/tool/whatsapp-sales",
-   "name": "رسائل واتساب للبيع",
+   "key": "/tool/cover-letter",
+   "path": "/tool/cover-letter",
+   "name": "خطاب التقديم",
    "problems": [],
    "tech": [],
-   "ms": 4327,
-   "note": "587 حرف في 1 ثانية"
+   "ms": 4715,
+   "note": "959 حرف في 2 ثانية"
   },
   {
    "group": "ai",
-   "key": "/tool/youtube-title",
-   "path": "/tool/youtube-title",
-   "name": "عناوين يوتيوب",
+   "key": "/tool/cv",
+   "path": "/tool/cv",
+   "name": "السيرة الذاتية",
    "problems": [],
    "tech": [],
-   "ms": 4924,
-   "note": "705 حرف في 2 ثانية"
+   "ms": 4694,
+   "note": "742 حرف في 2 ثانية"
   },
   {
    "group": "ai",
-   "key": "/tool/adspy",
-   "path": "/tool/adspy",
-   "name": "Adspy عربي: جاسوس الإعلانات",
+   "key": "/tool/content-calendar",
+   "path": "/tool/content-calendar",
+   "name": "جدول محتوى 30 يوم",
    "problems": [],
    "tech": [],
-   "ms": 5514,
-   "note": "996 حرف في 3 ثانية"
+   "ms": 9136,
+   "note": "3207 حرف في 6 ثانية"
   },
   {
    "group": "ai",
-   "key": "/tool/article",
-   "path": "/tool/article",
-   "name": "كاتب المقالات",
+   "key": "/tool/daily-plan",
+   "path": "/tool/daily-plan",
+   "name": "خطة اليوم",
    "problems": [],
    "tech": [],
-   "ms": 4035,
-   "note": "214 حرف في 1 ثانية"
+   "ms": 4732,
+   "note": "685 حرف في 2 ثانية"
   },
   {
    "group": "ai",
-   "key": "/tool/ad-copy",
-   "path": "/tool/ad-copy",
-   "name": "نص إعلاني",
-   "problems": [
-    {
-     "level": "broken",
-     "text": "النتيجة فاضية أو قصيرة جداً (67 حرف)"
-    }
-   ],
-   "tech": [
-    "sample: النسخة ١\n\nالنسخة ١\n\n**قهوتك المختصة مستحك في المعادي.. ابدأ يومك به"
-   ],
-   "ms": 7187,
-   "note": "67 حرف في 4 ثانية",
-   "shot": "shots/ai-ad-copy_tool_ad-copy.jpg"
+   "key": "/tool/debug",
+   "path": "/tool/debug",
+   "name": "مكتشف الأخطاء",
+   "problems": [],
+   "tech": [],
+   "ms": 30121,
+   "note": "524 حرف في 28 ثانية"
   }
  ],
  "spaces": [
@@ -6955,7 +6941,7 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 138,
+   "ms": 260,
    "ct": "application/json",
    "snippet": ""
   },
@@ -6970,7 +6956,7 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 449,
+   "ms": 369,
    "ct": "application/json",
    "snippet": ""
   },
@@ -6986,7 +6972,7 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 656,
+   "ms": 450,
    "ct": "application/json",
    "snippet": ""
   },
@@ -7000,7 +6986,7 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 908,
+   "ms": 621,
    "ct": "application/json",
    "snippet": ""
   },
@@ -7014,21 +7000,7 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 163,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "qwen-qwen-image",
-   "host": "https://qwen-qwen-image.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 179,
+   "ms": 255,
    "ct": "application/json",
    "snippet": ""
   },
@@ -7042,7 +7014,21 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 200,
+   "ms": 256,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "qwen-qwen-image",
+   "host": "https://qwen-qwen-image.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 272,
    "ct": "application/json",
    "snippet": ""
   },
@@ -7056,7 +7042,7 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 228,
+   "ms": 272,
    "ct": "application/json",
    "snippet": ""
   },
@@ -7070,35 +7056,7 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 304,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "stabilityai-stable-diffusion-3-5-large-turbo",
-   "host": "https://stabilityai-stable-diffusion-3-5-large-turbo.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 307,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "yupengzhou-storydiffusion",
-   "host": "https://yupengzhou-storydiffusion.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 332,
+   "ms": 279,
    "ct": "application/json",
    "snippet": ""
   },
@@ -7112,13 +7070,13 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 335,
+   "ms": 288,
    "ct": "application/json",
    "snippet": ""
   },
   {
-   "sub": "black-forest-labs-flux-1-kontext-dev",
-   "host": "https://black-forest-labs-flux-1-kontext-dev.hf.space",
+   "sub": "stabilityai-stable-diffusion-3-5-large-turbo",
+   "host": "https://stabilityai-stable-diffusion-3-5-large-turbo.hf.space",
    "files": [
     "lib/library.js"
    ],
@@ -7126,13 +7084,13 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 346,
+   "ms": 293,
    "ct": "application/json",
    "snippet": ""
   },
   {
-   "sub": "gokaygokay-flux-prompt-generator",
-   "host": "https://gokaygokay-flux-prompt-generator.hf.space",
+   "sub": "yupengzhou-storydiffusion",
+   "host": "https://yupengzhou-storydiffusion.hf.space",
    "files": [
     "lib/library.js"
    ],
@@ -7140,7 +7098,7 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 369,
+   "ms": 311,
    "ct": "application/json",
    "snippet": ""
   },
@@ -7154,7 +7112,49 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 397,
+   "ms": 338,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "black-forest-labs-flux-1-kontext-dev",
+   "host": "https://black-forest-labs-flux-1-kontext-dev.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 340,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "qwen-qwen-image-layered",
+   "host": "https://qwen-qwen-image-layered.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 345,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "gokaygokay-flux-prompt-generator",
+   "host": "https://gokaygokay-flux-prompt-generator.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 348,
    "ct": "application/json",
    "snippet": ""
   },
@@ -7168,49 +7168,7 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 409,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "aryadytm-remove-photo-object",
-   "host": "https://aryadytm-remove-photo-object.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 434,
-   "ct": "text/html",
-   "snippet": ""
-  },
-  {
-   "sub": "qwen-qwen-image-layered",
-   "host": "https://qwen-qwen-image-layered.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 440,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "multimodalart-flux-fill-outpaint",
-   "host": "https://multimodalart-flux-fill-outpaint.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 504,
+   "ms": 373,
    "ct": "application/json",
    "snippet": ""
   },
@@ -7224,13 +7182,13 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 519,
+   "ms": 389,
    "ct": "application/json",
    "snippet": ""
   },
   {
-   "sub": "gokaygokay-tile-upscaler",
-   "host": "https://gokaygokay-tile-upscaler.hf.space",
+   "sub": "multimodalart-flux-fill-outpaint",
+   "host": "https://multimodalart-flux-fill-outpaint.hf.space",
    "files": [
     "lib/library.js"
    ],
@@ -7238,203 +7196,7 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 534,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "multimodalart-qwen-image-multiple-angles-3d-camera",
-   "host": "https://multimodalart-qwen-image-multiple-angles-3d-camera.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 590,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "hf-audio-whisper-large-v3",
-   "host": "https://hf-audio-whisper-large-v3.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 592,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "kingnish-realtime-whisper-large-v3-turbo",
-   "host": "https://kingnish-realtime-whisper-large-v3-turbo.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 610,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "parler-tts-parler-tts",
-   "host": "https://parler-tts-parler-tts.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 647,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "remsky-kokoro-tts-zero",
-   "host": "https://remsky-kokoro-tts-zero.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 649,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "k2-fsa-text-to-speech",
-   "host": "https://k2-fsa-text-to-speech.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 677,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "qwen-qwen3-tts",
-   "host": "https://qwen-qwen3-tts.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 679,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "mohamedrashad-orpheus-tts",
-   "host": "https://mohamedrashad-orpheus-tts.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 700,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "qwen-qwen3-vl-demo",
-   "host": "https://qwen-qwen3-vl-demo.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 710,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "qwen-qwen3-demo",
-   "host": "https://qwen-qwen3-demo.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 716,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "qwen-qwen3-coder-webdev",
-   "host": "https://qwen-qwen3-coder-webdev.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 724,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "prithivmlmods-multimodal-ocr",
-   "host": "https://prithivmlmods-multimodal-ocr.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 772,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "prithivmlmods-florence-2-image-caption",
-   "host": "https://prithivmlmods-florence-2-image-caption.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 780,
-   "ct": "application/json",
-   "snippet": ""
-  },
-  {
-   "sub": "merterbak-deepseek-ocr-demo",
-   "host": "https://merterbak-deepseek-ocr-demo.hf.space",
-   "files": [
-    "lib/library.js"
-   ],
-   "feature": null,
-   "up": true,
-   "status": 200,
-   "error": "",
-   "ms": 797,
+   "ms": 392,
    "ct": "application/json",
    "snippet": ""
   },
@@ -7448,7 +7210,189 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 806,
+   "ms": 422,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "aryadytm-remove-photo-object",
+   "host": "https://aryadytm-remove-photo-object.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": false,
+   "status": 404,
+   "error": "",
+   "ms": 359,
+   "ct": "text/html; charset=UTF-8",
+   "snippet": "<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"/><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,shrink-to-fit=no\"/><link rel=\"shor"
+  },
+  {
+   "sub": "multimodalart-qwen-image-multiple-angles-3d-camera",
+   "host": "https://multimodalart-qwen-image-multiple-angles-3d-camera.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 425,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "hf-audio-whisper-large-v3",
+   "host": "https://hf-audio-whisper-large-v3.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 430,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "gokaygokay-tile-upscaler",
+   "host": "https://gokaygokay-tile-upscaler.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 446,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "kingnish-realtime-whisper-large-v3-turbo",
+   "host": "https://kingnish-realtime-whisper-large-v3-turbo.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 456,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "remsky-kokoro-tts-zero",
+   "host": "https://remsky-kokoro-tts-zero.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 462,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "k2-fsa-text-to-speech",
+   "host": "https://k2-fsa-text-to-speech.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 466,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "qwen-qwen3-tts",
+   "host": "https://qwen-qwen3-tts.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 476,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "qwen-qwen3-coder-webdev",
+   "host": "https://qwen-qwen3-coder-webdev.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 494,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "parler-tts-parler-tts",
+   "host": "https://parler-tts-parler-tts.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 504,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "mohamedrashad-orpheus-tts",
+   "host": "https://mohamedrashad-orpheus-tts.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 512,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "prithivmlmods-multimodal-ocr",
+   "host": "https://prithivmlmods-multimodal-ocr.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 532,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "merterbak-deepseek-ocr-demo",
+   "host": "https://merterbak-deepseek-ocr-demo.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 543,
    "ct": "application/json",
    "snippet": ""
   },
@@ -7462,7 +7406,49 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 830,
+   "ms": 555,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "qwen-qwen3-vl-demo",
+   "host": "https://qwen-qwen3-vl-demo.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 558,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "prithivmlmods-florence-2-image-caption",
+   "host": "https://prithivmlmods-florence-2-image-caption.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 558,
+   "ct": "application/json",
+   "snippet": ""
+  },
+  {
+   "sub": "qwen-qwen3-demo",
+   "host": "https://qwen-qwen3-demo.hf.space",
+   "files": [
+    "lib/library.js"
+   ],
+   "feature": null,
+   "up": true,
+   "status": 200,
+   "error": "",
+   "ms": 577,
    "ct": "application/json",
    "snippet": ""
   },
@@ -7476,7 +7462,7 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 843,
+   "ms": 575,
    "ct": "application/json",
    "snippet": ""
   },
@@ -7490,7 +7476,7 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 854,
+   "ms": 594,
    "ct": "application/json",
    "snippet": ""
   },
@@ -7504,7 +7490,7 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 875,
+   "ms": 644,
    "ct": "application/json",
    "snippet": ""
   },
@@ -7518,7 +7504,7 @@
    "up": false,
    "status": 206,
    "error": "",
-   "ms": 301,
+   "ms": 302,
    "ct": "text/html; charset=utf-8",
    "snippet": "<!DOCTYPE html> <html class=\"\"> <head> <meta charset=\"utf-8\"/> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\" /> <meta "
   },
@@ -7532,7 +7518,7 @@
    "up": false,
    "status": 206,
    "error": "",
-   "ms": 423,
+   "ms": 357,
    "ct": "text/html; charset=utf-8",
    "snippet": "<!DOCTYPE html> <html class=\"\"> <head> <meta charset=\"utf-8\"/> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\" /> <meta "
   },
@@ -7546,7 +7532,7 @@
    "up": false,
    "status": 206,
    "error": "",
-   "ms": 519,
+   "ms": 375,
    "ct": "text/html; charset=utf-8",
    "snippet": "<!DOCTYPE html> <html class=\"\"> <head> <meta charset=\"utf-8\"/> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\" /> <meta "
   },
@@ -7560,22 +7546,12 @@
    "up": false,
    "status": 206,
    "error": "",
-   "ms": 860,
+   "ms": 563,
    "ct": "text/html; charset=utf-8",
    "snippet": "<!DOCTYPE html> <html class=\"\"> <head> <meta charset=\"utf-8\"/> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\" /> <meta "
   }
  ],
  "links": [
-  {
-   "url": "https://inkscape.org/",
-   "pages": [
-    "/global-tools/alternatives"
-   ],
-   "status": 502,
-   "error": "",
-   "level": "warn",
-   "why": "موقعهم فيه عطل (502)"
-  },
   {
    "url": "https://gemini.google.com/",
    "pages": [
@@ -7610,6 +7586,26 @@
    "why": "الموقع بطيء جداً أو مش بيرد"
   },
   {
+   "url": "https://www.vectorpea.com/",
+   "pages": [
+    "/tool/design-apps"
+   ],
+   "status": 521,
+   "error": "",
+   "level": "warn",
+   "why": "موقعهم فيه عطل (521)"
+  },
+  {
+   "url": "https://helloandy.net/",
+   "pages": [
+    "/ai/andy"
+   ],
+   "status": 0,
+   "error": "ERR_SSL_TLSV1_UNRECOGNIZED_NAME",
+   "level": "warn",
+   "why": "شهادة الأمان بتاعت الموقع فيها مشكلة"
+  },
+  {
    "url": "https://www.maharah.net/",
    "pages": [
     "/learn"
@@ -7618,6 +7614,16 @@
    "error": "EAI_AGAIN",
    "level": "broken",
    "why": "الموقع مش موجود خالص (الدومين مش شغال)"
+  },
+  {
+   "url": "https://inkscape.org/",
+   "pages": [
+    "/global-tools/alternatives"
+   ],
+   "status": 0,
+   "error": "TimeoutError",
+   "level": "warn",
+   "why": "الموقع بطيء جداً أو مش بيرد"
   }
  ]
 }

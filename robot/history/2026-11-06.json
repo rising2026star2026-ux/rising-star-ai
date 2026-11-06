@@ -1,0 +1,30 @@
+{
+ "date": "2026-11-06T05:42:06.751Z",
+ "total": 518,
+ "ok": 515,
+ "broken": [
+  "feature:amazon-competitor"
+ ],
+ "warn": 2,
+ "spacesDown": [
+  "aryadytm-remove-photo-object",
+  "multimodalart-logo-in-context",
+  "eccv2022-dis-background-removal",
+  "doevent-face-real-esrgan",
+  "stepfun-ai-step1x-3d"
+ ],
+ "aiTested": [
+  "/tool/brainstorm",
+  "/tool/business-ideas",
+  "/tool/business-plan",
+  "/tool/caption",
+  "/tool/code-explain",
+  "/tool/code-gen",
+  "/tool/compare",
+  "/tool/content-calendar",
+  "/tool/cover-letter",
+  "/tool/cv",
+  "/tool/daily-plan",
+  "/tool/debug"
+ ]
+}
