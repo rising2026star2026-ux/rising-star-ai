@@ -1,11 +1,12 @@
 {
- "date": "2026-11-06T05:42:06.751Z",
+ "date": "2026-11-07T05:29:14.946Z",
  "total": 518,
- "ok": 515,
+ "ok": 513,
  "broken": [
-  "feature:amazon-competitor"
+  "feature:amazon-check",
+  "feature:voice-post"
  ],
- "warn": 2,
+ "warn": 3,
  "spacesDown": [
   "aryadytm-remove-photo-object",
   "multimodalart-logo-in-context",
@@ -14,17 +15,17 @@
   "stepfun-ai-step1x-3d"
  ],
  "aiTested": [
-  "/tool/brainstorm",
-  "/tool/business-ideas",
-  "/tool/business-plan",
-  "/tool/caption",
-  "/tool/code-explain",
-  "/tool/code-gen",
-  "/tool/compare",
-  "/tool/content-calendar",
-  "/tool/cover-letter",
-  "/tool/cv",
-  "/tool/daily-plan",
-  "/tool/debug"
+  "/tool/email-reply",
+  "/tool/email-writer",
+  "/tool/english-correct",
+  "/tool/excel-formula",
+  "/tool/explain",
+  "/tool/formalize",
+  "/tool/gem-assistant",
+  "/tool/image-prompt",
+  "/tool/interview-qs",
+  "/tool/kids-story",
+  "/tool/landing-page",
+  "/tool/lesson-plan"
  ]
 }

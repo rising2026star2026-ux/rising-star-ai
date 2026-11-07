@@ -1,0 +1,31 @@
+{
+ "date": "2026-11-07T05:29:14.946Z",
+ "total": 518,
+ "ok": 513,
+ "broken": [
+  "feature:amazon-check",
+  "feature:voice-post"
+ ],
+ "warn": 3,
+ "spacesDown": [
+  "aryadytm-remove-photo-object",
+  "multimodalart-logo-in-context",
+  "eccv2022-dis-background-removal",
+  "doevent-face-real-esrgan",
+  "stepfun-ai-step1x-3d"
+ ],
+ "aiTested": [
+  "/tool/email-reply",
+  "/tool/email-writer",
+  "/tool/english-correct",
+  "/tool/excel-formula",
+  "/tool/explain",
+  "/tool/formalize",
+  "/tool/gem-assistant",
+  "/tool/image-prompt",
+  "/tool/interview-qs",
+  "/tool/kids-story",
+  "/tool/landing-page",
+  "/tool/lesson-plan"
+ ]
+}
