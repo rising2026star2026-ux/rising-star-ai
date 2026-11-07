@@ -14,3 +14,27 @@
 .sec svg { color: var(--sec); }
 .sec b { font-size: var(--fs-md); }
 .sec span { font-size: var(--fs-sm); color: var(--muted); }
+
+/* الرئيسية: كروت الأقسام */
+.homeIn { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+.hub { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.hubCard {
+  position: relative; display: grid; gap: 8px; align-content: start; padding: 20px 18px 16px; min-height: 210px;
+  border-radius: var(--r-xl); color: #fff; overflow: hidden;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.2s var(--ease), border-color 0.2s var(--ease), background-color 0.2s var(--ease);
+}
+.hubCard::before { content: ""; position: absolute; inset-inline: 0; top: 0; height: 3px; background: var(--sec); }
+.hubCard::after { content: ""; position: absolute; inset-inline-end: -40px; top: -40px; width: 140px; height: 140px; border-radius: 50%; background: var(--sec); opacity: 0.14; filter: blur(30px); pointer-events: none; }
+.hubCard:hover, .hubCard:focus-visible { transform: translateY(-3px); border-color: var(--sec); }
+.hubIcon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: var(--r-lg); background: var(--sec); color: #fff; }
+.hubCard b { font-size: var(--fs-lg); margin-top: 4px; }
+.hubTag { font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.72); }
+.hubChips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+.hubChips i { font-style: normal; font-size: var(--fs-xs); padding: 3px 9px; border-radius: var(--r-xl); background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.85); }
+.hubGo { display: inline-flex; align-items: center; gap: 6px; margin-top: auto; padding-top: 8px; font-size: var(--fs-sm); font-weight: 700; color: #fff; }
+.hubFoot { display: flex; justify-content: center; gap: 22px; margin: 26px 0 0; font-size: var(--fs-sm); }
+.hubFoot a { color: rgba(255, 255, 255, 0.7); }
+.hubFoot a:hover { color: #fff; }
+@media (prefers-reduced-motion: reduce) { .hubCard { transition: none; } .hubCard:hover { transform: none; } }
