@@ -8,6 +8,7 @@ import { DIR_CATEGORIES, DIR_TOOLS } from "@/lib/directory";
 import { TASKS } from "@/lib/tasks";
 import { LIBRARY } from "@/lib/library";
 import { AGENTS } from "@/lib/agents";
+import { SECTIONS } from "@/lib/sections";
 
 // خريطة الموقع لجوجل: الرئيسية والصفحات الأساسية وكل الأدوات
 export default function sitemap() {
@@ -63,6 +64,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/global-tools`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     ...DIR_CATEGORIES.map((c) => ({ url: `${SITE_URL}/global-tools/${c.id}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 })),
     ...DIR_TOOLS.map((t) => ({ url: `${SITE_URL}/ai/${t.slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.6 })),
+    ...SECTIONS.map((x) => ({ url: `${SITE_URL}/s/${x.id}`, lastModified: now, changeFrequency: "weekly", priority: 0.9 })),
     ...FLOWS.map((f) => ({ url: `${SITE_URL}/flow/${f.id}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),
     ...APPS.map((a) => ({ url: `${SITE_URL}/program/${a.slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),
     ...tools.map((t) => ({ url: `${SITE_URL}/tool/${t.id}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),

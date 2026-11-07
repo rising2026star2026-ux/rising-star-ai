@@ -1,0 +1,16 @@
+/* صفحة دخول القسم + كروت الأقسام في الرئيسية */
+.page { max-width: 980px; margin: 0 auto; padding: 28px 18px 110px; }
+.head { display: grid; gap: 6px; padding: 22px 20px; border-radius: var(--r-xl); background: var(--surface-2); border-inline-start: 6px solid var(--sec); color: var(--ink); }
+.head svg { color: var(--sec); }
+.head h1 { margin: 0; font-size: var(--fs-xl); }
+.head p { margin: 0; font-size: var(--fs-base); color: var(--muted); }
+.grid { display: grid; gap: 12px; margin-top: 18px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.card { display: grid; gap: 6px; align-content: start; padding: 16px; border-radius: var(--r-lg); background: var(--surface-2); color: var(--ink); border: 1px solid transparent; min-height: 88px; transition: border-color 0.18s var(--ease); }
+.card:hover, .card:focus-visible { border-color: var(--sec); }
+.card b { font-size: var(--fs-md); }
+.card span { font-size: var(--fs-sm); color: var(--muted); line-height: 1.7; }
+.cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); max-width: 1100px; margin: 0 auto 28px; }
+.sec { display: grid; gap: 6px; padding: 16px; border-radius: var(--r-lg); background: var(--surface-2); color: var(--ink); border-top: 4px solid var(--sec); min-height: 110px; }
+.sec svg { color: var(--sec); }
+.sec b { font-size: var(--fs-md); }
+.sec span { font-size: var(--fs-sm); color: var(--muted); }

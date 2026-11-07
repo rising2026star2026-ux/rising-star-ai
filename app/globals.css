@@ -531,6 +531,15 @@ body.rs-modal { overflow: hidden; }
 .side-sub .side-link { padding-block: 6px; font-size: var(--fs-md); }
 @media (min-width: 1024px) { html.side-mini .side-sub, html.side-mini .side-chev { display: none; } }
 .side-foot { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--hairline); }
+/* رأس القسم الحالي في القايمة الجانبية */
+.side-sechead { display: flex; align-items: center; gap: 10px; padding: 10px 12px 12px; margin-bottom: 4px; border-bottom: 1px solid var(--hairline); }
+.side-secdot { flex: none; width: 10px; height: 34px; border-radius: var(--r-xs); background: var(--sec); }
+.side-sechead .side-label { display: grid; gap: 2px; min-width: 0; }
+.side-sechead b { font-size: var(--fs-base); color: #fff; }
+.side-sechead small { font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.side-nav .side-link.on { box-shadow: inset -3px 0 0 var(--sec, var(--yellow)); }
+.side-switch .side-link svg { color: var(--sec); }
+html.side-mini .side-sechead { justify-content: center; padding-inline: 0; }
 .side-scrim { display: none; }
 
 @media (min-width: 1024px) {

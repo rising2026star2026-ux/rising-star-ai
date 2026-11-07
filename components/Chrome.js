@@ -12,6 +12,8 @@ import StarMark from "./StarMark";
 import BotIcon from "./BotIcon";
 import { RES_CATS } from "@/lib/resources";
 import { BOTS } from "@/lib/bots";
+import { SECTIONS, ITEMS, itemHref } from "@/lib/sections";
+import useSection from "./useSection";
 
 const I = { viewBox: "0 0 24 24", width: 20, height: 20, fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true };
 
@@ -40,6 +42,8 @@ const NAV = [
   { href: "/learn", label: "تعلّم الذكاء الاصطناعي", tone: "learn", match: ["/learn"], icon: <svg {...I}><path d="M3 9l9-4.5L21 9l-9 4.5z" /><path d="M7 11.2v4.3c0 1.2 2.2 2.5 5 2.5s5-1.3 5-2.5v-4.3M21 9v5.5" /></svg> },
   { href: "/news", label: "جديد الذكاء الاصطناعي", tone: "news", match: ["/news"], icon: <svg {...I}><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z" /></svg> },
   { href: "/flows", label: "المهام الكاملة", match: ["/flows", "/flow/"], icon: <svg {...I}><rect x="3" y="4" width="7" height="5" rx="1.5" /><rect x="14" y="15" width="7" height="5" rx="1.5" /><path d="M6.5 9v3.5a2 2 0 002 2h7v.5" /></svg> },
+  { href: "/realestate/chat", label: "الشات العقاري", match: ["/realestate/chat"], icon: <svg {...I}><path d="M20.5 11.5a8.3 8.3 0 01-8.9 8.3L3.5 21l1.1-3.5A8.3 8.3 0 1120.5 11.5z" /></svg> },
+  { href: "/prompts/studio", label: "استوديو البرومبتات", match: ["/prompts/studio"], icon: <svg {...I}><path d="M12 3.5l1.8 4.7 4.7 1.8-4.7 1.8L12 16.5l-1.8-4.7L5.5 10l4.7-1.8z" /><path d="M18 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" /></svg> },
   { href: "/history", label: "السجل", icon: <svg {...I}><circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" /></svg> },
   { href: "/subscriptions", label: "مقارن الاشتراكات", match: ["/subscriptions", "/scam-check"], icon: <svg {...I}><path d="M12 3.5l7 3v5c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9v-5z" /><path d="M9 12l2.2 2.2L15.5 10" /></svg> },
   { href: "/map", label: "خريطة الموقع", icon: <svg {...I}><path d="M9 4.5L3.5 6.5v13L9 17.5l6 2 5.5-2v-13L15 6.5z" /><path d="M9 4.5v13M15 6.5v13" /></svg> },
@@ -129,9 +133,9 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
     return () => document.body.classList.remove("side-open");
   }, [open]);
 
+  const { section, current } = useSection();
   const [folder, setFolder] = useStored("side-res", false);
   const folderOpen = !!folder || pathname.startsWith("/resources/");
-  const active = (n) => (n.exact ? pathname === n.href : (n.match || [n.href]).some((p) => pathname.startsWith(p)));
 
   return (
     <>
@@ -153,52 +157,103 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
           <span className="side-label">محادثة جديدة</span>
         </Link>
 
-        <nav className="side-nav">
-          {NAV.map((n) => n.folder ? (
-            <div key={n.href} className="side-folder">
-              <div className="side-folder-row">
-                <Link href={n.href} className={`side-link${pathname === n.href ? " on" : ""}`} title={n.label}>
-                  {n.icon}
-                  <span className="side-label">{n.label}</span>
-                </Link>
-                <button type="button" className="side-chev side-label" onClick={() => setFolder(!folderOpen)} aria-expanded={folderOpen} aria-label={folderOpen ? "اقفل الأقسام" : "افتح الأقسام"}>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ transform: folderOpen ? "rotate(180deg)" : "none", transition: "transform .2s" }}><path d="M6 9l6 6 6-6" /></svg>
-                </button>
-              </div>
-              {folderOpen && (
-                <div className="side-sub">
-                  {RES_CATS.map((c) => (
-                    <Link key={c.id} href={`/resources/${c.id}`} className={`side-link${pathname === `/resources/${c.id}` ? " on" : ""}`} title={c.name}>
-                      <span aria-hidden="true">{c.icon}</span>
-                      <span className="side-label">{c.name}</span>
+        {section ? (
+          <>
+            <div className="side-sechead" style={{ "--sec": section.color }}>
+              <span className="side-secdot" aria-hidden="true" />
+              <span className="side-label"><b>{section.name}</b><small>{section.tagline}</small></span>
+            </div>
+            <nav className="side-nav" style={{ "--sec": section.color }}>
+              {section.items.map((h) => {
+                const n = NAV.find((x) => x.href === h);
+                if (!n) return null;
+                if (n.folder) return (
+                  <div key={h} className="side-folder">
+                    <div className="side-folder-row">
+                      <Link href={itemHref(h, section.id)} className={`side-link${pathname === h ? " on" : ""}`} title={ITEMS[h].label}>
+                        {n.icon}
+                        <span className="side-label">{ITEMS[h].label}</span>
+                      </Link>
+                      <button type="button" className="side-chev side-label" onClick={() => setFolder(!folderOpen)} aria-expanded={folderOpen} aria-label={folderOpen ? "اقفل الأقسام" : "افتح الأقسام"}>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ transform: folderOpen ? "rotate(180deg)" : "none" }}><path d="M6 9l6 6 6-6" /></svg>
+                      </button>
+                    </div>
+                    {folderOpen && (
+                      <div className="side-sub">
+                        {RES_CATS.map((c) => (
+                          <Link key={c.id} href={`/resources/${c.id}`} className={`side-link${pathname === `/resources/${c.id}` ? " on" : ""}`} title={c.name}>
+                            <span aria-hidden="true">{c.icon}</span>
+                            <span className="side-label">{c.name}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+                return (
+                  <Link key={h} href={itemHref(h, section.id)} className={`side-link${current === h ? " on" : ""}`} title={ITEMS[h].label} aria-current={current === h ? "page" : undefined}>
+                    {n.icon}
+                    <span className="side-label">{ITEMS[h].label}</span>
+                  </Link>
+                );
+              })}
+              <button type="button" className="side-link" onClick={onSearch} title="ابحث عن أداة">
+                <svg {...I}><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></svg>
+                <span className="side-label">ابحث عن أداة</span>
+              </button>
+            </nav>
+
+            {section.id === "chat" && (
+              <>
+                <div className="side-sec side-label">اتكلم مع</div>
+                <nav className="side-nav side-bots">
+                  {SIDE_BOTS.map((b) => (
+                    <Link key={b.key} href={`/chat?bot=${b.key}`} className="side-link" title={b.name}>
+                      <BotIcon bot={b} size={22} />
+                      <span className="side-label" dir="auto">{b.name}</span>
                     </Link>
                   ))}
-                </div>
-              )}
-            </div>
-          ) : (
-            <Link key={n.href} href={n.href} className={`side-link${n.tone ? " tone-" + n.tone : ""}${active(n) ? " on" : ""}`} title={n.label}>
-              {n.icon}
-              <span className="side-label">{n.label}</span>
-            </Link>
-          ))}
-          <button type="button" className="side-link" onClick={onSearch} title="ابحث عن أداة">
-            <svg {...I}><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></svg>
-            <span className="side-label">ابحث عن أداة</span>
-          </button>
-        </nav>
+                </nav>
+              </>
+            )}
 
-        <div className="side-sec side-label">اتكلم مع</div>
-        <nav className="side-nav side-bots">
-          {SIDE_BOTS.map((b) => (
-            <Link key={b.key} href={`/chat?bot=${b.key}`} className="side-link" title={b.name}>
-              <BotIcon bot={b} size={22} />
-              <span className="side-label" dir="auto">{b.name}</span>
-            </Link>
-          ))}
-        </nav>
+            <div className="side-sec side-label">انتقل لقسم تاني</div>
+            <nav className="side-nav side-switch">
+              {SECTIONS.filter((x) => x.id !== section.id).map((x) => (
+                <Link key={x.id} href={`/s/${x.id}`} className="side-link" title={x.name} style={{ "--sec": x.color }}>
+                  <svg {...I}><path d={x.icon} /></svg>
+                  <span className="side-label">{x.name}</span>
+                </Link>
+              ))}
+            </nav>
+          </>
+        ) : (
+          <>
+            <div className="side-sec side-label">الأقسام</div>
+            <nav className="side-nav">
+              {SECTIONS.map((x) => (
+                <Link key={x.id} href={`/s/${x.id}`} className="side-link" title={x.name} style={{ "--sec": x.color }}>
+                  <svg {...I}><path d={x.icon} /></svg>
+                  <span className="side-label">{x.name}</span>
+                </Link>
+              ))}
+              <button type="button" className="side-link" onClick={onSearch} title="ابحث عن أداة">
+                <svg {...I}><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></svg>
+                <span className="side-label">ابحث عن أداة</span>
+              </button>
+            </nav>
+          </>
+        )}
 
         <div className="side-foot">
+          <Link href="/plans" className={`side-link${pathname.startsWith("/plans") ? " on" : ""}`} title="الباقات">
+            <svg {...I}><path d="M4 8l4 3.5L12 5l4 6.5L20 8l-1.5 10h-13z" /></svg>
+            <span className="side-label">الباقات</span>
+          </Link>
+          <Link href="/support" className={`side-link${pathname.startsWith("/support") ? " on" : ""}`} title="الدعم">
+            <svg {...I}><path d="M4 13v-1a8 8 0 0116 0v1" /><rect x="3" y="13" width="4" height="6" rx="1.5" /><rect x="17" y="13" width="4" height="6" rx="1.5" /></svg>
+            <span className="side-label">الدعم</span>
+          </Link>
           <button type="button" className="side-link" onClick={onSettings} title="الإعدادات">
             <svg {...I}><path d="M4 7h10M18 7h2M4 17h2M10 17h10" /><circle cx="16" cy="7" r="2" /><circle cx="8" cy="17" r="2" /></svg>
             <span className="side-label">الإعدادات</span>

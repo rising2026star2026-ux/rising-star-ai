@@ -24,6 +24,8 @@ import SpotRoot, { Glow } from "./fx/SpotRoot";
 import { ShowcaseStrip } from "./seller/Showcase";
 import { BOTS } from "@/lib/bots";
 import { APPS } from "@/lib/apps";
+import { SECTIONS } from "@/lib/sections";
+import sc from "./section.module.css";
 import ms from "./models.module.css";
 import s from "./home.module.css";
 
@@ -259,6 +261,15 @@ export default function Home() {
       {/* ============ القسم التاني: نهار ============ */}
       <section className={`${s.band} ${s.white}`} data-band-sec="white">
         <div className={s.in}>
+        <div className={sc.cards}>
+          {SECTIONS.map((x) => (
+            <Link key={x.id} href={`/s/${x.id}`} className={sc.sec} style={{ "--sec": x.color }}>
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={x.icon} /></svg>
+              <b>{x.name}</b>
+              <span>{x.tagline}</span>
+            </Link>
+          ))}
+        </div>
       {/* ===== ستوديو البيّاع ===== */}
       <section className={s.cats} data-reveal>
         <div className={s.catsHead}>
