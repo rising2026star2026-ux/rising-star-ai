@@ -1,21 +1,61 @@
 "use client";
-// شات القسم: مساعد متخصص جوه صفحة كل قسم، بلون القسم وأسئلة بداية خاصة بيه.
-import { useEffect, useRef, useState } from "react";
+// شات القسم: أول حاجة بتتفتح لما تدخل القسم. صفحة محادثة كاملة، وأدوات القسم في القايمة الجانبية.
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Md from "./Md";
 import { enterSends } from "@/lib/keys";
+import { getChat, newChatId, saveChat, setActive } from "@/lib/secchats";
 import s from "./sectionchat.module.css";
 
-export default function SectionChat({ section, name, starters = [] }) {
+export default function SectionChat({ section, name, tagline, starters = [], children }) {
+  const params = useSearchParams();
   const [msgs, setMsgs] = useState([]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const chatId = useRef(newChatId());
   const endRef = useRef(null);
+  const abortRef = useRef(null);
   const started = useRef(false);
 
+  // وضع الشات: بيشيل الفوتر والمسافة الفاضية تحت (globals.css: .chat-mode)
   useEffect(() => {
-    if (!started.current) return; // ما نسحبش الصفحة لتحت أول ما تتفتح
-    endRef.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    document.body.classList.add("chat-mode");
+    return () => document.body.classList.remove("chat-mode");
+  }, []);
+
+  const reset = useCallback(() => {
+    abortRef.current?.abort();
+    chatId.current = newChatId();
+    started.current = false;
+    setMsgs([]); setInput(""); setError(""); setBusy(false);
+    setActive(section, "");
+  }, [section]);
+
+  // فتح محادثة قديمة (?c=) أو محادثة جديدة (?new=1)
+  const c = params.get("c"), isNew = params.get("new");
+  useEffect(() => {
+    if (c) {
+      const old = getChat(section, c);
+      if (old) {
+        abortRef.current?.abort();
+        chatId.current = old.id;
+        started.current = false;
+        setMsgs(old.msgs); setError(""); setBusy(false);
+        setActive(section, old.id);
+        return;
+      }
+    }
+    if (isNew) reset();
+  }, [c, isNew, section, reset]);
+
+  useEffect(() => {
+    window.addEventListener("rs-new-section-chat", reset);
+    return () => window.removeEventListener("rs-new-section-chat", reset);
+  }, [reset]);
+
+  useEffect(() => {
+    if (started.current) endRef.current?.scrollIntoView({ block: "end", behavior: "smooth" });
   }, [msgs]);
 
   async function send(text) {
@@ -24,12 +64,15 @@ export default function SectionChat({ section, name, starters = [] }) {
     started.current = true;
     setError("");
     setInput("");
+    const id = chatId.current;
     const history = [...msgs, { role: "user", content: q }];
     setMsgs([...history, { role: "assistant", content: "", pending: true }]);
     setBusy(true);
+    const ctl = new AbortController();
+    abortRef.current = ctl;
     let out = "";
     try {
-      const res = await fetch("/api/section-chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ section, messages: history.map(({ role, content }) => ({ role, content })) }) });
+      const res = await fetch("/api/section-chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ section, messages: history.map(({ role, content }) => ({ role, content })) }), signal: ctl.signal });
       if (!res.ok) {
         const d = await res.json().catch(() => ({}));
         throw new Error(d.error || "حصل خطأ، جرّب تاني.");
@@ -40,29 +83,41 @@ export default function SectionChat({ section, name, starters = [] }) {
         const { done, value } = await reader.read();
         if (done) break;
         out += dec.decode(value, { stream: true });
-        setMsgs((m) => m.map((x, i) => (i === m.length - 1 ? { ...x, content: out, pending: false } : x)));
+        if (chatId.current === id) setMsgs((m) => m.map((x, i) => (i === m.length - 1 ? { ...x, content: out, pending: false } : x)));
       }
-      if (!out) setMsgs((m) => m.map((x, i) => (i === m.length - 1 ? { ...x, content: "مقدرتش أرد دلوقتي. جرّب تاني.", pending: false } : x)));
+      if (!out) out = "مقدرتش أرد دلوقتي. جرّب تاني.";
+      if (chatId.current === id) setMsgs((m) => m.map((x, i) => (i === m.length - 1 ? { ...x, content: out, pending: false } : x)));
+      saveChat(section, id, [...history, { role: "assistant", content: out }]);
+      setActive(section, id);
     } catch (e) {
-      setError(e.message);
-      setMsgs((m) => m.slice(0, -1));
-      setInput(q);
+      if (e.name !== "AbortError" && chatId.current === id) {
+        setError(e.message);
+        setMsgs((m) => m.slice(0, -1));
+        setInput(q);
+      }
     } finally {
-      setBusy(false);
+      if (abortRef.current === ctl) { abortRef.current = null; setBusy(false); }
     }
   }
 
   return (
-    <section className={s.box} aria-label={`شات ${name}`}>
-      <div className={s.head}>
-        <b>شات {name}</b>
-        <small>اسأل في تخصص القسم وهتاخد رد مباشر</small>
-      </div>
+    <div className={s.page}>
+      <header className={s.top}>
+        <div>
+          <h1>{name}</h1>
+          <p>{tagline}</p>
+        </div>
+        {children}
+      </header>
 
       <div className={s.thread} aria-live="polite" data-clarity-mask="True">
         {msgs.length === 0 && (
-          <div className={s.starters}>
-            {starters.map((q) => <button key={q} type="button" onClick={() => send(q)}>{q}</button>)}
+          <div className={s.welcome}>
+            <h2>اسأل في {name}</h2>
+            <p>رد مباشر في تخصص القسم، وأدواته كلها في القايمة الجانبية.</p>
+            <div className={s.starters}>
+              {starters.map((q) => <button key={q} type="button" onClick={() => send(q)}>{q}</button>)}
+            </div>
           </div>
         )}
         {msgs.map((m, i) => (
@@ -80,7 +135,7 @@ export default function SectionChat({ section, name, starters = [] }) {
           rows={1}
           value={input}
           dir="auto"
-          placeholder="اكتب سؤالك…"
+          placeholder={`اسأل ${name}…`}
           aria-label="اكتب سؤالك"
           maxLength={2000}
           onChange={(e) => { setInput(e.target.value); e.target.style.height = "auto"; e.target.style.height = `${Math.min(e.target.scrollHeight, 140)}px`; }}
@@ -88,6 +143,6 @@ export default function SectionChat({ section, name, starters = [] }) {
         />
         <button type="submit" disabled={!input.trim() || busy} aria-label="إرسال">↑</button>
       </form>
-    </section>
+    </div>
   );
 }

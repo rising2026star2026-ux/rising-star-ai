@@ -2,7 +2,7 @@
 // شريط التنقل السفلي على الموبايل: الأقسام الخمسة (بيختفي على الشاشات الكبيرة)
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SECTIONS } from "@/lib/sections";
+import { SECTIONS, sectionHome } from "@/lib/sections";
 import useSection from "./useSection";
 import s from "./nav.module.css";
 
@@ -17,7 +17,7 @@ export default function BottomNav() {
       {SECTIONS.map((x) => {
         const active = section?.id === x.id || pathname === `/s/${x.id}`;
         return (
-          <Link key={x.id} href={`/s/${x.id}`} className={`${s.tab} ${active ? s.active : ""}`} aria-current={active ? "page" : undefined}>
+          <Link key={x.id} href={sectionHome(x.id)} className={`${s.tab} ${active ? s.active : ""}`} aria-current={active ? "page" : undefined}>
             <svg {...P}><path d={x.icon} /></svg>
             <span>{x.name}</span>
           </Link>

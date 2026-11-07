@@ -12,7 +12,8 @@ import StarMark from "./StarMark";
 import BotIcon from "./BotIcon";
 import { RES_CATS } from "@/lib/resources";
 import { BOTS } from "@/lib/bots";
-import { SECTIONS, ITEMS, itemHref } from "@/lib/sections";
+import { SECTIONS, ITEMS, itemHref, sectionHome } from "@/lib/sections";
+import { chatsKey, activeKey } from "@/lib/secchats";
 import useSection from "./useSection";
 
 const I = { viewBox: "0 0 24 24", width: 20, height: 20, fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true };
@@ -120,6 +121,26 @@ export default function Chrome() {
   );
 }
 
+// محادثات القسم الحالي (محفوظة على جهاز الزائر)
+function SecChats({ id, color }) {
+  const [list] = useStored(chatsKey(id), []);
+  const [active] = useStored(activeKey(id), "");
+  const items = Array.isArray(list) ? list.slice(0, 8) : [];
+  if (!items.length) return null;
+  return (
+    <div className="side-label" style={{ "--sec": color }}>
+      <div className="side-sec">محادثاتك في القسم</div>
+      <nav className="side-nav">
+        {items.map((c) => (
+          <Link key={c.id} href={`/s/${id}?c=${c.id}`} className={`side-link${active === c.id ? " on" : ""}`} title={c.title}>
+            <span className="side-label" dir="auto" style={{ overflow: "hidden", textOverflow: "ellipsis" }}>{c.title}</span>
+          </Link>
+        ))}
+      </nav>
+    </div>
+  );
+}
+
 // اللوحة الجانبية: ثابتة على الكمبيوتر (وبتتصغّر لأيقونات)، ودرج بيطلع من الجنب على الموبايل
 function Sidebar({ open, onClose, onSettings, onSearch }) {
   const pathname = usePathname() || "/";
@@ -152,10 +173,17 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
           <button className="icon-btn side-close" onClick={onClose} aria-label="اقفل القائمة">✕</button>
         </div>
 
-        <Link href="/chat?new=1" className="side-new" title="محادثة جديدة" onClick={() => window.dispatchEvent(new Event("rs-new-chat"))}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
-          <span className="side-label">محادثة جديدة</span>
-        </Link>
+        {section && section.id !== "chat" ? (
+          <Link href={`/s/${section.id}?new=1`} className="side-new" title="محادثة جديدة" onClick={() => window.dispatchEvent(new Event("rs-new-section-chat"))} style={{ "--sec": section.color }}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+            <span className="side-label">محادثة جديدة</span>
+          </Link>
+        ) : section ? (
+          <Link href="/chat?new=1" className="side-new" title="محادثة جديدة" onClick={() => window.dispatchEvent(new Event("rs-new-chat"))}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+            <span className="side-label">محادثة جديدة</span>
+          </Link>
+        ) : null}
 
         {section ? (
           <>
@@ -164,6 +192,12 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
               <span className="side-label"><b>{section.name}</b><small>{section.tagline}</small></span>
             </div>
             <nav className="side-nav" style={{ "--sec": section.color }}>
+              {section.id !== "chat" && (
+                <Link href={`/s/${section.id}`} className={`side-link${pathname === `/s/${section.id}` ? " on" : ""}`} title={`شات ${section.name}`} aria-current={pathname === `/s/${section.id}` ? "page" : undefined}>
+                  <svg {...I}><path d="M21 11.5a8.4 8.4 0 01-9 8.4L3 21l1.1-3.6A8.4 8.4 0 1121 11.5z" /></svg>
+                  <span className="side-label">شات {section.name}</span>
+                </Link>
+              )}
               {section.items.map((h) => {
                 const n = NAV.find((x) => x.href === h);
                 if (!n) return null;
@@ -203,6 +237,8 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
               </button>
             </nav>
 
+            {section.id !== "chat" && <SecChats id={section.id} color={section.color} />}
+
             {section.id === "chat" && (
               <>
                 <div className="side-sec side-label">اتكلم مع</div>
@@ -220,7 +256,7 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
             <div className="side-sec side-label">انتقل لقسم تاني</div>
             <nav className="side-nav side-switch">
               {SECTIONS.filter((x) => x.id !== section.id).map((x) => (
-                <Link key={x.id} href={`/s/${x.id}`} className="side-link" title={x.name} style={{ "--sec": x.color }}>
+                <Link key={x.id} href={sectionHome(x.id)} className="side-link" title={x.name} style={{ "--sec": x.color }}>
                   <svg {...I}><path d={x.icon} /></svg>
                   <span className="side-label">{x.name}</span>
                 </Link>
@@ -232,7 +268,7 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
             <div className="side-sec side-label">الأقسام</div>
             <nav className="side-nav">
               {SECTIONS.map((x) => (
-                <Link key={x.id} href={`/s/${x.id}`} className="side-link" title={x.name} style={{ "--sec": x.color }}>
+                <Link key={x.id} href={sectionHome(x.id)} className="side-link" title={x.name} style={{ "--sec": x.color }}>
                   <svg {...I}><path d={x.icon} /></svg>
                   <span className="side-label">{x.name}</span>
                 </Link>

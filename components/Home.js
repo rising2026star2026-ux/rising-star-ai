@@ -1,7 +1,7 @@
 "use client";
 // الرئيسية: شكل بسيط. الاسم وكروت الأقسام بس، وكل قسم يفتح قايمته وأدواته.
 import Link from "next/link";
-import { SECTIONS, ITEMS } from "@/lib/sections";
+import { SECTIONS, ITEMS, sectionHome } from "@/lib/sections";
 import { tools } from "@/lib/tools";
 import StarMark from "./StarMark";
 import SectionArt from "./SectionArt";
@@ -27,7 +27,7 @@ export default function Home() {
 
           <nav className={sc.hub} aria-label="الأقسام">
             {SECTIONS.map((x) => (
-              <Link key={x.id} href={`/s/${x.id}`} className={sc.hubCard} style={{ "--sec": x.color }}>
+              <Link key={x.id} href={sectionHome(x.id)} className={sc.hubCard} style={{ "--sec": x.color }}>
                 <span className={sc.hubArt} aria-hidden="true"><SectionArt id={x.id} /></span>
                 <span className={sc.hubIcon} aria-hidden="true">
                   <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={x.icon} /></svg>
