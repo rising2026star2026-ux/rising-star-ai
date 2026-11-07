@@ -4,7 +4,8 @@
 .head svg { color: var(--sec); }
 .head h1 { margin: 0; font-size: var(--fs-xl); }
 .head p { margin: 0; font-size: var(--fs-base); color: var(--muted); }
-.grid { display: grid; gap: 12px; margin-top: 18px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.sub { margin: 26px 0 0; font-size: var(--fs-lg); color: var(--ink); }
+.grid { display: grid; gap: 12px; margin-top: 12px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
 .card { display: grid; gap: 6px; align-content: start; padding: 16px; border-radius: var(--r-lg); background: var(--surface-2); color: var(--ink); border: 1px solid transparent; min-height: 88px; transition: border-color 0.18s var(--ease); }
 .card:hover, .card:focus-visible { border-color: var(--sec); }
 .card b { font-size: var(--fs-md); }

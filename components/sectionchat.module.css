@@ -1,0 +1,21 @@
+/* شات القسم: بلون القسم (--sec) من الصفحة الأب */
+.box { display: grid; gap: 10px; margin-top: 18px; padding: 16px; border-radius: var(--r-xl); background: #fff; border: 1px solid var(--hairline-strong); border-top: 4px solid var(--sec); color: var(--text); }
+.head { display: grid; gap: 2px; }
+.head b { font-size: var(--fs-xl); color: var(--text-strong); }
+.head small { font-size: var(--fs-sm); color: var(--muted); }
+.thread { display: grid; align-content: start; gap: 10px; max-height: 420px; overflow-y: auto; }
+.starters { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.starters button { text-align: start; font: inherit; font-size: var(--fs-md); cursor: pointer; padding: 11px 13px; border: 1px solid var(--hairline-strong); border-inline-start: 3px solid var(--sec); border-radius: var(--r-sm); background: var(--surface-2); color: var(--text); }
+.starters button:hover { background: #eef0f3; }
+.user { justify-self: end; max-width: 85%; background: var(--sec); color: #fff; border-radius: 16px 16px 4px 16px; padding: 9px 13px; }
+.user p { margin: 0; font-size: var(--fs-base); line-height: 1.8; white-space: pre-wrap; }
+.bot { background: var(--surface-2); border-radius: 4px 14px 14px 14px; padding: 11px 14px; font-size: var(--fs-base); line-height: 1.9; }
+.bot :global(p) { margin: 0 0 8px; }
+.bot :global(p:last-child) { margin-bottom: 0; }
+.wait { margin: 0; font-size: var(--fs-md); color: var(--muted); }
+.error { color: #b42318; background: #fef3f2; padding: 8px 12px; border-radius: var(--r-sm); font-size: var(--fs-md); }
+.composer { display: flex; gap: 8px; align-items: flex-end; border: 1px solid var(--sec); border-radius: var(--r-md); padding: 8px 8px 8px 12px; background: #fff; }
+.composer textarea { flex: 1; min-width: 0; resize: none; border: 0; outline: none; font: inherit; font-size: var(--fs-base); line-height: 1.7; padding: 6px 4px; background: transparent; color: var(--text); max-height: 140px; }
+.composer button { flex: none; width: 38px; height: 38px; border-radius: var(--r-sm); border: 0; font-size: var(--fs-lg); cursor: pointer; color: #fff; background: var(--sec); }
+.composer button:disabled { opacity: 0.35; cursor: default; }
+.starters button:focus-visible, .composer button:focus-visible { outline: 2px solid var(--sec); outline-offset: 2px; }

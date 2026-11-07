@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SECTIONS, SECTION_BY_ID, ITEMS, itemHref } from "@/lib/sections";
+import { SECTION_INFO } from "@/lib/sectioninfo";
+import SectionChat from "@/components/SectionChat";
+import SectionInfo from "@/components/SectionInfo";
 import s from "@/components/section.module.css";
 
 export function generateStaticParams() {
@@ -26,6 +29,8 @@ export default async function SectionPage({ params }) {
         <h1>{x.name}</h1>
         <p>{x.tagline}</p>
       </header>
+      <SectionChat section={x.id} name={x.name} starters={SECTION_INFO[x.id].starters} />
+      <h2 className={s.sub}>أدوات القسم</h2>
       <div className={s.grid}>
         {x.items.map((h) => (
           <Link key={h} href={itemHref(h, x.id)} className={s.card}>
@@ -34,6 +39,7 @@ export default async function SectionPage({ params }) {
           </Link>
         ))}
       </div>
+      <SectionInfo name={x.name} can={SECTION_INFO[x.id].can} soon={SECTION_INFO[x.id].soon} />
     </main>
   );
 }
