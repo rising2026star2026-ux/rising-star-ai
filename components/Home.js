@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SECTIONS, ITEMS } from "@/lib/sections";
 import { tools } from "@/lib/tools";
 import StarMark from "./StarMark";
+import SectionArt from "./SectionArt";
 import s from "./home.module.css";
 import sc from "./section.module.css";
 
@@ -21,21 +22,22 @@ export default function Home() {
           <div className={s.brand}>
             <span className={s.mark}><StarMark size={64} /></span>
             <h1 dir="ltr"><span>Rising</span>{" "}<span>Star<em>Ai</em></span></h1>
-            <p>اختار مجالك وادخل على أدواته. {tools.length} أداة بالعربي، مقسمة على أقسام متخصصة.</p>
+            <p>اختار مجالك وادخل على أدواته. {tools.length} أداة بالعربي.</p>
           </div>
 
           <nav className={sc.hub} aria-label="الأقسام">
             {SECTIONS.map((x) => (
               <Link key={x.id} href={`/s/${x.id}`} className={sc.hubCard} style={{ "--sec": x.color }}>
-                <span className={sc.hubIcon}>
-                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={x.icon} /></svg>
+                <span className={sc.hubArt} aria-hidden="true"><SectionArt id={x.id} /></span>
+                <span className={sc.hubIcon} aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={x.icon} /></svg>
                 </span>
-                <b>{x.name}</b>
+                <b className={sc.hubName}>{x.name}</b>
                 <span className={sc.hubTag}>{x.tagline}</span>
-                <span className={sc.hubChips}>
-                  {x.items.slice(0, 3).map((h) => <i key={h}>{ITEMS[h].label}</i>)}
-                </span>
-                <span className={sc.hubGo}>ادخل القسم <Arrow /></span>
+                <ul className={sc.hubList}>
+                  {x.items.slice(0, 4).map((h) => <li key={h}>{ITEMS[h].label}</li>)}
+                </ul>
+                <span className={sc.hubGo}><span>ادخل القسم</span><i><Arrow /></i></span>
               </Link>
             ))}
           </nav>

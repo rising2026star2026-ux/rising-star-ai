@@ -73,6 +73,7 @@
   --fs-base: 0.95rem;
   --fs-lg: 1rem;
   --fs-xl: 1.125rem;
+  --fs-hero: clamp(1.5rem, 5vw, 2.1rem); /* عناوين كروت الأقسام */
 }
 
 * { box-sizing: border-box; }
