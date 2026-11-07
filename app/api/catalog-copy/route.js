@@ -1,11 +1,12 @@
 // «كتالوجك في دقيقة»: وصف قصير لكل منتج + جملة للغلاف، من أسماء المنتجات وأسعارها بس
 import { fail, clientIp, rateLimiter } from "@/lib/groq";
 import { askJson, str, list } from "@/lib/llmjson";
+import { withSection } from "@/lib/sectionkeys";
 
 export const maxDuration = 45;
 const tooMany = rateLimiter(15);
 
-export async function POST(req) {
+async function handlePost(req) {
   let body;
   try { body = await req.json(); } catch { return fail("طلب غير صالح.", 400); }
   const shop = str(body.shop, 60);
@@ -39,3 +40,5 @@ export async function POST(req) {
   if (!out) return fail("الكاتب مشغول دلوقتي. جرّب تاني بعد دقيقة.", 503);
   return Response.json(out);
 }
+
+export const POST = withSection("seller", handlePost);

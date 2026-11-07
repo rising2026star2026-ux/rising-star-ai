@@ -12,6 +12,7 @@ import { cleanDocs, cleanInstructions, docContext, longChain, instructionsBlock 
 import { cleanBrand, brandBlock } from "@/lib/brandprofile";
 import { cleanOpts, optsBlock, optsNeedWeb } from "@/lib/answeropts";
 import { documentImages } from "@/lib/imagesearch";
+import { withSection } from "@/lib/sectionkeys";
 
 // توجيه تلقائي: سؤال عن معلومة (مين/فين/إمتى/كام…) بيدوّر على النت لوحده، وسؤال برمجة بيروح لموديل البرمجة.
 // طلبات الكتابة والتأليف («اكتب…»، «لخّص…») ما بتتوجّهش للبحث حتى لو فيها كلمة زي «مين».
@@ -109,7 +110,7 @@ function cleanMessages(raw) {
 
 export const maxDuration = 60;
 
-export async function POST(req) {
+async function handlePost(req) {
   const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) return fail("مفتاح Groq غير مضاف في إعدادات Vercel.", 500);
 
@@ -303,3 +304,5 @@ export async function POST(req) {
   }
   return out;
 }
+
+export const POST = withSection("chat", handlePost);

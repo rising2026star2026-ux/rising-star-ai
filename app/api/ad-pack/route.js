@@ -4,6 +4,7 @@
 import { fail, clientIp, rateLimiter } from "@/lib/groq";
 import { askJson, str, list } from "@/lib/llmjson";
 import { cleanBrand, brandBlock } from "@/lib/brandprofile";
+import { withSection } from "@/lib/sectionkeys";
 
 export const maxDuration = 60;
 const tooMany = rateLimiter(25);
@@ -68,7 +69,7 @@ function normalize(o) {
   };
 }
 
-export async function POST(req) {
+async function handlePost(req) {
   let body;
   try { body = await req.json(); } catch { return fail("طلب غير صالح.", 400); }
   const source = body.source === "voice" ? "voice" : "photo";
@@ -103,3 +104,5 @@ export async function POST(req) {
   if (!pack) return fail("الكاتب مشغول دلوقتي. جرّب تاني بعد دقيقة.", 503);
   return Response.json(pack);
 }
+
+export const POST = withSection("seller", handlePost);

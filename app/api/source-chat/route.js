@@ -13,6 +13,7 @@ import { logUsage } from "@/lib/supa";
 import { installmentPlan, rentalYield, oldRent, transferCosts, compareOptions, stats } from "@/lib/realestate";
 import { sampleFrom } from "@/lib/realdata";
 import { hasApifyRe, apifyForQuery } from "@/lib/apifyre";
+import { withSection } from "@/lib/sectionkeys";
 
 export const maxDuration = 60;
 const tooMany = rateLimiter(60);
@@ -209,7 +210,7 @@ function priceBlock({ rent, items }, numbered) {
 
 const query0 = (messages) => ([...messages].reverse().find((m) => m.role === "user")?.content || "");
 
-export async function POST(req) {
+async function handlePost(req) {
   let body;
   try { body = await req.json(); } catch { return fail("طلب غير صالح.", 400); }
   if (tooMany(clientIp(req))) return fail("وصلت لحد الرسايل الساعة دي. جرّب بعد شوية.", 429);
@@ -355,3 +356,5 @@ export async function POST(req) {
     headers,
   });
 }
+
+export const POST = withSection("academic", handlePost);

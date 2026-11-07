@@ -10,6 +10,7 @@ import { gatherProperty } from "@/lib/realdata";
 import { UNIT_TYPES, PURPOSES, MODES, REPORT_SECTIONS } from "@/lib/realestate";
 import { hasClaude, claudeWithTools, textStream, CLAUDE_MODELS } from "@/lib/claude";
 import { recordSamples, areaStats, logUsage } from "@/lib/supa";
+import { withSection } from "@/lib/sectionkeys";
 
 export const maxDuration = 60;
 export const runtime = "nodejs";
@@ -121,7 +122,7 @@ async function readDoc(body, signal) {
   });
 }
 
-export async function POST(req) {
+async function handlePost(req) {
   let body;
   try { body = await req.json(); } catch { return fail("طلب غير صالح.", 400); }
   const ip = clientIp(req);
@@ -243,3 +244,5 @@ export async function POST(req) {
 
   return fail("خطوة غير معروفة.", 400);
 }
+
+export const POST = withSection("realestate", handlePost);

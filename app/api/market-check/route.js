@@ -5,6 +5,7 @@ import { fail, clientIp, rateLimiter, completeOnce, quickChain } from "@/lib/gro
 import { askJson, extractJson, str, list } from "@/lib/llmjson";
 import { collectListings, marketStats, readiness } from "@/lib/marketeg";
 import { searchVolumeEgypt, hasDataForSeo, trendChange } from "@/lib/dataforseo";
+import { withSection } from "@/lib/sectionkeys";
 
 export const maxDuration = 60;
 const tooMany = rateLimiter(10); // 10 فحص في الساعة لكل زائر (كل فحص = 4 طلبات بحث)
@@ -60,7 +61,7 @@ const RULES = (channel) => [
   'رجّع JSON بس بالشكل ده: {"summary":"جملتين","strengths":["..."],"risks":["..."],"steps":["..."],"check":["حاجة لازم تتأكد منها بنفسك"]}',
 ].join(" ");
 
-export async function POST(req) {
+async function handlePost(req) {
   let body;
   try { body = await req.json(); } catch { return fail("طلب غير صالح.", 400); }
   const product = String(body.product || "").replace(/\s+/g, " ").trim().slice(0, 120);
@@ -143,3 +144,5 @@ export async function POST(req) {
     checkedAt: new Date().toISOString(),
   });
 }
+
+export const POST = withSection("seller", handlePost);

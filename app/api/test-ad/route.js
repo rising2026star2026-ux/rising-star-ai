@@ -4,6 +4,7 @@
 import { fail, clientIp, rateLimiter } from "@/lib/groq";
 import { askJson, describeImage, DATA_IMAGE, MAX_IMAGE, str, int, list } from "@/lib/llmjson";
 import { PLATFORMS, AUDIENCES } from "@/lib/testad";
+import { withSection } from "@/lib/sectionkeys";
 
 export const maxDuration = 60;
 const tooMany = rateLimiter(12);
@@ -107,7 +108,7 @@ function normalize(o, hasImage) {
   };
 }
 
-export async function POST(req) {
+async function handlePost(req) {
   let body;
   try { body = await req.json(); } catch { return fail("طلب غير صالح.", 400); }
   const text = str(body.text, 2500);
@@ -145,3 +146,5 @@ export async function POST(req) {
   if (!result) return fail("الزباين مشغولين دلوقتي 😅 جرّب تاني بعد دقيقة.", 503);
   return Response.json({ ...result, platform: platformKey, audience: audienceKey, sawImage: !!(image && photoNotes) });
 }
+
+export const POST = withSection("seller", handlePost);

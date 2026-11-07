@@ -1,12 +1,13 @@
 // نص إعلان قصير لمنتج: شعار + 3 مميزات (من سلسلة الموديلات المعتادة)
 import { getModel } from "@/lib/models";
 import { fail, clientIp, rateLimiter, chainFor, streamFromGroq } from "@/lib/groq";
+import { withSection } from "@/lib/sectionkeys";
 
 export const maxDuration = 40;
 const tooMany = rateLimiter(30);
 const DIALECTS = { egy: "بالعامية المصرية", fusha: "بالفصحى المبسطة", gulf: "باللهجة الخليجية" };
 
-export async function POST(req) {
+async function handlePost(req) {
   let body;
   try { body = await req.json(); } catch { return fail("طلب غير صالح.", 400); }
   const name = String(body.name || "").trim().slice(0, 120);
@@ -47,3 +48,5 @@ export async function POST(req) {
   if (!tagline && !features.length) return fail("ما طلعش نص مناسب. زوّد وصف المنتج وجرّب تاني.", 502);
   return Response.json({ tagline, features });
 }
+
+export const POST = withSection("seller", handlePost);

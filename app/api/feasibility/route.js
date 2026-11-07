@@ -8,6 +8,7 @@ import { askJson, str, list, int, DATA_IMAGE, MAX_IMAGE } from "@/lib/llmjson";
 import { readAdImages, findVideos, watchVideo } from "@/lib/fieldmedia";
 import { gatherMarket } from "@/lib/marketdata";
 import { TYPES, GOVERNORATES, REPORT_SECTIONS, cleanRange } from "@/lib/feasibility";
+import { withSection } from "@/lib/sectionkeys";
 
 export const maxDuration = 60;
 
@@ -81,7 +82,7 @@ function normalizeAssumptions(o, nSources) {
   };
 }
 
-export async function POST(req) {
+async function handlePost(req) {
   let body;
   try { body = await req.json(); } catch { return fail("طلب غير صالح.", 400); }
   const ip = clientIp(req);
@@ -209,3 +210,5 @@ export async function POST(req) {
 
   return fail("خطوة غير معروفة.", 400);
 }
+
+export const POST = withSection("seller", handlePost);

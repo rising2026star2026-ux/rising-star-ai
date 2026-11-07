@@ -3,6 +3,7 @@
 import { fail, clientIp, rateLimiter } from "@/lib/groq";
 import { askJson } from "@/lib/llmjson";
 import { parseRequest, systemPrompt, userMessage, normalizeItems, cacheKey } from "@/lib/promptstudio";
+import { withSection } from "@/lib/sectionkeys";
 
 export const maxDuration = 60;
 const tooMany = rateLimiter(20);
@@ -21,7 +22,7 @@ const remember = (k, items) => {
   if (cache.size > CACHE_MAX) cache.delete(cache.keys().next().value);
 };
 
-export async function POST(req) {
+async function handlePost(req) {
   let body;
   try { body = await req.json(); } catch { return fail("طلب غير صالح.", 400); }
   const parsed = parseRequest(body);
@@ -50,3 +51,5 @@ export async function POST(req) {
   if (!avoid.length) remember(key, res.items);
   return Response.json({ items: res.items });
 }
+
+export const POST = withSection("aiwork", handlePost);
