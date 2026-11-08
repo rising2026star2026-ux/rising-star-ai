@@ -218,7 +218,7 @@ export default function VoicePost() {
             </div>
 
             <p className={v.status} role="status">
-              {stage === "stt" ? "بنفرّغ كلامك… ثواني" : recording ? <><b className={v.dot} />بيسجّل {fmt(sec)} <small>/ {fmt(MAX_SEC)}</small></> : "اضغط واتكلم براحتك بالمصري، زي ما بتشرح لزبون"}
+              {stage === "stt" ? "بنفرّغ كلامك… ثواني" : recording ? <><b className={v.dot} />بيسجّل {fmt(sec)} <small>/ {fmt(MAX_SEC)}</small></> : "اضغط واتكلم براحتك بالمصري، زي ما بتشرح لعميل"}
             </p>
             {recording && <p className={v.live} dir="auto">{live || "…"}</p>}
             {recording && <button type="button" className={s.cta} onClick={stop}>خلصت ✓</button>}
@@ -261,7 +261,7 @@ export default function VoicePost() {
       <section className={s.card}>
         <div className={s.next}>
           <Link href="/photo-ad" className={s.nextCard}><i aria-hidden="true">📸</i><span><b>صوّرها بموبايلك</b><small>صور شكل الاستوديو لنفس المنتج</small></span></Link>
-          <Link href="/test-ad" className={s.nextCard}><i aria-hidden="true">👥</i><span><b>جرّب إعلانك على 100 زبون</b><small>قبل ما تدفع فيه</small></span></Link>
+          <Link href="/test-ad" className={s.nextCard}><i aria-hidden="true">👥</i><span><b>جرّب إعلانك على 100 عميل</b><small>قبل ما تدفع فيه</small></span></Link>
         </div>
       </section>
     </div>

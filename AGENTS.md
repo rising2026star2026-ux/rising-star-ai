@@ -12,6 +12,7 @@ Arabic-first AI hub for the Egyptian market, built with Next.js (App Router, Jav
 ## Rules
 
 - The interface is Arabic, right-to-left, written in Egyptian Arabic. Model and company names are shown where visitors pick a model (model cards, `/models`); never show keys, provider routing or raw provider errors.
+- Copy follows `docs/voice.md` (language standard per audience: polished Egyptian Arabic; simplified, near-standard Arabic for the academic section; no street slang). `node scripts/voicecheck.mjs` must pass.
 - Keys live only in Vercel environment variables. Refer to them by name (for example `SERPER_API_KEY`); never write a value into code, commits, chat or docs.
 - Numbers shown to customers (prices, scores, counts) are computed in code from real data. Models explain and filter; they never invent figures, sources or links.
 - Every paid call needs a per-visitor hourly limit (`rateLimiter` in `lib/groq.js`) and, where it can repeat, a cache.
@@ -25,7 +26,8 @@ Arabic-first AI hub for the Egyptian market, built with Next.js (App Router, Jav
 
 1. Parse every changed file with esbuild (`--loader:.js=jsx --jsx=automatic`) and bundle-check new routes with `--tsconfig=jsconfig.json`.
 2. Test new API routes with mocked `fetch` responses (success, empty, upstream error, bad input).
-3. After pushing, confirm the Vercel commit status is `success`, not just that the push went through.
+3. Run `node scripts/voicecheck.mjs` (language standard).
+4. After pushing, confirm the Vercel commit status is `success`, not just that the push went through.
 
 ## Commits
 

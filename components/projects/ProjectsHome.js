@@ -52,9 +52,9 @@ export default function ProjectsHome() {
 
       <section className={ps.card}>
         <h2 className={ps.h2}>{list?.length ? "مشروع جديد" : "ابدأ أول مشروع"}</h2>
-        <p className={ps.lead}>اختار قالب قريب من شغلك (تقدر تغيّر اسمه وتعليماته بعدين)، أو ابدأ مشروع فاضي.</p>
+        <p className={ps.lead}>اختار قالب قريب من دراستك أو بحثك (تقدر تغيّر اسمه وتعليماته بعدين)، أو ابدأ مشروع فاضي.</p>
         <div className={ps.tplGrid}>
-          {TEMPLATES.map((t) => (
+          {TEMPLATES.filter((t) => !t.hidden).map((t) => (
             <button key={t.key} type="button" className={`${ps.tpl} ${t.key === "blank" ? ps.tplBlank : ""}`} onClick={() => start(t.key)} disabled={!!making}>
               <i aria-hidden="true">{making === t.key ? <span className={ps.spin} /> : t.icon}</i>
               <b>{t.name}</b>

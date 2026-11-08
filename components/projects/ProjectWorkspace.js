@@ -366,7 +366,7 @@ function InstructionsPanel({ value, tpl, onSave }) {
     <div className={ps.panel}>
       <p className={ps.panelNote}>التعليمات بتتبعت مع كل سؤال في المشروع. اكتب إنت مين، وعايز الردود تبقى إزاي، وإيه اللي المساعد لازم يلتزم بيه.</p>
       <label className="sr" htmlFor="proj-instr">تعليمات المشروع</label>
-      <textarea id="proj-instr" className={ps.textarea} value={text} maxLength={MAX_INSTR} onChange={(e) => setText(e.target.value)} placeholder="مثلاً: أنا صاحب محل موبايلات في المنصورة. ردودك على الزباين تبقى بالمصري وقصيرة، والأسعار من ملف الأسعار بس." dir="auto" />
+      <textarea id="proj-instr" className={ps.textarea} value={text} maxLength={MAX_INSTR} onChange={(e) => setText(e.target.value)} placeholder="مثلاً: أنا طالب في الفرقة التانية. اشرحلي من الملفات بوضوح، واذكر رقم الصفحة، ولما أطلب مراجعة اعملي أسئلة زي الامتحان." dir="auto" />
       <div className={ps.instrMeta}>
         <small>{text.length} / {MAX_INSTR}</small>
         {tpl.instructions && text !== tpl.instructions && <button type="button" className={ps.textBtn} onClick={() => setText(tpl.instructions)}>رجّع تعليمات القالب</button>}

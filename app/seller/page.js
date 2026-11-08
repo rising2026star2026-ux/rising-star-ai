@@ -4,10 +4,10 @@ import s from "@/components/seller/seller.module.css";
 
 export const metadata = {
   title: "ستوديو البيّاع: كل اللي محتاجه عشان تبيع أونلاين من موبايلك",
-  description: "صوّر منتجك وخد صور استوديو وإعلان كامل، اتكلم وخد بوستات، جرّب إعلانك على 100 زبون قبل ما تدفع، واعمل كتالوج PDF بزرار طلب واتساب.",
+  description: "صوّر منتجك وخد صور استوديو وإعلان كامل، اتكلم وخد بوستات، جرّب إعلانك على 100 عميل قبل ما تدفع، واعمل كتالوج PDF بزرار طلب واتساب.",
   alternates: { canonical: "/seller" },
-  openGraph: { title: "ستوديو البيّاع", description: "صوّر منتجك وخد صور استوديو وإعلان كامل، اتكلم وخد بوستات، جرّب إعلانك على 100 زبون قبل ما تدفع، واعمل كتالوج PDF بزرار طلب واتساب.", url: "/seller", siteName: "Rising StarAi", locale: "ar_EG", type: "website" },
-  twitter: { card: "summary", title: "ستوديو البيّاع", description: "صوّر منتجك وخد صور استوديو وإعلان كامل، اتكلم وخد بوستات، جرّب إعلانك على 100 زبون قبل ما تدفع، واعمل كتالوج PDF بزرار طلب واتساب." },
+  openGraph: { title: "ستوديو البيّاع", description: "صوّر منتجك وخد صور استوديو وإعلان كامل، اتكلم وخد بوستات، جرّب إعلانك على 100 عميل قبل ما تدفع، واعمل كتالوج PDF بزرار طلب واتساب.", url: "/seller", siteName: "Rising StarAi", locale: "ar_EG", type: "website" },
+  twitter: { card: "summary", title: "ستوديو البيّاع", description: "صوّر منتجك وخد صور استوديو وإعلان كامل، اتكلم وخد بوستات، جرّب إعلانك على 100 عميل قبل ما تدفع، واعمل كتالوج PDF بزرار طلب واتساب." },
 };
 
 export default function SellerPage() {

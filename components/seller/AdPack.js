@@ -1,5 +1,5 @@
 "use client";
-// عرض «باكدج الإعلان»: بوست لكل منصة في تبويب، ونسخ بضغطة، وإرسال واتساب، واختبار على 100 زبون
+// عرض «باكدج الإعلان»: بوست لكل منصة في تبويب، ونسخ بضغطة، وإرسال واتساب، واختبار على 100 عميل
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { copyText } from "@/lib/imagefile";
@@ -62,7 +62,7 @@ export default function AdPack({ pack, testImage = "" }) {
         <div className={s.copyBody} dir="auto">{body || "—"}</div>
       </div>
       <div className={p.packActions}>
-        <button type="button" className={`${s.cta} ${s.blue}`} onClick={testIt}>👥 اختبر البوست ده على 100 زبون</button>
+        <button type="button" className={`${s.cta} ${s.blue}`} onClick={testIt}>👥 اختبر البوست ده على 100 عميل</button>
         <button type="button" className={s.miniBtn} onClick={() => copy(TABS.map(([k, l]) => `—— ${l} ——\n${packText(pack, k)}`).join("\n\n"))}>انسخ كل حاجة مرة واحدة</button>
       </div>
     </div>

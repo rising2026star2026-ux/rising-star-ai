@@ -1,7 +1,7 @@
 "use client";
-// «جرّب إعلانك على 100 زبون قبل ما تصرف جنيه»
+// «جرّب إعلانك على 100 عميل قبل ما تصرف جنيه»
 // الإعلان بيتعرض على 10 شخصيات مصرية (كل شخصية شريحة من 100)، التعليقات بتظهر واحدة ورا التانية زي فيسبوك،
-// وبعدها الدرجة وشبكة الـ100 زبون واللي هيطلب واللي عدّى، والاعتراضات والتعديلات ونسخة محسّنة تتختبر تاني.
+// وبعدها الدرجة وشبكة الـ100 عميل واللي هيطلب واللي عدّى، والاعتراضات والتعديلات ونسخة محسّنة تتختبر تاني.
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { PLATFORMS, AUDIENCE_LABELS, SCORE_LABELS, VERDICT_LABELS, REACTION_EMOJI, HANDOFF_KEY } from "@/lib/testad";
@@ -17,7 +17,7 @@ const PLATFORM_ICON = { facebook: "f", instagram: "◎", tiktok: "♪", whatsapp
 const tierOf = (n) =>
   n >= 80 ? { label: "إعلان قوي جداً", color: "#12b76a", key: "great" }
   : n >= 60 ? { label: "كويس، ومحتاج لمسات", color: "#1f4dff", key: "good" }
-  : n >= 40 ? { label: "متوسط، هتخسر زباين", color: "#f79009", key: "mid" }
+  : n >= 40 ? { label: "متوسط، هتخسر عملاء", color: "#f79009", key: "mid" }
   : { label: "محتاج شغل قبل ما تدفع فيه", color: "#f04438", key: "weak" };
 
 const VERDICT_COLOR = { buy: "#12b76a", maybe: "#f5a524", skip: "#c5cad3" };
@@ -185,7 +185,7 @@ export default function TestAd() {
 
           <button type="button" className={s.cta} onClick={() => run()} disabled={text.trim().length < 8}>
             <span className={t.ctaDots} aria-hidden="true"><i /><i /><i /></span>
-            اعرض إعلاني على 100 زبون
+            اعرض إعلاني على 100 عميل
           </button>
           <p className={s.ctaNote}>النتيجة بتطلع في أقل من نص دقيقة، ومحدش غيرك بيشوفها.</p>
           {error && <p className={s.err} role="alert">{error}</p>}
@@ -211,12 +211,12 @@ export default function TestAd() {
   );
 }
 
-/* ============ الانتظار: 100 زبون بيتجمعوا ============ */
+/* ============ الانتظار: 100 عميل بيتجمعوا ============ */
 function Running({ platform, hasImage, onCancel }) {
   const lines = useMemo(() => [
-    ...(hasImage ? ["بنبص على صورة الإعلان بعين الزبون…"] : []),
-    "بنجمع 100 زبون من محافظات مختلفة…",
-    `الزباين بيقلّبوا في ${platform} ووقفوا عند إعلانك…`,
+    ...(hasImage ? ["بنبص على صورة الإعلان بعين العميل…"] : []),
+    "بنجمع 100 عميل من محافظات مختلفة…",
+    `العملاء بيقلّبوا في ${platform} ووقفوا عند إعلانك…`,
     "فيه ناس بتدوّر على السعر… وفيه ناس عدّت 👀",
     "التعليقات بتتكتب دلوقتي…",
     "بنعدّ مين هيطلب ومين لأ…",
@@ -254,14 +254,14 @@ function PostMock({ res, image, platform, shown, typing, onSkip, done }) {
   const commenters = res.personas.length;
   const long = res.adText.length > 220;
   return (
-    <section className={`${s.card} ${t.post}`} aria-label="إعلانك قدام الزباين">
+    <section className={`${s.card} ${t.post}`} aria-label="إعلانك قدام العملاء">
       <div className={t.postHead}>
         <span className={t.pageAv} aria-hidden="true">م</span>
         <div className={t.postMeta}>
           <b>متجرك</b>
           <small>إعلان ممول · {PLATFORMS[platform]}</small>
         </div>
-        <span className={t.live}><i />الزباين بيتفرجوا</span>
+        <span className={t.live}><i />العملاء بيتفرجوا</span>
       </div>
       <p className={`${t.postText} ${long && !more ? t.clamp : ""}`} dir="auto">{res.adText}</p>
       {long && !more && <button type="button" className={t.more} onClick={() => setMore(true)}>عرض المزيد</button>}
@@ -363,7 +363,7 @@ function ScorePanel({ res, prev }) {
       </div>
 
       <div className={t.hundredWrap}>
-        <div className={t.hundred} role="img" aria-label={`من 100 زبون: ${res.tally.buy} هيطلبوا، ${res.tally.maybe} بيفكروا، ${res.tally.skip} عدّوا`}>
+        <div className={t.hundred} role="img" aria-label={`من 100 عميل: ${res.tally.buy} هيطلبوا، ${res.tally.maybe} بيفكروا، ${res.tally.skip} عدّوا`}>
           {dots.map((v, i) => (
             <i key={i} style={{ background: fill ? VERDICT_COLOR[v] : "#eef0f3", transitionDelay: `${i * 14}ms` }} />
           ))}
@@ -436,7 +436,7 @@ function Rewrite({ res, onRetest }) {
       <textarea className={t.rwText} dir="auto" value={draft} onChange={(e) => setDraft(e.target.value)} rows={Math.min(14, draft.split("\n").length + 2)} aria-label="النسخة المحسّنة" />
       {holes > 0 && <p className={t.holes}>✍️ فيه {holes === 1 ? "معلومة ناقصة" : `${holes} معلومات ناقصة`} بين قوسين [ ]. اكتب مكانها الحقيقية قبل ما تختبر أو تنشر.</p>}
       <div className={t.rwActions}>
-        <button type="button" className={`${s.cta} ${s.blue}`} onClick={() => onRetest(draft)} disabled={draft.trim().length < 8}>اختبر النسخة دي على 100 زبون تاني</button>
+        <button type="button" className={`${s.cta} ${s.blue}`} onClick={() => onRetest(draft)} disabled={draft.trim().length < 8}>اختبر النسخة دي على 100 عميل تاني</button>
         <div className={t.rwRow}>
           <button type="button" className={s.miniBtn} onClick={copy}>نسخ النص</button>
           <a className={s.miniBtn} href={`https://wa.me/?text=${encodeURIComponent(draft.slice(0, 3500))}`} target="_blank" rel="noopener noreferrer">ابعته على واتساب</a>
@@ -454,7 +454,7 @@ async function makeStory(res) {
   const tier = tierOf(res.score);
   night(ctx, W, H);
   drawText(ctx, "اختبرت إعلاني على", W / 2, 230, { size: 54, weight: 700, color: "rgba(255,255,255,0.82)", font: "display" });
-  drawText(ctx, "100 زبون قبل ما أنشره", W / 2, 312, { size: 64, weight: 900, color: "#ffd21f", font: "display" });
+  drawText(ctx, "100 عميل قبل ما أنشره", W / 2, 312, { size: 64, weight: 900, color: "#ffd21f", font: "display" });
 
   // الدرجة
   const cx = W / 2, cy = 560, R = 172;
@@ -510,7 +510,7 @@ function ShareRow({ res, onReset }) {
     setBusy(true);
     try {
       const blob = await makeStory(res);
-      const r = await shareOrDownload(blob, `my-ad-${res.score}.png`, "اختبرت إعلاني على 100 زبون قبل ما أنشره 👀");
+      const r = await shareOrDownload(blob, `my-ad-${res.score}.png`, "اختبرت إعلاني على 100 عميل قبل ما أنشره 👀");
       if (r === "downloaded") toast("الصورة اتحملت");
     } catch { toast("ما قدرناش نعمل الصورة"); }
     setBusy(false);
@@ -523,7 +523,7 @@ function ShareRow({ res, onReset }) {
       </div>
       <p className={s.note} style={{ marginTop: 14 }}>
         <span aria-hidden="true">ℹ️</span>
-        <span>الزباين دول <b>افتراضيين بالذكاء الاصطناعي</b> ومبنيين على سلوك الجمهور المصري على السوشيال ميديا. النتيجة تقدير بيساعدك تحسّن إعلانك قبل ما تدفع فيه، مش ضمان مبيعات.</span>
+        <span>العملاء دول <b>افتراضيين بالذكاء الاصطناعي</b> ومبنيين على سلوك الجمهور المصري على السوشيال ميديا. النتيجة تقدير بيساعدك تحسّن إعلانك قبل ما تدفع فيه، مش ضمان مبيعات.</span>
       </p>
       <div className={s.next} style={{ marginTop: 14 }}>
         <Link href="/photo-ad" className={s.nextCard}><i aria-hidden="true">📸</i><span><b>صوّرها بموبايلك</b><small>صورة منتج شكل الاستوديو + إعلان كامل</small></span></Link>

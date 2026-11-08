@@ -16,7 +16,7 @@ const AI_SITES = [
 const DIRECTORIES = [
   { name: "TAAFT", desc: "من أكبر أدلة أدوات الذكاء الاصطناعي في العالم", url: "https://theresanaiforthat.com", hue: "#ff8a5c", icon: "search", lang: "EN" },
   { name: "Toolify", desc: "دليل ضخم مقسم لمئات التصنيفات", url: "https://www.toolify.ai", hue: "#4fc3f7", icon: "layers", lang: "EN" },
-  { name: "TopAI.tools", desc: "أدوات مرتبة حسب الشغلانة والمجال", url: "https://topai.tools", hue: "#b388ff", icon: "list", lang: "EN" },
+  { name: "TopAI.tools", desc: "أدوات مرتبة حسب المهمة والمجال", url: "https://topai.tools", hue: "#b388ff", icon: "list", lang: "EN" },
   { name: "Futurepedia", desc: "أدوات مع شروحات وفيديوهات", url: "https://www.futurepedia.io", hue: "#ffd166", icon: "book", lang: "EN" },
   { name: "FutureTools", desc: "اختيارات منتقاة وتقييمات المستخدمين", url: "https://www.futuretools.io", hue: "#7ee0a8", icon: "star", lang: "EN" },
   { name: "Adawatly", desc: "دليل أدوات الذكاء الاصطناعي بالعربي", url: "https://adawatly.com", hue: "#ff6f91", icon: "globe", lang: "عربي" },

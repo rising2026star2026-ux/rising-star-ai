@@ -145,7 +145,7 @@ export default function Poster() {
 
             <div className={s.section}>
               <span className={s.sectionTitle}>اللوجو (اختياري)</span>
-              <Drop accept={IMAGE_TYPES} onFiles={openLogo} compact title={logo ? "غيّر اللوجو" : "حط اللوجو بتاعك"} />
+              <Drop accept={IMAGE_TYPES} onFiles={openLogo} compact title={logo ? "غيّر اللوجو" : "أضف اللوجو"} />
               {logo && <button type="button" className="btn ghost" onClick={() => setLogo(null)}>شيل اللوجو</button>}
               <Note>اللوجو بصيغة PNG شفافة بيطلع أحلى. ممكن تشيل خلفيته بأداة «إزالة الخلفية».</Note>
             </div>

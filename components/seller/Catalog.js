@@ -347,7 +347,7 @@ export default function Catalog() {
       <section className={s.card}>
         <div className={s.next}>
           <Link href="/photo-ad" className={s.nextCard}><i aria-hidden="true">📸</i><span><b>صوّرها بموبايلك</b><small>صور استوديو وإعلان كامل لأي منتج</small></span></Link>
-          <Link href="/test-ad" className={s.nextCard}><i aria-hidden="true">👥</i><span><b>جرّب إعلانك على 100 زبون</b><small>قبل ما تدفع في الإعلان</small></span></Link>
+          <Link href="/test-ad" className={s.nextCard}><i aria-hidden="true">👥</i><span><b>جرّب إعلانك على 100 عميل</b><small>قبل ما تدفع في الإعلان</small></span></Link>
         </div>
       </section>
 

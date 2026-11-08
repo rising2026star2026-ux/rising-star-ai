@@ -71,7 +71,7 @@ export default function ListingTool() {
     <div className={s.body}>
       <section className={s.card} aria-labelledby="ls-h">
         <h2 id="ls-h">قول عن منتجك بكلامك</h2>
-        <p className="lead" style={{ margin: "0 0 14px", color: "var(--muted)", fontSize: "0.9rem" }}>زي ما بتحكي لزبون في المحل. من غير تنسيق ولا إنجليزي.</p>
+        <p className="lead" style={{ margin: "0 0 14px", color: "var(--muted)", fontSize: "0.9rem" }}>زي ما بتشرح لعميل في المحل. من غير تنسيق ولا إنجليزي.</p>
 
         <div className={s.field}><MarketChips value={market} onChange={setMarket} /></div>
 
