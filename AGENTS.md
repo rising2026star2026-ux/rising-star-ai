@@ -11,7 +11,7 @@ Arabic-first AI hub for the Egyptian market, built with Next.js (App Router, Jav
 
 ## Rules
 
-- The interface is Arabic, right-to-left, written in Egyptian Arabic. Never show provider or model internals to visitors.
+- The interface is Arabic, right-to-left, written in Egyptian Arabic. Model and company names are shown where visitors pick a model (model cards, `/models`); never show keys, provider routing or raw provider errors.
 - Keys live only in Vercel environment variables. Refer to them by name (for example `SERPER_API_KEY`); never write a value into code, commits, chat or docs.
 - Numbers shown to customers (prices, scores, counts) are computed in code from real data. Models explain and filter; they never invent figures, sources or links.
 - Every paid call needs a per-visitor hourly limit (`rateLimiter` in `lib/groq.js`) and, where it can repeat, a cache.

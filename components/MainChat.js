@@ -129,7 +129,7 @@ function VerifyPanel({ v }) {
   );
 }
 
-export default function MainChat({ chatBots = null, project = null, initialMessages = null, onMessages, onAttach, onNewChat, onShowFiles, onStart, hero = null, barStart = null, placeholder = "" }) {
+export default function MainChat({ chatBots = null, project = null, initialMessages = null, onMessages, onAttach, onNewChat, onShowFiles, onStart, hero = null, barStart = null, placeholder = "", showcase = null }) {
   const inProject = !!project;
   const [messages, setMessages] = useState(() => (Array.isArray(initialMessages) ? initialMessages : []));
   const [input, setInput] = useState("");
@@ -620,6 +620,7 @@ export default function MainChat({ chatBots = null, project = null, initialMessa
                   <span aria-hidden="true">📁</span> عندك ملفات بترجعلها كتير؟ <b>اعمل مشروع</b> والمساعد يفتكرها في كل محادثة
                 </Link>
               )}
+              {showcase && !bot && !docs.length && <div className={s.showcase}>{showcase}</div>}
             </section>
           )
         ) : (

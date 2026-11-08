@@ -2,6 +2,7 @@ import MainChat from "@/components/MainChat";
 import { tools } from "@/lib/tools";
 import { resolveBots, publicBot } from "@/lib/botcatalog";
 import { CHAT_PICKS } from "@/lib/bots";
+import ChatShowcase from "@/components/ChatShowcase";
 
 export const metadata = {
   title: "الشات",
@@ -15,5 +16,7 @@ export const revalidate = 21600;
 export default async function ChatPage() {
   const all = await resolveBots();
   const picks = CHAT_PICKS.map((k) => all.find((b) => b.key === k)).filter((b) => b && b.available).map(publicBot);
-  return <MainChat chatBots={picks} />;
+  const models = all.filter((b) => ["official", "world", "free"].includes(b.section)).map(publicBot);
+  const assistants = all.filter((b) => b.section === "assistants").map(publicBot);
+  return <MainChat chatBots={picks} showcase={<ChatShowcase models={models} assistants={assistants} />} />;
 }

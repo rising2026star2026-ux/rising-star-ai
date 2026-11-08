@@ -718,3 +718,7 @@ button.fileChip:hover { border-color: var(--accent-line); }
 /* الزرارين الأزرق والأصفر ما يغطوش آخر الرد */
 .composerWrap { padding-top: 38px; }
 @media (max-width: 879px) { .composerWrap { bottom: env(safe-area-inset-bottom, 0px); } }
+
+/* رفوف الموديلات والأدوات والمساعدين تحت البداية (components/ChatShowcase.js)، وبتستخبى وقت الكتابة */
+.showcase { display: grid; gap: 30px; margin: 40px 0 8px; text-align: start; }
+.typingMode .showcase { display: none; }
