@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import s from "./sectioninfo.module.css";
 
-export default function SectionInfo({ name, can, soon }) {
+export default function SectionInfo({ name, can, soon, credit = null }) {
   const [open, setOpen] = useState(false);
   const btn = useRef(null);
   const panel = useRef(null);
@@ -19,7 +19,7 @@ export default function SectionInfo({ name, can, soon }) {
   return (
     <>
       <button ref={btn} type="button" className={s.fab} onClick={() => setOpen(true)} aria-haspopup="dialog">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v5M12 7.6v.1" /></svg>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v5M12 7.6v.1" /></svg>
         <span>إمكانيات القسم</span>
       </button>
       {open && (
@@ -34,6 +34,7 @@ export default function SectionInfo({ name, can, soon }) {
             <h3>في خطة التطوير</h3>
             <ul className={s.soon}>{soon.map((x) => <li key={x}>{x}</li>)}</ul>
             <p className={s.note}>دي خطط مش مواعيد. وعايز ميزة معينة؟ قولّنا من صفحة الدعم.</p>
+            {credit && <p className={s.note}>صورة الخلفية: <a href={credit.href} target="_blank" rel="noopener noreferrer">{credit.name} على Unsplash</a></p>}
           </div>
         </div>
       )}

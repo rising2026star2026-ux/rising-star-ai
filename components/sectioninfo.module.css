@@ -1,5 +1,5 @@
-.fab { flex: none; display: inline-flex; align-items: center; gap: 7px; padding: 8px 13px; border: 1px solid var(--sec); border-radius: 999px; background: #fff; color: var(--sec); font: inherit; font-size: var(--fs-md); font-weight: 700; cursor: pointer; }
-.fab:hover { background: var(--sec); color: #fff; }
+.fab { flex: none; display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border: 1px solid var(--line, var(--hairline-strong)); border-radius: 999px; background: transparent; color: var(--soft, var(--muted)); font: inherit; font-size: var(--fs-sm); font-weight: 500; cursor: pointer; transition: color 0.15s var(--ease), border-color 0.15s var(--ease); }
+.fab:hover { color: var(--sec); border-color: var(--sec); }
 .fab:focus-visible { outline: 2px solid var(--sec); outline-offset: 2px; }
 .scrim { position: fixed; inset: 0; z-index: 60; display: grid; place-items: end center; background: rgba(5, 5, 16, 0.55); }
 @media (min-width: 640px) { .scrim { place-items: center; } }
@@ -14,5 +14,6 @@
 .can li::before { content: "✓"; position: absolute; inset-inline-start: 0; color: var(--sec); font-weight: 800; }
 .soon li::before { content: "◌"; position: absolute; inset-inline-start: 0; color: var(--muted); }
 .note { margin: 16px 0 0; font-size: var(--fs-sm); color: var(--muted); }
+.note a { color: var(--sec); text-decoration: underline; text-underline-offset: 3px; }
 @media (prefers-reduced-motion: no-preference) { .panel { animation: up 0.22s var(--ease); } }
 @keyframes up { from { transform: translateY(14px); opacity: 0; } to { transform: none; opacity: 1; } }

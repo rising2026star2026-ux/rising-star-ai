@@ -40,14 +40,14 @@ export default function RootLayout({ children }) {
       <head>
         {/* وضع التخفيف: بيقفل المؤثرات الزخرفية على الأجهزة الضعيفة أو لما المستخدم يطلب تقليل الحركة أو توفير البيانات */}
         <script dangerouslySetInnerHTML={{ __html: "try{var n=navigator,c=n.connection||{};if(localStorage.getItem('rs:motion')==='off'||matchMedia('(prefers-reduced-motion: reduce)').matches||c.saveData||/(^|-)2g$/.test(c.effectiveType||'')||(n.deviceMemory&&n.deviceMemory<=2)||(n.hardwareConcurrency&&n.hardwareConcurrency<=2))document.documentElement.classList.add('lite')}catch(e){}" }} />
-        {/* الشاشة الافتتاحية بتظهر أول مرة في الجلسة بس */}
-        <script dangerouslySetInnerHTML={{ __html: "try{if(sessionStorage.getItem('rs:intro'))document.documentElement.classList.add('no-intro');if(localStorage.getItem('rs:side-mini')==='true')document.documentElement.classList.add('side-mini')}catch(e){}" }} />
+        {/* الشاشة الافتتاحية أول مرة في الجلسة بس، وشكل الكتابة اللي الزائر اختاره في شات الأقسام (rs:look) قبل ما الصفحة تترسم */}
+        <script dangerouslySetInnerHTML={{ __html: "try{if(sessionStorage.getItem('rs:intro'))document.documentElement.classList.add('no-intro');if(localStorage.getItem('rs:side-mini')==='true')document.documentElement.classList.add('side-mini');var l=JSON.parse(localStorage.getItem('rs:look')||'{}'),d=document.documentElement;if(/^(sm|md|lg)$/.test(l.size))d.setAttribute('data-look-size',l.size);if(/^(naskh|plex|almarai)$/.test(l.font))d.setAttribute('data-look-font',l.font);if(/^(light|warm|dark)$/.test(l.mode))d.setAttribute('data-look-mode',l.mode)}catch(e){}" }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         {/* الخط: IBM Plex Sans Arabic. لو غيرته، غيّر --ui في globals.css كمان */}
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Alexandria:wght@600;700;800;900&family=Archivo:wght@700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Alexandria:wght@600;700;800;900&family=Archivo:wght@700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400..700&family=Almarai:wght@400;700&display=swap"
         />
       </head>
       <body>

@@ -74,6 +74,7 @@
   --fs-lg: 1rem;
   --fs-xl: 1.125rem;
   --fs-hero: clamp(1.5rem, 5vw, 2.1rem); /* عناوين كروت الأقسام */
+  --fs-display: clamp(1.7rem, 6.6vw, 2.5rem); /* عنوان أول شاشة في شات الأقسام */
 }
 
 * { box-sizing: border-box; }
@@ -794,6 +795,11 @@ body.chat-mode {
   --chat-green-line: rgba(21, 128, 61, 0.35);
   background: #f1f7f3;
 }
+
+/* شات الأقسام: خلفية الصفحة حسب «شكل الكتابة» اللي الزائر اختاره (فاتح / دافئ / غامق) */
+body.chat-mode.sec-mode { --bg: #ffffff; background: #ffffff; }
+html[data-look-mode="warm"] body.chat-mode.sec-mode { --bg: #faf7f0; background: #faf7f0; }
+html[data-look-mode="dark"] body.chat-mode.sec-mode { --bg: #18191d; background: #18191d; color-scheme: dark; }
 
 /* زرار «توجه للشات المتخصص» في الباحث الأكاديمي والتجاري */
 .chat-jump { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 12px; padding: 10px 16px; border-radius: 999px; background: #15803d; color: #fff; font-weight: 600; font-size: var(--fs-base); text-decoration: none; box-shadow: 0 10px 24px -14px #15803d; transition: transform 0.2s ease; }

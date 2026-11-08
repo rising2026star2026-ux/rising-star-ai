@@ -4,6 +4,14 @@ import { SECTIONS, SECTION_BY_ID, ITEMS } from "@/lib/sections";
 import { SECTION_INFO } from "@/lib/sectioninfo";
 import SectionChat from "@/components/SectionChat";
 import SectionInfo from "@/components/SectionInfo";
+import { PORTALS } from "@/lib/portals";
+
+// الصورة من CDN بتاع Unsplash بمقاسات مختلفة (المتصفح بيختار المناسب للشاشة)
+const photoSet = (p) => {
+  if (!p) return null;
+  const u = (w) => `${p.base}?auto=format&fit=max&q=70&w=${w}`;
+  return { src: u(1280), srcSet: [640, 960, 1280, 1920].map((w) => `${u(w)} ${w}w`).join(", ") };
+};
 
 export function generateStaticParams() {
   return SECTIONS.filter((x) => x.id !== "chat").map((x) => ({ id: x.id }));
@@ -27,8 +35,8 @@ export default async function SectionPage({ params }) {
   return (
     <div style={{ "--sec": x.color }}>
       <Suspense fallback={null}>
-        <SectionChat section={id} name={x.name} tagline={x.tagline} headline={info.headline} sub={info.sub} starters={info.starters}>
-          <SectionInfo name={x.name} can={info.can} soon={info.soon} />
+        <SectionChat section={id} name={x.name} tagline={x.tagline} headline={info.headline} sub={info.sub} placeholder={info.placeholder} starters={info.starters} sources={id === "realestate" ? PORTALS.map((p) => p.name) : []} photo={photoSet(info.photo)}>
+          <SectionInfo name={x.name} can={info.can} soon={info.soon} credit={info.photo ? { name: info.photo.credit, href: info.photo.page } : null} />
         </SectionChat>
       </Suspense>
     </div>
