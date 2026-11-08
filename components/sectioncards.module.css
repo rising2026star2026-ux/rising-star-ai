@@ -1,0 +1,53 @@
+/* كروت القسم: صفوف بتتسحب بالعرض وتقف على كل كارت. ألوان الكارت من فئته (--c1 فاتح، --c2 غامق)،
+   فبتبان قوية على الفاتح والغامق. المقاسات من مقاييس الموقع. */
+.rows { display: grid; gap: 28px; margin-top: 36px; }
+.row { min-width: 0; }
+.head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; padding-inline: 2px; }
+.head h2 { margin: 0; font-family: var(--ui); font-size: calc(var(--fs-xl) * var(--k, 1)); font-weight: 600; line-height: 1.4; color: var(--ink, var(--text)); }
+.more { flex: none; font-size: var(--fs-sm); color: var(--soft, var(--muted)); text-decoration: none; }
+.more:hover { color: var(--ink, var(--text)); }
+
+.track {
+  display: flex; gap: 12px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: 16px;
+  margin: 0 -16px -18px; padding: 4px 16px 28px; scrollbar-width: none;
+}
+.track::-webkit-scrollbar { display: none; }
+@media (min-width: 880px) { .track { margin-inline: 0; padding-inline: 2px; scroll-padding-inline: 0; } }
+
+.card {
+  position: relative; isolation: isolate; overflow: hidden; flex: 0 0 clamp(180px, 52vw, 232px); aspect-ratio: 1.2; scroll-snap-align: start;
+  display: flex; flex-direction: column; gap: 3px; padding: 14px 15px 15px; color: #fff; text-decoration: none;
+  border-radius: var(--r-xl);
+  background:
+    radial-gradient(120% 85% at 90% 0%, color-mix(in srgb, var(--c1) 70%, #fff) 0%, transparent 58%),
+    linear-gradient(158deg, var(--c1) 0%, var(--c2) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 10px 20px -14px var(--c2);
+  transition: transform 0.18s var(--ease), box-shadow 0.18s var(--ease);
+}
+.card:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 14px 22px -14px var(--c2); }
+.card:active { transform: scale(0.97); }
+.card:focus-visible { outline: 2px solid var(--c1); outline-offset: 3px; }
+.mark { position: absolute; z-index: -1; inset-block-start: -22px; inset-inline-end: -26px; opacity: 0.17; color: #fff; }
+/* كروت نفس الفئة جنب بعض: الإضاءة والأيقونة الكبيرة في مكان مختلف عشان الصف ما يبقاش نسخة واحدة */
+.card:nth-child(even) { background: radial-gradient(110% 80% at 10% 100%, color-mix(in srgb, var(--c1) 70%, #fff) 0%, transparent 55%), linear-gradient(200deg, var(--c1) 0%, var(--c2) 100%); }
+.card:nth-child(even) .mark { inset-block-start: auto; inset-block-end: -34px; transform: rotate(-14deg); }
+.badge {
+  width: 40px; height: 40px; margin-bottom: auto; display: grid; place-items: center; border-radius: 50%;
+  background: #fff; color: var(--c2); box-shadow: 0 6px 14px -6px rgba(0, 0, 0, 0.45);
+}
+.card b { font-size: calc(var(--fs-lg) * var(--k, 1)); font-weight: 600; line-height: 1.45; }
+.desc {
+  font-size: var(--fs-xs); line-height: 1.65; color: rgba(255, 255, 255, 0.86);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+.recent {
+  flex: 0 0 clamp(160px, 46vw, 210px); scroll-snap-align: start; display: grid; gap: 8px; align-content: start; padding: 12px 14px;
+  border-radius: var(--r-lg); background: var(--card, #fff); border: 1px solid var(--line, var(--hairline)); color: var(--ink, var(--text)); text-decoration: none;
+  font-size: var(--fs-sm); line-height: 1.6;
+}
+.recent svg { color: var(--sec); }
+.recent span { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.recent:hover { border-color: var(--sec); }
+
+@media (prefers-reduced-motion: reduce) { .card, .card:hover, .card:active { transition: none; transform: none; } }

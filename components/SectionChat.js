@@ -5,6 +5,7 @@ import { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Md from "./Md";
 import LookButton from "./LookButton";
+import SectionCards from "./SectionCards";
 import { enterSends } from "@/lib/keys";
 import { getChat, newChatId, saveChat, setActive } from "@/lib/secchats";
 import { toast } from "@/lib/store";
@@ -71,7 +72,7 @@ function Card({ c, best }) {
   );
 }
 
-export default function SectionChat({ section, name, tagline, headline, sub, placeholder, starters = [], sources = [], photo = null, children }) {
+export default function SectionChat({ section, name, tagline, headline, sub, placeholder, starters = [], sources = [], photo = null, rows = [], children }) {
   const params = useSearchParams();
   const auto = sources.length > 0; // العقاري: البحث في المواقع تلقائي مع كل طلب
   const [msgs, setMsgs] = useState([]);
@@ -333,6 +334,7 @@ export default function SectionChat({ section, name, tagline, headline, sub, pla
             )}
             {error && <div className={s.error} role="alert">{error}</div>}
           </div>
+          <SectionCards section={section} rows={rows} />
           <div className={s.fill} aria-hidden="true" />
           {starters.length > 0 && (
             <div className={s.starters}>
@@ -343,7 +345,13 @@ export default function SectionChat({ section, name, tagline, headline, sub, pla
         </>
       ) : (
         <>
-          <div className={s.bar}><b>{name}</b>{children}</div>
+          <div className={s.bar}>
+            <b>{name}</b>
+            <span className={s.barActs}>
+              <button type="button" className={s.newChat} onClick={() => { reset(); window.history.replaceState(null, "", window.location.pathname); }}>+ محادثة جديدة</button>
+              {children}
+            </span>
+          </div>
           <div className={s.thread} aria-live="polite" data-clarity-mask="True">
             {msgs.map((m, i) => (m.role === "user"
               ? <div key={i} className={s.user}><p dir="auto">{m.content}</p></div>

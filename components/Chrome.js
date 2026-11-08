@@ -13,7 +13,6 @@ import BotIcon from "./BotIcon";
 import { RES_CATS } from "@/lib/resources";
 import { BOTS } from "@/lib/bots";
 import { SECTIONS, ITEMS, itemHref, sectionHome } from "@/lib/sections";
-import { chatsKey, activeKey } from "@/lib/secchats";
 import useSection from "./useSection";
 
 const I = { viewBox: "0 0 24 24", width: 20, height: 20, fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true };
@@ -121,26 +120,6 @@ export default function Chrome() {
   );
 }
 
-// محادثات القسم الحالي (محفوظة على جهاز الزائر)
-function SecChats({ id, color }) {
-  const [list] = useStored(chatsKey(id), []);
-  const [active] = useStored(activeKey(id), "");
-  const items = Array.isArray(list) ? list.slice(0, 8) : [];
-  if (!items.length) return null;
-  return (
-    <div className="side-label" style={{ "--sec": color }}>
-      <div className="side-sec">محادثاتك في القسم</div>
-      <nav className="side-nav">
-        {items.map((c) => (
-          <Link key={c.id} href={`/s/${id}?c=${c.id}`} className={`side-link${active === c.id ? " on" : ""}`} title={c.title}>
-            <span className="side-label" dir="auto" style={{ overflow: "hidden", textOverflow: "ellipsis" }}>{c.title}</span>
-          </Link>
-        ))}
-      </nav>
-    </div>
-  );
-}
-
 // اللوحة الجانبية: ثابتة على الكمبيوتر (وبتتصغّر لأيقونات)، ودرج بيطلع من الجنب على الموبايل
 function Sidebar({ open, onClose, onSettings, onSearch }) {
   const pathname = usePathname() || "/";
@@ -198,7 +177,8 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
                   <span className="side-label">{section.chatLabel || `شات ${section.name}`}</span>
                 </Link>
               )}
-              {section.items.map((h) => {
+              {/* أدوات الأقسام ومحادثاتها بقت كروت جوه صفحة القسم نفسها؛ الشات العام بس لسه بيعرض أدواته هنا */}
+              {section.id === "chat" && section.items.map((h) => {
                 const n = NAV.find((x) => x.href === h);
                 if (!n) return null;
                 if (n.folder) return (
@@ -236,8 +216,6 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
                 <span className="side-label">ابحث عن أداة</span>
               </button>
             </nav>
-
-            {section.id !== "chat" && <SecChats id={section.id} color={section.color} />}
 
             {section.id === "chat" && (
               <>

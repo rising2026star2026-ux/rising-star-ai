@@ -19,6 +19,9 @@
 .top, .bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .top b, .bar b { font-size: var(--fs-md); font-weight: 600; color: var(--sec); }
 .bar { padding: 12px 2px 4px; }
+.barActs { display: flex; align-items: center; gap: 8px; }
+.newChat { padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--soft); font: inherit; font-size: var(--fs-sm); cursor: pointer; }
+.newChat:hover { color: var(--sec); border-color: var(--sec); }
 
 /* ---------- الشاشة الأولى ---------- */
 .hero { position: relative; display: flex; flex-direction: column; gap: 22px; padding: 14px 2px 0; }

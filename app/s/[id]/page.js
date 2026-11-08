@@ -5,6 +5,7 @@ import { SECTION_INFO } from "@/lib/sectioninfo";
 import SectionChat from "@/components/SectionChat";
 import SectionInfo from "@/components/SectionInfo";
 import { PORTALS } from "@/lib/portals";
+import { sectionRows } from "@/lib/sectioncards";
 
 // الصورة من CDN بتاع Unsplash بمقاسات مختلفة (المتصفح بيختار المناسب للشاشة)
 const photoSet = (p) => {
@@ -35,7 +36,7 @@ export default async function SectionPage({ params }) {
   return (
     <div style={{ "--sec": x.color }}>
       <Suspense fallback={null}>
-        <SectionChat section={id} name={x.name} tagline={x.tagline} headline={info.headline} sub={info.sub} placeholder={info.placeholder} starters={info.starters} sources={id === "realestate" ? PORTALS.map((p) => p.name) : []} photo={photoSet(info.photo)}>
+        <SectionChat section={id} name={x.name} tagline={x.tagline} headline={info.headline} sub={info.sub} placeholder={info.placeholder} starters={info.starters} sources={id === "realestate" ? PORTALS.map((p) => p.name) : []} photo={photoSet(info.photo)} rows={sectionRows(id)}>
           <SectionInfo name={x.name} can={info.can} soon={info.soon} credit={info.photo ? { name: info.photo.credit, href: info.photo.page } : null} />
         </SectionChat>
       </Suspense>
