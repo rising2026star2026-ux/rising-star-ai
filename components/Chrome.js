@@ -43,7 +43,7 @@ const NAV = [
   { href: "/learn", label: "تعلّم الذكاء الاصطناعي", tone: "learn", match: ["/learn"], icon: <svg {...I}><path d="M3 9l9-4.5L21 9l-9 4.5z" /><path d="M7 11.2v4.3c0 1.2 2.2 2.5 5 2.5s5-1.3 5-2.5v-4.3M21 9v5.5" /></svg> },
   { href: "/news", label: "جديد الذكاء الاصطناعي", tone: "news", match: ["/news"], icon: <svg {...I}><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z" /></svg> },
   { href: "/flows", label: "المهام الكاملة", match: ["/flows", "/flow/"], icon: <svg {...I}><rect x="3" y="4" width="7" height="5" rx="1.5" /><rect x="14" y="15" width="7" height="5" rx="1.5" /><path d="M6.5 9v3.5a2 2 0 002 2h7v.5" /></svg> },
-  { href: "/realestate/chat", label: "الشات العقاري", match: ["/realestate/chat"], icon: <svg {...I}><path d="M20.5 11.5a8.3 8.3 0 01-8.9 8.3L3.5 21l1.1-3.5A8.3 8.3 0 1120.5 11.5z" /></svg> },
+  { href: "/realestate/chat", label: "المستشار العقاري", match: ["/realestate/chat"], icon: <svg {...I}><path d="M20.5 11.5a8.3 8.3 0 01-8.9 8.3L3.5 21l1.1-3.5A8.3 8.3 0 1120.5 11.5z" /></svg> },
   { href: "/prompts/studio", label: "استوديو البرومبتات", match: ["/prompts/studio"], icon: <svg {...I}><path d="M12 3.5l1.8 4.7 4.7 1.8-4.7 1.8L12 16.5l-1.8-4.7L5.5 10l4.7-1.8z" /><path d="M18 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" /></svg> },
   { href: "/history", label: "السجل", icon: <svg {...I}><circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" /></svg> },
   { href: "/subscriptions", label: "مقارن الاشتراكات", match: ["/subscriptions", "/scam-check"], icon: <svg {...I}><path d="M12 3.5l7 3v5c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9v-5z" /><path d="M9 12l2.2 2.2L15.5 10" /></svg> },
@@ -193,9 +193,9 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
             </div>
             <nav className="side-nav" style={{ "--sec": section.color }}>
               {section.id !== "chat" && (
-                <Link href={`/s/${section.id}`} className={`side-link${pathname === `/s/${section.id}` ? " on" : ""}`} title={`شات ${section.name}`} aria-current={pathname === `/s/${section.id}` ? "page" : undefined}>
+                <Link href={`/s/${section.id}`} className={`side-link${pathname === `/s/${section.id}` ? " on" : ""}`} title={section.chatLabel || `شات ${section.name}`} aria-current={pathname === `/s/${section.id}` ? "page" : undefined}>
                   <svg {...I}><path d="M21 11.5a8.4 8.4 0 01-9 8.4L3 21l1.1-3.6A8.4 8.4 0 1121 11.5z" /></svg>
-                  <span className="side-label">شات {section.name}</span>
+                  <span className="side-label">{section.chatLabel || `شات ${section.name}`}</span>
                 </Link>
               )}
               {section.items.map((h) => {

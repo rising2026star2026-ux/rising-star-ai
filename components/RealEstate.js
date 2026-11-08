@@ -300,7 +300,7 @@ function Researcher() {
           <p className={s.disclaimer}>{DISCLAIMER}</p>
           {!busy && (
             <>
-              <Link href="/realestate/chat" className="chat-jump"><span aria-hidden="true">💬</span> ناقش التقرير في الشات العقاري<small>اسأل عن المنطقة والسعر والعقد والتفاوض</small></Link>
+              <Link href="/realestate/chat" className="chat-jump"><span aria-hidden="true">💬</span> ناقش التقرير مع المستشار العقاري<small>اسأل عن المنطقة والسعر والعقد والتفاوض</small></Link>
               <ShareBar text={reportText} title="تقرير عقاري" getHtml={() => {
                 const esc = (x) => String(x).replace(/[<>&]/g, "");
                 const where = [data?.form.district, data?.form.city].filter(Boolean).join("، ");

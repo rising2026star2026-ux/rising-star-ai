@@ -38,7 +38,7 @@ const MODES = {
     ],
   },
   realestate: {
-    title: "الشات العقاري",
+    title: "المستشار العقاري",
     sub: "اسأل عن منطقة أو وحدة أو عقد. كل رد بيدوّر في سوق العقارات المصري ويعتمد على أرقام تقريرك.",
     back: { href: "/realestate", label: "الباحث العقاري" },
     store: "srcchat-realestate",

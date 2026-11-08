@@ -16,7 +16,7 @@ export default function RealEstatePage() {
     <>
       <h1 className="page-title">الباحث العقاري</h1>
       <p className="page-sub">قولّي المنطقة والنوع وهدفك، وهجيبلك أسعار المتر والإيجار من الإعلانات بمصادرها، وأحسبلك الكاش والتقسيط والعائد، وأقارن الوحدات بتقييم من 100. مستشار محايد، مش سمسار.</p>
-      <Link href="/realestate/chat" className="chat-jump"><span aria-hidden="true">💬</span> توجه للشات المتخصص<small>الشات العقاري: اسأل عن منطقة أو سعر أو عقد</small></Link>
+      <Link href="/realestate/chat" className="chat-jump"><span aria-hidden="true">💬</span> توجه للمستشار العقاري<small>اسأل عن منطقة أو سعر أو عقد</small></Link>
       <RealEstate />
     </>
   );
