@@ -1,0 +1,192 @@
+⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+   ▲ Next.js 15.5.29
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 15.4s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/1124) ...
+   Generating static pages (281/1124) 
+   Generating static pages (562/1124) 
+   Generating static pages (843/1124) 
+ ✓ Generating static pages (1124/1124)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS  Revalidate  Expire
+┌ ○ /                                    5.62 kB         131 kB
+├ ○ /_not-found                             1 kB         105 kB
+├ ○ /agents                                437 B         108 kB
+├ ● /agents/[id]                         2.13 kB         161 kB
+├   ├ /agents/research
+├   ├ /agents/market
+├   ├ /agents/compare
+├   └ [+3 more paths]
+├ ● /ai/[slug]                             991 B         108 kB
+├   ├ /ai/taskade
+├   ├ /ai/runwayml
+├   ├ /ai/aiva
+├   └ [+588 more paths]
+├ ○ /amazon                              1.58 kB         109 kB
+├ ○ /amazon/check                          196 B         122 kB
+├ ○ /amazon/competitor                   2.71 kB         121 kB
+├ ○ /amazon/listing                      3.54 kB         125 kB
+├ ○ /amazon/profit                       3.39 kB         121 kB
+├ ƒ /api/ad-pack                           240 B         104 kB
+├ ƒ /api/adcopy                            240 B         104 kB
+├ ƒ /api/agent                             240 B         104 kB
+├ ƒ /api/amazon/check                      240 B         104 kB
+├ ƒ /api/amazon/competitor                 240 B         104 kB
+├ ƒ /api/amazon/listing                    240 B         104 kB
+├ ƒ /api/brand-fill                        240 B         104 kB
+├ ƒ /api/catalog-copy                      240 B         104 kB
+├ ƒ /api/chat                              240 B         104 kB
+├ ƒ /api/feasibility                       240 B         104 kB
+├ ƒ /api/image                             240 B         104 kB
+├ ƒ /api/logo-gen                          240 B         104 kB
+├ ƒ /api/market-check                      240 B         104 kB
+├ ƒ /api/or-media                          240 B         104 kB
+├ ƒ /api/pexels                            240 B         104 kB
+├ ƒ /api/podcast                           240 B         104 kB
+├ ƒ /api/pro                               240 B         104 kB
+├ ƒ /api/product-eye                       240 B         104 kB
+├ ƒ /api/prompt-en                         240 B         104 kB
+├ ƒ /api/prompt-gen                        240 B         104 kB
+├ ƒ /api/prompt-studio                     240 B         104 kB
+├ ƒ /api/proofread                         240 B         104 kB
+├ ƒ /api/realestate                        240 B         104 kB
+├ ƒ /api/reel                              240 B         104 kB
+├ ƒ /api/research                          240 B         104 kB
+├ ƒ /api/run                               240 B         104 kB
+├ ƒ /api/scam-scan                         240 B         104 kB
+├ ƒ /api/section-chat                      240 B         104 kB
+├ ƒ /api/seller-agent                      240 B         104 kB
+├ ƒ /api/source-chat                       240 B         104 kB
+├ ƒ /api/speak                             240 B         104 kB
+├ ƒ /api/speak-pro                         240 B         104 kB
+├ ƒ /api/support                           240 B         104 kB
+├ ƒ /api/test-ad                           240 B         104 kB
+├ ƒ /api/transcribe                        240 B         104 kB
+├ ƒ /api/transcribe-long                   240 B         104 kB
+├ ƒ /api/tts                               240 B         104 kB
+├ ƒ /api/verify                            240 B         104 kB
+├ ƒ /api/vision                            240 B         104 kB
+├ ƒ /api/vscript                           240 B         104 kB
+├ ○ /brand                               16.9 kB         124 kB
+├ ○ /catalog                             12.1 kB         123 kB
+├ ○ /chat                                1.07 kB         214 kB          6h      1y
+├ ○ /compare                             6.97 kB         161 kB          6h      1y
+├ ○ /creators                              404 B         108 kB
+├ ● /creators/[slug]                       404 B         108 kB
+├   ├ /creators/omar-alshal
+├   ├ /creators/ahmed-shaffik
+├   ├ /creators/hossam-hassan
+├   └ [+17 more paths]
+├ ○ /feasibility                         7.45 kB         179 kB
+├ ○ /feasibility/chat                      139 B         175 kB
+├ ● /flow/[id]                           6.37 kB         188 kB
+├   ├ /flow/product-launch
+├   ├ /flow/short-video
+├   ├ /flow/youtube-video
+├   └ [+6 more paths]
+├ ○ /flows                                 511 B         108 kB
+├ ○ /global-tools                        1.09 kB         109 kB
+├ ● /global-tools/[cat]                  3.43 kB         111 kB
+├   ├ /global-tools/chatbots
+├   ├ /global-tools/writing
+├   ├ /global-tools/copywriting
+├   └ [+37 more paths]
+├ ○ /global-tools/alternatives             452 B         108 kB
+├ ○ /history                               881 B         131 kB
+├ ○ /icon.svg                                0 B            0 B
+├ ○ /lab/remotion                        1.84 kB         109 kB
+├ ○ /learn                                 423 B         108 kB
+├ ○ /library                             2.56 kB         110 kB
+├ ● /library/[slug]                       3.5 kB         111 kB
+├   ├ /library/flux-schnell
+├   ├ /library/flux-dev
+├   ├ /library/qwen-image
+├   └ [+111 more paths]
+├ ○ /maker                               1.22 kB         109 kB
+├ ● /maker/[slug]                        5.13 kB         113 kB
+├   ├ /maker/pollinations
+├   ├ /maker/perchance
+├   ├ /maker/raphael-ai
+├   └ [+38 more paths]
+├ ○ /maker/create                        6.02 kB         114 kB
+├ ○ /manifest.webmanifest                  240 B         104 kB
+├ ○ /map                                   305 B         108 kB
+├ ○ /market-check                        5.45 kB         113 kB
+├ ○ /models                              3.82 kB         111 kB          6h      1y
+├ ○ /models/all                          1.98 kB         109 kB          6h      1y
+├ ƒ /models/studio                       5.45 kB         113 kB
+├ ○ /my-tools                            14.2 kB         118 kB
+├ ○ /news                                 1.3 kB         105 kB
+├ ○ /photo-ad                            15.4 kB         126 kB
+├ ○ /plans                                 166 B         108 kB
+├ ● /program/[key]                       1.58 kB         109 kB
+├   ├ /program/chatgpt
+├   ├ /program/claude
+├   ├ /program/gemini
+├   └ [+68 more paths]
+├ ○ /projects                            7.01 kB         115 kB
+├ ƒ /projects/[id]                       8.74 kB         222 kB
+├ ○ /prompts                             2.14 kB         133 kB
+├ ○ /prompts/builder                       175 B         127 kB
+├ ○ /prompts/studio                      7.29 kB         132 kB
+├ ○ /realestate                          17.1 kB         176 kB
+├ ○ /realestate/chat                       138 B         175 kB
+├ ○ /research                            10.7 kB         170 kB
+├ ○ /research/chat                         139 B         175 kB
+├ ○ /resources                             611 B         108 kB
+├ ● /resources/[cat]                       611 B         108 kB
+├   ├ /resources/canva
+├   ├ /resources/social
+├   ├ /resources/psd
+├   └ [+6 more paths]
+├ ○ /robots.txt                            240 B         104 kB
+├ ● /s/[id]                              9.77 kB         164 kB
+├   ├ /s/realestate
+├   ├ /s/seller
+├   ├ /s/academic
+├   └ /s/aiwork
+├ ○ /scam-check                          4.69 kB         112 kB
+├ ○ /seller                                 1 kB         109 kB
+├ ○ /seller/agent                        14.9 kB         127 kB
+├ ○ /sitemap.xml                           240 B         104 kB
+├ ○ /subscriptions                       3.03 kB         120 kB
+├ ○ /subscriptions/calculator            2.36 kB         120 kB
+├ ○ /subscriptions/receipt               11.7 kB         129 kB
+├ ○ /support                             2.62 kB         153 kB
+├ ○ /survey                              3.44 kB         108 kB
+├ ● /task/[slug]                         3.43 kB         111 kB
+├   ├ /task/logo
+├   ├ /task/resume
+├   ├ /task/translate
+├   └ [+27 more paths]
+├ ○ /tasks                                 611 B         108 kB
+├ ○ /test-ad                             12.1 kB         120 kB
+├ ● /tool/[id]                           11.8 kB         171 kB
+├   ├ /tool/article
+├   ├ /tool/rewrite
+├   ├ /tool/summarize
+├   └ [+86 more paths]
+├ ○ /tools                                2.9 kB         133 kB
+└ ○ /voice-post                           8.3 kB         116 kB
++ First Load JS shared by all             104 kB
+  ├ chunks/1255-d8a1861c775d9bcc.js      46.3 kB
+  ├ chunks/4bd1b696-100b9d70ed4e49c1.js  54.2 kB
+  └ other shared chunks (total)          3.59 kB
+
+
+ƒ Middleware                             34.2 kB
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

@@ -1,0 +1,9 @@
+{
+  "ok": false,
+  "notes": [
+    "status 200 search=empty sources=0 model=gemini/gemini-flash-lite-latest",
+    "why: gemini-flash-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate- | gemini-flash-lite-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate- | ddg: ok but 0 resul",
+    "domains: ",
+    "مش قادر أؤكد سعر الدولار النهاردة لعدم توفر نتايج بحث محدثة، لكن آخر متوسط رسمي أعلنه البنك المركزي المصري استقر فيه الدولار تقريباً عند حوالي **٤٧.٥٠ إلى ٤٨.٥٠ جنيه مصري** خلال الفترة الماضية. \n\n## أسباب تذبذب السعر\n* تطبيق **مرونة سعر الصرف** اللي أعلنها البنك المركزي في مارس ٢٠٢٤ لتحديد السعر بناءً على آليات العرض والطلب.\n* حجم **تدفقات النقد الأجنبي** الناتجة عن الصفقات الكبرى مثل مشروع تطوير "
+  ]
+}
