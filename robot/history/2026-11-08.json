@@ -1,0 +1,48 @@
+{
+ "date": "2026-11-08T05:30:11.314Z",
+ "total": 523,
+ "ok": 501,
+ "broken": [
+  "/tool/rewrite",
+  "/tool/proofread",
+  "/tool/marketing-plan",
+  "/tool/post",
+  "/tool/proposal",
+  "/tool/review-reply",
+  "/tool/product-desc",
+  "/tool/quiz",
+  "/tool/math-solver",
+  "/tool/poem",
+  "/tool/report",
+  "feature:voice-post",
+  "feature:photo-ad",
+  "feature:amazon-listing",
+  "feature:amazon-competitor",
+  "feature:amazon-check",
+  "feature:prompt-builder",
+  "feature:image-reader",
+  "feature:chat-search"
+ ],
+ "warn": 3,
+ "spacesDown": [
+  "aryadytm-remove-photo-object",
+  "multimodalart-logo-in-context",
+  "eccv2022-dis-background-removal",
+  "doevent-face-real-esrgan",
+  "stepfun-ai-step1x-3d"
+ ],
+ "aiTested": [
+  "/tool/logo-ideas",
+  "/tool/marketing-plan",
+  "/tool/math-solver",
+  "/tool/poem",
+  "/tool/post",
+  "/tool/product-desc",
+  "/tool/proofread",
+  "/tool/proposal",
+  "/tool/quiz",
+  "/tool/report",
+  "/tool/review-reply",
+  "/tool/rewrite"
+ ]
+}
