@@ -7,6 +7,7 @@ import { getAgent } from "@/lib/agents";
 import { getModel } from "@/lib/models";
 import { fail, clientIp, rateLimiter, chainFor, quickChain, completeOnce, streamFromGroq } from "@/lib/groq";
 import { webSearch, searchProvider } from "@/lib/websearch";
+import { THINKING_BLOCK } from "@/lib/thinking";
 
 export const maxDuration = 120;
 const tooMany = rateLimiter(12); // الوكيل أتقل من الأداة العادية: 12 تشغيل في الساعة لكل زائر
@@ -37,7 +38,7 @@ async function readPage(url) {
 
 async function planQueries(agent, inputText, signal) {
   const msg = [
-    { role: "system", content: `انت مخطط بحث. ${agent.plan}\nرجّع JSON بس بالشكل ده: {"q":["...","...","..."]} من غير أي كلام تاني.` },
+    { role: "system", content: `انت مخطط بحث. الخطوة الأولى في تفكيرك: افهم الطلب بالظبط وحدد أدق جمل بحث تجيب داتا حقيقية حالية (مش عامة). ${agent.plan}\nرجّع JSON بس بالشكل ده: {"q":["...","...","..."]} من غير أي كلام تاني.` },
     { role: "user", content: inputText },
   ];
   for (const m of quickChain().slice(0, 4)) {
@@ -102,7 +103,7 @@ export async function POST(req) {
 
         send({ t: "step", m: "بكتب النتيجة…" });
         const today = new Date().toLocaleDateString("ar-EG", { timeZone: "Africa/Cairo", dateStyle: "full" });
-        const system = `انت «${agent.name}» على موقع Rising StarAi. تاريخ النهارده: ${today}.\n${agent.write}\n${
+        const system = `انت «${agent.name}» على موقع Rising StarAi. تاريخ النهارده: ${today}.\n${THINKING_BLOCK}\n\n${agent.write}\n${
           context ? "اعتمد على المصادر اللي تحت أولاً، وما تخترعش أرقام أو أسعار مش موجودة فيها." : "مفيش بحث في الإنترنت متاح دلوقتي. اكتب في أول سطر بالظبط: «⚠️ البحث في الإنترنت مش متاح دلوقتي، فدي معلومات عامة ممكن تكون مش محدثة.» وما تذكرش اسم أي موديل أو تاريخ تدريب. ممنوع تخترع أسماء محلات أو شركات أو أسعار محددة أو مصادر أو دراسات: اكتب أنواع وفئات ونطاقات تقريبية بس، وقول إنها تقديرية."
         }`;
         const messages = [{ role: "system", content: system }, { role: "user", content: context ? `${inputText}\n\nالمصادر:\n${context}` : inputText }];
