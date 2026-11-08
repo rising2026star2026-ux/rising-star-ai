@@ -1,31 +1,576 @@
 {
- "updated": "2026-11-06T05:29:36.363Z",
+ "updated": "2026-11-08T05:22:49.789Z",
  "providers": [
   "gemini",
   "groq",
   "openrouter"
  ],
- "used": {},
+ "used": {
+  "gemini": 5
+ },
  "feeds": {
   "deepmind": "ok 11",
-  "openai": "ok 86",
-  "verge": "ok 10",
-  "techcrunch": "ok 20",
-  "nvidia": "ok 18",
-  "aws": "ok 20",
-  "huggingface": "ok 27",
+  "openai": "ok 82",
   "apple": "ok 10",
+  "techcrunch": "ok 20",
+  "aws": "ok 20",
+  "huggingface": "ok 26",
+  "verge": "ok 10",
+  "meta": "ok 9",
+  "nvidia": "ok 18",
   "marktechpost": "ok 10",
-  "google-ai": "ok 6",
+  "google-research": "ok 9",
+  "google-ai": "ok 5",
   "techwd": "ok 1",
   "arstechnica": "ok 20",
-  "microsoft": "ok 10",
-  "meta": "ok 9",
-  "aitnews": "FAIL HTTP 403",
-  "venturebeat": "FAIL HTTP 429",
-  "google-research": "ok 10"
+  "aitnews": "ok 3",
+  "microsoft": "ok 9",
+  "venturebeat": "FAIL HTTP 429"
  },
  "items": [
+  {
+   "id": "15fd7ad56b7b",
+   "url": "https://www.marktechpost.com/2026/11/07/nous-research-arete-27b-qwen3-8-27b-propaganda-fine-tune/",
+   "title": "Nous Research Releases Arete-27B that Cuts Qwen3.8-27B Propaganda From 22% to 0.9%",
+   "date": "2026-11-08T04:45:59.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "Nous Research تطلق نموذج Arete-27B",
+    "summary": "شركة Nous Research نزّلت نموذج Arete-27B المبني على Qwen3.8-27B، وقدر يقلل إجابات البروباجندا من 22% لـ 0.9% بس، مع الحفاظ على نفس الأداء في Hermes Bench."
+   }
+  },
+  {
+   "id": "ed263cbbe1a4",
+   "url": "https://techcrunch.com/2026/11/07/after-the-midterms-things-are-looking-rocky-for-elon-musk-and-data-centers/",
+   "title": "After the midterms, things are looking rocky for Elon Musk and data centers",
+   "date": "2026-11-07T22:07:22.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "تأثير انتخابات التجديد النصفي على قطاع التكنولوجيا",
+    "summary": "حلقة بودكاست Equity ناقشت إيه اللي بتعنيه انتخابات التجديد النصفي لمجال التكنولوجيا، وليه الوضع شكله هيكون متلخبط شوية لـ Elon Musk ومراكز البيانات."
+   }
+  },
+  {
+   "id": "69c75581d56f",
+   "url": "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo/",
+   "title": "Megaspeed exec was recruited to spy on Nvidia CEO, according to US intelligence memo",
+   "date": "2026-11-07T21:17:08.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "شبهات تجسس صيني على رئيس Nvidia التنفيذي",
+    "summary": "مذكرة استخبارات أمريكية أفادت بأن وزارة أمن الدولة الصينية جنّدت مديرة تنفيذية في شركة Megaspeed عشان تتجسس على الرئيس التنفيذي لشركة Nvidia."
+   }
+  },
+  {
+   "id": "92f859ede504",
+   "url": "https://www.marktechpost.com/2026/11/07/coding-guide-nvidia-dory-4b-llama-cpp/",
+   "title": "How to Run NVIDIA Dory 4B with llama.cpp: Loop by Loop Guide",
+   "date": "2026-11-07T19:22:44.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "دليل تشغيل نموذج Dory 4B من NVIDIA",
+    "summary": "نزل دليل بيشرح خطوة بخطوة إزاي تشغل نموذج Dory 1.0 4B التابع لـ NVIDIA باستخدام llama.cpp، مع تحليل استهلاك المعالجة واختبار الذاكرة المؤقتة."
+   }
+  },
+  {
+   "id": "fa06ff8fdc83",
+   "url": "https://www.theverge.com/tech/1029489/nyt-cooking-ai-assistant-review",
+   "title": "NYT Cooking’s AI assistant saved my weeknight chicken, but almost ruined my cake",
+   "date": "2026-11-07T15:47:15.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "تجربة المساعد الذكي لـ NYT Cooking",
+    "summary": "المساعد الذكي بتاع NYT Cooking أنقذ وجبة فراخ سريعة للعشا، لكنه في نفس الوقت كان هيضيّع وصفة الكيكة."
+   }
+  },
+  {
+   "id": "73be1ddc7ff2",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government",
+   "title": "The US let Nvidia sell chips to an empty office in China",
+   "date": "2026-11-07T15:43:45.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "مخاوف من بيع رقائق Nvidia لشركة بمكاتب فاضية",
+    "summary": "ظهرت مخاوف لعدم قيام Nvidia ووزارة التجارة بالفحص الكافي للشركات الصينية المصرح لها بالحصول على رقائق H200، بعد ما اتضح إن مكاتب شركة New Matrix المعتمدة عبارة عن مقرات فاضية تماماً."
+   }
+  },
+  {
+   "id": "769471a70415",
+   "url": "https://www.tech-wd.com/wd/2026/11/07/google-%d8%aa%d8%b9%d9%85%d9%84-%d8%b9%d9%84%d9%89-%d9%88%d8%b6%d8%b9-gemini-live-%d8%af%d9%88%d9%86-%d8%a5%d9%86%d8%aa%d8%b1%d9%86%d8%aa-%d9%8a%d8%aa%d8%b7%d9%84%d8%a8-%d8%a5%d8%b9%d8%af%d8%a7%d8%af/",
+   "title": "Google تعمل على وضع Gemini Live دون إنترنت يتطلب إعدادا أوليا بالاتصال",
+   "date": "2026-11-07T12:16:07.000Z",
+   "src": "تك وورلد",
+   "srcId": "techwd",
+   "kind": "arabic",
+   "ar": {
+    "title": "Google تعمل على وضع Gemini Live دون إنترنت يتطلب إعدادا أوليا بالاتصال",
+    "summary": ""
+   }
+  },
+  {
+   "id": "d8e02d11382d",
+   "url": "https://www.marktechpost.com/2026/11/07/buoyant-kinference-open-source-inference-control-plane-kubernetes-vllm/",
+   "title": "Buoyant Releases Kinference: An Open Source Inference Control Plane for Kubernetes and vLLM",
+   "date": "2026-11-07T08:16:33.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "Buoyant تطلق Kinference لإدارة الاستدلال",
+    "summary": "أطلقت Buoyant نظام Kinference مفتوح المصدر لدعم vLLM على Kubernetes، وقدر يقلل وقت الاستجابة المبدئي TTFT بنسبة 95% في تجاربهم."
+   }
+  },
+  {
+   "id": "055e03fe8fc4",
+   "url": "https://www.theverge.com/podcast/1029038/ai-cybersecurity-hackers-data-breach-dark-age-alex-stamos",
+   "title": "AI broke the cybersecurity world. What’s next?",
+   "date": "2026-11-07T05:43:11.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "نقاش حول تأثير الذكاء الاصطناعي على الأمن السيبراني",
+    "summary": "حوار جديد مع Alex Stamos، المسؤول الأمني في Cognition، بيناقش فيه المشاكل واللخبطة اللي عملها الذكاء الاصطناعي في عالم الأمن السيبراني."
+   }
+  },
+  {
+   "id": "36231604b288",
+   "url": "https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/",
+   "title": "Crusoe sells troubled Wyoming data center project to Google",
+   "date": "2026-11-07T01:40:28.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Google تشتري مشروع داتا سنتر متعثر من Crusoe",
+    "summary": "شركة Crusoe باعت مشروع مركز بيانات كان بيواجه مشاكل في Wyoming لـ Google، والصفقة دي بتبين التحديات الصعبة في بناء وتطوير داتا سنترز ضخمة للـ AI."
+   }
+  },
+  {
+   "id": "6813d62fd925",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1029380/openai-1-25-trillion-investment-valuation",
+   "title": "OpenAI valued at $1.25 trillion, as rival Anthropic nears its IPO",
+   "date": "2026-11-06T23:46:18.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "تقييم OpenAI يوصل لـ 1.25 تريليون دولار",
+    "summary": "تقييم شركة OpenAI وصل لـ 1.25 تريليون دولار بعد جولة تمويل جديدة جمعت فيها 11 مليار دولار إضافية، وده بيخليها واحدة من أقيم الشركات في العالم في نفس الوقت اللي منافستها Anthropic بتقرب من طرح أسهمها بالبورصة."
+   }
+  },
+  {
+   "id": "1bc7ba2a28c4",
+   "url": "https://www.theverge.com/tech/1029338/nvidia-ceo-jensen-huang-china-spy",
+   "title": "China reportedly recruited AI exec to spy on Jensen Huang",
+   "date": "2026-11-06T23:00:44.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "تقارير عن تجنيد مسؤولة صينية للتجسس على رئيس Nvidia",
+    "summary": "المخابرات الصينية جندت Alice Huang، المسؤولة في Megaspeed، عشان تتجسس على Jensen Huang رئيس Nvidia، بهدف جمع معلومات عن رقائق الـ AI الأمريكية ومحاولة التأثير على الشركة لتوفير أقوى رقائقها للصين."
+   }
+  },
+  {
+   "id": "314bd089789a",
+   "url": "https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/",
+   "title": "OpenAI reportedly raises an additional $11 billion at a $1.25 trillion valuation",
+   "date": "2026-11-06T22:53:46.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "OpenAI بتجمع 11 مليار دولار إضافية",
+    "summary": "شركة OpenAI جمعت 11 مليار دولار زيادة كجزء من جولة تمويلية لسه مخلصتش رسميًا، بس متوقع تقفل خلال الأسابيع الجاية عند تقييم 1.25 تريليون دولار."
+   }
+  },
+  {
+   "id": "91f8d419f4fc",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1028609/ai-dating-feelings-doomers-singularity",
+   "title": "AI is the new dating dealbreaker",
+   "date": "2026-11-06T21:51:59.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "الـ AI بيتحول لسبب للرفض في تطبيقات المواعدة",
+    "summary": "الـ AI بقى عامل حاسم ومؤثر في مواعدة الأشخاص لبعض؛ ده اللي لاحظته محللة شابة لما بدأت تستخدم تطبيق Hinge عشان تتعرف على ناس جداد في San Francisco."
+   }
+  },
+  {
+   "id": "8879475e62b3",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1029126/anthropic-metr-report-accelerating-ai-development",
+   "title": "Why a new report on Anthropic automating AI development is alarming researchers",
+   "date": "2026-11-06T21:48:06.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "تقرير عن Anthropic يثير قلق الباحثين",
+    "summary": "منظمة METR نشرت تقرير كشف إن Anthropic بتستخدم الـ AI عشان تطور نماذج AI تانية أقوى، ونماذجها بتتحسن بسرعة ضعف السنة اللي فاتت وبدون أي مؤشرات للتباطؤ، وده اللي مقلق باحثي الأمان."
+   }
+  },
+  {
+   "id": "c0641eb0de56",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/902546/data-centers-ai-energy-power-grids-controversy",
+   "title": "All the latest updates on AI data centers",
+   "date": "2026-11-06T20:03:32.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "أحدث تفاصيل مراكز بيانات الـ AI وأزمتها مع الطاقة",
+    "summary": "رغم إن مراكز البيانات الضخمة هي الأساس اللي بتبني عليه الشركات طموحات الـ AI، إلا إن التوسع السريع في السيرفرات دي عمل أزمات حول العالم بسبب استهلاكها الشديد للطاقة وتأثيرها على البيئة وفواتير الاستهلاك."
+   }
+  },
+  {
+   "id": "52e0623fab79",
+   "url": "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces",
+   "title": "Meta’s Muse AI can create custom ‘spaces’ for the version of the app you need right now",
+   "date": "2026-11-06T20:00:43.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "Meta تطلق ميزة spaces داخل Muse",
+    "summary": "شركة Meta بقت تسمح ببناء تجارب وتطبيقات مخصصة جوه مساعد Muse بميزة اسمها spaces، واللي بتخليك تعمل حاجات زي منصة تسوق أو ألعاب وتتفاعل معاها مباشرة."
+   }
+  },
+  {
+   "id": "4758b3e08407",
+   "url": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web/",
+   "title": "Hundreds of Artex AI hacking tools found publicly exposed to the web",
+   "date": "2026-11-06T18:44:38.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "خوادم أداة Artex مكشوفة على النت للجميع",
+    "summary": "باحثين أمنيين لقوا مئات السيرفرات اللي بتستضيف أداة اختبار الاختراق Artex مكشوفة على الإنترنت بدون حماية. الوضع ده بيسمح لأي حد إنه يوصل لأداة الهاكينج دي ويستخدمها بكل سهولة."
+   }
+  },
+  {
+   "id": "46e88a02e034",
+   "url": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
+   "title": "Meta introduces Spaces, a new way to collaborate with your Muse agent",
+   "date": "2026-11-06T18:44:20.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "ميزة Spaces الجديدة من Meta للتعاون مع وكلاء Muse",
+    "summary": "شركة Meta كشفت عن ميزة جديدة باسم Spaces عشان تقدم طريقة تانية للتعاون والتفاعل مع وكلاء الذكاء الاصطناعي Muse. الميزة دي بتوسع من إمكانيات المساعدين الذكيين وتكاملهم."
+   }
+  },
+  {
+   "id": "b620342f92c4",
+   "url": "https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints/",
+   "title": "SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints",
+   "date": "2026-11-06T18:01:00.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "خدمة Amazon SageMaker تدعم تقنية MIG لتقسيم الـ GPU",
+    "summary": "أعلنت Amazon SageMaker Inference عن دعم تجزئة الكروت باستخدام تقنية NVIDIA Multi-Instance GPU (MIG) عشان تقسم كارت الـ GPU الواحد لأجزاء معزولة هاردوير. الميزة دي بتخليك تشغل نماذج ذكاء اصطناعي مختلفة على نفس الكارت وتستفيد من الموارد بأعلى كفاءة."
+   }
+  },
+  {
+   "id": "860444638104",
+   "url": "https://techcrunch.com/podcast/how-a-blue-wave-midterm-might-reshape-the-ai-industry/",
+   "title": "How a Blue Wave midterm might reshape the AI industry",
+   "date": "2026-11-06T18:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "انتخابات أمريكا النصفية قد تفرض قيوداً على مراكز البيانات",
+    "summary": "فوز الديمقراطيين في انتخابات التجديد النصفي الأمريكية جاب معاه تصويت الناس في أغلب الاستفتاءات لصالح فرض قيود جديدة على تطوير مراكز البيانات. القرارات دي بتهدد قطاع التكنولوجيا وتطوير البنية التحتية للذكاء الاصطناعي بشكل كبير."
+   }
+  },
+  {
+   "id": "95ff043a27dc",
+   "url": "https://arstechnica.com/tech-policy/2026/11/does-meta-think-we-cant-read-meta-abandons-sketchy-commercial-terms-update/",
+   "title": "“Does Meta think we can’t read?” Meta abandons sketchy commercial terms update.",
+   "date": "2026-11-06T17:43:02.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": {
+    "title": "تراجع Meta عن إجبار صفحات Facebook على تدريب الذكاء الاصطناعي",
+    "summary": "شركة Meta تراجعت عن تحديث شروطها التجارية ومش هتجبر أصحاب صفحات Facebook على السماح بتدريب نماذج الذكاء الاصطناعي على المحتوى المرتبط بصفحاتهم."
+   }
+  },
+  {
+   "id": "afd6335fa188",
+   "url": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-agentic-primitives-in-amazon-quick/",
+   "title": "Taxonomy of agentic primitives in Amazon Quick",
+   "date": "2026-11-06T17:34:45.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "تصنيف مبادئ وكلاء الذكاء الاصطناعي في Amazon Quick",
+    "summary": "فريق Amazon Quick استعرض تصنيف لمكونات الوكلاء بعد ما اتطوروا من مجرد الرد على الأسئلة لتنفيذ المهام. التقسيم بيعتمد على إجابة أربع أسئلة أساسية بتحدد إمتى، وإيه، ومين، وإزاي عشان يسهلوا بناء قدراتهم وسياقهم."
+   }
+  },
+  {
+   "id": "18d4bcaa5e30",
+   "url": "https://www.marktechpost.com/2026/11/06/zyphra-zyfa-fp8-flashattention-amd-mi355x/",
+   "title": "Zyphra ZYFA: FP8 FlashAttention for AMD MI355X, Up to 1.76x Faster",
+   "date": "2026-11-06T17:28:04.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "شركة Zyphra تطلق ZYFA لتسريع معالجات AMD",
+    "summary": "طرحت شركة Zyphra برمجيات ZYFA مفتوحة المصدر لمعالجات AMD Instinct MI355X. الاختبارات بتوضح إنها أسرع من AITER من AMD بمعدل بيوصل لـ 1.76 ضعف، وبتقلل الأخطاء بنسبة كبيرة."
+   }
+  },
+  {
+   "id": "ead671d25881",
+   "url": "https://techcrunch.com/video/after-the-midterms-is-the-ai-industry-in-for-a-rough-two-years/",
+   "title": "After the midterms, is the AI industry in for a rough two years?",
+   "date": "2026-11-06T17:23:52.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "قيود مراكز البيانات تضع قطاع التكنولوجيا أمام تحديات بعد الانتخابات",
+    "summary": "نتائج انتخابات التجديد النصفي الأمريكية شهدت تصويت الناخبين لصالح وضع قيود صارمة على مشاريع مراكز البيانات في 40 اقتراع من أصل 41، وهو أمر متوقع يؤثر بقوة على مسار قطاع التكنولوجيا."
+   }
+  },
+  {
+   "id": "7ffe65e37ef1",
+   "url": "https://aws.amazon.com/blogs/machine-learning/serverless-mcp-server-for-ai-agent-data-lake-access-on-amazon-ecs-fargate/",
+   "title": "Serverless MCP server for AI agent data lake access on Amazon ECS Fargate",
+   "date": "2026-11-06T17:13:13.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "بناء سيرفر MCP بدون خوادم على Amazon ECS Fargate",
+    "summary": "تقدر تبني سيرفر Model Context Protocol (MCP) بدون خوادم على Amazon ECS وAWS Fargate، وده بيدي وكلاء الذكاء الاصطناعي وصول آمن لبيانات الـ data lake. الميزة هنا إنك مش هتحتاج غير ملف JSON واحد لإضافة أي مجموعة بيانات جديدة ومن غير كود ربط إضافي."
+   }
+  },
+  {
+   "id": "b8bac355d624",
+   "url": "https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-2/",
+   "title": "Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore – Part 2",
+   "date": "2026-11-06T17:09:23.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "توسيع إدارة وصول وكلاء الذكاء الاصطناعي في الشركات - الجزء الثاني",
+    "summary": "الجزء التاني بيشرح إزاي تطبق النظام ده على مستوى الشركات الكبيرة، بحيث يبقى Amazon Bedrock AgentCore Gateway هو البوابة الأساسية مع Okta. كمان بتستخدم سياسات Cedar وتشغل وكيل تاني على Amazon EKS، مع تتبع كل أذونات السماح والرفض على Amazon CloudWatch."
+   }
+  },
+  {
+   "id": "b7a89fa9b2a0",
+   "url": "https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-1/",
+   "title": "Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore – Part 1",
+   "date": "2026-11-06T17:09:18.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "إدارة صلاحيات وكلاء الذكاء الاصطناعي مع Okta وAmazon Bedrock - الجزء الأول",
+    "summary": "المقال بيوضح إزاي تبني وكيل مهام على Amazon Bedrock AgentCore يقدر يحدد مين من الوكلاء مسموح له ينوب عن المستخدمين ويتحكم في صلاحياتهم. كل ده بيتم تنظيمه من خلال Okta Cross App Access وAgentCore Identity."
+   }
+  },
+  {
+   "id": "22815b4f725e",
+   "url": "https://www.theverge.com/podcast/1028731/2026-midterms-tech-ai-vergecast",
+   "title": "Big Tech lost big in the 2026 election",
+   "date": "2026-11-06T17:09:01.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": {
+    "title": "خسارة كبيرة لشركات Big Tech في انتخابات 2026",
+    "summary": "ملايين الناخبين الأمريكيين صوتوا بأغلبية للديمقراطيين وضد الذكاء الاصطناعي في الانتخابات الأخيرة. وده هيرجع الصراع بقوة ضد شركات Big Tech وهيصعّب بناء مراكز البيانات على القائمين عليها."
+   }
+  },
+  {
+   "id": "38bdfb2f8c28",
+   "url": "https://aws.amazon.com/blogs/machine-learning/how-greenlight-financial-built-an-autonomous-soc-solution-on-amazon-bedrock-agentcore/",
+   "title": "How Greenlight Financial built an autonomous SOC solution on Amazon Bedrock AgentCore",
+   "date": "2026-11-06T16:55:05.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "Greenlight Financial تحل مشاكل الأمان تلقائياً عبر Amazon Bedrock AgentCore",
+    "summary": "شركة Greenlight Financial بتعالج أكتر من 90% من قضايا الأمان والمخاطر الشهرية اللي بتوصل لـ 4000 حالة من غير أي تدخل بشري، وده بالاعتماد على نظام Luna الذكي والمبني على Amazon Bedrock AgentCore."
+   }
+  },
+  {
+   "id": "55950fa4ce7a",
+   "url": "https://aws.amazon.com/blogs/machine-learning/taxbit-assist-a-grounded-role-aware-ai-agent-on-amazon-bedrock-agentcore/",
+   "title": "Taxbit Assist: A grounded, role-aware AI agent on Amazon Bedrock AgentCore",
+   "date": "2026-11-06T16:49:42.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "Taxbit تطور المساعد الذكي Taxbit Assist على Amazon Bedrock",
+    "summary": "طوّرت شركة Taxbit مساعد ذكي باسم Taxbit Assist مدمج في لوحة التحكم للشركات ومعتمد على Amazon Bedrock AgentCore. المساعد بيقدم إجابات موثقة وبيلتزم بصلاحيات المستخدمين والاشتراطات الإقليمية، مع متابعة جودة الإجابات باستمرار على الترافيك الحي."
+   }
+  },
+  {
+   "id": "5beddb2a546b",
+   "url": "https://aws.amazon.com/blogs/machine-learning/extend-claude-code-to-remote-sessions-on-amazon-bedrock-agentcore-with-security-controls/",
+   "title": "Extend Claude Code to remote sessions on Amazon Bedrock AgentCore with security controls",
+   "date": "2026-11-06T16:45:58.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "تشغيل Claude Code عن بُعد بأمان عبر Amazon Bedrock AgentCore",
+    "summary": "تقدر تشغل Claude Code كوكيل عن بُعد على Amazon Bedrock AgentCore بأمان كامل، بحيث تتنفذ كل مهمة برمجية في جلسة معزولة جوه حساب AWS بتاعك. النتيجة النهائية بترجع لك على هيئة pull request على GitHub تقدر تراجعه وتدمجه بنفسك."
+   }
+  },
+  {
+   "id": "01aef0d2f976",
+   "url": "https://arstechnica.com/gaming/2026/11/could-potential-ai-clones-of-gta-vi-force-a-quicker-official-port/",
+   "title": "Could potential AI clones of GTA VI force a quicker official port?",
+   "date": "2026-11-06T16:19:12.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": {
+    "title": "ضغوط وقت جديدة تواجه مطوري لعبة GTA VI",
+    "summary": "مدير تقني سابق في Rockstar شايف إن الشركة المطورة للعبة بتواجه في الوقت الحالي ضغوط زمنية جديدة."
+   }
+  },
+  {
+   "id": "215687ca939d",
+   "url": "https://blogs.nvidia.com/blog/telco-open-source-tools-research-6g-networks/",
+   "title": "How NVIDIA Open Source Tools Are Helping Researchers Build Next-Generation 6G Networks",
+   "date": "2026-11-06T16:00:35.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": {
+    "title": "أدوات NVIDIA مفتوحة المصدر بتدعم أبحاث 6G",
+    "summary": "NVIDIA وفرت برمجيات مفتوحة المصدر زي Aerial وSionna عشان تسرع تطوير شبكات 6G. الأدوات دي بتدي الباحثين أساس لتجربة أفكارهم والربط بين المحاكاة وتدريب AI والتجارب اللاسلكية الفعلية."
+   }
+  },
+  {
+   "id": "d275be2a1267",
+   "url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/",
+   "title": "Ramp data shows AI spending stalling just as Anthropic nears its IPO",
+   "date": "2026-11-06T15:54:47.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "بيانات Ramp: الإنفاق على AI واقف مكانه رغم زيادة الاستخدام",
+    "summary": "استخدام تقنيات AI لسه مستمر في الزيادة، لكن الصرف المالي عليها وقف مكانه. تخفيض الأسعار والتحكم الذكي في التكاليف عند كبار المستخدمين ممكن يهز افتراضات المستثمرين عن النمو السريع للمجال."
+   }
+  },
+  {
+   "id": "ab4846bbc512",
+   "url": "https://techcrunch.com/2026/11/06/after-blocking-muse-amazon-now-lets-users-text-alexa-to-help-them-shop/",
+   "title": "After blocking Muse, Amazon now lets users text Alexa to help them shop",
+   "date": "2026-11-06T14:10:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Amazon بتتيح مراسلة Alexa للمساعدة في الشوبينج",
+    "summary": "بعد ما حظرت Muse، Amazon بتسمح للمستخدمين يبعتوا رسايل نصية لـ Alexa عشان تساعدهم في التسوق. الشركة وضحت إن الميزة دي هتوصل لملايين المستخدمين في الأسابيع الجاية."
+   }
+  },
+  {
+   "id": "be1ba71e55b7",
+   "url": "https://huggingface.co/blog/allenai/toyblocks",
+   "title": "ToyBlocks: A controlled world for robot learning and evaluation",
+   "date": "2026-11-06T14:00:48.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": {
+    "title": "مشروع ToyBlocks لتدريب وتقييم الروبوتات",
+    "summary": "ToyBlocks بيوفر بيئة محكومة ومخصصة لتدريب الروبوتات والتعلم وتقييم أدائها."
+   }
+  },
+  {
+   "id": "fbf575ba8ccd",
+   "url": "https://techcrunch.com/2026/11/06/underdog-shows-off-a-32mb-speech-model-in-new-demo/",
+   "title": "Underdog shows off a 32MB speech model in new demo",
+   "date": "2026-11-06T13:02:16.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Underdog تستعرض نموذج صوتي بحجم 32 ميجابايت بس",
+    "summary": "شركة Underdog استعرضت نموذج جديد حجمه 32MB، ورغم صغر حجمه بيقدر يولد كلام وموسيقى بشكل فعال."
+   }
+  },
+  {
+   "id": "f3bfec28682f",
+   "url": "https://techcrunch.com/2026/11/06/physicl-raises-10m-to-make-the-digital-world-real-enough-for-robots/",
+   "title": "Physicl raises $10M to make the digital world real enough for robots",
+   "date": "2026-11-06T13:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Physicl تجمع 10 مليون دولار لتطوير بيئات محاكاة الروبوتات",
+    "summary": "جمعت Physicl تمويل بقيمة 10 مليون دولار عشان تقرب العالم الرقمي للواقع بالنسبة للروبوتات، وبتعتمد في حل الفجوة دي على نظام كان معمول أصلاً لتسويق المنتجات أونلاين."
+   }
+  },
+  {
+   "id": "bc8f9eac1966",
+   "url": "https://openai.com/index/partnering-with-hacktron",
+   "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+   "date": "2026-11-06T08:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "شراكة بين OpenAI وHacktron لكشف الثغرات وتأمين الأنظمة",
+    "summary": "OpenAI بتتعاون مع Hacktron لاكتشاف الثغرات الأمنية واختبار الاتصال بخدمات الطرف التالت، بالإضافة لتقوية الدفاعات بالاعتماد على frontier AI."
+   }
+  },
+  {
+   "id": "9889510bec40",
+   "url": "https://techcrunch.com/2026/11/05/palo-alto-networks-in-talks-to-buy-ai-agent-security-startup-clutch-for-500m/",
+   "title": "Palo Alto Networks in talks to buy AI agent security startup Clutch for $500M",
+   "date": "2026-11-06T06:28:32.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "Palo Alto Networks تفاوض لشراء Clutch بـ 500 مليون دولار",
+    "summary": "Palo Alto Networks دخلت في محادثات للاستحواذ على شركة Clutch الناشئة في أمان الـ AI agents بصفقة قيمتها 500 مليون دولار. الشركة مدعومة من Lightspeed وSignalFire وكان آخر تقييم ليها 85 مليون دولار."
+   }
+  },
+  {
+   "id": "e8ca26fb00ba",
+   "url": "https://www.marktechpost.com/2026/11/05/thinking-machines-inkling-2-small-release/",
+   "title": "Thinking Machines Releases Inkling 2 Small, a 594B MoE With 17B Active",
+   "date": "2026-11-06T04:25:07.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
   {
    "id": "85f398082dad",
    "url": "https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda",
@@ -44,6 +589,26 @@
    "src": "The Verge",
    "srcId": "verge",
    "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "cfd4354afa14",
+   "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+   "title": "Measuring how AI agents handle everyday wet-lab science",
+   "date": "2026-11-06T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "82196d4ece0a",
+   "url": "https://huggingface.co/blog/open-asr-leaderboard-liva",
+   "title": "Egyptian and Nigerian English join the Open ASR Leaderboard",
+   "date": "2026-11-06T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
    "ar": null
   },
   {
@@ -1596,6 +2161,19 @@
    "ar": {
     "title": "Trajectory تجمع 45 مليون دولار لتسهيل تدريب نماذج AI",
     "summary": "الشركة الناشئة اللي عمرها سنة قيمتها دلوقتي 300 مليون دولار وبتسعى تخلي تدريب نماذج الذكاء الاصطناعي سهل للناس غير المتخصصين."
+   }
+  },
+  {
+   "id": "cc4ba65623a7",
+   "url": "https://aitnews.com/2026/11/03/%d8%a3%d8%af%d9%88%d8%a8%d9%8a-%d8%aa%d8%b7%d9%88%d9%91%d8%b1-%d9%88%d9%83%d9%8a%d9%84%d9%8b%d8%a7-%d8%b0%d9%83%d9%8a%d9%8b%d8%a7-%d9%84%d8%aa%d8%ad%d8%b1%d9%8a%d8%b1-%d8%a7%d9%84%d8%b5%d9%88%d8%b1/",
+   "title": "أدوبي تطوّر وكيلًا ذكيًا لتحرير الصور مثل خبراء فوتوشوب",
+   "date": "2026-11-02T23:10:00.000Z",
+   "src": "البوابة العربية للأخبار التقنية",
+   "srcId": "aitnews",
+   "kind": "arabic",
+   "ar": {
+    "title": "أدوبي تطوّر وكيلًا ذكيًا لتحرير الصور مثل خبراء فوتوشوب",
+    "summary": ""
    }
   },
   {
@@ -3260,588 +3838,6 @@
    "ar": {
     "title": "إطلاق نموذج Nemotron 3.5 Transcribe من NVIDIA",
     "summary": "نزلت NVIDIA نموذج Nemotron 3.5 Transcribe المفتوح للتعامل مع الصوت بـ 40 لغة، وده بيدي دقة عالية جداً في تفريغ النصوص."
-   }
-  },
-  {
-   "id": "e1c742c1d925",
-   "url": "https://huggingface.co/blog/announcing-project-protostar",
-   "title": "Announcing Project ProtoStar: Making Publicly Funded Science AI-Ready",
-   "date": "2026-10-29T00:00:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "إعلان عن Project ProtoStar لتجهيز العلوم العامة للذكاء الاصطناعي",
-    "summary": ""
-   }
-  },
-  {
-   "id": "a1765f446c5b",
-   "url": "https://huggingface.co/blog/mistral-large4",
-   "title": "Welcome Le Chonk: Mistral Large 4 on Hugging Face",
-   "date": "2026-10-29T00:00:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "ترحيب بـ Le Chonk: Mistral Large 4 على Hugging Face",
-    "summary": ""
-   }
-  },
-  {
-   "id": "85d975255b4f",
-   "url": "https://huggingface.co/blog/anydecisionmodel",
-   "title": "Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms",
-   "date": "2026-10-29T00:00:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "نموذج AnySpeechRecognizer و AnyDecisionModel على Apple",
-    "summary": ""
-   }
-  },
-  {
-   "id": "6750c2461412",
-   "url": "https://openai.com/index/credit-saison",
-   "title": "Credit Saison achieves 954% ROI in a ChatGPT Enterprise pilot",
-   "date": "2026-10-29T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Credit Saison تحقق عائد 954% في تجربة ChatGPT Enterprise",
-    "summary": "تجربة ChatGPT Enterprise عند Credit Saison أدت لعائد استثمار 954%، والقياديين والموظفين حولوا النتائج لتطبيق على مستوى الشركة."
-   }
-  },
-  {
-   "id": "09f762edab0d",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1021644/adam-mosseri-instagram-ai-negativity",
-   "title": "Adam Mosseri says negativity around AI is ‘going to get worse’",
-   "date": "2026-10-28T23:05:39.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "كلام رئيس Instagram عن الذكاء الاصطناعي",
-    "summary": "Adam Mosseri رئيس Instagram اعترف إن الهجوم ورفض الناس للذكاء الاصطناعي هيكبر ويزيد الفترة الجاية مش بس عند الشباب والمبدعين."
-   }
-  },
-  {
-   "id": "69a84e049cc6",
-   "url": "https://aitnews.com/2026/10/29/%d8%a3%d9%85%d8%a7%d8%b2%d9%88%d9%86-%d8%aa%d9%83%d8%b4%d9%81-%d8%b9%d9%86-5-%d8%a3%d8%ac%d9%87%d8%b2%d8%a9-%d8%ac%d8%af%d9%8a%d8%af%d8%a9-%d9%85%d9%86-%d8%a3%d9%84%d9%8a%d9%83%d8%b3%d8%a7-%d8%a5/",
-   "title": "أمازون تكشف عن 5 أجهزة جديدة من أليكسا.. إطار صور ذكي وساعة منبهة لمراقبة النوم",
-   "date": "2026-10-28T22:00:44.000Z",
-   "src": "البوابة العربية للأخبار التقنية",
-   "srcId": "aitnews",
-   "kind": "arabic",
-   "ar": {
-    "title": "أمازون تكشف عن 5 أجهزة جديدة من أليكسا.. إطار صور ذكي وساعة منبهة لمراقبة النوم",
-    "summary": ""
-   }
-  },
-  {
-   "id": "b126d7721238",
-   "url": "https://techcrunch.com/2026/10/28/microsoft-just-shared-azures-actual-revenue-in-dollars-33-2-billion/",
-   "title": "Microsoft just shared Azure’s actual revenue in dollars: $33.2 billion",
-   "date": "2026-10-28T21:58:32.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "إيرادات Azure تظهر للنور",
-    "summary": "لأول مرة Microsoft تكشف عن أرقام إيرادات Azure بالدولار واللي وصلت لـ 33.2 مليار دولار لتنافس بقوة."
-   }
-  },
-  {
-   "id": "f348c6db37d8",
-   "url": "https://techcrunch.com/2026/10/28/google-expands-ai-search-ads-globally-as-core-ad-growth-slows/",
-   "title": "Google expands AI Search ads globally as core ad growth slows",
-   "date": "2026-10-28T21:48:37.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "Google توسع نطاق إعلانات بحث الذكاء الاصطناعي",
-    "summary": "Google قررت توسع إعلانات البحث المدعومة بالذكاء الاصطناعي عالمياً وسط نمو قوي في إيرادات شركة Alphabet."
-   }
-  },
-  {
-   "id": "90b267becbf2",
-   "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
-   "title": "Microsoft recorded $10 billion in revenue from OpenAI",
-   "date": "2026-10-28T21:34:30.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "مكاسب Microsoft من شراكتها مع OpenAI",
-    "summary": "Microsoft حققت إيرادات بـ 10 مليار دولار من الشراكة والترتيبات التجارية مع OpenAI."
-   }
-  },
-  {
-   "id": "e4867209a9cd",
-   "url": "https://www.theverge.com/gadgets/1021405/akai-open-source-mpc-sample-key",
-   "title": "Akai is embracing vibe-coded mods with an open-source MPC",
-   "date": "2026-10-28T21:34:04.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "دعم Akai للمعدلين والمبرمجين",
-    "summary": "شركة Akai بتدعم مجتمع المودين والمبرمجين من خلال إتاحة جهاز MPC بفيرمแวر مفتوح المصدر بدري."
-   }
-  },
-  {
-   "id": "f7041d98b561",
-   "url": "https://techcrunch.com/2026/10/28/microsoft-hits-10-quarters-of-record-breaking-revenue-in-a-row/",
-   "title": "Microsoft hits 10 quarters of record-breaking revenue in a row",
-   "date": "2026-10-28T21:25:30.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "أرقام قياسية جديدة لـ Microsoft",
-    "summary": "Microsoft حققت إيرادات قياسية جديدة للمرة العاشرة على التوالي بقيمة 92.3 مليار دولار بزيادة 19%."
-   }
-  },
-  {
-   "id": "cd4299cd72e0",
-   "url": "https://aitnews.com/2026/10/29/%d8%ac%d9%88%d8%ac%d9%84-%d8%aa%d8%b7%d9%84%d9%82-%d9%86%d9%85%d9%88%d8%b0%d8%ac-gemini-4-carbon-%d9%82%d9%81%d8%b2%d8%a9-%d9%83%d8%a8%d9%8a%d8%b1%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d8%a3%d9%85%d9%86/",
-   "title": "جوجل تطلق نموذج Gemini 4 Carbon.. قفزة كبيرة في الأمن السيبراني تتفوق على OpenAI وأنثروبيك",
-   "date": "2026-10-28T21:04:31.000Z",
-   "src": "البوابة العربية للأخبار التقنية",
-   "srcId": "aitnews",
-   "kind": "arabic",
-   "ar": {
-    "title": "جوجل تطلق نموذج Gemini 4 Carbon.. قفزة كبيرة في الأمن السيبراني تتفوق على OpenAI وأنثروبيك",
-    "summary": ""
-   }
-  },
-  {
-   "id": "fc7d1d71bde9",
-   "url": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier",
-   "title": "Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity",
-   "date": "2026-10-28T20:03:00.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "إطلاق Gemini 4 Carbon من Google",
-    "summary": "Google أعلنت عن نموذج Gemini 4 Carbon بتطورات ضخمة في البرمجة والأمن السيبراني متفوقاً على منافسيه."
-   }
-  },
-  {
-   "id": "bbd4d7a8dcb5",
-   "url": "https://openai.com/ads/customers/evernote",
-   "title": "Evernote turns AI-driven discovery into paid subscriptions",
-   "date": "2026-10-28T19:40:49.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "2ede9b7f3431",
-   "url": "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/",
-   "title": "Anthropic just launched tools to show companies what their AI spending is buying",
-   "date": "2026-10-28T19:19:58.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "أدوات جديدة من Anthropic لمتابعة فلوس الذكاء الاصطناعي",
-    "summary": "شركة Anthropic بتزل أدوات جديدة عشان تعرف الشركات فلوسها رايحة فين على موديلات الذكاء الاصطناعي، وذلك استعداداً لطرحها في البورصة."
-   }
-  },
-  {
-   "id": "66c9055b3cf2",
-   "url": "https://techcrunch.com/video/wizs-cto-on-php2shell-and-the-coming-vulnpocalypse/",
-   "title": "Wiz’s CTO on PHP2Shell and the coming ‘vulnpocalypse’",
-   "date": "2026-10-28T19:05:46.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "رئيس التقنية في Wiz يحذر من كارثة ثغرات برمجية",
-    "summary": "بعد ظهور ثغرات خطيرة في لغة PHP اللي بتشغل نسبة كبيرة من المواقع، لسه الشركات بتصلح مشاكلها وقفلوا بعض المواقع لحد ما العيب يتصلح."
-   }
-  },
-  {
-   "id": "24b289310b19",
-   "url": "https://techcrunch.com/podcast/the-vulnpocalypse-is-coming-for-the-internets-aging-code-says-wizs-cto/",
-   "title": "The ‘Vulnpocalypse’ is coming for the internet’s aging code, says Wiz’s CTO",
-   "date": "2026-10-28T18:50:39.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "تحذيرات من Wiz بخصوص الكود القديم على الإنترنت",
-    "summary": "مشاكل لغة PHP الأخيرة وضحت إن تنظيف الكودات القديمة لسه قدامه مشوار طويل والشركات لسه بتلحق نفسها."
-   }
-  },
-  {
-   "id": "bfd6acefc1fb",
-   "url": "https://arstechnica.com/ai/2026/10/google-announces-gemini-4-carbon-its-latest-frontier-ai-model-that-you-cant-use/",
-   "title": "Google announces Gemini 4 Carbon, its latest frontier AI model that you can't use",
-   "date": "2026-10-28T18:47:27.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "جوجل تعلن عن نموذج Gemini 4 Carbon بس مش هتقدر تستخدمه",
-    "summary": "جوجل كشفت عن نموذج الذكاء الاصطناعي الجديد Gemini 4 Carbon، واللي يعتبر نسخة أحسن شوية من نموذج Argon."
-   }
-  },
-  {
-   "id": "d0753be868cc",
-   "url": "https://www.theverge.com/tech/1021143/microsoft-lg-samsung-copilot-ai-assistant-smart-tvs-ending",
-   "title": "Microsoft is ending Copilot support on smart TVs",
-   "date": "2026-10-28T18:36:26.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "مايكروسوفت بتلغي دعم Copilot من الشاشات الذكية",
-    "summary": "بعد أقل من سنتين من إعلانه، مايكروسوفت قررت تقفل دعم مساعد الذكاء الاصطناعي Copilot على الشاشات الذكية لسنانج وLG السنة دي."
-   }
-  },
-  {
-   "id": "81ea71b47239",
-   "url": "https://aws.amazon.com/blogs/machine-learning/building-an-agentic-ai-platform-on-amazon-bedrock-agentcore/",
-   "title": "Building an Agentic AI Platform on Amazon Bedrock AgentCore",
-   "date": "2026-10-28T18:28:26.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "بناء منصة ذكاء اصطناعي تفاعلية على Amazon Bedrock",
-    "summary": "شرح لطريقة بناء وتأمين منصة ذكاء اصطناعي متعددة الحسابات باستخدام Amazon Bedrock AgentCore مع خطوط أنابيب للتقييم."
-   }
-  },
-  {
-   "id": "3364604ad84a",
-   "url": "https://aws.amazon.com/blogs/machine-learning/distributed-training-with-ray-train-dlcs-and-efa-on-eks/",
-   "title": "Distributed training with Ray Train DLCs and EFA on EKS",
-   "date": "2026-10-28T18:19:54.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "التدريب الموزع باستخدام Ray Train على Amazon EKS",
-    "summary": "استعراض لتجربة عملية لضبط نموذج Qwen2.5-1.5B باستخدام حاويات Ray Train ودعم من كارت الشاشة على خدمات أمازون."
-   }
-  },
-  {
-   "id": "12048ccbf56b",
-   "url": "https://aws.amazon.com/blogs/machine-learning/accelerating-software-delivery-with-agentic-qa-automation-using-amazon-nova-act-part-3/",
-   "title": "Accelerating software delivery with agentic QA automation using Amazon Nova Act – Part 3",
-   "date": "2026-10-28T18:12:13.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "تسريع تسليم البرمجيات بأتمتة اختبار الجودة مع Amazon Nova Act",
-    "summary": "الجزء الثالث من السلسلة بيضيف أدوات لتنظيم الاختبارات وتقارير الصحة وإدارة المستخدمين بناءً على الفرق في Amazon Nova Act."
-   }
-  },
-  {
-   "id": "c44aa551102e",
-   "url": "https://www.marktechpost.com/2026/10/28/google-deepmind-gemini-4-carbon-frontier-model/",
-   "title": "Google DeepMind Introduces Gemini 4 Carbon, Its Top Model for Cyber Defense and Coding",
-   "date": "2026-10-28T17:48:38.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": {
-    "title": "جوجل ديب مايند تقدم Gemini 4 Carbon",
-    "summary": "كشفت Google DeepMind عن نموذجها الجديد Gemini 4 Carbon المخصص لأمان السايبر والكود، ومتاح الأول للمتخصصين بأسعار محددة."
-   }
-  },
-  {
-   "id": "168eca1264fc",
-   "url": "https://www.tech-wd.com/wd/2026/10/28/%d8%ad%d8%ac%d8%a8-%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-chatgpt-%d8%b9%d9%84%d9%89-%d8%a7%d9%84%d8%a3%d8%ac%d9%87%d8%b2%d8%a9-%d8%a7%d9%84%d8%ad%d9%83%d9%88%d9%85%d9%8a%d8%a9-%d8%a8%d8%a7%d9%84%d8%b3/",
-   "title": "حجب برنامج ChatGPT على الأجهزة الحكومية بالسويد لحماية البيانات",
-   "date": "2026-10-28T17:47:19.000Z",
-   "src": "تك وورلد",
-   "srcId": "techwd",
-   "kind": "arabic",
-   "ar": {
-    "title": "حجب برنامج ChatGPT على الأجهزة الحكومية بالسويد لحماية البيانات",
-    "summary": ""
-   }
-  },
-  {
-   "id": "0f279d2e0404",
-   "url": "https://www.tech-wd.com/wd/2026/10/28/%d9%86%d8%b8%d8%a7%d9%85-gpt-6-1-terra-%d9%8a%d9%86%d8%b7%d9%84%d9%82-%d8%b1%d8%b3%d9%85%d9%8a%d8%a7%d9%8b-%d8%a8%d9%86%d8%b5%d9%81-%d8%b3%d8%b9%d8%b1-%d9%88%d8%a7%d8%ac%d9%87%d8%a9-%d8%a7%d9%84%d9%86/",
-   "title": "نظام GPT-6.1 Terra ينطلق رسمياً بنصف سعر واجهة النظام السابق",
-   "date": "2026-10-28T17:47:00.000Z",
-   "src": "تك وورلد",
-   "srcId": "techwd",
-   "kind": "arabic",
-   "ar": {
-    "title": "نظام GPT-6.1 Terra ينطلق رسمياً بنصف سعر واجهة النظام السابق",
-    "summary": ""
-   }
-  },
-  {
-   "id": "0676def7896c",
-   "url": "https://arstechnica.com/ai/2026/10/google-ai-gets-cagey-when-asked-who-won-the-2020-elections/",
-   "title": "Google AI gets cagey when asked who won the 2020 elections",
-   "date": "2026-10-28T17:46:32.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "ذكاء جوجل الاصطناعي يتحفظ في إجابات انتخابات 2020",
-    "summary": "بقت إجابات الـ AI متحفظة لما بيتسأل عن مين فاز في انتخابات 2020 جوه أمريكا، لكن بتكون أوضح بره أمريكا."
-   }
-  },
-  {
-   "id": "d8fb4e7732a4",
-   "url": "https://www.marktechpost.com/2026/10/28/minimax-open-sources-mcode-stack-agent-skills/",
-   "title": "MiniMax Open-Sources MCode Stack: 15 Agent Skills Its Coding Team Uses Daily",
-   "date": "2026-10-28T17:20:29.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": {
-    "title": "ميني ماكس تتيح MCode Stack كمصدر مفتوح",
-    "summary": "شركة MiniMax نزلت MCode Stack برخصة MIT، وهو عبارة عن مهارات وقوائم مستخدمة يومياً لفريق الكود بتاعها."
-   }
-  },
-  {
-   "id": "b0da25ea6c1a",
-   "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
-   "title": "Gemini 4 Carbon: Our next frontier model",
-   "date": "2026-10-28T17:00:58.000Z",
-   "src": "Google DeepMind",
-   "srcId": "deepmind",
-   "kind": "company",
-   "ar": {
-    "title": "التفاصيل عن نموذج Gemini 4 Carbon الجديد",
-    "summary": "أعلنت الشركة عن نموذجها الجديد المتطور Gemini 4 Carbon."
-   }
-  },
-  {
-   "id": "765a5a74d244",
-   "url": "https://techcrunch.com/2026/10/28/chromes-ai-powered-autofill-can-now-dig-through-your-gmail-to-fill-out-forms/",
-   "title": "Chrome’s AI-powered Autofill can now dig through your Gmail to fill out forms",
-   "date": "2026-10-28T17:00:00.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "الملء الآلي في Chrome يدخل على Gmail",
-    "summary": "تحديث الملء الآلي الجديد في متصفح Chrome بيقدر يسحب بيانات الطيران والشحن من إيميلاتك على Gmail بإذنك."
-   }
-  },
-  {
-   "id": "1e8ba9106ed8",
-   "url": "https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/",
-   "title": "As AI agents reshape the web, Google opens Gemini and Search to more apps",
-   "date": "2026-10-28T17:00:00.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "جوجل تفتح Gemini وبحثها لتطبيقات أكتر",
-    "summary": "منصة مطورين جديدة هتمكن الشركات من دمج خدماتهم في تجارب الذكاء الاصطناعي من جوجل لتغيير طريقة استخدام التطبيقات."
-   }
-  },
-  {
-   "id": "c802108aab79",
-   "url": "https://www.theverge.com/tech/1020626/chrome-enhanced-autofill-gmail-forms-gemini-personal-intelligence",
-   "title": "Chrome’s enhanced autofill can now pull info from Gmail to help you fill out forms",
-   "date": "2026-10-28T16:32:41.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "تطوير الملء الآلي في Chrome ببيانات Gmail",
-    "summary": "متصفح Chrome بقى بيستخدم تقنية Gemini وسحب المعلومات من Gmail عشان يسهل عليك ملء الاستمارات والبيانات."
-   }
-  },
-  {
-   "id": "1739307690c3",
-   "url": "https://www.theverge.com/tech/1020769/meta-updated-business-terms-delay-indefinitely",
-   "title": "Meta says it’ll probably delay its controversial new business terms again",
-   "date": "2026-10-28T16:15:30.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "ميتا تفكر في تأجيل شروط الأعمال الجديدة",
-    "summary": "شركة Meta قالت إنها ممكن تؤجل تطبيق شروط الأعمال الجديدة بعد 20 نوفمبر بسبب الهجوم والاعتراضات من الناشرين."
-   }
-  },
-  {
-   "id": "41bdeeb24da3",
-   "url": "https://engineering.fb.com/2026/10/28/ml-applications/meta-andromeda-next-gen-ads-retrieval-gpu-co-design/",
-   "title": "Meta Andromeda: Powering the Next Generation of Ads Retrieval Through Model-System Co-Design",
-   "date": "2026-10-28T16:00:01.000Z",
-   "src": "Meta Engineering",
-   "srcId": "meta",
-   "kind": "company",
-   "ar": {
-    "title": "إصدار جديد من محرك إعلانات Meta Andromeda",
-    "summary": "ميتا طورت محرك الإعلانات Meta Andromeda عبر دمج تصميم النماذج مع عتاد الـ GPU، وده بيزود كفاءة استرجاع الإعلانات بشكل كبير."
-   }
-  },
-  {
-   "id": "d0407e5d8c6e",
-   "url": "https://techcrunch.com/2026/10/28/ai-execs-may-be-too-out-of-touch-to-build-for-the-general-public/",
-   "title": "AI execs may be too out of touch to build for the general public",
-   "date": "2026-10-28T15:53:52.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "انتقادات لقيادات الذكاء الاصطناعي بسبب انعزالهم عن الجمهور",
-    "summary": "مسؤولي قطاع التكنولوجيا بيظهروا انفصالهم عن الواقع لما بيتباهوا باستخدام الذكاء الاصطناعي عشان يتواصلوا مع أسرهم."
-   }
-  },
-  {
-   "id": "feda3ad530f5",
-   "url": "https://techcrunch.com/2026/10/28/south-koreas-financial-industry-hit-by-fresh-wave-of-cyberattacks/",
-   "title": "South Korea’s financial industry hit by fresh wave of cyberattacks",
-   "date": "2026-10-28T15:41:18.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "هجمات سيبرانية جديدة تضرب القطاع المالي في كوريا الجنوبية",
-    "summary": "المؤسسات المالية في كوريا الجنوبية اتعرضت لموجة هجمات سيبرانية جديدة، وده بيبين خطورة عمليات الاختراق بالذكاء الاصطناعي في آسيا."
-   }
-  },
-  {
-   "id": "2952348be6c4",
-   "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-laptops-updates-models-agents-games/",
-   "title": "Thin, Light and Built for Everything: NVIDIA RTX Spark Windows Laptops Gain New Models, Agent Tools and Games",
-   "date": "2026-10-28T15:00:46.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "لابتوبات NVIDIA RTX Spark الجديدة خفيفة الوزن",
-    "summary": "أجهزة NVIDIA RTX Spark الجديدة نزلت من شركات كبرى وبتجمع بين معالجات Blackwell RTX و Grace CPU لأداء قوي."
-   }
-  },
-  {
-   "id": "f1ebb512d4e0",
-   "url": "https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/",
-   "title": "Voice AI in vogue: Nvidia releases new open transcription model",
-   "date": "2026-10-28T15:00:00.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "Nvidia تطرح نموذج مجاني للتحويل من الصوت للنص",
-    "summary": "Nvidia نزلت نموذج صوتي جديد بيحول الكلام لنص بحوالي 40 لغة بس بيشتغل على التسجيلات المسجلة مش البث الحي."
-   }
-  },
-  {
-   "id": "7ae8eb20550e",
-   "url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
-   "title": "NVIDIA Nemotron 3.5 Transcribe and Granary v2: Intelligent Multilingual Transcription You Can Prompt and Adapt",
-   "date": "2026-10-28T14:58:17.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "إطلاق NVIDIA Nemotron 3.5 للنسخ والتحويل",
-    "summary": "إطلاق نموذجي NVIDIA Nemotron 3.5 Transcribe و Granary v2 للنسخ متعدد اللغات والقابل للتعديل."
-   }
-  },
-  {
-   "id": "5283652bd524",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1020596/xai-mississippi-neighborhood-data-center-lawsuit",
-   "title": "xAI is buying out homeowners who promise not to sue over data center noise",
-   "date": "2026-10-28T14:44:00.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "شركة xAI تشتري منازل جيران مركز البيانات",
-    "summary": "شركة تابعة لـ xAI بتعرض شراء بيوت في ميسيسبي بشرط إن السكان ما يرفعوش قضايا بسبب إزعاج مركز البيانات."
-   }
-  },
-  {
-   "id": "a8cd205d5d97",
-   "url": "https://www.tech-wd.com/wd/2026/10/28/%d8%b0%d8%a7%d9%83%d8%b1%d8%a9-hbm-%d8%aa%d9%82%d9%88%d8%af-%d8%b5%d8%a7%d8%af%d8%b1%d8%a7%d8%aa-%d9%83%d9%88%d8%b1%d9%8a%d8%a7-%d9%84%d8%aa%d8%ac%d8%a7%d9%88%d8%b2-%d8%ae%d9%85%d8%b3%d9%8a%d9%86/",
-   "title": "ذاكرة HBM تقود صادرات كوريا لتجاوز خمسين تريليون وون",
-   "date": "2026-10-28T13:57:59.000Z",
-   "src": "تك وورلد",
-   "srcId": "techwd",
-   "kind": "arabic",
-   "ar": {
-    "title": "ذاكرة HBM تقود صادرات كوريا لتجاوز خمسين تريليون وون",
-    "summary": ""
-   }
-  },
-  {
-   "id": "75e2017ed4c5",
-   "url": "https://openai.com/index/openai-servicenow-partnership-expansion",
-   "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
-   "date": "2026-10-28T13:15:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "توسيع الشراكة بين OpenAI و ServiceNow",
-    "summary": "OpenAI و ServiceNow وسعوا شراكتهم عشان يدخلوا نماذج ووكلاء الذكاء الاصطناعي جوه بيئة عمل ServiceNow و ChatGPT."
-   }
-  },
-  {
-   "id": "11933a85bc5f",
-   "url": "https://techcrunch.com/2026/10/28/7-days-until-techcrunch-founder-summit-save-up-to-100-before-doors-open/",
-   "title": "7 days until TechCrunch Founder Summit: Save up to $100 on your pass before doors open",
-   "date": "2026-10-28T13:00:00.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "متبقي 7 أيام لمؤتمر TechCrunch Founder Summit",
-    "summary": "في خلال 7 أيام، مؤتمر TechCrunch Founder Summit هيقابلنا في بوسطن يوم 4 نوفمبر، وتقدر توفر لحد 100 دولار على التذاكر."
-   }
-  },
-  {
-   "id": "8030d1b5c635",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1018676/data-center-midterm-election-energy-water-texas",
-   "title": "Voters in Texas agree: They hate data centers",
-   "date": "2026-10-28T12:39:57.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "مصوتو تكساس يرفضوا مراكز البيانات",
-    "summary": ""
-   }
-  },
-  {
-   "id": "1d32e1e17f91",
-   "url": "https://www.tech-wd.com/wd/2026/10/28/%d9%85%d8%aa%d8%b5%d9%81%d8%ad-opera-%d9%8a%d9%82%d8%af%d9%85-%d9%85%d8%b9%d9%8a%d8%a7%d8%b1-webai-%d9%84%d8%aa%d8%b4%d8%ba%d9%8a%d9%84-%d8%a7%d9%84%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d9%84%d8%a7%d8%b5/",
-   "title": "متصفح Opera يقدم معيار WebAI لتشغيل الذكاء الاصطناعي في المتصفح",
-   "date": "2026-10-28T12:17:06.000Z",
-   "src": "تك وورلد",
-   "srcId": "techwd",
-   "kind": "arabic",
-   "ar": {
-    "title": "متصفح Opera يقدم معيار WebAI لتشغيل الذكاء الاصطناعي في المتصفح",
-    "summary": ""
-   }
-  },
-  {
-   "id": "6da995572c9c",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1020410/meta-launched-ai-pet-journal-app-waddle-world",
-   "title": "Meta quietly launched an ‘AI pet journal’ app",
-   "date": "2026-10-28T11:27:30.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "Meta أطلقت تطبيق دفتر يوميات AI للحيوانات",
-    "summary": ""
    }
   }
  ]
