@@ -27,7 +27,7 @@ export default async function SectionPage({ params }) {
   return (
     <div style={{ "--sec": x.color }}>
       <Suspense fallback={null}>
-        <SectionChat section={id} name={x.name} tagline={x.tagline} starters={info.starters}>
+        <SectionChat section={id} name={x.name} tagline={x.tagline} headline={info.headline} sub={info.sub} starters={info.starters}>
           <SectionInfo name={x.name} can={info.can} soon={info.soon} />
         </SectionChat>
       </Suspense>
