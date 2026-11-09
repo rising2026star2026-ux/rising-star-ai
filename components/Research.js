@@ -232,7 +232,7 @@ export default function Research() {
           )}
           {(found || report) && !busy && <button type="button" className={s.ghost} onClick={reset}>بحث جديد</button>}
         </div>
-        <p className={s.libs}>المكتبات: OpenAlex • CORE • Semantic Scholar • arXiv • Open Library • مجلات بنك المعرفة المصري • شمعة</p>
+        <p className={s.libs}>المكتبات: OpenAlex • CORE • Semantic Scholar • DOAJ • arXiv • Open Library • Google Books • مجلات بنك المعرفة المصري • شمعة</p>
       </section>
 
       {stage === "searching" && <div className={s.status}><span className={s.spin} aria-hidden="true" /> بدوّر في مكتبات الأبحاث والكتب…</div>}
@@ -262,9 +262,20 @@ export default function Research() {
                       {x.cites ? <small>{x.kind === "book" ? `${Math.round(x.cites / 3)} طبعة` : `${x.cites} استشهاد`}</small> : null}
                       <small>{x.lib}</small>
                     </span>
-                    <strong dir="auto">{x.title}</strong>
+                    {x.title_ar ? (
+                      <>
+                        <strong dir="rtl">{x.title_ar}</strong>
+                        <span className={s.orig} dir="auto" lang="en">{x.title}</span>
+                      </>
+                    ) : (
+                      <strong dir="auto">{x.title}</strong>
+                    )}
                     {x.authors?.length > 0 && <span className={s.authors} dir="auto">{x.authors.join("، ")}{x.venue ? ` — ${x.venue}` : ""}</span>}
-                    {x.abstract && <span className={s.abs} dir="auto">{x.abstract.slice(0, 260)}{x.abstract.length > 260 ? "…" : ""}</span>}
+                    {x.summary_ar ? (
+                      <span className={s.abs} dir="rtl"><span className={s.mt}>ترجمة آلية</span> {x.summary_ar}</span>
+                    ) : x.abstract ? (
+                      <span className={s.abs} dir="auto">{x.abstract.slice(0, 260)}{x.abstract.length > 260 ? "…" : ""}</span>
+                    ) : null}
                     <span className={s.links}>
                       {x.url && <a href={x.url} target="_blank" rel="noopener noreferrer nofollow">صفحة المصدر</a>}
                       {x.oa && <a href={x.oa} target="_blank" rel="noopener noreferrer nofollow">النص الكامل (مفتوح)</a>}

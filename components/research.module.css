@@ -58,6 +58,8 @@
 .srcBody strong { font-size: var(--fs-md); font-weight: 600; color: var(--text-strong); line-height: 1.55; overflow-wrap: anywhere; }
 .authors { font-size: var(--fs-xs); color: var(--muted); }
 .abs { font-size: var(--fs-xs); color: var(--faint); line-height: 1.7; }
+.orig { display: block; font-size: var(--fs-xs); color: var(--muted); line-height: 1.6; text-align: start; }
+.mt { display: inline-block; font-size: var(--fs-xs); color: var(--accent); background: var(--accent-soft); border-radius: var(--r-xs); padding: 0 6px; margin-inline-end: 4px; }
 .links { display: flex; gap: 12px; flex-wrap: wrap; }
 .links a { font-size: var(--fs-xs); color: #1f4dff; }
 

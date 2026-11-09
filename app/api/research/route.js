@@ -1,16 +1,18 @@
 // الباحث الأكاديمي: 3 خطوات منفصلة عشان كل طلب يخلص في أقل من دقيقة على Vercel
-//   step: "sources"  ← بحث في المكتبات (OpenAlex وSemantic Scholar وarXiv وOpen Library)
+//   step: "sources"  ← بحث في المكتبات (lib/scholar.js) وترجمة المصادر الأجنبية للعربي
 //   step: "outline"  ← خطة التقرير (أقسام ونقاط ومصادر كل قسم) من المصادر اللي العميل اختارها
 //   step: "map"      ← قراءة خريطة المصادر: محاور البحث، وفجوات، وترتيب قراءة مقترح
 //   step: "section"  ← كتابة قسم واحد (رد متدفق) بالاعتماد على مصادره بس، والمتصفح بيجمّع الأقسام
 import { fail, clientIp, rateLimiter, chainFor, streamFromGroq } from "@/lib/groq";
 import { getModel } from "@/lib/models";
 import { askJson, str, list, int } from "@/lib/llmjson";
-import { findSources } from "@/lib/scholar";
+import { findSources, translateSources } from "@/lib/scholar";
 import { withSection } from "@/lib/sectionkeys";
 
 export const maxDuration = 60;
 
+// نفس الموضوع في خلال 6 ساعات بيرجع من غير بحث وترجمة تاني
+const srcCache = new Map();
 const tooManySearches = rateLimiter(12); // 12 بحث مكتبات في الساعة لكل زائر
 const tooManyReports = rateLimiter(10);  // 10 تقارير (خطط) في الساعة
 const tooManyMaps = rateLimiter(20); // تحليل خريطة المصادر
@@ -22,7 +24,7 @@ const LENGTHS = {
   long: { sections: 11, words: 480, label: "حوالي 15 صفحة" },
 };
 
-const cleanSources = (raw, max = 20) =>
+const cleanSources = (raw, max = 40) =>
   list(raw, max, (x) => {
     const n = int(x?.n, 1, 99, 0);
     const title = str(x?.title, 300);
@@ -71,9 +73,19 @@ async function handlePost(req) {
 
   if (body.step === "sources") {
     if (tooManySearches(ip)) return fail("وصلت لحد البحث في المكتبات الساعة دي. جرّب بعد شوية.", 429);
+    const started = Date.now();
+    const key = topic.toLowerCase().replace(/\s+/g, " ");
+    const hit = srcCache.get(key);
+    if (hit && Date.now() - hit.t < 6 * 3600_000) return Response.json(hit.v);
     const out = await findSources(topic);
     if (!out.sources.length) return fail("ما لقيتش مصادر للموضوع ده في المكتبات. جرّب تكتبه بشكل تاني أو بكلمات أدق.", 404);
-    return Response.json(out);
+    // الترجمة بتاخد اللي فاضل من وقت الطلب (حد Vercel 60 ثانية)، واللي ما يلحقش يفضل بالأصل
+    const left = 50_000 - (Date.now() - started);
+    const sources = left > 6_000 ? await translateSources(out.sources, { ms: Math.min(25_000, left) }) : out.sources;
+    const v = { ...out, sources };
+    srcCache.set(key, { t: Date.now(), v });
+    if (srcCache.size > 200) srcCache.delete(srcCache.keys().next().value);
+    return Response.json(v);
   }
 
   const len = LENGTHS[body.length] || LENGTHS.medium;
@@ -132,7 +144,7 @@ async function handlePost(req) {
       mode: "strong",
       messages: [
         { role: "system", content: OUTLINE_RULES },
-        { role: "user", content: `الموضوع: ${topic}\nعدد الأقسام المطلوب: ${len.sections}\n\nالمصادر:\n${sources.map((s) => srcLine(s, 500)).join("\n\n")}` },
+        { role: "user", content: `الموضوع: ${topic}\nعدد الأقسام المطلوب: ${len.sections}\n\nالمصادر:\n${sources.map((s) => srcLine(s, sources.length > 24 ? 280 : 500)).join("\n\n")}` },
       ],
       normalize: (o) => {
         const sections = list(o.sections, len.sections + 1, (x) => {
