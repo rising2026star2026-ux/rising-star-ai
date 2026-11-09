@@ -7,8 +7,8 @@ import { buildMap, layout } from "@/lib/sourcemap";
 import s from "./sourcemap.module.css";
 
 const CLUSTER_COLORS = ["#1f4dff", "#12a36b", "#e0791b", "#b03fd6", "#d23a59"];
-const KIND_COLOR = { paper: "#1f4dff", book: "#12a36b", thesis: "#b03fd6" };
-const KIND = { paper: "بحث", book: "كتاب", thesis: "رسالة" };
+const KIND_COLOR = { paper: "#1f4dff", book: "#12a36b", thesis: "#b03fd6", report: "#d97706", encyclopedia: "#64748b", video: "#e11d48" };
+const KIND = { paper: "بحث", book: "كتاب", thesis: "رسالة", report: "تقرير", encyclopedia: "مرجع عام", video: "فيديو" };
 const LINK_STYLE = {
   cites: { stroke: "#e0791b", width: 2.2, dash: "" },
   shared: { stroke: "#1f4dff", width: 1.6, dash: "5 4" },

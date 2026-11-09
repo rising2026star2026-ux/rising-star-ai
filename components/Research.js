@@ -14,7 +14,7 @@ const LENGTHS = [
   ["medium", "متوسط", "حوالي 8 صفحات"],
   ["long", "طويل", "حوالي 15 صفحة"],
 ];
-const KIND = { paper: "بحث", book: "كتاب", thesis: "رسالة" };
+const KIND = { paper: "بحث", book: "كتاب", thesis: "رسالة", report: "تقرير", encyclopedia: "مرجع عام", video: "فيديو" };
 const EXAMPLES = [
   "أثر الذكاء الاصطناعي على سوق العمل في الدول العربية",
   "دور محمد علي باشا في تحديث مصر",
@@ -232,7 +232,7 @@ export default function Research() {
           )}
           {(found || report) && !busy && <button type="button" className={s.ghost} onClick={reset}>بحث جديد</button>}
         </div>
-        <p className={s.libs}>المكتبات: OpenAlex • CORE • Semantic Scholar • DOAJ • arXiv • Open Library • Google Books • مجلات بنك المعرفة المصري • شمعة</p>
+        <p className={s.libs}>المكتبات: OpenAlex • CORE • Semantic Scholar • DOAJ • arXiv • ناسا • البنك الدولي • Open Library • Google Books • أرشيف الإنترنت • مجلات بنك المعرفة المصري • شمعة • ويكيبيديا ويوتيوب كمراجع عامة</p>
       </section>
 
       {stage === "searching" && <div className={s.status}><span className={s.spin} aria-hidden="true" /> بدوّر في مكتبات الأبحاث والكتب…</div>}
