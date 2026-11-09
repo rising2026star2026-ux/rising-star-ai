@@ -16,6 +16,8 @@ import { timedAsk } from "@/lib/amazonapi";
 import { withSection } from "@/lib/sectionkeys";
 
 export const maxDuration = 60;
+// موديل متأخر ما يوقعش الطلب كله عند حد Vercel (60 ثانية): الخطوة بتتقفل قبله وترجع رسالة مفهومة
+const deadline = (req) => (req.signal ? AbortSignal.any([req.signal, AbortSignal.timeout(50_000)]) : AbortSignal.timeout(50_000));
 
 // حدود كل زائر في الساعة: المهمة الواحدة بتاخد خطة + لحد 3 خطوات على السيرفر
 const LIMITS = { plan: rateLimiter(12), market: rateLimiter(10), listing: rateLimiter(15), posts: rateLimiter(20) };
@@ -82,7 +84,7 @@ async function plan(req, body) {
     temperature: 0.2,
     maxTokens: 900,
     tries: 3,
-    signal: req.signal,
+    signal: deadline(req),
   });
   if (!out) return fail("الوكيل مشغول دلوقتي. جرّب تاني بعد دقيقة.", 503);
   return Response.json(out);
@@ -97,7 +99,7 @@ async function market(req, body) {
     product: b.product,
     channel: b.channel === "social" ? "facebook" : "marketplace",
     price: b.price, cost: b.cost, shipping: b.shipping, feePct: b.feePct,
-    signal: req.signal,
+    signal: deadline(req),
   });
   if (out.empty) return Response.json({ product: out.product, channel: out.channel, empty: true, note: out.note });
   return Response.json(out);
@@ -129,7 +131,7 @@ async function posts(req, body) {
     seen && `اللي باين في صورة المنتج:\n${seen}`,
     b.details && `معلومات تانية من التاجر:\n${b.details}`,
   ].filter(Boolean).join("\n\n");
-  const out = await runAdPack({ facts, dialect: b.dialect, brand, signal: req.signal });
+  const out = await runAdPack({ facts, dialect: b.dialect, brand, signal: deadline(req) });
   if (!out) return fail("الكاتب مشغول دلوقتي. جرّب تاني بعد دقيقة.", 503);
   return Response.json(out);
 }

@@ -6,7 +6,7 @@ import { runMarketCheck } from "@/lib/marketcheck";
 import { withSection } from "@/lib/sectionkeys";
 
 export const maxDuration = 60;
-const tooMany = rateLimiter(10); // 10 فحص في الساعة لكل زائر (كل فحص = 4 طلبات بحث)
+const tooMany = rateLimiter(10); // 10 فحص في الساعة لكل زائر (كل فحص = 5 أرصدة Serper: 3 بحث عادي وبحث تسوق بـ20 نتيجة بيتحسب برصيدين)
 
 const n = (v, lo, hi) => {
   const x = Math.round(Number(String(v ?? "").replace(/[^\d.]/g, "")));
