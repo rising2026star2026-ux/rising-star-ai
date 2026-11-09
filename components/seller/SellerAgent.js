@@ -453,7 +453,7 @@ export default function SellerAgent() {
                   <div><dt>أعلى سعر</dt><dd>{egp(mk.stats.max)}</dd></div>
                 </dl>
               ) : <p className={s.note}>الأسعار مش ظاهرة في نتايج البحث للمنتج ده. افتح الروابط في المصادر وشوف الأسعار بنفسك.</p>}
-              <p className={s.note}>من {mk.stats.listings} ليستنج حقيقي{mk.stats.priced ? ` و${mk.stats.priced} سعر ظاهر` : ""} في {mk.stats.stores.length} متجر{mk.score ? `. مؤشر الفرصة ${mk.score.low}–${mk.score.high} من 100، ومحسوب من البيانات دي مش وعد بمبيعات` : ""}.</p>
+              <p className={s.note}>من عيّنة {mk.stats.listings} ليستنج حقيقي من أول نتايج البحث (مش كل المنافسين){mk.stats.priced ? ` و${mk.stats.priced} سعر ظاهر` : ""} في {mk.stats.stores.length} متجر{mk.score ? `. مؤشر الفرصة ${mk.score.low}–${mk.score.high} من 100، ومحسوب من البيانات دي مش وعد بمبيعات` : ""}.</p>
               {mk.analysis?.summary && <p className={s.lead}><Cited text={mk.analysis.summary} /></p>}
               {mk.analysis && (
                 <div className={s.advice}>
@@ -466,7 +466,7 @@ export default function SellerAgent() {
               <details className={s.sources}>
                 <summary>المصادر ({mk.listings.length}) والأسعار في كل متجر</summary>
                 <table className={s.table}>
-                  <thead><tr><th scope="col">المتجر</th><th scope="col">ليستنج</th><th scope="col">المتوسط</th></tr></thead>
+                  <thead><tr><th scope="col">المتجر</th><th scope="col">في العيّنة</th><th scope="col">المتوسط</th></tr></thead>
                   <tbody>{mk.stats.stores.map((x) => <tr key={x.store}><th scope="row">{x.name}</th><td>{x.listings}</td><td>{egp(x.median)}</td></tr>)}</tbody>
                 </table>
                 <ol>
@@ -603,7 +603,7 @@ function Diff({ d, cached }) {
       <ul>
         {line("متوسط السوق", d.median)}
         {line("أقل سعر", d.min)}
-        <li><span>عدد الليستنجات</span><b>{d.listings.from} ← {d.listings.to}</b></li>
+        <li><span>حجم العيّنة</span><b>{d.listings.from} ← {d.listings.to}</b></li>
       </ul>
       {cached && <small className={s.note}>الأسعار دي من آخر 24 ساعة.</small>}
     </div>
@@ -620,7 +620,7 @@ function buildReport(run, priced, lang) {
   t.push(`مهمة: ${run.goal}`);
   h.push(`<p><b>المهمة:</b> ${esc(run.goal)}</p>`);
   if (mk?.stats?.priced) {
-    t.push("", "السوق في مصر", `أقل سعر ${egp(mk.stats.min)}، المتوسط ${egp(mk.stats.median)}، أعلى سعر ${egp(mk.stats.max)} (من ${mk.stats.listings} ليستنج).`);
+    t.push("", "السوق في مصر", `أقل سعر ${egp(mk.stats.min)}، المتوسط ${egp(mk.stats.median)}، أعلى سعر ${egp(mk.stats.max)} (عيّنة من ${mk.stats.listings} ليستنج من أول نتايج البحث).`);
     h.push(`<h2>السوق في مصر</h2><p>أقل سعر ${egp(mk.stats.min)}، المتوسط ${egp(mk.stats.median)}، أعلى سعر ${egp(mk.stats.max)} (من ${mk.stats.listings} ليستنج في ${mk.stats.stores.length} متجر).</p>`);
     if (mk.analysis?.summary) { t.push(strip(mk.analysis.summary)); h.push(`<p>${esc(strip(mk.analysis.summary))}</p>`); }
     const sec = (title, arr) => { if (arr?.length) { t.push("", title, ...arr.map((x) => `- ${strip(x)}`)); h.push(`<h3>${title}</h3><ul>${arr.map((x) => `<li>${esc(strip(x))}</li>`).join("")}</ul>`); } };

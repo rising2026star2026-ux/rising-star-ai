@@ -136,7 +136,7 @@ export default function MarketCheck() {
               </div>
               <div className={m.range} aria-hidden="true"><i style={{ insetInlineStart: `${sc.low}%`, width: `${sc.high - sc.low}%` }} /></div>
               <p className={m.disclaimer}>
-                ده مؤشر محسوب من بيانات السوق اللي لقيناها ({st.listings} ليستنج، {st.reviewsTotal.toLocaleString("en")} تقييم)، مش وعد بمبيعات.
+                ده مؤشر محسوب من عيّنة من أول نتايج البحث ({st.listings} ليستنج، مش كل المنافسين، {st.reviewsTotal.toLocaleString("en")} تقييم)، مش وعد بمبيعات.
                 المدى بيضيق كل ما البيانات تزيد. قوة البيانات هنا: {sc.evidence}%.
               </p>
               {a?.summary && <p className={m.summary}><Cited text={a.summary} /></p>}
@@ -167,7 +167,7 @@ export default function MarketCheck() {
                 <p className={m.small}>الأسعار مش ظاهرة في نتايج البحث للمنتج ده. افتح الروابط تحت وشوف الأسعار بنفسك.</p>
               )}
               <table className={m.table}>
-                <thead><tr><th scope="col">المتجر</th><th scope="col">ليستنج</th><th scope="col">المتوسط</th><th scope="col">تقييمات</th></tr></thead>
+                <thead><tr><th scope="col">المتجر</th><th scope="col">في العيّنة</th><th scope="col">المتوسط</th><th scope="col">تقييمات</th></tr></thead>
                 <tbody>
                   {st.stores.map((x) => (
                     <tr key={x.store}><th scope="row">{x.name}</th><td>{x.listings}</td><td>{egp(x.median)}</td><td>{x.reviews ? x.reviews.toLocaleString("en") : "—"}</td></tr>
