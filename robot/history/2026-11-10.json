@@ -1,0 +1,42 @@
+{
+ "date": "2026-11-10T05:34:52.907Z",
+ "total": 524,
+ "ok": 507,
+ "broken": [
+  "/tool/caption",
+  "/tool/business-plan",
+  "/tool/code-gen",
+  "/tool/code-explain",
+  "/tool/compare",
+  "/tool/remove-bg",
+  "feature:voice-post",
+  "feature:amazon-check",
+  "feature:test-ad",
+  "feature:amazon-listing",
+  "feature:amazon-competitor",
+  "feature:prompt-builder",
+  "feature:image-reader"
+ ],
+ "warn": 4,
+ "spacesDown": [
+  "aryadytm-remove-photo-object",
+  "multimodalart-logo-in-context",
+  "eccv2022-dis-background-removal",
+  "doevent-face-real-esrgan",
+  "stepfun-ai-step1x-3d"
+ ],
+ "aiTested": [
+  "/tool/whatsapp-sales",
+  "/tool/youtube-title",
+  "/tool/ad-copy",
+  "/tool/adspy",
+  "/tool/article",
+  "/tool/brainstorm",
+  "/tool/business-ideas",
+  "/tool/business-plan",
+  "/tool/caption",
+  "/tool/code-explain",
+  "/tool/code-gen",
+  "/tool/compare"
+ ]
+}
