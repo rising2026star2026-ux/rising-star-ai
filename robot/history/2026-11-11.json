@@ -1,0 +1,42 @@
+{
+ "date": "2026-11-11T05:39:02.376Z",
+ "total": 524,
+ "ok": 508,
+ "broken": [
+  "/tool/formalize",
+  "/tool/explain",
+  "/tool/english-correct",
+  "/tool/debug",
+  "/tool/excel-formula",
+  "/tool/daily-plan",
+  "/tool/email-writer",
+  "/tool/email-reply",
+  "/tool/gem-assistant",
+  "/tool/image-to-text",
+  "feature:photo-ad",
+  "feature:test-ad",
+  "feature:prompt-builder"
+ ],
+ "warn": 3,
+ "spacesDown": [
+  "aryadytm-remove-photo-object",
+  "multimodalart-logo-in-context",
+  "eccv2022-dis-background-removal",
+  "doevent-face-real-esrgan",
+  "stepfun-ai-step1x-3d"
+ ],
+ "aiTested": [
+  "/tool/content-calendar",
+  "/tool/cover-letter",
+  "/tool/cv",
+  "/tool/daily-plan",
+  "/tool/debug",
+  "/tool/email-reply",
+  "/tool/email-writer",
+  "/tool/english-correct",
+  "/tool/excel-formula",
+  "/tool/explain",
+  "/tool/formalize",
+  "/tool/gem-assistant"
+ ]
+}

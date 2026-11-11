@@ -1,23 +1,23 @@
 {
- "date": "2026-11-10T05:34:52.907Z",
+ "date": "2026-11-11T05:39:02.376Z",
  "total": 524,
- "ok": 507,
+ "ok": 508,
  "broken": [
-  "/tool/caption",
-  "/tool/business-plan",
-  "/tool/code-gen",
-  "/tool/code-explain",
-  "/tool/compare",
-  "/tool/remove-bg",
-  "feature:voice-post",
-  "feature:amazon-check",
+  "/tool/formalize",
+  "/tool/explain",
+  "/tool/english-correct",
+  "/tool/debug",
+  "/tool/excel-formula",
+  "/tool/daily-plan",
+  "/tool/email-writer",
+  "/tool/email-reply",
+  "/tool/gem-assistant",
+  "/tool/image-to-text",
+  "feature:photo-ad",
   "feature:test-ad",
-  "feature:amazon-listing",
-  "feature:amazon-competitor",
-  "feature:prompt-builder",
-  "feature:image-reader"
+  "feature:prompt-builder"
  ],
- "warn": 4,
+ "warn": 3,
  "spacesDown": [
   "aryadytm-remove-photo-object",
   "multimodalart-logo-in-context",
@@ -26,17 +26,17 @@
   "stepfun-ai-step1x-3d"
  ],
  "aiTested": [
-  "/tool/whatsapp-sales",
-  "/tool/youtube-title",
-  "/tool/ad-copy",
-  "/tool/adspy",
-  "/tool/article",
-  "/tool/brainstorm",
-  "/tool/business-ideas",
-  "/tool/business-plan",
-  "/tool/caption",
-  "/tool/code-explain",
-  "/tool/code-gen",
-  "/tool/compare"
+  "/tool/content-calendar",
+  "/tool/cover-letter",
+  "/tool/cv",
+  "/tool/daily-plan",
+  "/tool/debug",
+  "/tool/email-reply",
+  "/tool/email-writer",
+  "/tool/english-correct",
+  "/tool/excel-formula",
+  "/tool/explain",
+  "/tool/formalize",
+  "/tool/gem-assistant"
  ]
 }
