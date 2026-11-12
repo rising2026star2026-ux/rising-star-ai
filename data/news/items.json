@@ -1,33 +1,325 @@
 {
- "updated": "2026-11-11T05:26:51.888Z",
+ "updated": "2026-11-12T17:32:45.793Z",
  "providers": [
   "gemini",
   "groq",
   "openrouter"
  ],
  "used": {
-  "gemini": 7
+  "gemini": 1
  },
  "feeds": {
-  "openai": "ok 89",
-  "meta": "ok 9",
-  "huggingface": "ok 30",
-  "nvidia": "ok 18",
-  "deepmind": "ok 14",
-  "aws": "ok 20",
+  "openai": "ok 94",
+  "deepmind": "ok 13",
   "apple": "ok 10",
-  "google-research": "ok 10",
   "techcrunch": "ok 20",
-  "marktechpost": "ok 10",
-  "google-ai": "ok 8",
   "verge": "ok 10",
+  "marktechpost": "ok 10",
+  "aws": "ok 20",
+  "nvidia": "ok 18",
+  "huggingface": "ok 31",
+  "google-ai": "ok 10",
+  "meta": "ok 9",
+  "techwd": "ok 2",
   "arstechnica": "ok 20",
-  "techwd": "ok 0",
-  "aitnews": "ok 4",
-  "microsoft": "ok 10",
+  "aitnews": "ok 5",
+  "google-research": "ok 11",
+  "microsoft": "ok 9",
   "venturebeat": "FAIL HTTP 429"
  },
  "items": [
+  {
+   "id": "4213b9afeff9",
+   "url": "https://www.theverge.com/games/1032085/gdc-festival-of-gaming-annual-survey-ai-layoffs",
+   "title": "More game developers are starting to use generative AI",
+   "date": "2026-11-12T17:20:58.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "ddf7a6c150d0",
+   "url": "https://techcrunch.com/2026/11/12/softbanks-billion-dollar-loss-may-have-put-a-cap-on-ais-natural-gas-ambitions/",
+   "title": "SoftBank’s billion-dollar loss may have put a cap on AI’s natural gas ambitions",
+   "date": "2026-11-12T17:00:52.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "d0b6d30c7ec6",
+   "url": "https://techcrunch.com/2026/11/12/phota-labs-uses-ai-to-turn-everyday-photos-into-professional-looking-shots/",
+   "title": "Phota Labs uses AI to turn everyday photos into professional-looking shots",
+   "date": "2026-11-12T17:00:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "1d250e9233fe",
+   "url": "https://www.theverge.com/podcast/1031260/nvidia-jensen-huang-resign-china-spy-scandal-ai-chips-trump",
+   "title": "Jensen Huang is out. What did China want from him?",
+   "date": "2026-11-12T16:59:00.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "32933935200c",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1032020/gemini-chatgpt-perplexity-shopping-test-risky-fake-websites-citations",
+   "title": "AI chatbots are recommending fake retail websites, study finds",
+   "date": "2026-11-12T16:57:11.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "0fd7ae7044e5",
+   "url": "https://techcrunch.com/2026/11/12/jensen-huang-agrees-to-testify-before-congress/",
+   "title": "Jensen Huang agrees to testify before Congress",
+   "date": "2026-11-12T16:36:37.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "0ff22abf6100",
+   "url": "https://techcrunch.com/2026/11/12/five-ways-jensen-huangs-ouster-from-nvidia-could-damage-the-ai-industry/",
+   "title": "Five ways Jensen Huang’s ouster from Nvidia could damage the AI industry",
+   "date": "2026-11-12T16:32:33.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "4a6d92631407",
+   "url": "https://www.theverge.com/tech/1031652/jensen-huang-rumor",
+   "title": "Nvidia is reportedly preparing to fire Jensen Huang",
+   "date": "2026-11-12T16:26:32.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "9e1f41c111d5",
+   "url": "https://aws.amazon.com/blogs/machine-learning/migrate-to-amazon-bedrock-managed-knowledge-base-with-your-coding-agent/",
+   "title": "Migrate to Amazon Bedrock Managed Knowledge Base with your coding agent",
+   "date": "2026-11-12T16:16:45.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "a5ee89764269",
+   "url": "https://techcrunch.com/2026/11/12/trump-floats-apple-chairman-tim-cook-as-jensen-huangs-successor/",
+   "title": "Trump floats Apple chairman Tim Cook as Jensen Huang’s successor",
+   "date": "2026-11-12T16:12:44.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "bb3d6502410d",
+   "url": "https://www.tech-wd.com/wd/2026/11/12/%d8%a7%d8%b3%d8%aa%d9%82%d8%a7%d9%84%d8%a9-%d8%b1%d8%a6%d9%8a%d8%b3-nvidia-%d8%a8%d8%b9%d8%af-%d9%81%d8%b6%d9%8a%d8%ad%d8%a9-%d8%b4%d8%ae%d8%b5%d9%8a%d8%a9-%d9%88%d9%83%d9%88%d9%84%d9%8a%d8%aa-%d9%83/",
+   "title": "استقالة رئيس Nvidia بعد فضيحة شخصية وكوليت كريس تتولى المنصب مؤقتاً",
+   "date": "2026-11-12T16:12:23.000Z",
+   "src": "تك وورلد",
+   "srcId": "techwd",
+   "kind": "arabic",
+   "ar": {
+    "title": "استقالة رئيس Nvidia بعد فضيحة شخصية وكوليت كريس تتولى المنصب مؤقتاً",
+    "summary": ""
+   }
+  },
+  {
+   "id": "830958e6e6f7",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1032028/read-nvidias-internal-emails-jensen-huang",
+   "title": "Read Nvidia’s internal emails about the ‘extraordinarily difficult period’ amid CEO shakeup",
+   "date": "2026-11-12T16:11:59.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "426b199762db",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1031689/jensen-huang-nvidia-ceo-resigns",
+   "title": "Nvidia CEO Jensen Huang resigns amid spy, affair scandals",
+   "date": "2026-11-12T15:48:05.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "de687054f074",
+   "url": "https://aws.amazon.com/blogs/machine-learning/build-composable-interoperable-multi-agent-systems-with-a2a-on-aws/",
+   "title": "Build composable, interoperable multi-agent systems with A2A on AWS",
+   "date": "2026-11-12T15:42:21.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "a888961d7ce6",
+   "url": "https://aws.amazon.com/blogs/machine-learning/fine-grained-access-control-for-amazon-bedrock-managed-knowledge-base-tools/",
+   "title": "Fine-grained access control for Amazon Bedrock Managed Knowledge Base tools",
+   "date": "2026-11-12T15:40:24.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "19d3c2e19db4",
+   "url": "https://aws.amazon.com/blogs/machine-learning/from-prototype-to-production-engineering-agents-with-agent-dlc/",
+   "title": "From prototype to production: Engineering agents with Agent DLC",
+   "date": "2026-11-12T15:38:47.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "15b0384fb53f",
+   "url": "https://techcrunch.com/2026/11/12/jensen-huang-is-out-at-nvidia-who-is-colette-kress-his-interim-replacement/",
+   "title": "Jensen Huang is out at Nvidia — who is Colette Kress, his interim replacement?",
+   "date": "2026-11-12T15:37:29.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "62c34abfa66e",
+   "url": "https://techcrunch.com/2026/11/12/norwest-pushes-deeper-into-ai-with-new-4b-fund/",
+   "title": "Norwest pushes deeper into AI with new $4B fund",
+   "date": "2026-11-12T15:18:14.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "023d1c79ca20",
+   "url": "https://techcrunch.com/2026/11/12/cyberattack-on-fireworks-ai-allowed-hackers-to-access-notion-customers-chat-transcripts/",
+   "title": "Cyberattack on Fireworks AI allowed hackers to access Notion customers’ chat transcripts",
+   "date": "2026-11-12T15:02:28.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "5f96a0ebfa7b",
+   "url": "https://arstechnica.com/google/2026/11/google-pushes-privacy-angle-as-gemini-powered-smartglasses-debut-starting-at-395/",
+   "title": "Google pushes privacy angle as Gemini-powered smartglasses debut starting at $395",
+   "date": "2026-11-12T14:50:17.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "5e5f306d785f",
+   "url": "https://techcrunch.com/2026/11/12/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
+   "title": "The unfolding Jensen Huang scandal: a timeline",
+   "date": "2026-11-12T14:30:01.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "39f4c129e434",
+   "url": "https://www.theverge.com/tech/1031868/i-reviewed-the-apple-homeview-ask-me-anything",
+   "title": "I reviewed the Apple HomeView, ask me anything",
+   "date": "2026-11-12T14:27:12.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "42899cb2010a",
+   "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-warhammer-dawn-of-war-iv-coming/",
+   "title": "A New Dawn in the Cloud: ‘Warhammer 40,000: Dawn of War IV’ Is Coming to GeForce NOW",
+   "date": "2026-11-12T14:00:59.000Z",
+   "src": "NVIDIA",
+   "srcId": "nvidia",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "7ed9c1c82c2d",
+   "url": "https://techcrunch.com/2026/11/12/nine-korean-startups-vie-for-a-spot-in-disrupt-2027s-startup-battlefield-200-competition/",
+   "title": "Nine Korean startups vie for a spot in Disrupt 2027’s Startup Battlefield 200 competition",
+   "date": "2026-11-12T13:26:25.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "0990939c7d6e",
+   "url": "https://openai.com/business/customer-stories/holidays-extras-codex",
+   "title": "Holiday Extras is rethinking what it can build with Codex",
+   "date": "2026-11-12T09:30:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "4d944021cd7f",
+   "url": "https://www.marktechpost.com/2026/11/12/ibm-quantum-nighthawk-r3-520-qubits-1040-qubit-system-2027/",
+   "title": "IBM Announces IBM Quantum Nighthawk r3: A New Processor to Support 10k Quantum Operations on 520 Programmable Qubits",
+   "date": "2026-11-12T08:42:21.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": {
+    "title": "IBM تعلن عن معالج كوانتم جديد Nighthawk r3",
+    "summary": "كشفت شركة IBM عن معالج Quantum Nighthawk r3 اللي بييجي بـ 520 كيوبت ومخصص لتنفيذ 10 آلاف عملية كمومية. الشركة بتخطط لربط شريحتين منه في سنة 2027 للوصول لنظام بيشتغل بـ 1,040 كيوبت."
+   }
+  },
+  {
+   "id": "48e6c4124142",
+   "url": "https://techcrunch.com/2026/11/11/who-could-replace-jensen-huang-a-highly-unscientific-list-of-possible-successors/",
+   "title": "Who could replace Jensen Huang? A highly unscientific list of possible successors",
+   "date": "2026-11-12T03:13:10.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": {
+    "title": "مين ممكن يخلف Jensen Huang في رئاسة Nvidia؟",
+    "summary": "في ظل غياب خطة واضحة للخلافة داخل Nvidia والموقف الصعب اللي بيواجهه رئيسها التنفيذي، المقال بيقدم قايمة ترشيحات غير علمية لبدائل محتملين لقيادة الشركة."
+   }
+  },
+  {
+   "id": "4fde59b89280",
+   "url": "https://aws.amazon.com/blogs/machine-learning/build-autonomous-ai-agents-with-amazon-bedrock-and-spring-ai/",
+   "title": "Build autonomous AI agents with Amazon Bedrock and Spring AI",
+   "date": "2026-11-12T01:18:23.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "بناء وكلاء ذكاء اصطناعي بـ Amazon Bedrock وSpring AI",
+    "summary": "دليل بيشرح لمطوري Java إزاي يبنوا وكلاء ذكاء اصطناعي مستقلين وجاهزين للإنتاج الفعلي باستخدام Amazon Bedrock وSpring AI، ونشرهم على AWS عبر Amazon Bedrock AgentCore."
+   }
+  },
   {
    "id": "f28f90d2895a",
    "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
@@ -42,6 +334,437 @@
    }
   },
   {
+   "id": "b06379671ede",
+   "url": "https://openai.com/index/children-first-declaration",
+   "title": "Supporting research on AI and children’s safety",
+   "date": "2026-11-12T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "OpenAI تخصص 2 مليون دولار لأبحاث أمان الأطفال",
+    "summary": "أعلنت OpenAI عن التزامها بتقديم 2 مليون دولار لدعم الأبحاث الخاصة بأمان الأطفال مع الذكاء الاصطناعي، بهدف بناء أدوات مشتركة لتقييم المخاطر والفرص المتاحة للشباب وصغار السن."
+   }
+  },
+  {
+   "id": "56dac742ff29",
+   "url": "https://huggingface.co/blog/3d-lora-finetuning",
+   "title": "The Definitive Fine-Tuning Guide for 3D Generation Models",
+   "date": "2026-11-12T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": {
+    "title": "الدليل الشامل لضبط نماذج التوليد ثلاثية الأبعاد",
+    "summary": "دليل متخصص بيتناول طريقة الـ Fine-Tuning لنماذج التوليد ثلاثية الأبعاد 3D."
+   }
+  },
+  {
+   "id": "8983976445a6",
+   "url": "https://aws.amazon.com/blogs/machine-learning/openai-codex-on-amazon-bedrock/",
+   "title": "OpenAI Codex on Amazon Bedrock",
+   "date": "2026-11-11T23:35:47.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "تشغيل OpenAI Codex عبر Amazon Bedrock",
+    "summary": "دليل عملي بيساعد الشركات في إتاحة OpenAI Codex للمطورين على بيئة AWS بالاعتماد على Amazon Bedrock، مع التركيز على تنظيم الصلاحيات والحوكمة والتكاليف بين فرق العمل."
+   }
+  },
+  {
+   "id": "d69d0f141f7a",
+   "url": "https://aws.amazon.com/blogs/machine-learning/semantic-diffing-of-formal-policies-with-anti-unification/",
+   "title": "Semantic diffing of formal policies with anti-unification",
+   "date": "2026-11-11T23:33:03.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "مقارنة دلالية لسياسات الأمان باستخدام anti-unification",
+    "summary": "المقال بيوضح طريقة لحساب الفروق الدلالية بين سياسات التفويض باستخدام محرك anti-unification مفتوح المصدر، عشان المراجعين يركزوا على الاختلافات الحقيقية في الأداء بدل التغييرات الشكلية في النصوص."
+   }
+  },
+  {
+   "id": "a0a816a0eb24",
+   "url": "https://aws.amazon.com/blogs/machine-learning/detecting-and-recovering-from-silent-data-corruption-on-amazon-sagemaker-hyperpod/",
+   "title": "Detecting and recovering from silent data corruption on Amazon SageMaker HyperPod",
+   "date": "2026-11-11T23:30:03.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": {
+    "title": "كشف تلف البيانات الصامت في Amazon SageMaker HyperPod",
+    "summary": "المقال بيقدم طريقة لاكتشاف تلف البيانات الصامت في الـ GPU أثناء التدريب الموزع، وده من خلال إضافة 3 فحوصات على PyTorch DDP لتحديد العقدة المعطلة في Amazon SageMaker HyperPod واستبدالها تلقائياً."
+   }
+  },
+  {
+   "id": "e9253ae6619e",
+   "url": "https://techcrunch.com/2026/11/11/nvidias-stock-drops-as-board-reportedly-preps-to-oust-ceo-jensen-huang/",
+   "title": "Nvidia’s stock drops as board reportedly preps to oust CEO Jensen Huang",
+   "date": "2026-11-11T23:28:45.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "0ca5cf57ee51",
+   "url": "https://techcrunch.com/2026/11/11/jensen-huang-accused-of-having-another-affair-with-a-nvidia-exec/",
+   "title": "Jensen Huang accused of having another affair — with an Nvidia exec",
+   "date": "2026-11-11T23:17:05.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "b5708027eb88",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-the-web-search-api-on-amazon-bedrock-agentcore/",
+   "title": "Introducing the Web Search API on Amazon Bedrock AgentCore",
+   "date": "2026-11-11T23:13:16.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "04245104e05c",
+   "url": "https://aws.amazon.com/blogs/machine-learning/icymi-what-landed-for-ai-builders-in-october-2026/",
+   "title": "ICYMI: What landed for AI builders in October 2026",
+   "date": "2026-11-11T22:26:40.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "33bddd1c4002",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1031623/united-unauthorized-ai-agents",
+   "title": "United won’t let your AI agent book your flight",
+   "date": "2026-11-11T21:54:21.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "faee25e7eeb0",
+   "url": "https://www.marktechpost.com/2026/11/11/google-gemini-decisions-api-gemini-decision-1/",
+   "title": "Google Launches Gemini Decisions API With Gemini Decision 1 at $0.10/M Tokens",
+   "date": "2026-11-11T21:21:42.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "379a65528035",
+   "url": "https://aws.amazon.com/blogs/machine-learning/the-attendees-guide-to-the-aws-reinvent-2026-ai-ml-track/",
+   "title": "The attendee’s guide to the AWS re:Invent 2026 AI/ML track",
+   "date": "2026-11-11T21:05:59.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "9d7749e3a495",
+   "url": "https://aws.amazon.com/blogs/machine-learning/automating-aws-agent-registry-updates-with-push-based-architecture/",
+   "title": "Automating AWS Agent Registry updates with push-based architecture",
+   "date": "2026-11-11T20:52:48.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "89831e72483f",
+   "url": "https://www.marktechpost.com/2026/11/11/google-deepmind-alphagenome-2-cell-type-variant-effects/",
+   "title": "Google DeepMind Releases AlphaGenome 2 for Cell-Type-Specific Variant Effects",
+   "date": "2026-11-11T20:51:56.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "b2b3dad90aa3",
+   "url": "https://aws.amazon.com/blogs/machine-learning/how-dxc-technology-built-a-multi-model-ai-substrate-on-amazon-bedrock/",
+   "title": "How DXC Technology built a multi-model AI substrate on Amazon Bedrock",
+   "date": "2026-11-11T20:45:45.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "0d92f57c72e3",
+   "url": "https://techcrunch.com/video/why-the-data-center-you-dread-might-never-even-be-built/",
+   "title": "Why the data center you dread might never even be built",
+   "date": "2026-11-11T20:15:15.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "6bc57b8d8016",
+   "url": "https://techcrunch.com/2026/11/11/meta-is-losing-its-longtime-head-of-infrastructure/",
+   "title": "Meta is losing its longtime head of infrastructure",
+   "date": "2026-11-11T20:12:01.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "984513ae1fc4",
+   "url": "https://techcrunch.com/podcast/how-backlash-and-red-tape-continue-to-slow-data-centers-post-blue-wave/",
+   "title": "How backlash and red tape continue to slow data centers post-Blue Wave",
+   "date": "2026-11-11T20:02:14.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "c063829a6185",
+   "url": "https://techcrunch.com/2026/11/11/coreweave-turns-to-customer-prepayments-shorter-contracts-to-fund-ai-growth/",
+   "title": "CoreWeave turns to customer prepayments, shorter contracts to fund AI growth",
+   "date": "2026-11-11T19:54:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "9a0e58e782b2",
+   "url": "https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/",
+   "title": "Using wearables to enable cardiovascular-kidney-metabolic (CKM) risk profiling for personalized coaching",
+   "date": "2026-11-11T19:54:00.000Z",
+   "src": "Google Research",
+   "srcId": "google-research",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "019cc9ec163b",
+   "url": "https://techcrunch.com/2026/11/11/with-720m-round-britains-fractile-gets-a-leg-up-in-the-race-for-ai-chips/",
+   "title": "With $720M round, Britain’s Fractile gets a leg up in the race for AI chips",
+   "date": "2026-11-11T19:34:55.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "90a2e60457e0",
+   "url": "https://techcrunch.com/2026/11/11/congress-to-call-jensen-huang-in-to-answer-for-alleged-chinese-spy-affair/",
+   "title": "Congress to call Jensen Huang in to answer for alleged Chinese spy affair",
+   "date": "2026-11-11T19:22:22.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "003618fd7423",
+   "url": "https://aws.amazon.com/blogs/machine-learning/accelerating-generative-ai-delivery-with-reusable-assets/",
+   "title": "Accelerating generative AI delivery with reusable assets",
+   "date": "2026-11-11T19:19:21.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "d48e4f7a3199",
+   "url": "https://arstechnica.com/ai/2026/11/taiwans-chipmaking-giant-tsmc-to-invest-1b-in-anthropic-openai/",
+   "title": "Taiwan’s chipmaking giant TSMC to invest $1B in Anthropic, OpenAI",
+   "date": "2026-11-11T18:16:40.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "8e4104a923ec",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+   "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+   "date": "2026-11-11T18:00:00.000Z",
+   "src": "Google AI",
+   "srcId": "google-ai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "9e2e1c68cf1b",
+   "url": "https://arstechnica.com/gaming/2026/11/big-walk-used-ai-to-fix-a-bug-now-the-indie-gaming-world-is-having-a-reckoning/",
+   "title": "Big Walk used AI to fix a bug. Now the indie gaming world is having a reckoning.",
+   "date": "2026-11-11T17:37:32.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "4051f05189e9",
+   "url": "https://engineering.fb.com/2026/11/11/ml-applications/intelligent-delivery-serve-better-ads/",
+   "title": "Intelligent Delivery: Making Every Unit of Compute Serve Better Ads",
+   "date": "2026-11-11T17:00:38.000Z",
+   "src": "Meta Engineering",
+   "srcId": "meta",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "c125d3ccf886",
+   "url": "https://www.tech-wd.com/wd/2026/11/11/%d9%88%d8%b5%d9%88%d9%84-muse-ai-%d9%85%d9%86-%d9%85%d9%8a%d8%aa%d8%a7-%d8%a5%d9%84%d9%89-%d8%b3%d8%a7%d8%b9%d8%a7%d8%aa-wear-os-%d9%88apple-watch/",
+   "title": "وصول Muse AI من ميتا إلى ساعات Wear OS وApple Watch",
+   "date": "2026-11-11T16:39:23.000Z",
+   "src": "تك وورلد",
+   "srcId": "techwd",
+   "kind": "arabic",
+   "ar": {
+    "title": "وصول Muse AI من ميتا إلى ساعات Wear OS وApple Watch",
+    "summary": ""
+   }
+  },
+  {
+   "id": "32bc3a2f6211",
+   "url": "https://techcrunch.com/2026/11/11/is-jensen-huangs-bad-behavior-more-commonplace-than-it-seems/",
+   "title": "Is Jensen Huang’s bad behavior more commonplace than it seems?",
+   "date": "2026-11-11T16:16:07.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "614da7e902a8",
+   "url": "https://aws.amazon.com/blogs/machine-learning/accelerating-product-development-with-ai-driven-lifecycle-management-ai-pdlc-in-aws-quick/",
+   "title": "Accelerating product development with AI-driven lifecycle management (AI-PDLC) in AWS Quick",
+   "date": "2026-11-11T16:05:33.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "97adab01dbf7",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/",
+   "title": "Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.",
+   "date": "2026-11-11T16:00:00.000Z",
+   "src": "Google AI",
+   "srcId": "google-ai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "df94b6a8801f",
+   "url": "https://www.marktechpost.com/2026/11/11/marktechpost-gpu-leaderboard-chrome-extension-launch/",
+   "title": "Marktechpost AI Launches GPU Leaderboard and the Deploy It Chrome Extension",
+   "date": "2026-11-11T15:51:14.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "242a50772669",
+   "url": "https://aws.amazon.com/blogs/machine-learning/uaef-a-framework-agnostic-system-for-closed-loop-evaluation-of-ai-agents/",
+   "title": "UAEF: A framework-agnostic system for closed-loop evaluation of AI agents",
+   "date": "2026-11-11T15:50:55.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "ab8503eb81d9",
+   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-usage-based-pricing-for-amazon-sagemaker-ai-bidirectional-streaming/",
+   "title": "Introducing usage-based pricing for Amazon SageMaker AI bidirectional streaming",
+   "date": "2026-11-11T15:10:23.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "5b916f1bea87",
+   "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+   "title": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
+   "date": "2026-11-11T15:00:15.000Z",
+   "src": "Google DeepMind",
+   "srcId": "deepmind",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "2d8f602ac5a8",
+   "url": "https://www.theverge.com/tech/1031526/google-tabletop-ai-experiment-waitlist-availability",
+   "title": "Google’s Tabletop AI experiment lets you build custom collaboration apps",
+   "date": "2026-11-11T14:15:27.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "ef892408bebc",
+   "url": "https://arstechnica.com/ai/2026/11/signals-encryption-just-passed-an-ai-powered-mathematical-checkup/",
+   "title": "Google DeepMind just mathematically verified key parts of Signal",
+   "date": "2026-11-11T14:08:57.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "7e65614cc89a",
+   "url": "https://blog.google/company-news/outreach-and-initiatives/arts-culture/esther-mahlangu/",
+   "title": "Experience the art and legacy of Dr. Esther Mahlangu",
+   "date": "2026-11-11T09:00:00.000Z",
+   "src": "Google AI",
+   "srcId": "google-ai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "6e58ed40794b",
+   "url": "https://aitnews.com/2026/11/11/omniops-bunyan-inference-hub-saudi-arabia/",
+   "title": "«أومني أوبس» تطلق منصة Bunyan Inference Hub لتشغيل نماذج الذكاء الاصطناعي داخل السعودية",
+   "date": "2026-11-11T08:06:16.000Z",
+   "src": "البوابة العربية للأخبار التقنية",
+   "srcId": "aitnews",
+   "kind": "arabic",
+   "ar": {
+    "title": "«أومني أوبس» تطلق منصة Bunyan Inference Hub لتشغيل نماذج الذكاء الاصطناعي داخل السعودية",
+    "summary": ""
+   }
+  },
+  {
+   "id": "80b38ea7da37",
+   "url": "https://openai.com/index/chatgpt-plus-for-veterans",
+   "title": "ChatGPT Plus for veterans and servicemembers",
+   "date": "2026-11-11T08:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "be3ddfba985d",
+   "url": "https://www.marktechpost.com/2026/11/10/ifm-pan-2-open-world-model/",
+   "title": "MBZUAI’s IFM Releases PAN 2, an Open 29B World Model for Physical AI",
+   "date": "2026-11-11T07:38:57.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
+  {
    "id": "b22522d14a17",
    "url": "https://huggingface.co/blog/qvac/botpsy",
    "title": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
@@ -53,6 +776,16 @@
     "title": "مساعد BotPsy الشخصي على الأجهزة",
     "summary": "تقديم BotPsy كمساعد شخصي بيشتغل مباشرة على الجهاز ومدعوم بنموذج لغوي وكيل بأقل من مليار باراميتر."
    }
+  },
+  {
+   "id": "ad52ee8ca175",
+   "url": "https://www.marktechpost.com/2026/11/10/fish-audio-live-3-full-duplex-voice-model/",
+   "title": "Fish Audio Releases Live 3, a Full-Duplex Voice Model That Reacts in 186 ms",
+   "date": "2026-11-11T04:43:53.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
   },
   {
    "id": "34dcc0e759ee",
@@ -79,6 +812,26 @@
     "title": "توفر نموذج Kimi K3.1 Pro على Amazon Bedrock",
     "summary": "نموذج Kimi K3.1 Pro التابع لشركة Moonshot AI بقى متاح دلوقتي على Amazon Bedrock، مع إمكانية استخدامه كمساعد برمجي في OpenCode والاستفادة من واجهات الـ API المتوافقة مع OpenAI."
    }
+  },
+  {
+   "id": "8c999d6885d2",
+   "url": "https://openai.com/index/jiostar-vijay-seshadri",
+   "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
+   "date": "2026-11-11T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "d2296a64c0dc",
+   "url": "https://huggingface.co/blog/token-pooling",
+   "title": "Token Pooling-Aware Training for Multi-Vector Embedding Models",
+   "date": "2026-11-11T00:00:00.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
   },
   {
    "id": "fe4093b62bcc",
@@ -723,6 +1476,16 @@
    "ar": null
   },
   {
+   "id": "4e3e5904c85a",
+   "url": "https://openai.com/index/singapore-airlines-travel-work",
+   "title": "Singapore Airlines elevates travel & work with OpenAI technology",
+   "date": "2026-11-10T08:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
    "id": "3588ceed4155",
    "url": "https://openai.com/index/ai-effect-on-freelance-work",
    "title": "Work at the Frontier: AI’s effect on freelance work",
@@ -837,6 +1600,46 @@
     "title": "نماذج Decision Models على منصة Hugging Face",
     "summary": "استعراض لنماذج الـ Decision Models المتاحة على منصة Hugging Face."
    }
+  },
+  {
+   "id": "1ff74ee2cb10",
+   "url": "https://openai.com/index/cogent-security",
+   "title": "Cogent and OpenAI build cyber defense factories for enterprises",
+   "date": "2026-11-10T00:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "0df0bcd411cf",
+   "url": "https://machinelearning.apple.com/research/evaluating-evaluators-llm-judges",
+   "title": "Evaluating the Evaluators: Investigating LLM Judges for Personalized Writing Style Assessment",
+   "date": "2026-11-10T00:00:00.000Z",
+   "src": "Apple ML",
+   "srcId": "apple",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "2e8bb88bbb7c",
+   "url": "https://machinelearning.apple.com/research/gating-memorization-in-context",
+   "title": "On the Importance of Gating: Memorization vs. In-Context Learning in State Space Models",
+   "date": "2026-11-10T00:00:00.000Z",
+   "src": "Apple ML",
+   "srcId": "apple",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "c90609be6e5b",
+   "url": "https://machinelearning.apple.com/research/weighted-state-souping",
+   "title": "Weighted State Souping for Efficient Long-Context Retrieval",
+   "date": "2026-11-10T00:00:00.000Z",
+   "src": "Apple ML",
+   "srcId": "apple",
+   "kind": "company",
+   "ar": null
   },
   {
    "id": "15c28179b2dc",
@@ -2757,902 +3560,6 @@
    "srcId": "verge",
    "kind": "news",
    "ar": null
-  },
-  {
-   "id": "e818c1486ecf",
-   "url": "https://www.theverge.com/transportation/1026306/uber-ai-agents-q3-earnings-disintermediation",
-   "title": "Uber only fulfilled 4 rides from AI agents last quarter",
-   "date": "2026-11-04T16:05:06.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "1eb19ba95d16",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1026292/sam-altman-ram-shortage-pcs-comments",
-   "title": "Sam Altman addresses RAM comments: people should ‘put as much as they want in their computers’",
-   "date": "2026-11-04T14:46:01.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "3a06f84c0f51",
-   "url": "https://openai.com/index/openai-to-acquire-pierre",
-   "title": "OpenAI to acquire Pierre Computer Company, Inc.",
-   "date": "2026-11-04T14:30:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "9629b9d628e6",
-   "url": "https://techcrunch.com/2026/11/04/techcrunch-founder-summit-2026-todays-the-day/",
-   "title": "TechCrunch Founder Summit 2026: Doors open at 9 a.m. ET in Boston",
-   "date": "2026-11-04T13:00:00.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "a4f4c423c542",
-   "url": "https://openai.com/index/a-thousand-fewer-paths-to-root",
-   "title": "A thousand fewer paths to root",
-   "date": "2026-11-04T08:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "75679f5aa60b",
-   "url": "https://openai.com/index/daybreak-red-aws-govcloud",
-   "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
-   "date": "2026-11-04T07:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "8c4cd4032a6a",
-   "url": "https://www.marktechpost.com/2026/11/03/tencent-wevisone-vl-vision-language-model/",
-   "title": "Tencent WeVisOne-VL Unifies Detection, OCR, Segmentation and Matting",
-   "date": "2026-11-04T04:39:27.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "5d47252e76d4",
-   "url": "https://www.theverge.com/games/1026085/nexus-mods-ai-disclosures",
-   "title": "The biggest modding site in PC gaming is taking a stance on AI",
-   "date": "2026-11-04T00:42:54.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "0a437d67f2ef",
-   "url": "https://openai.com/index/introducing-images-2-6",
-   "title": "Introducing Images 2.6",
-   "date": "2026-11-04T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "bf25be8f8779",
-   "url": "https://openai.com/index/devrev-enterprise-self-service",
-   "title": "DevRev delivers autonomous self-service with GPT-6.1 Sol",
-   "date": "2026-11-04T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "64fbdbf83ed1",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1025826/ai-bubble-pimco-apollo-bonds",
-   "title": "Please stop asking me when the AI bubble will pop",
-   "date": "2026-11-03T23:37:45.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "f11d9a22fb66",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1024862/google-search-ai-overviews-alphabet-earnings-q3",
-   "title": "Google hasn’t figured out how to make AI pay like its search engine",
-   "date": "2026-11-03T22:41:23.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "f901cc10a3c4",
-   "url": "https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/",
-   "title": "Anthropic is working on a system to prove AI models’ identity",
-   "date": "2026-11-03T22:41:03.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "59cb8a96ca92",
-   "url": "https://techcrunch.com/2026/11/03/data-centers-are-turning-to-old-jet-engines-as-the-wait-for-power-grows/",
-   "title": "Data centers are turning to old jet engines as the wait for power grows",
-   "date": "2026-11-03T22:19:53.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "2b36c11db627",
-   "url": "https://www.marktechpost.com/2026/11/03/anthropic-flashprove-provable-inference-zksnark/",
-   "title": "Anthropic Releases FlashProve: Cryptographic Proofs That a Reply Came From Committed Weights",
-   "date": "2026-11-03T22:08:22.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "db1d0915e442",
-   "url": "https://www.theverge.com/games/1025596/valve-steam-indie-games-missing-launch-dates",
-   "title": "Indie games are missing launch dates because Steam is backed up",
-   "date": "2026-11-03T21:56:58.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "d37889a9ebdd",
-   "url": "https://techcrunch.com/2026/11/03/ted-schleins-ballistic-ventures-seeks-490m-for-new-funds-amid-ai-driven-cybersecurity-boom/",
-   "title": "Ted Schlein’s Ballistic Ventures seeks $490M for new funds amid AI-driven cybersecurity boom",
-   "date": "2026-11-03T21:43:08.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "39cfcbde58ed",
-   "url": "https://www.theverge.com/tech/1025745/fake-jeff-bezos-hair-replacement-photos-debunk",
-   "title": "Those Jeff Bezos hair transplant photos are very fake",
-   "date": "2026-11-03T21:09:00.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "dd34e5bf1c5e",
-   "url": "https://techcrunch.com/2026/11/03/hiding-inside-palantirs-skyrocketing-quarter-is-a-foreboding-signal/",
-   "title": "Hiding inside Palantir’s skyrocketing quarter is a foreboding signal",
-   "date": "2026-11-03T21:05:55.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "2f70d6c369eb",
-   "url": "https://arstechnica.com/ai/2026/11/russia-looks-to-hide-data-centers-underground-as-ukrainian-drones-strike-back/",
-   "title": "Ukraine’s drone strikes spur hasty Russian plans for underground data centers",
-   "date": "2026-11-03T20:39:55.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "90a8b08254cc",
-   "url": "https://www.marktechpost.com/2026/11/03/nvidia-dgx-spark-moe-inference-ling-3-0-flash/",
-   "title": "NVIDIA Shows 3 Ways to Speed Up MoE Inference on DGX Spark, Lifting Ling-3.0-flash Throughput 42.5%",
-   "date": "2026-11-03T20:28:22.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "49792679d79f",
-   "url": "https://www.theverge.com/tech/1025694/apple-siri-ai-third-party-apps",
-   "title": "Apple starts giving Siri AI access to third-party apps",
-   "date": "2026-11-03T20:19:55.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "af914e6869a5",
-   "url": "https://www.marktechpost.com/2026/11/03/soniox-stt-v6-agent-text-input-echo-cancellation/",
-   "title": "Soniox STT v6 Adds Agent Text Input and Echo Filtering for Voice Agents",
-   "date": "2026-11-03T20:18:22.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "c69664e34de2",
-   "url": "https://techcrunch.com/2026/11/03/ai-inference-startup-fal-doubles-its-valuation-to-16b-as-demand-surges/",
-   "title": "AI inference startup Fal doubles its valuation to $16B as demand surges",
-   "date": "2026-11-03T19:34:43.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "62af55115339",
-   "url": "https://www.theverge.com/tech/1025002/apple-watch-audio-intelligence-watchos-beta",
-   "title": "Apple’s latest watchOS beta includes its new always-on Audio Intelligence features",
-   "date": "2026-11-03T18:52:30.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "2023d4b1aafd",
-   "url": "https://techcrunch.com/2026/11/03/netflixs-new-ai-discover-tab-helps-you-find-something-to-watch-based-on-your-mood/",
-   "title": "Netflix’s new AI Discover tab helps you find something to watch based on your mood",
-   "date": "2026-11-03T18:42:16.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "662bf89dbff2",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1025482/openai-says-chatgpt-is-catching-up-to-google-in-search",
-   "title": "OpenAI says ChatGPT is catching up to Google in search",
-   "date": "2026-11-03T18:38:47.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "b121628aeba0",
-   "url": "https://arstechnica.com/ai/2026/11/google-will-let-schools-skip-ai-tools-but-they-have-to-give-up-search-too/",
-   "title": "Google will let schools skip AI tools, but they have to give up search, too",
-   "date": "2026-11-03T17:54:43.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "c65f77dcf81d",
-   "url": "https://www.theverge.com/streaming/1025029/netflix-ai-discover-recommendations",
-   "title": "Netflix will show you themed recommendations through a new ‘AI Discover’ tab",
-   "date": "2026-11-03T17:28:14.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "a55665cf4895",
-   "url": "https://huggingface.co/blog/allenai/statebench",
-   "title": "StateBench: Testing how language models track state changes over long documents",
-   "date": "2026-11-03T17:15:21.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "StateBench: اختبار تتبع النماذج اللغوية لتغيّر الحالة عبر مستندات طويلة",
-    "summary": "StateBench بيقيس قدرة نماذج اللغة على متابعة تغيّر الحالة في نصوص طويلة."
-   }
-  },
-  {
-   "id": "7edcdb24a88e",
-   "url": "https://www.microsoft.com/en-us/research/podcast/learn-the-rules-the-hacker-mindset/",
-   "title": "Learn the rules: The hacker mindset",
-   "date": "2026-11-03T17:14:38.000Z",
-   "src": "Microsoft Research",
-   "srcId": "microsoft",
-   "kind": "company",
-   "ar": {
-    "title": "دروس من عقلية الهاكر",
-    "summary": "Mike Walker من Microsoft Research بيشارك خبرته في ثقافة الهاكر والأمن السيبراني والذكاء الاصطناعي، وبيأكد إن الفضول والحكم السليم والمرونة مهمين لحل المشكلات الصعبة."
-   }
-  },
-  {
-   "id": "2437af63b2f8",
-   "url": "https://techcrunch.com/2026/11/03/anthropic-is-still-grappling-with-the-economics-of-compute/",
-   "title": "Anthropic is still grappling with the economics of compute",
-   "date": "2026-11-03T17:07:01.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "Anthropic تواجه صعوبات في اقتصاد الحوسبة",
-    "summary": "رغم إن هوامش الحوسبة عند Anthropic المفروض تتحسن، إلا إن الوضع بيزداد سوءًا."
-   }
-  },
-  {
-   "id": "aa38fd9221c6",
-   "url": "https://www.tech-wd.com/wd/2026/11/03/%d8%b3%d8%a7%d9%85%d8%b3%d9%88%d9%86%d8%ac-%d8%aa%d8%b7%d8%b1%d8%ad-%d9%86%d8%b8%d8%a7%d8%b1%d8%a7%d8%aa-intelligent-eyewear-%d9%81%d9%8a-%d8%af%d9%8a%d8%b3%d9%85%d8%a8%d8%b1-%d8%a8%d9%83%d9%88%d8%b1/",
-   "title": "سامسونج تطرح نظارات Intelligent Eyewear في ديسمبر بكوريا وأمريكا بحسب تقرير",
-   "date": "2026-11-03T17:04:09.000Z",
-   "src": "تك وورلد",
-   "srcId": "techwd",
-   "kind": "arabic",
-   "ar": {
-    "title": "سامسونج تطرح نظارات Intelligent Eyewear في ديسمبر بكوريا وأمريكا بحسب تقرير",
-    "summary": ""
-   }
-  },
-  {
-   "id": "7b04a568c5ad",
-   "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
-   "title": "Agentic cheminformatics with Google Antigravity",
-   "date": "2026-11-03T17:01:49.000Z",
-   "src": "Google DeepMind",
-   "srcId": "deepmind",
-   "kind": "company",
-   "ar": {
-    "title": "Google Antigravity في الكيمياء الحاسوبية",
-    "summary": "Google Antigravity مع مهارات Cheminformatics بيساعدوا في تسريع اكتشاف الأدوية، والبحث عن مركبات، واقتراح ماكروسايكلات صلبة جديدة."
-   }
-  },
-  {
-   "id": "0eaf3e3a7544",
-   "url": "https://www.theverge.com/tech/1025411/google-turn-off-search-ai-features",
-   "title": "Google is entirely disabling Search in schools that don’t want AI",
-   "date": "2026-11-03T17:01:26.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "Google توقف البحث في المدارس اللي ترفض الذكاء الاصطناعي",
-    "summary": "Google هتلغي خدمة Search بالكامل للمدارس اللي مش عايزة ميزات الذكاء الاصطناعي، وكمان هتوقف Gemini وGemini Notebook وGemini in Classroom لحسابات طلاب K‑12."
-   }
-  },
-  {
-   "id": "072a27666339",
-   "url": "https://engineering.fb.com/2026/11/03/ml-applications/f3-lightning-how-meta-accelerates-ads-ml-features-to-production/",
-   "title": "F3 Lightning: How Meta Accelerates Ads ML Features to Production at Scale",
-   "date": "2026-11-03T17:00:35.000Z",
-   "src": "Meta Engineering",
-   "srcId": "meta",
-   "kind": "company",
-   "ar": {
-    "title": "F3 Lightning: تسريع ميزات إعلانات Meta للانتاج",
-    "summary": "Facebook Feature Framework (F3) هو إطار Meta لتأليف وتجميع وتقديم ميزات التعلم الآلي لإعلانات ranking، وبيقلل تكلفة التنفيذ عن طريق دمج كل الميزات في رسم بياني موحد."
-   }
-  },
-  {
-   "id": "85827c831b0b",
-   "url": "https://www.theverge.com/policy/1020640/midterm-elections-2026-all-the-news",
-   "title": "Midterm elections 2026: all the news",
-   "date": "2026-11-03T16:57:17.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "الانتخابات النصفية 2026 وتأثيرها على التقنية",
-    "summary": "الانتخابات النصفية 2026 هتحدد مدى سلطة الرئيس ترامب في السنتين الأخيرتين، وهتظهر أولويات الناخبين قبل انتخابات 2028، مع تركيز على قضايا التكلفة اللي بتأثر على قطاع التكنولوجيا."
-   }
-  },
-  {
-   "id": "cf714de9cceb",
-   "url": "https://aws.amazon.com/blogs/machine-learning/bring-structured-and-unstructured-data-together-with-amazon-quick/",
-   "title": "Bring structured and unstructured data together with Amazon Quick",
-   "date": "2026-11-03T16:49:29.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "Amazon Quick يجمع البيانات المهيكلة وغير المهيكلة",
-    "summary": "Amazon Quick بيوحد البيانات المهيكلة وغير المهيكلة في تجربة واحدة، بيوصل S3 كقاعدة معرفة، ويغني البيانات، ويبني Space، ويخلق شات بوت يجاوب على أسئلة الأعمال عبر واجهة محادثة."
-   }
-  },
-  {
-   "id": "3e5d35744daf",
-   "url": "https://aws.amazon.com/blogs/machine-learning/servicenow-on-behalf-of-token-exchange-with-bedrock-agentcore-gateway/",
-   "title": "ServiceNow on-behalf-of token exchange with Bedrock AgentCore Gateway",
-   "date": "2026-11-03T16:47:40.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "تبادل توكن OBO بين ServiceNow وBedrock",
-    "summary": "اتعلم إزاي تضبط Amazon Bedrock AgentCore Gateway لتبادل توكن OBO مع Microsoft Entra ID، بحيث يقدر الوكيل الذكي ينادي API بتاع ServiceNow وهو محافظ على هوية المستخدم."
-   }
-  },
-  {
-   "id": "8564eb547f9a",
-   "url": "https://aws.amazon.com/blogs/machine-learning/how-gen-digital-built-norton-revamps-ai-curated-news-engine-with-amazon-bedrock-agentcore-web-search/",
-   "title": "How Gen Digital built Norton Revamp’s AI-curated News Engine with Amazon Bedrock AgentCore Web Search",
-   "date": "2026-11-03T16:43:20.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "نظام أخبار AI لمنصة Norton Revamp",
-    "summary": "Gen Digital استخدمت Amazon Bedrock AgentCore لتشغيل محرك أخبار AI بيستند للبحث على الويب، بيوفر اقتراحات محتوى موثقة، وتحديد أهداف، وتغذية أخبار، كل ده من غير خروج بيانات وضمان خصوصية مستوى Norton."
-   }
-  },
-  {
-   "id": "462c228cc8ba",
-   "url": "https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-with-edb-postgres-ai-and-amazon-bedrock-agentcore/",
-   "title": "Build a semantic layer for agentic AI with EDB Postgres AI and Amazon Bedrock AgentCore",
-   "date": "2026-11-03T16:41:13.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "طبقة دلالية للذكاء الوكيل باستخدام EDB Postgres AI",
-    "summary": "اتعلم إزاي تبني طبقة دلالية محكومة للذكاء الوكيل داخل EDB Postgres AI وتستدعيها من Strands Agents على Amazon Bedrock AgentCore، مع التحكم في الوصول عبر GRANT وأمان الصف."
-   }
-  },
-  {
-   "id": "4ed75b5aadb5",
-   "url": "https://aws.amazon.com/blogs/machine-learning/building-ultra-low-latency-voice-ai-applications-on-aws/",
-   "title": "Building ultra-low-latency voice AI applications on AWS",
-   "date": "2026-11-03T16:40:54.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "تطبيقات صوتية AI بزمن استجابة تحت 100 مللي ثانية",
-    "summary": "Cartesia، شريك AWS، بيستخدم نماذج State Space ومرافق AWS لتقديم تحويل نص‑صوت وصوت‑نص بأقل من 100 ms على نطاق عالمي، وبيوضح إزاي تنشر نموذج Sonic على SageMaker أو على EC2 GPU."
-   }
-  },
-  {
-   "id": "bc4177032a04",
-   "url": "https://huggingface.co/blog/ibm-research/palette-deck-building",
-   "title": "Palette: teaching a small model to build decks in your design language",
-   "date": "2026-11-03T16:35:36.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": {
-    "title": "Palette: تدريب نموذج صغير لتصميم الشرائح",
-    "summary": ""
-   }
-  },
-  {
-   "id": "8de1952e3884",
-   "url": "https://aws.amazon.com/blogs/machine-learning/introducing-india-based-inference-for-kimi-k3-on-amazon-bedrock/",
-   "title": "Introducing India-based inference for Kimi K3 on Amazon Bedrock",
-   "date": "2026-11-03T16:32:54.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": {
-    "title": "تشغيل Kimi K3 داخل الهند",
-    "summary": "Amazon Bedrock بقى بيدعم استدلال Kimi K3 داخل الهند، مع معالجة البيانات في مناطق مومباي وحيدر أباد، والبوست يوضح خيارات الاستدلال عبر المناطق وكود مثال لقراءة مستندات باللغات الهندية."
-   }
-  },
-  {
-   "id": "410d5c941f71",
-   "url": "https://techcrunch.com/2026/11/03/google-will-let-schools-disable-its-ai-tools-but-not-without-sacrificing-search/",
-   "title": "Google will let schools disable its AI tools, but not without sacrificing Search",
-   "date": "2026-11-03T16:30:34.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "جوجل تحرم المدارس من AI وتفقدها البحث",
-    "summary": "لو المدارس تقفل أدوات AI، مش هتقدر تستخدم Google Search لأن ميزات AI دلوقتي مدمجة في محرك البحث."
-   }
-  },
-  {
-   "id": "32791f69eb2c",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1025242/openai-quietly-renames-data-centers-as-compute-campuses",
-   "title": "OpenAI is quietly renaming data centers ‘compute campuses’",
-   "date": "2026-11-03T16:08:35.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "OpenAI تسمي مراكز البيانات بـ \"حُكم الحوسبة\"",
-    "summary": "OpenAI غير اسم مراكز البيانات إلى \"compute campuses\" في محاولة لتقليل الجدل حول مراكز البيانات الضوضائية والمستهلكة للموارد."
-   }
-  },
-  {
-   "id": "c90cd6cc0c02",
-   "url": "https://blogs.nvidia.com/blog/ai-semiconductor-fabs/",
-   "title": "AI Is Changing How Semiconductor Fabs Work — and Engineers Are Moving Faster Because of It",
-   "date": "2026-11-03T16:00:45.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "الذكاء الاصطناعي يسرّع عمل مصانع أشباه الموصلات",
-    "summary": "مع ارتفاع طلب الرقائق المتقدمة وتعقيد عمليات تصنيعها، بيقل الهامش للخطأ. الذكاء الاصطناعي بيساعد المهندسين يتوقعوا سلوك التغييرات، تفاعل المواد، وتحديد أسباب العيوب بسرعة."
-   }
-  },
-  {
-   "id": "dde5f3bd6293",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1025245/apple-earnings-q4-ai",
-   "title": "Apple is all in on AI — its own and everyone else’s",
-   "date": "2026-11-03T15:52:53.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "آبل تستثمر في الذكاء الاصطناعي وتحقق أعلى إيرادات",
-    "summary": "النتائج الأخيرة لآبل بتظهر إن الشركة استفادت من موجة الذكاء الاصطناعي من غير ما تصرف كتير على البنية التحتية. السنة المالية دي كانت الأفضل على الإطلاق في الإيرادات وربحية السهم، مع نمو قوي في مبيعات iPhone وMac."
-   }
-  },
-  {
-   "id": "f9c0c715eee2",
-   "url": "https://techcrunch.com/2026/11/03/apple-restricts-dating-apps-and-ai-companions-to-users-18-and-up/",
-   "title": "Apple restricts dating apps and AI companions to users 18 and up",
-   "date": "2026-11-03T15:38:27.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "آبل تحصر تطبيقات المواعدة والرفقاء الذكيين على 18+",
-    "summary": "قواعد جديدة في App Store بتطلب تصنيف 18+ للتطبيقات اللي بتقدّم محتوى رومانسي أو جنسي، سواء كانت تطبيقات مواعدة أو رفقاء ذكاء اصطناعي."
-   }
-  },
-  {
-   "id": "954137d8d070",
-   "url": "https://techcrunch.com/2026/11/03/the-techcrunch-founder-summit-agenda-is-only-half-the-reason-to-be-in-boston-on-nov-4/",
-   "title": "The TechCrunch Founder Summit agenda is only half the reason to be in Boston on Nov. 4",
-   "date": "2026-11-03T14:30:00.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "قمة TechCrunch Founder في بوسطن يوم 4 نوفمبر",
-    "summary": "الفعالية هتجمع مؤسسين ومستثمرين في SoWa Power Station لتبادل رؤى عملية وتوسيع شبكة العلاقات. احجز تذكرتك قبل ما الأسعار ترتفع عند الباب."
-   }
-  },
-  {
-   "id": "2b376a551173",
-   "url": "https://techcrunch.com/2026/11/03/tomorrow-techcrunch-founder-summit-takes-over-boston-and-when-pass-rates-increase/",
-   "title": "Tomorrow: TechCrunch Founder Summit takes over Boston and when pass rates increase",
-   "date": "2026-11-03T14:00:00.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "خصم على تذاكر قمة TechCrunch Founder غداً",
-    "summary": "اللي يشتري تذكرة قبل الساعة 9 صباحًا بتوقيت شرق أمريكا غدًا هيستفيد بخصم يصل لـ100 دولار وتذكرة مجانية تانية."
-   }
-  },
-  {
-   "id": "26c6032e1d26",
-   "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world",
-   "title": "Accelerating engineering for the physical world",
-   "date": "2026-11-03T12:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "08b710f1e780",
-   "url": "https://openai.com/index/heimstaden",
-   "title": "Heimstaden is changing residential real estate management with AI",
-   "date": "2026-11-03T08:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": {
-    "title": "Heimstaden تستخدم ChatGPT Enterprise لتطوير إدارة العقارات",
-    "summary": "الشركة الأوروبية بتستغل أدوات OpenAI زي ChatGPT Enterprise وCodex لتقليل التكاليف وتمكين الموظفين في إدارة المساكن عبر أوروبا."
-   }
-  },
-  {
-   "id": "a2357e701f02",
-   "url": "https://openai.com/index/cisco-cyber",
-   "title": "How Cisco defends at machine speed with OpenAI",
-   "date": "2026-11-03T08:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "0e5b1d74afc9",
-   "url": "https://techcrunch.com/2026/11/02/apple-watchs-ai-features-for-rewinding-and-recapping-conversations-begin-beta-testing/",
-   "title": "Apple Watch’s AI features for rewinding and recapping conversations begin beta testing",
-   "date": "2026-11-03T07:20:00.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "ميزة Audio Intelligence في Apple Watch تدخل مرحلة التجربة",
-    "summary": "الوظيفة الجديدة بتساعد المستخدمين على استرجاع الكلام وتلخيص المحادثات، وده متاح دلوقتي في نسخة تجريبية."
-   }
-  },
-  {
-   "id": "928e7584e6cd",
-   "url": "https://blogs.nvidia.com/blog/cities-physical-agentic-ai-applications/",
-   "title": "Cities Worldwide Build and Scale AI Services With NVIDIA Physical and Agentic AI",
-   "date": "2026-11-03T07:00:12.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": {
-    "title": "المدن تستخدم AI الفيزيائي والوكيل لتطوير الخدمات",
-    "summary": "المدن بتنتج بيانات هائلة من الكاميرات والحساسات، والذكاء الاصطناعي الفيزيائي والوكيل بيساعدوا على تحويلها لإجراءات عملية زي التوأم الرقمي وتطبيقات الرؤية والخدمات."
-   }
-  },
-  {
-   "id": "ab3480bae6a3",
-   "url": "https://www.marktechpost.com/2026/11/02/openai-pando-git-backend-monorepo/",
-   "title": "OpenAI Introduces Pando: A Git Backend That Cuts Median Push Latency ~80%",
-   "date": "2026-11-03T05:51:06.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": {
-    "title": "OpenAI تطلق Pando لتقليل زمن الدفع في Git",
-    "summary": "OpenAI بنى Pando، نظام خلفي متوافق مع Git للـ monorepo، بيقلل زمن الدفع المتوسط حوالي 80% وبيتعامل مع الفروع بشكل مستقل، وبيوصل تقريبًا بيتابايت من بيانات Git يوميًا."
-   }
-  },
-  {
-   "id": "4c7d73c3037d",
-   "url": "https://techcrunch.com/2026/11/02/google-takes-dreambeans-to-india-in-bid-to-bring-ai-generated-personal-stories-to-the-masses/",
-   "title": "Google takes Dreambeans to India in bid to bring AI-generated personal stories to the masses",
-   "date": "2026-11-03T03:30:00.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "Google تطلق Dreambeans في الهند",
-    "summary": "Dreambeans، تجربة جوجل للذكاء الاصطناعي، بقت تدعم 13 لغة هندية."
-   }
-  },
-  {
-   "id": "9c67c7267a56",
-   "url": "https://techcrunch.com/2026/11/02/apple-may-try-to-increase-revenue-by-doing-something-with-third-party-ai-apps/",
-   "title": "Apple may try to increase revenue by doing…something with third-party AI apps",
-   "date": "2026-11-03T01:49:52.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "آبل ممكن تزود إيراداتها من تطبيقات AI الطرف الثالث",
-    "summary": "آبل ألمحت في مكالمة الأرباح إن فيه فرص لزيادة الدخل من خلال تطبيقات الذكاء الاصطناعي اللي بيطوّرها الطرف التالت."
-   }
-  },
-  {
-   "id": "dbd1a815f4d9",
-   "url": "https://www.marktechpost.com/2026/11/02/zyphra-hierarchical-attention-zha-sparse-attention/",
-   "title": "Zyphra AI Introduces Zyphra Hierarchical Attention (ZHA): A Path to True Subquadratic Attention",
-   "date": "2026-11-03T01:09:49.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": {
-    "title": "Zyphra AI تطلق ZHA للانتباه الشجري",
-    "summary": "ZHA طريقة انتباه شجرية Sparse بتضيف 4 مليار توكن لتقليل حجم النموذج، وتوصل لأداء يوازي الانتباه الكثيف في مهام التفكير واسترجاع 256K."
-   }
-  },
-  {
-   "id": "5e23b266eaab",
-   "url": "https://www.marktechpost.com/2026/11/02/letter-letterpress-1-growth-engineering-coding-agent/",
-   "title": "The Letter Company Releases Letterpress-1: A Coding Agent Built for Growth Engineering",
-   "date": "2026-11-03T00:43:03.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": {
-    "title": "Letter تطلق Letterpress-1 لتوليد الكود",
-    "summary": "Letterpress-1 هو وكيل برمجي بيفحص موقع مبني على Git ويفتح Pull Requests لتحسين SEO، الجغرافيا، والتحويل."
-   }
-  },
-  {
-   "id": "bd936fe1d4a2",
-   "url": "https://techcrunch.com/2026/11/02/y-combinators-garry-tan-uses-ai-agents-so-much-he-spends-up-to-200k-a-year-on-tokens/",
-   "title": "Y Combinator’s Garry Tan uses AI agents so much, he spends up to $200K a year on tokens",
-   "date": "2026-11-03T00:35:52.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "غاري تان من Y Combinator يصرف 200 ألف دولار على توكنات AI",
-    "summary": "غاري تان قال إنه بيقضي تقريبًا 200 ألف دولار في السنة على توكنات الذكاء الاصطناعي، وبيعاني من \"سيبر سيكوزيس\" بسبب شغفه بالوكيل."
-   }
-  },
-  {
-   "id": "fec0e46ceba4",
-   "url": "https://huggingface.co/blog/transformers-mic",
-   "title": "Transformers Model Integration Contracts",
-   "date": "2026-11-03T00:00:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "3d509e27bae2",
-   "url": "https://openai.com/index/jill-hazelbaker-chief-corporate-affairs-officer",
-   "title": "OpenAI appoints Jill Hazelbaker as Chief Corporate Affairs Officer",
-   "date": "2026-11-03T00:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "20954e3ac0ff",
-   "url": "https://huggingface.co/blog/cwe-bench",
-   "title": "CWE-bench v2: More coverage, quality, and transparency",
-   "date": "2026-11-03T00:00:00.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "f20aa0a9a1f2",
-   "url": "https://machinelearning.apple.com/research/attention-mamba-distillation",
-   "title": "Attention to Mamba: A Recipe for Cross-Architecture Distillation",
-   "date": "2026-11-03T00:00:00.000Z",
-   "src": "Apple ML",
-   "srcId": "apple",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "dc6c7ef2ed74",
-   "url": "https://www.theverge.com/tech/1024588/brave-lawsuit-ai-scraping-new-york-times",
-   "title": "The New York Times sues Brave web browser for AI scraping and bypassing paywalls",
-   "date": "2026-11-02T23:20:01.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "نيويورك تايمز ترفع دعوى ضد Brave",
-    "summary": "نيويورك تايمز ومجموعة من الصحف رفعوا قضية على متصفح Brave بتهمة جمع بيانات لتدريب AI وتجاوز الحواجز المدفوعة."
-   }
-  },
-  {
-   "id": "19ce29ebfa96",
-   "url": "https://techcrunch.com/2026/11/02/trajectory-raises-45m-to-make-ai-model-training-accessible-to-nontechnical-experts/",
-   "title": "Trajectory raises $45M to make AI model training accessible to nontechnical experts",
-   "date": "2026-11-02T23:13:53.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "Trajectory تجمع 45 مليون دولار لتسهيل تدريب نماذج AI",
-    "summary": "الشركة الناشئة اللي عمرها سنة قيمتها دلوقتي 300 مليون دولار وبتسعى تخلي تدريب نماذج الذكاء الاصطناعي سهل للناس غير المتخصصين."
-   }
-  },
-  {
-   "id": "cc4ba65623a7",
-   "url": "https://aitnews.com/2026/11/03/%d8%a3%d8%af%d9%88%d8%a8%d9%8a-%d8%aa%d8%b7%d9%88%d9%91%d8%b1-%d9%88%d9%83%d9%8a%d9%84%d9%8b%d8%a7-%d8%b0%d9%83%d9%8a%d9%8b%d8%a7-%d9%84%d8%aa%d8%ad%d8%b1%d9%8a%d8%b1-%d8%a7%d9%84%d8%b5%d9%88%d8%b1/",
-   "title": "أدوبي تطوّر وكيلًا ذكيًا لتحرير الصور مثل خبراء فوتوشوب",
-   "date": "2026-11-02T23:10:00.000Z",
-   "src": "البوابة العربية للأخبار التقنية",
-   "srcId": "aitnews",
-   "kind": "arabic",
-   "ar": {
-    "title": "أدوبي تطوّر وكيلًا ذكيًا لتحرير الصور مثل خبراء فوتوشوب",
-    "summary": ""
-   }
-  },
-  {
-   "id": "e3f3f6c0c50f",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1024632/anthropic-claude-ai-video-game-clones",
-   "title": "Anthropic clamps down on Claude’s AI video game clones",
-   "date": "2026-11-02T22:57:16.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "Anthropic تمنع استنساخ ألعاب فيديو بـ Claude",
-    "summary": "Anthropic عدلت Prompt نظام Claude Code عشان تمنع إعادة إنشاء ألعاب موجودة، لكن لسه بتسمح بإنشاء ألعاب جديدة."
-   }
-  },
-  {
-   "id": "55dd7e97ced5",
-   "url": "https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai/",
-   "title": "Anthropic warns that it’s very close to RSI capability, aka self-building AI",
-   "date": "2026-11-02T22:14:50.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "Anthropic تحذر من قرب وصول الذكاء الاصطناعي لمرحلة RSI",
-    "summary": "RSI يعني إن الذكاء الاصطناعي يقدر يدرب نفسه بسرعة هائلة، وده ممكن يسبب تسارع كبير في قدراته، والناس القلقانة شايفة فيه كارثة لا رجوع عنها."
-   }
-  },
-  {
-   "id": "f0d114902300",
-   "url": "https://techcrunch.com/2026/11/02/web-host-squarespace-lays-off-19-of-its-employees/",
-   "title": "Web host Squarespace lays off 19% of its employees",
-   "date": "2026-11-02T19:25:59.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "Squarespace تقليص 19% من موظفيها",
-    "summary": "موقع بناء المواقع Squarespace أعلن عن تسريح 19% من فريقه كجزء من إعادة هيكلة أوسع للمنظمة."
-   }
-  },
-  {
-   "id": "8402594bed24",
-   "url": "https://techcrunch.com/2026/11/02/new-york-times-and-other-outlets-sue-web-browser-brave-over-alleged-content-scraping/",
-   "title": "New York Times and other outlets sue web browser Brave over alleged content scraping",
-   "date": "2026-11-02T19:19:17.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": {
-    "title": "NY Times و غيرها يرفعوا دعوى ضد متصفح Brave",
-    "summary": "صحيفة نيويورك تايمز تقاضي متصفح Brave المتخصص في الخصوصية بتهمة استخراج محتواها المحمي بحقوق النشر وتوزيعه لعملائه مثل Anthropic و Perplexity."
-   }
-  },
-  {
-   "id": "ce16d3e02a32",
-   "url": "https://www.marktechpost.com/2026/11/02/deep-principle-hydrogen-1-0-open-weight-scientific-model/",
-   "title": "Deep Principle Releases Hydrogen-1.0: A 753B Open-Weight Model for Scientific Discovery",
-   "date": "2026-11-02T18:41:41.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": {
-    "title": "Deep Principle تطلق Hydrogen-1.0 نموذج علمي مفتوح الوزن",
-    "summary": "Deep Principle أطلقت Hydrogen-1.0، نموذج وزن مفتوح 753 مليار بارامتر للكيماويات والمواد والعلوم الحياتية، مبني على GLM-5.3 من Z.ai، ومتوفر تحت رخصة MIT."
-   }
-  },
-  {
-   "id": "95189256059f",
-   "url": "https://arstechnica.com/apple/2026/11/apples-roaming-home-robot-may-do-facetime-switch-lights-on-and-yell-at-your-cat/",
-   "title": "Coming in 2027: Apple’s $1,000 home robot for FaceTime and switching on lights",
-   "date": "2026-11-02T18:32:21.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "روبوت Apple المنزلي بـ1000 دولار يُطرح في 2027",
-    "summary": "آبل تخطط لإطلاق روبوت منزلي سعره حوالي ألف دولار يقدر يعمل مكالمات FaceTime ويشغل الإضاءة، لكن استخداماته محدودة."
-   }
-  },
-  {
-   "id": "778dbacaaeb9",
-   "url": "https://arstechnica.com/ai/2026/11/claudes-new-rules-against-game-cloning-wont-stop-the-ai-copying-boom/",
-   "title": "Claude’s new rules against game cloning won’t stop the AI copying boom",
-   "date": "2026-11-02T18:05:31.000Z",
-   "src": "Ars Technica",
-   "srcId": "arstechnica",
-   "kind": "news",
-   "ar": {
-    "title": "قواعد جديدة لـClaude ضد نسخ الألعاب ما هتوقف الازدهار",
-    "summary": "Claude أضاف قواعد لمنع استنساخ الألعاب، لكن موجة النسخ الكبيرة أكبر من أي جهد فردي لأي شركة نموذج."
-   }
-  },
-  {
-   "id": "16194c055af9",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1024604/openai-data-center-grid-protection-program",
-   "title": "OpenAI pitches data center power plants as a way to protect nearby areas",
-   "date": "2026-11-02T18:01:30.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": {
-    "title": "OpenAI تقترح محطات طاقة لمراكز البيانات لحماية المناطق المجاورة",
-    "summary": "OpenAI أعلنت عن برنامج \"Grid Protectors\" لتجربة توفير ما يصل لـ1000 ميجاواط من الطاقة من مراكز بياناتها في إيفهامنج، جورجيا خلال الطوارئ، لتغطية احتياجات حوالي 700,000 منزل."
-   }
   }
  ]
 }
