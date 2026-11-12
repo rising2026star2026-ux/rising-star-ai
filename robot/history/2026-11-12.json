@@ -1,0 +1,42 @@
+{
+ "date": "2026-11-12T05:41:30.485Z",
+ "total": 524,
+ "ok": 507,
+ "broken": [
+  "/tool/proofread",
+  "/tool/landing-page",
+  "/tool/marketing-plan",
+  "/tool/post",
+  "/tool/product-desc",
+  "/tool/lesson-plan",
+  "/tool/math-solver",
+  "/tool/poem",
+  "/tool/remove-bg",
+  "feature:photo-ad",
+  "feature:test-ad",
+  "feature:amazon-listing",
+  "feature:amazon-competitor"
+ ],
+ "warn": 4,
+ "spacesDown": [
+  "aryadytm-remove-photo-object",
+  "multimodalart-logo-in-context",
+  "eccv2022-dis-background-removal",
+  "doevent-face-real-esrgan",
+  "stepfun-ai-step1x-3d"
+ ],
+ "aiTested": [
+  "/tool/image-prompt",
+  "/tool/interview-qs",
+  "/tool/kids-story",
+  "/tool/landing-page",
+  "/tool/lesson-plan",
+  "/tool/logo-ideas",
+  "/tool/marketing-plan",
+  "/tool/math-solver",
+  "/tool/poem",
+  "/tool/post",
+  "/tool/product-desc",
+  "/tool/proofread"
+ ]
+}
