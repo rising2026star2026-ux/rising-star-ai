@@ -1,0 +1,45 @@
+{
+ "date": "2026-11-13T05:39:58.876Z",
+ "total": 524,
+ "ok": 505,
+ "broken": [
+  "/tool/rewrite",
+  "/tool/summarize",
+  "/tool/tiktok-script",
+  "/tool/review-reply",
+  "/tool/quiz",
+  "/tool/study-plan",
+  "/tool/short-story",
+  "/tool/sheet-analyst",
+  "/tool/report",
+  "feature:photo-ad",
+  "feature:amazon-check",
+  "feature:amazon-listing",
+  "feature:amazon-competitor",
+  "feature:prompt-builder",
+  "feature:image-reader",
+  "feature:test-ad"
+ ],
+ "warn": 3,
+ "spacesDown": [
+  "aryadytm-remove-photo-object",
+  "multimodalart-logo-in-context",
+  "eccv2022-dis-background-removal",
+  "doevent-face-real-esrgan",
+  "stepfun-ai-step1x-3d"
+ ],
+ "aiTested": [
+  "/tool/proposal",
+  "/tool/quiz",
+  "/tool/report",
+  "/tool/review-reply",
+  "/tool/rewrite",
+  "/tool/seo-article",
+  "/tool/sheet-analyst",
+  "/tool/short-story",
+  "/tool/speech",
+  "/tool/study-plan",
+  "/tool/summarize",
+  "/tool/tiktok-script"
+ ]
+}
