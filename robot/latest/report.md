@@ -1,30 +1,28 @@
-# 🤖 تقرير الروبوت · الجمعة 13 نوفمبر 2026
+# 🤖 تقرير الروبوت · السبت 14 نوفمبر 2026
 
-فحصت **524** صفحة وأداة في 12 دقيقة.
+فحصت **524** صفحة وأداة في 11 دقيقة.
 
-✅ **505** شغالين  ·  ❌ **16** بايظين  ·  ⚠️ **3** محتاجين نظرة
+✅ **507** شغالين  ·  ❌ **14** بايظين  ·  ⚠️ **3** محتاجين نظرة
 
-🎉 **اتصلح من آخر تقرير:** 9 (`/tool/proofread`، `/tool/landing-page`، `/tool/marketing-plan`، `/tool/post`، `/tool/product-desc`، `/tool/lesson-plan` …)
+🎉 **اتصلح من آخر تقرير:** 10 (`/tool/rewrite`، `/tool/summarize`، `/tool/tiktok-script`، `/tool/review-reply`، `/tool/quiz`، `/tool/study-plan` …)
 
 ## ❌ بايظ (المستخدم مش هيعرف يستخدمه)
-1. **صوّرها بموبايلك (إعلان من صورة)**: كتابة الإعلان ما خلصتش في دقيقة ونص  
+1. **صوّرها بموبايلك (إعلان من صورة)**: وقفت عند «كتابة الإعلان»: ما حصلش اللي متوقع في الوقت المسموح  
    [افتح](https://rising-star-ai.vercel.app/photo-ad) · [📷 صورة](https://github.com/rising2026star2026-ux/rising-star-ai/blob/ci-results/robot/latest/shots/features-photo-ad_photo-ad.jpg)
-2. **أمازون: فاحص رفض الليستنج** 🆕: التصليح الذكي ظهر «مش متاح دلوقتي»  
-   [افتح](https://rising-star-ai.vercel.app/amazon/check) · [📷 صورة](https://github.com/rising2026star2026-ux/rising-star-ai/blob/ci-results/robot/latest/shots/features-amazon-check_amazon_check.jpg)
-3. **أمازون: كاتب الليستنج**: كتابة الليستنج طلّعت خطأ: الكاتب مشغول دلوقتي 😅 جرّب تاني بعد دقيقة.  
-   [افتح](https://rising-star-ai.vercel.app/amazon/listing) · [📷 صورة](https://github.com/rising2026star2026-ux/rising-star-ai/blob/ci-results/robot/latest/shots/features-amazon-listing_amazon_listing.jpg)
-4. **أمازون: تحليل المنافس**: التحليل طلّع خطأ: المحلل مشغول دلوقتي 😅 جرّب تاني بعد دقيقة.  
+2. **أمازون: تحليل المنافس**: التحليل طلّع خطأ: المحلل مشغول دلوقتي 😅 جرّب تاني بعد دقيقة.  
    [افتح](https://rising-star-ai.vercel.app/amazon/competitor) · [📷 صورة](https://github.com/rising2026star2026-ux/rising-star-ai/blob/ci-results/robot/latest/shots/features-amazon-competitor_amazon_competitor.jpg)
-5. **صانع البرومبتات** 🆕: التوليد طلّع خطأ: المولّد مشغول دلوقتي 😅 جرّب تاني بعد دقيقة.  
-   [افتح](https://rising-star-ai.vercel.app/prompts/builder) · [📷 صورة](https://github.com/rising2026star2026-ux/rising-star-ai/blob/ci-results/robot/latest/shots/features-prompt-builder_prompts_builder.jpg)
-6. **قارئ الصور** 🆕: قراية الصورة طلّعت خطأ: مقدرناش نقرا الصورة دلوقتي. جرّب تاني بعد شوية.  
-   [افتح](https://rising-star-ai.vercel.app/tool/image-reader) · [📷 صورة](https://github.com/rising2026star2026-ux/rising-star-ai/blob/ci-results/robot/latest/shots/features-image-reader_tool_image-reader.jpg)
-7. **اختبر إعلانك على 100 زبون**: وقفت عند «بدء الاختبار»: ما حصلش اللي متوقع في الوقت المسموح  
+3. **اختبر إعلانك على 100 زبون**: وقفت عند «بدء الاختبار»: ما حصلش اللي متوقع في الوقت المسموح  
    [افتح](https://rising-star-ai.vercel.app/test-ad) · [📷 صورة](https://github.com/rising2026star2026-ux/rising-star-ai/blob/ci-results/robot/latest/shots/features-test-ad_test-ad.jpg)
-8. **8 صفحة** فيها نفس العطل (8 جديد 🆕): الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة.  
-   زي: [إعادة الصياغة](https://rising-star-ai.vercel.app/tool/rewrite)، [تلخيص النصوص](https://rising-star-ai.vercel.app/tool/summarize)، [سكريبت فيديو قصير](https://rising-star-ai.vercel.app/tool/tiktok-script)، [الرد على التقييمات](https://rising-star-ai.vercel.app/tool/review-reply) · [📷 صورة](https://github.com/rising2026star2026-ux/rising-star-ai/blob/ci-results/robot/latest/shots/ai-rewrite_tool_rewrite.jpg)
-9. **صانع الاختبارات** 🆕: الأداة طلّعت خطأ: حصلت مشكلة مؤقتة. جرّب تاني.  
-   [افتح](https://rising-star-ai.vercel.app/tool/quiz) · [📷 صورة](https://github.com/rising2026star2026-ux/rising-star-ai/blob/ci-results/robot/latest/shots/ai-quiz_tool_quiz.jpg)
+4. **صانع البرومبتات**: التوليد طلّع خطأ: المولّد مشغول دلوقتي 😅 جرّب تاني بعد دقيقة.  
+   [افتح](https://rising-star-ai.vercel.app/prompts/builder) · [📷 صورة](https://github.com/rising2026star2026-ux/rising-star-ai/blob/ci-results/robot/latest/shots/features-prompt-builder_prompts_builder.jpg)
+5. **قارئ الصور**: قراية الصورة طلّعت خطأ: مقدرناش نقرا الصورة دلوقتي. جرّب تاني بعد شوية.  
+   [افتح](https://rising-star-ai.vercel.app/tool/image-reader) · [📷 صورة](https://github.com/rising2026star2026-ux/rising-star-ai/blob/ci-results/robot/latest/shots/features-image-reader_tool_image-reader.jpg)
+6. **أمازون: كاتب الليستنج**: كتابة الليستنج طلّعت خطأ: حصلت مشكلة. جرّب تاني.  
+   [افتح](https://rising-star-ai.vercel.app/amazon/listing) · [📷 صورة](https://github.com/rising2026star2026-ux/rising-star-ai/blob/ci-results/robot/latest/shots/features-amazon-listing_amazon_listing.jpg)
+7. **7 صفحة** فيها نفس العطل (7 جديد 🆕): الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة.  
+   زي: [كاتب المقالات](https://rising-star-ai.vercel.app/tool/article)، [نص إعلاني](https://rising-star-ai.vercel.app/tool/ad-copy)، [Adspy عربي: جاسوس الإعلانات](https://rising-star-ai.vercel.app/tool/adspy)، [عناوين يوتيوب](https://rising-star-ai.vercel.app/tool/youtube-title) · [📷 صورة](https://github.com/rising2026star2026-ux/rising-star-ai/blob/ci-results/robot/latest/shots/ai-article_tool_article.jpg)
+8. **محوّل اللهجات** 🆕: الأداة طلّعت خطأ: حصلت مشكلة مؤقتة. جرّب تاني.  
+   [افتح](https://rising-star-ai.vercel.app/tool/translate-dialect) · [📷 صورة](https://github.com/rising2026star2026-ux/rising-star-ai/blob/ci-results/robot/latest/shots/ai-translate-dialect_tool_translate-dialect.jpg)
 
 ## 🛰️ سيرفرات مجانية واقعة (مش عيب في كودنا)
 - 5 سيرفر من اللي في «المكتبة» واقفين: `aryadytm-remove-photo-object`، `multimodalart-logo-in-context`، `eccv2022-dis-background-removal`، `doevent-face-real-esrgan`، `stepfun-ai-step1x-3d`
@@ -50,29 +48,27 @@
 
 <details><summary>تفاصيل تقنية (لـ Claude وهو بيصلّح)</summary>
 
-- `feature:photo-ad` [broken] كتابة الإعلان ما خلصتش في دقيقة ونص
-  - api: 504 POST https://rising-star-ai.vercel.app/api/ad-pack
-- `feature:amazon-check` [broken] التصليح الذكي ظهر «مش متاح دلوقتي»
-- `feature:amazon-listing` [broken] كتابة الليستنج طلّعت خطأ: الكاتب مشغول دلوقتي 😅 جرّب تاني بعد دقيقة.
-  - api: 503 POST https://rising-star-ai.vercel.app/api/amazon/listing
+- `feature:photo-ad` [broken] وقفت عند «كتابة الإعلان»: ما حصلش اللي متوقع في الوقت المسموح
+  - locator.click: Timeout 30000ms exceeded. Call log: - waiting for getByRole('button', { name: /اكتبلي الإعلان كامل/ })
 - `feature:amazon-competitor` [broken] التحليل طلّع خطأ: المحلل مشغول دلوقتي 😅 جرّب تاني بعد دقيقة.
   - api: 503 POST https://rising-star-ai.vercel.app/api/amazon/competitor
+- `feature:test-ad` [broken] وقفت عند «بدء الاختبار»: ما حصلش اللي متوقع في الوقت المسموح
+  - locator.click: Timeout 30000ms exceeded. Call log: - waiting for getByRole('button', { name: 'اعرض إعلاني على 100 زبون' })
 - `feature:prompt-builder` [broken] التوليد طلّع خطأ: المولّد مشغول دلوقتي 😅 جرّب تاني بعد دقيقة.
   - api: 503 POST https://rising-star-ai.vercel.app/api/prompt-gen
 - `feature:image-reader` [broken] قراية الصورة طلّعت خطأ: مقدرناش نقرا الصورة دلوقتي. جرّب تاني بعد شوية.
   - api: 503 POST https://rising-star-ai.vercel.app/api/vision
-- `feature:test-ad` [broken] وقفت عند «بدء الاختبار»: ما حصلش اللي متوقع في الوقت المسموح
-  - locator.click: Timeout 30000ms exceeded. Call log: - waiting for getByRole('button', { name: 'اعرض إعلاني على 100 زبون' })
-- `/tool/rewrite` [broken] الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة.
-- `/tool/summarize` [broken] الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة.
-- `/tool/tiktok-script` [broken] الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة.
-- `/tool/review-reply` [broken] الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة.
-- `/tool/quiz` [broken] الأداة طلّعت خطأ: حصلت مشكلة مؤقتة. جرّب تاني.
+- `feature:amazon-listing` [broken] كتابة الليستنج طلّعت خطأ: حصلت مشكلة. جرّب تاني.
+  - api: 504 POST https://rising-star-ai.vercel.app/api/amazon/listing
+- `/tool/article` [broken] الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة.
+- `/tool/ad-copy` [broken] الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة.
+- `/tool/adspy` [broken] الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة.
+- `/tool/youtube-title` [broken] الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة.
+- `/tool/business-ideas` [broken] الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة.
+- `/tool/translate-dialect` [broken] الأداة طلّعت خطأ: حصلت مشكلة مؤقتة. جرّب تاني.
   - api: 502 POST https://rising-star-ai.vercel.app/api/run
-- `/tool/study-plan` [broken] الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة.
-- `/tool/short-story` [broken] الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة.
-- `/tool/sheet-analyst` [broken] الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة.
-- `/tool/report` [broken] الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة.
+- `/tool/brainstorm` [broken] الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة.
+- `/tool/video-qa` [broken] الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة.
 - `/global-tools/alternatives` [warn] ملفات ناقصة على الصفحة (3)
   - 404 https://rising-star-ai.vercel.app/tool/post-ideas?_rsc=N7sdgus8o7TCijZR | 404 https://rising-star-ai.vercel.app/tool/email-campaign?_rsc=N7sdgus8o7TCijZR | 404 https://rising-star-ai.vercel.app/tool/budget?_rsc=N7sdgus8o7TCijZR
   - console: Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()
