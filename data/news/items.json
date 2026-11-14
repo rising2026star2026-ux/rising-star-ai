@@ -1,31 +1,216 @@
 {
- "updated": "2026-11-13T17:33:48.037Z",
+ "updated": "2026-11-14T05:23:28.319Z",
  "providers": [
   "gemini",
   "groq",
   "openrouter"
  ],
- "used": {},
+ "used": {
+  "gemini": 1
+ },
  "feeds": {
-  "deepmind": "ok 13",
-  "verge": "ok 10",
-  "apple": "ok 10",
-  "techcrunch": "ok 20",
-  "aws": "ok 20",
-  "meta": "ok 9",
-  "nvidia": "ok 18",
-  "huggingface": "ok 33",
   "openai": "ok 92",
-  "google-research": "ok 8",
+  "deepmind": "ok 13",
+  "apple": "ok 8",
+  "verge": "ok 10",
+  "techcrunch": "ok 20",
+  "nvidia": "ok 18",
+  "meta": "ok 9",
   "marktechpost": "ok 10",
   "google-ai": "ok 11",
-  "aitnews": "ok 5",
+  "huggingface": "ok 31",
+  "aws": "ok 20",
   "arstechnica": "ok 20",
+  "techwd": "ok 4",
+  "aitnews": "ok 3",
   "microsoft": "ok 10",
   "venturebeat": "FAIL HTTP 429",
-  "techwd": "ok 4"
+  "google-research": "ok 9"
  },
  "items": [
+  {
+   "id": "b04640db7250",
+   "url": "https://aitnews.com/2026/11/14/gemini-google-wallet-financial-insights/",
+   "title": "جوجل تتيح لـ Gemini تحليل الإنفاق عبر Google Wallet",
+   "date": "2026-11-14T01:12:29.000Z",
+   "src": "البوابة العربية للأخبار التقنية",
+   "srcId": "aitnews",
+   "kind": "arabic",
+   "ar": {
+    "title": "جوجل تتيح لـ Gemini تحليل الإنفاق عبر Google Wallet",
+    "summary": ""
+   }
+  },
+  {
+   "id": "04367a7d0b10",
+   "url": "https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search",
+   "title": "Amazon has a plan to index the world’s online shopping data",
+   "date": "2026-11-13T23:49:11.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "fc5d215625b2",
+   "url": "https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1/",
+   "title": "Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1",
+   "date": "2026-11-13T23:22:09.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "ec577d4c46a6",
+   "url": "https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/",
+   "title": "Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say",
+   "date": "2026-11-13T22:43:00.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "3880f24cce93",
+   "url": "https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard/",
+   "title": "Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard",
+   "date": "2026-11-13T22:30:12.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "29d22120108e",
+   "url": "https://aws.amazon.com/blogs/machine-learning/architecture-patterns-for-fast-session-startup-on-amazon-bedrock-agentcore-runtime/",
+   "title": "Architecture patterns for fast session startup on Amazon Bedrock AgentCore runtime",
+   "date": "2026-11-13T22:02:39.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "2e5da3065056",
+   "url": "https://aws.amazon.com/blogs/machine-learning/openfold3-on-amazon-sagemaker-jumpstart-predict-biomolecular-structures/",
+   "title": "OpenFold3 on Amazon SageMaker JumpStart: Predict biomolecular structures",
+   "date": "2026-11-13T21:53:40.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "c479f2841d4a",
+   "url": "https://arstechnica.com/features/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/",
+   "title": "FAA expands AI advice to manage air traffic congestion across entire US airspace",
+   "date": "2026-11-13T21:20:47.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "90d40fe08702",
+   "url": "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/",
+   "title": "Advancing science & engineering with Antigravity’s /teamwork",
+   "date": "2026-11-13T20:47:18.000Z",
+   "src": "Google Research",
+   "srcId": "google-research",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "951c84561943",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet",
+   "title": "ChatGPT Wallet lets OpenAI’s Dots agents make purchases for you",
+   "date": "2026-11-13T20:45:10.000Z",
+   "src": "The Verge",
+   "srcId": "verge",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "645e798427f9",
+   "url": "https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/",
+   "title": "AI agent startup LangChain hits $3B valuation",
+   "date": "2026-11-13T19:37:57.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "081d77d792d9",
+   "url": "https://aws.amazon.com/blogs/machine-learning/cost-optimizing-assemblyai-speech-to-text-inference-on-aws-with-amazon-ec2-spot/",
+   "title": "Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot",
+   "date": "2026-11-13T19:35:35.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "16c76fa53ec6",
+   "url": "https://aws.amazon.com/blogs/machine-learning/cost-attribution-and-controls-for-ai-developer-and-productivity-tools-on-amazon-bedrock/",
+   "title": "Cost attribution and controls for AI developer and productivity tools on Amazon Bedrock",
+   "date": "2026-11-13T18:44:02.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "3dc626ea28ff",
+   "url": "https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/",
+   "title": "Export-banned Nvidia chips are behind China’s most powerful AI models — uh-oh, Jensen!",
+   "date": "2026-11-13T18:40:30.000Z",
+   "src": "TechCrunch",
+   "srcId": "techcrunch",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "a8b10f8e6653",
+   "url": "https://aws.amazon.com/blogs/machine-learning/build-a-model-improvement-flywheel-with-amazon-sagemaker-hyperpod-data-capture/",
+   "title": "Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture",
+   "date": "2026-11-13T18:01:15.000Z",
+   "src": "Amazon AWS",
+   "srcId": "aws",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "2427bacb74a9",
+   "url": "https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place",
+   "title": "Build a Robot Pick-and-Place Simulation with SimReady Assets",
+   "date": "2026-11-13T18:00:39.000Z",
+   "src": "Hugging Face",
+   "srcId": "huggingface",
+   "kind": "company",
+   "ar": null
+  },
+  {
+   "id": "743e8b03b2d9",
+   "url": "https://arstechnica.com/ai/2026/11/ai-is-the-most-likely-reason-youll-die-openai-board-member-warns/",
+   "title": "OpenAI board member worries an AI \"takeover\" of society could be months away",
+   "date": "2026-11-13T17:25:45.000Z",
+   "src": "Ars Technica",
+   "srcId": "arstechnica",
+   "kind": "news",
+   "ar": null
+  },
+  {
+   "id": "bd92ae14b8c4",
+   "url": "https://www.marktechpost.com/2026/11/13/best-ai-video-generation-models-2026/",
+   "title": "Best AI Video Generation Models in 2026: Elo, Price per Second, Open Weights",
+   "date": "2026-11-13T17:23:51.000Z",
+   "src": "MarkTechPost",
+   "srcId": "marktechpost",
+   "kind": "news",
+   "ar": null
+  },
   {
    "id": "8400bdfe1e2a",
    "url": "https://huggingface.co/blog/allenai/xybench",
@@ -104,7 +289,10 @@
    "src": "Hugging Face",
    "srcId": "huggingface",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "إطلاق llama.cpp v1.0.0 لدعم الذكاء الاصطناعي المحلي",
+    "summary": "الإصدار الجديد llama.cpp v1.0.0 نزل عشان يوفر أساس أقوى لمنظومة الـ AI المحلية."
+   }
   },
   {
    "id": "71dad9da95c2",
@@ -114,7 +302,10 @@
    "src": "The Verge",
    "srcId": "verge",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "جدل وتساؤلات حول اللي بيحصل في Nvidia ورئيسها",
+    "summary": "تساؤلات كتير طالعة ومفيش إجابات واضحة بخصوص الأحداث اللي بتدور في شركة Nvidia وموضوع علاقات Jensen Huang الأخيرة."
+   }
   },
   {
    "id": "a326fbf0621f",
@@ -124,7 +315,10 @@
    "src": "NVIDIA",
    "srcId": "nvidia",
    "kind": "company",
-   "ar": null
+   "ar": {
+    "title": "الـ AI بيساعد الفرق الطبية تركز أكتر مع المرضى",
+    "summary": "الذكاء الاصطناعي بقى بيقلل وقت المهام الروتينية للأطباء عشان يركزوا أكتر مع المرضى في المستشفيات والبيوت، مع استمرار إشرافهم المباشر على النتائج."
+   }
   },
   {
    "id": "f240bb31094b",
@@ -134,7 +328,10 @@
    "src": "TechCrunch",
    "srcId": "techcrunch",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "قلق وفرص للمنافسين في إسرائيل بعد أزمات Nvidia",
+    "summary": "رغم سيطرة Nvidia على سوق الذكاء الاصطناعي وقلق بيئة الشركات الناشئة من رحيل رئيسها، شركات رأس المال المخاطر شايفة فرصة لظهور منافسين جدد."
+   }
   },
   {
    "id": "025949940b1f",
@@ -144,7 +341,10 @@
    "src": "TechCrunch",
    "srcId": "techcrunch",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Jensen Huang مش واثق في خليفته بالشركة",
+    "summary": "تقارير بتقول إن Jensen Huang مظهرش ثقة في Kress اللي هيخلفه، ووصفه في اجتماع خلال الصيف بإنه عامل زي الغزال المتفاجئ بنور العربيات."
+   }
   },
   {
    "id": "e7899aa97baf",
@@ -154,7 +354,10 @@
    "src": "MarkTechPost",
    "srcId": "marktechpost",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Google تطلق أداة TPU Sync مفتوحة المصدر",
+    "summary": "Google طرحت مكتبة TPU Sync البرمجية لنقل الـ KV caches والأوزان بين الذاكرة والتخزين، وبتقلل وقت التأخير بنسبة أكتر من 90% في نماذج معينة."
+   }
   },
   {
    "id": "e13d8feb54cd",
@@ -164,7 +367,23 @@
    "src": "MarkTechPost",
    "srcId": "marktechpost",
    "kind": "news",
-   "ar": null
+   "ar": {
+    "title": "Google تكشف عن نموذج Gemini 4 Hydrogen السريع",
+    "summary": "Google أعلنت عن Gemini 4 Hydrogen، وهو نموذج سريع بنافذة سياق بتوصل لمليون توكن، وأسرع بمرتين ونصف مقارنة بالجيل السابق."
+   }
+  },
+  {
+   "id": "d1318183fe17",
+   "url": "https://openai.com/business/customer-stories/shield",
+   "title": "Shield helps technicians hand off legacy portal work with OpenAI",
+   "date": "2026-11-13T08:00:00.000Z",
+   "src": "OpenAI",
+   "srcId": "openai",
+   "kind": "company",
+   "ar": {
+    "title": "شركة Shield تستعين بـ OpenAI لتسهيل مهام تقنية المعلومات",
+    "summary": "Shield بتستخدم تقنيات OpenAI عشان عملاء الـ Forge بتوعها يتولوا الشغل على البوابات القديمة، وده بيدي فرصة للفنيين يركزوا في المهام اللي محتاجة تقييمهم."
+   }
   },
   {
    "id": "b7b69bcb2e8c",
@@ -3375,196 +3594,6 @@
    "date": "2026-11-05T21:39:40.000Z",
    "src": "Ars Technica",
    "srcId": "arstechnica",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "baf47aeb9b7e",
-   "url": "https://www.marktechpost.com/2026/11/05/baidu-ernie-5-5-flash-base-280b-moe/",
-   "title": "Baidu Releases ERNIE 5.5 Flash Base: A 280B MoE Base Model With 14B Active Parameters",
-   "date": "2026-11-05T21:33:00.000Z",
-   "src": "MarkTechPost",
-   "srcId": "marktechpost",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "6dde141103f3",
-   "url": "https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore/",
-   "title": "Getting started with Web Answer on Amazon Bedrock AgentCore",
-   "date": "2026-11-05T21:04:24.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "e8438a23dbcf",
-   "url": "https://blogs.nvidia.com/blog/vera-cpu-highest-throughput-fastest-agents/",
-   "title": "Vera Delivers the Best of Both Worlds: Highest Throughput and Fastest Agents",
-   "date": "2026-11-05T20:00:41.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "c88b52d0b210",
-   "url": "https://openai.com/index/cultfit-builds-with-codex",
-   "title": "Cult.fit builds operational muscle with Codex",
-   "date": "2026-11-05T20:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "9d6202c03434",
-   "url": "https://techcrunch.com/2026/11/05/meta-says-us-users-can-now-video-chat-with-their-muse-ai-avatar/",
-   "title": "Meta says US users can now video chat with their Muse AI avatar",
-   "date": "2026-11-05T19:48:28.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "e8690f74b67f",
-   "url": "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation",
-   "title": "New NVIDIA Cosmos 3 Open Models for Interactive World Simulation",
-   "date": "2026-11-05T19:35:16.000Z",
-   "src": "Hugging Face",
-   "srcId": "huggingface",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "ea881b03ae96",
-   "url": "https://techcrunch.com/2026/11/05/metas-warns-that-election-backlash-against-data-centers-could-make-ai-expansion-harder/",
-   "title": "Meta warns that election backlash against data centers could make AI expansion harder",
-   "date": "2026-11-05T19:12:39.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "8f7798ef97e4",
-   "url": "https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/",
-   "title": "OpenAI released a new cybersecurity model. Is that enough?",
-   "date": "2026-11-05T19:06:12.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "8d9f2ba0bf26",
-   "url": "https://aws.amazon.com/blogs/machine-learning/how-amazon-marketplace-evaluates-content-quality-with-amazon-sagemaker-ai/",
-   "title": "How Amazon Marketplace evaluates content quality with Amazon SageMaker AI",
-   "date": "2026-11-05T18:06:43.000Z",
-   "src": "Amazon AWS",
-   "srcId": "aws",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "bf7e9a38adde",
-   "url": "https://techcrunch.com/2026/11/05/openai-president-greg-brockman-says-company-could-be-ipo-ready-in-2027/",
-   "title": "OpenAI president Greg Brockman says company could be IPO ready in 2027",
-   "date": "2026-11-05T18:02:27.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "b0e121b3a461",
-   "url": "https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool/",
-   "title": "Claude can now analyze your spending with its new Personal Finance tool",
-   "date": "2026-11-05T18:00:00.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "23696f011bd9",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1026927/total-repudiation-the-blue-wave-is-about-to-hit-ai",
-   "title": "‘Total repudiation’: The blue wave is about to hit AI",
-   "date": "2026-11-05T17:51:52.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "f49d817c3fd3",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1027652/anthropic-claude-plaid-personal-finance",
-   "title": "Claude AI can plug directly into your bank account",
-   "date": "2026-11-05T17:49:25.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "b529285c262b",
-   "url": "https://www.theverge.com/ai-artificial-intelligence/1027599/openai-gpt-6-cyber-launch",
-   "title": "OpenAI says its new cybersecurity model is better at not hacking other companies",
-   "date": "2026-11-05T17:10:19.000Z",
-   "src": "The Verge",
-   "srcId": "verge",
-   "kind": "news",
-   "ar": null
-  },
-  {
-   "id": "825a50d1c0ad",
-   "url": "https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/",
-   "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
-   "date": "2026-11-05T17:05:16.000Z",
-   "src": "Google DeepMind",
-   "srcId": "deepmind",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "baf7193e75c1",
-   "url": "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/",
-   "title": "Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents",
-   "date": "2026-11-05T17:00:35.000Z",
-   "src": "NVIDIA",
-   "srcId": "nvidia",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "b58fee4edbbb",
-   "url": "https://openai.com/index/australian-universities-ai-native-graduates",
-   "title": "Australian universities are creating AI-native graduates",
-   "date": "2026-11-05T17:00:00.000Z",
-   "src": "OpenAI",
-   "srcId": "openai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "63c3d56bc72b",
-   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
-   "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
-   "date": "2026-11-05T17:00:00.000Z",
-   "src": "Google AI",
-   "srcId": "google-ai",
-   "kind": "company",
-   "ar": null
-  },
-  {
-   "id": "c2788911aa71",
-   "url": "https://techcrunch.com/2026/11/05/axiom-math-wants-to-keep-ai-slop-out-of-mathematics/",
-   "title": "Axiom Math wants to keep AI slop out of mathematics",
-   "date": "2026-11-05T16:16:45.000Z",
-   "src": "TechCrunch",
-   "srcId": "techcrunch",
    "kind": "news",
    "ar": null
   }
