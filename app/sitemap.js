@@ -6,6 +6,10 @@ import { SECTIONS } from "@/lib/sections";
 // خريطة الموقع لجوجل: صفحات الأعمال والتسويق بس (Rising Business)
 const PAGES = [
   ["", "weekly", 1],
+  ["/market", "weekly", 0.95],
+  ["/products", "weekly", 0.9],
+  ["/marketing", "weekly", 0.9],
+  ["/studio", "weekly", 0.9],
   ["/seller", "weekly", 0.95],
   ["/seller/agent", "weekly", 0.9],
   ["/compare-business", "monthly", 0.95],

@@ -1,8 +1,9 @@
 /* الرئيسية: لوحة Rising Business */
-.title { margin: 10px 0 12px; font-family: var(--display); font-weight: 800; color: #fff; font-size: var(--fs-headline); line-height: 1.4; }
+/* .title.title: أعلى من قاعدة `.brand h1` القديمة في home.module.css (كانت بتكبّر العنوان وبتفك حروف العربي) */
+.title.title { margin: 10px 0 12px; font-family: var(--display); font-weight: 800; color: #fff; font-size: var(--fs-headline); line-height: 1.45; letter-spacing: 0; }
 .choice { display: grid; gap: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 640px; margin: 0 auto; }
-.choiceBtn { display: grid; gap: 2px; padding: 16px; border-radius: var(--r-lg); background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(217, 176, 74, 0.4); color: #fff; text-align: center; transition: background-color 0.18s var(--ease); }
-.choiceBtn:hover, .choiceBtn:focus-visible { background: rgba(217, 176, 74, 0.18); }
+.choiceBtn { display: grid; gap: 2px; padding: 16px; border-radius: var(--r-lg); background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(198, 160, 75, 0.4); color: #fff; text-align: center; transition: background-color 0.18s var(--ease); }
+.choiceBtn:hover, .choiceBtn:focus-visible { background: rgba(198, 160, 75, 0.18); }
 .choiceBtn b { font-size: var(--fs-lg); color: var(--yellow); }
 .choiceBtn span { font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.85); line-height: 1.7; }
 .choiceBtn small { margin-top: 4px; font-size: var(--fs-xs); color: var(--yellow); opacity: 0.9; }
@@ -10,7 +11,7 @@
 .cta:hover, .cta:focus-visible { background: #e6c15f; }
 .ctaNote { margin: 0 auto 18px; max-inline-size: 460px; text-align: center; font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.8); line-height: 1.8; }
 .values { list-style: none; display: grid; gap: 8px; grid-template-columns: repeat(3, minmax(0, 1fr)); max-inline-size: 640px; margin: 18px auto 0; padding: 0; }
-.values li { display: grid; gap: 2px; text-align: center; padding: 10px 6px; border-top: 1px solid rgba(217, 176, 74, 0.35); }
+.values li { display: grid; gap: 2px; text-align: center; padding: 10px 6px; border-top: 1px solid rgba(198, 160, 75, 0.35); }
 .values b { color: var(--yellow); font-size: var(--fs-md); }
 .values span { font-size: var(--fs-xs); color: rgba(255, 255, 255, 0.75); line-height: 1.6; }
 .block { margin-top: 34px; }
@@ -46,7 +47,15 @@
 .foot a { color: var(--accent); font-weight: 600; }
 @media (max-width: 520px) { .choice { grid-template-columns: 1fr; } .values { grid-template-columns: 1fr; } .values li { grid-template-columns: auto 1fr; text-align: start; gap: 10px; align-items: baseline; } }
 .who { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; max-inline-size: 680px; margin: 16px auto 0; padding: 0; }
-.who li { padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(217, 176, 74, 0.45); color: rgba(255, 255, 255, 0.88); font-size: var(--fs-xs); }
+.who li { padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(198, 160, 75, 0.45); color: rgba(255, 255, 255, 0.88); font-size: var(--fs-xs); }
 .stages { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 4px; padding: 0; }
 .stages li { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px 4px 12px; border-radius: 999px; background: var(--surface-2); font-size: var(--fs-sm); font-weight: 700; color: var(--ink); }
 .stages b { display: inline-grid; place-items: center; inline-size: 20px; block-size: 20px; border-radius: 50%; background: var(--night); color: var(--yellow); font-size: var(--fs-xs); }
+.forWho { font-size: var(--fs-sm); color: var(--muted); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.step { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: var(--r-md); background: #fff; border: 1px solid var(--hairline-strong); color: var(--ink); transition: border-color 0.18s var(--ease); }
+.step:hover, .step:focus-visible { border-color: var(--yellow-deep); }
+.step i { flex: none; display: inline-grid; place-items: center; inline-size: 28px; block-size: 28px; border-radius: 50%; background: var(--night); color: var(--yellow); font-style: normal; font-size: var(--fs-sm); font-weight: 700; }
+.step span { display: grid; gap: 2px; }
+.step b { font-size: var(--fs-md); }
+.step small { font-size: var(--fs-sm); color: var(--muted); line-height: 1.6; }

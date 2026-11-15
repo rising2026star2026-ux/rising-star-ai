@@ -107,7 +107,7 @@ const ALL_CHECKS = [
     async run({ page, shot, screens, note }) {
       await shot("form");
       await page.getByRole("button", { name: "جرّب بمثال" }).click();
-      await page.getByRole("button", { name: "اعرض إعلاني على 100 زبون" }).click();
+      await page.getByRole("button", { name: "اعرض إعلاني على 100 عميل" }).click();
       await page.waitForTimeout(1200);
       await shot("running");
       await page.getByRole("button", { name: /اعرض النتيجة على طول/ }).waitFor({ timeout: 75000 });

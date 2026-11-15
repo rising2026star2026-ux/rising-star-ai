@@ -1,0 +1,22 @@
+// طبقة البيانات: إضافة وحذف وتصدير ومسح. تشغيل: node scripts/test/repo.test.mjs
+import assert from "node:assert/strict";
+const mem = new Map();
+globalThis.localStorage = { getItem: (k) => (mem.has(k) ? mem.get(k) : null), setItem: (k, v) => mem.set(k, String(v)), removeItem: (k) => mem.delete(k) };
+globalThis.window = { dispatchEvent: () => {} };
+globalThis.CustomEvent = class { constructor(t, o) { this.type = t; this.detail = o?.detail; } };
+const repo = await import("../../lib/repo.js");
+repo.set("profile", { name: "نور" });
+repo.add("studies", { id: "a", name: "١" });
+repo.add("studies", { id: "b", name: "٢" });
+repo.add("studies", { id: "a", name: "١ معدّلة" });
+assert.deepEqual(repo.list("studies").map((x) => x.id), ["a", "b"], "نفس المعرّف بيتحدّث ويطلع الأول");
+repo.remove("studies", "b");
+assert.equal(repo.list("studies").length, 1);
+const ex = repo.exportAll();
+assert.equal(ex.data.profile.name, "نور"); assert.equal(ex.data.studies.length, 1); assert.ok(!("chats" in ex.data));
+assert.equal(repo.summary().find((x) => x.name === "studies").count, 1);
+repo.clearAll();
+assert.equal(repo.get("profile"), null); assert.deepEqual(repo.list("studies"), []);
+assert.equal(mem.size, 0, "المسح بيشيل المفاتيح نفسها");
+assert.throws(() => repo.get("nothing"));
+console.log("repo: تمام");

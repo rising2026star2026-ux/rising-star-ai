@@ -21,7 +21,7 @@
 .table th, .table td { padding: 11px 12px; text-align: start; border-bottom: 1px solid var(--hairline); }
 .table thead th { background: var(--night); color: #fff; font-weight: 700; }
 .table tbody th { font-weight: 600; color: var(--ink); background: var(--surface-2); white-space: nowrap; }
-.best { background: rgba(217, 176, 74, 0.22); font-weight: 700; color: var(--ink); }
+.best { background: rgba(198, 160, 75, 0.22); font-weight: 700; color: var(--ink); }
 .total th, .total td { border-bottom: 0; font-weight: 700; }
 .note, .empty { margin: 0; font-size: var(--fs-sm); color: var(--muted); line-height: 1.8; }
 .charts { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
@@ -42,7 +42,7 @@
 .savedRow { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: var(--r-md); background: #fff; border: 1px solid var(--hairline-strong); }
 .savedRow span { flex: 1; }
 @media print { .actions, .cards, .savedBox, .legend { display: none; } }
-.toFeas { display: grid; gap: 6px; margin-top: 12px; padding: 14px 16px; border-radius: var(--r-lg); background: rgba(217, 176, 74, 0.12); border: 1px solid rgba(184, 144, 47, 0.45); }
+.toFeas { display: grid; gap: 6px; margin-top: 12px; padding: 14px 16px; border-radius: var(--r-lg); background: rgba(198, 160, 75, 0.12); border: 1px solid rgba(184, 144, 47, 0.45); }
 .toFeas b { font-size: var(--fs-md); color: var(--ink); }
 .toFeas small { font-size: var(--fs-sm); color: var(--muted); line-height: 1.7; }
 @media print { .toFeas { display: none; } }

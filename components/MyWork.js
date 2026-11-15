@@ -7,6 +7,8 @@ import { compareAll } from "@/lib/bizcompare";
 import { groupOf } from "@/lib/bizgroups";
 import { MODE_BY_ID } from "@/lib/bizassistant";
 import { profileCompleteness } from "@/lib/bizprofile";
+import { exportAll, clearAll, summary } from "@/lib/repo";
+import { toast } from "@/lib/store";
 import s from "./mywork.module.css";
 
 const when = (t) => new Date(t).toLocaleDateString("ar-EG", { day: "numeric", month: "long", year: "numeric" });
@@ -26,6 +28,21 @@ export default function MyWork() {
   const marketing = byGroup(["marketing", "content"]);
   const reports = byGroup(["manage", "feasibility", "market", "sales", "identity"]);
   const studiesCount = studies.length + (feas?.a ? 1 : 0);
+  function downloadData() {
+    const blob = new Blob([JSON.stringify(exportAll(), null, 2)], { type: "application/json" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `rising-business-${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  }
+  function wipeData() {
+    const n = summary().reduce((t, x) => t + x.count, 0);
+    if (!n) { toast("مفيش بيانات محفوظة."); return; }
+    if (!window.confirm(`هيتمسح ${n.toLocaleString("ar-EG")} عنصر من على جهازك نهائياً: ملف النشاط والدراسات والمقارنات والمحادثات والمخرجات. نزّل نسخة الأول لو محتاجها. تكمّل؟`)) return;
+    clearAll();
+    toast("اتمسحت بياناتك من الجهاز.");
+  }
   const none = !brand && !feas?.a && !cmp.length && !studies.length && !hist.length && !chats.length;
   const tiles = [["الدراسات", studiesCount], ["المقارنات", cmp.length], ["المنتجات", products.length], ["خطط التسويق", marketing.length], ["التقارير", reports.length], ["المحادثات", chats.length]];
   const histRows = (list, empty) => list.length ? list.slice(0, 8).map((h) => (
@@ -102,6 +119,15 @@ export default function MyWork() {
             <button type="button" className={s.del} onClick={() => setChats(chats.filter((x) => x.id !== c.id))}>احذف</button>
           </details>
         )) : <p className={s.empty}>اضغط على أيقونة الحفظ تحت أي رد من المساعد ويتحفظ هنا.</p>}
+      </section>
+
+      <section className={s.card} aria-labelledby="mw-data">
+        <div className={s.head}><h2 id="mw-data">بياناتك</h2></div>
+        <p className={s.empty}>كل بياناتك محفوظة على جهازك ده بس. تقدر تنزّل نسخة منها أو تمسحها.</p>
+        <div className={s.dataActs}>
+          <button type="button" className={s.go} onClick={downloadData}>نزّل نسخة من بياناتك</button>
+          <button type="button" className={s.del} onClick={wipeData}>امسح كل بياناتك من الجهاز</button>
+        </div>
       </section>
 
       {none && <p className={s.note}>كل اللي هنا محفوظ على جهازك أنت بس. لو مسحت بيانات المتصفح بتتمسح.</p>}

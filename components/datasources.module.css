@@ -5,8 +5,8 @@
 .head h2 a { color: var(--ink); }
 .kind { font-size: var(--fs-xs); font-weight: 700; padding: 4px 10px; border-radius: 999px; background: var(--surface-2); color: var(--muted); }
 .kind[data-kind="live"] { background: var(--night); color: var(--yellow); }
-.kind[data-kind="yours"] { background: rgba(217, 176, 74, 0.16); color: var(--ink); }
-.kind[data-kind="simulated"] { background: rgba(20, 48, 90, 0.1); color: var(--accent); }
+.kind[data-kind="yours"] { background: rgba(198, 160, 75, 0.16); color: var(--ink); }
+.kind[data-kind="simulated"] { background: rgba(38, 54, 77, 0.1); color: var(--accent); }
 .list { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; font-size: var(--fs-md); line-height: 1.8; }
 .list dt { font-weight: 700; color: var(--ink); }
 .list dd { margin: 0; color: var(--muted); }

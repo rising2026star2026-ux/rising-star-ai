@@ -13,5 +13,8 @@ assert.equal(profileCompleteness({ name: "نور" }).missing.length, 8);
 const p = feasibilityPrefill(b);
 assert.equal(p.type, "factory"); assert.equal(p.governorate, "سوهاج"); assert.equal(p.capital, "200000"); assert.equal(p.activity, "حلويات");
 assert.equal(feasibilityPrefill({}), null);
+assert.equal(feasibilityPrefill({ name: "مطعم", kind: "food", region: "أسوان", capital: "1 مليون", budget: "٢٠٠ ألف" }).capital, "1000000", "رأس المال قبل الميزانية");
+assert.equal(feasibilityPrefill({ name: "مطعم", kind: "food", region: "أسوان" }).type, "cafe");
+assert.equal(feasibilityPrefill({ name: "مطعم", region: "أسوان" }).governorate, "أسوان");
 assert.equal(feasibilityPrefill({ name: "x", city: "مدينة غريبة" }).city, "مدينة غريبة");
 console.log("bizprofile: تمام");

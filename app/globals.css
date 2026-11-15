@@ -5,7 +5,7 @@
    ================================================================== */
 
 /* اللون الأساسي: نيلي واحد نقي، من غير تحولات ولا توهج */
-@property --accent      { syntax: "<color>"; inherits: true; initial-value: #14305a; }
+@property --accent      { syntax: "<color>"; inherits: true; initial-value: #26364d; }
 @property --a           { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
 
 :root {
@@ -13,12 +13,13 @@
   --ui: "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
   --display: "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
   /* هوية Myndlab: أصفر وأزرق مشبعين على حبر غامق */
-  --yellow: #d9b04a;
-  --yellow-deep: #b8902f;
-  --blue: #14305a;
+  --yellow: #c6a04b;
+  --yellow-deep: #a8853a;
+  --blue: #26364d;
   --blue-deep: #0c2244;
   --cyan: #c9a24a;
-  --ink: #0a1424;
+  --slate: #26364d;
+  --ink: #101b30;
   color-scheme: light;
 
   /* الأساس: رمادي فاتح جداً، والكروت أبيض صافي */
@@ -26,7 +27,7 @@
   --bg-deep: #ffffff;
   --card: #ffffff;
   --surface: #ffffff;
-  --surface-2: #f6f7f9;
+  --surface-2: #f4f6f9;
   --surface-solid: #ffffff;
   --field: #fafbfc;
   --panel: rgba(255, 255, 255, 0.98);
@@ -40,15 +41,15 @@
 
   /* النص */
   --text: #12121c;
-  --text-strong: #0a1424;
+  --text-strong: #101b30;
   --muted: #5b6474;
   --faint: #667085; /* كان #8b93a1 (تباين 3.1:1 على الأبيض). دلوقتي 5:1 وده الحد المقبول للنص الصغير */
   --danger: #d43f3a;
 
   /* لون واحد للتفاعل */
-  --accent: #14305a;
-  --accent-line: rgba(20, 48, 90, 0.36);
-  --accent-soft: rgba(20, 48, 90, 0.1);
+  --accent: #26364d;
+  --accent-line: rgba(38, 54, 77, 0.36);
+  --accent-soft: rgba(38, 54, 77, 0.1);
   --on-accent: #ffffff;
 
   --glow-warm: transparent;
@@ -507,11 +508,11 @@ body.rs-modal { overflow: hidden; }
 .side-new {
   display: flex; align-items: center; gap: 10px; margin: 2px 0 10px; padding: 10px 14px;
   border-radius: var(--r-sm); font-size: var(--fs-base); font-weight: 500; color: #fff;
-  background: linear-gradient(135deg, #14305a, #0c2244);
-  box-shadow: 0 8px 20px -10px rgba(20, 48, 90, 0.75);
+  background: linear-gradient(135deg, #26364d, #0c2244);
+  box-shadow: 0 8px 20px -10px rgba(38, 54, 77, 0.75);
   transition: transform 0.18s var(--ease), box-shadow 0.18s var(--ease);
 }
-.side-new:hover { transform: translateY(-1px); box-shadow: 0 12px 24px -10px rgba(20, 48, 90, 0.8); }
+.side-new:hover { transform: translateY(-1px); box-shadow: 0 12px 24px -10px rgba(38, 54, 77, 0.8); }
 .side-new svg { width: 18px; height: 18px; flex: none; }
 .side-nav { display: grid; gap: 2px; }
 .side-link {
@@ -576,7 +577,7 @@ html.side-mini .side-sechead { justify-content: center; padding-inline: 0; }
 /* ============ الشاشة الافتتاحية ============ */
 .intro {
   position: fixed; inset: 0; z-index: 300; display: grid; place-content: center; justify-items: center; gap: 16px;
-  background: radial-gradient(60% 50% at 50% 40%, #d9b04a 0%, #14305a 55%, #0c2244 100%); overflow: hidden;
+  background: radial-gradient(60% 50% at 50% 40%, #c6a04b 0%, #26364d 55%, #0c2244 100%); overflow: hidden;
   animation: intro-out 0.55s ease 2.6s forwards; cursor: pointer;
 }
 html.no-intro .intro { display: none; }
@@ -586,9 +587,9 @@ html.no-intro .intro { display: none; }
   width: 132px; height: 132px; filter: drop-shadow(0 12px 30px rgba(245, 158, 11, 0.5));
   animation: intro-star 1.1s cubic-bezier(0.2, 0.9, 0.25, 1.15) both, intro-glow 1.6s ease-in-out 1.1s infinite alternate;
 }
-.intro-ring { position: absolute; inset: 0; border-radius: 50%; border: 3px solid rgba(217, 176, 74, 0.75); animation: intro-ring 1.5s ease-out 0.45s both; }
+.intro-ring { position: absolute; inset: 0; border-radius: 50%; border: 3px solid rgba(198, 160, 75, 0.75); animation: intro-ring 1.5s ease-out 0.45s both; }
 .intro-ring.r2 { border-color: rgba(255, 255, 255, 0.6); animation-delay: 0.75s; }
-.intro-ring.r3 { border-color: rgba(217, 176, 74, 0.45); animation-delay: 1.05s; }
+.intro-ring.r3 { border-color: rgba(198, 160, 75, 0.45); animation-delay: 1.05s; }
 .intro-sparks { position: absolute; inset: 0; pointer-events: none; }
 .intro-sparks svg { position: absolute; bottom: -8%; inset-inline-start: var(--x); width: var(--s); height: var(--s); opacity: 0; filter: drop-shadow(0 0 8px rgba(255, 198, 26, 0.7)); animation: intro-rise var(--t) ease-out var(--d) infinite; }
 @keyframes intro-rise { 0% { transform: translateY(0) scale(0.4) rotate(0); opacity: 0; } 15% { opacity: 1; } 55% { opacity: 0.9; } 100% { transform: translateY(-105vh) scale(1.1) rotate(160deg); opacity: 0; } }
@@ -609,21 +610,21 @@ html.no-intro .intro { display: none; }
    الرئيسية بتبدأ بسما ليل والنجمة طالعة من أفق أزرق.
    ================================================================== */
 :root {
-  --night: #0a1424;
-  --night-2: #12233b;
-  --night-3: #1a3050;
+  --night: #101b30;
+  --night-2: #18263f;
+  --night-3: #26364d;
   --blue-bright: #d4af5a;
-  --ink: #0a1424;
-  --text: #0a1424;
-  --text-strong: #0a1424;
+  --ink: #101b30;
+  --text: #101b30;
+  --text-strong: #101b30;
   --muted: #4a5063;
   --faint: #7a8093;
-  --hairline: rgba(10, 20, 36, 0.09);
-  --hairline-strong: rgba(10, 20, 36, 0.2);
-  --surface-2: #f3f4f8;
-  --field: #f6f7fa;
+  --hairline: rgba(16, 27, 48, 0.09);
+  --hairline-strong: rgba(16, 27, 48, 0.2);
+  --surface-2: #f4f6f9;
+  --field: #f4f6f9;
   --shadow-soft: none;
-  --shadow-lift: 0 24px 50px -28px rgba(10, 20, 36, 0.4);
+  --shadow-lift: 0 24px 50px -28px rgba(16, 27, 48, 0.4);
   --display: "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
   --wordmark: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
@@ -637,16 +638,16 @@ body { overflow-x: clip; background: #fff; }
   --hairline: rgba(255, 255, 255, 0.1); --hairline-strong: rgba(255, 255, 255, 0.22);
   --surface: rgba(255, 255, 255, 0.06); --surface-2: rgba(255, 255, 255, 0.1);
   --card: var(--night-2); --field: rgba(255, 255, 255, 0.06);
-  --accent: #d9b04a; --accent-soft: rgba(217, 176, 74, 0.14); --accent-line: rgba(217, 176, 74, 0.5); --on-accent: #0a1424;
+  --accent: #c6a04b; --accent-soft: rgba(198, 160, 75, 0.14); --accent-line: rgba(198, 160, 75, 0.5); --on-accent: #101b30;
   color: var(--text);
 }
 
 /* الاسم */
 .logo { gap: 11px; }
-.logo-star { filter: drop-shadow(0 0 14px rgba(217, 176, 74, 0.55)); }
+.logo-star { filter: drop-shadow(0 0 14px rgba(198, 160, 75, 0.55)); }
 .logo-name { font-family: var(--wordmark); font-size: 1.7rem; font-weight: 900; letter-spacing: -0.045em; color: #fff; line-height: 1; }
 .logo-name b { font-weight: 900; }
-.logo-ai { color: #d9b04a; }
+.logo-ai { color: #c6a04b; }
 .side-head .logo-name { font-size: 1.5rem; }
 @media (max-width: 560px) {
   .logo-name { font-size: 1.38rem; }
@@ -656,7 +657,7 @@ body { overflow-x: clip; background: #fff; }
 @media (max-width: 380px) { .logo-name { font-size: 1.22rem; } }
 
 /* الشريط العلوي: ليل دايماً */
-.topbar { background: rgba(10, 20, 36, 0.92); border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+.topbar { background: rgba(16, 27, 48, 0.92); border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
 .icon-btn:hover { background: rgba(255, 255, 255, 0.08); border-color: transparent; }
 .search-btn { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.1); }
 .search-btn:hover { border-color: rgba(255, 255, 255, 0.28); }
@@ -664,11 +665,11 @@ body { overflow-x: clip; background: #fff; }
 
 /* اللوحة الجانبية: ليل */
 .side { background: var(--night); border-inline-end: 1px solid rgba(255, 255, 255, 0.06); }
-.side-new { background: var(--yellow); color: var(--ink); font-weight: 700; box-shadow: 0 10px 26px -12px rgba(217, 176, 74, 0.7); }
-.side-new:hover { box-shadow: 0 14px 30px -12px rgba(217, 176, 74, 0.85); }
+.side-new { background: var(--yellow); color: var(--ink); font-weight: 700; box-shadow: 0 10px 26px -12px rgba(198, 160, 75, 0.7); }
+.side-new:hover { box-shadow: 0 14px 30px -12px rgba(198, 160, 75, 0.85); }
 .side-link { color: rgba(255, 255, 255, 0.7); }
 .side-link:hover { background: rgba(255, 255, 255, 0.07); color: #fff; }
-.side-link.on { background: rgba(217, 176, 74, 0.12); color: var(--yellow); font-weight: 600; }
+.side-link.on { background: rgba(198, 160, 75, 0.12); color: var(--yellow); font-weight: 600; }
 .side-sec { color: rgba(255, 255, 255, 0.42); }
 .side-foot { border-top-color: rgba(255, 255, 255, 0.08); }
 
@@ -681,24 +682,24 @@ h1, h2, h3 { font-family: var(--display); letter-spacing: 0; }
 .shelf h2, .related h2 { font-family: var(--display); font-weight: 700; color: var(--text-strong); font-size: var(--fs-xl); }
 
 /* الكروت: حدود حبر واضحة بدل الظل الباهت */
-.card { border: 1.5px solid rgba(10, 20, 36, 0.12); box-shadow: none; border-radius: var(--r-md); }
+.card { border: 1.5px solid rgba(16, 27, 48, 0.12); box-shadow: none; border-radius: var(--r-md); }
 .card:hover { border-color: var(--ink); transform: none; box-shadow: none; }
 .card h3 { font-weight: 600; }
 .shelf-item, .chip, .filter, .guide-uses li, .guide-faq details, .history-item { border-width: 1.5px; }
 .shelf-item:hover { border-color: var(--ink); transform: none; }
 .chip.active { background: var(--ink); color: #fff; border-color: var(--ink); }
-.composer, .result { border: 1.5px solid rgba(10, 20, 36, 0.14); box-shadow: none; }
+.composer, .result { border: 1.5px solid rgba(16, 27, 48, 0.14); box-shadow: none; }
 .result { border-top: 3px solid var(--blue); }
 .ticon { border-width: 1.5px; }
 
 /* الأزرار */
 .btn { background: var(--blue); color: #fff; box-shadow: 0 14px 30px -16px var(--blue); font-weight: 700; }
-.btn.ghost { background: #fff; color: var(--ink); border: 1.5px solid rgba(10, 20, 36, 0.16); font-weight: 600; box-shadow: none; }
+.btn.ghost { background: #fff; color: var(--ink); border: 1.5px solid rgba(16, 27, 48, 0.16); font-weight: 600; box-shadow: none; }
 .btn.ghost:hover { border-color: var(--ink); }
 .btn.stop { background: var(--ink); color: #fff; }
 
 /* الباقات */
-.plan { border: 1.5px solid rgba(10, 20, 36, 0.12); box-shadow: none; }
+.plan { border: 1.5px solid rgba(16, 27, 48, 0.12); box-shadow: none; }
 .plan.best { background: var(--night); color: #fff; border-color: var(--night);
   --text: #fff; --muted: rgba(255, 255, 255, 0.72); --accent: var(--yellow); }
 .plan .tag { background: var(--yellow); color: var(--ink); font-weight: 700; }
@@ -708,17 +709,17 @@ h1, h2, h3 { font-family: var(--display); letter-spacing: 0; }
   box-shadow: 0 0 0 100vmax var(--night); clip-path: inset(0 -100vmax); }
 
 /* الشاشة الافتتاحية: سما ليل */
-.intro { background: radial-gradient(70% 55% at 50% 42%, #1a3050 0%, #0a1424 72%); }
+.intro { background: radial-gradient(70% 55% at 50% 42%, #26364d 0%, #101b30 72%); }
 
 /* فولدرين مميزين في الشريط الجانبي: تعلّم (أزرق) وجديد الذكاء الاصطناعي (برتقالي) */
 .side-link.tone-learn, .side-link.tone-news { font-weight: 700; margin-block: 2px; }
-.side-link.tone-learn { background: linear-gradient(135deg, #14305a, #0c2244); color: #fff; box-shadow: 0 8px 18px -10px #14305a; }
+.side-link.tone-learn { background: linear-gradient(135deg, #26364d, #0c2244); color: #fff; box-shadow: 0 8px 18px -10px #26364d; }
 .side-link.tone-news { background: linear-gradient(135deg, #ff7a1a, #ff3d2e); color: #fff; box-shadow: 0 8px 18px -10px #ff5a1f; }
 .side-link.tone-learn:hover { background: linear-gradient(135deg, #3a63ff, #1535e6); color: #fff; }
 .side-link.tone-news:hover { background: linear-gradient(135deg, #ff8d38, #ff4f40); color: #fff; }
-.side-link.tone-seller { font-weight: 700; margin-block: 2px; background: linear-gradient(135deg, #d9b04a, #b8902f); color: #0a1424; box-shadow: 0 8px 18px -10px #b8902f; }
-.side-link.tone-seller:hover { background: linear-gradient(135deg, #ffe066, #ffc21a); color: #0a1424; }
-.side-link.tone-seller.on { color: #0a1424; outline: 2px solid #fff; outline-offset: 1px; font-weight: 800; }
+.side-link.tone-seller { font-weight: 700; margin-block: 2px; background: linear-gradient(135deg, #c6a04b, #a8853a); color: #101b30; box-shadow: 0 8px 18px -10px #a8853a; }
+.side-link.tone-seller:hover { background: linear-gradient(135deg, #ffe066, #ffc21a); color: #101b30; }
+.side-link.tone-seller.on { color: #101b30; outline: 2px solid #fff; outline-offset: 1px; font-weight: 800; }
 .side-link.tone-learn.on, .side-link.tone-news.on { color: #fff; outline: 2px solid var(--yellow); outline-offset: 1px; font-weight: 800; }
 
 /* ===== بلوك الرسالة في صفحة الأداة (لأصحاب المشاريع) ===== */
@@ -744,7 +745,7 @@ h1, h2, h3 { font-family: var(--display); letter-spacing: 0; }
   transition: opacity 0.25s var(--ease);
   background: radial-gradient(180px circle at var(--mx, 50%) var(--my, 50%), var(--fx-glow-color, rgba(255, 255, 255, 0.24)), transparent 72%);
 }
-.fx-glow-cool { --fx-glow-color: rgba(20, 48, 90, 0.12); }
+.fx-glow-cool { --fx-glow-color: rgba(38, 54, 77, 0.12); }
 @media (hover: hover) and (pointer: fine) { [data-spot]:hover > .fx-glow { opacity: 1; } }
 html.lite .fx-glow { display: none; }
 

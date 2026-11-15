@@ -87,7 +87,7 @@ function CashChart({ res }) {
   const lo = Math.min(...all, 0), hi = Math.max(...all, 0);
   const X = (m) => P + ((W - 2 * P) * m) / MONTHS;
   const Y = (v) => H - P - ((H - 2 * P) * (v - lo)) / (hi - lo || 1);
-  const colors = { pess: "#e5484d", mid: "#14305a", opt: "#12a150" };
+  const colors = { pess: "#e5484d", mid: "#26364d", opt: "#12a150" };
   return (
     <figure className={s.chart}>
       <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="الرصيد التراكمي على 36 شهر للسيناريوهات التلاتة">

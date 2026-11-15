@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useStored, toast, read } from "@/lib/store";
 import { profileCompleteness } from "@/lib/bizprofile";
+import { GOVERNORATES } from "@/lib/feasibility";
 import { BIZ_KINDS, BRAND_TONES, BRAND_DIALECTS, BIZ_STATUS, CUSTOMER_TYPES, SALES_CHANNELS, EMPTY_BRAND, brandBlock, cleanBrand } from "@/lib/brandprofile";
 import { resolveColors } from "@/lib/logostudio";
 import { Seg } from "./studio/ui";
@@ -122,7 +123,11 @@ export default function BrandProfile() {
         </div>
         <div className={s.row2}>
           <label className={s.field}><span>الدولة</span><input className={s.input} value={b.country} onChange={set("country")} maxLength={40} placeholder="مصر" /></label>
-          <label className={s.field}><span>المدينة</span><input className={s.input} value={b.city} onChange={set("city")} maxLength={60} placeholder="مثلاً: سوهاج" /></label>
+          <label className={s.field}><span>المحافظة أو المنطقة</span><input className={s.input} list="rb-governorates" value={b.region} onChange={set("region")} maxLength={60} placeholder="مثلاً: سوهاج" /></label>
+          <datalist id="rb-governorates">{GOVERNORATES.map((g) => <option key={g} value={g} />)}</datalist>
+        </div>
+        <div className={s.row2}>
+          <label className={s.field}><span>المدينة أو الحي</span><input className={s.input} value={b.city} onChange={set("city")} maxLength={60} placeholder="مثلاً: أخميم" /></label>
         </div>
         <Seg label="نوع العملاء" value={b.customerType} onChange={set("customerType")} options={CUSTOMER_TYPES} />
         <label className={s.field}><span>منتجاتك أو خدماتك</span><textarea className={s.input} value={b.products} onChange={set("products")} maxLength={300} placeholder="مثلاً: حلل جرانيت، أطقم صيني، أدوات مطبخ" /></label>
@@ -134,6 +139,10 @@ export default function BrandProfile() {
               return <button key={c} type="button" aria-pressed={on} className={s.chip} style={on ? { background: "var(--night)", color: "var(--yellow)" } : undefined} onClick={() => { setB((x) => ({ ...x, channels: on ? x.channels.filter((y) => y !== c) : [...(x.channels || []), c] })); setDirty(true); }}>{c}</button>;
             })}
           </div>
+        </div>
+        <div className={s.row2}>
+          <label className={s.field}><span>رأس المال (اختياري)</span><input className={s.input} value={b.capital} onChange={set("capital")} maxLength={60} placeholder="مثلاً: ٥٠٠ ألف جنيه" /></label>
+          <label className={s.field}><span>عدد العاملين (اختياري)</span><input className={s.input} inputMode="numeric" value={b.staff} onChange={set("staff")} maxLength={20} placeholder="مثلاً: ٤" /></label>
         </div>
         <label className={s.field}><span>الميزانية المتاحة (اختياري)</span><input className={s.input} value={b.budget} onChange={set("budget")} maxLength={60} placeholder="مثلاً: ٢٠٠ ألف جنيه" /></label>
         <label className={s.field}><span>أهدافك التجارية</span><textarea className={s.input} value={b.goals} onChange={set("goals")} maxLength={300} placeholder="مثلاً: أوصل ٣٠٠ طلب في الشهر وأفتح فرع تاني" /></label>

@@ -6,6 +6,7 @@ import { useStored, write } from "@/lib/store";
 import { compareAll, METRICS } from "@/lib/bizcompare";
 import { SCENARIOS } from "@/lib/feasibility";
 import { profileCompleteness } from "@/lib/bizprofile";
+import { nextSteps } from "@/lib/dashplan";
 import { BIZ_GROUPS } from "@/lib/bizgroups";
 import { tools } from "@/lib/tools";
 import { isCore } from "@/lib/toolroles";
@@ -24,6 +25,8 @@ export default function Home() {
   const [brand] = useStored("brand", null);
   const [feas] = useStored("feasibility-last", null);
   const [cmp] = useStored("compare-saved", []);
+  const [status] = useStored("biz-status", null);
+  const steps = nextSteps({ brand, status, hasStudy: !!feas?.a, comparisons: cmp.length });
   const prog = profileCompleteness(brand);
   const hasWork = !!brand || !!feas?.a || cmp.length > 0;
 
@@ -65,6 +68,20 @@ export default function Home() {
 
       <section className={`${s.band} ${s.white}`}>
         <div className={s.in} style={{ maxWidth: 1000 }}>
+          <div className={d.block}>
+            <div className={d.head}><h2>خطوتك الجاية</h2>{brand?.name && <span className={d.forWho}>لـ {brand.name}</span>}</div>
+            <ol className={d.steps}>
+              {steps.map((st, i) => (
+                <li key={st.id}>
+                  <Link href={st.href} className={d.step}>
+                    <i>{(i + 1).toLocaleString("ar-EG")}</i>
+                    <span><b>{st.label}</b><small>{st.why}</small></span>
+                  </Link>
+                </li>
+              ))}
+            </ol>
+          </div>
+
           <div className={d.block}>
             <div className={d.grid2}>
               <Link href="/brand" className={d.panel}>

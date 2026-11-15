@@ -21,7 +21,7 @@ export default function Intro() {
         <div className="intro-sparks">
           {SPARKS.map((p, i) => (
             <svg key={i} viewBox="0 0 24 24" style={{ "--x": `${p.x}%`, "--s": `${p.s}px`, "--d": `${p.d}s`, "--t": `${p.t}s` }}>
-              <path d={STAR_PATH} fill="#D9B04A" stroke="#D9B04A" strokeWidth="1.7" strokeLinejoin="round" />
+              <path d={STAR_PATH} fill="#c6a04b" stroke="#c6a04b" strokeWidth="1.7" strokeLinejoin="round" />
             </svg>
           ))}
         </div>
@@ -33,7 +33,7 @@ export default function Intro() {
             <defs>
               <linearGradient id="intro-g" x1="0.2" y1="0" x2="0.8" y2="1">
                 <stop offset="0" stopColor="#F2DC9B" />
-                <stop offset="0.45" stopColor="#D9B04A" />
+                <stop offset="0.45" stopColor="#c6a04b" />
                 <stop offset="1" stopColor="#A9812A" />
               </linearGradient>
             </defs>

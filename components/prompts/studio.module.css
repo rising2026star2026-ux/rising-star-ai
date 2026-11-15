@@ -48,7 +48,7 @@
 .item { border: 1.5px solid rgba(11, 11, 20, 0.1); border-radius: var(--r-lg); background: #fff; padding: 14px; display: grid; gap: 10px; }
 .item h3 { margin: 0; font-family: var(--display); font-size: var(--fs-lg); font-weight: 800; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .tag { font-size: var(--fs-xs); font-weight: 800; padding: 2px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--blue); }
-.box { margin: 0; border-radius: var(--r-md); background: #0a1424; color: #f4f6fb; padding: 13px 14px; font-size: var(--fs-md); line-height: 1.9; white-space: pre-wrap; overflow-wrap: anywhere; }
+.box { margin: 0; border-radius: var(--r-md); background: #101b30; color: #f4f6fb; padding: 13px 14px; font-size: var(--fs-md); line-height: 1.9; white-space: pre-wrap; overflow-wrap: anywhere; }
 .ltr { direction: ltr; text-align: left; }
 .soft { margin: 0; border-radius: var(--r-md); background: var(--surface-2); padding: 10px 12px; font-size: var(--fs-md); line-height: 1.85; white-space: pre-wrap; overflow-wrap: anywhere; }
 .k { display: block; font-size: var(--fs-xs); font-weight: 800; color: var(--muted); margin-bottom: 3px; }
