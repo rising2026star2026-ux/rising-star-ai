@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useStored, toast, read } from "@/lib/store";
 import { profileCompleteness } from "@/lib/bizprofile";
-import { BRAND_TONES, BRAND_DIALECTS, BIZ_STATUS, CUSTOMER_TYPES, SALES_CHANNELS, EMPTY_BRAND, brandBlock, cleanBrand } from "@/lib/brandprofile";
+import { BIZ_KINDS, BRAND_TONES, BRAND_DIALECTS, BIZ_STATUS, CUSTOMER_TYPES, SALES_CHANNELS, EMPTY_BRAND, brandBlock, cleanBrand } from "@/lib/brandprofile";
 import { resolveColors } from "@/lib/logostudio";
 import { Seg } from "./studio/ui";
 import s from "./brand.module.css";
@@ -111,6 +111,15 @@ export default function BrandProfile() {
       <section className={s.card}>
         <h2>ملف نشاطك التجاري</h2>
         <Seg label="حالة نشاطك" value={b.status} onChange={set("status")} options={BIZ_STATUS} />
+        <div className={s.field}>
+          <span>نوع نشاطك</span>
+          <div className={s.chips} role="radiogroup" aria-label="نوع نشاطك">
+            {BIZ_KINDS.map(([k, label]) => {
+              const on = b.kind === k;
+              return <button key={k} type="button" role="radio" aria-checked={on} className={s.chip} style={on ? { background: "var(--night)", color: "var(--yellow)" } : undefined} onClick={() => { setB((x) => ({ ...x, kind: on ? "" : k })); setDirty(true); }}>{label}</button>;
+            })}
+          </div>
+        </div>
         <div className={s.row2}>
           <label className={s.field}><span>الدولة</span><input className={s.input} value={b.country} onChange={set("country")} maxLength={40} placeholder="مصر" /></label>
           <label className={s.field}><span>المدينة</span><input className={s.input} value={b.city} onChange={set("city")} maxLength={60} placeholder="مثلاً: سوهاج" /></label>

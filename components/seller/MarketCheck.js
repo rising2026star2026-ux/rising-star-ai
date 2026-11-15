@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Link from "next/link";
 import s from "./seller.module.css";
 import m from "./marketcheck.module.css";
+import { collectedAt } from "@/lib/datasources";
 
 const CHANNELS = [
   { id: "marketplace", title: "ببيع على أمازون أو نون أو جوميا", sub: "عندي حساب بياع أو ناوي أفتح" },
@@ -224,8 +225,8 @@ export default function MarketCheck() {
             <section className={s.card} aria-labelledby="mk-sources">
               <h2 id="mk-sources">المصادر ({res.listings.length})</h2>
               <p className={m.small}>
-                ليستنجات حقيقية لقيناها {res.checkedAt ? `في ${new Date(res.checkedAt).toLocaleDateString("ar-EG")}` : ""}.
-                {res.dropped ? ` شيلنا ${res.dropped} نتيجة مش نفس نوع المنتج.` : ""} الأسعار بتتغير، فافتح الرابط قبل ما تعتمد على سعر.
+                ليستنجات منشورة اتجمعت من نتايج بحث جوجل في مصر{res.checkedAt ? ` يوم ${collectedAt(res.checkedAt)}` : ""}.
+                {res.dropped ? ` شيلنا ${res.dropped} نتيجة مش نفس نوع المنتج.` : ""} الأسعار بتتغير، فافتح الرابط قبل ما تعتمد على سعر. <Link href="/data-sources">مصادر البيانات</Link>
               </p>
               <ol className={m.sources}>
                 {res.listings.map((x) => (
@@ -238,7 +239,7 @@ export default function MarketCheck() {
             </section>
 
             <div className={s.next}>
-              <Link href="/test-ad" className={s.nextCard}><i aria-hidden="true">👥</i><span><b>جرّب إعلانك على 100 عميل</b><small>بعد ما تتأكد من السوق</small></span></Link>
+              <Link href="/test-ad" className={s.nextCard}><i aria-hidden="true">👥</i><span><b>جرّب إعلانك على 100 عميل افتراضي</b><small>بعد ما تتأكد من السوق</small></span></Link>
               <Link href="/amazon" className={s.nextCard}><i aria-hidden="true">🛒</i><span><b>أدوات بياعين أمازون</b><small>ليستنج وحاسبة ربح</small></span></Link>
             </div>
           </>

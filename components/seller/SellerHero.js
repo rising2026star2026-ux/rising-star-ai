@@ -23,7 +23,7 @@ export default function SellerHero({ kicker, title, accent, sub, steps = [], ton
         {steps.length > 0 && (
           <ol className={s.heroSteps}>
             {steps.map((st, i) => (
-              <li key={i}><b>{i + 1}</b><span>{st}</span></li>
+              <li key={i}><b>{(i + 1).toLocaleString("ar-EG")}</b><span>{st}</span></li>
             ))}
           </ol>
         )}

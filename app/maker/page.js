@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MAKERS_CHECKED } from "@/lib/datasources";
 import BotIcon from "@/components/BotIcon";
 import { MAKER_KINDS, MAKER_LIST, makersIn } from "@/lib/makers";
 import d from "@/components/directory.module.css";
@@ -59,7 +60,7 @@ export default function MakerHub() {
           </div>
         </section>
       ))}
-      <p className={d.note}>الحدود المجانية من مقالات منشورة في 2026 وبتتغير بسرعة. اتأكد من الموقع الرسمي. الشعارات والأسماء علامات تجارية لأصحابها والصفحات دي تعريفية.</p>
+      <p className={d.note}>الحدود المجانية والأسعار من مقالات منشورة والمواقع الرسمية، اتراجعت في {MAKERS_CHECKED}، وبتتغير بسرعة. اتأكد من الموقع الرسمي. الشعارات والأسماء علامات تجارية لأصحابها والصفحات دي تعريفية.</p>
     </div>
   );
 }

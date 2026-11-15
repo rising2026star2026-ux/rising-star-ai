@@ -11,7 +11,7 @@
 :root {
   /* الخط: غيّر السطر ده بس لو اخترت خط تاني من صفحة اختيار الخطوط */
   --ui: "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
-  --display: "IBM Plex Sans Arabic", "Archivo", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+  --display: "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
   /* هوية Myndlab: أصفر وأزرق مشبعين على حبر غامق */
   --yellow: #d9b04a;
   --yellow-deep: #b8902f;
@@ -592,8 +592,10 @@ html.no-intro .intro { display: none; }
 .intro-sparks { position: absolute; inset: 0; pointer-events: none; }
 .intro-sparks svg { position: absolute; bottom: -8%; inset-inline-start: var(--x); width: var(--s); height: var(--s); opacity: 0; filter: drop-shadow(0 0 8px rgba(255, 198, 26, 0.7)); animation: intro-rise var(--t) ease-out var(--d) infinite; }
 @keyframes intro-rise { 0% { transform: translateY(0) scale(0.4) rotate(0); opacity: 0; } 15% { opacity: 1; } 55% { opacity: 0.9; } 100% { transform: translateY(-105vh) scale(1.1) rotate(160deg); opacity: 0; } }
-.intro-name { display: flex; font-family: var(--display); font-size: clamp(3.2rem, 15vw, 7.5rem); font-weight: 900; letter-spacing: -0.045em; color: #fff; line-height: 1; }
-.intro-name span { display: inline-block; opacity: 0; animation: intro-letter 0.5s var(--ease) both; animation-delay: calc(0.7s + var(--d) * 0.045s); }
+.intro-name { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 0.22em; padding-inline: 16px; text-align: center; font-family: var(--wordmark); font-size: clamp(2.6rem, 11vw, 7rem); font-weight: 900; letter-spacing: -0.045em; color: #fff; line-height: 1; }
+.intro-name .intro-word { display: inline-flex; opacity: 1; animation: none; }
+.intro-name .intro-word.gold { color: var(--yellow); }
+.intro-name .intro-word span { display: inline-block; opacity: 0; animation: intro-letter 0.5s var(--ease) both; animation-delay: calc(0.7s + var(--d) * 0.045s); }
 .intro-tag { color: var(--yellow); font-weight: 700; font-size: var(--fs-lg); opacity: 0; animation: intro-letter 0.6s ease 1.4s both; }
 @keyframes intro-star { from { transform: scale(0) rotate(-200deg); opacity: 0; } 70% { transform: scale(1.12) rotate(12deg); opacity: 1; } to { transform: scale(1) rotate(0); opacity: 1; } }
 @keyframes intro-glow { to { filter: drop-shadow(0 14px 44px rgba(245, 158, 11, 0.75)); } }
@@ -622,7 +624,7 @@ html.no-intro .intro { display: none; }
   --field: #f6f7fa;
   --shadow-soft: none;
   --shadow-lift: 0 24px 50px -28px rgba(10, 20, 36, 0.4);
-  --display: "Alexandria", "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+  --display: "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
   --wordmark: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 html { background: var(--night); }
@@ -670,7 +672,8 @@ body { overflow-x: clip; background: #fff; }
 .side-sec { color: rgba(255, 255, 255, 0.42); }
 .side-foot { border-top-color: rgba(255, 255, 255, 0.08); }
 
-/* العناوين بخط إسكندرية (Alexandria). العربي من غير تباعد حروف عشان الحروف ما تتفكش */
+/* خط عربي واحد للمنصة كلها (IBM Plex Sans Arabic): العناوين والنصوص. Archivo لاسم Rising Business اللاتيني بس.
+   العربي من غير تباعد حروف عشان الحروف ما تتفكش */
 h1, h2, h3 { font-family: var(--display); letter-spacing: 0; }
 .page-title { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 7vw, 3.3rem); letter-spacing: 0; line-height: 1.2; color: var(--ink); padding-top: 30px; }
 .page-sub { font-weight: 500; color: var(--muted); font-size: var(--fs-lg); }
@@ -807,3 +810,7 @@ html[data-look-mode="dark"] body.chat-mode.sec-mode { --bg: #18191d; background:
 .chat-jump:hover { transform: translateY(-1px); }
 .chat-jump small { font-weight: 400; font-size: var(--fs-xs); opacity: 0.85; }
 .trade-line { display: block; margin-top: 4px; font-size: var(--fs-xs); color: var(--accent); font-weight: 600; }
+.support-tools { margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--hairline-strong); }
+.support-tools summary { cursor: pointer; font-weight: 700; font-size: var(--fs-lg); color: var(--ink); }
+.support-tools summary small { font-weight: 500; color: var(--muted); font-size: var(--fs-sm); }
+.support-tools .meta { display: block; margin: 6px 0 12px; }

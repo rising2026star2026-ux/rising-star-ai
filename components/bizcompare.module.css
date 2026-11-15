@@ -42,3 +42,7 @@
 .savedRow { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: var(--r-md); background: #fff; border: 1px solid var(--hairline-strong); }
 .savedRow span { flex: 1; }
 @media print { .actions, .cards, .savedBox, .legend { display: none; } }
+.toFeas { display: grid; gap: 6px; margin-top: 12px; padding: 14px 16px; border-radius: var(--r-lg); background: rgba(217, 176, 74, 0.12); border: 1px solid rgba(184, 144, 47, 0.45); }
+.toFeas b { font-size: var(--fs-md); color: var(--ink); }
+.toFeas small { font-size: var(--fs-sm); color: var(--muted); line-height: 1.7; }
+@media print { .toFeas { display: none; } }

@@ -466,7 +466,7 @@ async function makeStory(res) {
   drawText(ctx, String(res.score), cx, cy + 50, { size: 170, weight: 900, color: "#fff", font: "word" });
   drawText(ctx, "من 100", cx, cy + 112, { size: 38, weight: 600, color: "rgba(255,255,255,0.6)" });
   ctx.fillStyle = tier.color;
-  ctx.font = `800 44px "Alexandria", sans-serif`;
+  ctx.font = `700 44px "IBM Plex Sans Arabic", sans-serif`;
   const tw = ctx.measureText(tier.label).width + 70;
   rr(ctx, cx - tw / 2, cy + R + 44, tw, 80, 40); ctx.fill();
   drawText(ctx, tier.label, cx, cy + R + 99, { size: 40, weight: 800, color: "#fff", font: "display" });
