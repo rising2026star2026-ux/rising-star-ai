@@ -9,8 +9,6 @@ import { SETTINGS, DEFAULT_SETTINGS } from "@/lib/settings";
 import { useStored, read } from "@/lib/store";
 import ToolIcon from "./ToolIcon";
 import StarMark from "./StarMark";
-import { SECTIONS, sectionHome } from "@/lib/sections";
-import useSection from "./useSection";
 
 const I = { viewBox: "0 0 24 24", width: 20, height: 20, fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true };
 
@@ -76,6 +74,19 @@ export default function Chrome() {
 }
 
 // اللوحة الجانبية: ثابتة على الكمبيوتر (وبتتصغّر لأيقونات)، ودرج بيطلع من الجنب على الموبايل
+// القائمة الجانبية: أقسام المنصة (Rising Business)
+const BIZ_NAV = [
+  { href: "/", label: "لوحة التحكم", exact: true, icon: "M4 13h6V4H4zM14 20h6V11h-6zM4 20h6v-3H4zM14 8h6V4h-6z" },
+  { href: "/brand", label: "ملف النشاط", match: ["/brand", "/my-work"], icon: "M4 7.5A1.5 1.5 0 015.5 6h13A1.5 1.5 0 0120 7.5v9a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 014 16.5zM8 10.5h3M8 14h6" },
+  { href: "/compare-business", label: "مقارنة الأنشطة", match: ["/compare-business"], icon: "M12 4v16M5 8l-2 6h6zM19 8l-2 6h6zM6 20h12" },
+  { href: "/feasibility", label: "دراسة الجدوى", match: ["/feasibility"], icon: "M4 20V10M10 20V4M16 20v-7M22 20H2" },
+  { href: "/market-check", label: "السوق والمنافسون", match: ["/market-check", "/amazon/competitor", "/survey"], icon: "M12 3a9 9 0 100 18 9 9 0 000-18zM12 7v5l3 2" },
+  { href: "/amazon/profit", label: "المنتجات والتسعير", match: ["/amazon", "/catalog"], icon: "M20 12l-8 8-9-9V4h7zM7.5 8.5h.01" },
+  { href: "/tools?cat=marketing", label: "التسويق والمحتوى", match: ["/tools", "/tool/", "/photo-ad", "/test-ad", "/voice-post", "/maker", "/prompts", "/resources"], icon: "M3 11v3a1 1 0 001 1h2l5 4V6L6 10H4a1 1 0 00-1 1zM16 8.5a5 5 0 010 7" },
+  { href: "/seller", label: "المبيعات والعملاء", match: ["/seller"], icon: "M4 9.5l1.6-4.2A1.5 1.5 0 017 4.3h10a1.5 1.5 0 011.4 1l1.6 4.2M4 9.5a2.7 2.7 0 005.3 0 2.7 2.7 0 005.4 0 2.7 2.7 0 005.3 0M5.5 12.5V19a1 1 0 001 1h11a1 1 0 001-1v-6.5" },
+  { href: "/s/seller", label: "مساعد الأعمال", match: ["/s/seller"], icon: "M20.5 11.5a8.3 8.3 0 01-8.9 8.3L3.5 21l1.1-3.5A8.3 8.3 0 1120.5 11.5z" },
+];
+
 function Sidebar({ open, onClose, onSettings, onSearch }) {
   const pathname = usePathname() || "/";
   const [mini, setMini] = useStored("side-mini", false);
@@ -88,7 +99,6 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
     return () => document.body.classList.remove("side-open");
   }, [open]);
 
-  const { section } = useSection();
 
   return (
     <>
@@ -105,57 +115,21 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
           <button className="icon-btn side-close" onClick={onClose} aria-label="اقفل القائمة">✕</button>
         </div>
 
-        {section ? (
-          <Link href={`/s/${section.id}?new=1`} className="side-new" title="محادثة جديدة" onClick={() => window.dispatchEvent(new Event("rs-new-section-chat"))} style={{ "--sec": section.color }}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
-            <span className="side-label">محادثة جديدة</span>
-          </Link>
-        ) : null}
-
-        {section ? (
-          <>
-            <div className="side-sechead" style={{ "--sec": section.color }}>
-              <span className="side-secdot" aria-hidden="true" />
-              <span className="side-label"><b>{section.name}</b><small>{section.tagline}</small></span>
-            </div>
-            <nav className="side-nav" style={{ "--sec": section.color }}>
-              <Link href={`/s/${section.id}`} className={`side-link${pathname === `/s/${section.id}` ? " on" : ""}`} title={section.chatLabel || `شات ${section.name}`} aria-current={pathname === `/s/${section.id}` ? "page" : undefined}>
-                <svg {...I}><path d="M21 11.5a8.4 8.4 0 01-9 8.4L3 21l1.1-3.6A8.4 8.4 0 1121 11.5z" /></svg>
-                <span className="side-label">{section.chatLabel || `شات ${section.name}`}</span>
+        <nav className="side-nav" aria-label="أقسام المنصة">
+          {BIZ_NAV.map((x) => {
+            const on = x.exact ? pathname === x.href : x.match.some((m) => pathname === m || pathname.startsWith(m.endsWith("/") ? m : m + "/"));
+            return (
+              <Link key={x.href} href={x.href} className={`side-link${on ? " on" : ""}`} title={x.label} aria-current={on ? "page" : undefined}>
+                <svg {...I}><path d={x.icon} /></svg>
+                <span className="side-label">{x.label}</span>
               </Link>
-              <button type="button" className="side-link" onClick={onSearch} title="ابحث عن أداة">
-                <svg {...I}><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></svg>
-                <span className="side-label">ابحث عن أداة</span>
-              </button>
-            </nav>
-
-            {SECTIONS.length > 1 && <div className="side-sec side-label">انتقل لقسم تاني</div>}
-            {SECTIONS.length > 1 && <nav className="side-nav side-switch">
-              {SECTIONS.filter((x) => x.id !== section.id).map((x) => (
-                <Link key={x.id} href={sectionHome(x.id)} className="side-link" title={x.name} style={{ "--sec": x.color }}>
-                  <svg {...I}><path d={x.icon} /></svg>
-                  <span className="side-label">{x.name}</span>
-                </Link>
-              ))}
-            </nav>}
-          </>
-        ) : (
-          <>
-            <div className="side-sec side-label">الأقسام</div>
-            <nav className="side-nav">
-              {SECTIONS.map((x) => (
-                <Link key={x.id} href={sectionHome(x.id)} className="side-link" title={x.name} style={{ "--sec": x.color }}>
-                  <svg {...I}><path d={x.icon} /></svg>
-                  <span className="side-label">{x.name}</span>
-                </Link>
-              ))}
-              <button type="button" className="side-link" onClick={onSearch} title="ابحث عن أداة">
-                <svg {...I}><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></svg>
-                <span className="side-label">ابحث عن أداة</span>
-              </button>
-            </nav>
-          </>
-        )}
+            );
+          })}
+          <button type="button" className="side-link" onClick={onSearch} title="ابحث عن أداة">
+            <svg {...I}><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></svg>
+            <span className="side-label">ابحث عن أداة</span>
+          </button>
+        </nav>
 
         <div className="side-foot">
           <Link href="/plans" className={`side-link${pathname.startsWith("/plans") ? " on" : ""}`} title="الباقات">

@@ -2,8 +2,8 @@
 // «هوية نشاطي»: العميل يكتب نشاطه مرة، وبتتحفظ على جهازه، والأدوات بتستخدمها.
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { useStored, toast } from "@/lib/store";
-import { BRAND_TONES, BRAND_DIALECTS, EMPTY_BRAND, brandBlock, cleanBrand } from "@/lib/brandprofile";
+import { useStored, toast, read } from "@/lib/store";
+import { BRAND_TONES, BRAND_DIALECTS, BIZ_STATUS, CUSTOMER_TYPES, SALES_CHANNELS, EMPTY_BRAND, brandBlock, cleanBrand } from "@/lib/brandprofile";
 import { resolveColors } from "@/lib/logostudio";
 import { Seg } from "./studio/ui";
 import s from "./brand.module.css";
@@ -20,7 +20,13 @@ export default function BrandProfile() {
 
   useEffect(() => {
     // الهوية المحفوظة بتوصل بعد أول رسمة، فبنحمّلها أول ما توصل (مرة واحدة)
-    if (loaded || !stored) return;
+    if (loaded) return;
+    if (!stored) {
+      // أول زيارة: بنقرا اختيار الرئيسية (نشاط قائم أو مشروع جديد)
+      const st = read("biz-status", null);
+      if (st === "new" || st === "existing") setB((x) => ({ ...x, status: st }));
+      return;
+    }
     setB({ ...EMPTY_BRAND, ...stored, colors: { ...EMPTY_BRAND.colors, ...(stored.colors || {}) } });
     setLoaded(true);
   }, [stored, loaded]);
@@ -84,6 +90,28 @@ export default function BrandProfile() {
           <input className={s.input} value={b.tagline} onChange={set("tagline")} maxLength={80} placeholder="مثلاً: طعم البيت" />
         </label>
         {taglines.length > 0 && <div className={s.chips}>{taglines.map((t) => <button key={t} type="button" className={s.chip} onClick={() => { setB((x) => ({ ...x, tagline: t })); setDirty(true); }}>{t}</button>)}</div>}
+      </section>
+
+      <section className={s.card}>
+        <h2>ملف نشاطك التجاري</h2>
+        <Seg label="حالة نشاطك" value={b.status} onChange={set("status")} options={BIZ_STATUS} />
+        <div className={s.row2}>
+          <label className={s.field}><span>الدولة</span><input className={s.input} value={b.country} onChange={set("country")} maxLength={40} placeholder="مصر" /></label>
+          <label className={s.field}><span>المدينة</span><input className={s.input} value={b.city} onChange={set("city")} maxLength={60} placeholder="مثلاً: سوهاج" /></label>
+        </div>
+        <Seg label="نوع العملاء" value={b.customerType} onChange={set("customerType")} options={CUSTOMER_TYPES} />
+        <label className={s.field}><span>منتجاتك أو خدماتك</span><textarea className={s.input} value={b.products} onChange={set("products")} maxLength={300} placeholder="مثلاً: حلل جرانيت، أطقم صيني، أدوات مطبخ" /></label>
+        <div className={s.field}>
+          <span>قنوات البيع</span>
+          <div className={s.chips}>
+            {SALES_CHANNELS.map((c) => {
+              const on = (b.channels || []).includes(c);
+              return <button key={c} type="button" aria-pressed={on} className={s.chip} style={on ? { background: "var(--night)", color: "var(--yellow)" } : undefined} onClick={() => { setB((x) => ({ ...x, channels: on ? x.channels.filter((y) => y !== c) : [...(x.channels || []), c] })); setDirty(true); }}>{c}</button>;
+            })}
+          </div>
+        </div>
+        <label className={s.field}><span>الميزانية المتاحة (اختياري)</span><input className={s.input} value={b.budget} onChange={set("budget")} maxLength={60} placeholder="مثلاً: ٢٠٠ ألف جنيه" /></label>
+        <label className={s.field}><span>أهدافك التجارية</span><textarea className={s.input} value={b.goals} onChange={set("goals")} maxLength={300} placeholder="مثلاً: أوصل ٣٠٠ طلب في الشهر وأفتح فرع تاني" /></label>
       </section>
 
       <section className={s.card}>

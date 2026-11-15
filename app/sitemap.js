@@ -8,6 +8,7 @@ const PAGES = [
   ["", "weekly", 1],
   ["/seller", "weekly", 0.95],
   ["/seller/agent", "weekly", 0.9],
+  ["/compare-business", "monthly", 0.95],
   ["/feasibility", "monthly", 0.9],
   ["/feasibility/chat", "monthly", 0.8],
   ["/market-check", "monthly", 0.9],
