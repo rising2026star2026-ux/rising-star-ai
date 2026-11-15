@@ -71,7 +71,7 @@ export default function MyWork() {
           return (
             <div key={c.id} className={s.row}>
               <span><b>{c.name}</b><small>{rows.map((r) => r.name).join(" ‏|‏ ")} — {when(c.at)}</small></span>
-              <Link href="/compare-business" className={s.go}>افتح</Link>
+              <button type="button" className={s.go} onClick={() => { write("compare-draft", c.list); router.push("/compare-business"); }}>افتح</button>
               <button type="button" className={s.del} onClick={() => setCmp(cmp.filter((x) => x.id !== c.id))}>احذف</button>
             </div>
           );

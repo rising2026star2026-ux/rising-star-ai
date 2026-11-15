@@ -1,7 +1,9 @@
 "use client";
 // مقارنة الأنشطة التجارية: من نشاطين لخمسة. الأرقام بتتحسب بالكود من افتراضات العميل (lib/bizcompare.js).
 import { useEffect, useMemo, useState } from "react";
-import { useStored, toast } from "@/lib/store";
+import { useRouter } from "next/navigation";
+import { useStored, toast, write } from "@/lib/store";
+import { HANDOFF_KEY, bizNumbers } from "@/lib/feasilink";
 import { MAX_BIZ, MIN_BIZ, RATINGS, METRICS, emptyBiz, compareAll, fmt } from "@/lib/bizcompare";
 import s from "./bizcompare.module.css";
 
@@ -55,6 +57,17 @@ export default function BizCompare() {
 
   const { rows, best, wins } = useMemo(() => compareAll(list), [list]);
   const ready = rows.filter((r) => r.ready);
+  const router = useRouter();
+
+  // دراسة جدوى لنشاط من المقارنة: بننقل أرقامه لصفحة الجدوى وهي بتقارنها بأرقام السوق
+  function study(id) {
+    const b = list.find((x) => x.id === id);
+    if (!b) return;
+    if (String(b.name || "").trim().length < 3) { toast("اكتب اسم النشاط الأول"); return; }
+    setDraft(list);
+    write(HANDOFF_KEY, { biz: bizNumbers(b), from: "المقارنة الحالية", at: Date.now() });
+    router.push("/feasibility");
+  }
 
   function save() {
     const name = prompt("اسم المقارنة")?.trim();
@@ -140,6 +153,15 @@ export default function BizCompare() {
           </tbody>
         </table>
       </div>
+      {ready.length > 0 && (
+        <div className={s.toFeas}>
+          <b>ادرس جدوى نشاط بأرقام السوق</b>
+          <small>بنجمع أسعار منشورة ومنافسين، ونقارنها بأرقامك هنا، وتختار تستخدم أنهي.</small>
+          <div className={s.actions}>
+            {ready.map((r) => <button key={r.id} type="button" className={s.btn} onClick={() => study(r.id)}>ادرس جدوى «{r.name}»</button>)}
+          </div>
+        </div>
+      )}
       <p className={s.note}>الخلية الملونة هي الأفضل في المعيار. لو القيم متساوية أو ناقصة بتظهر «—» ومفيش أفضل. عدد المعايير مجرد عدّ، مش حكم نهائي: وزن كل معيار يختلف من تاجر لتاجر.</p>
 
       {ready.length >= 2 ? (

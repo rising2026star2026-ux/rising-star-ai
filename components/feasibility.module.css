@@ -202,3 +202,10 @@ a.ghost { text-decoration: none; display: inline-block; }
 .fromBrand { margin: 0 0 12px; padding: 10px 14px; border-radius: var(--r-md); background: rgba(217, 176, 74, 0.14); border: 1px solid rgba(184, 144, 47, 0.45); font-size: var(--fs-sm); line-height: 1.8; color: var(--ink); }
 .fromBrand a { color: var(--accent); font-weight: 700; text-decoration: underline; }
 .fromBrand button { margin-inline-start: 6px; padding: 0; border: 0; background: none; color: var(--accent); font: inherit; font-weight: 700; text-decoration: underline; cursor: pointer; }
+.linkBox { border-color: var(--yellow-deep); }
+.linkBox p { margin: 0 0 10px; line-height: 1.8; }
+.linkActs { display: flex; flex-wrap: wrap; gap: 8px; }
+.yours { font-style: normal; font-size: var(--fs-xs); font-weight: 700; padding: 1px 8px; border-radius: 999px; background: rgba(217, 176, 74, 0.2); color: var(--ink); }
+.diff { inline-size: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+.diff th, .diff td { padding: 8px 10px; border-bottom: 1px solid var(--hairline); text-align: start; white-space: nowrap; }
+.diff thead th { color: var(--muted); font-weight: 600; }
