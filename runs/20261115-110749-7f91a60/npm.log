@@ -1,0 +1,35 @@
+npm warn ERESOLVE overriding peer dependency
+npm error code ERESOLVE
+npm error ERESOLVE could not resolve
+npm error
+npm error While resolving: @neondatabase/auth@0.7.0-beta
+npm error Found: next@15.5.29
+npm error node_modules/next
+npm error   peerOptional next@">=16.0.0" from @neondatabase/auth@0.6.0-beta
+npm error   node_modules/@neondatabase/auth/node_modules/@neondatabase/auth
+npm error     peer @neondatabase/auth@"0.6.0-beta" from @neondatabase/auth-ui@0.4.0-beta
+npm error     node_modules/@neondatabase/auth/node_modules/@neondatabase/auth-ui
+npm error       @neondatabase/auth-ui@"0.4.0-beta" from @neondatabase/auth@0.7.0-beta
+npm error       node_modules/@neondatabase/auth
+npm error         @neondatabase/auth@"latest" from the root project
+npm error       1 more (@neondatabase/auth)
+npm error
+npm error Could not resolve dependency:
+npm error peerOptional next@">=16.0.0" from @neondatabase/auth@0.7.0-beta
+npm error node_modules/@neondatabase/auth
+npm error   @neondatabase/auth@"latest" from the root project
+npm error
+npm error Conflicting peer dependency: next@16.4.6
+npm error node_modules/next
+npm error   peerOptional next@">=16.0.0" from @neondatabase/auth@0.7.0-beta
+npm error   node_modules/@neondatabase/auth
+npm error     @neondatabase/auth@"latest" from the root project
+npm error
+npm error Fix the upstream dependency conflict, or retry
+npm error this command with --force or --legacy-peer-deps
+npm error to accept an incorrect (and potentially broken) dependency resolution.
+npm error
+npm error
+npm error For a full report see:
+npm error /home/runner/.npm/_logs/2026-11-15T11_07_32_941Z-eresolve-report.txt
+npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2026-11-15T11_07_32_941Z-debug-0.log
