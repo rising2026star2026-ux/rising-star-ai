@@ -179,9 +179,9 @@ const ALL_FEATURE_RECIPES = [
     const body = await page.locator("main").innerText();
     if (/البحث على الإنترنت مش متفعّل/.test(body)) throw warn("البحث على الإنترنت مش شغال (مفتاح البحث مش موجود في Vercel)، والرد طلع من غير بحث");
   }),
-  F("test-ad", "اختبر إعلانك على 100 زبون", "/test-ad", async ({ page }) => {
+  F("test-ad", "اختبر إعلانك على 100 عميل", "/test-ad", async ({ page }) => {
     await step("جرّب بمثال", () => page.getByRole("button", { name: "جرّب بمثال" }).click());
-    await step("بدء الاختبار", () => page.getByRole("button", { name: "اعرض إعلاني على 100 زبون" }).click());
+    await step("بدء الاختبار", () => page.getByRole("button", { name: "اعرض إعلاني على 100 عميل" }).click());
     const skip = page.getByRole("button", { name: /اعرض النتيجة على طول/ });
     const r = await firstOf(page, [skip], 100000);
     if (r?.error) throw broken(`الاختبار طلّع خطأ: ${r.error}`);

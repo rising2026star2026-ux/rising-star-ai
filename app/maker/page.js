@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MAKERS_CHECKED } from "@/lib/datasources";
 import BotIcon from "@/components/BotIcon";
 import { MAKER_KINDS, MAKER_LIST, makersIn } from "@/lib/makers";
 import d from "@/components/directory.module.css";
@@ -48,7 +49,7 @@ export default function MakerHub() {
           <div className={d.grid}>
             {makersIn(k.id).map((m) => (
               <Link key={m.slug} href={m.href} className={d.tool}>
-                <BotIcon bot={{ name: m.name, logo: m.logo, mono: m.name.slice(0, 2), tint: "#14305a" }} size={46} />
+                <BotIcon bot={{ name: m.name, logo: m.logo, mono: m.name.slice(0, 2), tint: "#26364d" }} size={46} />
                 <span>
                   <b dir="auto">{m.name}</b>
                   <small>{m.free}</small>
@@ -59,7 +60,7 @@ export default function MakerHub() {
           </div>
         </section>
       ))}
-      <p className={d.note}>الحدود المجانية من مقالات منشورة في 2026 وبتتغير بسرعة. اتأكد من الموقع الرسمي. الشعارات والأسماء علامات تجارية لأصحابها والصفحات دي تعريفية.</p>
+      <p className={d.note}>الحدود المجانية والأسعار من مقالات منشورة والمواقع الرسمية، اتراجعت في {MAKERS_CHECKED}، وبتتغير بسرعة. اتأكد من الموقع الرسمي. الشعارات والأسماء علامات تجارية لأصحابها والصفحات دي تعريفية.</p>
     </div>
   );
 }

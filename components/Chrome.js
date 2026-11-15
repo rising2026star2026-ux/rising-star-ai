@@ -1,6 +1,6 @@
 "use client";
 // الشريط العلوي + البحث السريع (Ctrl+K) + لوحة التحكم + الإشعارات الصغيرة
-import { SIDE_NAV, isOn } from "@/lib/nav";
+import { SIDE_NAV, activeOf } from "@/lib/nav";
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -79,6 +79,7 @@ export default function Chrome() {
 
 function Sidebar({ open, onClose, onSettings, onSearch }) {
   const pathname = usePathname() || "/";
+  const current = activeOf(SIDE_NAV, pathname);
   const [mini, setMini] = useStored("side-mini", false);
 
   useEffect(() => {
@@ -107,7 +108,7 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
 
         <nav className="side-nav" aria-label="أقسام المنصة">
           {SIDE_NAV.map((x) => {
-            const on = isOn(x, pathname);
+            const on = x === current;
             return (
               <Link key={x.href} href={x.href} className={`side-link${on ? " on" : ""}`} title={x.label} aria-current={on ? "page" : undefined}>
                 <svg {...I}><path d={x.icon} /></svg>
@@ -122,9 +123,9 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
         </nav>
 
         <div className="side-foot">
-          <Link href="/plans" className={`side-link${pathname.startsWith("/plans") ? " on" : ""}`} title="الباقات">
-            <svg {...I}><path d="M4 8l4 3.5L12 5l4 6.5L20 8l-1.5 10h-13z" /></svg>
-            <span className="side-label">الباقات</span>
+          <Link href="/account" className={`side-link${pathname.startsWith("/account") ? " on" : ""}`} title="حسابي">
+            <svg {...I}><circle cx="12" cy="8.5" r="3.5" /><path d="M5 19.5c1.2-3.3 3.9-5 7-5s5.8 1.7 7 5" /></svg>
+            <span className="side-label">حسابي</span>
           </Link>
           <Link href="/support" className={`side-link${pathname.startsWith("/support") ? " on" : ""}`} title="الدعم">
             <svg {...I}><path d="M4 13v-1a8 8 0 0116 0v1" /><rect x="3" y="13" width="4" height="6" rx="1.5" /><rect x="17" y="13" width="4" height="6" rx="1.5" /></svg>

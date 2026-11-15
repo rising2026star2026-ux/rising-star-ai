@@ -261,7 +261,7 @@ export default function VoicePost() {
       <section className={s.card}>
         <div className={s.next}>
           <Link href="/photo-ad" className={s.nextCard}><i aria-hidden="true">📸</i><span><b>صوّرها بموبايلك</b><small>صور شكل الاستوديو لنفس المنتج</small></span></Link>
-          <Link href="/test-ad" className={s.nextCard}><i aria-hidden="true">👥</i><span><b>جرّب إعلانك على 100 عميل</b><small>قبل ما تدفع فيه</small></span></Link>
+          <Link href="/test-ad" className={s.nextCard}><i aria-hidden="true">👥</i><span><b>جرّب إعلانك على 100 عميل افتراضي</b><small>قبل ما تدفع فيه</small></span></Link>
         </div>
       </section>
     </div>

@@ -11,6 +11,7 @@ import { read, useStored, toast } from "@/lib/store";
 import { enterSends } from "@/lib/keys";
 import { readImage, scaledCanvas, canvasBlob, blobToDataUrl, shareOrDownload, copyText, loadFonts } from "@/lib/imagefile";
 import s from "./selleragent.module.css";
+import { collectedAt } from "@/lib/datasources";
 
 const STARTERS = [
   "عايز أبيع سماعة بلوتوث على أمازون مصر. هات أسعار المنافسين واكتب الليستنج.",
@@ -309,7 +310,7 @@ export default function SellerAgent() {
         <>
           <header className={s.hero}>
             <h1>قولّي عايز تبيع إيه، وأنا أخلّص الباقي.</h1>
-            <p>بجيب أسعار المنافسين الحقيقية، وأحسب السعر والمكسب، وأكتب الليستنج والبوستات، وأصمم صور الإعلان من صورة منتجك. كله هنا في مكان واحد.</p>
+            <p>بجمع أسعار المنافسين المنشورة بروابطها وتاريخها، وأحسب السعر والمكسب، وأكتب الليستنج والبوستات، وأصمم صور الإعلان من صورة منتجك. كله هنا في مكان واحد.</p>
           </header>
           <ul className={s.toolsRow} aria-label="الأدوات اللي الوكيل بيستخدمها">
             {["market", "price", "listing", "posts", "images"].map((id) => (
@@ -477,7 +478,7 @@ export default function SellerAgent() {
                     </li>
                   ))}
                 </ol>
-                <p className={s.note}>{mk.checkedAt ? `اتجمعت ${when(mk.checkedAt)}. ` : ""}الأسعار بتتغيّر، فافتح الرابط قبل ما تعتمد على سعر.</p>
+                <p className={s.note}>{mk.checkedAt ? `اتجمعت من نتايج بحث جوجل في مصر يوم ${collectedAt(mk.checkedAt)}. ` : ""}الأسعار بتتغيّر، فافتح الرابط قبل ما تعتمد على سعر. <Link href="/data-sources">مصادر البيانات</Link></p>
               </details>
             </section>
           )}

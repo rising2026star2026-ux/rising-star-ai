@@ -4,10 +4,10 @@
 import { DISPLAY_FONT, UI_FONT, WORD_FONT } from "@/lib/imagefile";
 
 export const THEMES = {
-  night: { name: "ليل ذهبي", bg: "#0a1424", bg2: "#1a3050", card: "#10132b", text: "#ffffff", muted: "rgba(255,255,255,0.68)", accent: "#d9b04a", onAccent: "#0a1424", price: "#d9b04a", imgBg: "#ffffff" },
-  white: { name: "أبيض أنيق", bg: "#f4f5f8", bg2: "#ffffff", card: "#ffffff", text: "#0a1424", muted: "#5b6474", accent: "#14305a", onAccent: "#ffffff", price: "#0a1424", imgBg: "#f6f7f9" },
+  night: { name: "ليل ذهبي", bg: "#101b30", bg2: "#26364d", card: "#10132b", text: "#ffffff", muted: "rgba(255,255,255,0.68)", accent: "#c6a04b", onAccent: "#101b30", price: "#c6a04b", imgBg: "#ffffff" },
+  white: { name: "أبيض أنيق", bg: "#f4f5f8", bg2: "#ffffff", card: "#ffffff", text: "#101b30", muted: "#5b6474", accent: "#26364d", onAccent: "#ffffff", price: "#101b30", imgBg: "#f6f7f9" },
   pastel: { name: "باستيل", bg: "#fff3ea", bg2: "#ffe3d3", card: "#ffffff", text: "#3b2a22", muted: "#8a6f62", accent: "#e8735a", onAccent: "#ffffff", price: "#c2410c", imgBg: "#fff8f3" },
-  bold: { name: "جريء", bg: "#d9b04a", bg2: "#ffbf00", card: "#ffffff", text: "#0a1424", muted: "#4a5063", accent: "#14305a", onAccent: "#ffffff", price: "#14305a", imgBg: "#ffffff" },
+  bold: { name: "جريء", bg: "#c6a04b", bg2: "#ffbf00", card: "#ffffff", text: "#101b30", muted: "#4a5063", accent: "#26364d", onAccent: "#ffffff", price: "#26364d", imgBg: "#ffffff" },
 };
 
 export const LAYOUTS = {
@@ -264,7 +264,7 @@ export function renderHowTo(o, qr) {
     ctx.fillStyle = T.onAccent; ctx.textBaseline = "middle";
     font(ctx, 900, Math.round(bh * 0.32), "word");
     ctx.fillText(String(i + 1), bx + bw - bh * 0.5, y + bh / 2 + 2);
-    ctx.fillStyle = T.card === "#ffffff" ? "#0a1424" : "#ffffff"; ctx.textAlign = "right";
+    ctx.fillStyle = T.card === "#ffffff" ? "#101b30" : "#ffffff"; ctx.textAlign = "right";
     fitText(ctx, st, bw - bh * 1.3, 700, Math.round(bh * 0.28), "display");
     ctx.fillText(st, bx + bw - bh, y + bh / 2 + 2);
     ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
@@ -287,7 +287,7 @@ export function renderHowTo(o, qr) {
     const qx = (W - qs) / 2;
     ctx.fillStyle = "#fff"; rr(ctx, qx - qs * 0.06, y - qs * 0.06, qs * 1.12, qs * 1.12, qs * 0.06); ctx.fill();
     const n = qr.getModuleCount(), cell = qs / n;
-    ctx.fillStyle = "#0a1424";
+    ctx.fillStyle = "#101b30";
     for (let r = 0; r < n; r++) for (let k = 0; k < n; k++) if (qr.isDark(r, k)) ctx.fillRect(qx + k * cell, y + r * cell, Math.ceil(cell), Math.ceil(cell));
     links.push({ x: qx, y, w: qs, h: qs, url: waLink(o.shop.phone, `أهلاً ${o.shop.name || ""}، عايز أطلب من الكتالوج`) });
     y += qs + qs * 0.2;

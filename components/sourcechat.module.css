@@ -14,7 +14,7 @@
 .empty p { margin: 0; font-size: var(--fs-md); color: var(--muted); }
 .suggest { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; }
 .suggest button { text-align: start; font: inherit; font-size: var(--fs-md); line-height: 1.6; cursor: pointer; padding: 12px 14px; border-radius: var(--r-md); border: 1px solid var(--hairline-strong); background: #fff; color: var(--text); }
-.suggest button:hover { border-color: var(--chat-green-line, #14305a); }
+.suggest button:hover { border-color: var(--chat-green-line, #26364d); }
 .user { justify-self: end; max-width: 85%; background: #fff; border: 1px solid var(--hairline); border-radius: 18px 18px 4px 18px; padding: 10px 14px; }
 .user p { margin: 0; font-size: var(--fs-base); line-height: 1.8; white-space: pre-wrap; }
 .bot { display: grid; gap: 8px; min-width: 0; }
@@ -22,20 +22,20 @@
 .md :global(p) { margin: 0 0 10px; }
 .md :global(h2), .md :global(h3) { font-size: var(--fs-lg); margin: 14px 0 6px; }
 .wait { display: flex; gap: 8px; align-items: center; margin: 0; font-size: var(--fs-md); color: var(--muted); }
-.spin { width: 15px; height: 15px; border-radius: 50%; border: 2px solid var(--hairline-strong); border-top-color: var(--chat-green, #14305a); animation: scspin 0.8s linear infinite; }
+.spin { width: 15px; height: 15px; border-radius: 50%; border: 2px solid var(--hairline-strong); border-top-color: var(--chat-green, #26364d); animation: scspin 0.8s linear infinite; }
 @keyframes scspin { to { transform: rotate(360deg); } }
 .sources { background: #fff; border: 1px solid var(--hairline); border-radius: var(--r-md); padding: 10px 12px; }
 .srcHead { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
 .srcHead b { font-size: var(--fs-xs); color: var(--muted); font-weight: 600; }
-.srcHead button { font: inherit; font-size: var(--fs-xs); border: 0; background: none; color: var(--chat-green, #14305a); cursor: pointer; }
+.srcHead button { font: inherit; font-size: var(--fs-xs); border: 0; background: none; color: var(--chat-green, #26364d); cursor: pointer; }
 .sources ol { margin: 6px 0 0; padding-inline-start: 22px; display: grid; gap: 5px; }
 .sources li { font-size: var(--fs-sm); line-height: 1.6; }
 .sources a { color: var(--text-strong); }
 .sources small { display: block; font-size: var(--fs-xs); color: var(--faint); }
 .error { color: #b42318; background: #fef3f2; padding: 8px 12px; border-radius: var(--r-sm); font-size: var(--fs-md); }
-.composer { position: sticky; bottom: 10px; display: flex; gap: 8px; align-items: flex-end; background: #fff; border: 1px solid var(--hairline-strong); border-radius: var(--r-xl); padding: 8px 8px 8px 12px; box-shadow: 0 12px 30px -18px rgba(10, 20, 36, 0.35); }
+.composer { position: sticky; bottom: 10px; display: flex; gap: 8px; align-items: flex-end; background: #fff; border: 1px solid var(--hairline-strong); border-radius: var(--r-xl); padding: 8px 8px 8px 12px; box-shadow: 0 12px 30px -18px rgba(16, 27, 48, 0.35); }
 .composer textarea { flex: 1; min-width: 0; resize: none; border: 0; outline: none; font: inherit; font-size: var(--fs-base); line-height: 1.7; padding: 6px 4px; background: transparent; color: var(--text); max-height: 180px; }
-.send, .stop { flex: none; width: 36px; height: 36px; border-radius: 50%; border: 0; font-size: var(--fs-lg); cursor: pointer; color: #fff; background: var(--chat-green, #14305a); }
+.send, .stop { flex: none; width: 36px; height: 36px; border-radius: 50%; border: 0; font-size: var(--fs-lg); cursor: pointer; color: #fff; background: var(--chat-green, #26364d); }
 .send:disabled { opacity: 0.35; cursor: default; }
 .stop { background: var(--ink); font-size: var(--fs-xs); }
 .foot { margin: 0 0 6px; text-align: center; font-size: var(--fs-xs); color: var(--faint); }
