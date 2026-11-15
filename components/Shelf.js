@@ -27,18 +27,3 @@ export function ArtCard({ href, title, desc, img, c1, c2, tag }) {
     </Link>
   );
 }
-
-export function ModelCard({ bot }) {
-  const [c1, c2] = bot.colors || ["#3a4152", "#12151c"];
-  const href = bot.available ? `/chat?bot=${bot.key}` : "/models";
-  const tag = !bot.available ? "قريباً" : bot.tier === "pro" ? "PRO" : null;
-  return (
-    <Link href={href} className={s.model} style={{ "--c1": c1, "--c2": c2 }} title={bot.desc || bot.name}>
-      {bot.logo && <img className={s.glow} src={bot.logo} alt="" aria-hidden="true" loading="lazy" />}
-      {tag && <span className={`${s.tag} ${tag === "PRO" ? s.pro : ""}`}>{tag}</span>}
-      {bot.logo ? <img className={s.logo} src={bot.logo} alt="" width="52" height="52" loading="lazy" /> : <span className={s.mono}>{bot.mono || bot.name.slice(0, 2)}</span>}
-      <b dir="auto">{bot.name}</b>
-      <small dir="auto">{bot.maker}</small>
-    </Link>
-  );
-}

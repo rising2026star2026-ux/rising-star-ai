@@ -1,73 +1,43 @@
 import { tools } from "@/lib/tools";
-import { APPS } from "@/lib/apps";
-import { FLOWS } from "@/lib/flows";
 import { SITE_URL } from "@/lib/site";
 import { MAKER_LIST } from "@/lib/makers";
-import { CREATORS } from "@/lib/creators";
-import { DIR_CATEGORIES, DIR_TOOLS } from "@/lib/directory";
-import { TASKS } from "@/lib/tasks";
-import { LIBRARY } from "@/lib/library";
-import { AGENTS } from "@/lib/agents";
 import { SECTIONS } from "@/lib/sections";
 
-// خريطة الموقع لجوجل: الرئيسية والصفحات الأساسية وكل الأدوات
+// خريطة الموقع لجوجل: صفحات الأعمال والتسويق بس (Rising Business)
+const PAGES = [
+  ["", "weekly", 1],
+  ["/seller", "weekly", 0.95],
+  ["/seller/agent", "weekly", 0.9],
+  ["/feasibility", "monthly", 0.9],
+  ["/feasibility/chat", "monthly", 0.8],
+  ["/market-check", "monthly", 0.9],
+  ["/test-ad", "monthly", 0.9],
+  ["/photo-ad", "monthly", 0.9],
+  ["/voice-post", "monthly", 0.9],
+  ["/catalog", "monthly", 0.9],
+  ["/amazon", "monthly", 0.9],
+  ["/amazon/check", "monthly", 0.9],
+  ["/amazon/listing", "monthly", 0.9],
+  ["/amazon/profit", "monthly", 0.9],
+  ["/amazon/competitor", "monthly", 0.9],
+  ["/brand", "monthly", 0.8],
+  ["/tools", "weekly", 0.9],
+  ["/maker", "weekly", 0.9],
+  ["/maker/create", "weekly", 0.9],
+  ["/prompts", "weekly", 0.8],
+  ["/prompts/studio", "weekly", 0.9],
+  ["/prompts/builder", "monthly", 0.8],
+  ["/plans", "monthly", 0.6],
+  ["/support", "monthly", 0.5],
+];
+
 export default function sitemap() {
   const now = new Date();
+  const entry = (path, changeFrequency, priority) => ({ url: `${SITE_URL}${path}`, lastModified: now, changeFrequency, priority });
   return [
-    { url: SITE_URL, lastModified: now, changeFrequency: "weekly", priority: 1 },
-    { url: `${SITE_URL}/tools`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${SITE_URL}/models/all`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
-    { url: `${SITE_URL}/chat`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/projects`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${SITE_URL}/models`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${SITE_URL}/compare`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE_URL}/research`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/feasibility`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/research/chat`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/feasibility/chat`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/map`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE_URL}/realestate`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/realestate/chat`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/global-tools/alternatives`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/seller`, lastModified: now, changeFrequency: "weekly", priority: 0.95 },
-    { url: `${SITE_URL}/seller/agent`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${SITE_URL}/market-check`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE_URL}/test-ad`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE_URL}/photo-ad`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE_URL}/voice-post`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE_URL}/amazon`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE_URL}/amazon/check`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE_URL}/amazon/listing`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE_URL}/amazon/profit`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE_URL}/amazon/competitor`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE_URL}/catalog`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE_URL}/subscriptions/receipt`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE_URL}/subscriptions`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${SITE_URL}/subscriptions/calculator`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE_URL}/scam-check`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE_URL}/flows`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/maker`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${SITE_URL}/maker/create`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    ...MAKER_LIST.map((m) => ({ url: `${SITE_URL}/maker/${m.slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),
-    { url: `${SITE_URL}/learn`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/news`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
-    { url: `${SITE_URL}/creators`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    ...CREATORS.map((c) => ({ url: `${SITE_URL}/creators/${c.slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.6 })),
-    { url: `${SITE_URL}/agents`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    ...AGENTS.map((a) => ({ url: `${SITE_URL}/agents/${a.id}`, lastModified: now, changeFrequency: "monthly", priority: 0.8 })),
-    { url: `${SITE_URL}/prompts`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${SITE_URL}/prompts/studio`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${SITE_URL}/prompts/builder`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE_URL}/library`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    ...LIBRARY.map((t) => ({ url: `${SITE_URL}/library/${t.slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),
-    { url: `${SITE_URL}/tasks`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    ...TASKS.map((t) => ({ url: `${SITE_URL}/task/${t.slug}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 })),
-    { url: `${SITE_URL}/global-tools`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    ...DIR_CATEGORIES.map((c) => ({ url: `${SITE_URL}/global-tools/${c.id}`, lastModified: now, changeFrequency: "weekly", priority: 0.8 })),
-    ...DIR_TOOLS.map((t) => ({ url: `${SITE_URL}/ai/${t.slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.6 })),
-    ...SECTIONS.filter((x) => x.id !== "chat").map((x) => ({ url: `${SITE_URL}/s/${x.id}`, lastModified: now, changeFrequency: "weekly", priority: 0.9 })),
-    ...FLOWS.map((f) => ({ url: `${SITE_URL}/flow/${f.id}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),
-    ...APPS.map((a) => ({ url: `${SITE_URL}/program/${a.slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),
-    ...tools.map((t) => ({ url: `${SITE_URL}/tool/${t.id}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),
+    ...PAGES.map(([p, f, n]) => entry(p, f, n)),
+    ...SECTIONS.map((x) => entry(`/s/${x.id}`, "weekly", 0.9)),
+    ...MAKER_LIST.map((m) => entry(`/maker/${m.slug}`, "monthly", 0.7)),
+    ...tools.map((t) => entry(`/tool/${t.id}`, "monthly", 0.7)),
   ];
 }

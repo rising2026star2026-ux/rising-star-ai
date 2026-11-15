@@ -158,7 +158,7 @@ async function voiceSample(BASE, OUT) {
   return file;
 }
 
-export const FEATURE_RECIPES = [
+const ALL_FEATURE_RECIPES = [
   F("chat", "الشات الرئيسي", "/chat", async ({ page }) => {
     await step("كتابة السؤال", () => page.locator("#chat-in").fill("اكتبلي 3 أفكار بوستات قصيرة لصفحة بتبيع عسل طبيعي"));
     const before = await textLength(page);
@@ -313,3 +313,7 @@ export const FEATURE_RECIPES = [
     if (size < 5000) throw broken(`الصوت المعبّر رجّع ملف صوت فاضي (${size} بايت)`);
   }, { api: true }),
 ];
+
+// Rising Business (2026-11-15): الأقسام اللي اتشالت (الشات العام، العقاري، الإيصالات، فاحص النصب...) ما بتتجربش
+const REMOVED_PATH = /^\/(realestate|research|projects|learn|flows?|tasks?|agents|library|global-tools|ai|creators|news|subscriptions|scam-check|my-tools|chat|models|program|compare|history|map)(\/|$|\?)/;
+export const FEATURE_RECIPES = ALL_FEATURE_RECIPES.filter((r) => !REMOVED_PATH.test(r.path || ""));

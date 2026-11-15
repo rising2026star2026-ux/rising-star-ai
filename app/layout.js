@@ -4,10 +4,10 @@ import ThemeShift from "@/components/ThemeShift";
 import Chrome from "@/components/Chrome";
 import BottomNav from "@/components/BottomNav";
 import Intro from "@/components/Intro";
-import { tools, categories } from "@/lib/tools";
+import { tools } from "@/lib/tools";
 import { SITE_URL, BRAND } from "@/lib/site";
 
-const description = `منصة عربية فيها ${tools.length} أداة ذكاء اصطناعي في ${categories.length} مجال، وشات بأقوى موديلات العالم: كتابة، تسويق، تعليم، ترجمة، برمجة، وأكتر.`;
+const description = `مساحة عمل عربية لأصحاب الأنشطة التجارية: ${tools.length} أداة للتسويق والبيع، ودراسة جدوى، ومساعد أعمال بالذكاء الاصطناعي.`;
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),

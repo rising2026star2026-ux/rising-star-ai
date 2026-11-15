@@ -4,10 +4,10 @@ export default function manifest() {
   return {
     name: "Rising StarAi",
     short_name: "Rising StarAi",
-    description: "منصة عربية لأدوات الذكاء الاصطناعي وشات بأقوى الموديلات",
+    description: "مساحة عمل عربية لأصحاب الأنشطة التجارية: تسويق وبيع ودراسة جدوى",
     lang: "ar",
     dir: "rtl",
-    start_url: "/chat",
+    start_url: "/",
     scope: "/",
     display: "standalone",
     orientation: "portrait",

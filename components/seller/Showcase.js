@@ -36,12 +36,6 @@ export const FEATURES = [
   },
 ];
 
-export const RECEIPT = {
-  href: "/subscriptions/receipt", tone: "rose", icon: "🧾",
-  title: "كشف حساب اشتراكاتك", hook: "بتدفع كام على ChatGPT وCanva وCapCut؟ واللي بيضيع منهم كام؟",
-  gets: ["إيصال بالإجمالي بالجنيه", "الفلوس اللي بتضيع وليه", "كارت تشاركه ستوري"],
-};
-
 export const AMAZON = {
   href: "/amazon", tone: "gold", icon: "cart",
   title: "أدوات بياعين أمازون", hook: "فاحص رفض، ليستنج بالعربي والإنجليزي، حاسبة ربح، وتحليل منافس",
@@ -52,7 +46,7 @@ export const AMAZON = {
 export function ShowcaseStrip() {
   return (
     <div className={s.strip}>
-      {[...FEATURES, AMAZON, RECEIPT].map((f) => (
+      {[...FEATURES, AMAZON].map((f) => (
         <Link key={f.href} href={f.href} className={`${s.tile} ${s["t_" + f.tone]}`}>
           <span className={s.tIcon} aria-hidden="true">{f.icon in ICONS ? ICONS[f.icon] : f.icon}</span>
           <b>{f.title}</b>
@@ -93,16 +87,6 @@ export function ShowcaseFull() {
           <ul>{AMAZON.gets.map((g) => <li key={g}>{g}</li>)}</ul>
         </span>
         <span className={s.cGo}>افتح الأدوات ←</span>
-      </Link>
-      <h2 className={s.sub}>ولو بتدفع اشتراكات ذكاء اصطناعي</h2>
-      <Link href={RECEIPT.href} className={`${s.card} ${s.wide} ${s["t_" + RECEIPT.tone]}`}>
-        <span className={s.cIcon} aria-hidden="true">{RECEIPT.icon}</span>
-        <span className={s.cText}>
-          <b>{RECEIPT.title}</b>
-          <small>{RECEIPT.hook}</small>
-          <ul>{RECEIPT.gets.map((g) => <li key={g}>{g}</li>)}</ul>
-        </span>
-        <span className={s.cGo}>اطبع كشفك ←</span>
       </Link>
     </>
   );

@@ -1,5 +1,5 @@
 "use client";
-// الشات المتخصص: حوار زي الشات العادي، بس كل رد مبني على مصادر الباحث (مكتبات أكاديمية أو بحث السوق ودراسة الجدوى)
+// الشات المتخصص للباحث التجاري: حوار زي الشات العادي، بس كل رد مبني على بحث السوق ودراسة الجدوى المفتوحة.
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Md from "./Md";
@@ -7,23 +7,9 @@ import { read, write } from "@/lib/store";
 import { enterSends } from "@/lib/keys";
 import { runAll, sensitivity, factsText } from "@/lib/feasibility";
 import { fieldText } from "./FieldData";
-import { factsText as reFacts, installmentPlan, compareOptions, rentalYield, transferCosts } from "@/lib/realestate";
 import s from "./sourcechat.module.css";
 
 const MODES = {
-  academic: {
-    title: "الشات الأكاديمي",
-    sub: "ناقش موضوع بحثك. كل رد بيدوّر في مكتبات الأبحاث والكتب ويستشهد بمصادرها.",
-    back: { href: "/research", label: "الباحث الأكاديمي" },
-    store: "srcchat-academic",
-    placeholder: "اسأل عن موضوع بحثك…",
-    suggestions: [
-      "إيه أهم النظريات اللي بتفسر الموضوع ده؟",
-      "إيه الفجوات البحثية اللي ممكن أشتغل عليها؟",
-      "قارن بين نتايج أهم الدراسات في الموضوع",
-      "اقترح عليا عنوان رسالة ماجستير وأسئلة بحث",
-    ],
-  },
   business: {
     title: "الشات التجاري",
     sub: "ناقش مشروعك وسوقك. كل رد بيدوّر في السوق المصري ويعتمد على أرقام دراستك.",
@@ -37,63 +23,13 @@ const MODES = {
       "إزاي أموّل الفرق من غير قروض بفايدة؟",
     ],
   },
-  realestate: {
-    title: "المستشار العقاري",
-    sub: "اسأل عن منطقة أو وحدة أو عقد. كل رد بيدوّر في سوق العقارات المصري ويعتمد على أرقام تقريرك.",
-    back: { href: "/realestate", label: "الباحث العقاري" },
-    store: "srcchat-realestate",
-    placeholder: "اسأل عن منطقة أو سعر أو عقد…",
-    suggestions: [
-      "السعر ده مناسب للمنطقة ولا مبالغ فيه؟",
-      "أدفع كاش بخصم ولا أقسّط على 8 سنين؟",
-      "إيه الأوراق اللي لازم أطلبها قبل ما أدفع المقدم؟",
-      "إزاي أتفاوض مع المطوّر على السعر أو نظام السداد؟",
-    ],
-    tasks: [
-      { t: "قيّم السعر", d: "هل السعر في حدود المنطقة؟ مقارنة بأسعار منشورة.", q: "السعر ده مناسب للمنطقة ولا مبالغ فيه؟ قارنه بالأسعار المنشورة وقولي حدود السعر العادل." },
-      { t: "قارن طرق الدفع", d: "كاش بخصم أو تقسيط أو إيجار، بقيمة فلوس النهارده.", q: "أدفع كاش بخصم ولا أقسّط على 8 سنين؟ احسبها بقيمة فلوس النهارده." },
-      { t: "افحص قبل ما تدفع", d: "الأوراق والتراخيص المطلوبة قبل المقدم.", q: "إيه الأوراق والتراخيص اللي لازم أطلبها وأتأكد منها قبل ما أدفع المقدم؟" },
-      { t: "جهّز التفاوض", d: "نقاط الضغط على السعر ونظام السداد.", q: "إزاي أتفاوض مع المطوّر على السعر أو نظام السداد؟ إيه النقط اللي أضغط عليها؟" },
-    ],
-  },
 };
 
 /** [3] في الرد تتحول لرابط على المصدر رقم 3 في الأسفل */
 const linkCites = (t) => String(t || "").replace(/\[(\d{1,2})\](?!\()/g, "[$1](#src-$1)");
 
 /** سياق الصفحة: البحث أو الدراسة المفتوحة على الجهاز */
-function loadContext(mode) {
-  if (mode === "academic") {
-    const last = read("research-last", null);
-    const all = last?.found?.sources || [];
-    if (!all.length) return null;
-    const picked = new Set(last.picked || all.map((x) => x.n));
-    const pinned = all.filter((x) => picked.has(x.n)).map(({ kind, title, authors, year, venue, doi, url, abstract, lib }) => ({ kind, title, authors, year, venue, doi, url, abstract, lib }));
-    return { label: last.topic || last.report?.title || "بحثك", count: pinned.length, topic: last.topic || "", pinned };
-  }
-  if (mode === "realestate") {
-    const last = read("realestate-last", null);
-    if (!last?.data?.market) return null;
-    try {
-      const d = last.data, m = d.market, i = last.inp || {};
-      const sale = d.form.mode === "sale";
-      const calc = i.price ? {
-        price: Number(i.price) || 0,
-        plan: sale ? installmentPlan({ price: i.price, downPct: i.downPct, years: i.years, perYear: i.perYear, maintenancePct: i.maintenancePct, deliveryYears: i.deliveryYears, inflation: i.inflation }) : null,
-        compare: sale ? compareOptions({ price: i.price, cashDiscountPct: i.cashDiscountPct, plan: { downPct: i.downPct, years: i.years, perYear: i.perYear }, rentMonthly: i.rentMonthly, appreciation: i.appreciation, inflation: i.inflation, horizon: i.horizon }) : null,
-        yield: sale && i.rentMonthly ? rentalYield({ price: i.price, rentMonthly: i.rentMonthly, vacancyMonths: i.vacancyMonths }) : null,
-        costs: sale ? transferCosts({ price: i.price }) : null,
-      } : null;
-      const where = [d.form.district, d.form.city].filter(Boolean).join("، ");
-      return {
-        label: where || "بحثك العقاري",
-        count: (d.sources || []).length,
-        study: { facts: reFacts(d.form, m, calc), summary: m.summary || "", where, sources: (d.sources || []).map(({ title, url, snippet }) => ({ title, url, snippet })) },
-      };
-    } catch {
-      return null;
-    }
-  }
+function loadContext() {
   const last = read("feasibility-last", null);
   if (!last?.a || !last?.data) return null;
   try {
@@ -140,35 +76,8 @@ function Sources({ list, text }) {
   );
 }
 
-// شريط الأسعار المحسوبة من إعلانات عقار ماب وProperty Finder (أرقام من الكود، مش من الموديل)
-const egp = (v) => Math.round(v).toLocaleString("en");
-function MarketLine({ market }) {
-  if (!market || !market.listings) return null;
-  const rows = [
-    market.ppm && ["سعر المتر", market.ppm],
-    market.price && ["سعر الوحدة", market.price],
-    market.rent && ["الإيجار الشهري", market.rent],
-  ].filter(Boolean);
-  if (!rows.length) return <p className={s.searchNote}>لقينا {market.listings} إعلان، بس الأسعار مش ظاهرة في نتايج البحث. افتح روابط الإعلانات في المصادر.</p>;
-  return (
-    <div className={s.market}>
-      <b>من {market.listings} إعلان على {(market.sites?.length ? market.sites : ["مواقع العقارات المصرية"]).join(" و")}</b>
-      <dl>
-        {rows.map(([label, st]) => (
-          <div key={label}>
-            <dt>{label}</dt>
-            <dd dir="ltr">{egp(st.low)} – {egp(st.high)} ج</dd>
-            <small>الوسيط {egp(st.mid)} • {st.n} إعلان</small>
-          </div>
-        ))}
-      </dl>
-      <small>أسعار معروضة في الإعلانات، والسعر النهائي بيتحدد بالتفاوض والمعاينة.</small>
-    </div>
-  );
-}
-
-export default function SourceChat({ mode = "academic" }) {
-  const M = MODES[mode] || MODES.academic;
+export default function SourceChat({ mode = "business" }) {
+  const M = MODES.business;
   const [msgs, setMsgs] = useState([]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
@@ -181,7 +90,7 @@ export default function SourceChat({ mode = "academic" }) {
 
   useEffect(() => {
     setMsgs(read(M.store, []) || []);
-    setCtx(loadContext(mode));
+    setCtx(loadContext());
     document.body.classList.add("chat-mode");
     return () => document.body.classList.remove("chat-mode");
   }, [mode, M.store]);
@@ -209,7 +118,7 @@ export default function SourceChat({ mode = "academic" }) {
     const body = {
       mode,
       messages: history.map(({ role, content }) => ({ role, content })),
-      ...(mode === "academic" ? { pinned: useCtx ? ctx?.pinned || [] : [], topic: useCtx ? ctx?.topic || "" : "" } : { study: useCtx ? ctx?.study || {} : {} }),
+      study: useCtx ? ctx?.study || {} : {},
     };
     let textOut = "";
     try {
@@ -256,16 +165,16 @@ export default function SourceChat({ mode = "academic" }) {
 
   const empty = msgs.length === 0;
   const ctxNote = useMemo(() => {
-    if (!ctx) return mode === "academic" ? "مفيش بحث مفتوح، فهدوّر في المكتبات لكل سؤال." : mode === "realestate" ? "مفيش بحث عقاري مفتوح، فهدوّر في السوق لكل سؤال." : "مفيش دراسة مفتوحة، فهدوّر في السوق لكل سؤال.";
+    if (!ctx) return "مفيش دراسة مفتوحة، فهدوّر في السوق لكل سؤال.";
     return null;
   }, [ctx, mode]);
 
   return (
-    <div className={`${s.wrap} ${mode === "realestate" ? s.re : ""}`}>
+    <div className={s.wrap}>
       <header className={s.top}>
         <div>
-          <h1 className={s.title}>{mode === "realestate" ? "المستشار العقاري" : M.title}</h1>
-          <p className={s.sub}>{mode === "realestate" ? "رأي محايد مبني على أسعار منشورة وحسابات دقيقة. كل رقم ليه مصدر أو معادلة." : M.sub}</p>
+          <h1 className={s.title}>{M.title}</h1>
+          <p className={s.sub}>{M.sub}</p>
         </div>
         <div className={s.topActions}>
           <Link href={M.back.href} className={s.ghost}>↩ {M.back.label}</Link>
@@ -312,12 +221,10 @@ export default function SourceChat({ mode = "academic" }) {
             {m.role === "user" ? (
               <p dir="auto">{m.content}</p>
             ) : m.pending && !m.content ? (
-              <p className={s.wait}><span className={s.spin} aria-hidden="true" /> {mode === "academic" ? "بدوّر في المكتبات…" : mode === "realestate" ? "بدوّر في سوق العقارات وبحسب…" : "بدوّر في السوق…"}</p>
+              <p className={s.wait}><span className={s.spin} aria-hidden="true" /> {"بدوّر في السوق…"}</p>
             ) : (
               <>
                 <div className={`md ${s.md}`} dir="auto"><Md>{linkCites(m.content)}</Md></div>
-                {!m.pending && mode === "realestate" && <MarketLine market={m.market} />}
-                {!m.pending && mode === "realestate" && m.search === "empty" && <p className={s.searchNote}>بحث السوق ما رجّعش نتايج للسؤال ده، فالرد من معرفة عامة ومن غير أرقام موثّقة.</p>}
                 {!m.pending && <Sources list={m.sources} text={m.content} />}
               </>
             )}
