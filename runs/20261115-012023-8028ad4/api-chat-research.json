@@ -1,0 +1,9 @@
+{
+  "ok": false,
+  "notes": [
+    "status 200 search=empty sources=0 model=groq/qwen/qwen3.8-27b",
+    "why: gemini-flash-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate- | gemini-flash-lite-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate- | ddg: ok but 0 resul",
+    "domains: ",
+    "أنا مش قادر أتأكد من آخر المعلومات أو أسعار الصرف الحية دلوقتي لأن البحث على الإنترنت ما رجّعش نتايج.\n\n## معلومات عامة عن سعر الدولار\n- السعر الرسمي في البنوك المصرية كان يتراوح تقريباً بين **48 و50 جنيهاً** للدولار الواحد خلال النصف الثاني من 2024، لكن هذا الرقم يتغير يومياً حسب العرض والطلب.\n- يوجد دائماً فرق بسيط بين **سعر الشراء** (اللي بتبعت فيه البنك) و**سعر البيع** (اللي بتشتري فيه العميل)،"
+  ]
+}
