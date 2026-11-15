@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "الباقات",
-  description: "باقات Rising Business بالجنيه المصري.",
+  description: "باقات Rising Business المبدئية بالجنيه المصري للتجار وأصحاب الأنشطة: مقارنة وجدوى ومساعد أعمال وأدوات المنتجات والتسويق.",
   robots: { index: false },
 };
 
@@ -22,7 +22,7 @@ export default function Plans() {
   return (
     <>
       <h1 className="page-title">الباقات</h1>
-      <p className="page-sub">الأسعار بالجنيه المصري شهرياً، والإلغاء في أي وقت.</p>
+      <p className="page-sub">أسعار مبدئية بالجنيه المصري شهرياً. الاشتراكات لسه مش مفعّلة.</p>
 
       <div className="plans">
         {PLANS.map((p) => (

@@ -278,14 +278,14 @@ export function renderScene(id, o) {
   }
 
   else if (id === "bold") {
-    ctx.fillStyle = "#d9b04a"; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = "#c6a04b"; ctx.fillRect(0, 0, W, H);
     const cy = base - box.maxH * 0.48, R = Math.min(W * 0.4, box.maxH * 0.62);
-    ctx.fillStyle = "#14305a";
+    ctx.fillStyle = "#26364d";
     ctx.beginPath(); ctx.arc(W / 2, cy, R, 0, Math.PI * 2); ctx.fill();
     ctx.strokeStyle = "rgba(10,20,36,0.9)"; ctx.lineWidth = W * 0.006;
     ctx.beginPath(); ctx.arc(W / 2, cy, R * 1.12, Math.PI * 1.1, Math.PI * 1.65); ctx.stroke();
     ctx.beginPath(); ctx.arc(W / 2, cy, R * 1.12, Math.PI * 0.1, Math.PI * 0.62); ctx.stroke();
-    for (const [x, y, s2, col] of [[0.14, 0.18, 26, "#0a1424"], [0.86, 0.3, 18, "#fff"], [0.18, 0.62, 16, "#fff"], [0.82, 0.7, 24, "#0a1424"]]) sparkle(ctx, W * x, H * y, s2 * (W / 1080) * 1.3, col);
+    for (const [x, y, s2, col] of [[0.14, 0.18, 26, "#101b30"], [0.86, 0.3, 18, "#fff"], [0.18, 0.62, 16, "#fff"], [0.82, 0.7, 24, "#101b30"]]) sparkle(ctx, W * x, H * y, s2 * (W / 1080) * 1.3, col);
     const r = fit(prod, box);
     if (!framed) softShadow(ctx, prod, r, { dx: -0.05, dy: 0.04, alpha: 0.35, blur: 0.04, color: "#0a1a6b" });
     drawProduct(ctx, prod, r, framed);
@@ -293,7 +293,7 @@ export function renderScene(id, o) {
 
   else if (id === "offer") {
     let g = ctx.createRadialGradient(W / 2, H * 0.48, 0, W / 2, H * 0.48, Math.max(W, H) * 0.7);
-    g.addColorStop(0, "#1b2150"); g.addColorStop(1, "#0a1424");
+    g.addColorStop(0, "#1b2150"); g.addColorStop(1, "#101b30");
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
     glow(ctx, W / 2, H * 0.5, W * 0.5, "rgba(43,91,255,0.45)");
     // الاسم فوق
@@ -319,10 +319,10 @@ export function renderScene(id, o) {
       const px = Math.min(W - pr - 30, r.x + r.w + pr * 0.15), py = Math.max(textBottom + pr * 0.9, r.y + pr * 0.4);
       ctx.save();
       ctx.shadowColor = "rgba(0,0,0,0.35)"; ctx.shadowBlur = 30;
-      ctx.fillStyle = "#d9b04a";
+      ctx.fillStyle = "#c6a04b";
       ctx.beginPath(); ctx.arc(px, py, pr, 0, Math.PI * 2); ctx.fill();
       ctx.restore();
-      ctx.fillStyle = "#0a1424"; ctx.textBaseline = "middle";
+      ctx.fillStyle = "#101b30"; ctx.textBaseline = "middle";
       let ps = pr * 0.62;
       ctx.font = `900 ${ps}px ${DISPLAY_FONT}`;
       while (ctx.measureText(price).width > pr * 1.65 && ps > 20) { ps -= 4; ctx.font = `900 ${ps}px ${DISPLAY_FONT}`; }
@@ -341,9 +341,9 @@ export function renderScene(id, o) {
     const cta = (o.cta || "اطلب دلوقتي").trim();
     const contact = (o.contact || "").trim();
     const by = H - ctaH - (story ? H * 0.06 : H * 0.045);
-    ctx.fillStyle = "#d9b04a";
+    ctx.fillStyle = "#c6a04b";
     rr(ctx, W * 0.08, by, W * 0.84, ctaH, ctaH / 2); ctx.fill();
-    ctx.fillStyle = "#0a1424"; ctx.textBaseline = "middle";
+    ctx.fillStyle = "#101b30"; ctx.textBaseline = "middle";
     const label = contact ? `${cta} · ${contact}` : cta;
     let cs = ctaH * 0.36;
     ctx.font = `800 ${cs}px ${DISPLAY_FONT}`;

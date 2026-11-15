@@ -7,6 +7,8 @@ import ShareBar from "./ShareBar";
 import FieldData, { fieldText } from "./FieldData";
 import { read, write, toast } from "@/lib/store";
 import { feasibilityPrefill } from "@/lib/bizprofile";
+import { collectedAt } from "@/lib/datasources";
+import { HANDOFF_KEY, compareCandidates, prefillFromBiz, applyBizNumbers, numbersDiff } from "@/lib/feasilink";
 import {
   cashFlowRows, yearlyCashFlow,
   TYPES, GOVERNORATES, SCENARIOS, REPORT_SECTIONS, MONTHS,
@@ -36,6 +38,7 @@ const toNum = (v) => {
 };
 
 function SrcBadges({ item, sources }) {
+  if (item?.yours) return <em className={s.yours}>رقمك</em>;
   if (item?.est) return <em className={s.est}>تقدير</em>;
   return (
     <>
@@ -84,7 +87,7 @@ function CashChart({ res }) {
   const lo = Math.min(...all, 0), hi = Math.max(...all, 0);
   const X = (m) => P + ((W - 2 * P) * m) / MONTHS;
   const Y = (v) => H - P - ((H - 2 * P) * (v - lo)) / (hi - lo || 1);
-  const colors = { pess: "#e5484d", mid: "#14305a", opt: "#12a150" };
+  const colors = { pess: "#e5484d", mid: "#26364d", opt: "#12a150" };
   return (
     <figure className={s.chart}>
       <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="الرصيد التراكمي على 36 شهر للسيناريوهات التلاتة">
@@ -113,16 +116,16 @@ function assumptionsText(a, t) {
   const r = (x) => `${n0(x.low)} / ${n0(x.mid)} / ${n0(x.high)}`;
   return [
     "تكاليف التجهيز (مرة واحدة):",
-    ...a.capex.map((x) => `- ${x.name}: ${r(x)} ج${x.est ? " (تقدير)" : x.src.length ? ` [${x.src.join("، ")}]` : ""}`),
+    ...a.capex.map((x) => `- ${x.name}: ${r(x)} ج${x.yours ? " (رقمك)" : x.est ? " (تقدير)" : (x.src || []).length ? ` [${x.src.join("، ")}]` : ""}`),
     "المصاريف الشهرية الثابتة:",
-    ...a.fixed.map((x) => `- ${x.name}: ${r(x)} ج${x.est ? " (تقدير)" : x.src.length ? ` [${x.src.join("، ")}]` : ""}`),
+    ...a.fixed.map((x) => `- ${x.name}: ${r(x)} ج${x.yours ? " (رقمك)" : x.est ? " (تقدير)" : (x.src || []).length ? ` [${x.src.join("، ")}]` : ""}`),
     `${t.priceLabel}: ${r(a.price)} ج. ${t.costLabel}: ${r(a.unitCost)} ج. المبيعات الشهرية عند الاستقرار: ${r(a.units)} ${t.unit}.`,
     `بداية المبيعات ${Math.round(a.rampStart * 100)}٪ وتستقر بعد ${a.rampMonths} شهور. ضريبة ${a.taxPct}٪ من المبيعات.`,
   ].join("\n");
 }
 
 function assumptionsLog(a, t, sources) {
-  const cite = (x) => (x.est ? "تقدير" : (x.src || []).map((n) => `[${n}]`).join(" ") || "—");
+  const cite = (x) => (x.yours ? "رقمك" : x.est ? "تقدير" : (x.src || []).map((n) => `[${n}]`).join(" ") || "—");
   const row = (name, x) => `| ${name} | ${n0(x.low)} | ${n0(x.mid)} | ${n0(x.high)} | ${cite(x)} |`;
   return [
     "## سجل الافتراضات",
@@ -150,10 +153,25 @@ export default function Feasibility() {
   const [field, setField] = useState(null); // { survey, phone, paste, ads, videos }
   const [error, setError] = useState("");
   const [fromBrand, setFromBrand] = useState(false);
+  const [linked, setLinked] = useState(null); // { biz, from } نشاط من مقارنة محفوظة
+  const [pendingLink, setPendingLink] = useState(null); // نشاط جاي من المقارنة وفيه دراسة مفتوحة
+  const [candidates, setCandidates] = useState([]);
   const abortRef = useRef(null);
   const reportRef = useRef(null);
 
+  // بداية دراسة جديدة: من ملف النشاط، ولو فيه نشاط من مقارنة أرقامه بتغلب
+  function freshForm(link) {
+    const pre = feasibilityPrefill(read("brand", null)) || {};
+    setFromBrand(Object.keys(pre).length > 0);
+    setForm({ ...EMPTY_FORM, ...pre, ...(link ? prefillFromBiz(link.biz, link.from) : {}) });
+    setLinked(link || null);
+  }
+
   useEffect(() => {
+    setCandidates(compareCandidates(read("compare-saved", [])));
+    const hand = read(HANDOFF_KEY, null);
+    if (hand) write(HANDOFF_KEY, null);
+    const link = hand?.biz && Date.now() - (hand.at || 0) < 30 * 60 * 1000 ? { biz: hand.biz, from: hand.from } : null;
     const last = read("feasibility-last", null);
     if (last?.a && last?.data) {
       setForm({ ...EMPTY_FORM, ...last.form });
@@ -161,18 +179,37 @@ export default function Feasibility() {
       setA(last.a);
       setReport(last.report || null);
       setField(last.field || null);
+      setLinked(last.linked || null);
       setStage(last.report ? "done" : "ready");
+      if (link) setPendingLink(link);
     } else {
-      // أول مرة: نعبّي من ملف النشاط (والعميل يعدّل)
-      const pre = feasibilityPrefill(read("brand", null));
-      if (pre) { setForm((f) => ({ ...EMPTY_FORM, ...f, ...pre })); setFromBrand(true); }
+      freshForm(link);
     }
   }, []);
 
+  // نشاط جاي من المقارنة وفيه دراسة مفتوحة: الدراسة المفتوحة بتتحفظ في مشروعاتك الأول، وبعدين نبدأ الجديدة
+  function startLinked() {
+    if (a && data) {
+      const list = read("feasibility-saved", []);
+      write("feasibility-saved", [{ id: `f${Date.now().toString(36)}`, name: title, at: Date.now(), study: { form, data, a, report, field, linked } }, ...list].slice(0, 20));
+      toast("الدراسة المفتوحة اتحفظت في مشروعاتك");
+    }
+    const link = pendingLink;
+    setPendingLink(null);
+    reset();
+    freshForm(link);
+  }
+
+  function applyMine() {
+    if (!linked || !a) return;
+    setA((x) => applyBizNumbers(x, linked.biz));
+    toast("اتحطت أرقامك من المقارنة. الأقل والأعلى بنفس نسبة السوق.");
+  }
+
   // نحفظ آخر دراسة على الجهاز (بعد أي تعديل)
   useEffect(() => {
-    if (a && data && stage !== "gathering" && stage !== "writing") write("feasibility-last", { form, data, a, report, field });
-  }, [a, data, report, stage, form, field]);
+    if (a && data && stage !== "gathering" && stage !== "writing") write("feasibility-last", { form, data, a, report, field, linked });
+  }, [a, data, report, stage, form, field, linked]);
 
   const t = TYPES[form.type] || TYPES.shop;
   const res = useMemo(() => (a ? runAll(a) : null), [a]);
@@ -191,7 +228,7 @@ export default function Feasibility() {
       const r = await post({ step: "gather", form: { ...form, capital: toNum(form.capital), size: toNum(form.size) } }, ctl.signal);
       const d = await r.json();
       const { assumptions, ...rest } = d;
-      setData({ sources: rest.sources, competitors: rest.competitors, compNote: rest.compNote, apps: rest.apps || [], queries: rest.queries, market: assumptions.market, risks: assumptions.risks });
+      setData({ sources: rest.sources, competitors: rest.competitors, compNote: rest.compNote, apps: rest.apps || [], queries: rest.queries, market: assumptions.market, risks: assumptions.risks, at: rest.gatheredAt || new Date().toISOString() });
       setA(assumptions);
       setStage("ready");
     } catch (e) {
@@ -289,17 +326,18 @@ export default function Feasibility() {
     const name = (typeof prompt === "function" ? prompt("اسم الدراسة", title) : title)?.trim();
     if (!name) return;
     const list = read("feasibility-saved", []);
-    write("feasibility-saved", [{ id: `f${Date.now().toString(36)}`, name, at: Date.now(), study: { form, data, a, report, field } }, ...list].slice(0, 20));
+    write("feasibility-saved", [{ id: `f${Date.now().toString(36)}`, name, at: Date.now(), study: { form, data, a, report, field, linked } }, ...list].slice(0, 20));
     toast("اتحفظت الدراسة في مشروعاتي ✓");
   }
 
   function reset() {
     abortRef.current?.abort();
-    setForm(EMPTY_FORM);
+    freshForm(null);
     setData(null);
     setA(null);
     setReport(null);
     setField(null);
+    setLinked(null);
     setStage("idle");
     setError("");
     write("feasibility-last", null);
@@ -311,13 +349,22 @@ export default function Feasibility() {
   const bodyText = report ? report.map((x) => (x.key === "finance" && x.text ? `${x.text.trim()}\n\n${tables}` : x.text.trim())).filter(Boolean).join("\n\n") : "";
   const used = new Set([...bodyText.matchAll(/\[(\d{1,2})\]/g)].map((m) => Number(m[1])));
   const usedSources = (data?.sources || []).filter((x) => used.has(x.n));
-  const refsText = usedSources.length ? `\n\n## المصادر\n\n${usedSources.map((x) => `${x.n}. ${x.title} — ${x.url}`).join("\n")}` : "";
+  const refsText = usedSources.length ? `\n\n## المصادر${data?.at ? ` (اتجمعت ${collectedAt(data.at)})` : ""}\n\n${usedSources.map((x) => `${x.n}. ${x.title} — ${x.url}`).join("\n")}` : "";
   const fullText = report && a ? `# ${title}\n\n${bodyText}\n\n${assumptionsLog(a, t, data?.sources || [])}${refsText}\n\n> ${DISCLAIMER}` : "";
   const capital = toNum(form.capital);
   const progress = report ? report.filter((x) => x.status === "done").length : 0;
 
   return (
     <div className={s.wrap}>
+      {pendingLink && (
+        <section className={`${s.card} ${s.linkBox}`} aria-label="دراسة من المقارنة">
+          <p>عايز تدرس جدوى «{pendingLink.biz.name}» من المقارنة؟ عندك دراسة مفتوحة دلوقتي.</p>
+          <div className={s.linkActs}>
+            <button type="button" className={s.primary} onClick={startLinked}>ابدأ دراسة جديدة (المفتوحة بتتحفظ في مشروعاتك)</button>
+            <button type="button" className={s.ghost} onClick={() => setPendingLink(null)}>كمّل الدراسة المفتوحة</button>
+          </div>
+        </section>
+      )}
       <section className={s.card} aria-label="بيانات المشروع">
         <span className={s.label}>نوع المشروع</span>
         <div className={s.types} role="radiogroup" aria-label="نوع المشروع">
@@ -327,6 +374,16 @@ export default function Feasibility() {
             </button>
           ))}
         </div>
+        {stage === "idle" && candidates.length > 0 && (
+          <label className={s.field}>
+            <span className={s.label}>ابدأ من نشاط في مقارنة محفوظة (اختياري)</span>
+            <select value={linked ? candidates.find((c) => c.biz.name === linked.biz.name && c.from === linked.from)?.key || "" : ""} onChange={(e) => { const c = candidates.find((x) => x.key === e.target.value); freshForm(c ? { biz: c.biz, from: c.from } : null); }} disabled={busy}>
+              <option value="">من غير مقارنة</option>
+              {candidates.map((c) => <option key={c.key} value={c.key}>{c.biz.name} ({c.from})</option>)}
+            </select>
+          </label>
+        )}
+        {linked && stage === "idle" && <p className={s.fromBrand}>الدراسة دي لنشاط «{linked.biz.name}» من {linked.from === "المقارنة الحالية" ? "المقارنة" : `مقارنة «${linked.from}»`}. بعد ما نجمع أرقام السوق هتشوف أرقامك جنبها وتختار.</p>}
         {fromBrand && stage === "idle" && (
           <p className={s.fromBrand}>اتعبّت البيانات من <Link href="/brand">ملف نشاطك</Link>. راجعها وعدّل اللي محتاجه. <button type="button" onClick={() => { setForm(EMPTY_FORM); setFromBrand(false); }}>ابدأ من فاضي</button></p>
         )}
@@ -439,6 +496,33 @@ export default function Feasibility() {
             </div>
           </section>
 
+          {linked && (() => {
+            const diff = numbersDiff(a, linked.biz);
+            if (!diff.length) return null;
+            return (
+              <section className={`${s.card} ${s.linkBox}`} aria-label="أرقامك من المقارنة">
+                <div className={s.head}><b>أرقامك من المقارنة مقابل أرقام الدراسة</b><small>«{linked.biz.name}»{linked.from !== "المقارنة الحالية" ? ` من «${linked.from}»` : ""}</small></div>
+                <div className={s.tableWrap}>
+                  <table className={s.diff}>
+                    <thead><tr><th>البند</th><th>رقمك</th><th>المتوقع في الدراسة</th><th>الفرق</th></tr></thead>
+                    <tbody>
+                      {diff.map((r) => (
+                        <tr key={r.key}>
+                          <th scope="row">{r.label}</th>
+                          <td>{r.key === "units" ? n0(r.yours) : egp(r.yours)}</td>
+                          <td>{r.key === "units" ? n0(r.market) : egp(r.market)}</td>
+                          <td>{r.gap === null ? "—" : `${r.gap > 0 ? "+" : ""}${pct(r.gap)}`}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className={s.note2}>الفرق الكبير معناه إن أرقامك محتاجة مراجعة، أو إن السوق اللي اتجمع مختلف عن نشاطك. استخدام أرقامك بيغيّر المتوقع بس، والأقل والأعلى بيفضلوا بنفس نسبة السوق.</p>
+                <div className={s.linkActs}><button type="button" className={s.ghost} onClick={applyMine}>استخدم أرقامي في الدراسة</button></div>
+              </section>
+            );
+          })()}
+
           <section className={s.card} aria-label="الافتراضات">
             <div className={s.head}><b>الافتراضات</b><small>راجع كل رقم وعدّله من خبرتك. «تقدير» يعني مالقيناش مصدر ليه.</small></div>
             {data?.market && <p className={s.market} dir="auto">{data.market}</p>}
@@ -466,7 +550,7 @@ export default function Feasibility() {
 
           {(data?.competitors?.length > 0 || data?.compNote || data?.apps?.length > 0) && (
             <section className={s.card} aria-label="المنافسين">
-              <div className={s.head}><b>المنافسين</b><small>من خرائط جوجل{data?.apps?.length ? " ومتجر أبل" : ""}</small></div>
+              <div className={s.head}><b>المنافسين</b><small>من خرائط جوجل{data?.apps?.length ? " ومتجر أبل" : ""}{data?.at ? `، اتجمعت ${collectedAt(data.at)}` : ""}</small></div>
               {data.compNote && <p className={s.note2}>{data.compNote}</p>}
               <ul className={s.comps}>
                 {data.competitors.map((c, i) => <li key={i}><b dir="auto">{c.name}</b><small>{c.rating ? `${c.rating}★ · ${n0(c.reviews)} تقييم` : "من غير تقييم"}{c.address ? ` · ${c.address}` : ""}</small></li>)}
@@ -485,7 +569,8 @@ export default function Feasibility() {
 
           <section className={s.card} aria-label="المصادر">
             <details className={s.srcBox}>
-              <summary><b>المصادر ({(data?.sources || []).length})</b></summary>
+              <summary><b>المصادر ({(data?.sources || []).length})</b>{data?.at && <small> اتجمعت {collectedAt(data.at)}</small>}</summary>
+              <p className={s.note2}>مصادر منشورة من بحث الويب، والتضخم من صندوق النقد الدولي، والمنافسين من خرائط جوجل. <Link href="/data-sources">إزاي بنجمع البيانات</Link></p>
               <ol className={s.sources}>
                 {(data?.sources || []).map((x) => <li key={x.n} value={x.n}><a href={x.url} target="_blank" rel="noopener noreferrer nofollow" dir="auto">{x.title}</a><small dir="auto">{x.snippet}</small></li>)}
               </ol>

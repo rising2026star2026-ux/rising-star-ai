@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MAKERS_CHECKED } from "@/lib/datasources";
 import { notFound } from "next/navigation";
 import BotIcon from "@/components/BotIcon";
 import MakerPrompt from "@/components/MakerPrompt";
@@ -44,7 +45,7 @@ export default async function MakerPage({ params }) {
       </nav>
 
       <header className={d.hero}>
-        <BotIcon bot={{ name: m.name, logo: m.logo, mono: m.name.slice(0, 2), tint: "#14305a" }} size={84} />
+        <BotIcon bot={{ name: m.name, logo: m.logo, mono: m.name.slice(0, 2), tint: "#26364d" }} size={84} />
         <div>
           <h1 dir="auto">{m.name}</h1>
           <p>{m.free}</p>
@@ -83,13 +84,13 @@ export default async function MakerPage({ params }) {
         <div className={d.grid}>
           {similar.map((x) => (
             <Link key={x.slug} href={x.href} className={d.tool}>
-              <BotIcon bot={{ name: x.name, logo: x.logo, mono: x.name.slice(0, 2), tint: "#14305a" }} size={40} />
+              <BotIcon bot={{ name: x.name, logo: x.logo, mono: x.name.slice(0, 2), tint: "#26364d" }} size={40} />
               <span><b dir="auto">{x.name}</b><small>{x.free}</small></span>
             </Link>
           ))}
         </div>
       </section>
-      <p className={d.note}>معلومات الحد المجاني من مقالات منشورة في 2026 وممكن تتغير. اتأكد من الموقع الرسمي قبل ما تعتمد عليها. الاسم والشعار علامات تجارية لأصحابها والصفحة تعريفية.</p>
+      <p className={d.note}>معلومات الحد المجاني والأسعار اتراجعت في {MAKERS_CHECKED} من مقالات منشورة والمواقع الرسمية، وممكن تتغير. اتأكد من الموقع الرسمي قبل ما تعتمد عليها. الاسم والشعار علامات تجارية لأصحابها والصفحة تعريفية.</p>
     </div>
   );
 }

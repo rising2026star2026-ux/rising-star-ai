@@ -7,7 +7,7 @@
 }
 .p_facebook { background: #1877f2; }
 .p_instagram { background: linear-gradient(45deg, #f9a825, #e1306c 55%, #833ab4); }
-.p_tiktok { background: #0a1424; box-shadow: inset -2px 0 0 #25f4ee, inset 2px 0 0 #fe2c55; }
+.p_tiktok { background: #101b30; box-shadow: inset -2px 0 0 #25f4ee, inset 2px 0 0 #fe2c55; }
 .p_whatsapp { background: #25d366; }
 .count { text-align: end; color: var(--faint); font-size: var(--fs-xs); margin-top: 4px; font-variant-numeric: tabular-nums; }
 
@@ -46,7 +46,7 @@
 .more { background: none; border: 0; padding: 0 16px 6px; color: var(--muted); font: inherit; font-size: var(--fs-md); font-weight: 700; cursor: pointer; }
 .postImg { display: block; width: 100%; max-height: 520px; object-fit: cover; margin-top: 8px; background: #f2f4f7; }
 
-.reactBar { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-bottom: 1px solid rgba(10, 20, 36, 0.07); font-size: var(--fs-md); color: var(--muted); }
+.reactBar { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-bottom: 1px solid rgba(16, 27, 48, 0.07); font-size: var(--fs-md); color: var(--muted); }
 .reactIcons { display: inline-flex; }
 .reactIcons i { font-style: normal; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 2px #fff; font-size: var(--fs-base); }
 .reactIcons i + i { margin-inline-start: -6px; }
@@ -80,7 +80,7 @@
 @keyframes typing { 0%, 60%, 100% { transform: translateY(0); opacity: 0.5; } 30% { transform: translateY(-4px); opacity: 1; } }
 .skip {
   display: flex; align-items: center; justify-content: center; gap: 6px; width: calc(100% - 32px); margin: 8px 16px 16px;
-  padding: 11px; border-radius: var(--r-md); border: 1.5px dashed rgba(10, 20, 36, 0.18); background: none; cursor: pointer;
+  padding: 11px; border-radius: var(--r-md); border: 1.5px dashed rgba(16, 27, 48, 0.18); background: none; cursor: pointer;
   font: inherit; font-size: var(--fs-md); font-weight: 700; color: var(--ink);
 }
 .skip:hover { border-color: var(--ink); }

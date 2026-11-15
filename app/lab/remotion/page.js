@@ -4,6 +4,7 @@ import d from "@/components/directory.module.css";
 
 export const metadata = {
   title: "تجربة ريلز Remotion",
+  description: "تجربة فيديو ريلز قصير لإعلان منتجك.",
   robots: { index: false, follow: false },
 };
 

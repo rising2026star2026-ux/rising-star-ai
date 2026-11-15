@@ -137,6 +137,7 @@ async function handlePost(req) {
       compNote: market.compNote,
       apps: market.apps,
       queries: market.queries,
+      gatheredAt: new Date().toISOString(),
     });
   }
 
