@@ -27,7 +27,7 @@ function Catalog({ cat, onCat }) {
         <button role="tab" aria-selected={cat === "all"} className={`chip ${cat === "all" ? "active" : ""}`} onClick={() => onCat("all")}>
           الكل <small>{tools.length}</small>
         </button>
-        {categories.map((c) => (
+        {categories.filter((c) => COUNTS[c.id]).map((c) => (
           <button key={c.id} role="tab" aria-selected={cat === c.id} className={`chip ${cat === c.id ? "active" : ""}`} onClick={() => onCat(c.id)}>
             <Glyph name={CATEGORY_GLYPH[c.id]} size={16} /> {c.name} <small>{COUNTS[c.id]}</small>
           </button>

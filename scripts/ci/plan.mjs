@@ -1,6 +1,7 @@
 // خطة التجارب: الصفحات والتجارب الفعلية اللي check.mjs بيشغلها
 import fs from "node:fs/promises";
 import path from "node:path";
+import { isListed } from "../../lib/tools.js";
 
 const FIX = path.join(path.dirname(new URL(import.meta.url).pathname), "fixtures");
 const post = async (BASE, route, body) => {
@@ -98,7 +99,7 @@ const SPACE_LAB = async ({ page, note, FIXDIR, save }) => {
   await save("space-lab", out);
 };
 
-export const CHECKS = [
+const ALL_CHECKS = [
   { name: "home", path: "/", max: 4 },
   { name: "seller", path: "/seller", max: 5 },
   {
@@ -331,7 +332,7 @@ export const API_CHECKS_FIRST = [
   },
 ];
 
-export const API_CHECKS = [
+const ALL_API_CHECKS = [
   {
     name: "chat-research",
     async run({ BASE }) {
@@ -404,3 +405,10 @@ export const API_CHECKS = [
     },
   },
 ];
+
+// Rising Business (2026-11-15): الأقسام اللي اتشالت (العقاري، الأكاديمي، شغل الذكاء الاصطناعي، الشات العام) ما بتتجربش
+const REMOVED = /^\/(realestate|research|projects|learn|flows?|tasks?|agents|library|global-tools|ai|creators|news|subscriptions|scam-check|my-tools|chat|models|program|compare|history|map)(\/|$|\?)/;
+const REMOVED_API = new Set(["chat-research", "chat-long-doc", "chat-summarize-long"]);
+const toolGone = (p) => /^\/tool\//.test(p) && !isListed(p.split("/")[2]);
+export const CHECKS = ALL_CHECKS.filter((c) => !REMOVED.test(c.path || "") && !toolGone(c.path || ""));
+export const API_CHECKS = ALL_API_CHECKS.filter((c) => !REMOVED_API.has(c.name));

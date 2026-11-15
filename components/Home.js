@@ -1,5 +1,5 @@
 "use client";
-// الرئيسية: شكل بسيط. الاسم وكروت الأقسام بس، وكل قسم يفتح قايمته وأدواته.
+// الرئيسية: شكل بسيط. الاسم وكارت قسم الأعمال (الشكل الجديد في المرحلة 2 من Rising Business).
 import Link from "next/link";
 import { SECTIONS, ITEMS, sectionHome } from "@/lib/sections";
 import { tools } from "@/lib/tools";
@@ -22,7 +22,7 @@ export default function Home() {
           <div className={s.brand}>
             <span className={s.mark}><StarMark size={64} /></span>
             <h1 dir="ltr"><span>Rising</span>{" "}<span>Star<em>Ai</em></span></h1>
-            <p>اختار مجالك وادخل على أدواته. {tools.length} أداة بالعربي.</p>
+            <p>مساحة عمل لأصحاب الأنشطة التجارية: تسويق وبيع ودراسة جدوى. {tools.length} أداة بالعربي.</p>
           </div>
 
           <nav className={sc.hub} aria-label="الأقسام">
@@ -45,7 +45,6 @@ export default function Home() {
           <p className={sc.hubFoot}>
             <Link href="/plans">الباقات</Link>
             <Link href="/support">الدعم</Link>
-            <Link href="/map">خريطة الموقع</Link>
           </p>
         </div>
       </section>

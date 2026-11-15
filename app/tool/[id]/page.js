@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { tools, getTool, getCategory, isListed } from "@/lib/tools";
 import { getContent } from "@/lib/content";
 import ToolPitch from "@/components/ToolPitch";
@@ -81,6 +81,7 @@ function jsonLd(tool, cat, content) {
 export default async function ToolPage({ params }) {
   const { id } = await params;
   const tool = isListed(id) ? getTool(id) : null;
+  if (!tool && getTool(id)) redirect("/tools"); // أداة اتشالت مع إعادة الهيكلة
   if (!tool) notFound();
   const cat = getCategory(tool.cat);
   const content = getContent(tool.id);

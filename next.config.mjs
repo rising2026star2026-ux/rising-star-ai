@@ -14,6 +14,17 @@ const SECURITY_HEADERS = [
   { key: "Content-Security-Policy", value: "frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests" },
 ];
 
+// Rising Business (2026-11-15): الأقسام اللي اتشالت. روابطها القديمة بتروح للرئيسية بدل صفحة خطأ.
+const REMOVED = [
+  "realestate", "research", "projects", "learn", "flows", "flow", "tasks", "task", "agents", "library",
+  "global-tools", "ai", "creators", "news", "subscriptions", "scam-check", "my-tools",
+  "chat", "models", "program", "compare", "history", "map",
+];
+const REDIRECTS = REMOVED.flatMap((p) => [
+  { source: `/${p}`, destination: "/", permanent: true },
+  { source: `/${p}/:path*`, destination: "/", permanent: true },
+]);
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // msedge-tts بيعتمد على ws، وتجميعها جوه Next بيبوّظ (b.mask is not a function). بنسيبهم برّه الـbundle
@@ -21,6 +32,9 @@ const nextConfig = {
   // ما نعلنش إن الموقع Next.js، وما ننشرش الكود الأصلي للمتصفح (source maps)
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
+  async redirects() {
+    return [...REDIRECTS, { source: "/s/:id(realestate|academic|aiwork|chat)", destination: "/", permanent: true }];
+  },
   async headers() {
     return [{ source: "/:path*", headers: SECURITY_HEADERS }];
   },

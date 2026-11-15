@@ -9,51 +9,11 @@ import { SETTINGS, DEFAULT_SETTINGS } from "@/lib/settings";
 import { useStored, read } from "@/lib/store";
 import ToolIcon from "./ToolIcon";
 import StarMark from "./StarMark";
-import BotIcon from "./BotIcon";
-import { RES_CATS } from "@/lib/resources";
-import { BOTS } from "@/lib/bots";
-import { SECTIONS, ITEMS, itemHref, sectionHome } from "@/lib/sections";
+import { SECTIONS, sectionHome } from "@/lib/sections";
 import useSection from "./useSection";
 
 const I = { viewBox: "0 0 24 24", width: 20, height: 20, fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true };
 
-// روابط اللوحة الجانبية
-const NAV = [
-  { href: "/", label: "الرئيسية", exact: true, icon: <svg {...I}><path d="M3.5 10.5L12 3.5l8.5 7" /><path d="M5.5 9.5V20h13V9.5" /></svg> },
-  { href: "/chat", label: "الشات", icon: <svg {...I}><path d="M20.5 11.5a8.3 8.3 0 01-8.9 8.3L3.5 21l1.1-3.5A8.3 8.3 0 1120.5 11.5z" /></svg> },
-  { href: "/projects", label: "المشاريع", match: ["/projects"], icon: <svg {...I}><path d="M3.5 7a2 2 0 012-2h4l2 2h7a2 2 0 012 2v8.5a2 2 0 01-2 2h-13a2 2 0 01-2-2z" /><path d="M8.5 13.5h7M12 10v7" /></svg> },
-  { href: "/seller", label: "ستوديو البيّاع", tone: "seller", match: ["/seller", "/seller/agent", "/market-check", "/test-ad", "/photo-ad", "/voice-post", "/catalog", "/amazon"], icon: <svg {...I}><path d="M4 9.5l1.6-4.2A1.5 1.5 0 017 4.3h10a1.5 1.5 0 011.4 1l1.6 4.2" /><path d="M4 9.5a2.7 2.7 0 005.3 0 2.7 2.7 0 005.4 0 2.7 2.7 0 005.3 0" /><path d="M5.5 12.5V19a1 1 0 001 1h11a1 1 0 001-1v-6.5M10 20v-4.5h4V20" /></svg> },
-  { href: "/models", label: "الموديلات والبرامج", icon: <svg {...I}><rect x="3.5" y="3.5" width="7" height="7" rx="2" /><rect x="13.5" y="3.5" width="7" height="7" rx="2" /><rect x="3.5" y="13.5" width="7" height="7" rx="2" /><path d="M17 13.2l1 2.2 2.3.3-1.7 1.6.4 2.3-2-1.1-2 1.1.4-2.3-1.7-1.6 2.3-.3z" /></svg> },
-  { href: "/compare", label: "مقارنة الموديلات", match: ["/compare"], icon: <svg {...I}><rect x="3.5" y="4.5" width="7" height="15" rx="2" /><rect x="13.5" y="4.5" width="7" height="15" rx="2" /><path d="M7 9h.01M17 9h.01M5.5 13h3M15.5 13h3" /></svg> },
-  { href: "/research", label: "الباحث الأكاديمي", match: ["/research"], icon: <svg {...I}><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 1 4 17.5z" /><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 0 1.5-1.5z" /></svg> },
-  { href: "/feasibility", label: "الباحث التجاري", match: ["/feasibility"], icon: <svg {...I}><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" /></svg> },
-  { href: "/realestate", label: "الباحث العقاري", match: ["/realestate"], icon: <svg {...I}><path d="M3 11l9-7 9 7M5 9.5V20h14V9.5M10 20v-6h4v6" /></svg> },
-  { href: "/my-tools", label: "أدواتي", match: ["/my-tools"], icon: <svg {...I}><rect x="3.5" y="3.5" width="7" height="7" rx="2" /><rect x="13.5" y="3.5" width="7" height="7" rx="2" /><rect x="3.5" y="13.5" width="7" height="7" rx="2" /><path d="M17 13.5v7M13.5 17h7" /></svg> },
-  { href: "/brand", label: "هوية نشاطي", match: ["/brand"], icon: <svg {...I}><circle cx="12" cy="9" r="4.5" /><path d="M4.5 20.5c1-3.6 3.8-5.5 7.5-5.5s6.5 1.9 7.5 5.5M9.5 9h5" /></svg> },
-  { href: "/tools", label: "كل الأدوات", match: ["/tools", "/tool/"], icon: <svg {...I}><path d="M14.5 6.5l3-3 3 3-3 3zM4 20l9-9M3.5 7.5h6M6.5 4.5v6M14 17.5h6.5" /></svg> },
-  { href: "/maker", label: "صانع الصور والفيديو", match: ["/maker"], icon: <svg {...I}><rect x="3.5" y="4.5" width="17" height="15" rx="3" /><circle cx="9" cy="10" r="1.7" /><path d="M20.5 16l-5-4.5L8 19" /></svg> },
-  { href: "/agents", label: "الوكلاء", match: ["/agents"], icon: <svg {...I}><rect x="5" y="8" width="14" height="11" rx="3" /><path d="M12 4.5V8M9.5 13h.01M14.5 13h.01M9.5 16h5" /><circle cx="12" cy="4" r="1" /></svg> },
-  { href: "/library", label: "مكتبة الأدوات", match: ["/library"], icon: <svg {...I}><path d="M4 19.5V5a1.5 1.5 0 011.5-1.5H8V19.5M8 3.5h3.5v16H8M14 4.6l3.2-.8 3.3 15.4-3.2.8z" /><path d="M3 19.5h18" /></svg> },
-  { href: "/prompts", label: "مكتبة البرومبتات", match: ["/prompts"], icon: <svg {...I}><path d="M5 5.5h14a1.5 1.5 0 011.5 1.5v8a1.5 1.5 0 01-1.5 1.5h-7l-4.5 3.5V16.5H5A1.5 1.5 0 013.5 15V7A1.5 1.5 0 015 5.5z" /><path d="M8 9.5h8M8 12.5h5" /></svg> },
-  { href: "/resources", label: "مكتبة الموارد", folder: "res", match: ["/resources"], icon: <svg {...I}><path d="M3.5 7.5a2 2 0 012-2h4l2 2h7a2 2 0 012 2v8a2 2 0 01-2 2h-13a2 2 0 01-2-2z" /><path d="M3.5 10.5h17" /></svg> },
-  { href: "/global-tools", label: "أدوات عالمية", match: ["/global-tools", "/ai/"], icon: <svg {...I}><circle cx="12" cy="12" r="8.5" /><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z" /></svg> },
-  { href: "/creators", label: "صناع المحتوى", match: ["/creators"], icon: <svg {...I}><circle cx="9" cy="8.5" r="3.2" /><path d="M3.5 19.5c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5" /><path d="M16 5.6a3 3 0 010 5.8M17.5 14.7c1.6.6 2.7 2.2 3 4.8" /></svg> },
-  { href: "/tasks", label: "أداة لأي مهمة", match: ["/tasks", "/task/"], icon: <svg {...I}><path d="M9 11l3 3 8-8" /><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9" /></svg> },
-  { href: "/learn", label: "تعلّم الذكاء الاصطناعي", tone: "learn", match: ["/learn"], icon: <svg {...I}><path d="M3 9l9-4.5L21 9l-9 4.5z" /><path d="M7 11.2v4.3c0 1.2 2.2 2.5 5 2.5s5-1.3 5-2.5v-4.3M21 9v5.5" /></svg> },
-  { href: "/news", label: "جديد الذكاء الاصطناعي", tone: "news", match: ["/news"], icon: <svg {...I}><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z" /></svg> },
-  { href: "/flows", label: "المهام الكاملة", match: ["/flows", "/flow/"], icon: <svg {...I}><rect x="3" y="4" width="7" height="5" rx="1.5" /><rect x="14" y="15" width="7" height="5" rx="1.5" /><path d="M6.5 9v3.5a2 2 0 002 2h7v.5" /></svg> },
-  { href: "/realestate/chat", label: "المستشار العقاري", match: ["/realestate/chat"], icon: <svg {...I}><path d="M20.5 11.5a8.3 8.3 0 01-8.9 8.3L3.5 21l1.1-3.5A8.3 8.3 0 1120.5 11.5z" /></svg> },
-  { href: "/prompts/studio", label: "استوديو البرومبتات", match: ["/prompts/studio"], icon: <svg {...I}><path d="M12 3.5l1.8 4.7 4.7 1.8-4.7 1.8L12 16.5l-1.8-4.7L5.5 10l4.7-1.8z" /><path d="M18 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" /></svg> },
-  { href: "/history", label: "السجل", icon: <svg {...I}><circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" /></svg> },
-  { href: "/subscriptions", label: "مقارن الاشتراكات", match: ["/subscriptions", "/scam-check"], icon: <svg {...I}><path d="M12 3.5l7 3v5c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9v-5z" /><path d="M9 12l2.2 2.2L15.5 10" /></svg> },
-  { href: "/map", label: "خريطة الموقع", icon: <svg {...I}><path d="M9 4.5L3.5 6.5v13L9 17.5l6 2 5.5-2v-13L15 6.5z" /><path d="M9 4.5v13M15 6.5v13" /></svg> },
-  { href: "/support", label: "الدعم", icon: <svg {...I}><path d="M4 13v-1a8 8 0 0116 0v1" /><rect x="3" y="13" width="4" height="6" rx="1.5" /><rect x="17" y="13" width="4" height="6" rx="1.5" /><path d="M19 19c0 1.4-1.6 2.5-4 2.5h-2" /></svg> },
-  { href: "/plans", label: "الباقات", icon: <svg {...I}><path d="M4 8l4 3.5L12 5l4 6.5L20 8l-1.5 10h-13z" /></svg> },
-];
-
-const SIDE_BOTS = ["claude-opus", "gpt-astra", "gemini-pro", "grok", "deepseek", "gemini-direct"]
-  .map((k) => BOTS.find((b) => b.key === k))
-  .filter(Boolean);
 
 export default function Chrome() {
   const [palette, setPalette] = useState(false);
@@ -101,11 +61,6 @@ export default function Chrome() {
             <span>ابحث عن أداة</span>
             <kbd>Ctrl K</kbd>
           </button>
-          <Link href="/history" className="icon-btn history-link" title="السجل" aria-label="السجل">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" />
-            </svg>
-          </Link>
           <button className="icon-btn" onClick={() => setPanel(true)} title="لوحة التحكم" aria-label="لوحة التحكم">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M4 7h10M18 7h2M4 17h2M10 17h10" /><circle cx="16" cy="7" r="2" /><circle cx="8" cy="17" r="2" />
@@ -133,9 +88,7 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
     return () => document.body.classList.remove("side-open");
   }, [open]);
 
-  const { section, current } = useSection();
-  const [folder, setFolder] = useStored("side-res", false);
-  const folderOpen = !!folder || pathname.startsWith("/resources/");
+  const { section } = useSection();
 
   return (
     <>
@@ -152,13 +105,8 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
           <button className="icon-btn side-close" onClick={onClose} aria-label="اقفل القائمة">✕</button>
         </div>
 
-        {section && section.id !== "chat" ? (
+        {section ? (
           <Link href={`/s/${section.id}?new=1`} className="side-new" title="محادثة جديدة" onClick={() => window.dispatchEvent(new Event("rs-new-section-chat"))} style={{ "--sec": section.color }}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
-            <span className="side-label">محادثة جديدة</span>
-          </Link>
-        ) : section ? (
-          <Link href="/chat?new=1" className="side-new" title="محادثة جديدة" onClick={() => window.dispatchEvent(new Event("rs-new-chat"))}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
             <span className="side-label">محادثة جديدة</span>
           </Link>
@@ -171,75 +119,25 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
               <span className="side-label"><b>{section.name}</b><small>{section.tagline}</small></span>
             </div>
             <nav className="side-nav" style={{ "--sec": section.color }}>
-              {section.id !== "chat" && (
-                <Link href={`/s/${section.id}`} className={`side-link${pathname === `/s/${section.id}` ? " on" : ""}`} title={section.chatLabel || `شات ${section.name}`} aria-current={pathname === `/s/${section.id}` ? "page" : undefined}>
-                  <svg {...I}><path d="M21 11.5a8.4 8.4 0 01-9 8.4L3 21l1.1-3.6A8.4 8.4 0 1121 11.5z" /></svg>
-                  <span className="side-label">{section.chatLabel || `شات ${section.name}`}</span>
-                </Link>
-              )}
-              {/* أدوات الأقسام ومحادثاتها بقت كروت جوه صفحة القسم نفسها؛ الشات العام بس لسه بيعرض أدواته هنا */}
-              {section.id === "chat" && section.items.map((h) => {
-                const n = NAV.find((x) => x.href === h);
-                if (!n) return null;
-                if (n.folder) return (
-                  <div key={h} className="side-folder">
-                    <div className="side-folder-row">
-                      <Link href={itemHref(h, section.id)} className={`side-link${pathname === h ? " on" : ""}`} title={ITEMS[h].label}>
-                        {n.icon}
-                        <span className="side-label">{ITEMS[h].label}</span>
-                      </Link>
-                      <button type="button" className="side-chev side-label" onClick={() => setFolder(!folderOpen)} aria-expanded={folderOpen} aria-label={folderOpen ? "اقفل الأقسام" : "افتح الأقسام"}>
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ transform: folderOpen ? "rotate(180deg)" : "none" }}><path d="M6 9l6 6 6-6" /></svg>
-                      </button>
-                    </div>
-                    {folderOpen && (
-                      <div className="side-sub">
-                        {RES_CATS.map((c) => (
-                          <Link key={c.id} href={`/resources/${c.id}`} className={`side-link${pathname === `/resources/${c.id}` ? " on" : ""}`} title={c.name}>
-                            <span aria-hidden="true">{c.icon}</span>
-                            <span className="side-label">{c.name}</span>
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                );
-                return (
-                  <Link key={h} href={itemHref(h, section.id)} className={`side-link${current === h ? " on" : ""}`} title={ITEMS[h].label} aria-current={current === h ? "page" : undefined}>
-                    {n.icon}
-                    <span className="side-label">{ITEMS[h].label}</span>
-                  </Link>
-                );
-              })}
+              <Link href={`/s/${section.id}`} className={`side-link${pathname === `/s/${section.id}` ? " on" : ""}`} title={section.chatLabel || `شات ${section.name}`} aria-current={pathname === `/s/${section.id}` ? "page" : undefined}>
+                <svg {...I}><path d="M21 11.5a8.4 8.4 0 01-9 8.4L3 21l1.1-3.6A8.4 8.4 0 1121 11.5z" /></svg>
+                <span className="side-label">{section.chatLabel || `شات ${section.name}`}</span>
+              </Link>
               <button type="button" className="side-link" onClick={onSearch} title="ابحث عن أداة">
                 <svg {...I}><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></svg>
                 <span className="side-label">ابحث عن أداة</span>
               </button>
             </nav>
 
-            {section.id === "chat" && (
-              <>
-                <div className="side-sec side-label">اتكلم مع</div>
-                <nav className="side-nav side-bots">
-                  {SIDE_BOTS.map((b) => (
-                    <Link key={b.key} href={`/chat?bot=${b.key}`} className="side-link" title={b.name}>
-                      <BotIcon bot={b} size={22} />
-                      <span className="side-label" dir="auto">{b.name}</span>
-                    </Link>
-                  ))}
-                </nav>
-              </>
-            )}
-
-            <div className="side-sec side-label">انتقل لقسم تاني</div>
-            <nav className="side-nav side-switch">
+            {SECTIONS.length > 1 && <div className="side-sec side-label">انتقل لقسم تاني</div>}
+            {SECTIONS.length > 1 && <nav className="side-nav side-switch">
               {SECTIONS.filter((x) => x.id !== section.id).map((x) => (
                 <Link key={x.id} href={sectionHome(x.id)} className="side-link" title={x.name} style={{ "--sec": x.color }}>
                   <svg {...I}><path d={x.icon} /></svg>
                   <span className="side-label">{x.name}</span>
                 </Link>
               ))}
-            </nav>
+            </nav>}
           </>
         ) : (
           <>
@@ -322,7 +220,7 @@ function Palette({ onClose }) {
               </button>
             </li>
           ))}
-          {!list.length && <li className="palette-empty">مفيش أداة بالكلام ده. جرّب كلمة زي: إعلان، ترجمة، سيرة ذاتية.</li>}
+          {!list.length && <li className="palette-empty">مفيش أداة بالكلام ده. جرّب كلمة زي: إعلان، وصف منتج، لوجو.</li>}
         </ul>
         <div className="palette-foot">↑↓ للتنقل • Enter للفتح • Esc للإغلاق</div>
       </div>
