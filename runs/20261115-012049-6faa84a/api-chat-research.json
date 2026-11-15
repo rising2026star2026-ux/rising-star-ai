@@ -1,9 +1,0 @@
-{
-  "ok": false,
-  "notes": [
-    "status 200 search=empty sources=0 model=gemini/gemini-flash-lite-latest",
-    "why: gemini-flash-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate- | gemini-flash-lite-latest: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate- | ddg: ok but 0 resul",
-    "domains: ",
-    "أنا مش قادر أتأكد من آخر المعلومات دلوقتي لعدم توفر نتايج بحث حديثة، لكن هعرض لك متوسط الأسعار في السوق بحسب آخر البيانات الرسمية المسجلة قبل فترة التحديث الأخيرة.\n\n## متوسط سعر الدولار\n* سجل سعر الدولار في البنك المركزي المصري تقريباً **48.50 جنيه للشراء** و**48.64 جنيه للبيع**.\n* تختلف الأسعار بفروق طفيفة لا تتعدى **قروش معدودة** بين البنوك الحكومية مثل البنك الأهلي وبنك مصر، والبنوك الخاصة مثل "
-  ]
-}
