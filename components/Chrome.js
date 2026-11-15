@@ -123,6 +123,10 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
         </nav>
 
         <div className="side-foot">
+          <Link href="/account" className={`side-link${pathname.startsWith("/account") ? " on" : ""}`} title="حسابي">
+            <svg {...I}><circle cx="12" cy="8.5" r="3.5" /><path d="M5 19.5c1.2-3.3 3.9-5 7-5s5.8 1.7 7 5" /></svg>
+            <span className="side-label">حسابي</span>
+          </Link>
           <Link href="/support" className={`side-link${pathname.startsWith("/support") ? " on" : ""}`} title="الدعم">
             <svg {...I}><path d="M4 13v-1a8 8 0 0116 0v1" /><rect x="3" y="13" width="4" height="6" rx="1.5" /><rect x="17" y="13" width="4" height="6" rx="1.5" /></svg>
             <span className="side-label">الدعم</span>

@@ -1,0 +1,19 @@
+.card { max-width: 560px; margin: 16px auto 0; padding: 20px; border-radius: var(--r-lg); background: #fff; border: 1px solid var(--hairline-strong); display: grid; gap: 10px; }
+.card h2 { margin: 0; font-size: var(--fs-xl); color: var(--ink); }
+.note { margin: 0; font-size: var(--fs-sm); color: var(--muted); line-height: 1.8; text-align: center; }
+.card .note { text-align: start; }
+.note a { color: var(--accent); font-weight: 700; }
+.tabs { display: flex; gap: 6px; }
+.tabs button { flex: 1; padding: 9px; border-radius: var(--r-md); border: 1px solid var(--hairline-strong); background: var(--surface-2); font: inherit; font-weight: 700; color: var(--muted); cursor: pointer; }
+.tabs button[aria-selected="true"] { background: var(--night); color: var(--yellow); border-color: var(--night); }
+.form { display: grid; gap: 10px; }
+.form label { display: grid; gap: 4px; font-size: var(--fs-sm); font-weight: 600; color: var(--ink); }
+.form input { padding: 11px 12px; border-radius: var(--r-md); border: 1px solid var(--hairline-strong); background: var(--field); font: inherit; font-size: var(--fs-md); }
+.form input:focus-visible { outline: 2px solid var(--yellow-deep); outline-offset: 1px; }
+.err { margin: 0; padding: 8px 12px; border-radius: var(--r-md); background: rgba(220, 38, 38, 0.08); color: #b42318; font-size: var(--fs-sm); }
+.primary, .ghost, .danger { justify-self: start; padding: 10px 20px; border-radius: 999px; font: inherit; font-weight: 700; cursor: pointer; }
+.primary { background: var(--yellow); color: var(--night); border: 0; }
+.primary:disabled { opacity: 0.6; cursor: default; }
+.ghost { background: none; border: 1px solid var(--hairline-strong); color: var(--ink); }
+.danger { background: none; border: 1px solid #b42318; color: #b42318; }
+.list { margin: 0; padding-inline-start: 20px; font-size: var(--fs-sm); color: var(--ink); line-height: 1.9; }

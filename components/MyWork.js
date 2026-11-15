@@ -123,7 +123,7 @@ export default function MyWork() {
 
       <section className={s.card} aria-labelledby="mw-data">
         <div className={s.head}><h2 id="mw-data">بياناتك</h2></div>
-        <p className={s.empty}>كل بياناتك محفوظة على جهازك ده بس. تقدر تنزّل نسخة منها أو تمسحها.</p>
+        <p className={s.empty}>بياناتك محفوظة على جهازك ده. تقدر تنزّل نسخة منها، أو تمسحها، أو تنقلها لـ<Link href="/account">حسابك</Link>.</p>
         <div className={s.dataActs}>
           <button type="button" className={s.go} onClick={downloadData}>نزّل نسخة من بياناتك</button>
           <button type="button" className={s.del} onClick={wipeData}>امسح كل بياناتك من الجهاز</button>
