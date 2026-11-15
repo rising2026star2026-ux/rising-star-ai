@@ -15,7 +15,7 @@ const enabled = () => dbEnabled() && authEnabled();
 
 export async function GET(req) {
   if (!enabled()) return Response.json({ enabled: false });
-  const user = await currentUser();
+  const user = await currentUser(req);
   if (!user) return Response.json({ enabled: true, user: null });
   try {
     const sql = await getSql();
@@ -31,7 +31,7 @@ export async function GET(req) {
 export async function POST(req) {
   if (!enabled()) return fail("الحسابات لسه مش متفعّلة.", 503);
   if (tooMany(clientIp(req))) return fail("وصلت للحد المسموح الساعة دي. جرّب بعد شوية.", 429);
-  const user = await currentUser();
+  const user = await currentUser(req);
   if (!user) return fail("سجّل دخولك الأول.", 401);
   const raw = await req.text();
   if (raw.length > MAX_BODY) return fail("البيانات أكبر من المسموح.", 413);

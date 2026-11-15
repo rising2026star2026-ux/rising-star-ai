@@ -8,7 +8,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@neondatabase/auth": "latest",
     "@neondatabase/serverless": "^1.0.0",
     "@remotion/media": "4.0.491",
     "@remotion/player": "4.0.491",
