@@ -10,12 +10,15 @@ import { enterSends } from "@/lib/keys";
 import { getChat, newChatId, saveChat, setActive } from "@/lib/secchats";
 import { toast } from "@/lib/store";
 import s from "./sectionchat.module.css";
+import { MODES, MODE_BY_ID, DEFAULT_MODE } from "@/lib/bizassistant";
+import { read as readStore, write as writeStore } from "@/lib/store";
 
 const svg = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true };
 const Mic = () => <svg {...svg} width="18" height="18" strokeWidth="1.8"><rect x="9" y="3" width="6" height="11.5" rx="3" /><path d="M5.5 11a6.5 6.5 0 0013 0M12 17.5V21" /></svg>;
 const Globe = () => <svg {...svg} width="18" height="18" strokeWidth="1.7"><circle cx="12" cy="12" r="8.5" /><path d="M3.5 12h17M12 3.5c2.8 3 2.8 14 0 17M12 3.5c-2.8 3-2.8 14 0 17" /></svg>;
 const Up = () => <svg {...svg} width="18" height="18" strokeWidth="2.2"><path d="M12 19V5M6 11l6-6 6 6" /></svg>;
 const Speaker = () => <svg {...svg} width="17" height="17" strokeWidth="1.7"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4zM16 9a4.5 4.5 0 010 6" /></svg>;
+const Save = () => <svg {...svg} width="17" height="17" strokeWidth="1.7"><path d="M6 4.5h9.5L19 8v11a.5.5 0 01-.5.5h-13A.5.5 0 015 19V5a.5.5 0 01.5-.5H6z" /><path d="M8.5 4.5v4h6v-4M8.5 19.5v-5h7v5" /></svg>;
 const Copy = () => <svg {...svg} width="17" height="17" strokeWidth="1.7"><rect x="8.5" y="8.5" width="11" height="11" rx="2.5" /><path d="M15.5 8.5V6a1.5 1.5 0 00-1.5-1.5H6A1.5 1.5 0 004.5 6v8A1.5 1.5 0 006 15.5h2.5" /></svg>;
 const Check = () => <svg {...svg} width="16" height="16" strokeWidth="2"><path d="M5 12.5l4.2 4L19 7" /></svg>;
 const Search = () => <svg {...svg} width="15" height="15" strokeWidth="1.9"><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></svg>;
@@ -80,6 +83,10 @@ export default function SectionChat({ section, name, tagline, headline, sub, pla
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [web, setWeb] = useState(false);
+  const [mode, setModeState] = useState(DEFAULT_MODE);
+  useEffect(() => { const m = readStore("assistant-mode", DEFAULT_MODE); if (MODE_BY_ID[m]) setModeState(m); }, []);
+  const setMode = (m) => { setModeState(m); writeStore("assistant-mode", m); };
+  const modeInfo = MODE_BY_ID[mode] || MODE_BY_ID[DEFAULT_MODE];
   const [listening, setListening] = useState(false);
   const [speaking, setSpeaking] = useState(-1);
   const [canVoice, setCanVoice] = useState(false);
@@ -167,7 +174,7 @@ export default function SectionChat({ section, name, tagline, headline, sub, pla
       setMsgs((m) => m.map((x, i) => (i === m.length - 1 ? { ...x, content: out, sources: srcs, note, ...(meta || {}), pending } : x)));
     };
     try {
-      const res = await fetch("/api/section-chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ section, search, messages: history.map(({ role, content }) => ({ role, content })) }), signal: ctl.signal });
+      const res = await fetch("/api/section-chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ section, search, mode, brand: readStore("brand", null), compare: (readStore("compare-saved", [])[0] || {}).list || null, study: readStore("feasibility-last", null), messages: history.map(({ role, content }) => ({ role, content })) }), signal: ctl.signal });
       if (!res.ok) {
         const d = await res.json().catch(() => ({}));
         throw new Error(d.error || "حصل خطأ، جرّب تاني.");
@@ -247,6 +254,16 @@ export default function SectionChat({ section, name, tagline, headline, sub, pla
     rec.start();
   }
 
+  // حفظ رد المساعد في مشروعاتي (على الجهاز، آخر 30)
+  function saveReply(i) {
+    const answer = msgs[i]?.content;
+    if (!answer) return;
+    const q = [...msgs.slice(0, i)].reverse().find((x) => x.role === "user")?.content || "";
+    const item = { id: Date.now().toString(36), mode, question: String(q).slice(0, 300), answer: String(answer).slice(0, 8000), at: Date.now() };
+    writeStore("assistant-saved", [item, ...readStore("assistant-saved", [])].slice(0, 30));
+    toast("اتحفظ في مشروعاتك.");
+  }
+
   async function copy(text) {
     try { await navigator.clipboard.writeText(String(text)); toast("اتنسخ."); } catch { toast("مقدرتش أنسخ، حدد النص وانسخه."); }
   }
@@ -303,6 +320,7 @@ export default function SectionChat({ section, name, tagline, headline, sub, pla
               <div className={s.acts}>
                 <button type="button" className={s.act} onClick={() => (speaking === i ? stopSpeak() : speak(m.content, i))} aria-pressed={speaking === i} aria-label={speaking === i ? "وقّف القراءة" : "اسمع الرد"} title={speaking === i ? "وقّف القراءة" : "اسمع الرد"}><Speaker /></button>
                 <button type="button" className={s.act} onClick={() => copy(m.content)} aria-label="انسخ الرد" title="انسخ الرد"><Copy /></button>
+                <button type="button" className={s.act} onClick={() => saveReply(i)} aria-label="احفظ في مشروعاتي" title="احفظ في مشروعاتي"><Save /></button>
               </div>
             )}
           </>
@@ -336,12 +354,15 @@ export default function SectionChat({ section, name, tagline, headline, sub, pla
           </div>
           <SectionCards section={section} rows={rows} />
           <div className={s.fill} aria-hidden="true" />
-          {starters.length > 0 && (
-            <div className={s.starters}>
-              <span>ممكن تبدأ بـ</span>
-              {starters.map((q) => <button key={q} type="button" onClick={() => send(q)}>{q}</button>)}
-            </div>
-          )}
+          <div className={s.starters} role="group" aria-label="وضع المساعد">
+            <span>وضع المساعد</span>
+            {MODES.map((m) => <button key={m.id} type="button" aria-pressed={mode === m.id} style={mode === m.id ? { background: "var(--night)", color: "var(--yellow)" } : undefined} onClick={() => setMode(m.id)}>{m.label}</button>)}
+          </div>
+          <div className={s.starters}>
+            <span>ممكن تبدأ بـ</span>
+            {modeInfo.starters.map((q) => <button key={q} type="button" onClick={() => send(q)}>{q}</button>)}
+            {modeInfo.tools.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
+          </div>
         </>
       ) : (
         <>

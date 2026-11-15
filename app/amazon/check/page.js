@@ -8,7 +8,7 @@ export const metadata = {
   title: T,
   description: D,
   alternates: { canonical: "/amazon/check" },
-  openGraph: { title: T, description: D, url: "/amazon/check", siteName: "Rising StarAi", locale: "ar_EG", type: "website" },
+  openGraph: { title: T, description: D, url: "/amazon/check", siteName: "Rising Business", locale: "ar_EG", type: "website" },
   twitter: { card: "summary", title: T, description: D },
 };
 

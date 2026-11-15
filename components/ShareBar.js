@@ -124,7 +124,7 @@ export default function ShareBar({ text, getHtml, title, compact = false }) {
   );
 }
 
-// اسم الأداة: من الخاصية، أو من عنوان الصفحة «اسم الأداة | Rising StarAi»
+// اسم الأداة: من الخاصية، أو من عنوان الصفحة «اسم الأداة | Rising Business»
 function resolveTitle(title) {
   if (title && title.trim()) return title.trim();
   if (typeof document !== "undefined" && document.title) {

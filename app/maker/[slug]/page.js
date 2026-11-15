@@ -44,7 +44,7 @@ export default async function MakerPage({ params }) {
       </nav>
 
       <header className={d.hero}>
-        <BotIcon bot={{ name: m.name, logo: m.logo, mono: m.name.slice(0, 2), tint: "#1f4dff" }} size={84} />
+        <BotIcon bot={{ name: m.name, logo: m.logo, mono: m.name.slice(0, 2), tint: "#14305a" }} size={84} />
         <div>
           <h1 dir="auto">{m.name}</h1>
           <p>{m.free}</p>
@@ -83,7 +83,7 @@ export default async function MakerPage({ params }) {
         <div className={d.grid}>
           {similar.map((x) => (
             <Link key={x.slug} href={x.href} className={d.tool}>
-              <BotIcon bot={{ name: x.name, logo: x.logo, mono: x.name.slice(0, 2), tint: "#1f4dff" }} size={40} />
+              <BotIcon bot={{ name: x.name, logo: x.logo, mono: x.name.slice(0, 2), tint: "#14305a" }} size={40} />
               <span><b dir="auto">{x.name}</b><small>{x.free}</small></span>
             </Link>
           ))}

@@ -7,10 +7,13 @@ import { tools, categories } from "@/lib/tools";
 import { norm } from "@/lib/search";
 import { useStored } from "@/lib/store";
 import ToolIcon from "./ToolIcon";
-import { Glyph, CATEGORY_GLYPH } from "@/lib/toolglyphs";
+import { Glyph } from "@/lib/toolglyphs";
+import { BIZ_GROUPS, groupOf } from "@/lib/bizgroups";
+import { TOOL_ROLES } from "@/lib/toolroles";
 
-const VALID = new Set(categories.map((c) => c.id));
-const COUNTS = Object.fromEntries(categories.map((c) => [c.id, tools.filter((t) => t.cat === c.id).length]));
+// التصنيف في الرابط: مجموعة من الـ8 (?cat=marketing)، أو تصنيف قديم (?cat=social) بيفضل شغال للروابط القديمة
+const VALID = new Set([...BIZ_GROUPS.map((g) => g.id), ...categories.map((c) => c.id)]);
+const COUNTS = Object.fromEntries(BIZ_GROUPS.map((g) => [g.id, tools.filter((t) => groupOf(t.id) === g.id).length]));
 
 function Catalog({ cat, onCat }) {
   const [filter, setFilter] = useState("");
@@ -18,7 +21,7 @@ function Catalog({ cat, onCat }) {
 
   const list = useMemo(() => {
     const q = norm(filter.trim());
-    return tools.filter((t) => (cat === "all" || t.cat === cat) && (!q || norm(`${t.name} ${t.desc}`).includes(q)));
+    return tools.filter((t) => (cat === "all" || groupOf(t.id) === cat || t.cat === cat) && (!q || norm(`${t.name} ${t.desc}`).includes(q)));
   }, [filter, cat]);
 
   return (
@@ -27,9 +30,9 @@ function Catalog({ cat, onCat }) {
         <button role="tab" aria-selected={cat === "all"} className={`chip ${cat === "all" ? "active" : ""}`} onClick={() => onCat("all")}>
           الكل <small>{tools.length}</small>
         </button>
-        {categories.filter((c) => COUNTS[c.id]).map((c) => (
-          <button key={c.id} role="tab" aria-selected={cat === c.id} className={`chip ${cat === c.id ? "active" : ""}`} onClick={() => onCat(c.id)}>
-            <Glyph name={CATEGORY_GLYPH[c.id]} size={16} /> {c.name} <small>{COUNTS[c.id]}</small>
+        {BIZ_GROUPS.filter((g) => COUNTS[g.id]).map((g) => (
+          <button key={g.id} role="tab" aria-selected={cat === g.id} className={`chip ${cat === g.id ? "active" : ""}`} onClick={() => onCat(g.id)}>
+            <Glyph name={g.glyph} size={16} /> {g.name} <small>{COUNTS[g.id]}</small>
           </button>
         ))}
       </div>
@@ -48,6 +51,7 @@ function Catalog({ cat, onCat }) {
               <div>
                 <h3>{t.name}{favs.includes(t.id) && <span className="fav-dot" aria-label="في المفضلة"> ★</span>}</h3>
                 <p>{t.desc}</p>
+                {TOOL_ROLES[t.id] && <small className="trade-line">للتاجر: {TOOL_ROLES[t.id]}</small>}
               </div>
             </Link>
           ))}

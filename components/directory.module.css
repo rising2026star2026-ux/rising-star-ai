@@ -61,7 +61,7 @@
 .crumbs { display: flex; flex-wrap: wrap; gap: 8px; color: var(--faint); font-size: var(--fs-sm); padding: 18px 0 4px; }
 .crumbs a:hover { color: var(--text); }
 .hero { position: relative; overflow: hidden; display: flex; gap: 16px; align-items: center; padding: 22px 20px; border-radius: 28px; background: var(--yellow); margin: 12px 0 14px; }
-.hero::after { content: ""; position: absolute; width: 320px; height: 320px; inset-inline-end: -120px; bottom: -170px; border-radius: 50%; background: radial-gradient(circle, rgba(31, 77, 255, 0.45), transparent 66%); pointer-events: none; }
+.hero::after { content: ""; position: absolute; width: 320px; height: 320px; inset-inline-end: -120px; bottom: -170px; border-radius: 50%; background: radial-gradient(circle, rgba(20, 48, 90, 0.45), transparent 66%); pointer-events: none; }
 .hero > * { position: relative; z-index: 1; }
 .hero h1 { margin: 0; font-family: var(--display); font-weight: 900; font-size: clamp(1.7rem, 6.5vw, 2.6rem); letter-spacing: -0.03em; line-height: 1.1; color: var(--ink); }
 .hero p { margin: 6px 0 8px; font-weight: 600; color: rgba(11, 11, 20, 0.8); font-size: var(--fs-base); line-height: 1.7; }

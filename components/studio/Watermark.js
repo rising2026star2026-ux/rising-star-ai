@@ -13,7 +13,7 @@ export default function Watermark() {
   const [files, setFiles] = useState([]);
   const [first, setFirst] = useState(null);
   const [kind, setKind] = useState("text");
-  const [text, setText] = useState("© Rising StarAi");
+  const [text, setText] = useState("© Rising Business");
   const [logo, setLogo] = useState(null);
   const [color, setColor] = useState("#ffffff");
   const [opacity, setOpacity] = useState(60);

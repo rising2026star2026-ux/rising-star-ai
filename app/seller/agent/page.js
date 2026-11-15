@@ -6,8 +6,8 @@ export const metadata = {
   title: "وكيل التاجر: مهمة كاملة من طلب واحد",
   description,
   alternates: { canonical: "/seller/agent" },
-  openGraph: { title: "وكيل التاجر | Rising StarAi", description, url: "/seller/agent", siteName: "Rising StarAi", locale: "ar_EG", type: "website" },
-  twitter: { card: "summary", title: "وكيل التاجر | Rising StarAi", description },
+  openGraph: { title: "وكيل التاجر | Rising Business", description, url: "/seller/agent", siteName: "Rising Business", locale: "ar_EG", type: "website" },
+  twitter: { card: "summary", title: "وكيل التاجر | Rising Business", description },
 };
 
 export default function SellerAgentPage() {

@@ -23,7 +23,7 @@ const deadline = (req) => (req.signal ? AbortSignal.any([req.signal, AbortSignal
 const LIMITS = { plan: rateLimiter(12), market: rateLimiter(10), listing: rateLimiter(15), posts: rateLimiter(20) };
 
 const PLAN_SYSTEM = [
-  "أنت «وكيل التاجر» على موقع Rising StarAi: مستشار تسويق مصري محترف بيخطط لمهمة تاجر قبل ما ينفذها بأدوات الموقع.",
+  "أنت «وكيل التاجر» على موقع Rising Business: مستشار تسويق مصري محترف بيخطط لمهمة تاجر قبل ما ينفذها بأدوات الموقع.",
   "الأدوات المتاحة:",
   "- market: يجيب أسعار المنافسين الحقيقية من أمازون مصر ونون وجوميا وتسوق جوجل في مصر، ويحسب السعر والمكسب.",
   "- listing: يكتب ليستنج أمازون أو نون أو جوميا (عنوان، نقاط، وصف، كلمات بحث).",

@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
   const x = SECTION_BY_ID[id];
   if (!x) return {};
   const title = `${x.name}: ${x.tagline}`;
-  return { title, description: `${x.name} في Rising StarAi: شات متخصص وأدوات ${x.items.map((h) => ITEMS[h].label).join("، ")}.`, alternates: { canonical: `/s/${id}` }, openGraph: { title, url: `/s/${id}`, siteName: "Rising StarAi", locale: "ar_EG", type: "website" } };
+  return { title, description: `${x.name} في Rising Business: شات متخصص وأدوات ${x.items.map((h) => ITEMS[h].label).join("، ")}.`, alternates: { canonical: `/s/${id}` }, openGraph: { title, url: `/s/${id}`, siteName: "Rising Business", locale: "ar_EG", type: "website" } };
 }
 
 // أول حاجة بتتفتح في القسم هي الشات. أدوات القسم ومحادثاته في القايمة الجانبية.

@@ -64,7 +64,7 @@ export default function Support() {
 
   const summary = () => {
     const mine = msgs.filter((m) => m.role === "user").map((m) => m.content).slice(-3).join(" | ");
-    return `مرحباً، محتاج مساعدة في Rising StarAi.${mine ? `\nاللي سألت عنه: ${mine}` : ""}`;
+    return `مرحباً، محتاج مساعدة في Rising Business.${mine ? `\nاللي سألت عنه: ${mine}` : ""}`;
   };
   const waHref = WA ? `https://wa.me/${WA}?text=${encodeURIComponent(summary())}` : "";
 

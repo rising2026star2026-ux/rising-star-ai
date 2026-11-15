@@ -63,6 +63,7 @@
   font: inherit; font-size: var(--fs-sm); line-height: 1.6; color: var(--soft); transition: color 0.15s var(--ease);
 }
 .starters button:last-child { border-bottom: 0; }
+.starters a { display: block; padding: 8px 4px; font-size: var(--fs-md); color: var(--accent); font-weight: 700; border-bottom: 1px solid var(--hairline); }
 .starters button:hover { color: var(--ink); }
 
 /* ---------- خانة الكتابة ---------- */

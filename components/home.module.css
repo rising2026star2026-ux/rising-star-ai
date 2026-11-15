@@ -261,7 +261,7 @@
     radial-gradient(1px 1px at 93% 41%, rgba(255, 255, 255, 0.55), transparent 70%),
     radial-gradient(1.2px 1.2px at 4% 55%, rgba(255, 255, 255, 0.6), transparent 70%),
     radial-gradient(1px 1px at 96% 62%, rgba(255, 255, 255, 0.5), transparent 70%),
-    radial-gradient(1.4px 1.4px at 53% 4%, rgba(255, 210, 31, 0.9), transparent 70%),
+    radial-gradient(1.4px 1.4px at 53% 4%, rgba(217, 176, 74, 0.9), transparent 70%),
     radial-gradient(1.2px 1.2px at 12% 72%, rgba(255, 255, 255, 0.4), transparent 70%);
 }
 /* أفق أزرق بيضوي من تحت، والنجمة طالعة منه */
@@ -269,13 +269,13 @@
   position: absolute; z-index: 0; pointer-events: none;
   left: 50%; bottom: -46%; width: 160%; height: 90%; transform: translateX(-50%);
   border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(43, 91, 255, 0.55), rgba(31, 77, 255, 0.22) 55%, transparent 100%);
+  background: radial-gradient(closest-side, rgba(201, 162, 74, 0.38), rgba(20, 48, 90, 0.22) 55%, transparent 100%);
 }
 .hero { padding-top: 30px; padding-bottom: 96px; }
 .hero::after {
   content: ""; position: absolute; z-index: 0; pointer-events: none;
   left: 50%; top: 10px; width: 420px; height: 420px; transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(255, 196, 0, 0.32), rgba(255, 196, 0, 0) 62%);
+  background: radial-gradient(circle, rgba(217, 176, 74, 0.22), rgba(217, 176, 74, 0) 62%);
 }
 
 /* --- النهار --- */
@@ -285,15 +285,15 @@
 .sky { z-index: 3; margin-top: -40px; padding-top: 70px; border-radius: 40px 40px 0 0; }
 .sky::before {
   content: ""; position: absolute; inset: 0 0 auto; height: 1px; z-index: 1;
-  background: linear-gradient(90deg, transparent, rgba(255, 210, 31, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(217, 176, 74, 0.5), transparent);
 }
 .sky + .white { z-index: 4; }
 
 /* ===== الاسم ===== */
 .brand { padding: 22px 0 30px; }
-.mark { filter: drop-shadow(0 0 28px rgba(255, 190, 0, 0.75)); }
+.mark { filter: drop-shadow(0 0 28px rgba(217, 176, 74, 0.55)); }
 .brand h1 { color: #fff; font-family: var(--wordmark); letter-spacing: -0.055em; margin-top: 10px; }
-.brand h1 em { color: #4a74ff; }
+.brand h1 em { color: #d9b04a; }
 .brand p { color: rgba(255, 255, 255, 0.82); font-weight: 600; font-size: var(--fs-lg); }
 
 /* اللحظة الوحيدة المتحركة: النجمة بتطلع من الأفق ونورها بيفتح */
@@ -309,13 +309,13 @@
 
 /* ===== صندوق السؤال: كارت أبيض ناصع وسط الليل ===== */
 .composer {
-  --text: #050510; --text-strong: #050510; --muted: #4a5063; --faint: #667085;
-  --hairline: rgba(5, 5, 16, 0.09); --hairline-strong: rgba(5, 5, 16, 0.18);
+  --text: #0a1424; --text-strong: #0a1424; --muted: #4a5063; --faint: #667085;
+  --hairline: rgba(10, 20, 36, 0.09); --hairline-strong: rgba(10, 20, 36, 0.18);
   --surface: #fff; --surface-2: #f3f4f8; --card: #fff; --field: #f6f7fa;
-  --accent: #1f4dff; --accent-soft: rgba(31, 77, 255, 0.1); --accent-line: rgba(31, 77, 255, 0.36); --on-accent: #fff;
+  --accent: #14305a; --accent-soft: rgba(20, 48, 90, 0.1); --accent-line: rgba(20, 48, 90, 0.36); --on-accent: #fff;
   color: var(--text); background: #fff;
   border: 0; border-radius: 28px;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5), 0 30px 80px -20px rgba(43, 91, 255, 0.7), 0 0 120px -30px rgba(255, 196, 0, 0.35);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5), 0 30px 80px -20px rgba(201, 162, 74, 0.45), 0 0 120px -30px rgba(217, 176, 74, 0.3);
 }
 .composer textarea { color: var(--ink); font-size: var(--fs-lg); }
 .sendBtn { background: var(--blue); box-shadow: 0 12px 26px -10px var(--blue); width: 42px; height: 42px; }
@@ -327,7 +327,7 @@
 /* ===== الاقتراحات والاختصارات على الليل ===== */
 .suggestHead > span { font-family: var(--display); font-weight: 700; font-size: var(--fs-lg); color: #fff; }
 .suggestCard { background: var(--night-2); border: 1px solid rgba(255, 255, 255, 0.09); box-shadow: none; color: #fff; }
-.suggestCard:hover { border-color: rgba(255, 210, 31, 0.6); transform: none; }
+.suggestCard:hover { border-color: rgba(217, 176, 74, 0.6); transform: none; }
 .suggestText b { font-weight: 600; }
 .suggestRow { -webkit-mask-image: linear-gradient(to left, transparent 0, #000 56px); mask-image: linear-gradient(to left, transparent 0, #000 56px); }
 .grid { gap: 8px 6px; }
@@ -347,7 +347,7 @@
 .night .allLink:hover { background: #fff; }
 
 /* ===== المجالات ===== */
-.catChip { font-weight: 600; color: var(--ink); background: #fff; border: 1.5px solid rgba(5, 5, 16, 0.12); padding: 7px 14px; }
+.catChip { font-weight: 600; color: var(--ink); background: #fff; border: 1.5px solid rgba(10, 20, 36, 0.12); padding: 7px 14px; }
 .catChip:hover { color: var(--ink); border-color: var(--ink); }
 .catChip small { color: var(--faint); }
 

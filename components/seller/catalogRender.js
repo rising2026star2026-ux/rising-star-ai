@@ -4,10 +4,10 @@
 import { DISPLAY_FONT, UI_FONT, WORD_FONT } from "@/lib/imagefile";
 
 export const THEMES = {
-  night: { name: "ليل ذهبي", bg: "#050510", bg2: "#161a3a", card: "#10132b", text: "#ffffff", muted: "rgba(255,255,255,0.68)", accent: "#ffd21f", onAccent: "#050510", price: "#ffd21f", imgBg: "#ffffff" },
-  white: { name: "أبيض أنيق", bg: "#f4f5f8", bg2: "#ffffff", card: "#ffffff", text: "#0b0b14", muted: "#5b6474", accent: "#1f4dff", onAccent: "#ffffff", price: "#0b0b14", imgBg: "#f6f7f9" },
+  night: { name: "ليل ذهبي", bg: "#0a1424", bg2: "#1a3050", card: "#10132b", text: "#ffffff", muted: "rgba(255,255,255,0.68)", accent: "#d9b04a", onAccent: "#0a1424", price: "#d9b04a", imgBg: "#ffffff" },
+  white: { name: "أبيض أنيق", bg: "#f4f5f8", bg2: "#ffffff", card: "#ffffff", text: "#0a1424", muted: "#5b6474", accent: "#14305a", onAccent: "#ffffff", price: "#0a1424", imgBg: "#f6f7f9" },
   pastel: { name: "باستيل", bg: "#fff3ea", bg2: "#ffe3d3", card: "#ffffff", text: "#3b2a22", muted: "#8a6f62", accent: "#e8735a", onAccent: "#ffffff", price: "#c2410c", imgBg: "#fff8f3" },
-  bold: { name: "جريء", bg: "#ffd21f", bg2: "#ffbf00", card: "#ffffff", text: "#050510", muted: "#4a5063", accent: "#1f4dff", onAccent: "#ffffff", price: "#1f4dff", imgBg: "#ffffff" },
+  bold: { name: "جريء", bg: "#d9b04a", bg2: "#ffbf00", card: "#ffffff", text: "#0a1424", muted: "#4a5063", accent: "#14305a", onAccent: "#ffffff", price: "#14305a", imgBg: "#ffffff" },
 };
 
 export const LAYOUTS = {
@@ -62,7 +62,7 @@ export const waLink = (phone, text) => {
 
 function footer(ctx, W, H, T, shop, page, total, fh) {
   const y = H - fh;
-  ctx.fillStyle = T.text === "#ffffff" ? "rgba(255,255,255,0.06)" : "rgba(5,5,16,0.05)";
+  ctx.fillStyle = T.text === "#ffffff" ? "rgba(255,255,255,0.06)" : "rgba(10,20,36,0.05)";
   ctx.fillRect(0, y, W, fh);
   ctx.direction = "rtl"; ctx.textBaseline = "middle";
   font(ctx, 700, Math.round(fh * 0.3), "display");
@@ -70,7 +70,7 @@ function footer(ctx, W, H, T, shop, page, total, fh) {
   ctx.fillText(shop.phone ? `للطلب واتساب: ${shop.phone}` : shop.name || "", W - 50, y + fh * 0.4);
   font(ctx, 500, Math.round(fh * 0.2));
   ctx.fillStyle = T.muted;
-  ctx.fillText("اتعمل في دقيقة على Rising StarAi", W - 50, y + fh * 0.76);
+  ctx.fillText("اتعمل في دقيقة على Rising Business", W - 50, y + fh * 0.76);
   ctx.textAlign = "left";
   font(ctx, 800, Math.round(fh * 0.28), "word");
   ctx.direction = "ltr";
@@ -148,7 +148,7 @@ export function renderCover(o) {
   }
   ctx.textBaseline = "alphabetic"; ctx.fillStyle = T.muted;
   font(ctx, 600, Math.round(W * 0.026));
-  ctx.fillText("اتعمل في دقيقة على Rising StarAi", W / 2, H - H * 0.025);
+  ctx.fillText("اتعمل في دقيقة على Rising Business", W / 2, H - H * 0.025);
   return { canvas: c, links };
 }
 
@@ -264,7 +264,7 @@ export function renderHowTo(o, qr) {
     ctx.fillStyle = T.onAccent; ctx.textBaseline = "middle";
     font(ctx, 900, Math.round(bh * 0.32), "word");
     ctx.fillText(String(i + 1), bx + bw - bh * 0.5, y + bh / 2 + 2);
-    ctx.fillStyle = T.card === "#ffffff" ? "#0b0b14" : "#ffffff"; ctx.textAlign = "right";
+    ctx.fillStyle = T.card === "#ffffff" ? "#0a1424" : "#ffffff"; ctx.textAlign = "right";
     fitText(ctx, st, bw - bh * 1.3, 700, Math.round(bh * 0.28), "display");
     ctx.fillText(st, bx + bw - bh, y + bh / 2 + 2);
     ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
@@ -287,7 +287,7 @@ export function renderHowTo(o, qr) {
     const qx = (W - qs) / 2;
     ctx.fillStyle = "#fff"; rr(ctx, qx - qs * 0.06, y - qs * 0.06, qs * 1.12, qs * 1.12, qs * 0.06); ctx.fill();
     const n = qr.getModuleCount(), cell = qs / n;
-    ctx.fillStyle = "#050510";
+    ctx.fillStyle = "#0a1424";
     for (let r = 0; r < n; r++) for (let k = 0; k < n; k++) if (qr.isDark(r, k)) ctx.fillRect(qx + k * cell, y + r * cell, Math.ceil(cell), Math.ceil(cell));
     links.push({ x: qx, y, w: qs, h: qs, url: waLink(o.shop.phone, `أهلاً ${o.shop.name || ""}، عايز أطلب من الكتالوج`) });
     y += qs + qs * 0.2;
@@ -301,7 +301,7 @@ export function renderHowTo(o, qr) {
   }
   // توقيع الموقع
   ctx.fillStyle = T.muted; font(ctx, 600, Math.round(W * 0.028));
-  ctx.fillText("الكتالوج ده اتعمل في دقيقة على Rising StarAi", W / 2, H - H * 0.05);
+  ctx.fillText("الكتالوج ده اتعمل في دقيقة على Rising Business", W / 2, H - H * 0.05);
   const host = typeof location !== "undefined" ? location.host : "";
   font(ctx, 700, Math.round(W * 0.026), "word");
   ctx.direction = "ltr"; ctx.fillText(`${host}/catalog`, W / 2, H - H * 0.025); ctx.direction = "rtl";

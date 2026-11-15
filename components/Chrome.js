@@ -1,5 +1,6 @@
 "use client";
 // الشريط العلوي + البحث السريع (Ctrl+K) + لوحة التحكم + الإشعارات الصغيرة
+import { SIDE_NAV, isOn } from "@/lib/nav";
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -9,8 +10,6 @@ import { SETTINGS, DEFAULT_SETTINGS } from "@/lib/settings";
 import { useStored, read } from "@/lib/store";
 import ToolIcon from "./ToolIcon";
 import StarMark from "./StarMark";
-import { SECTIONS, sectionHome } from "@/lib/sections";
-import useSection from "./useSection";
 
 const I = { viewBox: "0 0 24 24", width: 20, height: 20, fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true };
 
@@ -48,9 +47,9 @@ export default function Chrome() {
           <button className="icon-btn menu-btn" onClick={() => setDrawer(true)} aria-label="افتح القائمة" aria-expanded={drawer}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" /></svg>
           </button>
-          <Link href="/" className="logo top-logo" aria-label="Rising StarAi الصفحة الرئيسية">
+          <Link href="/" className="logo top-logo" aria-label="Rising Business الصفحة الرئيسية">
             <StarMark size={28} className="logo-star" />
-            <span dir="ltr" className="logo-name">Rising Star<span className="logo-ai">Ai</span></span>
+            <span dir="ltr" className="logo-name">Rising <span className="logo-ai">Business</span></span>
           </Link>
         </div>
         <nav className="top-actions" aria-label="القائمة">
@@ -76,6 +75,8 @@ export default function Chrome() {
 }
 
 // اللوحة الجانبية: ثابتة على الكمبيوتر (وبتتصغّر لأيقونات)، ودرج بيطلع من الجنب على الموبايل
+// القائمة الجانبية: أقسام المنصة (Rising Business)
+
 function Sidebar({ open, onClose, onSettings, onSearch }) {
   const pathname = usePathname() || "/";
   const [mini, setMini] = useStored("side-mini", false);
@@ -88,16 +89,15 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
     return () => document.body.classList.remove("side-open");
   }, [open]);
 
-  const { section } = useSection();
 
   return (
     <>
       <div className={`side-scrim${open ? " on" : ""}`} onClick={onClose} aria-hidden="true" />
       <aside className={`side${open ? " open" : ""}`} aria-label="القائمة الجانبية">
         <div className="side-head">
-          <Link href="/" className="logo" aria-label="Rising StarAi الصفحة الرئيسية">
+          <Link href="/" className="logo" aria-label="Rising Business الصفحة الرئيسية">
             <StarMark size={30} className="logo-star" />
-            <span dir="ltr" className="logo-name side-label">Rising Star<span className="logo-ai">Ai</span></span>
+            <span dir="ltr" className="logo-name side-label">Rising <span className="logo-ai">Business</span></span>
           </Link>
           <button className="icon-btn side-toggle" onClick={() => setMini(!mini)} aria-label={mini ? "كبّر القائمة" : "صغّر القائمة"} title={mini ? "كبّر القائمة" : "صغّر القائمة"}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="3" /><path d="M14.5 4v16" /></svg>
@@ -105,57 +105,21 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
           <button className="icon-btn side-close" onClick={onClose} aria-label="اقفل القائمة">✕</button>
         </div>
 
-        {section ? (
-          <Link href={`/s/${section.id}?new=1`} className="side-new" title="محادثة جديدة" onClick={() => window.dispatchEvent(new Event("rs-new-section-chat"))} style={{ "--sec": section.color }}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
-            <span className="side-label">محادثة جديدة</span>
-          </Link>
-        ) : null}
-
-        {section ? (
-          <>
-            <div className="side-sechead" style={{ "--sec": section.color }}>
-              <span className="side-secdot" aria-hidden="true" />
-              <span className="side-label"><b>{section.name}</b><small>{section.tagline}</small></span>
-            </div>
-            <nav className="side-nav" style={{ "--sec": section.color }}>
-              <Link href={`/s/${section.id}`} className={`side-link${pathname === `/s/${section.id}` ? " on" : ""}`} title={section.chatLabel || `شات ${section.name}`} aria-current={pathname === `/s/${section.id}` ? "page" : undefined}>
-                <svg {...I}><path d="M21 11.5a8.4 8.4 0 01-9 8.4L3 21l1.1-3.6A8.4 8.4 0 1121 11.5z" /></svg>
-                <span className="side-label">{section.chatLabel || `شات ${section.name}`}</span>
+        <nav className="side-nav" aria-label="أقسام المنصة">
+          {SIDE_NAV.map((x) => {
+            const on = isOn(x, pathname);
+            return (
+              <Link key={x.href} href={x.href} className={`side-link${on ? " on" : ""}`} title={x.label} aria-current={on ? "page" : undefined}>
+                <svg {...I}><path d={x.icon} /></svg>
+                <span className="side-label">{x.label}</span>
               </Link>
-              <button type="button" className="side-link" onClick={onSearch} title="ابحث عن أداة">
-                <svg {...I}><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></svg>
-                <span className="side-label">ابحث عن أداة</span>
-              </button>
-            </nav>
-
-            {SECTIONS.length > 1 && <div className="side-sec side-label">انتقل لقسم تاني</div>}
-            {SECTIONS.length > 1 && <nav className="side-nav side-switch">
-              {SECTIONS.filter((x) => x.id !== section.id).map((x) => (
-                <Link key={x.id} href={sectionHome(x.id)} className="side-link" title={x.name} style={{ "--sec": x.color }}>
-                  <svg {...I}><path d={x.icon} /></svg>
-                  <span className="side-label">{x.name}</span>
-                </Link>
-              ))}
-            </nav>}
-          </>
-        ) : (
-          <>
-            <div className="side-sec side-label">الأقسام</div>
-            <nav className="side-nav">
-              {SECTIONS.map((x) => (
-                <Link key={x.id} href={sectionHome(x.id)} className="side-link" title={x.name} style={{ "--sec": x.color }}>
-                  <svg {...I}><path d={x.icon} /></svg>
-                  <span className="side-label">{x.name}</span>
-                </Link>
-              ))}
-              <button type="button" className="side-link" onClick={onSearch} title="ابحث عن أداة">
-                <svg {...I}><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></svg>
-                <span className="side-label">ابحث عن أداة</span>
-              </button>
-            </nav>
-          </>
-        )}
+            );
+          })}
+          <button type="button" className="side-link" onClick={onSearch} title="ابحث عن أداة">
+            <svg {...I}><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></svg>
+            <span className="side-label">ابحث عن أداة</span>
+          </button>
+        </nav>
 
         <div className="side-foot">
           <Link href="/plans" className={`side-link${pathname.startsWith("/plans") ? " on" : ""}`} title="الباقات">

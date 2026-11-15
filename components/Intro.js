@@ -2,7 +2,7 @@
 import IntroDone from "./IntroDone";
 import { STAR_PATH } from "./StarMark";
 
-const NAME = "Rising StarAi";
+const NAME = "Rising Business";
 
 // نجوم صغيرة بمواقع ثابتة (من غير عشوائية عشان نفس الشكل على السيرفر والمتصفح)
 const SPARKS = Array.from({ length: 26 }, (_, i) => ({
@@ -19,7 +19,7 @@ export default function Intro() {
         <div className="intro-sparks">
           {SPARKS.map((p, i) => (
             <svg key={i} viewBox="0 0 24 24" style={{ "--x": `${p.x}%`, "--s": `${p.s}px`, "--d": `${p.d}s`, "--t": `${p.t}s` }}>
-              <path d={STAR_PATH} fill="#FFC61A" stroke="#FFC61A" strokeWidth="1.7" strokeLinejoin="round" />
+              <path d={STAR_PATH} fill="#D9B04A" stroke="#D9B04A" strokeWidth="1.7" strokeLinejoin="round" />
             </svg>
           ))}
         </div>
@@ -30,9 +30,9 @@ export default function Intro() {
           <svg className="intro-star" viewBox="0 0 24 24">
             <defs>
               <linearGradient id="intro-g" x1="0.2" y1="0" x2="0.8" y2="1">
-                <stop offset="0" stopColor="#FFE680" />
-                <stop offset="0.45" stopColor="#FFC61A" />
-                <stop offset="1" stopColor="#F59E0B" />
+                <stop offset="0" stopColor="#F2DC9B" />
+                <stop offset="0.45" stopColor="#D9B04A" />
+                <stop offset="1" stopColor="#A9812A" />
               </linearGradient>
             </defs>
             <path d={STAR_PATH} fill="url(#intro-g)" stroke="url(#intro-g)" strokeWidth="1.7" strokeLinejoin="round" />
