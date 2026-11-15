@@ -10,6 +10,8 @@ import { enterSends } from "@/lib/keys";
 import { getChat, newChatId, saveChat, setActive } from "@/lib/secchats";
 import { toast } from "@/lib/store";
 import s from "./sectionchat.module.css";
+import { MODES, MODE_BY_ID, DEFAULT_MODE } from "@/lib/bizassistant";
+import { read as readStore, write as writeStore } from "@/lib/store";
 
 const svg = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true };
 const Mic = () => <svg {...svg} width="18" height="18" strokeWidth="1.8"><rect x="9" y="3" width="6" height="11.5" rx="3" /><path d="M5.5 11a6.5 6.5 0 0013 0M12 17.5V21" /></svg>;
@@ -80,6 +82,10 @@ export default function SectionChat({ section, name, tagline, headline, sub, pla
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [web, setWeb] = useState(false);
+  const [mode, setModeState] = useState(DEFAULT_MODE);
+  useEffect(() => { const m = readStore("assistant-mode", DEFAULT_MODE); if (MODE_BY_ID[m]) setModeState(m); }, []);
+  const setMode = (m) => { setModeState(m); writeStore("assistant-mode", m); };
+  const modeInfo = MODE_BY_ID[mode] || MODE_BY_ID[DEFAULT_MODE];
   const [listening, setListening] = useState(false);
   const [speaking, setSpeaking] = useState(-1);
   const [canVoice, setCanVoice] = useState(false);
@@ -167,7 +173,7 @@ export default function SectionChat({ section, name, tagline, headline, sub, pla
       setMsgs((m) => m.map((x, i) => (i === m.length - 1 ? { ...x, content: out, sources: srcs, note, ...(meta || {}), pending } : x)));
     };
     try {
-      const res = await fetch("/api/section-chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ section, search, messages: history.map(({ role, content }) => ({ role, content })) }), signal: ctl.signal });
+      const res = await fetch("/api/section-chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ section, search, mode, brand: readStore("brand", null), compare: (readStore("compare-saved", [])[0] || {}).list || null, study: readStore("feasibility-last", null), messages: history.map(({ role, content }) => ({ role, content })) }), signal: ctl.signal });
       if (!res.ok) {
         const d = await res.json().catch(() => ({}));
         throw new Error(d.error || "حصل خطأ، جرّب تاني.");
@@ -336,12 +342,15 @@ export default function SectionChat({ section, name, tagline, headline, sub, pla
           </div>
           <SectionCards section={section} rows={rows} />
           <div className={s.fill} aria-hidden="true" />
-          {starters.length > 0 && (
-            <div className={s.starters}>
-              <span>ممكن تبدأ بـ</span>
-              {starters.map((q) => <button key={q} type="button" onClick={() => send(q)}>{q}</button>)}
-            </div>
-          )}
+          <div className={s.starters} role="group" aria-label="وضع المساعد">
+            <span>وضع المساعد</span>
+            {MODES.map((m) => <button key={m.id} type="button" aria-pressed={mode === m.id} style={mode === m.id ? { background: "var(--night)", color: "var(--yellow)" } : undefined} onClick={() => setMode(m.id)}>{m.label}</button>)}
+          </div>
+          <div className={s.starters}>
+            <span>ممكن تبدأ بـ</span>
+            {modeInfo.starters.map((q) => <button key={q} type="button" onClick={() => send(q)}>{q}</button>)}
+            {modeInfo.tools.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
+          </div>
         </>
       ) : (
         <>

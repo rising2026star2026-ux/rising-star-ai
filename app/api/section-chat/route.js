@@ -5,6 +5,7 @@ import { getModel } from "@/lib/models";
 import { str, list } from "@/lib/llmjson";
 import { SECTION_INFO, sectionSystemPrompt } from "@/lib/sectioninfo";
 import { withSection } from "@/lib/sectionkeys";
+import { assistantContext } from "@/lib/bizassistant";
 import { searchProvider, searchQuery, webSearchFull, resultsBlock } from "@/lib/websearch";
 
 export const maxDuration = 60;
@@ -26,7 +27,8 @@ export async function POST(req) {
 
   // مفاتيح وسقف القسم المطلوب (البحث كمان بيستخدمها)
   return withSection(id, async () => {
-    let system = sectionSystemPrompt(id);
+    // وضع العمل وملف النشاط وأرقام محسوبة بالكود (مقارنة ودراسة) بتتضاف لتعليمات المساعد
+    let system = `${sectionSystemPrompt(id)}\n\n${assistantContext(body)}`;
     const headers = {};
     if (body.search === true) {
       if (!searchProvider()) headers["x-search"] = "nokey";

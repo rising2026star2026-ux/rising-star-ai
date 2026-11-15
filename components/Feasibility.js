@@ -7,6 +7,7 @@ import ShareBar from "./ShareBar";
 import FieldData, { fieldText } from "./FieldData";
 import { read, write, toast } from "@/lib/store";
 import {
+  cashFlowRows, yearlyCashFlow,
   TYPES, GOVERNORATES, SCENARIOS, REPORT_SECTIONS, MONTHS,
   runAll, sensitivity, financialTables, factsText, egp, n0, pct, monthsText,
 } from "@/lib/feasibility";
@@ -276,6 +277,16 @@ export default function Feasibility() {
     }
   }
 
+  // حفظ الدراسة في قايمة «مشروعاتي» (على الجهاز)، بحد أقصى 20 دراسة
+  function saveStudy() {
+    if (!a || !data) return;
+    const name = (typeof prompt === "function" ? prompt("اسم الدراسة", title) : title)?.trim();
+    if (!name) return;
+    const list = read("feasibility-saved", []);
+    write("feasibility-saved", [{ id: `f${Date.now().toString(36)}`, name, at: Date.now(), study: { form, data, a, report, field } }, ...list].slice(0, 20));
+    toast("اتحفظت الدراسة في مشروعاتي ✓");
+  }
+
   function reset() {
     abortRef.current?.abort();
     setForm(EMPTY_FORM);
@@ -378,9 +389,44 @@ export default function Feasibility() {
               </p>
             )}
             <CashChart res={res} />
+            <details className={s.cfBox}>
+              <summary><b>التدفقات النقدية</b> <small>أول 12 شهر وملخص 3 سنين</small></summary>
+              <div className={s.tableWrap}>
+                <table className={s.kpi}>
+                  <caption className={s.cap}>الشهري (السيناريو المتوقع). الشهر صفر هو الاستثمار.</caption>
+                  <thead><tr><th>الشهر</th><th>داخل</th><th>خارج</th><th>الصافي</th><th>الرصيد</th></tr></thead>
+                  <tbody>
+                    {cashFlowRows(res.mid, 12).map((r) => (
+                      <tr key={r.m}><td>{n0(r.m)}</td><td>{egp(r.inflow)}</td><td>{egp(r.outflow)}</td><td className={r.net < 0 ? s.neg : ""}>{egp(r.net)}</td><td className={r.balance < 0 ? s.neg : ""}>{egp(r.balance)}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className={s.tableWrap}>
+                <table className={s.kpi}>
+                  <caption className={s.cap}>السنوي لكل سيناريو. «الرصيد» هو التراكمي بعد خصم الاستثمار.</caption>
+                  <thead><tr><th>السنة</th>{SCENARIOS.map((x) => <th key={x.key} colSpan={1}>{x.label}: الصافي / الرصيد</th>)}</tr></thead>
+                  <tbody>
+                    {[0, 1, 2].map((i) => (
+                      <tr key={i}><td>{n0(i + 1)}</td>{SCENARIOS.map((x) => { const y = yearlyCashFlow(res[x.key])[i]; return <td key={x.key} className={y.balance < 0 ? s.neg : ""}>{egp(y.net)} / {egp(y.balance)}</td>; })}</tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </details>
             <div className={s.sens}>
               <b>أكتر حاجة بتأثر على مشروعك</b>
               <ol>{sens.slice(0, 3).map((x) => <li key={x.key}>{x.label}: لو اتغير 20٪ صافي القيمة بيتحرك حوالي {egp(x.swing / 2)}</li>)}</ol>
+              <details className={s.cfBox}>
+                <summary>جدول الحساسية كامل</summary>
+                <div className={s.tableWrap}>
+                  <table className={s.kpi}>
+                    <thead><tr><th>العامل</th><th>لو زاد 20٪</th><th>لو قل 20٪</th></tr></thead>
+                    <tbody>{sens.map((x) => <tr key={x.key}><td>{x.label}</td><td className={x.up < 0 ? s.neg : ""}>{egp(x.up)}</td><td className={x.down < 0 ? s.neg : ""}>{egp(x.down)}</td></tr>)}</tbody>
+                  </table>
+                </div>
+                <p className={s.note2}>التغيير في صافي القيمة الحالية عن السيناريو المتوقع.</p>
+              </details>
             </div>
           </section>
 
@@ -439,6 +485,7 @@ export default function Feasibility() {
 
           {!busy && (
             <div className={s.actions}>
+              <button type="button" className={s.ghost} onClick={saveStudy}>احفظ الدراسة</button>
               <button type="button" className={s.primary} onClick={writeReport}>{report ? "اكتب التقرير من جديد بالأرقام الحالية" : "اكتب تقرير دراسة الجدوى"}</button>
             </div>
           )}

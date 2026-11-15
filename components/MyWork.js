@@ -1,7 +1,8 @@
 "use client";
 // مشروعاتي: كل اللي حفظه العميل على جهازه (ملف النشاط، آخر دراسة جدوى، المقارنات المحفوظة).
 import Link from "next/link";
-import { useStored } from "@/lib/store";
+import { useRouter } from "next/navigation";
+import { useStored, write } from "@/lib/store";
 import { compareAll } from "@/lib/bizcompare";
 import s from "./mywork.module.css";
 
@@ -11,7 +12,10 @@ export default function MyWork() {
   const [brand] = useStored("brand", null);
   const [feas] = useStored("feasibility-last", null);
   const [cmp, setCmp] = useStored("compare-saved", []);
-  const none = !brand && !feas?.a && !cmp.length;
+  const [studies, setStudies] = useStored("feasibility-saved", []);
+  const router = useRouter();
+  const none = !brand && !feas?.a && !cmp.length && !studies.length;
+  const openStudy = (st) => { write("feasibility-last", st.study); router.push("/feasibility"); };
 
   return (
     <div className={s.wrap}>
@@ -27,6 +31,13 @@ export default function MyWork() {
         {feas?.a ? (
           <p className={s.line}><b>{feas.form?.activity || "دراسة محفوظة"}</b>{feas.form?.governorate ? ` — ${feas.form.governorate}` : ""}</p>
         ) : <p className={s.empty}>مفيش دراسة محفوظة. أول ما تعمل دراسة بتتحفظ هنا على جهازك.</p>}
+        {studies.map((st) => (
+          <div key={st.id} className={s.row}>
+            <span><b>{st.name}</b><small>{when(st.at)}</small></span>
+            <button type="button" className={s.go} onClick={() => openStudy(st)}>افتح</button>
+            <button type="button" className={s.del} onClick={() => setStudies(studies.filter((x) => x.id !== st.id))}>احذف</button>
+          </div>
+        ))}
       </section>
 
       <section className={s.card}>
