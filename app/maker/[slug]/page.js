@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MAKERS_CHECKED } from "@/lib/datasources";
 import { notFound } from "next/navigation";
 import BotIcon from "@/components/BotIcon";
 import MakerPrompt from "@/components/MakerPrompt";
@@ -89,7 +90,7 @@ export default async function MakerPage({ params }) {
           ))}
         </div>
       </section>
-      <p className={d.note}>معلومات الحد المجاني من مقالات منشورة في 2026 وممكن تتغير. اتأكد من الموقع الرسمي قبل ما تعتمد عليها. الاسم والشعار علامات تجارية لأصحابها والصفحة تعريفية.</p>
+      <p className={d.note}>معلومات الحد المجاني والأسعار اتراجعت في {MAKERS_CHECKED} من مقالات منشورة والمواقع الرسمية، وممكن تتغير. اتأكد من الموقع الرسمي قبل ما تعتمد عليها. الاسم والشعار علامات تجارية لأصحابها والصفحة تعريفية.</p>
     </div>
   );
 }

@@ -22,6 +22,7 @@ const PAGES = [
   ["/amazon/profit", "monthly", 0.9],
   ["/amazon/competitor", "monthly", 0.9],
   ["/brand", "monthly", 0.8],
+  ["/data-sources", "monthly", 0.6],
   ["/tools", "weekly", 0.9],
   ["/maker", "weekly", 0.9],
   ["/maker/create", "weekly", 0.9],
