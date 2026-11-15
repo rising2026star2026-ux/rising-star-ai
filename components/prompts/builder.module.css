@@ -11,7 +11,7 @@
 .tabs { display: flex; gap: 6px; padding: 4px; border-radius: var(--r-md); background: var(--surface-2); overflow-x: auto; scrollbar-width: none; }
 .tabs::-webkit-scrollbar { display: none; }
 .tabs button { flex: 1 0 auto; font: inherit; font-weight: 700; font-size: var(--fs-md); padding: 10px 14px; border: 0; border-radius: var(--r-sm); background: transparent; color: var(--muted); cursor: pointer; white-space: nowrap; }
-.tabs button[aria-selected="true"] { background: #fff; color: var(--ink); box-shadow: 0 2px 8px rgba(5, 5, 16, 0.1); }
+.tabs button[aria-selected="true"] { background: #fff; color: var(--ink); box-shadow: 0 2px 8px rgba(10, 20, 36, 0.1); }
 
 .chips { display: flex; flex-wrap: wrap; gap: 7px; }
 .chip { font: inherit; font-size: var(--fs-md); font-weight: 600; cursor: pointer; padding: 8px 14px; border-radius: 999px; color: var(--ink); background: #fff; border: 1.5px solid rgba(11, 11, 20, 0.14); transition: background-color 0.18s var(--ease), border-color 0.18s var(--ease); }
@@ -40,9 +40,9 @@
 .err { margin: 10px 0 0; padding: 10px 14px; border-radius: var(--r-md); background: #fff1f0; border: 1px solid #ffc9c4; color: #b42318; font-size: var(--fs-md); }
 
 /* المعاينة */
-.preview { border-radius: var(--r-lg); background: #0b0b14; color: #f4f6fb; padding: 16px; }
+.preview { border-radius: var(--r-lg); background: #0a1424; color: #f4f6fb; padding: 16px; }
 .pText { margin: 0; white-space: pre-wrap; font-size: var(--fs-base); line-height: 1.95; overflow-wrap: anywhere; }
-.pText mark { background: rgba(255, 210, 31, 0.22); color: #ffe27a; border-radius: 5px; padding: 0 3px; }
+.pText mark { background: rgba(217, 176, 74, 0.22); color: #ffe27a; border-radius: 5px; padding: 0 3px; }
 .neg { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed rgba(255, 255, 255, 0.2); font-size: var(--fs-sm); color: #b9c0d4; direction: ltr; text-align: left; }
 .neg b { color: #ffb4a8; }
 .pActions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
@@ -53,7 +53,7 @@
 .meterBar { flex: 1; height: 8px; border-radius: 99px; background: #e4e7ec; overflow: hidden; }
 .meterBar i { display: block; height: 100%; border-radius: inherit; width: var(--p, 0%); background: var(--c, #f79009); transition: width 0.3s var(--ease), background-color 0.3s; }
 .meter b { font-family: var(--display); font-variant-numeric: tabular-nums; min-width: 3.2ch; text-align: end; }
-.l_great { --c: #12b76a; } .l_good { --c: #1f4dff; } .l_weak { --c: #f79009; }
+.l_great { --c: #12b76a; } .l_good { --c: #14305a; } .l_weak { --c: #f79009; }
 .tips { margin: 10px 0 0; padding: 0; list-style: none; display: grid; gap: 6px; }
 .tips li { font-size: var(--fs-sm); color: var(--muted); line-height: 1.7; padding-inline-start: 18px; position: relative; }
 .tips li::before { content: "+"; position: absolute; inset-inline-start: 0; font-weight: 800; color: var(--blue); }

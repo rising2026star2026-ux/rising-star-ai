@@ -2,10 +2,10 @@
 .wrap { position: relative; flex: none; }
 .btn {
   width: 34px; height: 34px; display: grid; place-items: center; padding: 0; cursor: pointer;
-  border: 1px solid rgba(31, 77, 255, 0.3); border-radius: 50%; background: rgba(31, 77, 255, 0.08); color: var(--accent);
+  border: 1px solid rgba(20, 48, 90, 0.3); border-radius: 50%; background: rgba(20, 48, 90, 0.08); color: var(--accent);
   transition: background-color 0.15s var(--ease);
 }
-.btn:hover, .btn[aria-expanded="true"] { background: rgba(31, 77, 255, 0.16); }
+.btn:hover, .btn[aria-expanded="true"] { background: rgba(20, 48, 90, 0.16); }
 .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .panel {

@@ -1,0 +1,35 @@
+/* الرئيسية: داشبورد Rising Business — كل الأدوات منسقة حسب الشغل */
+.profile { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 16px 18px; border-radius: var(--r-lg); background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(217, 176, 74, 0.35); color: #fff; margin: 0 auto 14px; max-width: 640px; }
+.profile b { display: block; font-size: var(--fs-lg); color: var(--yellow); }
+.profile span { font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.78); line-height: 1.7; }
+.ask { display: flex; align-items: center; gap: 10px; max-width: 640px; margin: 0 auto; padding: 14px 16px; border-radius: var(--r-xl); background: #fff; color: var(--faint); font-size: var(--fs-lg); border: 1px solid var(--hairline-strong); }
+.ask svg { color: var(--yellow-deep); flex: none; }
+.ask span { flex: 1; }
+.block { margin-top: 40px; }
+.block:first-child { margin-top: 0; }
+.head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.head h2 { margin: 0; font-family: var(--display); font-size: var(--fs-xl); font-weight: 800; color: var(--ink); }
+.head small { font-size: var(--fs-sm); color: var(--faint); }
+.work { display: grid; gap: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 720px) { .work { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.workCard { display: grid; gap: 4px; align-content: start; padding: 16px; border-radius: var(--r-lg); background: var(--surface-2); border: 1px solid var(--hairline); color: var(--ink); min-height: 104px; transition: border-color 0.18s var(--ease); }
+.workCard:hover, .workCard:focus-visible { border-color: var(--yellow-deep); }
+.workCard b { font-size: var(--fs-md); color: var(--ink); }
+.workCard span { font-size: var(--fs-sm); color: var(--muted); line-height: 1.7; }
+.workCard.main { background: var(--night); border-color: var(--night); }
+.workCard.main b { color: var(--yellow); }
+.workCard.main span { color: rgba(255, 255, 255, 0.78); }
+.cat { margin-top: 26px; }
+.cat:first-of-type { margin-top: 0; }
+.catHead { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-weight: 700; font-size: var(--fs-base); color: var(--ink); }
+.catHead small { color: var(--faint); font-weight: 500; }
+.catHead i { display: inline-grid; place-items: center; color: var(--c); }
+.tools { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+.tool { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: var(--r-md); background: #fff; border: 1px solid var(--hairline-strong); color: var(--ink); transition: border-color 0.18s var(--ease); }
+.tool:hover, .tool:focus-visible { border-color: var(--yellow-deep); }
+.tool b { display: block; font-size: var(--fs-md); }
+.tool span { display: block; font-size: var(--fs-xs); color: var(--muted); line-height: 1.6; }
+.foot { display: flex; justify-content: center; gap: 22px; margin-top: 36px; font-size: var(--fs-sm); }
+.foot a { color: var(--accent); font-weight: 600; }
+.wordmark { font-size: var(--fs-display) !important; letter-spacing: -0.03em !important; line-height: 1.1 !important; }
+.wordmark span { display: inline !important; }

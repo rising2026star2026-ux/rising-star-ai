@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "الباقات",
-  description: "باقات Rising StarAi بالجنيه المصري.",
+  description: "باقات Rising Business بالجنيه المصري.",
   robots: { index: false },
 };
 

@@ -48,7 +48,7 @@ export default function MakerHub() {
           <div className={d.grid}>
             {makersIn(k.id).map((m) => (
               <Link key={m.slug} href={m.href} className={d.tool}>
-                <BotIcon bot={{ name: m.name, logo: m.logo, mono: m.name.slice(0, 2), tint: "#1f4dff" }} size={46} />
+                <BotIcon bot={{ name: m.name, logo: m.logo, mono: m.name.slice(0, 2), tint: "#14305a" }} size={46} />
                 <span>
                   <b dir="auto">{m.name}</b>
                   <small>{m.free}</small>

@@ -59,7 +59,7 @@ export default function Apps() {
           </div>
         </section>
       ))}
-      <p className={s.note}>مواقع خارجية مش تابعة لـ Rising StarAi. الدخول والاشتراك بيكون بحسابك عندهم وحسب شروطهم.</p>
+      <p className={s.note}>مواقع خارجية مش تابعة لـ Rising Business. الدخول والاشتراك بيكون بحسابك عندهم وحسب شروطهم.</p>
     </div>
   );
 }

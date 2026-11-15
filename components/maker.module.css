@@ -4,9 +4,9 @@
 .sec p { margin: 0 0 12px; color: var(--muted); font-size: var(--fs-md); }
 .featured {
   position: relative; overflow: hidden; display: flex; gap: 14px; align-items: center; padding: 18px; border-radius: var(--r-xl); margin: 6px 0 4px;
-  background: linear-gradient(135deg, #2a5bff, #0a26d6); color: #fff; box-shadow: 0 24px 50px -26px rgba(10, 38, 214, 0.7);
+  background: linear-gradient(135deg, #2a5bff, #0c2244); color: #fff; box-shadow: 0 24px 50px -26px rgba(10, 38, 214, 0.7);
 }
-.featured::after { content: ""; position: absolute; width: 260px; height: 260px; inset-inline-start: -90px; bottom: -130px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 210, 31, 0.6), transparent 66%); pointer-events: none; }
+.featured::after { content: ""; position: absolute; width: 260px; height: 260px; inset-inline-start: -90px; bottom: -130px; border-radius: 50%; background: radial-gradient(circle, rgba(217, 176, 74, 0.6), transparent 66%); pointer-events: none; }
 .featured > * { position: relative; z-index: 1; }
 .featured b { display: block; font-family: var(--display); font-weight: 800; font-size: var(--fs-xl); }
 .featured small { display: block; opacity: 0.88; font-size: var(--fs-md); line-height: 1.6; margin-top: 2px; }

@@ -46,7 +46,7 @@ export default function ProfitTool() {
         ["عمولة أمازون", b.referral, "#ff8a3d"],
         ["رسوم الشحن والتجهيز", b.fulfil, "#ffc400"],
         ["الإعلانات", b.ads, "#a06bff"],
-        ["الضريبة", b.vatAmt, "#19c6ff"],
+        ["الضريبة", b.vatAmt, "#c9a24a"],
         ["المرتجع والمصاريف", b.returns + b.other, "#f2564a"],
         ["ربحك", Math.max(0, b.profit), "#12c48b"],
       ].filter(([, n]) => n > 0)

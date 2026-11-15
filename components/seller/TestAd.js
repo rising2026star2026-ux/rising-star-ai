@@ -16,7 +16,7 @@ const PLATFORM_ICON = { facebook: "f", instagram: "◎", tiktok: "♪", whatsapp
 
 const tierOf = (n) =>
   n >= 80 ? { label: "إعلان قوي جداً", color: "#12b76a", key: "great" }
-  : n >= 60 ? { label: "كويس، ومحتاج لمسات", color: "#1f4dff", key: "good" }
+  : n >= 60 ? { label: "كويس، ومحتاج لمسات", color: "#14305a", key: "good" }
   : n >= 40 ? { label: "متوسط، هتخسر عملاء", color: "#f79009", key: "mid" }
   : { label: "محتاج شغل قبل ما تدفع فيه", color: "#f04438", key: "weak" };
 
@@ -378,7 +378,7 @@ function ScorePanel({ res, prev }) {
       <div className={t.bars}>
         {Object.entries(SCORE_LABELS).map(([k, [label, hint]]) => {
           const v = res.scores[k];
-          const c = v >= 8 ? "#12b76a" : v >= 6 ? "#1f4dff" : v >= 4 ? "#f79009" : "#f04438";
+          const c = v >= 8 ? "#12b76a" : v >= 6 ? "#14305a" : v >= 4 ? "#f79009" : "#f04438";
           return (
             <div key={k} className={t.bar}>
               <div className={t.barHead}><b>{label}</b><small>{hint}</small><span style={{ color: c }}>{v}/10</span></div>
@@ -454,7 +454,7 @@ async function makeStory(res) {
   const tier = tierOf(res.score);
   night(ctx, W, H);
   drawText(ctx, "اختبرت إعلاني على", W / 2, 230, { size: 54, weight: 700, color: "rgba(255,255,255,0.82)", font: "display" });
-  drawText(ctx, "100 عميل قبل ما أنشره", W / 2, 312, { size: 64, weight: 900, color: "#ffd21f", font: "display" });
+  drawText(ctx, "100 عميل قبل ما أنشره", W / 2, 312, { size: 64, weight: 900, color: "#d9b04a", font: "display" });
 
   // الدرجة
   const cx = W / 2, cy = 560, R = 172;
@@ -496,7 +496,7 @@ async function makeStory(res) {
     const bh = 70 + lines.length * 50;
     ctx.fillStyle = "rgba(255,255,255,0.08)";
     rr(ctx, 110, ly + 40, W - 220, bh, 32); ctx.fill();
-    drawText(ctx, best.name, W - 150, ly + 94, { size: 30, weight: 700, color: "#ffd21f", align: "right" });
+    drawText(ctx, best.name, W - 150, ly + 94, { size: 30, weight: 700, color: "#d9b04a", align: "right" });
     lines.forEach((l, k) => drawText(ctx, l, W - 150, ly + 146 + k * 50, { size: 36, weight: 600, color: "#fff", align: "right" }));
   }
   star(ctx, W / 2, 118, 86);

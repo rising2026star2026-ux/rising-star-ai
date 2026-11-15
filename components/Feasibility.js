@@ -82,15 +82,15 @@ function CashChart({ res }) {
   const lo = Math.min(...all, 0), hi = Math.max(...all, 0);
   const X = (m) => P + ((W - 2 * P) * m) / MONTHS;
   const Y = (v) => H - P - ((H - 2 * P) * (v - lo)) / (hi - lo || 1);
-  const colors = { pess: "#e5484d", mid: "#1f4dff", opt: "#12a150" };
+  const colors = { pess: "#e5484d", mid: "#14305a", opt: "#12a150" };
   return (
     <figure className={s.chart}>
       <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="الرصيد التراكمي على 36 شهر للسيناريوهات التلاتة">
-        <line x1={P} x2={W - P} y1={Y(0)} y2={Y(0)} stroke="rgba(5,5,16,.25)" strokeDasharray="4 4" />
+        <line x1={P} x2={W - P} y1={Y(0)} y2={Y(0)} stroke="rgba(10,20,36,.25)" strokeDasharray="4 4" />
         {[12, 24, 36].map((m) => (
           <g key={m}>
-            <line x1={X(m)} x2={X(m)} y1={P} y2={H - P} stroke="rgba(5,5,16,.07)" />
-            <text x={X(m)} y={H - 10} textAnchor="middle" fontSize="11" fill="rgba(5,5,16,.55)">{`شهر ${m}`}</text>
+            <line x1={X(m)} x2={X(m)} y1={P} y2={H - P} stroke="rgba(10,20,36,.07)" />
+            <text x={X(m)} y={H - 10} textAnchor="middle" fontSize="11" fill="rgba(10,20,36,.55)">{`شهر ${m}`}</text>
           </g>
         ))}
         {SCENARIOS.map((sc) => {

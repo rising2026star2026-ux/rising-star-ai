@@ -48,9 +48,9 @@ export default function Chrome() {
           <button className="icon-btn menu-btn" onClick={() => setDrawer(true)} aria-label="افتح القائمة" aria-expanded={drawer}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" /></svg>
           </button>
-          <Link href="/" className="logo top-logo" aria-label="Rising StarAi الصفحة الرئيسية">
+          <Link href="/" className="logo top-logo" aria-label="Rising Business الصفحة الرئيسية">
             <StarMark size={28} className="logo-star" />
-            <span dir="ltr" className="logo-name">Rising Star<span className="logo-ai">Ai</span></span>
+            <span dir="ltr" className="logo-name">Rising <span className="logo-ai">Business</span></span>
           </Link>
         </div>
         <nav className="top-actions" aria-label="القائمة">
@@ -95,9 +95,9 @@ function Sidebar({ open, onClose, onSettings, onSearch }) {
       <div className={`side-scrim${open ? " on" : ""}`} onClick={onClose} aria-hidden="true" />
       <aside className={`side${open ? " open" : ""}`} aria-label="القائمة الجانبية">
         <div className="side-head">
-          <Link href="/" className="logo" aria-label="Rising StarAi الصفحة الرئيسية">
+          <Link href="/" className="logo" aria-label="Rising Business الصفحة الرئيسية">
             <StarMark size={30} className="logo-star" />
-            <span dir="ltr" className="logo-name side-label">Rising Star<span className="logo-ai">Ai</span></span>
+            <span dir="ltr" className="logo-name side-label">Rising <span className="logo-ai">Business</span></span>
           </Link>
           <button className="icon-btn side-toggle" onClick={() => setMini(!mini)} aria-label={mini ? "كبّر القائمة" : "صغّر القائمة"} title={mini ? "كبّر القائمة" : "صغّر القائمة"}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="3" /><path d="M14.5 4v16" /></svg>

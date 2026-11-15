@@ -33,7 +33,7 @@
 .btns .copy { background: var(--blue); border-color: var(--blue); color: #fff; min-width: 76px; }
 .go { background: var(--yellow); border-color: var(--yellow); }
 
-.builderBanner { display: grid; gap: 4px; margin: 0 0 16px; padding: 16px 18px; border-radius: var(--r-lg); color: #fff; background: linear-gradient(150deg, var(--blue), var(--blue-deep)); box-shadow: 0 22px 40px -26px rgba(31, 77, 255, 0.7); transition: transform 0.2s var(--ease); }
+.builderBanner { display: grid; gap: 4px; margin: 0 0 16px; padding: 16px 18px; border-radius: var(--r-lg); color: #fff; background: linear-gradient(150deg, var(--blue), var(--blue-deep)); box-shadow: 0 22px 40px -26px rgba(20, 48, 90, 0.7); transition: transform 0.2s var(--ease); }
 .builderBanner:hover { transform: translateY(-2px); }
 .builderBanner b { font-family: var(--display); font-size: var(--fs-xl); font-weight: 900; }
 .builderBanner span { font-size: var(--fs-md); line-height: 1.8; opacity: 0.92; }

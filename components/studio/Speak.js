@@ -306,7 +306,7 @@ export default function Speak() {
     if (!ms || !isBusy) return;
     try {
       const ci = chapters.length ? chapters.filter((c) => c.chunk <= idx).length - 1 : -1;
-      ms.metadata = new MediaMetadata({ title: (ci >= 0 && chapters[ci].title) || doc?.name || "كتاب مسموع", artist: "Rising StarAi" });
+      ms.metadata = new MediaMetadata({ title: (ci >= 0 && chapters[ci].title) || doc?.name || "كتاب مسموع", artist: "Rising Business" });
       ms.setActionHandler("play", play);
       ms.setActionHandler("pause", pause);
       ms.setActionHandler("nexttrack", () => goTo(idxRef.current + 1));

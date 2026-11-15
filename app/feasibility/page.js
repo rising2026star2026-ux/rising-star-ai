@@ -7,8 +7,8 @@ export const metadata = {
   title: "الباحث التجاري: دراسة جدوى لمشروعك بأرقام السوق المصري",
   description,
   alternates: { canonical: "/feasibility" },
-  openGraph: { title: "الباحث التجاري | Rising StarAi", description, url: "/feasibility", siteName: "Rising StarAi", locale: "ar_EG", type: "website" },
-  twitter: { card: "summary", title: "الباحث التجاري | Rising StarAi", description },
+  openGraph: { title: "الباحث التجاري | Rising Business", description, url: "/feasibility", siteName: "Rising Business", locale: "ar_EG", type: "website" },
+  twitter: { card: "summary", title: "الباحث التجاري | Rising Business", description },
 };
 
 export default function FeasibilityPage() {

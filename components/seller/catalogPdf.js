@@ -12,8 +12,8 @@ export async function buildPdf(pages, layout, title = "كتالوج") {
   const [pw, ph] = L.pt;
   const doc = await PDFDocument.create();
   doc.setTitle(title);
-  doc.setCreator("Rising StarAi");
-  doc.setProducer("Rising StarAi");
+  doc.setCreator("Rising Business");
+  doc.setProducer("Rising Business");
   for (const { canvas, links } of pages) {
     const img = await doc.embedJpg(await jpegBytes(canvas));
     const page = doc.addPage([pw, ph]);
