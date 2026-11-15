@@ -45,3 +45,8 @@
 .foot { display: flex; justify-content: center; gap: 22px; margin-top: 36px; font-size: var(--fs-sm); }
 .foot a { color: var(--accent); font-weight: 600; }
 @media (max-width: 520px) { .choice { grid-template-columns: 1fr; } .values { grid-template-columns: 1fr; } .values li { grid-template-columns: auto 1fr; text-align: start; gap: 10px; align-items: baseline; } }
+.who { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; max-inline-size: 680px; margin: 16px auto 0; padding: 0; }
+.who li { padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(217, 176, 74, 0.45); color: rgba(255, 255, 255, 0.88); font-size: var(--fs-xs); }
+.stages { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 4px; padding: 0; }
+.stages li { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px 4px 12px; border-radius: 999px; background: var(--surface-2); font-size: var(--fs-sm); font-weight: 700; color: var(--ink); }
+.stages b { display: inline-grid; place-items: center; inline-size: 20px; block-size: 20px; border-radius: 50%; background: var(--night); color: var(--yellow); font-size: var(--fs-xs); }

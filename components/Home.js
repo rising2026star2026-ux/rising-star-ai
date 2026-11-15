@@ -8,12 +8,16 @@ import { SCENARIOS } from "@/lib/feasibility";
 import { profileCompleteness } from "@/lib/bizprofile";
 import { BIZ_GROUPS } from "@/lib/bizgroups";
 import { tools } from "@/lib/tools";
+import { isCore } from "@/lib/toolroles";
+import { AUDIENCE } from "@/lib/site";
+import { STAGES } from "@/components/seller/Showcase";
 import { Glyph } from "@/lib/toolglyphs";
 import StarMark from "./StarMark";
 import s from "./home.module.css";
 import d from "./dash.module.css";
 
-const count = (g) => g.tools.length + g.links.length;
+const coreOf = (g) => g.tools.filter(isCore);
+const CORE = tools.filter((t) => isCore(t.id)).length;
 const when = (t) => new Date(t).toLocaleDateString("ar-EG", { day: "numeric", month: "long" });
 
 export default function Home() {
@@ -48,10 +52,13 @@ export default function Home() {
               <small>مقارنة الأنشطة ← دراسة الجدوى ← خطة العمل</small>
             </Link>
           </div>
+          <ul className={d.who} aria-label="المنصة لمين">
+            {AUDIENCE.map((a) => <li key={a}>{a}</li>)}
+          </ul>
           <ul className={d.values} aria-label="قيمة المنصة">
             <li><b>{METRICS.length.toLocaleString("ar-EG")} معيار</b><span>لمقارنة نشاطين لخمسة بأرقامك</span></li>
             <li><b>{SCENARIOS.length.toLocaleString("ar-EG")} سيناريوهات</b><span>جدوى بتعادل واسترداد وحساسية</span></li>
-            <li><b>{tools.length.toLocaleString("ar-EG")} أداة</b><span>لمنتجاتك وتسويقك ومبيعاتك</span></li>
+            <li><b>{CORE.toLocaleString("ar-EG")} أداة تجارية</b><span>لمنتجاتك وتسويقك ومبيعاتك</span></li>
           </ul>
         </div>
       </section>
@@ -95,20 +102,21 @@ export default function Home() {
             <div className={d.head}><h2>بيع وسوّق</h2></div>
             <Link href="/seller" className={`${d.panel} ${d.wide}`}>
               <h2>ستوديو البيّاع</h2>
-              <p>إعلان من صورة، منشورات من تسجيل صوتي، كتالوج بأزرار واتساب، فحص السوق واختبار الإعلان.</p>
+              <ol className={d.stages} aria-label="مراحل ستوديو البيّاع">{STAGES.map((st, i) => <li key={st}><b>{(i + 1).toLocaleString("ar-EG")}</b>{st}</li>)}</ol>
+              <p>افحص السوق، صوّر منتجك، حوّل كلامك لبوستات، اختبر إعلانك، انشر كتالوجك، أو وكّل المراحل كلها مرة واحدة.</p>
               <span className={d.more}>افتح الاستوديو</span>
             </Link>
           </div>
 
           <div className={d.block}>
-            <div className={d.head}><h2>أدوات المنتجات والتسويق</h2><Link href="/tools" className={d.all}>كل الأدوات ({tools.length.toLocaleString("ar-EG")})</Link></div>
+            <div className={d.head}><h2>أدوات التاجر</h2><Link href="/tools" className={d.all}>كل الأدوات</Link></div>
             <div className={d.groups}>
-              {BIZ_GROUPS.filter((g) => g.tools.length).map((g) => (
+              {BIZ_GROUPS.filter((g) => coreOf(g).length).map((g) => (
                 <Link key={g.id} href={`/tools?cat=${g.id}`} className={d.group}>
                   <i><Glyph name={g.glyph} size={20} /></i>
                   <b>{g.name}</b>
                   <span>{g.desc}</span>
-                  <small>{g.tools.length.toLocaleString("ar-EG")} أداة</small>
+                  <small>{coreOf(g).length.toLocaleString("ar-EG")} أداة</small>
                 </Link>
               ))}
             </div>
@@ -131,6 +139,7 @@ export default function Home() {
 
           <p className={d.foot}>
             <Link href="/plans">الباقات</Link>
+            <Link href="/data-sources">مصادر البيانات</Link>
             <Link href="/support">الدعم</Link>
           </p>
         </div>
