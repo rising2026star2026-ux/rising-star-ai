@@ -3,7 +3,9 @@
 // مجموعات الأدوات (من غير كتالوج طويل)، ومشروعات العميل المحفوظة.
 import Link from "next/link";
 import { useStored, write } from "@/lib/store";
-import { compareAll } from "@/lib/bizcompare";
+import { compareAll, METRICS } from "@/lib/bizcompare";
+import { SCENARIOS } from "@/lib/feasibility";
+import { profileCompleteness } from "@/lib/bizprofile";
 import { BIZ_GROUPS } from "@/lib/bizgroups";
 import { tools } from "@/lib/tools";
 import { Glyph } from "@/lib/toolglyphs";
@@ -18,6 +20,7 @@ export default function Home() {
   const [brand] = useStored("brand", null);
   const [feas] = useStored("feasibility-last", null);
   const [cmp] = useStored("compare-saved", []);
+  const prog = profileCompleteness(brand);
   const hasWork = !!brand || !!feas?.a || cmp.length > 0;
 
   return (
@@ -31,14 +34,25 @@ export default function Home() {
             <h1 className={d.title}>كل أدوات تجارتك في مكان واحد</h1>
             <p>حلّل السوق، قارن الفرص، ادرس مشروعك، جهّز منتجاتك، وسوّق وبِع بمساعدة الذكاء الاصطناعي.</p>
           </div>
+          <Link href="/brand" className={d.cta}>{brand ? "كمّل ملف نشاطك" : "ابدأ إعداد ملف نشاطك"}</Link>
+          <p className={d.ctaNote}>{brand ? `الملف مكتمل ${prog.percent.toLocaleString("ar-EG")}٪. كل أداة بتستخدمه تلقائياً.` : "سجّل نشاطك مرة واحدة، والمقارنة والجدوى والمساعد والأدوات يشتغلوا عليه."}</p>
           <div className={d.choice} role="group" aria-label="نوع النشاط">
             <Link href="/brand" className={d.choiceBtn} onClick={() => write("biz-status", "existing")}>
-              <b>عندي نشاط قائم</b><span>سجّل نشاطك وطوّره</span>
+              <b>عندي نشاط قائم</b>
+              <span>طوّر اللي عندك: سعّر صح، سوّق، وزوّد مبيعاتك.</span>
+              <small>ملف النشاط ← مساعد الأعمال ← أدوات التسويق</small>
             </Link>
             <Link href="/compare-business" className={d.choiceBtn} onClick={() => write("biz-status", "new")}>
-              <b>مشروع جديد</b><span>قارن الفرص وادرس الجدوى</span>
+              <b>مشروع جديد</b>
+              <span>اختار الفكرة الأنسب قبل ما تدفع جنيه.</span>
+              <small>مقارنة الأنشطة ← دراسة الجدوى ← خطة العمل</small>
             </Link>
           </div>
+          <ul className={d.values} aria-label="قيمة المنصة">
+            <li><b>{METRICS.length.toLocaleString("ar-EG")} معيار</b><span>لمقارنة نشاطين لخمسة بأرقامك</span></li>
+            <li><b>{SCENARIOS.length.toLocaleString("ar-EG")} سيناريوهات</b><span>جدوى بتعادل واسترداد وحساسية</span></li>
+            <li><b>{tools.length.toLocaleString("ar-EG")} أداة</b><span>لمنتجاتك وتسويقك ومبيعاتك</span></li>
+          </ul>
         </div>
       </section>
 

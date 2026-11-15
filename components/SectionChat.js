@@ -18,6 +18,7 @@ const Mic = () => <svg {...svg} width="18" height="18" strokeWidth="1.8"><rect x
 const Globe = () => <svg {...svg} width="18" height="18" strokeWidth="1.7"><circle cx="12" cy="12" r="8.5" /><path d="M3.5 12h17M12 3.5c2.8 3 2.8 14 0 17M12 3.5c-2.8 3-2.8 14 0 17" /></svg>;
 const Up = () => <svg {...svg} width="18" height="18" strokeWidth="2.2"><path d="M12 19V5M6 11l6-6 6 6" /></svg>;
 const Speaker = () => <svg {...svg} width="17" height="17" strokeWidth="1.7"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4zM16 9a4.5 4.5 0 010 6" /></svg>;
+const Save = () => <svg {...svg} width="17" height="17" strokeWidth="1.7"><path d="M6 4.5h9.5L19 8v11a.5.5 0 01-.5.5h-13A.5.5 0 015 19V5a.5.5 0 01.5-.5H6z" /><path d="M8.5 4.5v4h6v-4M8.5 19.5v-5h7v5" /></svg>;
 const Copy = () => <svg {...svg} width="17" height="17" strokeWidth="1.7"><rect x="8.5" y="8.5" width="11" height="11" rx="2.5" /><path d="M15.5 8.5V6a1.5 1.5 0 00-1.5-1.5H6A1.5 1.5 0 004.5 6v8A1.5 1.5 0 006 15.5h2.5" /></svg>;
 const Check = () => <svg {...svg} width="16" height="16" strokeWidth="2"><path d="M5 12.5l4.2 4L19 7" /></svg>;
 const Search = () => <svg {...svg} width="15" height="15" strokeWidth="1.9"><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></svg>;
@@ -253,6 +254,16 @@ export default function SectionChat({ section, name, tagline, headline, sub, pla
     rec.start();
   }
 
+  // حفظ رد المساعد في مشروعاتي (على الجهاز، آخر 30)
+  function saveReply(i) {
+    const answer = msgs[i]?.content;
+    if (!answer) return;
+    const q = [...msgs.slice(0, i)].reverse().find((x) => x.role === "user")?.content || "";
+    const item = { id: Date.now().toString(36), mode, question: String(q).slice(0, 300), answer: String(answer).slice(0, 8000), at: Date.now() };
+    writeStore("assistant-saved", [item, ...readStore("assistant-saved", [])].slice(0, 30));
+    toast("اتحفظ في مشروعاتك.");
+  }
+
   async function copy(text) {
     try { await navigator.clipboard.writeText(String(text)); toast("اتنسخ."); } catch { toast("مقدرتش أنسخ، حدد النص وانسخه."); }
   }
@@ -309,6 +320,7 @@ export default function SectionChat({ section, name, tagline, headline, sub, pla
               <div className={s.acts}>
                 <button type="button" className={s.act} onClick={() => (speaking === i ? stopSpeak() : speak(m.content, i))} aria-pressed={speaking === i} aria-label={speaking === i ? "وقّف القراءة" : "اسمع الرد"} title={speaking === i ? "وقّف القراءة" : "اسمع الرد"}><Speaker /></button>
                 <button type="button" className={s.act} onClick={() => copy(m.content)} aria-label="انسخ الرد" title="انسخ الرد"><Copy /></button>
+                <button type="button" className={s.act} onClick={() => saveReply(i)} aria-label="احفظ في مشروعاتي" title="احفظ في مشروعاتي"><Save /></button>
               </div>
             )}
           </>

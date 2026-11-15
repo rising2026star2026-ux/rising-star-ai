@@ -11,7 +11,7 @@
 :root {
   /* الخط: غيّر السطر ده بس لو اخترت خط تاني من صفحة اختيار الخطوط */
   --ui: "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
-  --display: "Archivo", "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+  --display: "IBM Plex Sans Arabic", "Archivo", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
   /* هوية Myndlab: أصفر وأزرق مشبعين على حبر غامق */
   --yellow: #d9b04a;
   --yellow-deep: #b8902f;
@@ -74,6 +74,7 @@
   --fs-lg: 1rem;
   --fs-xl: 1.125rem;
   --fs-hero: clamp(1.5rem, 5vw, 2.1rem); /* عناوين كروت الأقسام */
+  --fs-headline: clamp(1.3rem, 5.4vw, 2.2rem); /* عنوان الرئيسية */
   --fs-display: clamp(1.7rem, 6.6vw, 2.5rem); /* عنوان أول شاشة في شات الأقسام */
 }
 
@@ -805,3 +806,4 @@ html[data-look-mode="dark"] body.chat-mode.sec-mode { --bg: #18191d; background:
 .chat-jump { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 12px; padding: 10px 16px; border-radius: 999px; background: #15803d; color: #fff; font-weight: 600; font-size: var(--fs-base); text-decoration: none; box-shadow: 0 10px 24px -14px #15803d; transition: transform 0.2s ease; }
 .chat-jump:hover { transform: translateY(-1px); }
 .chat-jump small { font-weight: 400; font-size: var(--fs-xs); opacity: 0.85; }
+.trade-line { display: block; margin-top: 4px; font-size: var(--fs-xs); color: var(--accent); font-weight: 600; }

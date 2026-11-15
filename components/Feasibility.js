@@ -6,6 +6,7 @@ import Md from "./Md";
 import ShareBar from "./ShareBar";
 import FieldData, { fieldText } from "./FieldData";
 import { read, write, toast } from "@/lib/store";
+import { feasibilityPrefill } from "@/lib/bizprofile";
 import {
   cashFlowRows, yearlyCashFlow,
   TYPES, GOVERNORATES, SCENARIOS, REPORT_SECTIONS, MONTHS,
@@ -148,6 +149,7 @@ export default function Feasibility() {
   const [report, setReport] = useState(null); // [{key,title,text,status}]
   const [field, setField] = useState(null); // { survey, phone, paste, ads, videos }
   const [error, setError] = useState("");
+  const [fromBrand, setFromBrand] = useState(false);
   const abortRef = useRef(null);
   const reportRef = useRef(null);
 
@@ -160,6 +162,10 @@ export default function Feasibility() {
       setReport(last.report || null);
       setField(last.field || null);
       setStage(last.report ? "done" : "ready");
+    } else {
+      // أول مرة: نعبّي من ملف النشاط (والعميل يعدّل)
+      const pre = feasibilityPrefill(read("brand", null));
+      if (pre) { setForm((f) => ({ ...EMPTY_FORM, ...f, ...pre })); setFromBrand(true); }
     }
   }, []);
 
@@ -321,6 +327,9 @@ export default function Feasibility() {
             </button>
           ))}
         </div>
+        {fromBrand && stage === "idle" && (
+          <p className={s.fromBrand}>اتعبّت البيانات من <Link href="/brand">ملف نشاطك</Link>. راجعها وعدّل اللي محتاجه. <button type="button" onClick={() => { setForm(EMPTY_FORM); setFromBrand(false); }}>ابدأ من فاضي</button></p>
+        )}
         <label className={s.field}>
           <span className={s.label}>النشاط بالتحديد</span>
           <input value={form.activity} onChange={set("activity")} maxLength={120} disabled={busy} placeholder="مثلاً: كافيه صغير للطلبة جنب الجامعة" />

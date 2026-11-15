@@ -9,6 +9,7 @@ import { useStored } from "@/lib/store";
 import ToolIcon from "./ToolIcon";
 import { Glyph } from "@/lib/toolglyphs";
 import { BIZ_GROUPS, groupOf } from "@/lib/bizgroups";
+import { TOOL_ROLES } from "@/lib/toolroles";
 
 // التصنيف في الرابط: مجموعة من الـ8 (?cat=marketing)، أو تصنيف قديم (?cat=social) بيفضل شغال للروابط القديمة
 const VALID = new Set([...BIZ_GROUPS.map((g) => g.id), ...categories.map((c) => c.id)]);
@@ -50,6 +51,7 @@ function Catalog({ cat, onCat }) {
               <div>
                 <h3>{t.name}{favs.includes(t.id) && <span className="fav-dot" aria-label="في المفضلة"> ★</span>}</h3>
                 <p>{t.desc}</p>
+                {TOOL_ROLES[t.id] && <small className="trade-line">للتاجر: {TOOL_ROLES[t.id]}</small>}
               </div>
             </Link>
           ))}

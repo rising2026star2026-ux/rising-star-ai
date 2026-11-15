@@ -199,3 +199,6 @@ a.ghost { text-decoration: none; display: inline-block; }
 .cfBox summary { cursor: pointer; padding: 6px 0; }
 .cfBox small { color: var(--faint); font-weight: 400; }
 .cap { caption-side: top; text-align: start; padding: 8px 0 4px; font-size: var(--fs-xs); color: var(--muted); }
+.fromBrand { margin: 0 0 12px; padding: 10px 14px; border-radius: var(--r-md); background: rgba(217, 176, 74, 0.14); border: 1px solid rgba(184, 144, 47, 0.45); font-size: var(--fs-sm); line-height: 1.8; color: var(--ink); }
+.fromBrand a { color: var(--accent); font-weight: 700; text-decoration: underline; }
+.fromBrand button { margin-inline-start: 6px; padding: 0; border: 0; background: none; color: var(--accent); font: inherit; font-weight: 700; text-decoration: underline; cursor: pointer; }

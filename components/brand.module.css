@@ -30,3 +30,11 @@ textarea.input { resize: vertical; min-height: 62px; }
 .use b { color: var(--text-strong); font-weight: 800; white-space: nowrap; }
 .use a { color: var(--blue); text-decoration: underline; }
 .note { font-size: var(--fs-sm); color: var(--muted); line-height: 1.8; margin: 0; }
+.hub { border-color: var(--yellow-deep); }
+.meter { block-size: 8px; border-radius: 999px; background: var(--surface-2); overflow: hidden; margin: 10px 0; }
+.meter i { display: block; block-size: 100%; background: var(--yellow); transition: inline-size 0.3s var(--ease); }
+.uses { list-style: none; margin: 10px 0; padding: 0; display: grid; gap: 6px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.uses li { display: grid; gap: 1px; padding: 8px 12px; border-radius: var(--r-md); border: 1px dashed var(--hairline-strong); font-size: var(--fs-sm); color: var(--muted); }
+.uses li[data-done="true"] { border-style: solid; border-color: var(--yellow-deep); background: rgba(217, 176, 74, 0.1); color: var(--ink); }
+.uses li b { font-size: var(--fs-md); }
+.uses li span { font-size: var(--fs-xs); }

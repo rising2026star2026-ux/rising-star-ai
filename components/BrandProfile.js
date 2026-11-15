@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useStored, toast, read } from "@/lib/store";
+import { profileCompleteness } from "@/lib/bizprofile";
 import { BRAND_TONES, BRAND_DIALECTS, BIZ_STATUS, CUSTOMER_TYPES, SALES_CHANNELS, EMPTY_BRAND, brandBlock, cleanBrand } from "@/lib/brandprofile";
 import { resolveColors } from "@/lib/logostudio";
 import { Seg } from "./studio/ui";
@@ -68,11 +69,26 @@ export default function BrandProfile() {
     setBusy(false);
   }
 
+  const prog = useMemo(() => profileCompleteness(cleanBrand(b)), [b]);
   const preview = useMemo(() => brandBlock(cleanBrand(b)), [b]);
   const logoColors = (logos || []).slice(0, 6).map((c) => ({ c, col: resolveColors(c) }));
 
   return (
     <div className={s.root}>
+      <section className={`${s.card} ${s.hub}`} aria-label="اكتمال ملف النشاط">
+        <h2>ملف نشاطك بيشغّل المنصة كلها</h2>
+        <div className={s.meter} role="progressbar" aria-valuenow={prog.percent} aria-valuemin={0} aria-valuemax={100} aria-label="اكتمال الملف"><i style={{ inlineSize: `${prog.percent}%` }} /></div>
+        <p className={s.note}>{prog.done.toLocaleString("ar-EG")} من {prog.total.toLocaleString("ar-EG")} بنود مكتملة. كل بند بتكمّله بيتستخدم تلقائياً:</p>
+        <ul className={s.uses}>
+          {prog.items.map((i) => <li key={i.id} data-done={i.done}><b>{i.label}</b><span>{i.use}</span></li>)}
+        </ul>
+        <div className={s.acts}>
+          <Link href="/feasibility" className="btn ghost">دراسة الجدوى</Link>
+          <Link href="/s/seller" className="btn ghost">مساعد الأعمال</Link>
+          <Link href="/compare-business" className="btn ghost">مقارنة الأنشطة</Link>
+        </div>
+      </section>
+
       <section className={s.card}>
         <h2>نشاطك</h2>
         <div className={s.row2}>
