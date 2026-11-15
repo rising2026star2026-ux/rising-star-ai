@@ -2,7 +2,9 @@
 import IntroDone from "./IntroDone";
 import { STAR_PATH } from "./StarMark";
 
-const NAME = "Rising Business";
+import { BRAND, TAGLINE } from "@/lib/site";
+
+const NAME = BRAND;
 
 // نجوم صغيرة بمواقع ثابتة (من غير عشوائية عشان نفس الشكل على السيرفر والمتصفح)
 const SPARKS = Array.from({ length: 26 }, (_, i) => ({
@@ -39,11 +41,16 @@ export default function Intro() {
           </svg>
         </div>
         <div className="intro-name" dir="ltr">
-          {NAME.split("").map((c, i) => (
-            <span key={i} style={{ "--d": i }}>{c === " " ? "\u00A0" : c}</span>
-          ))}
+          {NAME.split(" ").map((w, wi, all) => {
+            const before = all.slice(0, wi).join(" ").length + (wi ? 1 : 0);
+            return (
+              <span key={wi} className={`intro-word${wi ? " gold" : ""}`}>
+                {w.split("").map((c, i) => <span key={i} style={{ "--d": before + i }}>{c}</span>)}
+              </span>
+            );
+          })}
         </div>
-        <div className="intro-tag">كل الذكاء الاصطناعي في مكان واحد، وبالعربي</div>
+        <div className="intro-tag">{TAGLINE}</div>
       </div>
       <IntroDone />
     </>

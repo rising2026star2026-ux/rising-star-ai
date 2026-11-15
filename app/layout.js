@@ -4,19 +4,18 @@ import ThemeShift from "@/components/ThemeShift";
 import Chrome from "@/components/Chrome";
 import BottomNav from "@/components/BottomNav";
 import Intro from "@/components/Intro";
-import { tools } from "@/lib/tools";
-import { SITE_URL, BRAND } from "@/lib/site";
+import { SITE_URL, BRAND, SITE_DESCRIPTION } from "@/lib/site";
 
-const description = `مساحة عمل عربية لأصحاب الأنشطة التجارية: ${tools.length} أداة للتسويق والبيع، ودراسة جدوى، ومساعد أعمال بالذكاء الاصطناعي.`;
+const description = SITE_DESCRIPTION;
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: `${BRAND} | ${tools.length} أداة ذكاء اصطناعي بالعربي`, template: `%s | ${BRAND}` },
+  title: { default: `${BRAND} | منصة التجارة والأعمال بالعربي`, template: `%s | ${BRAND}` },
   description,
   applicationName: BRAND,
   alternates: { canonical: "/" },
-  openGraph: { siteName: BRAND, locale: "ar_EG", type: "website", title: BRAND, description, url: "/" },
-  twitter: { card: "summary", title: BRAND, description },
+  openGraph: { siteName: BRAND, locale: "ar_EG", type: "website", title: `${BRAND} | منصة التجارة والأعمال بالعربي`, description, url: "/" },
+  twitter: { card: "summary", title: `${BRAND} | منصة التجارة والأعمال بالعربي`, description },
   formatDetection: { telephone: false },
   // تثبيت كتطبيق على الآيفون (ملء الشاشة من غير شريط Safari)
   appleWebApp: { capable: true, title: BRAND, statusBarStyle: "black-translucent" },
@@ -47,7 +46,7 @@ export default function RootLayout({ children }) {
         {/* الخط: IBM Plex Sans Arabic. لو غيرته، غيّر --ui في globals.css كمان */}
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Alexandria:wght@600;700;800;900&family=Archivo:wght@700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400..700&family=Almarai:wght@400;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400..700&family=Almarai:wght@400;700&display=swap"
         />
       </head>
       <body>
