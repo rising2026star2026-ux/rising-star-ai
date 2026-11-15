@@ -1,0 +1,358 @@
+[
+  {
+    "check": "api:voice-tts-transcribe",
+    "ok": true,
+    "ms": 1230,
+    "notes": [
+      "transcribe 200 in 343ms",
+      "said: عندي طقم حلل جرانيت تركي عشر قطع، سعره ألف وتمنمية وخمسين جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام.",
+      "got: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ]
+  },
+  {
+    "check": "home",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 4353,
+    "notes": [],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "home",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 3980,
+    "notes": [],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "seller",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 4241,
+    "notes": [],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "seller",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 3516,
+    "notes": [],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "test-ad",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 38997,
+    "notes": [
+      "story saved"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "test-ad",
+    "vp": "desktop",
+    "ok": false,
+    "ms": 97040,
+    "notes": [
+      "story saved",
+      "FAILED: locator.waitFor: Timeout 75000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /اعرض النتيجة على طول/ }) to be visible\n"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "photo-ad",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 123676,
+    "notes": [
+      "✓ الخلفية اتشالت",
+      "pack timeout",
+      "no video button"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently"
+    ]
+  },
+  {
+    "check": "photo-ad",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 124170,
+    "notes": [
+      "✓ الخلفية اتشالت",
+      "pack timeout",
+      "no video button"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently"
+    ]
+  },
+  {
+    "check": "voice-post",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 20319,
+    "notes": [
+      "transcript: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "voice-post",
+    "vp": "desktop",
+    "ok": false,
+    "ms": 81264,
+    "notes": [
+      "transcript: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام.",
+      "FAILED: locator.waitFor: Timeout 70000ms exceeded.\nCall log:\n  - waiting for getByText('البوستات جاهزة') to be visible\n"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "catalog",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 70357,
+    "notes": [
+      "after bg: ما قدرناش نشيل الخلفيات دلوقتي. جرّب تاني بعد شوية. | ",
+      "pdf saved",
+      "page images 4"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "console.warning: cloud cutout failed n: \"\"\n    at http://localhost:3000/_next/static/chunks/9269-e1fc8cf1dab755ea.js:1:1114\n    at o (http://localhost:3000/_next/static/chunks/9269-e1fc8cf1dab755ea.js:1:1148)\n    at async r (http://localhost:3000/_next/static/chunks/9269-e1fc8cf1dab755ea.js:1:1922)\n    at async p (http://localhost:3000/_next/static/chunks/9269-e1fc8cf1dab755ea.js:1:6108)\n    at async v (http://loc",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()"
+    ]
+  },
+  {
+    "check": "catalog",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 85901,
+    "notes": [
+      "after bg: ما قدرناش نشيل الخلفيات دلوقتي. جرّب تاني بعد شوية. | ",
+      "pdf saved",
+      "page images 4"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "console.warning: cloud cutout failed n: \"\"\n    at http://localhost:3000/_next/static/chunks/9269-e1fc8cf1dab755ea.js:1:1114\n    at o (http://localhost:3000/_next/static/chunks/9269-e1fc8cf1dab755ea.js:1:1148)\n    at async r (http://localhost:3000/_next/static/chunks/9269-e1fc8cf1dab755ea.js:1:1922)\n    at async p (http://localhost:3000/_next/static/chunks/9269-e1fc8cf1dab755ea.js:1:6108)\n    at async v (http://loc",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()"
+    ]
+  },
+  {
+    "check": "tools-grid",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 3534,
+    "notes": [],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "tools-grid",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 3014,
+    "notes": [],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "tool-qr",
+    "vp": "mobile",
+    "ok": false,
+    "ms": 32096,
+    "notes": [
+      "FAILED: locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('textarea')\n"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "tool-calcs",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 3892,
+    "notes": [
+      "",
+      ""
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "tool-ocr",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 11588,
+    "notes": [
+      "فاتورة رقم 4521\nشنطة جلد طبيعي: 850 جنيه\nمحفظة حريمي: 320 جنيه\nالإجمالي: 1170 جنيه\n\nOrder No. 4521 - Thank you"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "remove-bg",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 123970,
+    "notes": [
+      "device failed → trying cloud button",
+      "cloud timeout",
+      "NOT removed"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: \u001b[0;93m2026-11-15 11:22:45.413499 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-15 11:22:45.436398 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-15 11:22:45.453799 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-15 11:22:45.465299 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-15 11:22:45.484199 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-15 11:22:45.502099 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-15 11:22:45.536499 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-15 11:22:45.546399 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-15 11:22:45.867399 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-15 11:22:45.867898 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-15 11:22:45.868098 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-15 11:22:45.868499 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.0/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-15 11:22:45.868898 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-15 11:22:45.869098 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.2/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-15 11:22:45.869499 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3_1/Sub'\u001b[m",
+      "console.error: \u001b[0;93m2026-11-15 11:22:45.869899 [W:onnxruntime:, constant_folding.cc:278 ApplyImpl] Could not find a CPU kernel and hence can't constant fold Sub node '/bb/layers.3/Sub'\u001b[m",
+      "console.error: An error occurred during model execution: \"127873152\".",
+      "console.error: Inputs given to model: {input_image: Object}",
+      "console.error: 127873152"
+    ]
+  },
+  {
+    "check": "remove-bg",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 92340,
+    "notes": [
+      "device failed → trying cloud button",
+      "cloud timeout",
+      "NOT removed"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: Error: Error (405) occurred while trying to load file: \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json\".\n    at https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751721\n    at f (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751744)\n    at async _ (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:753508)\n    at async g ",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()"
+    ]
+  },
+  {
+    "check": "api:test-ad",
+    "ok": true,
+    "ms": 172177,
+    "notes": [
+      "status 200 in 172177ms",
+      "score 49 tally {\"buy\":11,\"maybe\":46,\"skip\":43}"
+    ]
+  },
+  {
+    "check": "api:test-ad-image",
+    "ok": false,
+    "ms": 300755,
+    "notes": [
+      "fetch failed"
+    ]
+  },
+  {
+    "check": "api:product-eye",
+    "ok": true,
+    "ms": 2479,
+    "notes": [
+      "status 200 in 2479ms",
+      "{\"name\":\"عبوة مستطيلة بغطاء أسود\",\"category\":\"مستحضرات تجميل\",\"colors\":[\"برتقالي\",\"أسود\"],\"visible\":[\"تصميم مستطيل بحواف دائرية\",\"غطاء مربع متصل\",\"تصميم بسيط ونظيف\"],\"scene\":\"minimalist warm beige studio background, soft warm lighting, clean flat surface, soft shadows, empty product photography backdrop\",\"seen\":\"بناءً على الصورة الظاهرة أمامنا، إليك التفاصيل المحددة:\\n\\n1) **المنتج:** عبوة مستطيلة"
+    ]
+  },
+  {
+    "check": "api:catalog-copy",
+    "ok": true,
+    "ms": 919,
+    "notes": [
+      "status 200 in 919ms",
+      "{\"tagline\":\"شياكتك تكمل عندنا بأحسن الأسعار\",\"descs\":[\"شنطة يد جلد طبيعي تشيل معاكي كل حاجتك اليومية.\",\"شنطة كروس صغيرة تريحك في الخروجات السريعة والحتت الزحمة.\",\"محفظة حريمي منظمة ترتّب لك فلوسك وكروت باسلوب شيك.\"]}"
+    ]
+  },
+  {
+    "check": "api:ad-pack-voice",
+    "ok": true,
+    "ms": 30745,
+    "notes": [
+      "status 200 in 30745ms",
+      "missing=[\"تفاصيل ومقاسات الـ 10 قطع (كام حلة وطاسة وغطا)\",\"سعر مصاريف الشحن للمحافظات\"] tags=12"
+    ]
+  }
+]
