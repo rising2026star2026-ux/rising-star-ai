@@ -1,0 +1,29 @@
+{
+ "date": "2026-11-18T05:42:41.052Z",
+ "total": 117,
+ "ok": 111,
+ "broken": [
+  "/tool/content-calendar",
+  "/tool/business-plan",
+  "/tool/business-ideas",
+  "/tool/email-writer",
+  "/tool/email-reply",
+  "feature:test-ad"
+ ],
+ "warn": 0,
+ "spacesDown": [],
+ "aiTested": [
+  "/tool/tiktok-script",
+  "/tool/video-prompt",
+  "/tool/whatsapp-sales",
+  "/tool/youtube-title",
+  "/tool/ad-copy",
+  "/tool/adspy",
+  "/tool/business-ideas",
+  "/tool/business-plan",
+  "/tool/caption",
+  "/tool/content-calendar",
+  "/tool/email-reply",
+  "/tool/email-writer"
+ ]
+}
