@@ -1,0 +1,32 @@
+{
+ "date": "2026-11-23T05:46:15.872Z",
+ "total": 117,
+ "ok": 108,
+ "broken": [
+  "/tool/seo-article",
+  "/tool/tiktok-script",
+  "/tool/proposal",
+  "/tool/product-desc",
+  "/tool/review-reply",
+  "/tool/whatsapp-sales",
+  "/tool/video-prompt",
+  "/tool/sheet-analyst",
+  "feature:test-ad"
+ ],
+ "warn": 0,
+ "spacesDown": [],
+ "aiTested": [
+  "/tool/post",
+  "/tool/product-desc",
+  "/tool/proposal",
+  "/tool/review-reply",
+  "/tool/seo-article",
+  "/tool/sheet-analyst",
+  "/tool/tiktok-script",
+  "/tool/video-prompt",
+  "/tool/whatsapp-sales",
+  "/tool/youtube-title",
+  "/tool/ad-copy",
+  "/tool/adspy"
+ ]
+}
