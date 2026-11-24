@@ -1,0 +1,34 @@
+{
+ "date": "2026-11-24T05:39:17.735Z",
+ "total": 117,
+ "ok": 106,
+ "broken": [
+  "/tool/landing-page",
+  "/tool/marketing-plan",
+  "/tool/business-plan",
+  "/tool/email-writer",
+  "/tool/image-prompt",
+  "/tool/logo-ideas",
+  "/tool/remove-bg",
+  "feature:photo-ad",
+  "feature:test-ad",
+  "feature:voice-post",
+  "feature:amazon-check"
+ ],
+ "warn": 0,
+ "spacesDown": [],
+ "aiTested": [
+  "/tool/business-ideas",
+  "/tool/business-plan",
+  "/tool/caption",
+  "/tool/content-calendar",
+  "/tool/email-reply",
+  "/tool/email-writer",
+  "/tool/image-prompt",
+  "/tool/landing-page",
+  "/tool/logo-ideas",
+  "/tool/marketing-plan",
+  "/tool/post",
+  "/tool/product-desc"
+ ]
+}
