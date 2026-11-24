@@ -2,7 +2,7 @@
 .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; padding: 12px 14px; border-radius: var(--r-md); background: var(--surface-2); font-size: var(--fs-sm); color: var(--muted); }
 .legend b { color: var(--ink); }
 .cards { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-.card { display: grid; gap: 12px; padding: 16px; border-radius: var(--r-lg); background: #fff; border: 1px solid var(--hairline-strong); align-content: start; }
+.card { display: grid; gap: 12px; padding: 16px; border-radius: var(--r-lg); background: var(--card); border: 1px solid var(--hairline-strong); align-content: start; }
 .cardHead { display: flex; gap: 8px; align-items: center; }
 .name { flex: 1; min-width: 0; font: inherit; font-size: var(--fs-base); font-weight: 700; padding: 10px 12px; border-radius: var(--r-sm); border: 1px solid var(--hairline-strong); background: var(--field); color: var(--ink); }
 .x { font: inherit; font-size: var(--fs-sm); cursor: pointer; color: var(--danger); background: transparent; border: 1px solid var(--hairline-strong); border-radius: var(--r-sm); padding: 8px 10px; }
@@ -12,20 +12,20 @@
 .field input, .field select { font: inherit; font-size: var(--fs-md); padding: 9px 10px; border-radius: var(--r-sm); border: 1px solid var(--hairline-strong); background: var(--field); color: var(--ink); min-width: 0; }
 .name:focus-visible, .field input:focus-visible, .field select:focus-visible, .btn:focus-visible { outline: 2px solid var(--yellow-deep); outline-offset: 1px; }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; }
-.btn { font: inherit; font-size: var(--fs-md); cursor: pointer; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--hairline-strong); background: #fff; color: var(--ink); }
+.btn { font: inherit; font-size: var(--fs-md); cursor: pointer; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--hairline-strong); background: var(--card); color: var(--ink); }
 .btn:hover { border-color: var(--ink); }
 .primary { background: var(--night); border-color: var(--night); color: var(--yellow); font-weight: 700; }
 .h2 { margin: 6px 0 0; font-family: var(--display); font-size: var(--fs-xl); font-weight: 800; color: var(--ink); }
-.tableWrap { overflow-x: auto; border: 1px solid var(--hairline-strong); border-radius: var(--r-lg); background: #fff; }
+.tableWrap { overflow-x: auto; border: 1px solid var(--hairline-strong); border-radius: var(--r-lg); background: var(--card); }
 .table { width: 100%; border-collapse: collapse; font-size: var(--fs-md); min-width: 480px; }
 .table th, .table td { padding: 11px 12px; text-align: start; border-bottom: 1px solid var(--hairline); }
 .table thead th { background: var(--night); color: #fff; font-weight: 700; }
 .table tbody th { font-weight: 600; color: var(--ink); background: var(--surface-2); white-space: nowrap; }
-.best { background: rgba(217, 176, 74, 0.22); font-weight: 700; color: var(--ink); }
+.best { background: rgba(255, 154, 60, 0.22); font-weight: 700; color: var(--ink); }
 .total th, .total td { border-bottom: 0; font-weight: 700; }
 .note, .empty { margin: 0; font-size: var(--fs-sm); color: var(--muted); line-height: 1.8; }
 .charts { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-.chart { margin: 0; padding: 14px; border-radius: var(--r-lg); background: #fff; border: 1px solid var(--hairline-strong); display: grid; gap: 8px; }
+.chart { margin: 0; padding: 14px; border-radius: var(--r-lg); background: var(--card); border: 1px solid var(--hairline-strong); display: grid; gap: 8px; }
 .chart figcaption { font-weight: 700; font-size: var(--fs-base); color: var(--ink); }
 .chart small { color: var(--faint); font-weight: 500; }
 .barRow { display: grid; grid-template-columns: 84px 1fr auto; gap: 8px; align-items: center; font-size: var(--fs-sm); }
@@ -39,6 +39,6 @@
 .how summary { cursor: pointer; font-weight: 700; }
 .how ul { margin: 8px 0 0; padding-inline-start: 18px; }
 .savedBox { display: grid; gap: 8px; }
-.savedRow { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: var(--r-md); background: #fff; border: 1px solid var(--hairline-strong); }
+.savedRow { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: var(--r-md); background: var(--card); border: 1px solid var(--hairline-strong); }
 .savedRow span { flex: 1; }
 @media print { .actions, .cards, .savedBox, .legend { display: none; } }

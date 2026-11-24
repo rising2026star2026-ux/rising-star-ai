@@ -47,7 +47,7 @@
 .hubList li { display: flex; align-items: center; gap: 9px; }
 .hubList li::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--sec); box-shadow: 0 0 0 3px color-mix(in srgb, var(--sec) 30%, transparent); }
 .hubGo { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 16px; font-size: var(--fs-md); font-weight: 700; }
-.hubGo i { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: #fff; color: #0a0a18; transition: transform 0.22s var(--ease); }
+.hubGo i { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--card); color: #0a0a18; transition: transform 0.22s var(--ease); }
 .hubCard:hover .hubGo i { transform: translateX(-4px); }
 .hubFoot { display: flex; justify-content: center; gap: 22px; margin: 28px 0 0; font-size: var(--fs-sm); }
 .hubFoot a { color: rgba(255, 255, 255, 0.7); }

@@ -1,16 +1,16 @@
 /* الرئيسية: لوحة Rising Business */
 .title { margin: 10px 0 12px; font-family: var(--display); font-weight: 800; color: #fff; font-size: var(--fs-headline); line-height: 1.4; }
 .choice { display: grid; gap: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 640px; margin: 0 auto; }
-.choiceBtn { display: grid; gap: 2px; padding: 16px; border-radius: var(--r-lg); background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(217, 176, 74, 0.4); color: #fff; text-align: center; transition: background-color 0.18s var(--ease); }
-.choiceBtn:hover, .choiceBtn:focus-visible { background: rgba(217, 176, 74, 0.18); }
+.choiceBtn { display: grid; gap: 2px; padding: 16px; border-radius: var(--r-lg); background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 154, 60, 0.4); color: #fff; text-align: center; transition: background-color 0.18s var(--ease); }
+.choiceBtn:hover, .choiceBtn:focus-visible { background: rgba(255, 154, 60, 0.18); }
 .choiceBtn b { font-size: var(--fs-lg); color: var(--yellow); }
 .choiceBtn span { font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.85); line-height: 1.7; }
 .choiceBtn small { margin-top: 4px; font-size: var(--fs-xs); color: var(--yellow); opacity: 0.9; }
 .cta { display: block; inline-size: fit-content; margin: 18px auto 6px; padding: 13px 30px; border-radius: 999px; background: var(--yellow); color: var(--night); font-size: var(--fs-lg); font-weight: 800; transition: background-color 0.18s var(--ease); }
-.cta:hover, .cta:focus-visible { background: #e6c15f; }
+.cta:hover, .cta:focus-visible { background: #ffb15c; }
 .ctaNote { margin: 0 auto 18px; max-inline-size: 460px; text-align: center; font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.8); line-height: 1.8; }
 .values { list-style: none; display: grid; gap: 8px; grid-template-columns: repeat(3, minmax(0, 1fr)); max-inline-size: 640px; margin: 18px auto 0; padding: 0; }
-.values li { display: grid; gap: 2px; text-align: center; padding: 10px 6px; border-top: 1px solid rgba(217, 176, 74, 0.35); }
+.values li { display: grid; gap: 2px; text-align: center; padding: 10px 6px; border-top: 1px solid rgba(255, 154, 60, 0.35); }
 .values b { color: var(--yellow); font-size: var(--fs-md); }
 .values span { font-size: var(--fs-xs); color: rgba(255, 255, 255, 0.75); line-height: 1.6; }
 .block { margin-top: 34px; }
@@ -19,7 +19,7 @@
 .head h2 { margin: 0; font-family: var(--display); font-size: var(--fs-xl); font-weight: 800; color: var(--ink); }
 .all { font-size: var(--fs-sm); font-weight: 700; color: var(--accent); }
 .grid2 { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.panel { display: grid; gap: 6px; align-content: start; padding: 18px; border-radius: var(--r-lg); background: #fff; border: 1px solid var(--hairline-strong); color: var(--ink); transition: border-color 0.18s var(--ease); }
+.panel { display: grid; gap: 6px; align-content: start; padding: 18px; border-radius: var(--r-lg); background: var(--card); border: 1px solid var(--hairline-strong); color: var(--ink); transition: border-color 0.18s var(--ease); }
 .panel:hover, .panel:focus-visible { border-color: var(--yellow-deep); }
 .panel h2 { margin: 0; font-size: var(--fs-lg); font-weight: 800; }
 .panel p { margin: 0; font-size: var(--fs-md); color: var(--muted); line-height: 1.8; }
@@ -38,7 +38,7 @@
 .group span { font-size: var(--fs-sm); color: var(--muted); line-height: 1.7; }
 .group small { font-size: var(--fs-xs); color: var(--faint); }
 .recent { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-.rItem { display: grid; gap: 2px; padding: 14px 16px; border-radius: var(--r-md); background: #fff; border: 1px solid var(--hairline-strong); color: var(--ink); }
+.rItem { display: grid; gap: 2px; padding: 14px 16px; border-radius: var(--r-md); background: var(--card); border: 1px solid var(--hairline-strong); color: var(--ink); }
 .rItem b { font-size: var(--fs-md); }
 .rItem span { font-size: var(--fs-sm); color: var(--muted); }
 .emptyBox { margin: 0; padding: 18px; border-radius: var(--r-lg); border: 1px dashed var(--hairline-strong); color: var(--muted); font-size: var(--fs-md); line-height: 1.8; text-align: center; }

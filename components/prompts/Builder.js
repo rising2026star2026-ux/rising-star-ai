@@ -239,7 +239,7 @@ export default function Builder() {
                 {gen.items.map((it, i) => (
                   <article key={i} className={s.item}>
                     <h3>{it.title}<span className={s.tag}>{i + 1}</span></h3>
-                    <p dir="auto">{parts(it.prompt).map((x, k) => (/^\[[^\]]+\]$/.test(x) ? <mark key={k} style={{ background: "#fff3c4", borderRadius: 5, padding: "0 3px" }}>{x}</mark> : <span key={k}>{x}</span>))}</p>
+                    <p dir="auto">{parts(it.prompt).map((x, k) => (/^\[[^\]]+\]$/.test(x) ? <mark key={k} style={{ background: "rgba(251,191,36,0.25)", borderRadius: 5, padding: "0 3px" }}>{x}</mark> : <span key={k}>{x}</span>))}</p>
                     <div className={s.row}>
                       <button type="button" className={`${s.btn} ${s.small} ${s.primary}`} onClick={() => copy(it.prompt)}>نسخ</button>
                       <button type="button" className={`${s.btn} ${s.small}`} onClick={() => save(it.title, it.prompt)}>احفظ</button>

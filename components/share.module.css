@@ -13,7 +13,7 @@
 }
 
 .label {
-  color: var(--faint, var(--muted, #8d8a96));
+  color: var(--faint, var(--muted, #8b92b8));
   font-size: var(--fs-sm);
 }
 
@@ -72,7 +72,7 @@
 .compact .btn {
   padding: 6px 9px;
   border-radius: var(--r-sm);
-  color: var(--faint, var(--muted, #8d8a96));
+  color: var(--faint, var(--muted, #8b92b8));
   background: transparent;
 }
 .compact .txt {
