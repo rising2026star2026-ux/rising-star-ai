@@ -1,0 +1,345 @@
+[
+  {
+    "check": "api:voice-tts-transcribe",
+    "ok": true,
+    "ms": 1086,
+    "notes": [
+      "transcribe 200 in 389ms",
+      "said: عندي طقم حلل جرانيت تركي عشر قطع، سعره ألف وتمنمية وخمسين جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام.",
+      "got: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام."
+    ]
+  },
+  {
+    "check": "home",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 4197,
+    "notes": [],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "home",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 4057,
+    "notes": [],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "seller",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 4106,
+    "notes": [],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "seller",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 3531,
+    "notes": [],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "test-ad",
+    "vp": "mobile",
+    "ok": false,
+    "ms": 32214,
+    "notes": [
+      "FAILED: locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: 'اعرض إعلاني على 100 زبون' })\n"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "test-ad",
+    "vp": "desktop",
+    "ok": false,
+    "ms": 32211,
+    "notes": [
+      "FAILED: locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: 'اعرض إعلاني على 100 زبون' })\n"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "photo-ad",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 36091,
+    "notes": [
+      "✓ الخلفية اتشالت"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license\nPass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear."
+    ]
+  },
+  {
+    "check": "photo-ad",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 124178,
+    "notes": [
+      "✓ الخلفية اتشالت",
+      "pack timeout",
+      "no video button"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently"
+    ]
+  },
+  {
+    "check": "voice-post",
+    "vp": "mobile",
+    "ok": false,
+    "ms": 82815,
+    "notes": [
+      "transcript: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام.",
+      "FAILED: locator.waitFor: Timeout 70000ms exceeded.\nCall log:\n  - waiting for getByText('البوستات جاهزة') to be visible\n"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "voice-post",
+    "vp": "desktop",
+    "ok": false,
+    "ms": 81866,
+    "notes": [
+      "transcript: عندي طقم حلل جرانيت تركي عشر قطع، سعره 1850 جنيه، وفيه منه لونين رمادي وبيج، والشحن لكل محافظات مصر والدفع عند الاستلام.",
+      "FAILED: locator.waitFor: Timeout 70000ms exceeded.\nCall log:\n  - waiting for getByText('البوستات جاهزة') to be visible\n"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "catalog",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 34006,
+    "notes": [
+      "after bg: 4 صورة ما اتشالتش خلفيتها، وفضلت زي ما هي. | ",
+      "pdf saved",
+      "page images 4"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "console.warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "console.warning: cloud cutout failed n: \"\"\n    at http://localhost:3000/_next/static/chunks/9269-e1fc8cf1dab755ea.js:1:1114\n    at o (http://localhost:3000/_next/static/chunks/9269-e1fc8cf1dab755ea.js:1:1148)\n    at async r (http://localhost:3000/_next/static/chunks/9269-e1fc8cf1dab755ea.js:1:1922)\n    at async p (http://localhost:3000/_next/static/chunks/9269-e1fc8cf1dab755ea.js:1:6108)\n    at async v (http://loc",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()"
+    ]
+  },
+  {
+    "check": "catalog",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 26945,
+    "notes": [
+      "after bg: ما قدرناش نشيل الخلفيات دلوقتي. جرّب تاني بعد شوية. | ",
+      "pdf saved",
+      "page images 4"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "console.warning: cloud cutout failed n: \"\"\n    at http://localhost:3000/_next/static/chunks/9269-e1fc8cf1dab755ea.js:1:1114\n    at o (http://localhost:3000/_next/static/chunks/9269-e1fc8cf1dab755ea.js:1:1148)\n    at async r (http://localhost:3000/_next/static/chunks/9269-e1fc8cf1dab755ea.js:1:1922)\n    at async p (http://localhost:3000/_next/static/chunks/9269-e1fc8cf1dab755ea.js:1:6108)\n    at async v (http://loc",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()"
+    ]
+  },
+  {
+    "check": "tools-grid",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 3547,
+    "notes": [],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "tools-grid",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 3646,
+    "notes": [],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "tool-qr",
+    "vp": "mobile",
+    "ok": false,
+    "ms": 32133,
+    "notes": [
+      "FAILED: locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('textarea')\n"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "tool-calcs",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 3943,
+    "notes": [
+      "",
+      ""
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "tool-ocr",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 4470,
+    "notes": [
+      "فاتورة رقم 4521\n\nشنطة جلد طبيعي: 850 جنيه\n\nمحفظة حريمي: 320 جنيه\n\nالإجمالي: 1170 جنيه\n\nOrder No. 4521 - Thank you"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'."
+    ]
+  },
+  {
+    "check": "remove-bg",
+    "vp": "mobile",
+    "ok": true,
+    "ms": 92455,
+    "notes": [
+      "device failed → trying cloud button",
+      "cloud timeout",
+      "NOT removed"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: Error: Error (405) occurred while trying to load file: \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json\".\n    at https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751721\n    at f (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751744)\n    at async _ (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:753508)\n    at async g ",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()"
+    ]
+  },
+  {
+    "check": "remove-bg",
+    "vp": "desktop",
+    "ok": true,
+    "ms": 92452,
+    "notes": [
+      "device failed → trying cloud button",
+      "cloud timeout",
+      "NOT removed"
+    ],
+    "errors": [
+      "console.warning: Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()",
+      "console.error: Error: Error (405) occurred while trying to load file: \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/config.json\".\n    at https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751721\n    at f (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:751744)\n    at async _ (https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.1:1:753508)\n    at async g ",
+      "http 405 GET https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/main/preprocessor_config.json",
+      "console.error: Failed to load resource: the server responded with a status of 405 ()"
+    ]
+  },
+  {
+    "check": "api:test-ad",
+    "ok": true,
+    "ms": 8426,
+    "notes": [
+      "status 200 in 8426ms",
+      "score 67 tally {\"buy\":47,\"maybe\":33,\"skip\":20}"
+    ]
+  },
+  {
+    "check": "api:test-ad-image",
+    "ok": true,
+    "ms": 12313,
+    "notes": [
+      "status 200 in 12312ms",
+      "sawImage=true",
+      "photo=[\"الصورة عبارة عن رسمة مسطحة ولا توضح شكل العبوة الحقيقي.\",\"غياب اللوجو واسم العطر على الصورة يقلل من الاحترافية.\"]"
+    ]
+  },
+  {
+    "check": "api:product-eye",
+    "ok": true,
+    "ms": 2310,
+    "notes": [
+      "status 200 in 2310ms",
+      "{\"name\":\"زجاجة عطر عسلي أنيقة\",\"category\":\"عطور ومستحضرات\",\"colors\":[\"عسلي\",\"أسود\"],\"visible\":[\"جسم مستطيل بحواف دائرية\",\"غطاء أسود مربع\",\"شريط طولي لامع\"],\"scene\":\"minimalist dark luxury marble podium, soft dramatic studio lighting, dark blurry background\",\"seen\":\"1. **نوع وشكل المنتج:** زجاجة (تأخذ شكل زجاجة عطر أو مستحضر) ذات جسم مستطيل بحواف دائرية، مع غطاء أسود مربع الشكل.\\n2. **الألوان والخا"
+    ]
+  },
+  {
+    "check": "api:catalog-copy",
+    "ok": true,
+    "ms": 900,
+    "notes": [
+      "status 200 in 900ms",
+      "{\"tagline\":\"أناقة بيتك وشغلك تبدأ من هنا\",\"descs\":[\"شنطة يد جلد طبيعي تشيل معاكي كل حاجتك\",\"شنطة كروس صغيرة تريحك في الخروجات السريعة\",\"محفظة حريمي ترتب فلوسك وكروتك بكل شكة\"]}"
+    ]
+  },
+  {
+    "check": "api:ad-pack-voice",
+    "ok": false,
+    "ms": 300764,
+    "notes": [
+      "fetch failed"
+    ]
+  }
+]
