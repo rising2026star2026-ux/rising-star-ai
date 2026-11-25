@@ -277,7 +277,7 @@
 .rangeTop { display: flex; justify-content: space-between; font-size: var(--fs-sm); color: var(--muted); }
 .rangeTop output { font-variant-numeric: tabular-nums; color: var(--text); }
 .qrBox { display: grid; gap: 12px; justify-items: center; }
-.qrBox img { width: 100%; max-width: 320px; height: auto; border-radius: var(--r-md); border: 1px solid var(--hairline); background: var(--card); }
+.qrBox img { width: 100%; max-width: 320px; height: auto; border-radius: var(--r-md); border: 1px solid var(--hairline); background: #fff; }
 .colorIn { width: 100%; height: 40px; padding: 3px; border-radius: var(--r-sm); border: 1px solid var(--hairline); background: var(--field); cursor: pointer; }
 
 /* مولد QR الكامل */
@@ -290,7 +290,7 @@
 .qrTypeOn { color: var(--text); border-color: var(--accent-line); background: var(--surface); }
 .qrSep { width: 100%; margin: 2px 0; border: 0; border-top: 1px solid var(--hairline); }
 .qrLogoRow { display: flex; align-items: center; gap: 12px; }
-.qrLogoRow img { border-radius: var(--r-sm); border: 1px solid var(--hairline); background: var(--card); object-fit: contain; }
+.qrLogoRow img { border-radius: var(--r-sm); border: 1px solid var(--hairline); background: #fff; object-fit: contain; }
 
 /* مولد الأصوات والكتاب المسموع */
 .spDoc { display: grid; gap: 6px; padding: 12px 14px; border-radius: var(--r-sm); border: 1px solid var(--hairline); background: var(--field); }

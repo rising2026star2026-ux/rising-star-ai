@@ -13,7 +13,7 @@
   padding: 7px 10px;
   /* يفضل فوق شريط النظام في الموبايل */
   padding-bottom: calc(7px + env(safe-area-inset-bottom, 0px));
-  background: rgba(5, 6, 16, 0.94);
+  background: rgba(10, 20, 36, 0.94);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
 }
@@ -40,8 +40,8 @@
 }
 .tab:hover { color: rgba(255, 255, 255, 0.85); }
 
-.active { color: #ff9a3c; }
-.active svg { filter: drop-shadow(0 0 10px rgba(255, 154, 60, 0.45)); }
+.active { color: #d9b04a; }
+.active svg { filter: drop-shadow(0 0 10px rgba(217, 176, 74, 0.45)); }
 
 /* على الشاشات الكبيرة الشريط مش محتاج */
 @media (min-width: 880px) {

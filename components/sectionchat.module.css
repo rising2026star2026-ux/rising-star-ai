@@ -4,8 +4,8 @@
 .page {
   --k: 1;
   --read: "Noto Naskh Arabic", var(--ui);
-  --pg: #070916; --ink: #eceefb; --soft: #a3a9c9; --card: #0f1226; --line: rgba(154, 141, 255, 0.18); --wash: #171b38;
-  --shadow: 0 14px 40px -20px rgba(106, 92, 245, 0.55);
+  --pg: #ffffff; --ink: #1d1d22; --soft: #62646e; --card: #ffffff; --line: rgba(20, 22, 30, 0.1); --wash: #f3f3f5;
+  --shadow: 0 1px 2px rgba(16, 18, 27, 0.05), 0 14px 34px -18px rgba(16, 18, 27, 0.32);
   position: relative; max-width: 860px; margin: 0 auto; min-height: calc(100dvh - 118px);
   display: flex; flex-direction: column; color: var(--ink);
 }
@@ -14,7 +14,7 @@
 :global(html[data-look-font="plex"]) .page { --read: var(--ui); }
 :global(html[data-look-font="almarai"]) .page { --read: "Almarai", var(--ui); }
 :global(html[data-look-mode="warm"]) .page { --pg: #faf7f0; --ink: #2a251d; --soft: #6c6455; --card: #fffdf8; --line: rgba(70, 52, 20, 0.14); --wash: #f1ebdf; }
-:global(html[data-look-mode="light"]) .page { --pg: #ffffff; --ink: #1d1d22; --soft: #62646e; --card: #ffffff; --line: rgba(20, 22, 30, 0.1); --wash: #f3f3f5; --shadow: 0 1px 2px rgba(16, 18, 27, 0.05), 0 14px 34px -18px rgba(16, 18, 27, 0.32); }
+:global(html[data-look-mode="dark"]) .page { --pg: #18191d; --ink: #ececf0; --soft: #a6a9b5; --card: #23252b; --line: rgba(255, 255, 255, 0.11); --wash: #2c2e35; --shadow: 0 14px 34px -18px rgba(0, 0, 0, 0.8); }
 
 .top, .bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .top b, .bar b { font-size: var(--fs-md); font-weight: 600; color: var(--sec); }
@@ -37,7 +37,7 @@
 }
 .hasPhoto::after {
   content: ""; position: absolute; inset: 0; z-index: -1;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0) 24%, rgba(255, 255, 255, 0.06) 46%, rgba(255, 255, 255, 0.74) 100%);
+  background: linear-gradient(180deg, rgba(5, 12, 24, 0.42) 0%, rgba(5, 12, 24, 0) 24%, rgba(5, 12, 24, 0.06) 46%, rgba(5, 12, 24, 0.74) 100%);
 }
 .photo { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
 :global(html.lite) .photo { display: none; }
@@ -111,13 +111,13 @@
 .found svg { flex: none; color: var(--sec); }
 .shimmer { background: linear-gradient(90deg, var(--soft) 0%, var(--soft) 40%, var(--ink) 50%, var(--soft) 60%, var(--soft) 100%); background-size: 220% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shine 1.8s linear infinite; }
 @keyframes shine { from { background-position: 110% 0; } to { background-position: -110% 0; } }
-.note { margin: 0 0 8px; font-size: var(--fs-sm); color: #fbbf24; }
+.note { margin: 0 0 8px; font-size: var(--fs-sm); color: #b54708; }
 .sources { margin: 12px 0 0; padding-inline-start: 20px; display: grid; gap: 4px; font-size: var(--fs-sm); }
 .sources a { color: var(--sec); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
 .acts { display: flex; gap: 2px; margin-top: 6px; margin-inline-start: -6px; }
 .act { width: 32px; height: 32px; display: grid; place-items: center; padding: 0; border: 0; border-radius: var(--r-xs); background: none; color: var(--soft); cursor: pointer; }
 .act:hover, .act[aria-pressed="true"] { background: var(--wash); color: var(--ink); }
-.error { color: #ff8a7a; background: rgba(244,67,54,0.13); padding: 8px 12px; border-radius: var(--r-sm); font-size: var(--fs-md); margin-top: 10px; }
+.error { color: #b42318; background: #fef3f2; padding: 8px 12px; border-radius: var(--r-sm); font-size: var(--fs-md); margin-top: 10px; }
 
 /* ---------- كروت الإعلانات ---------- */
 .cards { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -16px 14px; padding: 2px 16px 6px; scrollbar-width: none; }

@@ -18,17 +18,15 @@
 .brand h1 em { font-style: normal; color: var(--blue); }
 .brand p { margin: 0 auto; max-width: 30em; color: var(--ink); font-size: var(--fs-lg); font-weight: 700; line-height: 1.7; }
 
-/* ===== صندوق السؤال: زجاج داكن بحواف نيون بنفسجية ===== */
+/* ===== صندوق السؤال ===== */
 .composer {
-  --text: #eceefb; --text-strong: #ffffff; --muted: #a3a9c9; --faint: #8b92b8;
-  --hairline: rgba(255, 255, 255, 0.09); --hairline-strong: rgba(154, 141, 255, 0.28);
-  --surface: #0f1226; --surface-2: #171b38; --card: #0f1226; --field: #0b0e1f;
-  --accent: #9a8dff; --accent-soft: rgba(154, 141, 255, 0.14); --accent-line: rgba(154, 141, 255, 0.5); --on-accent: #fff;
-  color: var(--text); background: rgba(15, 18, 38, 0.86);
-  -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
-  border: 1px solid rgba(154, 141, 255, 0.4); border-radius: 28px;
-  box-shadow: 0 0 0 1px rgba(106, 92, 245, 0.25), 0 30px 80px -24px rgba(106, 92, 245, 0.6), 0 0 120px -34px rgba(56, 189, 248, 0.45);
+  position: relative;
+  border-radius: var(--r-xl); padding: 14px 14px 11px;
+  border: 1px solid var(--hairline-strong);
+  background: var(--card);
+  box-shadow: var(--shadow-lift);
 }
+@keyframes orbit { to { --a: 360deg; } }
 .composer textarea {
   width: 100%; resize: none; border: 0; outline: none; background: transparent; color: var(--text);
   font: inherit; font-size: var(--fs-lg); line-height: 1.7; padding: 4px 4px 12px; min-height: 60px;
@@ -176,7 +174,7 @@
   padding-bottom: calc(22px + env(safe-area-inset-bottom, 0px));
   background: var(--panel);
   border: 1px solid var(--hairline-strong); border-bottom: 0;
-  box-shadow: 0 -20px 60px -30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 -20px 60px -30px rgba(16, 24, 40, 0.25);
   animation: rise 0.24s var(--ease);
 }
 @keyframes rise { from { transform: translateY(14px); opacity: 0; } }
@@ -263,7 +261,7 @@
     radial-gradient(1px 1px at 93% 41%, rgba(255, 255, 255, 0.55), transparent 70%),
     radial-gradient(1.2px 1.2px at 4% 55%, rgba(255, 255, 255, 0.6), transparent 70%),
     radial-gradient(1px 1px at 96% 62%, rgba(255, 255, 255, 0.5), transparent 70%),
-    radial-gradient(1.4px 1.4px at 53% 4%, rgba(255, 154, 60, 0.9), transparent 70%),
+    radial-gradient(1.4px 1.4px at 53% 4%, rgba(217, 176, 74, 0.9), transparent 70%),
     radial-gradient(1.2px 1.2px at 12% 72%, rgba(255, 255, 255, 0.4), transparent 70%);
 }
 /* أفق أزرق بيضوي من تحت، والنجمة طالعة منه */
@@ -271,31 +269,31 @@
   position: absolute; z-index: 0; pointer-events: none;
   left: 50%; bottom: -46%; width: 160%; height: 90%; transform: translateX(-50%);
   border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(255, 154, 60, 0.38), rgba(106, 92, 245, 0.22) 55%, transparent 100%);
+  background: radial-gradient(closest-side, rgba(201, 162, 74, 0.38), rgba(20, 48, 90, 0.22) 55%, transparent 100%);
 }
 .hero { padding-top: 30px; padding-bottom: 96px; }
 .hero::after {
   content: ""; position: absolute; z-index: 0; pointer-events: none;
   left: 50%; top: 10px; width: 420px; height: 420px; transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(255, 154, 60, 0.22), rgba(255, 154, 60, 0) 62%);
+  background: radial-gradient(circle, rgba(217, 176, 74, 0.22), rgba(217, 176, 74, 0) 62%);
 }
 
 /* --- النهار --- */
 .white {
-  z-index: 2; margin-top: -40px; padding-top: 64px; border-radius: 40px 40px 0 0; background: var(--card);
+  z-index: 2; margin-top: -40px; padding-top: 64px; border-radius: 40px 40px 0 0; background: #fff;
 }
 .sky { z-index: 3; margin-top: -40px; padding-top: 70px; border-radius: 40px 40px 0 0; }
 .sky::before {
   content: ""; position: absolute; inset: 0 0 auto; height: 1px; z-index: 1;
-  background: linear-gradient(90deg, transparent, rgba(255, 154, 60, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(217, 176, 74, 0.5), transparent);
 }
 .sky + .white { z-index: 4; }
 
 /* ===== الاسم ===== */
 .brand { padding: 22px 0 30px; }
-.mark { filter: drop-shadow(0 0 28px rgba(255, 154, 60, 0.55)); }
+.mark { filter: drop-shadow(0 0 28px rgba(217, 176, 74, 0.55)); }
 .brand h1 { color: #fff; font-family: var(--wordmark); letter-spacing: -0.055em; margin-top: 10px; }
-.brand h1 em { color: #ff9a3c; }
+.brand h1 em { color: #d9b04a; }
 .brand p { color: rgba(255, 255, 255, 0.82); font-weight: 600; font-size: var(--fs-lg); }
 
 /* اللحظة الوحيدة المتحركة: النجمة بتطلع من الأفق ونورها بيفتح */
@@ -311,13 +309,13 @@
 
 /* ===== صندوق السؤال: كارت أبيض ناصع وسط الليل ===== */
 .composer {
-  --text: #070916; --text-strong: #070916; --muted: #4a5063; --faint: #8b92b8;
-  --hairline: rgba(255, 255, 255, 0.09); --hairline-strong: rgba(255, 255, 255, 0.18);
+  --text: #0a1424; --text-strong: #0a1424; --muted: #4a5063; --faint: #667085;
+  --hairline: rgba(10, 20, 36, 0.09); --hairline-strong: rgba(10, 20, 36, 0.18);
   --surface: #fff; --surface-2: #f3f4f8; --card: #fff; --field: #f6f7fa;
-  --accent: #6a5cf5; --accent-soft: rgba(106, 92, 245, 0.1); --accent-line: rgba(106, 92, 245, 0.36); --on-accent: #fff;
-  color: var(--text); background: var(--card);
+  --accent: #14305a; --accent-soft: rgba(20, 48, 90, 0.1); --accent-line: rgba(20, 48, 90, 0.36); --on-accent: #fff;
+  color: var(--text); background: #fff;
   border: 0; border-radius: 28px;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5), 0 30px 80px -20px rgba(255, 154, 60, 0.45), 0 0 120px -30px rgba(255, 154, 60, 0.3);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5), 0 30px 80px -20px rgba(201, 162, 74, 0.45), 0 0 120px -30px rgba(217, 176, 74, 0.3);
 }
 .composer textarea { color: var(--ink); font-size: var(--fs-lg); }
 .sendBtn { background: var(--blue); box-shadow: 0 12px 26px -10px var(--blue); width: 42px; height: 42px; }
@@ -329,7 +327,7 @@
 /* ===== الاقتراحات والاختصارات على الليل ===== */
 .suggestHead > span { font-family: var(--display); font-weight: 700; font-size: var(--fs-lg); color: #fff; }
 .suggestCard { background: var(--night-2); border: 1px solid rgba(255, 255, 255, 0.09); box-shadow: none; color: #fff; }
-.suggestCard:hover { border-color: rgba(255, 154, 60, 0.6); transform: none; }
+.suggestCard:hover { border-color: rgba(217, 176, 74, 0.6); transform: none; }
 .suggestText b { font-weight: 600; }
 .suggestRow { -webkit-mask-image: linear-gradient(to left, transparent 0, #000 56px); mask-image: linear-gradient(to left, transparent 0, #000 56px); }
 .grid { gap: 8px 6px; }
@@ -346,10 +344,10 @@
 .allLink { font-weight: 700; font-size: var(--fs-sm); padding: 6px 14px; border-radius: 999px; background: var(--ink); color: #fff; }
 .allLink:hover { background: var(--blue); }
 .night .allLink { background: var(--yellow); color: var(--ink); }
-.night .allLink:hover { background: var(--card); }
+.night .allLink:hover { background: #fff; }
 
 /* ===== المجالات ===== */
-.catChip { font-weight: 600; color: var(--ink); background: var(--card); border: 1.5px solid rgba(255, 255, 255, 0.12); padding: 7px 14px; }
+.catChip { font-weight: 600; color: var(--ink); background: #fff; border: 1.5px solid rgba(10, 20, 36, 0.12); padding: 7px 14px; }
 .catChip:hover { color: var(--ink); border-color: var(--ink); }
 .catChip small { color: var(--faint); }
 

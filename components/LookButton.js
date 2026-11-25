@@ -5,11 +5,11 @@ import { useEffect, useRef, useState } from "react";
 import { useStored } from "@/lib/store";
 import s from "./look.module.css";
 
-export const LOOK_DEFAULT = { size: "md", font: "naskh", mode: "dark" };
+export const LOOK_DEFAULT = { size: "md", font: "naskh", mode: "light" };
 const OPTS = {
   size: { label: "حجم الخط", choices: [["sm", "أصغر"], ["md", "عادي"], ["lg", "أكبر"]] },
   font: { label: "الخط", choices: [["naskh", "نسخ"], ["plex", "بسيط"], ["almarai", "واضح"]] },
-  mode: { label: "الألوان", choices: [["dark", "Horizon"], ["warm", "دافئ"], ["light", "فاتح"]] },
+  mode: { label: "الألوان", choices: [["light", "فاتح"], ["warm", "دافئ"], ["dark", "غامق"]] },
 };
 const clean = (look) => Object.fromEntries(Object.keys(OPTS).map((k) => [k, OPTS[k].choices.some(([v]) => v === look?.[k]) ? look[k] : LOOK_DEFAULT[k]]));
 

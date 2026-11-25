@@ -16,9 +16,9 @@ export default function StarMark({ size = 28, className = "" }) {
     >
       <defs>
         <linearGradient id={`sg${id}`} x1="0.2" y1="0" x2="0.8" y2="1">
-          <stop offset="0" stopColor="#C9C2FF" />
-          <stop offset="0.45" stopColor="#7A6CFF" />
-          <stop offset="1" stopColor="#3D33B8" />
+          <stop offset="0" stopColor="#F2DC9B" />
+          <stop offset="0.45" stopColor="#D9B04A" />
+          <stop offset="1" stopColor="#A9812A" />
         </linearGradient>
       </defs>
       <path

@@ -16,7 +16,7 @@ const PLATFORM_ICON = { facebook: "f", instagram: "◎", tiktok: "♪", whatsapp
 
 const tierOf = (n) =>
   n >= 80 ? { label: "إعلان قوي جداً", color: "#12b76a", key: "great" }
-  : n >= 60 ? { label: "كويس، ومحتاج لمسات", color: "#9a8dff", key: "good" }
+  : n >= 60 ? { label: "كويس، ومحتاج لمسات", color: "#14305a", key: "good" }
   : n >= 40 ? { label: "متوسط، هتخسر عملاء", color: "#f79009", key: "mid" }
   : { label: "محتاج شغل قبل ما تدفع فيه", color: "#f04438", key: "weak" };
 
