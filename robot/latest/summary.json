@@ -1,34 +1,34 @@
 {
- "date": "2026-11-24T05:39:17.735Z",
+ "date": "2026-11-25T05:38:45.639Z",
  "total": 117,
  "ok": 106,
  "broken": [
-  "/tool/landing-page",
-  "/tool/marketing-plan",
+  "/tool/tiktok-script",
   "/tool/business-plan",
-  "/tool/email-writer",
-  "/tool/image-prompt",
-  "/tool/logo-ideas",
+  "/tool/business-ideas",
+  "/tool/whatsapp-sales",
+  "/tool/video-prompt",
+  "/tool/sheet-analyst",
   "/tool/remove-bg",
-  "feature:photo-ad",
   "feature:test-ad",
   "feature:voice-post",
-  "feature:amazon-check"
+  "feature:amazon-check",
+  "feature:prompt-builder"
  ],
  "warn": 0,
  "spacesDown": [],
  "aiTested": [
+  "/tool/proposal",
+  "/tool/review-reply",
+  "/tool/seo-article",
+  "/tool/sheet-analyst",
+  "/tool/tiktok-script",
+  "/tool/video-prompt",
+  "/tool/whatsapp-sales",
+  "/tool/youtube-title",
+  "/tool/ad-copy",
+  "/tool/adspy",
   "/tool/business-ideas",
-  "/tool/business-plan",
-  "/tool/caption",
-  "/tool/content-calendar",
-  "/tool/email-reply",
-  "/tool/email-writer",
-  "/tool/image-prompt",
-  "/tool/landing-page",
-  "/tool/logo-ideas",
-  "/tool/marketing-plan",
-  "/tool/post",
-  "/tool/product-desc"
+  "/tool/business-plan"
  ]
 }

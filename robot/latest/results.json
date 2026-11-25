@@ -2,8 +2,8 @@
  "meta": {
   "base": "https://rising-star-ai.vercel.app",
   "repo": "rising2026star2026-ux/rising-star-ai",
-  "started": 1795498757735,
-  "durationMs": 302378,
+  "started": 1795585125639,
+  "durationMs": 284554,
   "pagesChecked": 105,
   "dirChecked": 0,
   "dirTotal": 0,
@@ -12,18 +12,18 @@
   "aiRun": 12,
   "aiTotal": 22,
   "aiTested": [
+   "/tool/proposal",
+   "/tool/review-reply",
+   "/tool/seo-article",
+   "/tool/sheet-analyst",
+   "/tool/tiktok-script",
+   "/tool/video-prompt",
+   "/tool/whatsapp-sales",
+   "/tool/youtube-title",
+   "/tool/ad-copy",
+   "/tool/adspy",
    "/tool/business-ideas",
-   "/tool/business-plan",
-   "/tool/caption",
-   "/tool/content-calendar",
-   "/tool/email-reply",
-   "/tool/email-writer",
-   "/tool/image-prompt",
-   "/tool/landing-page",
-   "/tool/logo-ideas",
-   "/tool/marketing-plan",
-   "/tool/post",
-   "/tool/product-desc"
+   "/tool/business-plan"
   ],
   "pageOnly": []
  },
@@ -38,7 +38,7 @@
     "console: Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 1023,
+   "ms": 1057,
    "notes": [],
    "status": "ok"
   },
@@ -52,7 +52,7 @@
     "console: Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 1027,
+   "ms": 1074,
    "notes": [],
    "status": "ok"
   },
@@ -62,9 +62,11 @@
    "name": "ستوديو البيّاع",
    "group": "pages",
    "problems": [],
-   "tech": [],
+   "tech": [
+    "console: Failed to load resource: the server responded with a status of 404 ()"
+   ],
    "shots": [],
-   "ms": 1151,
+   "ms": 1093,
    "notes": [],
    "status": "ok"
   },
@@ -78,7 +80,7 @@
     "console: Failed to load resource: the server responded with a status of 404 ()"
    ],
    "shots": [],
-   "ms": 965,
+   "ms": 1049,
    "notes": [],
    "status": "ok"
   },
@@ -90,19 +92,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 316,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/market-check",
-   "path": "/market-check",
-   "name": "منتجك هيبيع في مصر؟",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 440,
+   "ms": 365,
    "notes": [],
    "status": "ok"
   },
@@ -114,7 +104,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 532,
+   "ms": 426,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/market-check",
+   "path": "/market-check",
+   "name": "منتجك هيبيع في مصر؟",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 438,
    "notes": [],
    "status": "ok"
   },
@@ -126,31 +128,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 543,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/photo-ad",
-   "path": "/photo-ad",
-   "name": "صوّرها بموبايلك.. وخد إعلان كامل",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 371,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/catalog",
-   "path": "/catalog",
-   "name": "كتالوجك في دقيقة",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 439,
+   "ms": 502,
    "notes": [],
    "status": "ok"
   },
@@ -162,7 +140,31 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 618,
+   "ms": 593,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/photo-ad",
+   "path": "/photo-ad",
+   "name": "صوّرها بموبايلك.. وخد إعلان كامل",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 635,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/catalog",
+   "path": "/catalog",
+   "name": "كتالوجك في دقيقة",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 609,
    "notes": [],
    "status": "ok"
   },
@@ -174,19 +176,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 615,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/amazon/check",
-   "path": "/amazon/check",
-   "name": "فاحص الرفض",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 370,
+   "ms": 507,
    "notes": [],
    "status": "ok"
   },
@@ -198,7 +188,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 499,
+   "ms": 426,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/amazon/check",
+   "path": "/amazon/check",
+   "name": "فاحص الرفض",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 453,
    "notes": [],
    "status": "ok"
   },
@@ -210,7 +212,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 348,
+   "ms": 513,
    "notes": [],
    "status": "ok"
   },
@@ -222,19 +224,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 360,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/brand",
-   "path": "/brand",
-   "name": "هوية نشاطي",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 288,
+   "ms": 345,
    "notes": [],
    "status": "ok"
   },
@@ -246,7 +236,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 337,
+   "ms": 466,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/brand",
+   "path": "/brand",
+   "name": "هوية نشاطي",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 660,
    "notes": [],
    "status": "ok"
   },
@@ -258,7 +260,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 374,
+   "ms": 513,
    "notes": [],
    "status": "ok"
   },
@@ -270,7 +272,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 524,
+   "ms": 632,
    "notes": [],
    "status": "ok"
   },
@@ -282,7 +284,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 309,
+   "ms": 544,
    "notes": [],
    "status": "ok"
   },
@@ -294,7 +296,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 330,
+   "ms": 394,
    "notes": [],
    "status": "ok"
   },
@@ -306,7 +308,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 246,
+   "ms": 265,
    "notes": [],
    "status": "ok"
   },
@@ -318,7 +320,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 440,
+   "ms": 666,
    "notes": [],
    "status": "ok"
   },
@@ -330,7 +332,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 237,
+   "ms": 337,
    "notes": [],
    "status": "ok"
   },
@@ -342,7 +344,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 331,
+   "ms": 349,
    "notes": [],
    "status": "ok"
   },
@@ -354,7 +356,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 468,
+   "ms": 460,
    "notes": [],
    "status": "ok"
   },
@@ -366,7 +368,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 374,
+   "ms": 343,
    "notes": [],
    "status": "ok"
   },
@@ -378,19 +380,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 309,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/maker/dezgo",
-   "path": "/maker/dezgo",
-   "name": "Dezgo",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 432,
+   "ms": 325,
    "notes": [],
    "status": "ok"
   },
@@ -402,7 +392,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 454,
+   "ms": 396,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/maker/dezgo",
+   "path": "/maker/dezgo",
+   "name": "Dezgo",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 447,
    "notes": [],
    "status": "ok"
   },
@@ -414,7 +416,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 422,
+   "ms": 272,
    "notes": [],
    "status": "ok"
   },
@@ -426,19 +428,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 257,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/maker/flux-playground",
-   "path": "/maker/flux-playground",
-   "name": "FLUX Playground (Black Forest Labs)",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 345,
+   "ms": 292,
    "notes": [],
    "status": "ok"
   },
@@ -450,7 +440,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 413,
+   "ms": 432,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/maker/flux-playground",
+   "path": "/maker/flux-playground",
+   "name": "FLUX Playground (Black Forest Labs)",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 376,
    "notes": [],
    "status": "ok"
   },
@@ -462,7 +464,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 343,
+   "ms": 298,
    "notes": [],
    "status": "ok"
   },
@@ -474,7 +476,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 225,
+   "ms": 311,
    "notes": [],
    "status": "ok"
   },
@@ -486,7 +488,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 450,
+   "ms": 370,
    "notes": [],
    "status": "ok"
   },
@@ -498,7 +500,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 430,
+   "ms": 437,
    "notes": [],
    "status": "ok"
   },
@@ -510,7 +512,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 411,
+   "ms": 347,
    "notes": [],
    "status": "ok"
   },
@@ -534,7 +536,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 371,
+   "ms": 357,
    "notes": [],
    "status": "ok"
   },
@@ -546,7 +548,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 467,
+   "ms": 432,
    "notes": [],
    "status": "ok"
   },
@@ -558,7 +560,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 450,
+   "ms": 387,
    "notes": [],
    "status": "ok"
   },
@@ -570,7 +572,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 379,
+   "ms": 332,
    "notes": [],
    "status": "ok"
   },
@@ -582,7 +584,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 258,
+   "ms": 424,
    "notes": [],
    "status": "ok"
   },
@@ -594,7 +596,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 465,
+   "ms": 387,
    "notes": [],
    "status": "ok"
   },
@@ -606,7 +608,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 444,
+   "ms": 375,
    "notes": [],
    "status": "ok"
   },
@@ -618,19 +620,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 376,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/maker/canva-magic",
-   "path": "/maker/canva-magic",
-   "name": "Canva Magic Media",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 228,
+   "ms": 354,
    "notes": [],
    "status": "ok"
   },
@@ -642,7 +632,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 329,
+   "ms": 479,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/maker/canva-magic",
+   "path": "/maker/canva-magic",
+   "name": "Canva Magic Media",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 584,
    "notes": [],
    "status": "ok"
   },
@@ -654,7 +656,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 369,
+   "ms": 386,
    "notes": [],
    "status": "ok"
   },
@@ -666,7 +668,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 308,
+   "ms": 413,
    "notes": [],
    "status": "ok"
   },
@@ -678,7 +680,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 238,
+   "ms": 569,
    "notes": [],
    "status": "ok"
   },
@@ -690,7 +692,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 460,
+   "ms": 572,
    "notes": [],
    "status": "ok"
   },
@@ -702,7 +704,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 347,
+   "ms": 511,
    "notes": [],
    "status": "ok"
   },
@@ -714,7 +716,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 314,
+   "ms": 459,
    "notes": [],
    "status": "ok"
   },
@@ -726,19 +728,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 272,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/maker/wan-space",
-   "path": "/maker/wan-space",
-   "name": "Wan 2.2 (Hugging Face)",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 401,
+   "ms": 402,
    "notes": [],
    "status": "ok"
   },
@@ -750,7 +740,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 397,
+   "ms": 492,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/maker/wan-space",
+   "path": "/maker/wan-space",
+   "name": "Wan 2.2 (Hugging Face)",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 442,
    "notes": [],
    "status": "ok"
   },
@@ -762,7 +764,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 345,
+   "ms": 394,
    "notes": [],
    "status": "ok"
   },
@@ -774,7 +776,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 273,
+   "ms": 423,
    "notes": [],
    "status": "ok"
   },
@@ -786,19 +788,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 329,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/maker/clipchamp",
-   "path": "/maker/clipchamp",
-   "name": "Clipchamp",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 375,
+   "ms": 515,
    "notes": [],
    "status": "ok"
   },
@@ -810,7 +800,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 288,
+   "ms": 414,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/maker/clipchamp",
+   "path": "/maker/clipchamp",
+   "name": "Clipchamp",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 426,
    "notes": [],
    "status": "ok"
   },
@@ -822,19 +824,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 287,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/tool/ad-copy",
-   "path": "/tool/ad-copy",
-   "name": "نص إعلاني",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 489,
+   "ms": 265,
    "notes": [],
    "status": "ok"
   },
@@ -846,7 +836,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 536,
+   "ms": 444,
    "notes": [],
    "status": "ok"
   },
@@ -854,96 +844,84 @@
    "key": "/tool/landing-page",
    "path": "/tool/landing-page",
    "name": "صفحة الهبوط",
-   "group": "ai",
-   "problems": [
-    {
-     "level": "broken",
-     "text": "الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة."
-    }
-   ],
+   "group": "pages",
+   "problems": [],
    "tech": [],
-   "shots": [
-    "shots/ai-landing-page_tool_landing-page.jpg"
-   ],
-   "ms": 372,
+   "shots": [],
+   "ms": 471,
    "notes": [],
-   "status": "broken"
+   "status": "ok"
+  },
+  {
+   "key": "/tool/ad-copy",
+   "path": "/tool/ad-copy",
+   "name": "نص إعلاني",
+   "group": "ai",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 411,
+   "notes": [
+    "653 حرف في 1 ثانية"
+   ],
+   "status": "ok"
   },
   {
    "key": "/tool/seo-article",
    "path": "/tool/seo-article",
    "name": "مقال SEO",
-   "group": "pages",
+   "group": "ai",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 262,
-   "notes": [],
+   "ms": 314,
+   "notes": [
+    "2308 حرف في 8 ثانية"
+   ],
    "status": "ok"
   },
   {
    "key": "/tool/marketing-plan",
    "path": "/tool/marketing-plan",
    "name": "خطة تسويق شهرية",
-   "group": "ai",
-   "problems": [
-    {
-     "level": "broken",
-     "text": "الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة."
-    }
-   ],
+   "group": "pages",
+   "problems": [],
    "tech": [],
-   "shots": [
-    "shots/ai-marketing-plan_tool_marketing-plan.jpg"
-   ],
-   "ms": 483,
+   "shots": [],
+   "ms": 374,
    "notes": [],
-   "status": "broken"
+   "status": "ok"
   },
   {
    "key": "/tool/post",
    "path": "/tool/post",
    "name": "كاتب المنشورات",
-   "group": "ai",
+   "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 501,
-   "notes": [
-    "612 حرف في 28 ثانية"
-   ],
+   "ms": 445,
+   "notes": [],
    "status": "ok"
   },
   {
    "key": "/tool/adspy",
    "path": "/tool/adspy",
    "name": "Adspy عربي: جاسوس الإعلانات",
-   "group": "pages",
+   "group": "ai",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 510,
-   "notes": [],
+   "ms": 451,
+   "notes": [
+    "1936 حرف في 1 ثانية"
+   ],
    "status": "ok"
   },
   {
    "key": "/tool/caption",
    "path": "/tool/caption",
    "name": "كابشن إنستجرام",
-   "group": "ai",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 244,
-   "notes": [
-    "507 حرف في 3 ثانية"
-   ],
-   "status": "ok"
-  },
-  {
-   "key": "/tool/tiktok-script",
-   "path": "/tool/tiktok-script",
-   "name": "سكريبت فيديو قصير",
    "group": "pages",
    "problems": [],
    "tech": [],
@@ -953,21 +931,9 @@
    "status": "ok"
   },
   {
-   "key": "/tool/youtube-title",
-   "path": "/tool/youtube-title",
-   "name": "عناوين يوتيوب",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 408,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/tool/business-plan",
-   "path": "/tool/business-plan",
-   "name": "خطة عمل مختصرة",
+   "key": "/tool/tiktok-script",
+   "path": "/tool/tiktok-script",
+   "name": "سكريبت فيديو قصير",
    "group": "ai",
    "problems": [
     {
@@ -979,49 +945,99 @@
     "api: 502 POST https://rising-star-ai.vercel.app/api/run"
    ],
    "shots": [
-    "shots/ai-business-plan_tool_business-plan.jpg"
+    "shots/ai-tiktok-script_tool_tiktok-script.jpg"
    ],
-   "ms": 364,
+   "ms": 327,
    "notes": [],
    "status": "broken"
+  },
+  {
+   "key": "/tool/youtube-title",
+   "path": "/tool/youtube-title",
+   "name": "عناوين يوتيوب",
+   "group": "ai",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 420,
+   "notes": [
+    "450 حرف في 1 ثانية"
+   ],
+   "status": "ok"
   },
   {
    "key": "/tool/content-calendar",
    "path": "/tool/content-calendar",
    "name": "جدول محتوى 30 يوم",
-   "group": "ai",
+   "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 464,
-   "notes": [
-    "3653 حرف في 8 ثانية"
-   ],
+   "ms": 363,
+   "notes": [],
    "status": "ok"
+  },
+  {
+   "key": "/tool/business-plan",
+   "path": "/tool/business-plan",
+   "name": "خطة عمل مختصرة",
+   "group": "ai",
+   "problems": [
+    {
+     "level": "broken",
+     "text": "الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة."
+    }
+   ],
+   "tech": [],
+   "shots": [
+    "shots/ai-business-plan_tool_business-plan.jpg"
+   ],
+   "ms": 332,
+   "notes": [],
+   "status": "broken"
   },
   {
    "key": "/tool/business-ideas",
    "path": "/tool/business-ideas",
    "name": "أفكار مشاريع",
    "group": "ai",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 276,
-   "notes": [
-    "2857 حرف في 10 ثانية"
+   "problems": [
+    {
+     "level": "broken",
+     "text": "الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة."
+    }
    ],
-   "status": "ok"
+   "tech": [],
+   "shots": [
+    "shots/ai-business-ideas_tool_business-ideas.jpg"
+   ],
+   "ms": 298,
+   "notes": [],
+   "status": "broken"
   },
   {
    "key": "/tool/proposal",
    "path": "/tool/proposal",
    "name": "عرض الخدمة",
+   "group": "ai",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 355,
+   "notes": [
+    "3470 حرف في 8 ثانية"
+   ],
+   "status": "ok"
+  },
+  {
+   "key": "/tool/product-desc",
+   "path": "/tool/product-desc",
+   "name": "وصف المنتج",
    "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 278,
+   "ms": 346,
    "notes": [],
    "status": "ok"
   },
@@ -1029,25 +1045,13 @@
    "key": "/tool/review-reply",
    "path": "/tool/review-reply",
    "name": "الرد على التقييمات",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 334,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/tool/product-desc",
-   "path": "/tool/product-desc",
-   "name": "وصف المنتج",
    "group": "ai",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 433,
+   "ms": 308,
    "notes": [
-    "1194 حرف في 28 ثانية"
+    "430 حرف في 1 ثانية"
    ],
    "status": "ok"
   },
@@ -1055,18 +1059,6 @@
    "key": "/tool/whatsapp-sales",
    "path": "/tool/whatsapp-sales",
    "name": "رسائل واتساب للبيع",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 285,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/tool/email-writer",
-   "path": "/tool/email-writer",
-   "name": "كاتب الإيميلات",
    "group": "ai",
    "problems": [
     {
@@ -1076,49 +1068,64 @@
    ],
    "tech": [],
    "shots": [
-    "shots/ai-email-writer_tool_email-writer.jpg"
+    "shots/ai-whatsapp-sales_tool_whatsapp-sales.jpg"
    ],
-   "ms": 309,
+   "ms": 344,
    "notes": [],
    "status": "broken"
+  },
+  {
+   "key": "/tool/email-writer",
+   "path": "/tool/email-writer",
+   "name": "كاتب الإيميلات",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 304,
+   "notes": [],
+   "status": "ok"
   },
   {
    "key": "/tool/email-reply",
    "path": "/tool/email-reply",
    "name": "الرد على الإيميل",
-   "group": "ai",
+   "group": "pages",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 406,
-   "notes": [
-    "273 حرف في 4 ثانية"
-   ],
+   "ms": 321,
+   "notes": [],
    "status": "ok"
   },
   {
    "key": "/tool/image-prompt",
    "path": "/tool/image-prompt",
    "name": "برومبت الصور",
-   "group": "ai",
-   "problems": [
-    {
-     "level": "broken",
-     "text": "الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة."
-    }
-   ],
+   "group": "pages",
+   "problems": [],
    "tech": [],
-   "shots": [
-    "shots/ai-image-prompt_tool_image-prompt.jpg"
-   ],
-   "ms": 390,
+   "shots": [],
+   "ms": 307,
    "notes": [],
-   "status": "broken"
+   "status": "ok"
   },
   {
    "key": "/tool/logo-ideas",
    "path": "/tool/logo-ideas",
    "name": "أفكار اللوجو",
+   "group": "pages",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 331,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/tool/video-prompt",
+   "path": "/tool/video-prompt",
+   "name": "برومبت الفيديو",
    "group": "ai",
    "problems": [
     {
@@ -1128,35 +1135,30 @@
    ],
    "tech": [],
    "shots": [
-    "shots/ai-logo-ideas_tool_logo-ideas.jpg"
+    "shots/ai-video-prompt_tool_video-prompt.jpg"
    ],
-   "ms": 251,
+   "ms": 298,
    "notes": [],
    "status": "broken"
-  },
-  {
-   "key": "/tool/video-prompt",
-   "path": "/tool/video-prompt",
-   "name": "برومبت الفيديو",
-   "group": "pages",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 245,
-   "notes": [],
-   "status": "ok"
   },
   {
    "key": "/tool/sheet-analyst",
    "path": "/tool/sheet-analyst",
    "name": "محلل الجداول",
-   "group": "pages",
-   "problems": [],
+   "group": "ai",
+   "problems": [
+    {
+     "level": "broken",
+     "text": "الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة."
+    }
+   ],
    "tech": [],
-   "shots": [],
-   "ms": 373,
+   "shots": [
+    "shots/ai-sheet-analyst_tool_sheet-analyst.jpg"
+   ],
+   "ms": 307,
    "notes": [],
-   "status": "ok"
+   "status": "broken"
   },
   {
    "key": "/tool/image-reader",
@@ -1166,7 +1168,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 313,
+   "ms": 331,
    "notes": [],
    "status": "ok"
   },
@@ -1178,7 +1180,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 284,
+   "ms": 346,
    "notes": [],
    "status": "ok"
   },
@@ -1190,19 +1192,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 299,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/tool/image-resize",
-   "path": "/tool/image-resize",
-   "name": "تغيير مقاس الصور",
-   "group": "tools",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 327,
+   "ms": 360,
    "notes": [],
    "status": "ok"
   },
@@ -1221,9 +1211,21 @@
    "shots": [
     "shots/tools-remove-bg_tool_remove-bg.jpg"
    ],
-   "ms": 493,
+   "ms": 302,
    "notes": [],
    "status": "broken"
+  },
+  {
+   "key": "/tool/image-resize",
+   "path": "/tool/image-resize",
+   "name": "تغيير مقاس الصور",
+   "group": "tools",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 333,
+   "notes": [],
+   "status": "ok"
   },
   {
    "key": "/tool/image-compress",
@@ -1233,7 +1235,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 272,
+   "ms": 322,
    "notes": [],
    "status": "ok"
   },
@@ -1245,19 +1247,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 265,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "/tool/color-extract",
-   "path": "/tool/color-extract",
-   "name": "ألوان من صورة",
-   "group": "tools",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 347,
+   "ms": 468,
    "notes": [],
    "status": "ok"
   },
@@ -1269,7 +1259,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 479,
+   "ms": 495,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "/tool/color-extract",
+   "path": "/tool/color-extract",
+   "name": "ألوان من صورة",
+   "group": "tools",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 472,
    "notes": [],
    "status": "ok"
   },
@@ -1281,7 +1283,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 282,
+   "ms": 330,
    "notes": [],
    "status": "ok"
   },
@@ -1293,7 +1295,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 275,
+   "ms": 383,
    "notes": [],
    "status": "ok"
   },
@@ -1305,7 +1307,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 289,
+   "ms": 527,
    "notes": [],
    "status": "ok"
   },
@@ -1317,7 +1319,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 650,
+   "ms": 369,
    "notes": [],
    "status": "ok"
   },
@@ -1329,7 +1331,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 370,
+   "ms": 326,
    "notes": [],
    "status": "ok"
   },
@@ -1341,7 +1343,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 287,
+   "ms": 438,
    "notes": [],
    "status": "ok"
   },
@@ -1353,19 +1355,19 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 302,
+   "ms": 355,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "feature:catalog",
-   "path": "/catalog",
-   "name": "كتالوج في دقيقة",
+   "key": "feature:photo-ad",
+   "path": "/photo-ad",
+   "name": "صوّرها بموبايلك (إعلان من صورة)",
    "group": "features",
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 13983,
+   "ms": 18571,
    "notes": [],
    "status": "ok"
   },
@@ -1377,30 +1379,21 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 7294,
+   "ms": 9380,
    "notes": [],
    "status": "ok"
   },
   {
-   "key": "feature:photo-ad",
-   "path": "/photo-ad",
-   "name": "صوّرها بموبايلك (إعلان من صورة)",
+   "key": "feature:catalog",
+   "path": "/catalog",
+   "name": "كتالوج في دقيقة",
    "group": "features",
-   "problems": [
-    {
-     "level": "broken",
-     "text": "وقفت عند «كتابة الإعلان»: ما حصلش اللي متوقع في الوقت المسموح"
-    }
-   ],
-   "tech": [
-    "locator.click: Timeout 30000ms exceeded. Call log:   - waiting for getByRole('button', { name: /اكتبلي الإعلان كامل/ })"
-   ],
-   "shots": [
-    "shots/features-photo-ad_photo-ad.jpg"
-   ],
-   "ms": 44793,
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 45956,
    "notes": [],
-   "status": "broken"
+   "status": "ok"
   },
   {
    "key": "feature:test-ad",
@@ -1419,21 +1412,9 @@
    "shots": [
     "shots/features-test-ad_test-ad.jpg"
    ],
-   "ms": 32291,
+   "ms": 32339,
    "notes": [],
    "status": "broken"
-  },
-  {
-   "key": "feature:amazon-listing",
-   "path": "/amazon/listing",
-   "name": "أمازون: كاتب الليستنج",
-   "group": "features",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 8647,
-   "notes": [],
-   "status": "ok"
   },
   {
    "key": "feature:voice-post",
@@ -1452,21 +1433,9 @@
    "shots": [
     "shots/features-voice-post_voice-post.jpg"
    ],
-   "ms": 65421,
+   "ms": 66049,
    "notes": [],
    "status": "broken"
-  },
-  {
-   "key": "feature:amazon-profit",
-   "path": "/amazon/profit",
-   "name": "أمازون: حاسبة الربح الصافي",
-   "group": "features",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 2292,
-   "notes": [],
-   "status": "ok"
   },
   {
    "key": "feature:amazon-competitor",
@@ -1476,31 +1445,7 @@
    "problems": [],
    "tech": [],
    "shots": [],
-   "ms": 8778,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "feature:image-reader",
-   "path": "/tool/image-reader",
-   "name": "قارئ الصور",
-   "group": "features",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 7224,
-   "notes": [],
-   "status": "ok"
-  },
-  {
-   "key": "feature:voice-pro",
-   "path": "/tool/voice-studio",
-   "name": "الصوت المعبّر (Gemini)",
-   "group": "features",
-   "problems": [],
-   "tech": [],
-   "shots": [],
-   "ms": 2584,
+   "ms": 27148,
    "notes": [],
    "status": "ok"
   },
@@ -1521,34 +1466,89 @@
    "shots": [
     "shots/features-amazon-check_amazon_check.jpg"
    ],
-   "ms": 62639,
+   "ms": 62407,
    "notes": [],
    "status": "broken"
+  },
+  {
+   "key": "feature:amazon-profit",
+   "path": "/amazon/profit",
+   "name": "أمازون: حاسبة الربح الصافي",
+   "group": "features",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 2270,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "feature:amazon-listing",
+   "path": "/amazon/listing",
+   "name": "أمازون: كاتب الليستنج",
+   "group": "features",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 31241,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "feature:voice-pro",
+   "path": "/tool/voice-studio",
+   "name": "الصوت المعبّر (Gemini)",
+   "group": "features",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 2524,
+   "notes": [],
+   "status": "ok"
+  },
+  {
+   "key": "feature:image-reader",
+   "path": "/tool/image-reader",
+   "name": "قارئ الصور",
+   "group": "features",
+   "problems": [],
+   "tech": [],
+   "shots": [],
+   "ms": 7595,
+   "notes": [],
+   "status": "ok"
   },
   {
    "key": "feature:prompt-builder",
    "path": "/prompts/builder",
    "name": "صانع البرومبتات",
    "group": "features",
-   "problems": [],
-   "tech": [
-    "api: 504 POST https://rising-star-ai.vercel.app/api/prompt-gen"
+   "problems": [
+    {
+     "level": "broken",
+     "text": "التوليد طلّع خطأ: المولّد مشغول دلوقتي 😅 جرّب تاني بعد دقيقة."
+    }
    ],
-   "shots": [],
-   "ms": 68860,
+   "tech": [
+    "api: 503 POST https://rising-star-ai.vercel.app/api/prompt-gen"
+   ],
+   "shots": [
+    "shots/features-prompt-builder_prompts_builder.jpg"
+   ],
+   "ms": 25703,
    "notes": [],
-   "status": "ok"
+   "status": "broken"
   }
  ],
  "runs": [
   {
    "group": "features",
-   "key": "feature:catalog",
-   "path": "/catalog",
-   "name": "كتالوج في دقيقة",
+   "key": "feature:photo-ad",
+   "path": "/photo-ad",
+   "name": "صوّرها بموبايلك (إعلان من صورة)",
    "problems": [],
    "tech": [],
-   "ms": 13983,
+   "ms": 18571,
    "note": ""
   },
   {
@@ -1558,7 +1558,7 @@
    "name": "صانع الصور",
    "problems": [],
    "tech": [],
-   "ms": 7294,
+   "ms": 9380,
    "note": ""
   },
   {
@@ -1568,7 +1568,7 @@
    "name": "محرر الصور",
    "problems": [],
    "tech": [],
-   "ms": 2358,
+   "ms": 2301,
    "note": ""
   },
   {
@@ -1578,7 +1578,7 @@
    "name": "مصمم البوستات",
    "problems": [],
    "tech": [],
-   "ms": 2313,
+   "ms": 2300,
    "note": ""
   },
   {
@@ -1588,7 +1588,7 @@
    "name": "تغيير مقاس الصور",
    "problems": [],
    "tech": [],
-   "ms": 2366,
+   "ms": 2277,
    "note": ""
   },
   {
@@ -1598,7 +1598,7 @@
    "name": "ضغط الصور",
    "problems": [],
    "tech": [],
-   "ms": 2408,
+   "ms": 4598,
    "note": ""
   },
   {
@@ -1608,7 +1608,7 @@
    "name": "تحويل صيغة الصور",
    "problems": [],
    "tech": [],
-   "ms": 2625,
+   "ms": 2397,
    "note": ""
   },
   {
@@ -1618,7 +1618,17 @@
    "name": "العلامة المائية",
    "problems": [],
    "tech": [],
-   "ms": 2323,
+   "ms": 2342,
+   "note": ""
+  },
+  {
+   "group": "features",
+   "key": "feature:catalog",
+   "path": "/catalog",
+   "name": "كتالوج في دقيقة",
+   "problems": [],
+   "tech": [],
+   "ms": 45956,
    "note": ""
   },
   {
@@ -1628,7 +1638,7 @@
    "name": "ألوان من صورة",
    "problems": [],
    "tech": [],
-   "ms": 2337,
+   "ms": 2294,
    "note": ""
   },
   {
@@ -1638,35 +1648,7 @@
    "name": "صور إلى PDF",
    "problems": [],
    "tech": [],
-   "ms": 3241,
-   "note": ""
-  },
-  {
-   "group": "features",
-   "key": "feature:photo-ad",
-   "path": "/photo-ad",
-   "name": "صوّرها بموبايلك (إعلان من صورة)",
-   "problems": [
-    {
-     "level": "broken",
-     "text": "وقفت عند «كتابة الإعلان»: ما حصلش اللي متوقع في الوقت المسموح"
-    }
-   ],
-   "tech": [
-    "locator.click: Timeout 30000ms exceeded. Call log:   - waiting for getByRole('button', { name: /اكتبلي الإعلان كامل/ })"
-   ],
-   "ms": 44793,
-   "note": "",
-   "shot": "shots/features-photo-ad_photo-ad.jpg"
-  },
-  {
-   "group": "tools",
-   "key": "/tool/image-to-text",
-   "path": "/tool/image-to-text",
-   "name": "استخراج نص من صورة",
-   "problems": [],
-   "tech": [],
-   "ms": 3494,
+   "ms": 3142,
    "note": ""
   },
   {
@@ -1676,7 +1658,7 @@
    "name": "مولد QR كود",
    "problems": [],
    "tech": [],
-   "ms": 2403,
+   "ms": 2268,
    "note": ""
   },
   {
@@ -1686,7 +1668,7 @@
    "name": "تحسين الصور وتكبيرها",
    "problems": [],
    "tech": [],
-   "ms": 2925,
+   "ms": 2674,
    "note": ""
   },
   {
@@ -1696,7 +1678,7 @@
    "name": "حاسبة النسبة المئوية",
    "problems": [],
    "tech": [],
-   "ms": 3050,
+   "ms": 3029,
    "note": ""
   },
   {
@@ -1706,7 +1688,17 @@
    "name": "الرقم بالحروف",
    "problems": [],
    "tech": [],
-   "ms": 2991,
+   "ms": 2999,
+   "note": ""
+  },
+  {
+   "group": "tools",
+   "key": "/tool/image-to-text",
+   "path": "/tool/image-to-text",
+   "name": "استخراج نص من صورة",
+   "problems": [],
+   "tech": [],
+   "ms": 13572,
    "note": ""
   },
   {
@@ -1723,7 +1715,7 @@
    "tech": [
     "locator.click: Timeout 30000ms exceeded. Call log:   - waiting for getByRole('button', { name: 'اعرض إعلاني على 100 زبون' })"
    ],
-   "ms": 32291,
+   "ms": 32339,
    "note": "",
    "shot": "shots/features-test-ad_test-ad.jpg"
   },
@@ -1739,19 +1731,9 @@
     }
    ],
    "tech": [],
-   "ms": 108892,
+   "ms": 126738,
    "note": "",
    "shot": "shots/tools-remove-bg_tool_remove-bg.jpg"
-  },
-  {
-   "group": "features",
-   "key": "feature:amazon-listing",
-   "path": "/amazon/listing",
-   "name": "أمازون: كاتب الليستنج",
-   "problems": [],
-   "tech": [],
-   "ms": 8647,
-   "note": ""
   },
   {
    "group": "features",
@@ -1767,19 +1749,9 @@
    "tech": [
     "api: 504 POST https://rising-star-ai.vercel.app/api/ad-pack"
    ],
-   "ms": 65421,
+   "ms": 66049,
    "note": "",
    "shot": "shots/features-voice-post_voice-post.jpg"
-  },
-  {
-   "group": "features",
-   "key": "feature:amazon-profit",
-   "path": "/amazon/profit",
-   "name": "أمازون: حاسبة الربح الصافي",
-   "problems": [],
-   "tech": [],
-   "ms": 2292,
-   "note": ""
   },
   {
    "group": "features",
@@ -1788,27 +1760,7 @@
    "name": "أمازون: تحليل المنافس",
    "problems": [],
    "tech": [],
-   "ms": 8778,
-   "note": ""
-  },
-  {
-   "group": "features",
-   "key": "feature:image-reader",
-   "path": "/tool/image-reader",
-   "name": "قارئ الصور",
-   "problems": [],
-   "tech": [],
-   "ms": 7224,
-   "note": ""
-  },
-  {
-   "group": "features",
-   "key": "feature:voice-pro",
-   "path": "/tool/voice-studio",
-   "name": "الصوت المعبّر (Gemini)",
-   "problems": [],
-   "tech": [],
-   "ms": 2584,
+   "ms": 27148,
    "note": ""
   },
   {
@@ -1825,55 +1777,75 @@
    "tech": [
     "api: 504 POST https://rising-star-ai.vercel.app/api/amazon/check"
    ],
-   "ms": 62639,
+   "ms": 62407,
    "note": "",
    "shot": "shots/features-amazon-check_amazon_check.jpg"
   },
   {
-   "group": "ai",
-   "key": "/tool/business-ideas",
-   "path": "/tool/business-ideas",
-   "name": "أفكار مشاريع",
+   "group": "features",
+   "key": "feature:amazon-profit",
+   "path": "/amazon/profit",
+   "name": "أمازون: حاسبة الربح الصافي",
    "problems": [],
    "tech": [],
-   "ms": 12429,
-   "note": "2857 حرف في 10 ثانية"
+   "ms": 2270,
+   "note": ""
   },
   {
-   "group": "ai",
-   "key": "/tool/caption",
-   "path": "/tool/caption",
-   "name": "كابشن إنستجرام",
+   "group": "features",
+   "key": "feature:amazon-listing",
+   "path": "/amazon/listing",
+   "name": "أمازون: كاتب الليستنج",
    "problems": [],
    "tech": [],
-   "ms": 5398,
-   "note": "507 حرف في 3 ثانية"
+   "ms": 31241,
+   "note": ""
   },
   {
-   "group": "ai",
-   "key": "/tool/content-calendar",
-   "path": "/tool/content-calendar",
-   "name": "جدول محتوى 30 يوم",
+   "group": "features",
+   "key": "feature:voice-pro",
+   "path": "/tool/voice-studio",
+   "name": "الصوت المعبّر (Gemini)",
    "problems": [],
    "tech": [],
-   "ms": 10553,
-   "note": "3653 حرف في 8 ثانية"
+   "ms": 2524,
+   "note": ""
   },
   {
-   "group": "ai",
-   "key": "/tool/email-reply",
-   "path": "/tool/email-reply",
-   "name": "الرد على الإيميل",
+   "group": "features",
+   "key": "feature:image-reader",
+   "path": "/tool/image-reader",
+   "name": "قارئ الصور",
    "problems": [],
    "tech": [],
-   "ms": 6113,
-   "note": "273 حرف في 4 ثانية"
+   "ms": 7595,
+   "note": ""
   },
   {
    "group": "ai",
-   "key": "/tool/email-writer",
-   "path": "/tool/email-writer",
-   "name": "كاتب الإيميلات",
+   "key": "/tool/review-reply",
+   "path": "/tool/review-reply",
+   "name": "الرد على التقييمات",
+   "problems": [],
+   "tech": [],
+   "ms": 3985,
+   "note": "430 حرف في 1 ثانية"
+  },
+  {
+   "group": "ai",
+   "key": "/tool/proposal",
+   "path": "/tool/proposal",
+   "name": "عرض الخدمة",
+   "problems": [],
+   "tech": [],
+   "ms": 10396,
+   "note": "3470 حرف في 8 ثانية"
+  },
+  {
+   "group": "ai",
+   "key": "/tool/sheet-analyst",
+   "path": "/tool/sheet-analyst",
+   "name": "محلل الجداول",
    "problems": [
     {
      "level": "broken",
@@ -1881,85 +1853,115 @@
     }
    ],
    "tech": [],
-   "ms": 3315,
+   "ms": 3208,
    "note": "",
-   "shot": "shots/ai-email-writer_tool_email-writer.jpg"
+   "shot": "shots/ai-sheet-analyst_tool_sheet-analyst.jpg"
   },
   {
    "group": "ai",
-   "key": "/tool/image-prompt",
-   "path": "/tool/image-prompt",
-   "name": "برومبت الصور",
-   "problems": [
-    {
-     "level": "broken",
-     "text": "الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة."
-    }
-   ],
+   "key": "/tool/seo-article",
+   "path": "/tool/seo-article",
+   "name": "مقال SEO",
+   "problems": [],
    "tech": [],
-   "ms": 3260,
-   "note": "",
-   "shot": "shots/ai-image-prompt_tool_image-prompt.jpg"
-  },
-  {
-   "group": "ai",
-   "key": "/tool/landing-page",
-   "path": "/tool/landing-page",
-   "name": "صفحة الهبوط",
-   "problems": [
-    {
-     "level": "broken",
-     "text": "الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة."
-    }
-   ],
-   "tech": [],
-   "ms": 3274,
-   "note": "",
-   "shot": "shots/ai-landing-page_tool_landing-page.jpg"
-  },
-  {
-   "group": "ai",
-   "key": "/tool/logo-ideas",
-   "path": "/tool/logo-ideas",
-   "name": "أفكار اللوجو",
-   "problems": [
-    {
-     "level": "broken",
-     "text": "الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة."
-    }
-   ],
-   "tech": [],
-   "ms": 3315,
-   "note": "",
-   "shot": "shots/ai-logo-ideas_tool_logo-ideas.jpg"
-  },
-  {
-   "group": "ai",
-   "key": "/tool/marketing-plan",
-   "path": "/tool/marketing-plan",
-   "name": "خطة تسويق شهرية",
-   "problems": [
-    {
-     "level": "broken",
-     "text": "الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة."
-    }
-   ],
-   "tech": [],
-   "ms": 3631,
-   "note": "",
-   "shot": "shots/ai-marketing-plan_tool_marketing-plan.jpg"
+   "ms": 10314,
+   "note": "2308 حرف في 8 ثانية"
   },
   {
    "group": "features",
    "key": "feature:prompt-builder",
    "path": "/prompts/builder",
    "name": "صانع البرومبتات",
-   "problems": [],
-   "tech": [
-    "api: 504 POST https://rising-star-ai.vercel.app/api/prompt-gen"
+   "problems": [
+    {
+     "level": "broken",
+     "text": "التوليد طلّع خطأ: المولّد مشغول دلوقتي 😅 جرّب تاني بعد دقيقة."
+    }
    ],
-   "ms": 68860,
-   "note": ""
+   "tech": [
+    "api: 503 POST https://rising-star-ai.vercel.app/api/prompt-gen"
+   ],
+   "ms": 25703,
+   "note": "",
+   "shot": "shots/features-prompt-builder_prompts_builder.jpg"
+  },
+  {
+   "group": "ai",
+   "key": "/tool/video-prompt",
+   "path": "/tool/video-prompt",
+   "name": "برومبت الفيديو",
+   "problems": [
+    {
+     "level": "broken",
+     "text": "الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة."
+    }
+   ],
+   "tech": [],
+   "ms": 3336,
+   "note": "",
+   "shot": "shots/ai-video-prompt_tool_video-prompt.jpg"
+  },
+  {
+   "group": "ai",
+   "key": "/tool/whatsapp-sales",
+   "path": "/tool/whatsapp-sales",
+   "name": "رسائل واتساب للبيع",
+   "problems": [
+    {
+     "level": "broken",
+     "text": "الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة."
+    }
+   ],
+   "tech": [],
+   "ms": 3243,
+   "note": "",
+   "shot": "shots/ai-whatsapp-sales_tool_whatsapp-sales.jpg"
+  },
+  {
+   "group": "ai",
+   "key": "/tool/youtube-title",
+   "path": "/tool/youtube-title",
+   "name": "عناوين يوتيوب",
+   "problems": [],
+   "tech": [],
+   "ms": 3265,
+   "note": "450 حرف في 1 ثانية"
+  },
+  {
+   "group": "ai",
+   "key": "/tool/ad-copy",
+   "path": "/tool/ad-copy",
+   "name": "نص إعلاني",
+   "problems": [],
+   "tech": [],
+   "ms": 4102,
+   "note": "653 حرف في 1 ثانية"
+  },
+  {
+   "group": "ai",
+   "key": "/tool/adspy",
+   "path": "/tool/adspy",
+   "name": "Adspy عربي: جاسوس الإعلانات",
+   "problems": [],
+   "tech": [],
+   "ms": 3272,
+   "note": "1936 حرف في 1 ثانية"
+  },
+  {
+   "group": "ai",
+   "key": "/tool/business-ideas",
+   "path": "/tool/business-ideas",
+   "name": "أفكار مشاريع",
+   "problems": [
+    {
+     "level": "broken",
+     "text": "الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة."
+    }
+   ],
+   "tech": [],
+   "ms": 3256,
+   "note": "",
+   "shot": "shots/ai-business-ideas_tool_business-ideas.jpg"
   },
   {
    "group": "ai",
@@ -1969,35 +1971,31 @@
    "problems": [
     {
      "level": "broken",
+     "text": "الأداة طلّعت خطأ: الخدمة مشغولة دلوقتي. جرّب بعد دقيقة."
+    }
+   ],
+   "tech": [],
+   "ms": 3212,
+   "note": "",
+   "shot": "shots/ai-business-plan_tool_business-plan.jpg"
+  },
+  {
+   "group": "ai",
+   "key": "/tool/tiktok-script",
+   "path": "/tool/tiktok-script",
+   "name": "سكريبت فيديو قصير",
+   "problems": [
+    {
+     "level": "broken",
      "text": "الأداة طلّعت خطأ: حصلت مشكلة مؤقتة. جرّب تاني."
     }
    ],
    "tech": [
     "api: 502 POST https://rising-star-ai.vercel.app/api/run"
    ],
-   "ms": 52936,
+   "ms": 28022,
    "note": "",
-   "shot": "shots/ai-business-plan_tool_business-plan.jpg"
-  },
-  {
-   "group": "ai",
-   "key": "/tool/post",
-   "path": "/tool/post",
-   "name": "كاتب المنشورات",
-   "problems": [],
-   "tech": [],
-   "ms": 30143,
-   "note": "612 حرف في 28 ثانية"
-  },
-  {
-   "group": "ai",
-   "key": "/tool/product-desc",
-   "path": "/tool/product-desc",
-   "name": "وصف المنتج",
-   "problems": [],
-   "tech": [],
-   "ms": 30135,
-   "note": "1194 حرف في 28 ثانية"
+   "shot": "shots/ai-tiktok-script_tool_tiktok-script.jpg"
   }
  ],
  "spaces": [
@@ -2013,7 +2011,7 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 155,
+   "ms": 230,
    "ct": "application/json",
    "snippet": ""
   },
@@ -2028,7 +2026,7 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 171,
+   "ms": 231,
    "ct": "application/json",
    "snippet": ""
   },
@@ -2042,7 +2040,7 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 199,
+   "ms": 257,
    "ct": "application/json",
    "snippet": ""
   },
@@ -2056,7 +2054,7 @@
    "up": true,
    "status": 200,
    "error": "",
-   "ms": 211,
+   "ms": 260,
    "ct": "application/json",
    "snippet": ""
   }
