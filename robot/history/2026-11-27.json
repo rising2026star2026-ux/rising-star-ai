@@ -1,0 +1,32 @@
+{
+ "date": "2026-11-27T14:22:26.952Z",
+ "total": 117,
+ "ok": 108,
+ "broken": [
+  "/tool/tiktok-script",
+  "/tool/business-plan",
+  "/tool/business-ideas",
+  "/tool/whatsapp-sales",
+  "/tool/video-prompt",
+  "feature:amazon-competitor",
+  "feature:prompt-builder",
+  "feature:image-reader",
+  "feature:test-ad"
+ ],
+ "warn": 0,
+ "spacesDown": [],
+ "aiTested": [
+  "/tool/seo-article",
+  "/tool/sheet-analyst",
+  "/tool/tiktok-script",
+  "/tool/video-prompt",
+  "/tool/whatsapp-sales",
+  "/tool/youtube-title",
+  "/tool/ad-copy",
+  "/tool/adspy",
+  "/tool/business-ideas",
+  "/tool/business-plan",
+  "/tool/caption",
+  "/tool/content-calendar"
+ ]
+}
