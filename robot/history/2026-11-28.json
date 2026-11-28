@@ -1,0 +1,33 @@
+{
+ "date": "2026-11-28T13:37:36.888Z",
+ "total": 117,
+ "ok": 107,
+ "broken": [
+  "/tool/landing-page",
+  "/tool/marketing-plan",
+  "/tool/proposal",
+  "/tool/product-desc",
+  "/tool/review-reply",
+  "/tool/image-prompt",
+  "/tool/logo-ideas",
+  "feature:test-ad",
+  "feature:image-reader",
+  "feature:amazon-competitor"
+ ],
+ "warn": 0,
+ "spacesDown": [],
+ "aiTested": [
+  "/tool/email-reply",
+  "/tool/email-writer",
+  "/tool/image-prompt",
+  "/tool/landing-page",
+  "/tool/logo-ideas",
+  "/tool/marketing-plan",
+  "/tool/post",
+  "/tool/product-desc",
+  "/tool/proposal",
+  "/tool/review-reply",
+  "/tool/seo-article",
+  "/tool/sheet-analyst"
+ ]
+}
